@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Household Budget Optimizer &amp; Savings Simulator | Free, Private Calculator</title>
+  <meta name="description" content="Free household budget optimizer: enter your bills, get a personalized savings action plan, Budget Health Score, 50/30/20 check, goal and debt-free dates, and a 20-year investment projection. 100% private, runs in your browser.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="color-scheme" content="light dark">
+  <!--SITE_URL_TAGS-->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Household Budget Optimizer">
+  <meta property="og:title" content="Household Budget Optimizer & Savings Simulator">
+  <meta property="og:description" content="Find hidden expense leaks, build a personalized savings plan and see what investing the difference could be worth. Private, free and instant.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Household Budget Optimizer & Savings Simulator">
+  <meta name="twitter:description" content="Plug household expense leaks and see your savings grow. A 100% private, in-browser calculator.">
+
+  <!-- Theme, lite mode and ad flag are set before first paint to avoid flashes and layout shift -->
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      try { t = localStorage.getItem('hbo:theme'); } catch (e) {}
+      if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) d.classList.add('dark');
+      var n = navigator, c = n.connection || {};
+      if ((n.hardwareConcurrency && n.hardwareConcurrency <= 4) || (n.deviceMemory && n.deviceMemory <= 2) || c.saveData) d.classList.add('lite');
+      if (__ADS_ON__) d.classList.add('ads-on');
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Household Budget Optimizer & Savings Simulator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "A private, in-browser household budget tool that finds savings in your bills, scores your budget health, plans goals and debt payoff, and projects investment growth.",
+    "featureList": ["Personalized savings action plan", "Budget Health Score", "50/30/20 budget check", "Investment projection with inflation adjustment", "Goal planner", "Emergency fund check", "Debt-free date calculator", "Eight currencies"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is my financial data safe in this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the Reset button erases them." } },
+      { "@type": "Question", "name": "How are the savings estimates calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Each suggestion applies a conservative, benchmark-based percentage to the specific bill it targets, for example 12% for utility efficiency or 15% for carpooling. When two actions target the same bill, the second applies only to what is left, so savings never double-count. You can adjust every estimate with its slider." } },
+      { "@type": "Question", "name": "What does the \"I'll do this\" toggle do?", "acceptedAnswer": { "@type": "Answer", "text": "Only actions you commit to count toward your optimized spend, monthly savings, investment projection, goal dates and debt-free date. Turn an action off if it doesn't fit your life and every figure updates instantly." } },
+      { "@type": "Question", "name": "What is the 50/30/20 budget rule?", "acceptedAnswer": { "@type": "Answer", "text": "The 50/30/20 rule suggests spending about 50% of take-home pay on needs such as housing, utilities, groceries and minimum debt payments, 30% on wants such as dining out and subscriptions, and saving at least 20%." } },
+      { "@type": "Question", "name": "How is the Budget Health Score calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The score from 0 to 100 combines five factors: savings rate (30 points), housing cost as a share of income (20), debt payments and high-interest cards (15), emergency fund coverage (20) and spending on wants (15). The tool tells you which factor would raise your score the most." } },
+      { "@type": "Question", "name": "What annual return should I assume for the projection?", "acceptedAnswer": { "@type": "Answer", "text": "High-yield savings accounts have recently paid around 4%, balanced portfolios have historically returned around 6%, and broad stock index funds around 8 to 10% a year over long periods. Returns are never guaranteed, so compare several scenarios and use the inflation toggle to see values in today's money." } },
+      { "@type": "Question", "name": "How big should my emergency fund be?", "acceptedAnswer": { "@type": "Answer", "text": "A common guideline is three to six months of essential expenses. Households with one income, variable pay or dependants should aim for the higher end. The calculator shows your current coverage and how long your committed savings take to close the gap." } },
+      { "@type": "Question", "name": "Can I use currencies other than US dollars?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Amounts are formatted for each currency, and the typical ranges and rule thresholds are scaled to approximate local price levels." } }
+    ]
+  }
+  </script>
+</head>
+
+<body class="pb-28 lg:pb-0">
+  <!-- ===================== SVG ICON SPRITE (only the icons used) ===================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 0-20 0z"/><path d="M12 12v8a2 2 0 0 0 4 0M12 2v1"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><path d="M3 22h12M4 9h10M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"/><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9.83a2 2 0 0 0-.59-1.42L18 5"/></symbol>
+    <symbol id="i-train" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M12 3v8M8 19l-2 3M18 22l-2-3M8 15h.01M16 15h.01"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 5.8L20 10.7l-6.1 1.9L12 18.5l-1.9-5.9L4 10.7l6.1-1.9z"/><path d="M19 17v4M17 19h4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+    <symbol id="i-heart-pulse" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+    <symbol id="i-pie" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M3 3v18h18M7 16h8M7 11h12M7 6h3"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M3 7h18M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+    <symbol id="i-thermometer" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></symbol>
+    <symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></symbol>
+    <symbol id="i-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="m17 2-5 5-5-5"/></symbol>
+  </svg>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-lg focus:bg-indigo-600 focus:px-4 focus:py-3 focus:text-white">Skip to calculator</a>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-900 text-white">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" aria-label="Main">
+      <a href="#top" class="flex min-h-11 items-center gap-2.5 font-extrabold tracking-tight">
+        <img src="/favicon.svg" alt="" width="32" height="32" class="h-8 w-8">
+        <span>Budget<span class="text-emerald-400">Optimizer</span></span>
+      </a>
+      <ul class="hidden items-center gap-1 text-sm md:flex">
+        <li><a href="#inputs" class="flex min-h-11 items-center rounded-lg px-3 text-slate-300 hover:bg-white/10 hover:text-white">Your budget</a></li>
+        <li><a href="#plan" class="flex min-h-11 items-center rounded-lg px-3 text-slate-300 hover:bg-white/10 hover:text-white">Action plan</a></li>
+        <li><a href="#projection" class="flex min-h-11 items-center rounded-lg px-3 text-slate-300 hover:bg-white/10 hover:text-white">Growth</a></li>
+        <li><a href="#goals" class="flex min-h-11 items-center rounded-lg px-3 text-slate-300 hover:bg-white/10 hover:text-white">Goals</a></li>
+        <li><a href="#guide" class="flex min-h-11 items-center rounded-lg px-3 text-slate-300 hover:bg-white/10 hover:text-white">Guide</a></li>
+      </ul>
+      <button type="button" id="themeToggle" class="btn-icon text-slate-300 hover:bg-white/10 hover:text-white dark:hover:bg-white/10" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="icon dark:hidden" aria-hidden="true"><use href="#i-moon"></use></svg>
+        <svg class="icon hidden dark:block" aria-hidden="true"><use href="#i-sun"></use></svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="top" class="relative overflow-hidden bg-slate-900 text-white">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-indigo-600/25 blur-3xl"></div>
+      <div class="absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full bg-emerald-500/15 blur-3xl"></div>
+    </div>
+    <div class="relative mx-auto max-w-7xl px-4 pb-14 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+      <p class="inline-flex items-start gap-2.5 rounded-2xl bg-emerald-500/10 px-4 py-2.5 text-sm text-emerald-100 ring-1 ring-emerald-400/40 sm:items-center sm:rounded-full">
+        <span aria-hidden="true">🔒</span>
+        <span><strong class="text-white">100% Private.</strong> Your financial data is processed locally and never leaves your device.</span>
+      </p>
+      <h1 class="mt-5 max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+        Household Budget Optimizer <span class="text-emerald-300">&amp; Savings Simulator</span>
+      </h1>
+      <p class="mt-4 max-w-2xl text-base text-slate-300 sm:text-lg">
+        Enter your monthly bills to get a personalized savings plan, a Budget Health Score and goal dates, then see what investing the difference could be worth.
+      </p>
+      <ol class="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
+        <li><a href="#inputs" class="flex min-h-14 items-center gap-3 rounded-xl bg-white/5 p-3 ring-1 ring-white/10 hover:bg-white/10"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-indigo-500 font-bold">1</span><span><span class="block text-sm font-semibold">Enter your bills</span><span class="block text-xs text-slate-300">About 2 minutes</span></span></a></li>
+        <li><a href="#plan" class="flex min-h-14 items-center gap-3 rounded-xl bg-white/5 p-3 ring-1 ring-white/10 hover:bg-white/10"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-indigo-500 font-bold">2</span><span><span class="block text-sm font-semibold">Commit to actions</span><span class="block text-xs text-slate-300">Toggle what fits your life</span></span></a></li>
+        <li><a href="#projection" class="flex min-h-14 items-center gap-3 rounded-xl bg-white/5 p-3 ring-1 ring-white/10 hover:bg-white/10"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-emerald-500 font-bold text-slate-950">3</span><span><span class="block text-sm font-semibold">Watch it grow</span><span class="block text-xs text-slate-300">Goals, debt-free date, 20-yr view</span></span></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== ADSENSE: TOP BANNER START ===== -->
+  <!-- Filled automatically when VITE_ADSENSE_CLIENT (and optionally VITE_ADSENSE_SLOT_TOP) is set in .env.
+       min-height reserves the space so the ad never shifts the layout. -->
+  <aside class="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Advertisement">
+    <div class="ad-slot min-h-[100px]" data-ad="top"></div>
+  </aside>
+  <!-- ===== ADSENSE: TOP BANNER END ===== -->
+
+  <!-- ===================== APP ===================== -->
+  <main id="main" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+    <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
+
+      <!-- ================= INPUTS (left / top on mobile) ================= -->
+      <section id="inputs" aria-labelledby="inputsTitle" class="min-w-0 lg:sticky lg:top-20 lg:col-span-5 lg:-m-1 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:p-1 xl:col-span-4">
+        <div class="mb-4 flex items-end justify-between gap-3">
+          <div>
+            <p class="eyebrow">Step 1</p>
+            <h2 id="inputsTitle" class="h-section">Your monthly budget</h2>
+          </div>
+          <p id="savedIndicator" class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300" role="status">
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-check-circle"></use></svg><span id="savedText">Saved on this device</span>
+          </p>
+        </div>
+
+        <!-- Settings -->
+        <div class="card mb-4 p-4 sm:p-5">
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <label class="block">
+              <span class="label mb-1.5 block">Lifestyle profile</span>
+              <select id="profile" class="input select">
+                <option value="single">Single City Renter</option>
+                <option value="suburban">Suburban Family of 4</option>
+                <option value="youngpro">Young Professional</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="label mb-1.5 block">Currency</span>
+              <select id="currency" class="input select"></select>
+            </label>
+          </div>
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+            <fieldset>
+              <legend class="sr-only">Show figures per month or per year</legend>
+              <div class="seg">
+                <label><input type="radio" name="period" value="monthly" checked><span>Monthly</span></label>
+                <label><input type="radio" name="period" value="annual"><span>Annual</span></label>
+              </div>
+            </fieldset>
+            <div class="flex gap-2">
+              <button type="button" class="btn btn-secondary" data-action="sample"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sparkles"></use></svg>Load sample</button>
+              <button type="button" id="btnReset" class="btn-icon hover:text-rose-600" aria-label="Reset all data"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <form id="budgetForm" novalidate autocomplete="off">
+          <div id="inputGroups" class="space-y-3"></div>
+        </form>
+
+        <!-- ===== ADSENSE: SIDEBAR START ===== -->
+        <!-- Desktop only (hidden below 1024px), so an ad never sits between the inputs and the results on phones.
+             Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_SIDEBAR. -->
+        <aside class="mt-6 hidden lg:block" aria-label="Advertisement">
+          <div class="ad-slot min-h-[280px]" data-ad="sidebar"></div>
+        </aside>
+        <!-- ===== ADSENSE: SIDEBAR END ===== -->
+      </section>
+
+      <!-- ================= RESULTS (right) ================= -->
+      <section id="results" aria-label="Results" class="min-w-0 space-y-6 lg:col-span-7 xl:col-span-8">
+
+        <div id="sampleBanner" hidden class="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm text-indigo-900 dark:border-indigo-900 dark:bg-indigo-950 dark:text-indigo-200">
+          <p class="flex items-center gap-2"><svg class="icon shrink-0" aria-hidden="true"><use href="#i-sparkles"></use></svg><span>You're viewing <strong>sample data</strong> for a <span id="sampleProfile">Suburban Family of 4</span>. Edit any number to make it yours.</span></p>
+          <button type="button" id="clearSample" class="btn btn-secondary">Start with a blank budget</button>
+        </div>
+
+        <div id="overBanner" hidden role="alert" class="flex gap-3 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900 dark:border-rose-900 dark:bg-rose-950 dark:text-rose-200">
+          <svg class="icon mt-0.5 shrink-0" aria-hidden="true"><use href="#i-alert"></use></svg><p id="overText"></p>
+        </div>
+        <div id="incomeBanner" hidden class="flex gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
+          <svg class="icon mt-0.5 shrink-0" aria-hidden="true"><use href="#i-info"></use></svg>
+          <p>Add your <a href="#f-income" class="font-semibold underline">monthly net income</a> to unlock your Budget Health Score, the 50/30/20 check and a full projection.</p>
+        </div>
+
+        <!-- Empty state -->
+        <div id="emptyState" hidden class="card p-8 text-center sm:p-12">
+          <span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-indigo-50 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"><svg class="icon h-8 w-8" aria-hidden="true"><use href="#i-wallet"></use></svg></span>
+          <h2 class="mt-5 text-xl font-extrabold text-slate-900 dark:text-white">Let's find your hidden savings</h2>
+          <p class="mx-auto mt-2 max-w-md muted">Start with your monthly income and a few bills. Your plan, health score and projections appear here instantly. Nothing leaves your device.</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <a href="#f-income" class="btn btn-primary">Enter my numbers</a>
+            <button type="button" class="btn btn-secondary" data-action="sample"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sparkles"></use></svg>Load sample data</button>
+          </div>
+        </div>
+
+        <div id="dashboard" class="space-y-6">
+          <!-- Summary cards -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4" aria-label="Summary">
+            <div class="card card-lift p-4 sm:p-5">
+              <p class="text-xs font-semibold muted">Current total spend</p>
+              <p id="sumCurrent" class="mt-1.5 text-2xl font-extrabold tracking-tight text-slate-900 tabular-nums sm:text-3xl dark:text-white">$0</p>
+              <p class="mt-1 text-xs muted" data-per-label>per month</p>
+            </div>
+            <div class="card card-lift p-4 sm:p-5">
+              <p class="text-xs font-semibold muted">Optimized spend</p>
+              <p id="sumOptimized" class="mt-1.5 text-2xl font-extrabold tracking-tight text-slate-900 tabular-nums sm:text-3xl dark:text-white">$0</p>
+              <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div id="leanBar" class="h-full rounded-full bg-indigo-500 transition-all duration-500" style="width:0%"></div></div>
+              <p id="sumOptimizedSub" class="mt-1 text-xs muted"></p>
+            </div>
+            <div class="card-lift rounded-2xl bg-emerald-700 p-4 text-white shadow-sm sm:p-5">
+              <p class="text-xs font-semibold text-emerald-50">Monthly savings</p>
+              <p id="sumMonthly" class="mt-1.5 text-2xl font-extrabold tracking-tight tabular-nums sm:text-3xl">$0</p>
+              <p class="mt-1 text-xs text-emerald-50">from committed actions</p>
+            </div>
+            <div class="card-lift rounded-2xl bg-slate-900 p-4 text-white shadow-sm sm:p-5 dark:bg-slate-800">
+              <p class="text-xs font-semibold text-slate-300">Annual savings</p>
+              <p id="sumAnnual" class="mt-1.5 text-2xl font-extrabold tracking-tight tabular-nums sm:text-3xl">$0</p>
+              <p class="mt-1 text-xs text-slate-300">every year you keep it up</p>
+            </div>
+          </div>
+
+          <!-- Health + 50/30/20 -->
+          <div class="grid grid-cols-1 gap-6 xl:grid-cols-2">
+            <section class="card p-5 sm:p-6" aria-labelledby="healthTitle">
+              <h2 id="healthTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-rose-500" aria-hidden="true"><use href="#i-heart-pulse"></use></svg>Budget Health Score</h2>
+              <div class="mt-4 flex items-center gap-5">
+                <svg id="gauge" viewBox="0 0 120 120" class="h-32 w-32 shrink-0" role="img" aria-label="Budget Health Score">
+                  <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="12" class="text-slate-100 dark:text-slate-800"/>
+                  <circle id="gaugeArc" cx="60" cy="60" r="52" fill="none" stroke="#059669" stroke-width="12" stroke-linecap="round" transform="rotate(-90 60 60)" style="stroke-dasharray:0 327;transition:stroke-dasharray .6s ease"/>
+                  <text x="60" y="62" text-anchor="middle" class="fill-slate-900 text-[30px] font-extrabold dark:fill-white" id="healthScore">–</text>
+                  <text x="60" y="82" text-anchor="middle" class="fill-slate-600 text-[10px] font-semibold dark:fill-slate-400">out of 100</text>
+                </svg>
+                <div class="min-w-0">
+                  <p id="healthLabel" class="text-lg font-extrabold text-slate-900 dark:text-white">–</p>
+                  <p id="healthTip" class="mt-1 text-sm muted"></p>
+                </div>
+              </div>
+              <ul id="healthParts" class="mt-5 grid gap-3 sm:grid-cols-2"></ul>
+            </section>
+
+            <section class="card p-5 sm:p-6" aria-labelledby="splitTitle">
+              <h2 id="splitTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-indigo-600 dark:text-indigo-400" aria-hidden="true"><use href="#i-pie"></use></svg>50/30/20 check</h2>
+              <div class="mt-4 flex items-center gap-5">
+                <svg id="donut" viewBox="0 0 120 120" class="h-32 w-32 shrink-0" role="img" aria-label="Needs, wants and savings breakdown"><g id="donutSegments"></g></svg>
+                <ul id="splitLegend" class="min-w-0 flex-1 space-y-2.5"></ul>
+              </div>
+              <p id="splitMsg" class="mt-4 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 dark:bg-slate-800/60 dark:text-slate-300"></p>
+            </section>
+          </div>
+
+          <!-- Category bars -->
+          <section class="card p-5 sm:p-6" aria-labelledby="catTitle">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 id="catTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-indigo-600 dark:text-indigo-400" aria-hidden="true"><use href="#i-bars"></use></svg>Spending by category</h2>
+              <p id="categoryBasis" class="text-xs muted"></p>
+            </div>
+            <ul id="categoryBars" class="mt-5 space-y-4"></ul>
+          </section>
+
+          <!-- Action plan -->
+          <section id="plan" aria-labelledby="planTitle">
+            <div class="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p class="eyebrow">Step 2</p>
+                <h2 id="planTitle" class="h-section">Your savings action plan</h2>
+                <p id="planCount" class="mt-1 text-sm muted"></p>
+              </div>
+              <div id="planToolbar" class="flex flex-wrap items-center gap-2">
+                <label class="flex items-center gap-2 text-sm"><span class="muted">Sort</span>
+                  <select id="planSort" class="input select w-auto">
+                    <option value="savings">Highest savings</option>
+                    <option value="easy">Easiest first</option>
+                  </select>
+                </label>
+                <button type="button" id="btnCommitAll" class="btn btn-ghost">Commit all</button>
+                <button type="button" id="btnCommitNone" class="btn btn-ghost">Clear</button>
+              </div>
+            </div>
+            <div id="planList" class="mt-4 space-y-4"></div>
+            <div id="planEmpty" hidden class="card mt-4 p-8 text-center">
+              <svg class="icon mx-auto h-10 w-10 text-emerald-600" aria-hidden="true"><use href="#i-check-circle"></use></svg>
+              <p class="mt-3 font-bold text-slate-900 dark:text-white">Your budget is already lean</p>
+              <p class="mx-auto mt-1 max-w-md text-sm muted">None of your bills are above the benchmarks for this profile. Add subscriptions or debts, or try a different profile, to look for more savings.</p>
+            </div>
+          </section>
+
+          <!-- Projection -->
+          <section id="projection" class="card p-5 sm:p-6" aria-labelledby="projTitle">
+            <p class="eyebrow">Step 3</p>
+            <h2 id="projTitle" class="h-section">Investment projection</h2>
+            <p class="mt-1 text-sm muted">What happens if you invest the money you free up every month, with interest added monthly.</p>
+
+            <div class="mt-5 grid gap-5 md:grid-cols-2">
+              <div>
+                <div class="flex items-center justify-between">
+                  <label for="years" class="label">Years to save / invest</label>
+                  <output id="yearsOut" for="years" class="rounded-lg bg-indigo-600 px-2.5 py-0.5 text-sm font-bold text-white tabular-nums">10 yrs</output>
+                </div>
+                <input id="years" type="range" min="1" max="20" step="1" value="10" class="range">
+                <div class="flex justify-between text-xs muted" aria-hidden="true"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span></div>
+              </div>
+              <div class="space-y-3">
+                <label class="block"><span class="label mb-1.5 block">Assumed annual return</span><select id="rate" class="input select"></select></label>
+                <div class="flex flex-wrap items-center gap-3">
+                  <button type="button" role="switch" id="inflationSwitch" class="switch tap" aria-checked="false" aria-labelledby="inflLabel"></button>
+                  <span id="inflLabel" class="text-sm font-medium text-slate-700 dark:text-slate-300">Show inflation-adjusted values</span>
+                  <label class="flex items-center gap-1.5 text-sm"><span class="sr-only">Inflation rate in percent</span>
+                    <input id="inflationRate" type="number" inputmode="decimal" min="0" max="20" step="0.1" class="input w-20 text-center" value="3"><span class="muted">%</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-3 gap-3">
+              <div class="rounded-xl bg-emerald-50 p-3 dark:bg-emerald-950/60">
+                <p class="flex items-center gap-1.5 text-xs font-semibold text-emerald-800 dark:text-emerald-300"><span class="inline-block w-4 border-t-2 border-emerald-600"></span>Investing savings</p>
+                <p id="fvAlt" class="mt-1 text-lg font-extrabold text-emerald-800 tabular-nums sm:text-xl dark:text-emerald-300">$0</p>
+              </div>
+              <div class="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
+                <p class="flex items-center gap-1.5 text-xs font-semibold muted"><span class="inline-block w-4 border-t-2 border-dashed border-indigo-500"></span>Current path</p>
+                <p id="fvCur" class="mt-1 text-lg font-extrabold text-slate-900 tabular-nums sm:text-xl dark:text-white">$0</p>
+              </div>
+              <div class="rounded-xl bg-indigo-600 p-3 text-white">
+                <p class="text-xs font-semibold text-indigo-100">Extra wealth</p>
+                <p id="fvDiff" class="mt-1 text-lg font-extrabold tabular-nums sm:text-xl">$0</p>
+              </div>
+            </div>
+
+            <p id="chartMode" class="mt-5 text-xs font-medium muted"></p>
+            <div id="chartBox" class="relative mt-2 h-72 sm:h-80">
+              <div id="chartSkeleton" class="skeleton absolute inset-0 grid place-items-center p-6 text-center text-sm muted" aria-hidden="true"></div>
+              <canvas id="growthChart" hidden role="img" aria-label="Investment projection chart"></canvas>
+            </div>
+            <p id="projectionSummary" class="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm text-slate-800 dark:bg-slate-800/60 dark:text-slate-200"></p>
+            <details class="mt-3">
+              <summary class="inline-flex min-h-11 cursor-pointer items-center text-sm font-semibold text-indigo-700 dark:text-indigo-300">View year-by-year table</summary>
+              <div class="mt-2 max-h-72 overflow-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                <table class="w-full text-sm tabular-nums">
+                  <caption class="sr-only">Projected balance by year</caption>
+                  <thead class="sticky top-0 bg-slate-50 text-xs dark:bg-slate-800"><tr><th scope="col" class="px-3 py-2 text-left">Year</th><th scope="col" class="px-3 py-2 text-right">Current path</th><th scope="col" class="px-3 py-2 text-right">Investing savings</th></tr></thead>
+                  <tbody id="projectionTable" class="divide-y divide-slate-100 dark:divide-slate-800"></tbody>
+                </table>
+              </div>
+            </details>
+            <p class="mt-4 flex gap-2 text-xs muted"><svg class="icon icon-sm shrink-0" aria-hidden="true"><use href="#i-scale"></use></svg>Hypothetical illustration only, not a guarantee or investment advice. Assumes a constant return compounded monthly and excludes taxes and fees. Real investments rise and fall in value.</p>
+          </section>
+
+          <!-- Goals -->
+          <section id="goals" aria-labelledby="goalsTitle">
+            <h2 id="goalsTitle" class="h-section">Goals &amp; safety nets</h2>
+            <div class="mt-4 grid grid-cols-1 gap-6 xl:grid-cols-2">
+              <section class="card p-5 sm:p-6 xl:row-span-2" aria-labelledby="goalPlannerTitle">
+                <h3 id="goalPlannerTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-indigo-600 dark:text-indigo-400" aria-hidden="true"><use href="#i-target"></use></svg>Goal planner</h3>
+                <p id="goalBasis" class="mt-1 text-sm muted"></p>
+                <ul id="goalList" class="mt-4 space-y-3"></ul>
+                <p id="goalEmpty" class="mt-4 text-sm muted">No goals yet. Add one, like a holiday, a car or a home deposit.</p>
+                <button type="button" id="addGoal" class="btn btn-ghost mt-3"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-plus"></use></svg>Add goal</button>
+              </section>
+              <section class="card p-5 sm:p-6" aria-labelledby="efTitle">
+                <h3 id="efTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-emerald-600 dark:text-emerald-400" aria-hidden="true"><use href="#i-shield"></use></svg>Emergency fund check</h3>
+                <div id="emergencyBody" class="mt-3"></div>
+              </section>
+              <section class="card p-5 sm:p-6" aria-labelledby="debtTitle">
+                <h3 id="debtTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-amber-600 dark:text-amber-400" aria-hidden="true"><use href="#i-card"></use></svg>Debt-free date</h3>
+                <div id="debtBody" class="mt-3"></div>
+              </section>
+            </div>
+          </section>
+
+          <!-- History & sharing -->
+          <section id="history" class="card p-5 sm:p-6" aria-labelledby="historyTitle">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 id="historyTitle" class="flex items-center gap-2 font-bold text-slate-900 dark:text-white"><svg class="icon text-indigo-600 dark:text-indigo-400" aria-hidden="true"><use href="#i-history"></use></svg>Monthly history</h2>
+                <p class="mt-1 text-sm muted">Save a snapshot each month to track your progress over time.</p>
+              </div>
+              <button type="button" id="btnSnapshot" class="btn btn-primary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-save"></use></svg>Save this month</button>
+            </div>
+            <p id="historyEmpty" class="mt-4 rounded-xl bg-slate-50 px-4 py-3 text-sm muted dark:bg-slate-800/60">No snapshots yet. Save one now and come back next month to compare.</p>
+            <div id="historyTrend" hidden class="mt-4">
+              <div class="flex flex-wrap gap-4 text-xs muted">
+                <span class="flex items-center gap-1.5"><span class="inline-block w-4 border-t-2 border-dashed border-indigo-500"></span>Total spend</span>
+                <span class="flex items-center gap-1.5"><span class="inline-block w-4 border-t-2 border-emerald-600"></span>Optimized spend</span>
+              </div>
+              <div id="trendSvg" class="mt-2"></div>
+            </div>
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full text-sm">
+                <caption class="sr-only">Saved monthly snapshots</caption>
+                <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-semibold">Month</th><th scope="col" class="px-2 py-2 text-right font-semibold">Spend</th><th scope="col" class="px-2 py-2 text-right font-semibold">Savings</th><th scope="col" class="hidden px-2 py-2 text-right font-semibold sm:table-cell">Score</th><th scope="col" class="px-2 py-2 text-right font-semibold">Change</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                <tbody id="snapshotRows"></tbody>
+              </table>
+            </div>
+
+            <div class="mt-6 grid gap-4 border-t border-slate-100 pt-6 md:grid-cols-2 dark:border-slate-800">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Back up or print</h3>
+                <p class="mt-1 text-sm muted">Your data lives only in this browser. Download a backup to move it to another device.</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <button type="button" id="btnExport" class="btn btn-secondary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-download"></use></svg>Export JSON</button>
+                  <label class="btn btn-secondary cursor-pointer focus-within:outline-2 focus-within:outline-indigo-500"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-upload"></use></svg>Import JSON<input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
+                  <button type="button" id="btnPrint" class="btn btn-secondary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-printer"></use></svg>Print / Save PDF</button>
+                </div>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white">Share a link <span class="chip ml-1 bg-amber-50 text-amber-800 dark:bg-amber-950 dark:text-amber-300">Opt-in</span></h3>
+                <p class="mt-1 text-sm muted">Creates a link with your numbers encoded in it. Anyone who has the link can see them. Nothing is uploaded, and nothing is shared automatically.</p>
+                <button type="button" id="btnShare" class="btn btn-secondary mt-3"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-link"></use></svg>Create share link</button>
+                <div id="shareBox" hidden class="mt-3 flex gap-2">
+                  <label class="sr-only" for="shareUrl">Shareable link</label>
+                  <input id="shareUrl" type="text" readonly class="input text-xs">
+                  <button type="button" id="btnCopyShare" class="btn btn-primary shrink-0"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-copy"></use></svg>Copy</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== GUIDE (SEO ARTICLE) ===================== -->
+  <section id="guide" class="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900" aria-labelledby="guideTitle">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-12 lg:px-8">
+      <aside class="lg:col-span-3">
+        <nav class="rounded-2xl border border-slate-200 bg-slate-50 p-5 lg:sticky lg:top-24 dark:border-slate-800 dark:bg-slate-950" aria-labelledby="tocTitle">
+          <p id="tocTitle" class="text-xs font-bold uppercase tracking-wider muted">Table of contents</p>
+          <ol class="mt-3 space-y-0.5 text-sm">
+            <li><a href="#leak-1" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900"><span class="font-bold text-indigo-700 dark:text-indigo-300">1</span>Phantom power &amp; utilities</a></li>
+            <li><a href="#leak-2" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900"><span class="font-bold text-indigo-700 dark:text-indigo-300">2</span>Subscription creep</a></li>
+            <li><a href="#leak-3" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900"><span class="font-bold text-indigo-700 dark:text-indigo-300">3</span>Groceries &amp; dining out</a></li>
+            <li><a href="#leak-4" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900"><span class="font-bold text-indigo-700 dark:text-indigo-300">4</span>Transport &amp; insurance</a></li>
+            <li><a href="#leak-5" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900"><span class="font-bold text-indigo-700 dark:text-indigo-300">5</span>Impulse spending &amp; interest</a></li>
+            <li><a href="#leak-wealth" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900">Turn leaks into wealth</a></li>
+            <li><a href="#faq" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:bg-white hover:text-indigo-700 dark:text-slate-300 dark:hover:bg-slate-900">FAQ</a></li>
+          </ol>
+          <a href="#inputs" class="btn btn-primary mt-4 w-full">Run my numbers</a>
+        </nav>
+      </aside>
+
+      <article class="prose-guide max-w-3xl lg:col-span-9">
+        <header class="mb-8">
+          <p class="eyebrow mb-3">Money-saving guide · 5 min read</p>
+          <h2 id="guideTitle" class="text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl dark:text-white">5 Hidden Household Expense Leaks (And How to Plug Them Today)</h2>
+        </header>
+
+        <p class="text-lg">Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.</p>
+        <p>The good news? Leaks are usually the easiest money to recover. Unlike cutting back on things you love, plugging a leak typically means paying less for exactly the same lifestyle. Here are the five most common hidden household expense leaks, and the practical steps you can take today to stop each one.</p>
+
+        <section id="leak-1" aria-labelledby="leak-1-title">
+          <h3 id="leak-1-title"><span class="num-badge">1</span>Phantom Power and Inefficient Utilities</h3>
+          <p>Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This "phantom load", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.</p>
+          <div class="fix">
+            <h4>How to plug it</h4>
+            <ul>
+              <li><strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.</li>
+              <li><strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.</li>
+              <li><strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.</li>
+              <li>Wash laundry in cold water and set your water heater to 120°F (49°C).</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="leak-2" aria-labelledby="leak-2-title">
+          <h3 id="leak-2-title"><span class="num-badge">2</span>Subscription Creep</h3>
+          <p>Streaming services, cloud storage, app memberships, meal kits, fitness apps and "free trials" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.</p>
+          <div class="fix">
+            <h4>How to plug it</h4>
+            <ul>
+              <li>Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.</li>
+              <li><strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.</li>
+              <li>Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.</li>
+              <li>Set a calendar reminder two days before any free trial ends.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===== ADSENSE: IN-ARTICLE START ===== -->
+        <!-- In-article (fluid) unit. Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_INARTICLE. -->
+        <aside class="my-10" aria-label="Advertisement">
+          <div class="ad-slot min-h-[200px]" data-ad="inarticle"></div>
+        </aside>
+        <!-- ===== ADSENSE: IN-ARTICLE END ===== -->
+
+        <section id="leak-3" aria-labelledby="leak-3-title">
+          <h3 id="leak-3-title"><span class="num-badge">3</span>Grocery Waste and the Dining-Out Premium</h3>
+          <p>Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
+          <div class="fix">
+            <h4>How to plug it</h4>
+            <ul>
+              <li><strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.</li>
+              <li>Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.</li>
+              <li>Shop once a week with a list, and schedule one "leftovers night" to clear the fridge.</li>
+              <li>Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="leak-4" aria-labelledby="leak-4-title">
+          <h3 id="leak-4-title"><span class="num-badge">4</span>Transport and Insurance on Autopilot</h3>
+          <p>Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.</p>
+          <div class="fix">
+            <h4>How to plug it</h4>
+            <ul>
+              <li><strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.</li>
+              <li>Keep tires properly inflated, which can improve fuel economy by up to 3%.</li>
+              <li>Compare monthly transit passes and toll transponder discounts against what you pay per trip.</li>
+              <li><strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="leak-5" aria-labelledby="leak-5-title">
+          <h3 id="leak-5-title"><span class="num-badge">5</span>Impulse Spending and High-Interest Debt</h3>
+          <p>The daily coffee, the late-night online order, the "it was on sale" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% APR, the leak compounds: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.</p>
+          <div class="fix">
+            <h4>How to plug it</h4>
+            <ul>
+              <li><strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.</li>
+              <li>Remove saved card details from shopping sites and turn off retailer notifications.</li>
+              <li>Pay off cards using the <strong>avalanche method</strong>: minimums on everything, every extra dollar to the highest APR first.</li>
+              <li>Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="leak-wealth" aria-labelledby="leak-wealth-title" class="mt-12 rounded-2xl border border-emerald-200 bg-emerald-50 p-6 sm:p-8 dark:border-emerald-900 dark:bg-emerald-950/40">
+          <h3 id="leak-wealth-title" class="!mt-0">Turn Plugged Leaks Into Real Wealth</h3>
+          <p>Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.</p>
+          <p>Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the simulator above to run your own numbers, commit only to the actions that fit your life, and turn on the inflation toggle to see the result in today's money.</p>
+          <p class="!mb-0">Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month.</p>
+        </section>
+
+        <!-- FAQ (mirrors the FAQPage JSON-LD in <head>) -->
+        <section id="faq" class="mt-14" aria-labelledby="faqTitle">
+          <h3 id="faqTitle" class="!mt-0">Frequently Asked Questions</h3>
+          <div class="space-y-3">
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Is my financial data safe in this calculator?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the Reset button erases them.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How are the savings estimates calculated?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">Each suggestion applies a conservative, benchmark-based percentage to the specific bill it targets, for example 12% for utility efficiency or 15% for carpooling. When two actions target the same bill, the second applies only to what is left, so savings never double-count. You can adjust every estimate with its slider.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">What does the "I'll do this" toggle do?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">Only actions you commit to count toward your optimized spend, monthly savings, investment projection, goal dates and debt-free date. Turn an action off if it doesn't fit your life and every figure updates instantly.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">What is the 50/30/20 budget rule?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">The 50/30/20 rule suggests spending about 50% of take-home pay on needs such as housing, utilities, groceries and minimum debt payments, 30% on wants such as dining out and subscriptions, and saving at least 20%.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How is the Budget Health Score calculated?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">The score from 0 to 100 combines five factors: savings rate (30 points), housing cost as a share of income (20), debt payments and high-interest cards (15), emergency fund coverage (20) and spending on wants (15). The tool tells you which factor would raise your score the most.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">What annual return should I assume for the projection?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">High-yield savings accounts have recently paid around 4%, balanced portfolios have historically returned around 6%, and broad stock index funds around 8 to 10% a year over long periods. Returns are never guaranteed, so compare several scenarios and use the inflation toggle to see values in today's money.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How big should my emergency fund be?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">A common guideline is three to six months of essential expenses. Households with one income, variable pay or dependants should aim for the higher end. The calculator shows your current coverage and how long your committed savings take to close the gap.</p>
+            </details>
+            <details class="group rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Can I use currencies other than US dollars?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="px-5 pb-4">Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Amounts are formatted for each currency, and the typical ranges and rule thresholds are scaled to approximate local price levels.</p>
+            </details>
+          </div>
+        </section>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== ADSENSE: BOTTOM BANNER START ===== -->
+  <!-- Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_BOTTOM. min-height prevents layout shift. -->
+  <aside class="bg-white dark:bg-slate-900" aria-label="Advertisement">
+    <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div class="ad-slot min-h-[100px]" data-ad="bottom"></div>
+    </div>
+  </aside>
+  <!-- ===== ADSENSE: BOTTOM BANNER END ===== -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-slate-900 text-slate-300">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <section id="disclaimer" aria-labelledby="disclaimerTitle" class="rounded-2xl bg-slate-800/60 p-6 ring-1 ring-slate-700 sm:p-8">
+        <h2 id="disclaimerTitle" class="flex items-center gap-2 text-lg font-bold text-white"><svg class="icon text-amber-400" aria-hidden="true"><use href="#i-scale"></use></svg>Financial disclaimer</h2>
+        <div class="mt-4 grid gap-4 text-sm leading-relaxed md:grid-cols-2">
+          <p><strong class="text-white">Educational purposes only.</strong> This calculator and guide do not provide financial, investment, tax or legal advice, and nothing here is a recommendation to buy, sell or hold any security or financial product.</p>
+          <p><strong class="text-white">Estimates, not guarantees.</strong> Savings percentages are generalized estimates based on common household benchmarks. Your results depend on your location, providers, rates and habits.</p>
+          <p><strong class="text-white">Investment risk.</strong> Projections are hypothetical, assume a constant return compounded monthly, and exclude taxes and fees. Investments can lose value, and past performance does not guarantee future results.</p>
+          <p><strong class="text-white">Consult a professional.</strong> Before making significant financial decisions, speak with a qualified, licensed financial adviser, accountant or tax professional.</p>
+        </div>
+      </section>
+
+      <div class="mt-10 grid gap-8 text-sm leading-relaxed md:grid-cols-3">
+        <section id="privacy" aria-labelledby="privacyTitle">
+          <h2 id="privacyTitle" class="flex items-center gap-2 font-bold text-white"><svg class="icon icon-sm text-emerald-400" aria-hidden="true"><use href="#i-lock"></use></svg>Privacy Policy</h2>
+          <p class="mt-3">All budget calculations run locally in your browser. We do not collect, transmit or store the numbers you enter on any server. Your inputs, actions, goals and snapshots are saved only in your browser's local storage on this device, and you can delete them at any time with "Reset all data".</p>
+          <p class="mt-3">Share links are created only when you click "Create share link". The data is encoded in the link itself and is not uploaded.</p>
+          <p class="mt-3">This site may display ads served by Google. Google and its partners may use cookies to serve ads based on your visits to this and other websites. You can opt out of personalized advertising at <a href="https://adssettings.google.com" class="font-semibold text-indigo-300 underline-offset-2 hover:underline" rel="noopener" target="_blank">Google Ads Settings</a>, and learn more in <a href="https://policies.google.com/technologies/ads" class="font-semibold text-indigo-300 underline-offset-2 hover:underline" rel="noopener" target="_blank">how Google uses information from sites that use its services</a>.</p>
+        </section>
+        <section id="terms" aria-labelledby="termsTitle">
+          <h2 id="termsTitle" class="flex items-center gap-2 font-bold text-white"><svg class="icon icon-sm text-indigo-300" aria-hidden="true"><use href="#i-book"></use></svg>Terms of Use</h2>
+          <p class="mt-3">This tool is provided free of charge, "as is", without warranties of any kind. Calculations are estimates for general information and may contain errors. You are responsible for any decisions you make based on them.</p>
+          <p class="mt-3">You may use the calculator for personal, non-commercial budgeting. You may not copy or republish the site's content without permission. We may update these terms and the tool at any time. Continued use means you accept the current terms.</p>
+        </section>
+        <section id="contact" aria-labelledby="contactTitle">
+          <h2 id="contactTitle" class="flex items-center gap-2 font-bold text-white"><svg class="icon icon-sm text-amber-300" aria-hidden="true"><use href="#i-mail"></use></svg>Contact</h2>
+          <p class="mt-3">Questions, feedback or a bug to report? Please reach us at <!--CONTACT_EMAIL-->. We read every message.</p>
+          <p class="mt-3">Please don't send personal financial details by email. The calculator never needs them to work.</p>
+        </section>
+      </div>
+
+      <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-6 text-xs sm:flex-row">
+        <p>&copy; <span id="year"></span> Household Budget Optimizer &amp; Savings Simulator</p>
+        <p class="flex gap-4"><a href="#privacy" class="hover:text-white">Privacy</a><a href="#terms" class="hover:text-white">Terms</a><a href="#contact" class="hover:text-white">Contact</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MOBILE SUMMARY BAR ===================== -->
+  <div id="mobileBar" class="fixed inset-x-0 bottom-0 z-40 translate-y-[150%] p-3 transition-transform duration-300 lg:hidden" aria-hidden="true">
+    <div class="flex items-center justify-between gap-3 rounded-2xl bg-slate-900 px-4 py-3 text-white shadow-lg ring-1 ring-white/10 dark:bg-slate-800">
+      <p class="min-w-0">
+        <span class="block text-xs text-slate-300">Monthly savings</span>
+        <span class="block truncate font-extrabold tabular-nums"><span id="mbAmount" class="text-lg text-emerald-400">$0</span><span id="mbPer" class="text-xs font-medium text-slate-300">/mo</span></span>
+      </p>
+      <a href="#plan" class="btn shrink-0 bg-emerald-400 text-slate-950 hover:bg-emerald-300">See plan<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+    </div>
+  </div>
+
+  <!-- Toasts, live region and dialog -->
+  <div id="toastRegion" class="pointer-events-none fixed inset-x-0 bottom-24 z-50 flex flex-col items-center gap-2 px-4 lg:bottom-6" aria-live="polite"></div>
+  <div id="srAnnounce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="confirmDialog" class="m-auto w-[min(28rem,calc(100%-2rem))] rounded-2xl bg-white p-0 text-slate-800 shadow-2xl backdrop:bg-slate-950/60 dark:bg-slate-900 dark:text-slate-200" aria-labelledby="confirmTitle" aria-describedby="confirmMessage">
+    <form method="dialog" class="p-6">
+      <h2 id="confirmTitle" class="text-lg font-bold text-slate-900 dark:text-white"></h2>
+      <p id="confirmMessage" class="mt-2 text-sm muted"></p>
+      <div class="mt-6 flex justify-end gap-2">
+        <button id="confirmCancel" value="cancel" class="btn btn-secondary">Cancel</button>
+        <button id="confirmOk" value="ok" class="btn btn-primary">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Print-only action plan (built on demand) -->
+  <div id="printPlan"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

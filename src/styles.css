@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@source not "../legacy";
+
+/* Class-based dark mode so the toggle can override the system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design: a household money statement. Light grey page, white section cards,
+ * ink-black text. One bold moment: the deep-green "You could save" panel next
+ * to a till-receipt summary (the subject's own document). Green = money you
+ * keep, amber = worth a look, red = problem.
+ */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+  @keyframes shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 7.5rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-emerald-700 dark:outline-emerald-400; }
+  [hidden] { display: none !important; }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  h1, h2, h3 { text-wrap: balance; }
+}
+
+@layer components {
+  .card { @apply rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900; }
+  .panel { @apply rounded-2xl border border-slate-200/80 bg-white p-5 sm:p-7 dark:border-slate-800 dark:bg-slate-900; }
+
+  /* Sticky section bar on the results page */
+  .secnav { @apply inline-flex min-h-9 items-center whitespace-nowrap rounded-full px-3.5 text-sm font-medium text-slate-600 transition hover:bg-white hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-white; }
+  .secnav[aria-current="true"] { @apply bg-slate-900 text-white hover:bg-slate-900 hover:text-white dark:bg-white dark:text-slate-900; }
+
+  /* Guided-steps step list */
+  .wstep { @apply flex items-center gap-3 rounded-lg px-2 py-2 text-sm text-slate-500 dark:text-slate-400; }
+  .wstep .dot { @apply grid h-7 w-7 shrink-0 place-items-center rounded-full border border-slate-300 text-xs font-semibold tabular-nums dark:border-slate-600; }
+  .wstep[data-state="current"] { @apply font-semibold text-slate-900 dark:text-white; }
+  .wstep[data-state="current"] .dot { @apply border-slate-900 bg-slate-900 text-white dark:border-white dark:bg-white dark:text-slate-900; }
+  .wstep[data-state="done"] { @apply text-slate-700 dark:text-slate-300; }
+  .wstep[data-state="done"] .dot { @apply border-emerald-700 bg-emerald-700 text-white dark:border-emerald-500 dark:bg-emerald-500 dark:text-slate-950; }
+  .muted { @apply text-slate-600 dark:text-slate-400; }
+  .eyebrow { @apply text-sm font-medium text-slate-600 dark:text-slate-400; }
+  .h-section { @apply text-xl font-semibold tracking-tight text-slate-900 dark:text-white; }
+  .icon { @apply inline-block h-5 w-5 shrink-0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .icon-sm { @apply h-4 w-4; }
+  .link { @apply font-medium text-emerald-800 underline decoration-emerald-800/30 underline-offset-2 hover:decoration-emerald-800 dark:text-emerald-300 dark:decoration-emerald-300/40; }
+
+  .btn { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium transition select-none disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-slate-900 text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200; }
+  .btn-secondary { @apply border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800; }
+  .btn-ghost { @apply text-emerald-800 hover:bg-emerald-50 dark:text-emerald-300 dark:hover:bg-emerald-950; }
+  .btn-danger { @apply bg-rose-700 text-white hover:bg-rose-800; }
+  .btn-icon { @apply inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white; }
+
+  .label { @apply text-sm font-medium text-slate-800 dark:text-slate-200; }
+  .input {
+    @apply min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-[15px] text-slate-900 tabular-nums transition
+      placeholder:text-slate-500 hover:border-slate-400 focus:border-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900/10
+      dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-slate-300;
+  }
+  .input[aria-invalid="true"] { @apply border-rose-600 ring-2 ring-rose-600/15; }
+  .select { @apply appearance-none bg-no-repeat pr-9; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-size: 18px; background-position: right 10px center; }
+
+  .chip { @apply inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium; }
+
+  /* Toggle switch: a <button role="switch"> containing a .switch track and a state label */
+  .switch-btn { @apply inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2 rounded-lg; }
+  .switch { @apply relative inline-flex h-6 w-11 shrink-0 items-center rounded-full bg-slate-300 transition-colors dark:bg-slate-600; }
+  .switch::after { content: ""; @apply absolute left-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform; }
+  [aria-checked="true"] > .switch { @apply bg-emerald-700 dark:bg-emerald-500; }
+  [aria-checked="true"] > .switch::after { transform: translateX(20px); }
+
+  /* "?" help button */
+  .help-btn { @apply inline-grid h-5 w-5 shrink-0 place-items-center rounded-full border border-slate-300 text-[11px] font-semibold text-slate-600 transition hover:border-slate-900 hover:text-slate-900 dark:border-slate-600 dark:text-slate-400 dark:hover:border-white dark:hover:text-white; }
+
+  /* 44px tap target around a visually smaller control */
+  .tap { @apply relative; }
+  .tap::before { content: ""; position: absolute; inset: -12px; }
+
+  /* Segmented control built from radio inputs */
+  .seg { @apply inline-flex rounded-lg bg-slate-100 p-1 dark:bg-slate-800; }
+  .seg label { @apply relative; }
+  .seg input { @apply sr-only; }
+  .seg span { @apply flex min-h-11 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-slate-600 transition dark:text-slate-400; }
+  .seg input:checked + span { @apply bg-white text-slate-900 shadow-sm dark:bg-slate-950 dark:text-white; }
+  .seg input:focus-visible + span { @apply outline-2 outline-offset-1 outline-emerald-700; }
+
+  /* Range slider */
+  .range { @apply h-11 w-full cursor-pointer appearance-none bg-transparent; }
+  .range::-webkit-slider-runnable-track { @apply h-1.5 rounded-full; background: linear-gradient(to right, var(--track-fill, #0f172a) var(--fill, 50%), var(--track-bg, #e2e8f0) var(--fill, 50%)); }
+  .range::-moz-range-track { @apply h-1.5 rounded-full; background: var(--track-bg, #e2e8f0); }
+  .range::-moz-range-progress { @apply h-1.5 rounded-full; background: var(--track-fill, #0f172a); }
+  .range::-webkit-slider-thumb { @apply -mt-[9px] h-6 w-6 appearance-none rounded-full border-2 bg-white shadow-sm; border-color: var(--track-fill, #0f172a); }
+  .range::-moz-range-thumb { @apply h-5 w-5 rounded-full border-2 bg-white; border-color: var(--track-fill, #0f172a); }
+  .dark .range { --track-bg: #334155; --track-fill: #e2e8f0; }
+
+  /* Collapsible input groups (full input view) */
+  details.group-card > summary { @apply flex min-h-14 cursor-pointer list-none items-center gap-3 px-4 py-3; }
+  details.group-card > summary::-webkit-details-marker { display: none; }
+  details.group-card[open] > summary .chev { transform: rotate(180deg); }
+  .chev { @apply transition-transform; }
+
+  /* One-line expandable rows: "Label ........ key number  ⌄" */
+  details.row > summary { @apply flex min-h-14 cursor-pointer list-none items-center gap-3 py-3; }
+  details.row > summary::-webkit-details-marker { display: none; }
+  details.row[open] > summary .chev { transform: rotate(180deg); }
+
+  .skeleton { @apply rounded-lg bg-slate-100 dark:bg-slate-900; background-image: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent); background-size: 400px 100%; background-repeat: no-repeat; animation: var(--animate-shimmer); }
+  .dark .skeleton { background-image: linear-gradient(90deg, transparent, rgba(255,255,255,.05), transparent); }
+
+  .ad-slot { @apply hidden; }
+  .ads-on .ad-slot, .ads-preview .ad-slot { @apply flex items-center justify-center overflow-hidden rounded-lg; }
+  .ads-preview .ad-slot { @apply border border-dashed border-slate-300 text-xs text-slate-500 dark:border-slate-700; }
+
+  .prose-guide p, .prose-guide li { @apply leading-relaxed text-slate-700 dark:text-slate-300; }
+  .prose-guide p { @apply mb-4; }
+  .prose-guide strong { @apply font-semibold text-slate-900 dark:text-white; }
+  .prose-guide h3 { @apply mt-12 mb-3 text-xl font-semibold tracking-tight text-slate-900 dark:text-white; }
+  .prose-guide h4 { @apply mb-2 text-sm font-semibold text-slate-900 dark:text-white; }
+  .prose-guide .fix { @apply mt-4 border-l-2 border-emerald-700 pl-4 dark:border-emerald-500; }
+  .prose-guide .fix ul { @apply list-disc space-y-1.5 pl-5; }
+  .num-badge { @apply mr-1 font-semibold text-slate-400 dark:text-slate-500; }
+  .num-badge::after { content: "."; }
+}
+
+/* ---------- Till-receipt summary ---------- */
+.receipt { --paper: #ffffff; position: relative; background: var(--paper); border-radius: 0.75rem 0.75rem 0 0; filter: drop-shadow(0 1px 1px rgb(15 23 42 / 0.08)) drop-shadow(0 6px 16px rgb(15 23 42 / 0.06)); }
+.dark .receipt { --paper: #0f172a; filter: none; }
+.receipt::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: radial-gradient(circle at 8px 10px, transparent 6px, var(--paper) 6.5px) repeat-x; background-size: 16px 10px; }
+.receipt .rule { border-top: 1px dashed rgb(148 163 184 / 0.7); }
+.receipt .rule-double { border-top: 3px double rgb(100 116 139 / 0.8); }
+
+/* "?" buttons on the green savings panel */
+.on-dark .help-btn { border-color: rgb(255 255 255 / 0.55); color: #fff; }
+.on-dark .help-btn:hover { border-color: #fff; }
+
+/* ---------- Help bottom sheet (phones) ---------- */
+dialog.help-sheet { margin: auto 0 0 0; width: 100%; max-width: 100%; border-radius: 1rem 1rem 0 0; }
+
+/* ---------- Guided steps: groups shown as plain sections inside the step card ---------- */
+details.in-wizard { border: 0; background: transparent; }
+details.in-wizard > summary { pointer-events: none; min-height: 0; padding: 0 0 0.5rem; }
+details.in-wizard .chev, details.in-wizard .grp-num, details.in-wizard [data-sub] { display: none; }
+details.in-wizard > div { border: 0; padding: 0; }
+#settingsCard .wiz-only { display: none; }
+#settingsCard.in-wizard-settings { border: 0; background: transparent; padding: 0; margin: 0; }
+#settingsCard.in-wizard-settings .wiz-only { display: block; }
+#settingsCard.in-wizard-settings .wiz-hide { display: none; }
+
+/* First paint before JS: new visitors see the steps, returning visitors their results */
+html.returning #wizard { display: none; }
+html.returning #resultsView[hidden] { display: block !important; }
+
+/* No ads configured: drop the empty ad column so results use the full width */
+html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
+/* Hide the desktop ad column while the full inputs are open */
+#resultsLayout[data-inputs="on"] .rail-ad { display: none !important; }
+
+/* ---------- Micro-interactions ---------- */
+.toast-enter { animation: toast-in .2s ease-out both; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(6px); } }
+.flash { animation: flash 1.2s ease-out; }
+@keyframes flash { 0% { background-color: rgba(16,185,129,.2); } 100% { background-color: transparent; } }
+
+/* ---------- Lite mode (low-end devices / Save-Data) ---------- */
+.lite *, .lite *::before, .lite *::after { box-shadow: none !important; backdrop-filter: none !important; transition-duration: 0s !important; }
+.lite .skeleton { animation: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* ---------- Print: one clean action-plan page ---------- */
+#printPlan { display: none; }
+@media print {
+  @page { margin: 14mm; }
+  html, body { background: #fff !important; color: #0f172a !important; }
+  body > *:not(#printPlan) { display: none !important; }
+  #printPlan { display: block !important; font-size: 11pt; }
+  #printPlan table { width: 100%; border-collapse: collapse; }
+  #printPlan th, #printPlan td { border-bottom: 1px solid #e2e8f0; padding: 5px 4px; text-align: left; }
+  #printPlan td.num, #printPlan th.num { text-align: right; }
+}
