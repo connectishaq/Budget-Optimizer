@@ -11,6 +11,7 @@ import { initCharts, renderProjection } from './ui/charts.js';
 import { initGoals, renderGoals } from './ui/goals.js';
 import { initHistory, renderHistory } from './ui/history.js';
 import { initWizard, renderFlow } from './ui/wizard.js';
+import { initPayday, renderPayday } from './ui/payday.js';
 import { initHelp } from './ui/help.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { initAds } from './ads.js';
@@ -26,6 +27,7 @@ function render() {
   renderInputs(state, result, view);
   renderDashboard(state, result, view);
   renderPlan(state, result, view);
+  renderPayday(state, result, view);
   renderProjection(state, result, view);
   renderGoals(state, result, view);
   renderHistory(state, result, view);
@@ -79,6 +81,7 @@ function boot() {
   initHelp();
   initWizard();
   initPlan();
+  initPayday();
   initCharts();
   initGoals();
   initHistory();
@@ -98,8 +101,6 @@ function boot() {
     replaceState({ ...defaultState(), profile: st.profile, currency: st.currency, period: st.period, snapshots: st.snapshots }, 'reset');
   });
 
-  // Wide screens have room for the score breakdown next to the spending card
-  if (window.matchMedia('(min-width: 1024px)').matches) $('healthDetails').open = true;
   setText($('year'), String(new Date().getFullYear()));
   render();
   // JS now controls which view is shown

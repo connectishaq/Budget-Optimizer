@@ -6,6 +6,7 @@
 import { PROFILES } from './engine/profiles.js';
 import { CURRENCIES } from './utils/format.js';
 import { VALUE_FIELDS, ALLOCATION_PRESETS, BUCKETS } from './engine/calculate.js';
+import { SUB_KINDS } from './engine/subscriptions.js';
 
 const STORAGE_KEY = 'hbo:v3';
 const THEME_KEY = 'hbo:theme';
@@ -27,6 +28,8 @@ export function defaultState() {
     values: {},
     debts: [],
     subscriptions: [],
+    // Costs that come once a year (festivals, school books…), amount per year
+    yearly: [],
     plan: { committed: {}, pct: {}, sort: 'savings' },
     projection: { years: 10, rate: 0.08, inflationOn: false, inflation: 3 },
     goals: [],
@@ -35,6 +38,9 @@ export function defaultState() {
     allocation: { preset: 'even', ...pick(ALLOCATION_PRESETS.even) },
     // Answer to "Do you own your home or live rent-free?" (null = not asked/answered)
     housingFree: null,
+    // Payday plan: which day pay arrives ('last' = last day of the month) and
+    // the steps ticked off; ticks only count for the month they were made in
+    payday: { day: 1, month: '', done: {} },
     // mode: 'wizard' (guided steps) | 'results'; step 1–3 and sub-page inside step 2
     ui: { collapsed: {}, sample: false, mode: 'wizard', step: 1, sub: 0, showAll: false }
   };
@@ -69,8 +75,19 @@ export function normalizeState(raw) {
   }
   if (Array.isArray(raw.subscriptions)) {
     s.subscriptions = raw.subscriptions.slice(0, 40).filter(isObj).map((x) => ({
-      id: id(x.id, 's'), name: str(x.name), cost: n(x.cost), rarely: !!x.rarely
+      id: id(x.id, 's'), name: str(x.name), cost: n(x.cost), rarely: !!x.rarely,
+      // '' = not picked yet, so the type follows the name
+      kind: SUB_KINDS[x.kind] ? x.kind : ''
     }));
+  }
+  if (Array.isArray(raw.yearly)) {
+    s.yearly = raw.yearly.slice(0, 30).filter(isObj).map((x) => ({ id: id(x.id, 'y'), name: str(x.name), cost: n(x.cost) }));
+  }
+  if (isObj(raw.payday)) {
+    const p = raw.payday;
+    s.payday.day = p.day === 'last' ? 'last' : Math.round(n(p.day, 1, 28)) || 1;
+    s.payday.month = /^\d{4}-\d{2}$/.test(p.month) ? p.month : '';
+    if (isObj(p.done)) for (const [k, v] of Object.entries(p.done)) s.payday.done[str(k, 20)] = !!v;
   }
   if (isObj(raw.plan)) {
     if (isObj(raw.plan.committed)) for (const [k, v] of Object.entries(raw.plan.committed)) s.plan.committed[str(k, 40)] = !!v;
@@ -106,7 +123,7 @@ export function normalizeState(raw) {
     s.ui.sample = !!raw.ui.sample;
     s.ui.mode = raw.ui.mode === 'results' ? 'results' : 'wizard';
     s.ui.step = Math.round(n(raw.ui.step, 1, 3)) || 1;
-    s.ui.sub = Math.round(n(raw.ui.sub, 0, 3));
+    s.ui.sub = Math.round(n(raw.ui.sub, 0, 5));
     s.ui.showAll = !!raw.ui.showAll;
   }
   if (isObj(raw.ui) && isObj(raw.ui.collapsed)) for (const [k, v] of Object.entries(raw.ui.collapsed)) s.ui.collapsed[str(k, 30)] = !!v;
@@ -171,7 +188,7 @@ export function clearStorage() {
 
 /** True when the user has entered anything worth calculating. */
 export function hasData(s = state) {
-  return Object.values(s.values).some((v) => v > 0) || s.debts.length > 0 || s.subscriptions.length > 0;
+  return Object.values(s.values).some((v) => v > 0) || s.debts.length > 0 || s.subscriptions.length > 0 || s.yearly.length > 0;
 }
 
 // ---------------- Theme ----------------

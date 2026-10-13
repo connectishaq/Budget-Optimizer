@@ -5,11 +5,11 @@
 //   id, category, icon   identity + presentation
 //   label                the bill the card is about, in everyday words ("Fuel")
 //   noun                 how the bill reads mid-sentence ("fuel")
-//   title                the suggested change ("Carpool and combine errands")
+//   title                the suggested change ("Carpool and combine errands"), or fn(ctx)
 //   kind                 'cash' (lowers monthly spending) or 'interest' (interest
 //                        avoided on debt; NOT counted as monthly cash savings)
 //   pools                which amounts the % applies to. A pool is an input field
-//                        or a derived amount ('subsRarely', 'subsActive', 'cardInterest').
+//                        or a derived amount ('subsRarely', 'subsStreaming', 'subsTools', 'cardInterest').
 //                        Rules sharing a pool apply in order to what is left, so
 //                        savings never double-count.
 //   when(ctx)            whether the rule fires (profile- and country-aware thresholds)
@@ -22,7 +22,7 @@
 //   tips(ctx)            three short action steps, most useful first
 //   flag(ctx)            optional warning line
 //
-// ctx = { v, profile, P, B, income, debts, subs, fmt }
+// ctx = { v, profile, P, B, currency, income, debts, subs, fmt }
 //   v: monthly inputs · P: PROFILES[profile] (name, group) · B: benchmarks for
 //   this currency + profile · fmt: currency formatter for sentences.
 
@@ -35,6 +35,13 @@ const typical = (c, amount, threshold, what) =>
   `Shown because your ${what} (${c.fmt(amount)}) is higher than what's typical for ${c.P.group} (${c.fmt(threshold)}).`;
 
 const utilities = (c) => c.v.electricity + c.v.waterGas;
+// Subscriptions still in use, of one type
+const activeSubs = (c, kind) => c.subs.filter((s) => !s.rarely && s.kind === kind).reduce((a, s) => a + s.cost, 0);
+
+// South Asian households get ideas that fit local bills: slab-based
+// electricity tariffs, prepaid mobile bundles, few 0% balance-transfer cards.
+const LOCAL_CURRENCIES = ['PKR', 'INR'];
+export const isLocal = (c) => LOCAL_CURRENCIES.includes(c.currency);
 
 export const RULES = [
   // ---------------- Housing ----------------
@@ -83,12 +90,27 @@ export const RULES = [
     id: 'smart-thermostat', category: 'Utilities', icon: 'thermometer', kind: 'cash',
     label: 'Electricity & gas', noun: 'electricity and gas',
     pools: ['electricity', 'waterGas'],
-    when: (c) => c.profile !== 'single' && utilities(c) > c.B.thresholds.utilities,
+    when: (c) => !isLocal(c) && c.profile !== 'single' && utilities(c) > c.B.thresholds.utilities,
     pct: 0.08, effort: 'Requires purchase', upfront: 'smartThermostat',
     title: 'Install a smart thermostat',
     why: (c) => typical(c, utilities(c), c.B.thresholds.utilities, 'electricity and gas'),
     evidence: 'A smart thermostat that turns things down for you usually trims a further',
     tips: () => ['Check if your power company gives money back for one.', 'Turn on the setting that lowers it when everyone leaves.', 'Look at its monthly report and fix the most wasteful days.']
+  },
+  {
+    id: 'electricity-slab', category: 'Utilities', icon: 'bolt', kind: 'cash',
+    label: 'Electricity', noun: 'electricity',
+    pools: ['electricity'],
+    when: (c) => isLocal(c) && c.v.electricity > c.B.ranges.electricity[1],
+    pct: 0.15, effort: 'Easy', upfront: null,
+    title: 'Stay under the next price slab',
+    why: (c) => typical(c, c.v.electricity, c.B.ranges.electricity[1], 'electricity bill'),
+    evidence: 'Each unit costs more once you pass a slab, so keeping usage just under the next one usually cuts',
+    tips: () => [
+      'Find “units used” on your bill. Prices per unit jump at each slab, so aim to stay just under the next one.',
+      'Run the AC at 26°C with a ceiling fan on, and use timer or eco mode at night.',
+      'Run the iron, washing machine and water pump outside peak hours.'
+    ]
   },
   {
     id: 'utilities-tuneup', category: 'Utilities', icon: 'lightbulb', kind: 'cash',
@@ -110,7 +132,9 @@ export const RULES = [
     title: 'Ask your provider for a better deal',
     why: (c) => typical(c, c.v.internet, c.B.thresholds.internet, 'internet and phone bill'),
     evidence: 'Calling your provider and asking for a better deal usually cuts',
-    tips: () => ['Call and ask for the deal new customers get.', 'Do a speed test. If you use less than half, pick a cheaper plan.', 'Compare prepaid phone plans on the same network.']
+    tips: (c) => (isLocal(c)
+      ? ['Switch your mobile to a monthly prepaid bundle instead of loading balance as you go.', 'Use Wi-Fi calling and WhatsApp at home instead of mobile minutes.', 'Ask your internet provider for a cheaper package if you use less than half your speed.']
+      : ['Call and ask for the deal new customers get.', 'Do a speed test. If you use less than half, pick a cheaper plan.', 'Compare prepaid phone plans on the same network.'])
   },
 
   // ---------------- Transport ----------------
@@ -182,7 +206,9 @@ export const RULES = [
     evidence: 'Planning meals and buying store brands usually cuts',
     tips: (c) => [
       'Plan the week’s meals before you shop, and stick to the list.',
-      'Buy the shop’s own brand for basics like rice, flour and oil.',
+      isLocal(c)
+        ? 'Buy monthly staples (flour, rice, oil, lentils, sugar) once a month in bulk from a wholesale market.'
+        : 'Buy the shop’s own brand for basics like rice, flour and oil.',
       c.profile === 'suburban' ? 'Buy big packs of things you always use.' : 'Cook extra and freeze portions for later.'
     ]
   },
@@ -219,6 +245,21 @@ export const RULES = [
     evidence: 'Asking for sibling or pay-early discounts usually saves',
     tips: () => ['Ask the school about discounts for brothers and sisters.', 'Ask if paying for the year up front costs less.', 'Buy uniforms and books second-hand.']
   },
+  {
+    id: 'medical-generic', category: 'Health', icon: 'heart-pulse', kind: 'cash',
+    label: 'Doctor & medicine', noun: 'doctor visits and medicine',
+    pools: ['medical'],
+    when: (c) => c.v.medical > c.B.ranges.medical[1],
+    pct: 0.20, effort: 'Easy', upfront: null,
+    title: 'Ask for generic medicines',
+    why: (c) => typical(c, c.v.medical, c.B.ranges.medical[1], 'doctor and medicine costs'),
+    evidence: 'Choosing generic medicines with the same active ingredient usually cuts',
+    tips: (c) => [
+      'Ask your doctor or pharmacist for the generic version. It has the same active ingredient and costs less.',
+      'Buy medicines you take every month in a monthly pack, not strip by strip.',
+      isLocal(c) ? 'Check if your employer’s health cover or a hospital card pays for doctor visits.' : 'Check what your health insurance or employer plan already pays for.'
+    ]
+  },
 
   // ---------------- Subscriptions ----------------
   {
@@ -237,14 +278,29 @@ export const RULES = [
   },
   {
     id: 'subs-rotate', category: 'Subscriptions', icon: 'tv', kind: 'cash',
-    label: 'Subscriptions', noun: 'subscriptions you use',
-    pools: ['subsActive'],
-    when: (c) => c.subs.filter((s) => !s.rarely).reduce((a, s) => a + s.cost, 0) > c.B.thresholds.subsActive,
+    label: 'Streaming', noun: 'streaming and games subscriptions',
+    pools: ['subsStreaming'],
+    when: (c) => activeSubs(c, 'streaming') > c.B.thresholds.subsActive,
     pct: 0.30, effort: 'Easy', upfront: null,
     title: 'Keep one streaming service at a time',
-    why: (c) => typical(c, c.subs.filter((s) => !s.rarely).reduce((a, s) => a + s.cost, 0), c.B.thresholds.subsActive, 'subscriptions'),
+    why: (c) => typical(c, activeSubs(c, 'streaming'), c.B.thresholds.subsActive, 'streaming and games subscriptions'),
     evidence: 'Keeping one service at a time and choosing cheaper plans usually cuts',
     tips: () => ['Keep one streaming service, then switch next month.', 'Choose the plan with ads, or pay yearly if it’s cheaper.', 'Share a family plan with people in your home.']
+  },
+  {
+    id: 'subs-tools-yearly', category: 'Subscriptions', icon: 'laptop', kind: 'cash',
+    label: 'Work & AI tools', noun: 'work and AI tool subscriptions',
+    pools: ['subsTools'],
+    when: (c) => activeSubs(c, 'tools') > c.B.thresholds.subsActive,
+    pct: 0.15, effort: 'Easy', upfront: null,
+    title: 'Pay yearly and drop overlapping tools',
+    why: (c) => typical(c, activeSubs(c, 'tools'), c.B.thresholds.subsActive, 'work and AI tool subscriptions'),
+    evidence: 'Switching to yearly billing and cancelling tools that do the same job usually cuts',
+    tips: () => [
+      'Switch the tools you use every week to yearly billing. It’s often 15–20% cheaper.',
+      'If two tools do the same job (for example two AI assistants), keep the one you use most.',
+      'Ask your employer to pay for tools you use for work.'
+    ]
   },
 
   // ---------------- Debt ----------------
@@ -256,7 +312,7 @@ export const RULES = [
     pct: 0.75, maxPct: 1, effort: 'Medium',
     // A 0% balance-transfer card typically charges a one-off 3% fee
     upfront: (c) => highAprCards(c.debts).reduce((a, d) => a + d.balance, 0) * 0.03,
-    title: 'Move the balance to a 0% card',
+    title: (c) => (isLocal(c) ? 'Pay off the card with a cheaper loan' : 'Move the balance to a 0% card'),
     why: (c) => {
       const top = [...highAprCards(c.debts)].sort((a, b) => b.apr - a.apr)[0];
       return `Shown because ${top.name || 'a card'} charges ${top.apr}% interest a year, which is expensive.`;
@@ -265,11 +321,15 @@ export const RULES = [
       const top = [...highAprCards(c.debts)].sort((a, b) => b.apr - a.apr)[0];
       return `${top.name || 'A card'} charges ${top.apr}% a year in interest.`;
     },
-    evidence: 'Moving the balance to a card with 0% interest for a while usually avoids',
+    evidence: (c) => (isLocal(c)
+      ? 'Paying the card off with a personal loan at a much lower rate usually avoids'
+      : 'Moving the balance to a card with 0% interest for a while usually avoids'),
     tips: (c) => {
       const order = [...c.debts].filter((d) => d.balance > 0).sort((a, b) => b.apr - a.apr).map((d) => `${d.name || 'Debt'} (${d.apr}%)`);
       return [
-        'Ask your bank about a card with 0% interest on moved balances (usually a 3% fee).',
+        isLocal(c)
+          ? 'Ask your bank for a personal loan or a card instalment plan at a lower rate, and use it to clear the card (expect a small fee).'
+          : 'Ask your bank about a card with 0% interest on moved balances (usually a 3% fee).',
         `Pay the highest-interest loan first: ${order.join(' → ')}.`,
         'Keep paying at least the minimum on everything else.'
       ];

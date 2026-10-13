@@ -11,7 +11,9 @@ const BILL_PAGES = [
   { group: 'housing', name: 'Housing' },
   { group: 'utilities', name: 'Bills & utilities' },
   { group: 'transport', name: 'Getting around' },
-  { group: 'family', name: 'Food, family & fun' }
+  { group: 'family', name: 'Food, family & fun' },
+  { group: 'care', name: 'Health, help & giving' },
+  { group: 'yearly', name: 'Once-a-year costs', title: 'Any big costs once a year?', sub: 'Festivals, school books, car repairs… Spread over the year, they stop catching you out. Skip if none.' }
 ];
 
 const STEPS = {
@@ -76,8 +78,9 @@ export function renderFlow(state) {
     const st = STEPS[step];
     setText($('wizStepLabel'), `Step ${step} of 4`);
     setText($('wizSubStep'), step === 2 ? `Bills: ${BILL_PAGES[sub].name} (${sub + 1} of ${BILL_PAGES.length})` : '');
-    setText($('wizTitle'), st.title);
-    setText($('wizSub'), st.sub);
+    const page = step === 2 ? BILL_PAGES[sub] : {};
+    setText($('wizTitle'), page.title || st.title);
+    setText($('wizSub'), page.sub || st.sub);
     const p = progress(step, sub);
     $('wizBar').style.width = `${p * 100}%`;
     setAttr($('wizProgress'), 'aria-valuenow', String(Math.round(p * 100)));

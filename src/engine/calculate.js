@@ -3,10 +3,12 @@
 
 import { RULES, highAprCards } from './rules.js';
 import { PROFILES, benchmarkFor } from './profiles.js';
+import { SUB_KINDS, subKind } from './subscriptions.js';
 
 export const EXPENSE_FIELDS = [
   'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
-  'carIns', 'carLoan', 'school', 'groceries', 'dining', 'misc'
+  'carIns', 'carLoan', 'school', 'groceries', 'dining', 'misc',
+  'medical', 'homeHelp', 'familySupport', 'giving', 'other'
 ];
 export const VALUE_FIELDS = ['income', ...EXPENSE_FIELDS, 'emergencyFund'];
 
@@ -15,13 +17,19 @@ export const CATEGORY_DEFS = [
   { key: 'utilities', label: 'Bills & utilities', fields: ['electricity', 'waterGas', 'internet'] },
   { key: 'transport', label: 'Getting around', fields: ['fuel', 'transit', 'carIns', 'carLoan'] },
   { key: 'family', label: 'Food, family & fun', fields: ['school', 'groceries', 'dining', 'misc'] },
+  { key: 'care', label: 'Health, help & giving', fields: ['medical', 'homeHelp', 'familySupport', 'giving', 'other'] },
+  { key: 'yearly', label: 'Once-a-year costs', derived: 'yearlyMonthly' },
   { key: 'debt', label: 'Loan payments', derived: 'debtPayments' },
   { key: 'subscriptions', label: 'Subscriptions', derived: 'subsTotal' }
 ];
 
-// 50/30/20 classification. Minimum loan payments count as must-pay bills.
-const NEEDS_FIELDS = ['rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns', 'carLoan', 'school', 'groceries'];
-const WANTS_FIELDS = ['dining', 'misc'];
+// 50/30/20 classification. Minimum loan payments and the monthly set-aside
+// for once-a-year costs count as must-pay bills.
+const NEEDS_FIELDS = ['rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns', 'carLoan', 'school', 'groceries',
+  'medical', 'homeHelp', 'familySupport', 'giving'];
+const WANTS_FIELDS = ['dining', 'misc', 'other'];
+// Day-to-day spending that becomes the weekly allowance in the payday plan
+const ALLOWANCE_FIELDS = ['dining', 'misc'];
 
 const num = (n) => (Number.isFinite(+n) && +n > 0 ? +n : 0);
 const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
@@ -39,19 +47,23 @@ export function cleanInputs(state) {
     apr: clamp(num(d.apr), 0, 100),
     payment: num(d.payment)
   }));
-  const subs = (state.subscriptions || []).map((s) => ({ ...s, cost: num(s.cost), rarely: !!s.rarely }));
-  return { values, debts, subs };
+  const subs = (state.subscriptions || []).map((s) => ({ ...s, cost: num(s.cost), rarely: !!s.rarely, kind: subKind(s) }));
+  const yearly = (state.yearly || []).map((y) => ({ ...y, cost: num(y.cost) }));
+  return { values, debts, subs, yearly };
 }
 
 /** Totals, category breakdown and 50/30/20 buckets for the current budget. */
 export function computeTotals(state) {
-  const { values, debts, subs } = cleanInputs(state);
+  const { values, debts, subs, yearly } = cleanInputs(state);
   const B = benchmarkFor(state.currency, state.profile);
   const income = values.income;
   // A debt row with no balance left no longer needs a payment.
   const debtPayments = sum(debts.map((d) => (d.balance > 0 ? d.payment : 0)));
   const subsTotal = sum(subs.map((s) => s.cost));
-  const derived = { debtPayments, subsTotal };
+  // Costs entered per year are spread evenly over 12 months
+  const yearlyTotal = sum(yearly.map((y) => y.cost));
+  const yearlyMonthly = yearlyTotal / 12;
+  const derived = { debtPayments, subsTotal, yearlyMonthly };
 
   const categories = CATEGORY_DEFS.map((c) => {
     const amount = c.derived ? derived[c.derived] : sum(c.fields.map((f) => values[f]));
@@ -61,10 +73,17 @@ export function computeTotals(state) {
   });
 
   const spend = sum(categories.map((c) => c.amount));
-  const needs = sum(NEEDS_FIELDS.map((f) => values[f])) + debtPayments;
-  const wants = sum(WANTS_FIELDS.map((f) => values[f])) + subsTotal;
+  // Work tools are a cost of earning; every other subscription is a nice-to-have
+  const subsNeeds = sum(subs.filter((s) => SUB_KINDS[s.kind].need).map((s) => s.cost));
+  const subsByKind = {};
+  for (const s of subs) if (s.cost > 0) subsByKind[s.kind] = (subsByKind[s.kind] || 0) + s.cost;
+  const needs = sum(NEEDS_FIELDS.map((f) => values[f])) + debtPayments + yearlyMonthly + subsNeeds;
+  const wants = sum(WANTS_FIELDS.map((f) => values[f])) + subsTotal - subsNeeds;
 
-  return { values, debts, subs, income, debtPayments, subsTotal, categories, spend, needs, wants, surplus: income - spend };
+  return {
+    values, debts, subs, yearly, income, debtPayments, subsTotal, subsByKind, yearlyTotal, yearlyMonthly,
+    categories, spend, needs, wants, surplus: income - spend
+  };
 }
 
 /** Months to recover an upfront cost from monthly savings. 0 = no upfront cost. */
@@ -83,15 +102,17 @@ export function evaluatePlan(state, totals, fmt = plainFmt) {
   const profile = PROFILES[state.profile] ? state.profile : 'suburban';
   const B = benchmarkFor(state.currency, profile);
   const ctx = {
-    v: totals.values, profile, P: PROFILES[profile], B,
+    v: totals.values, profile, P: PROFILES[profile], B, currency: state.currency,
     income: totals.income, debts: totals.debts, subs: totals.subs, fmt
   };
+  const val = (x) => (typeof x === 'function' ? x(ctx) : x);
   const committedMap = state.plan?.committed || {};
   const pctMap = state.plan?.pct || {};
 
   const poolValue = (key) => {
     if (key === 'subsRarely') return sum(ctx.subs.filter((s) => s.rarely).map((s) => s.cost));
-    if (key === 'subsActive') return sum(ctx.subs.filter((s) => !s.rarely).map((s) => s.cost));
+    if (key === 'subsStreaming') return sum(ctx.subs.filter((s) => !s.rarely && s.kind === 'streaming').map((s) => s.cost));
+    if (key === 'subsTools') return sum(ctx.subs.filter((s) => !s.rarely && s.kind === 'tools').map((s) => s.cost));
     if (key === 'cardInterest') return sum(highAprCards(ctx.debts).map((d) => (d.balance * d.apr) / 1200));
     return ctx.v[key] || 0;
   };
@@ -118,9 +139,9 @@ export function evaluatePlan(state, totals, fmt = plainFmt) {
       pct, defaultPct, maxPct, monthly, annual: monthly * 12,
       committed, upfront, payback: paybackMonths(upfront, monthly),
       effort: rule.effort, category: rule.category, icon: rule.icon,
-      label: rule.label, noun: rule.noun, title: rule.title,
+      label: rule.label, noun: rule.noun, title: val(rule.title),
       why: rule.why(ctx),
-      evidence: typeof rule.evidence === 'function' ? rule.evidence(ctx) : rule.evidence,
+      evidence: val(rule.evidence),
       tips: rule.tips(ctx), flag: rule.flag ? rule.flag(ctx) : null
     });
   }
@@ -267,6 +288,37 @@ export function effectiveAllocation(alloc, needed) {
   return { shares, inactive, unassigned: false };
 }
 
+/**
+ * What a bill would be after the committed ideas in the plan. Each committed
+ * cash idea on that bill cuts its share of whatever is left, the same way
+ * evaluatePlan stacks them.
+ */
+export function fieldAfterPlan(plan, values, field) {
+  return plan
+    .filter((p) => p.committed && p.kind === 'cash' && p.rule.pools.includes(field))
+    .reduce((left, p) => left * (1 - p.pct), values[field] || 0);
+}
+
+/**
+ * The three things to do on payday: set aside money for once-a-year costs,
+ * move what's left to savings first, and keep a weekly allowance for
+ * eating out and shopping. Null without income.
+ */
+export function paydayPlan(totals, plan, optimized) {
+  if (!(totals.income > 0)) return null;
+  const left = totals.income - optimized;
+  const funMonthly = sum(ALLOWANCE_FIELDS.map((f) => fieldAfterPlan(plan, totals.values, f)));
+  return {
+    yearlyMonthly: totals.yearlyMonthly,
+    yearlyTotal: totals.yearlyTotal,
+    yearlyNames: totals.yearly.filter((y) => y.cost > 0).map((y) => y.name).filter(Boolean),
+    toSave: Math.max(0, left),
+    short: Math.max(0, -left),
+    funMonthly,
+    funWeekly: (funMonthly * 12) / 52
+  };
+}
+
 /** Splits a monthly amount by fractional shares. */
 export const splitSavings = (monthly, shares) =>
   Object.fromEntries(BUCKETS.map((k) => [k, monthly * (shares[k] || 0)]));
@@ -404,5 +456,7 @@ export function computeBudget(state, fmt = plainFmt) {
   const eff = effectiveAllocation(state.allocation || ALLOCATION_PRESETS.even, needed);
   const allocation = { ...eff, needed, amounts: splitSavings(savings, eff.shares) };
 
-  return { totals, plan, savings, interestAvoided, optimized, housing, health, split, allocation };
+  const payday = paydayPlan(totals, plan, optimized);
+
+  return { totals, plan, savings, interestAvoided, optimized, housing, health, split, allocation, payday };
 }

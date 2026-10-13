@@ -8,6 +8,7 @@ import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engin
 import { CURRENCIES, parseAmount, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast, confirmDialog } from './dom.js';
 import { helpBtn, HELP } from './help.js';
+import { SUB_KINDS, subKind } from '../engine/subscriptions.js';
 
 export const GROUPS = [
   { id: 'income', title: 'Income', icon: 'wallet', fields: [
@@ -34,14 +35,25 @@ export const GROUPS = [
     { key: 'dining', label: 'Eating out and takeaways', icon: 'utensils' },
     { key: 'misc', label: 'Impulse shopping and extras', icon: 'bag' }
   ] },
+  { id: 'care', title: 'Health, help & giving', icon: 'heart-pulse', blurb: 'Medicine, household help, money for family and charity. Skip what doesn’t apply.', fields: [
+    { key: 'medical', label: 'Doctor visits and medicine', icon: 'heart-pulse' },
+    { key: 'homeHelp', label: 'Household help (maid, cook, driver)', icon: 'users' },
+    { key: 'familySupport', label: 'Money you send to family', icon: 'wallet' },
+    { key: 'giving', label: 'Charity and religious giving', icon: 'gift' },
+    { key: 'other', label: 'Anything else you pay each month', icon: 'list-check' }
+  ] },
+  { id: 'yearly', title: 'Once-a-year costs', icon: 'calendar', list: 'yearly', blurb: 'Big costs that don’t come every month. Enter the total for the whole year and we’ll work out what to put aside each month.' },
   { id: 'debt', title: 'Loans and credit cards', icon: 'card', list: 'debts', blurb: 'Optional. Skip if you have none.' },
-  { id: 'subs', title: 'Subscriptions', icon: 'repeat', list: 'subscriptions', blurb: 'Optional. Streaming, apps, gym and memberships.' },
+  { id: 'subs', title: 'Subscriptions', icon: 'repeat', list: 'subscriptions', blurb: 'Optional. Streaming, AI and work tools, gym, apps and memberships.' },
   { id: 'savings', title: 'Emergency savings', icon: 'shield', blurb: 'Optional. Money already set aside.', fields: [
     { key: 'emergencyFund', label: 'Money saved for emergencies', icon: 'shield', help: 'A total amount, not monthly.', balance: true }
   ] }
 ];
 
 const errors = new Map(); // input id -> message
+
+/** One-tap suggestions for the once-a-year list. */
+export const YEARLY_PRESETS = ['Festivals (Eid, Diwali, Christmas…)', 'Weddings and gifts', 'School books, uniforms and admission', 'Car service and repairs', 'Yearly insurance', 'Travel and trips home', 'Home repairs'];
 
 // ---------------- Markup builders ----------------
 function moneyField(f) {
@@ -81,9 +93,15 @@ function groupCard(g, index, collapsed) {
          <button type="button" class="btn btn-ghost" data-add="card">${icon('plus', 'icon-sm')}Add a credit card</button>
          <button type="button" class="btn btn-ghost" data-add="loan">${icon('plus', 'icon-sm')}Add a loan</button>
        </div>`;
+  } else if (g.list === 'yearly') {
+    body = `<p class="mb-2 text-xs font-medium muted" id="yearlyChipsLabel">Tap to add</p>
+       <div id="yearlyChips" class="mb-4 flex flex-wrap gap-2" role="group" aria-labelledby="yearlyChipsLabel"></div>
+       <div id="yearlyRows" class="space-y-3"></div>
+       <button type="button" class="btn btn-ghost mt-3" data-add="yearly">${icon('plus', 'icon-sm')}Add your own</button>`;
   } else if (g.list === 'subscriptions') {
     body = `<div id="subRows" class="space-y-3"></div>
-         <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}Add a subscription</button>`;
+         <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}Add a subscription</button>
+         <div id="subSummary" hidden class="mt-4 rounded-lg bg-slate-50 p-4 text-sm dark:bg-slate-950"></div>`;
   } else {
     body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}</div>${g.id === 'housing' ? housingQuestion : ''}`;
   }
@@ -138,14 +156,24 @@ function debtRow(d) {
 }
 
 function subRow(s) {
+  const kind = subKind(s);
   return `
   <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${s.id}">
     <div class="grid grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
       <div class="min-w-0">
         <label for="r-${s.id}-name" class="mb-1 block text-xs font-medium muted">Service</label>
-        <input id="r-${s.id}-name" type="text" class="input" maxlength="60" data-list="subscriptions" data-id="${s.id}" data-key="name" value="${esc(s.name)}" placeholder="e.g. Netflix">
+        <input id="r-${s.id}-name" type="text" class="input" maxlength="60" data-list="subscriptions" data-id="${s.id}" data-key="name" value="${esc(s.name)}" placeholder="e.g. Netflix or Claude">
       </div>
       ${numInput('subscriptions', s, 'cost', 'Cost per month', 'subCost')}
+    </div>
+    <div class="mt-3">
+      <div class="mb-1 flex items-center gap-1.5">
+        <label for="r-${s.id}-kind" class="text-xs font-medium muted">Type</label>${helpBtn('subKind', 'Type')}
+      </div>
+      <select id="r-${s.id}-kind" class="input select" data-list="subscriptions" data-id="${s.id}" data-key="kind">
+        ${Object.entries(SUB_KINDS).map(([k, v]) => `<option value="${k}" ${k === kind ? 'selected' : ''}>${esc(v.label)}</option>`).join('')}
+      </select>
+      <p class="mt-2 flex gap-1.5 text-xs muted" data-sub-tip="${s.id}">${icon('lightbulb', 'h-3.5 w-3.5 mt-px shrink-0 text-amber-600 dark:text-amber-400')}<span>${esc(SUB_KINDS[kind].tip)}</span></p>
     </div>
     <div class="mt-2 flex items-center justify-between gap-2">
       <label class="flex min-h-11 cursor-pointer items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -155,6 +183,23 @@ function subRow(s) {
       <span class="flex items-center gap-1">${helpBtn('subRarely', 'I rarely use this')}
         <button type="button" class="btn-icon hover:text-rose-600" data-remove="subscriptions" data-id="${s.id}" aria-label="Remove ${esc(s.name || 'this subscription')}">${icon('trash')}</button></span>
     </div>
+  </div>`;
+}
+
+function yearlyRow(y) {
+  return `
+  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${y.id}">
+    <div class="flex items-end gap-2">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+        <div class="min-w-0">
+          <label for="r-${y.id}-name" class="mb-1 block text-xs font-medium muted">What is it?</label>
+          <input id="r-${y.id}-name" type="text" class="input" maxlength="60" data-list="yearly" data-id="${y.id}" data-key="name" value="${esc(y.name)}" placeholder="e.g. Birthday gifts">
+        </div>
+        ${numInput('yearly', y, 'cost', 'Cost for the whole year', 'yearlyCost')}
+      </div>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="yearly" data-id="${y.id}" aria-label="Remove ${esc(y.name || 'this cost')}">${icon('trash')}</button>
+    </div>
+    <p class="mt-2 text-xs muted empty:hidden" data-yearly-month="${y.id}"></p>
   </div>`;
 }
 
@@ -168,6 +213,23 @@ function renderRows(force = false) {
   if (force || debtBox.__sig !== dSig) {
     debtBox.__sig = dSig;
     debtBox.innerHTML = s.debts.length ? s.debts.map(debtRow).join('') : '<p class="text-sm muted">No loans or cards added. That’s fine. Skip this if you don’t have any.</p>';
+  }
+  const yearlyBox = $('yearlyRows');
+  const ySig = listSignature(s.yearly);
+  if (force || yearlyBox.__sig !== ySig) {
+    yearlyBox.__sig = ySig;
+    yearlyBox.innerHTML = s.yearly.length ? s.yearly.map(yearlyRow).join('') : '<p class="text-sm muted">Nothing added yet. Tap a suggestion above, or add your own.</p>';
+  }
+  // Suggestions that aren't on the list yet
+  const have = new Set(s.yearly.map((y) => y.name.trim().toLowerCase()));
+  const chips = YEARLY_PRESETS.filter((name) => !have.has(name.toLowerCase()));
+  const chipBox = $('yearlyChips');
+  const cSig = chips.join('|');
+  if (force || chipBox.__sig !== cSig) {
+    chipBox.__sig = cSig;
+    chipBox.innerHTML = chips.map((name) => `<button type="button" class="suggest" data-add="yearly" data-name="${esc(name)}">${icon('plus', 'icon-sm')}${esc(name)}</button>`).join('');
+    chipBox.hidden = !chips.length;
+    $('yearlyChipsLabel').hidden = !chips.length;
   }
   const sSig = listSignature(s.subscriptions);
   if (force || subBox.__sig !== sSig) {
@@ -194,7 +256,7 @@ export function syncInputs() {
 
 // ---------------- Render (called after every recompute) ----------------
 export function renderInputs(state, result, view) {
-  const { values, subsTotal, debtPayments } = result.totals;
+  const { values, subsTotal, debtPayments, yearly, yearlyMonthly } = result.totals;
   const subtotal = (fields) => fields.reduce((a, f) => a + (values[f] || 0), 0);
   const B = benchmarkFor(state.currency, state.profile);
   const who = PROFILES[state.profile];
@@ -208,6 +270,7 @@ export function renderInputs(state, result, view) {
     if (g.id === 'income') txt = values.income ? `${view.m(values.income)}${view.per}` : 'Start here';
     else if (g.id === 'savings') txt = values.emergencyFund ? `${view.raw(values.emergencyFund)} saved` : 'Optional';
     else if (g.list === 'debts') txt = state.debts.length ? `${view.m(debtPayments)}${view.per} · ${state.debts.length} added` : 'Optional';
+    else if (g.list === 'yearly') txt = state.yearly.length ? `${view.m(yearlyMonthly)}${view.per} · ${state.yearly.length} added` : 'Optional';
     else if (g.list === 'subscriptions') txt = state.subscriptions.length ? `${view.m(subsTotal)}${view.per} · ${state.subscriptions.length} added` : 'Optional';
     else txt = `${view.m(subtotal(g.fields.map((f) => f.key)))}${view.per}`;
     setText(el, txt);
@@ -254,6 +317,39 @@ export function renderInputs(state, result, view) {
     } else setText(msg, '');
   }
   renderRows();
+  renderSubKinds(state, result, view);
+  for (const y of yearly) {
+    setText(document.querySelector(`[data-yearly-month="${y.id}"]`), y.cost > 0 ? `That’s ${view.raw(y.cost / 12)} to put aside each month.` : '');
+  }
+}
+
+/** Keeps each row's type and tip in step with its name, and the by-type summary. */
+function renderSubKinds(state, result, view) {
+  for (const s of state.subscriptions) {
+    const kind = subKind(s);
+    const sel = $(`r-${s.id}-kind`);
+    // Until the user picks a type, it follows the name as they type it
+    if (sel && sel.value !== kind && document.activeElement !== sel) sel.value = kind;
+    const tip = document.querySelector(`[data-sub-tip="${s.id}"] span`);
+    setText(tip, SUB_KINDS[kind].tip);
+  }
+  const { subsByKind, subsTotal, income } = result.totals;
+  const box = $('subSummary');
+  box.hidden = !(subsTotal > 0);
+  if (box.hidden) return;
+  const B = benchmarkFor(state.currency, state.profile);
+  const limit = income * B.categoryShare.subscriptions;
+  const rows = Object.entries(subsByKind).sort((a, b) => b[1] - a[1]).map(([k, amt]) =>
+    `<li class="flex justify-between gap-3"><span class="flex items-center gap-2">${icon(SUB_KINDS[k].icon, 'icon-sm text-slate-400')}${esc(SUB_KINDS[k].label)}</span><span class="tabular-nums">${esc(view.m(amt))}</span></li>`).join('');
+  const over = income > 0 && subsTotal > limit;
+  const guide = income > 0
+    ? `<p class="mt-3 border-t border-slate-200 pt-3 text-xs dark:border-slate-800 ${over ? 'text-amber-800 dark:text-amber-300' : 'text-emerald-800 dark:text-emerald-300'}">
+        ${over
+          ? `That’s ${Math.round((subsTotal / income) * 1000) / 10}% of your income. A good guide is under ${Math.round(B.categoryShare.subscriptions * 100)}% (${esc(view.m(limit))}${view.per}). Start with the ones you rarely use.`
+          : `That’s ${Math.round((subsTotal / income) * 1000) / 10}% of your income, within the guide of under ${Math.round(B.categoryShare.subscriptions * 100)}%.`}</p>`
+    : '';
+  box.innerHTML = `<p class="mb-2 font-medium text-slate-900 dark:text-white">By type</p><ul class="space-y-1.5">${rows}</ul>
+    <p class="mt-2 flex justify-between gap-3 font-semibold text-slate-900 dark:text-white"><span>Total</span><span class="tabular-nums">${esc(view.m(subsTotal))}${view.per}</span></p>${guide}`;
 }
 
 // ---------------- Events ----------------
@@ -274,13 +370,14 @@ function onFieldInput(e) {
     if (key === 'name') v = el.value.slice(0, 60);
     else if (key === 'rarely') v = el.checked;
     else if (key === 'type') v = el.value === 'loan' ? 'loan' : 'card';
+    else if (key === 'kind') v = SUB_KINDS[el.value] ? el.value : '';
     else {
       const r = parseAmount(el.value);
       v = key === 'apr' ? Math.min(100, r.value) : r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
       el.title = r.error || '';
     }
-    const instant = key === 'rarely' || key === 'type';
+    const instant = key === 'rarely' || key === 'type' || key === 'kind';
     setState((s) => {
       const row = s[list].find((x) => x.id === id);
       if (row) row[key] = v;
@@ -319,11 +416,15 @@ export function initInputs() {
     const add = e.target.closest('[data-add]');
     if (add) {
       const kind = add.dataset.add;
+      const LIST = { sub: 'subscriptions', yearly: 'yearly' };
       const row = kind === 'sub'
-        ? { id: newId('s'), name: '', cost: 0, rarely: false }
-        : { id: newId('d'), type: kind, name: '', balance: 0, apr: kind === 'card' ? (getState().currency === 'PKR' ? 38 : 22) : 8, payment: 0 };
-      setState((st) => { (kind === 'sub' ? st.subscriptions : st.debts).push(row); });
-      requestAnimationFrame(() => document.querySelector(`[data-row="${row.id}"] input`)?.focus());
+        ? { id: newId('s'), name: '', cost: 0, rarely: false, kind: '' }
+        : kind === 'yearly'
+          ? { id: newId('y'), name: add.dataset.name || '', cost: 0 }
+          : { id: newId('d'), type: kind, name: '', balance: 0, apr: kind === 'card' ? (getState().currency === 'PKR' ? 38 : 22) : 8, payment: 0 };
+      setState((st) => { st[LIST[kind] || 'debts'].push(row); });
+      // A suggestion already has its name, so jump straight to the amount
+      requestAnimationFrame(() => document.querySelector(row.name ? `#r-${row.id}-cost` : `[data-row="${row.id}"] input`)?.focus());
       return;
     }
     const rm = e.target.closest('[data-remove]');
@@ -333,7 +434,7 @@ export function initInputs() {
       const idx = st[list].findIndex((x) => x.id === id);
       const removed = st[list][idx];
       setState((x) => { x[list] = x[list].filter((r) => r.id !== id); });
-      toast(`${removed?.name || (list === 'debts' ? 'Loan' : 'Subscription')} removed`, {
+      toast(`${removed?.name || { debts: 'Loan', subscriptions: 'Subscription', yearly: 'Cost' }[list]} removed`, {
         action: { label: 'Undo', onClick: () => setState((x) => { x[list].splice(idx, 0, removed); }) }
       });
     }
@@ -362,6 +463,7 @@ export function loadSample() {
     values: sample.values,
     debts: sample.debts,
     subscriptions: sample.subscriptions,
+    yearly: sample.yearly,
     housingFree: null,
     plan: { committed: {}, pct: {}, sort: st.plan.sort },
     goals: st.goals.length ? st.goals : [

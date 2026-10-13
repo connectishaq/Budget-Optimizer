@@ -3,9 +3,12 @@ import {
   computeTotals, evaluatePlan, computeBudget, projectGrowth, simulateDebts,
   debtFreeComparison, goalTimeline, emergencyFundStatus, healthScore,
   fiftyThirtyTwenty, paybackMonths, housingStatus,
-  rebalanceAllocation, effectiveAllocation, splitSavings, ALLOCATION_PRESETS
+  rebalanceAllocation, effectiveAllocation, splitSavings, ALLOCATION_PRESETS,
+  fieldAfterPlan, paydayPlan
 } from './calculate.js';
 import { RULES } from './rules.js';
+import { paydayIcs, nextPayday } from '../utils/ics.js';
+import { guessSubKind, subKind } from './subscriptions.js';
 import { sampleFor, benchmarkFor } from './profiles.js';
 import { parseAmount, duration, moneyNice, roundFriendly, pctWords } from '../utils/format.js';
 
@@ -343,5 +346,125 @@ describe('formatting', () => {
     expect(duration(1)).toBe('1 month');
     expect(pctWords(0.25)).toBe('about a quarter (25%)');
     expect(pctWords(0.12)).toBe('about 12%');
+  });
+});
+
+describe('yearly costs and new bills', () => {
+  it('spreads once-a-year costs over 12 months and counts them as must-pay bills', () => {
+    const s = base({ yearly: [{ id: 'a', name: 'Festivals', cost: 1200 }, { id: 'b', name: 'Car', cost: 600 }] });
+    const t = computeTotals(s);
+    expect(t.yearlyTotal).toBe(1800);
+    expect(t.yearlyMonthly).toBe(150);
+    expect(t.spend).toBe(150);
+    expect(t.needs).toBe(150);
+    expect(t.categories.find((c) => c.key === 'yearly').amount).toBe(150);
+  });
+
+  it('adds health, help and giving to spending; "anything else" is a nice-to-have', () => {
+    const t = computeTotals(base({ values: { income: 6000, medical: 100, homeHelp: 200, familySupport: 300, giving: 50, other: 80 } }));
+    expect(t.categories.find((c) => c.key === 'care').amount).toBe(730);
+    expect(t.needs).toBe(650);
+    expect(t.wants).toBe(80);
+  });
+
+  it('suggests generic medicines when medical costs are above typical', () => {
+    const s = base({ values: { income: 6000, medical: 400 } });
+    const item = evaluatePlan(s, computeTotals(s)).find((p) => p.id === 'medical-generic');
+    expect(item.monthly).toBeCloseTo(80, 5);
+  });
+});
+
+describe('local savings ideas', () => {
+  const pk = (values, over = {}) => base({ currency: 'PKR', values: { income: 300000, ...values }, ...over });
+
+  it('PKR gets the electricity slab idea instead of a smart thermostat', () => {
+    const s = pk({ electricity: 45000, waterGas: 6000 });
+    const got = ids(evaluatePlan(s, computeTotals(s)));
+    expect(got).toContain('electricity-slab');
+    expect(got).not.toContain('smart-thermostat');
+    const us = base({ values: { income: 6000, electricity: 250, waterGas: 100 } });
+    expect(ids(evaluatePlan(us, computeTotals(us)))).not.toContain('electricity-slab');
+  });
+
+  it('card debt advice is worded for the region', () => {
+    const debts = [{ id: 'c', type: 'card', name: 'Card', balance: 100000, apr: 40, payment: 8000 }];
+    const local = evaluatePlan(pk({}, { debts }), computeTotals(pk({}, { debts }))).find((p) => p.id === 'debt-avalanche');
+    expect(local.title).toBe('Pay off the card with a cheaper loan');
+    const us = base({ debts: [{ ...debts[0], balance: 5000, apr: 24, payment: 200 }] });
+    expect(evaluatePlan(us, computeTotals(us)).find((p) => p.id === 'debt-avalanche').title).toBe('Move the balance to a 0% card');
+  });
+});
+
+describe('payday plan', () => {
+  it('works out what to save and a weekly allowance after the plan', () => {
+    const s = base({ values: { income: 6000, dining: 500, groceries: 400, misc: 400 }, yearly: [{ id: 'y', name: 'Gifts', cost: 1200 }] });
+    const r = computeBudget(s);
+    // dining-swap (40%) and impulse-24h (25%) are on by default
+    expect(fieldAfterPlan(r.plan, r.totals.values, 'dining')).toBeCloseTo(300, 5);
+    expect(fieldAfterPlan(r.plan, r.totals.values, 'misc')).toBeCloseTo(300, 5);
+    expect(r.payday.funMonthly).toBeCloseTo(600, 5);
+    expect(r.payday.funWeekly).toBeCloseTo((600 * 12) / 52, 5);
+    expect(r.payday.yearlyMonthly).toBe(100);
+    expect(r.payday.toSave).toBeCloseTo(6000 - r.optimized, 5);
+    expect(r.payday.yearlyNames).toEqual(['Gifts']);
+  });
+
+  it('reports a shortfall instead of savings when costs beat income', () => {
+    const t = computeTotals(base({ values: { income: 1000, rent: 1500 } }));
+    const p = paydayPlan(t, [], t.spend);
+    expect(p.toSave).toBe(0);
+    expect(p.short).toBe(500);
+    expect(paydayPlan(computeTotals(base({ values: {} })), [], 0)).toBeNull();
+  });
+});
+
+describe('payday reminder file', () => {
+  it('finds the next payday, including the last day of the month', () => {
+    const from = new Date(2026, 1, 10); // 10 Feb 2026
+    expect(nextPayday(25, from).getDate()).toBe(25);
+    expect(nextPayday(5, from).getMonth()).toBe(2);
+    expect(nextPayday('last', from).getDate()).toBe(28);
+  });
+
+  it('builds a monthly event with escaped, folded text', () => {
+    const ics = paydayIcs({ day: 'last', title: 'Payday', lines: ['1. Save Rs 7,000; then relax', 'x'.repeat(120)], now: new Date(2026, 9, 13) });
+    expect(ics).toContain('RRULE:FREQ=MONTHLY;BYMONTHDAY=-1');
+    expect(ics).toContain('DTSTART:20261031T090000');
+    expect(ics).toContain('Rs 7\\,000\\; then relax');
+    for (const line of ics.split('\r\n')) expect(new TextEncoder().encode(line).length).toBeLessThanOrEqual(75);
+  });
+});
+
+describe('subscription types', () => {
+  it('guesses the type from the name', () => {
+    expect(guessSubKind('Netflix')).toBe('streaming');
+    expect(guessSubKind('Claude Pro')).toBe('tools');
+    expect(guessSubKind('Gym membership')).toBe('fitness');
+    expect(guessSubKind('Amazon Prime')).toBe('membership');
+    expect(guessSubKind('iCloud+')).toBe('cloud');
+    expect(guessSubKind('Duolingo')).toBe('learning');
+    expect(guessSubKind('Something else')).toBe('other');
+    expect(subKind({ name: 'Netflix', kind: 'tools' })).toBe('tools'); // the user's pick wins
+  });
+
+  it('counts work tools as must-pay bills and groups costs by type', () => {
+    const t = computeTotals(base({ subscriptions: [
+      { id: 'a', name: 'Claude', cost: 20 },
+      { id: 'b', name: 'Netflix', cost: 15 },
+      { id: 'c', name: 'Spotify', cost: 10 }
+    ] }));
+    expect(t.needs).toBe(20);
+    expect(t.wants).toBe(25);
+    expect(t.subsByKind).toEqual({ tools: 20, streaming: 25 });
+  });
+
+  it('streaming and tools ideas only look at their own type', () => {
+    const s = base({ subscriptions: [
+      { id: 'a', name: 'Claude', cost: 20 }, { id: 'b', name: 'ChatGPT', cost: 20 }, { id: 'c', name: 'Cursor', cost: 20 },
+      { id: 'd', name: 'Netflix', cost: 15 }
+    ] });
+    const plan = evaluatePlan(s, computeTotals(s));
+    expect(ids(plan)).not.toContain('subs-rotate');
+    expect(plan.find((p) => p.id === 'subs-tools-yearly').monthly).toBeCloseTo(9, 5);
   });
 });

@@ -14,7 +14,7 @@ const TONE = {
   look: { bar: 'bg-amber-500', text: 'text-amber-700 dark:text-amber-400', pill: 'bg-amber-50 text-amber-800 dark:bg-amber-950 dark:text-amber-300' },
   bad: { bar: 'bg-rose-600', text: 'text-rose-700 dark:text-rose-400', pill: 'bg-rose-50 text-rose-800 dark:bg-rose-950 dark:text-rose-300' }
 };
-const CATEGORY_ICON = { housing: 'home', utilities: 'bolt', transport: 'car', family: 'cart', debt: 'card', subscriptions: 'repeat' };
+const CATEGORY_ICON = { housing: 'home', utilities: 'bolt', transport: 'car', family: 'cart', care: 'heart-pulse', yearly: 'calendar', debt: 'card', subscriptions: 'repeat' };
 // Same cut-offs as the score labels: 60+ Good/Excellent, 40–59 Okay, under 40 Needs attention
 const toneFor = (ratio) => (ratio >= 0.6 ? TONE.good : ratio >= 0.4 ? TONE.look : TONE.bad);
 
@@ -90,6 +90,19 @@ function renderBanners(state, result, view) {
   $('dashboard').hidden = empty;
 }
 
+/** Label + value on top, a bar (with an optional target marker) and one plain note below. */
+function meterRow({ lead, value, fill, fillColor = '', fillClass = '', marker = null, markerTitle = '', note = '', noteClass = 'muted' }) {
+  return `<div class="flex items-baseline justify-between gap-3 text-sm">
+      <span class="flex min-w-0 items-center gap-2 font-medium text-slate-900 dark:text-white">${lead}</span>
+      <span class="shrink-0 whitespace-nowrap tabular-nums">${value}</span>
+    </div>
+    <div class="relative mt-2 h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+      <div class="h-full rounded-full ${fillClass}" style="width:${Math.max(0, Math.min(100, fill))}%${fillColor ? `;background:${fillColor}` : ''}"></div>
+      ${marker == null ? '' : `<span class="absolute -top-1 h-4 w-0.5 rounded-full bg-slate-900 dark:bg-white" style="left:${Math.min(100, marker)}%" title="${esc(markerTitle)}"></span>`}
+    </div>
+    ${note ? `<p class="mt-1.5 text-xs ${noteClass}">${note}</p>` : ''}`;
+}
+
 function renderHealth(result) {
   const h = result.health;
   $('healthEmpty').hidden = !!h;
@@ -99,21 +112,20 @@ function renderHealth(result) {
   animateNumber($('healthScore'), h.score, (n) => String(Math.round(n)));
   setText($('healthLabel'), h.label);
   $('healthLabel').className = `ml-1 rounded-full px-2.5 py-0.5 text-sm font-medium ${tone.pill}`;
-  // One segment per scoring part, sized by its points; the fill shows what you earned
-  setHTML($('healthSegments'), h.parts.map((p) => {
-    const t = toneFor(p.earned / p.max);
-    return `<div class="min-w-0" style="flex:${p.max} 1 0%">
-      <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-full rounded-full ${t.bar}" style="width:${(p.earned / p.max) * 100}%"></div></div>
-      <p class="mt-1 hidden truncate text-[11px] muted sm:block">${esc(p.label)}</p>
-    </div>`;
-  }).join(''));
-  setText($('healthTip'), h.tip);
+  // The one thing to do next, as a callout rather than another line of body text
+  const perfect = h.parts.every((p) => p.earned >= p.max);
+  setHTML($('healthTip'), `${icon(perfect ? 'check-circle' : 'lightbulb', 'icon-sm mt-0.5 shrink-0')}<span>${esc(h.tip)}</span>`);
+  $('healthTip').className = `mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3 text-sm ${perfect
+    ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
+    : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`;
   setHTML($('healthParts'), h.parts.map((p) => {
-    const t = toneFor(p.earned / p.max);
-    return `<li>
-      <div class="flex justify-between gap-3 text-sm"><span class="font-medium text-slate-900 dark:text-white">${esc(p.label)}</span><span class="tabular-nums ${t.text}">${Math.round(p.earned)} of ${p.max}</span></div>
-      <p class="mt-0.5 text-sm muted">${esc(p.text)}</p>
-    </li>`;
+    const ratio = p.earned / p.max;
+    const t = toneFor(ratio);
+    return `<li class="py-3 first:pt-0 last:pb-0">${meterRow({
+      lead: `${icon(ratio >= 0.6 ? 'check-circle' : 'alert', `icon-sm shrink-0 ${t.text}`)}${esc(p.label)}`,
+      value: `<span class="font-semibold ${t.text}">${Math.round(p.earned)}</span><span class="muted"> / ${p.max}</span>`,
+      fill: ratio * 100, fillClass: t.bar, note: esc(p.text)
+    })}</li>`;
   }).join(''));
 }
 
@@ -122,53 +134,54 @@ function renderSplit(result, view) {
   $('splitEmpty').hidden = !!s;
   $('splitBody').hidden = !s;
   if (!s) return;
-  const keys = ['needs', 'wants', 'savings'];
-  const total = keys.reduce((a, k) => a + s.actual[k], 0) || 1;
-  const LABELS = { needs: ['Must-pay bills', 'Needs', 50], wants: ['Nice-to-haves', 'Wants', 30], savings: ['Money left to save', 'Savings', 20] };
-  setHTML($('splitBar'), keys.filter((k) => s.actual[k] > 0).map((k) =>
-    `<div class="h-full" style="width:${(s.actual[k] / total) * 100}%;background:${SPLIT_COLORS[k]}" title="${LABELS[k][0]}: ${pct(s.share[k])}"></div>`).join(''));
-  setHTML($('splitLegend'), keys.map((k) => {
-    const [label, tag, target] = LABELS[k];
-    const off = k === 'savings' ? s.share[k] < 0.2 : s.share[k] > target / 100;
-    return `<li class="flex items-start gap-2">
-      <span class="mt-1 h-2.5 w-2.5 shrink-0 rounded-sm" style="background:${SPLIT_COLORS[k]}"></span>
-      <span>${label} <span class="muted">(${tag})</span><br>
-        <strong class="font-semibold tabular-nums text-slate-900 dark:text-white">${pct(s.share[k])}</strong>
-        <span class="${off ? 'text-amber-700 dark:text-amber-400' : 'muted'}"> · guideline ${target}%</span></span>
-    </li>`;
+  const ROWS = [
+    { key: 'needs', label: 'Must-pay bills', target: 50 },
+    { key: 'wants', label: 'Nice-to-haves', target: 30 },
+    { key: 'savings', label: 'Left to save', target: 20 }
+  ];
+  setHTML($('splitRows'), ROWS.map(({ key, label, target }) => {
+    const gap = s.diffs[key]; // > 0 means over the guideline (or, for savings, short of it)
+    const off = gap > 0;
+    const note = !off
+      ? `${icon('check', 'icon-sm -mt-0.5 inline')} Within the ${target}% guideline`
+      : key === 'savings'
+        ? `${esc(view.s(gap))}${view.per} short of the ${target}% guideline`
+        : `${esc(view.s(gap))}${view.per} over the ${target}% guideline`;
+    return `<li>${meterRow({
+      lead: `<span class="h-2.5 w-2.5 shrink-0 rounded-sm" style="background:${SPLIT_COLORS[key]}"></span>${label}`,
+      value: `<span class="font-semibold text-slate-900 dark:text-white">${pct(s.share[key])}</span><span class="muted"> of income</span>`,
+      fill: s.share[key] * 100, fillColor: SPLIT_COLORS[key],
+      marker: target, markerTitle: `Guideline: ${target}%`,
+      note, noteClass: off ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-700 dark:text-emerald-400'
+    })}</li>`;
   }).join(''));
-
-  const msgs = [];
-  if (s.diffs.needs > 0) msgs.push(`Your must-pay bills are ${view.s(s.diffs.needs)}${view.per} above the guideline.`);
-  if (s.diffs.wants > 0) msgs.push(`You spend ${view.s(s.diffs.wants)}${view.per} more than the guideline on nice-to-haves.`);
-  if (s.diffs.savings > 0) msgs.push(`To save a fifth of your income, you’d need ${view.s(s.diffs.savings)}${view.per} more left over.`);
-  setText($('splitMsg'), msgs.length ? msgs.join(' ') : 'Your money is split the way the guideline suggests.');
-  $('splitMsg').className = `mt-3 text-sm ${msgs.length ? 'text-amber-800 dark:text-amber-300' : 'text-emerald-800 dark:text-emerald-300'}`;
-  setAttr($('splitBar'), 'aria-label', `Must-pay bills ${pct(s.share.needs)}, nice-to-haves ${pct(s.share.wants)}, money left to save ${pct(s.share.savings)} of income`);
 }
 
 function renderCategories(state, result, view) {
   const { categories, income, spend } = result.totals;
   const denom = income > 0 ? income : spend || 1;
-  const maxShare = Math.max(...categories.map((c) => Math.max(c.amount / denom, income > 0 ? c.benchmark : 0)), 0.01);
   const B = benchmarkFor(state.currency, state.profile);
+  $('categoryLegend').hidden = !(income > 0);
   setText($('categoryBasis'), income > 0
-    ? `Bars show the share of your income. The line shows what’s typical for a ${PROFILES[state.profile].name}${B.approximate ? ' (a rough guide for this currency)' : ''}.`
-    : 'Bars show the share of your total spending. Add your income to compare with typical households.');
-  setHTML($('categoryBars'), categories.map((c) => {
+    ? `Share of your income, compared with a typical ${PROFILES[state.profile].name}${B.approximate ? ' (a rough guide for this currency)' : ''}.`
+    : 'Share of your total spending. Add your income to compare with typical households.');
+  // Biggest first; empty categories go in one line at the end instead of a row each
+  const used = categories.filter((c) => c.amount > 0).sort((a, b) => b.amount - a.amount);
+  const unused = categories.filter((c) => !(c.amount > 0));
+  const maxShare = Math.max(...used.map((c) => Math.max(c.amount / denom, income > 0 ? c.benchmark : 0)), 0.01);
+  setHTML($('categoryBars'), used.map((c) => {
     const share = c.amount / denom;
     const over = income > 0 && c.over;
-    return `<li>
-      <div class="flex flex-wrap items-baseline justify-between gap-x-3 text-sm">
-        <span class="flex flex-wrap items-center gap-x-2 text-slate-900 dark:text-white">${icon(CATEGORY_ICON[c.key], 'icon-sm text-slate-400')}${esc(c.label)}${over ? ' <span class="text-amber-700 dark:text-amber-400">· Higher than typical</span>' : ''}</span>
-        <span class="tabular-nums"><span class="text-slate-900 dark:text-white">${view.tag(view.m(c.amount), c.amount * view.f)}</span> <span class="muted">${pct(share)}</span></span>
-      </div>
-      <div class="relative mt-1.5 h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-        <div class="h-full rounded-full ${over ? 'bg-amber-500' : 'bg-slate-500 dark:bg-slate-400'}" style="width:${Math.min(100, (share / maxShare) * 100)}%"></div>
-        ${income > 0 ? `<span class="absolute -top-1 h-4 w-0.5 bg-slate-900 dark:bg-white" style="left:${Math.min(100, (c.benchmark / maxShare) * 100)}%" title="Typical: ${pct(c.benchmark)} of income"></span>` : ''}
-      </div>
-    </li>`;
+    return `<li>${meterRow({
+      lead: `${icon(CATEGORY_ICON[c.key], 'icon-sm shrink-0 text-slate-400')}<span class="truncate">${esc(c.label)}</span>`,
+      value: `<span class="font-semibold text-slate-900 dark:text-white">${view.tag(view.m(c.amount), c.amount * view.f)}</span> <span class="muted">· ${pct(share)}</span>`,
+      fill: (share / maxShare) * 100, fillClass: over ? 'bg-amber-500' : 'bg-slate-500 dark:bg-slate-400',
+      marker: income > 0 ? (c.benchmark / maxShare) * 100 : null, markerTitle: `Typical: ${pct(c.benchmark)} of income`,
+      note: over ? `Higher than typical (about ${pct(c.benchmark)})` : '', noteClass: 'text-amber-700 dark:text-amber-400'
+    })}</li>`;
   }).join(''));
+  $('categoryEmpty').hidden = !unused.length;
+  setText($('categoryEmpty'), unused.length ? `Nothing entered for: ${unused.map((c) => c.label).join(', ')}.` : '');
 }
 
 function renderMobileBar(state, result, view) {
