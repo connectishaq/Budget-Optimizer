@@ -6,7 +6,7 @@ import { PROFILES } from '../engine/profiles.js';
 import { EFFORT_LABEL } from '../engine/rules.js';
 // Snapshot amounts use the same lakh/crore display as the rest of the page
 import { moneyNice as money } from '../utils/format.js';
-import { $, icon, esc, setHTML, toast, confirmDialog } from './dom.js';
+import { $, icon, esc, setText, setHTML, toast, confirmDialog } from './dom.js';
 
 let latest = null; // { state, result, view } from the most recent render
 
@@ -52,12 +52,18 @@ function trendSvg(snaps) {
 
 function renderSnapshots(state) {
   const snaps = state.snapshots;
+  // Amounts in different currencies can't share one line, so the trend only
+  // shows months saved in the currency picked now
+  const same = snaps.filter((s) => s.currency === state.currency);
+  const other = snaps.length - same.length;
   $('historyEmpty').hidden = snaps.length > 0;
-  $('historyTrend').hidden = snaps.length < 2;
-  if (snaps.length >= 2) setHTML($('trendSvg'), trendSvg(snaps));
+  $('historyTrend').hidden = same.length < 2;
+  if (same.length >= 2) setHTML($('trendSvg'), trendSvg(same));
+  $('trendNote').hidden = !other;
+  setText($('trendNote'), `${other} month${other === 1 ? '' : 's'} saved in another currency ${other === 1 ? 'is' : 'are'} left out of this line.`);
   setHTML($('snapshotRows'), [...snaps].reverse().map((s, i, arr) => {
     const prev = arr[i + 1];
-    const delta = prev ? s.spend - prev.spend : null;
+    const delta = prev && prev.currency === s.currency ? s.spend - prev.spend : null;
     const deltaTxt = delta == null ? '<span class="muted">—</span>'
       : `<span class="${delta <= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'} font-semibold">${delta <= 0 ? '▼' : '▲'} ${money(Math.abs(delta), s.currency)}</span>`;
     return `<tr class="border-t border-slate-100 dark:border-slate-800">
@@ -154,7 +160,8 @@ async function importJson(file) {
     confirmLabel: 'Import'
   });
   if (!ok) return;
-  replaceState(data, 'import');
+  // Keep the screen the user is on; a backup's saved screen may be step 1
+  replaceState({ ...data, ui: { ...getState().ui, mode: 'results', sample: false } }, 'import');
   toast('Backup imported');
 }
 

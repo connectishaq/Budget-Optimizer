@@ -146,6 +146,30 @@ describe('country benchmarks', () => {
     expect(pk.ranges.fuel).toEqual([18000, 28000]);
   });
 
+  it('INR has its own hand-written set', () => {
+    const inr = benchmarkFor('INR', 'suburban');
+    expect(inr.approximate).toBe(false);
+    expect(inr.thresholds.utilities).toBe(8500);
+    expect(inr.ranges.homeHelp).toEqual([4000, 12000]);
+  });
+
+  it('INR thresholds drive the rules, including local ideas', () => {
+    const s = base({ currency: 'INR', values: { income: 180000, fuel: 9500, electricity: 7000 } });
+    const got = ids(evaluatePlan(s, computeTotals(s)));
+    expect(got).toContain('fuel-carpool');
+    expect(got).toContain('electricity-slab');
+    expect(got).not.toContain('smart-thermostat');
+  });
+
+  it('every INR sample leaves the household in a believable spot', () => {
+    for (const p of ['single', 'suburban', 'youngpro']) {
+      const r = computeBudget({ ...base({ profile: p, currency: 'INR' }), ...sampleFor(p, 'INR') });
+      expect(r.totals.spend).toBeGreaterThan(r.totals.income * 0.7);
+      expect(r.totals.spend).toBeLessThan(r.totals.income * 1.1);
+      expect(r.plan.length).toBeGreaterThan(2);
+    }
+  });
+
   it('currencies without a set fall back to scaled US figures and are flagged', () => {
     const gb = benchmarkFor('GBP', 'suburban');
     expect(gb.approximate).toBe(true);
@@ -218,7 +242,35 @@ describe('savings split', () => {
     };
     const r = computeBudget(s);
     expect(r.savings).toBeCloseTo(100, 5); // 25% of 400 misc
-    expect(r.allocation.amounts).toEqual({ emergency: 50, debt: 25, goals: 25 });
+    // Everything left after bills and the plan: 6000 - (900 - 100)
+    expect(r.allocation.monthly).toBeCloseTo(5200, 5);
+    expect(r.allocation.amounts.emergency).toBeCloseTo(2600, 5);
+    expect(r.allocation.amounts.debt).toBeCloseTo(1300, 5);
+    expect(r.allocation.amounts.goals).toBeCloseTo(1300, 5);
+  });
+
+  it('shares out money already left over, even with no ideas in the plan', () => {
+    const s = {
+      ...base({ profile: 'single', values: { income: 5000, rent: 1200, groceries: 300 } }),
+      goals: [{ id: 'g', name: 'Car', target: 6000, saved: 0 }],
+      allocation: { preset: 'even', emergency: 34, debt: 33, goals: 33 }
+    };
+    const r = computeBudget(s);
+    expect(r.savings).toBe(0);
+    expect(r.allocation.monthly).toBeCloseTo(r.payday.toSave, 8);
+    expect(r.allocation.amounts.goals).toBeGreaterThan(0);
+  });
+
+  it('shares out nothing while bills cost more than income', () => {
+    const s = {
+      ...base({ profile: 'single', values: { income: 2000, rent: 1500, dining: 900, groceries: 400 } }),
+      goals: [{ id: 'g', name: 'Car', target: 6000, saved: 0 }]
+    };
+    const r = computeBudget(s);
+    expect(r.savings).toBeGreaterThan(0);
+    expect(r.payday.short).toBeGreaterThan(0);
+    expect(r.allocation.monthly).toBe(0);
+    expect(r.allocation.amounts).toEqual({ emergency: 0, debt: 0, goals: 0 });
   });
 });
 

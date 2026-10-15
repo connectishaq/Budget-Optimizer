@@ -48,7 +48,6 @@ function initTheme() {
     btn.setAttribute('aria-pressed', String(dark));
     btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     meta?.setAttribute('content', dark ? '#020617' : '#0f172a');
-    window.dispatchEvent(new Event('themechange'));
   };
   apply(document.documentElement.classList.contains('dark'));
   btn.addEventListener('click', () => {
@@ -106,6 +105,15 @@ function boot() {
   // JS now controls which view is shown
   document.documentElement.classList.remove('returning');
   initAds();
+  registerOffline();
+}
+
+/** Lets the page open with no connection after the first visit (production only). */
+function registerOffline() {
+  if (!('serviceWorker' in navigator) || !import.meta.env.PROD) return;
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => { /* offline support is optional */ });
+  }, { once: true });
 }
 
 boot();

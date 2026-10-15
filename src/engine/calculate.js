@@ -453,8 +453,13 @@ export function computeBudget(state, fmt = plainFmt) {
     debt: totals.debts.some((d) => d.balance > 0),
     goals: goals.some((g) => num(g.target) > num(g.saved))
   };
+  // The money split between the three timelines is what's left after every
+  // bill and the plan's changes: the same amount the payday plan moves to
+  // savings. Over budget means nothing to split. Without income we can't tell,
+  // so only the plan's savings count (as in the growth chart).
+  const monthly = totals.income > 0 ? Math.max(0, totals.income - optimized) : savings;
   const eff = effectiveAllocation(state.allocation || ALLOCATION_PRESETS.even, needed);
-  const allocation = { ...eff, needed, amounts: splitSavings(savings, eff.shares) };
+  const allocation = { ...eff, needed, monthly, amounts: splitSavings(monthly, eff.shares) };
 
   const payday = paydayPlan(totals, plan, optimized);
 

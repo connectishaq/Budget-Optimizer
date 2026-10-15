@@ -10,13 +10,15 @@
   <meta name="color-scheme" content="light dark">
   <!--SITE_URL_TAGS-->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Household Budget Optimizer">
   <meta property="og:title" content="Household Budget Optimizer & Savings Simulator">
   <meta property="og:description" content="Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.">
   <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Household Budget Optimizer & Savings Simulator">
   <meta name="twitter:description" content="Find out where your money goes and how much you could save. A 100% private, in-browser tool.">
 
@@ -32,7 +34,7 @@
       // Returning visitors with saved numbers see results first; decided before paint so nothing jumps
       try {
         var st = JSON.parse(localStorage.getItem('hbo:v3') || 'null'), v = (st && st.values) || {};
-        if (st && (Object.keys(v).some(function (k) { return v[k] > 0; }) || (st.debts || []).length || (st.subscriptions || []).length)) d.classList.add('returning');
+        if (st && (Object.keys(v).some(function (k) { return v[k] > 0; }) || (st.debts || []).length || (st.subscriptions || []).length || (st.yearly || []).length)) d.classList.add('returning');
       } catch (e) {}
     })();
   </script>
@@ -63,7 +65,7 @@
       { "@type": "Question", "name": "How is the budget health score calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The score from 0 to 100 adds up five parts: how much you save each month (30 points), housing cost (20), debt (15), emergency savings (20) and spending on nice-to-haves (15). Each part has a sentence explaining your result and what to aim for." } },
       { "@type": "Question", "name": "Which growth rate should I pick for my savings?", "acceptedAnswer": { "@type": "Answer", "text": "A safe savings account has recently paid around 4% a year. Long-term investing in a broad mix of shares has averaged around 8% a year over long periods, but it goes up and down. Growth is never guaranteed, so try a few options and switch on \"Show in today's money\" to allow for rising prices." } },
       { "@type": "Question", "name": "How big should my emergency fund be?", "acceptedAnswer": { "@type": "Answer", "text": "A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level." } },
-      { "@type": "Question", "name": "Can I use rupees and other currencies?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani rupees use typical amounts for Pakistani households, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures." } }
+      { "@type": "Question", "name": "Can I use rupees and other currencies?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures." } }
     ]
   }
   </script>
@@ -488,9 +490,9 @@
                     <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-emerald-700 dark:border-emerald-400"></span><span class="muted">If you also save the extra money:</span> <strong id="fvAlt" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
                     <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-dashed border-slate-500"></span><span class="muted">If you keep going as you are:</span> <strong id="fvCur" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
                   </ul>
-                  <div id="chartBox" class="relative mt-4 h-64 sm:h-72">
-                    <div id="chartSkeleton" class="skeleton absolute inset-0 grid place-items-center p-6 text-center text-sm muted" aria-hidden="true"></div>
-                    <canvas id="growthChart" hidden role="img" aria-label="Savings growth chart"></canvas>
+                  <div id="chartBox" class="relative mt-4 h-64 touch-pan-y select-none sm:h-72">
+                    <svg id="growthChart" class="block h-full w-full" role="img" aria-label="Savings growth chart"></svg>
+                    <div id="chartTip" hidden class="pointer-events-none absolute top-2 z-10 w-max max-w-[16rem] rounded-xl bg-slate-900 px-3 py-2.5 text-xs text-slate-50 shadow-lg ring-1 ring-white/10" aria-hidden="true"></div>
                   </div>
                   <p id="chartMode" class="mt-2 text-xs muted"></p>
                 </div>
@@ -579,6 +581,7 @@
                           <span class="flex items-center gap-1.5"><span class="inline-block w-4 border-t-2 border-emerald-700"></span>What you could spend</span>
                         </div>
                         <div id="trendSvg" class="mt-2"></div>
+                        <p id="trendNote" hidden class="mt-1 text-xs muted"></p>
                       </div>
                       <div class="mt-2 overflow-x-auto">
                         <table class="w-full text-sm">
@@ -771,7 +774,7 @@
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
               <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Can I use rupees and other currencies?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani rupees use typical amounts for Pakistani households, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures.</p>
+              <p class="pb-4">Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures.</p>
             </details>
           </div>
         </section>

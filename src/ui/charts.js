@@ -1,32 +1,17 @@
-// Savings growth: controls, plain-language summary and the lazily loaded line
-// chart. The text summary renders immediately; Chart.js loads only once the
-// chart area approaches the viewport (a skeleton holds its space until then).
+// Savings growth: controls, plain-language summary and the line chart. The
+// chart is plain SVG drawn at the box's real pixel size, so text stays crisp,
+// colours follow the theme through CSS classes, and no chart library loads.
 
 import { setState, RETURN_OPTIONS } from '../state.js';
 import { projectGrowth } from '../engine/calculate.js';
 import { moneyShort, moneyNice } from '../utils/format.js';
-import { $, setText, setHTML, setAttr, isLite, motionOK } from './dom.js';
+import { $, esc, setText, setHTML, setAttr } from './dom.js';
 
-const LINE_ALT = 'If you also save the extra money';
-const LINE_CUR = 'If you keep going as you are';
-
-let chart = null;
 let lastData = null;
+let geom = null; // pixel layout of the last drawing, reused while hovering
+let hoverIndex = null;
 let currency = 'USD';
 const nice = (n) => moneyNice(n, currency, { friendly: true });
-
-const palette = () => {
-  const dark = document.documentElement.classList.contains('dark');
-  return {
-    alt: dark ? '#34d399' : '#047857',
-    cur: dark ? '#94a3b8' : '#64748b',
-    altFill: dark ? 'rgba(52,211,153,0.10)' : 'rgba(4,120,87,0.07)',
-    grid: dark ? '#1e293b' : '#f1f5f9',
-    axis: dark ? '#94a3b8' : '#64748b',
-    ink: dark ? '#f8fafc' : '#0f172a',
-    halo: dark ? '#0f172a' : '#ffffff'
-  };
-};
 
 /** Projection series + summary numbers (pure apart from reading state). */
 export function projectionData(state, result) {
@@ -41,132 +26,130 @@ export function projectionData(state, result) {
   return { years, rate, inflationOn, inflation, curMonthly, altMonthly, cur, alt, showReal: inflationOn };
 }
 
-// Vertical hover guide line
-const crosshair = {
-  id: 'crosshair',
-  afterDatasetsDraw(c) {
-    const active = c.tooltip?.getActiveElements();
-    if (!active?.length) return;
-    const x = active[0].element.x;
-    const { top, bottom } = c.chartArea;
-    const ctx = c.ctx;
-    ctx.save();
-    ctx.strokeStyle = palette().axis;
-    ctx.globalAlpha = 0.5;
-    ctx.setLineDash([3, 3]);
-    ctx.beginPath(); ctx.moveTo(x, top); ctx.lineTo(x, bottom); ctx.stroke();
-    ctx.restore();
-  }
-};
+// ---------------- SVG line chart ----------------
+const PAD = { r: 12, t: 20, b: 26 };
 
-// Direct end-of-line value labels (ink colour, haloed for legibility)
-const endLabels = {
-  id: 'endLabels',
-  afterDatasetsDraw(c) {
-    const p = palette();
-    const pts = c.data.datasets.map((ds, i) => {
-      const el = c.getDatasetMeta(i).data.at(-1);
-      return el ? { x: el.x, y: el.y, v: ds.data.at(-1) } : null;
-    });
-    if (!pts[0] || !pts[1]) return;
-    let yAlt = pts[0].y - 14;
-    let yCur = pts[1].y + 18;
-    if (yCur - yAlt < 20) { yAlt -= 6; yCur += 6; }
-    const { ctx, chartArea } = c;
-    ctx.save();
-    ctx.font = '700 12px system-ui, sans-serif';
-    ctx.textAlign = 'right';
-    ctx.textBaseline = 'middle';
-    ctx.lineJoin = 'round';
-    for (const [pt, y] of [[pts[0], yAlt], [pts[1], yCur]]) {
-      const ty = Math.max(chartArea.top + 8, Math.min(chartArea.bottom - 8, y));
-      const label = moneyShort(pt.v, currency);
-      ctx.lineWidth = 4; ctx.strokeStyle = p.halo; ctx.strokeText(label, pt.x - 10, ty);
-      ctx.fillStyle = p.ink; ctx.fillText(label, pt.x - 10, ty);
-    }
-    ctx.restore();
-  }
-};
-
-function chartConfig() {
-  const p = palette();
-  return {
-    type: 'line',
-    data: {
-      labels: [],
-      datasets: [
-        { label: LINE_ALT, data: [], borderColor: p.alt, backgroundColor: p.altFill, fill: true, borderWidth: 2.5, tension: 0.3,
-          pointRadius: 0, pointHitRadius: 18, pointHoverRadius: 5, pointHoverBackgroundColor: p.alt, pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2 },
-        { label: LINE_CUR, data: [], borderColor: p.cur, borderDash: [6, 4], fill: false, borderWidth: 2, tension: 0.3,
-          pointRadius: 0, pointHitRadius: 18, pointHoverRadius: 5, pointHoverBackgroundColor: p.cur, pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2 }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: isLite() || !motionOK() ? false : { duration: 400 },
-      interaction: { mode: 'index', intersect: false },
-      layout: { padding: { top: 18, right: 8 } },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#0f172a', padding: 12, cornerRadius: 10, usePointStyle: true, boxPadding: 4,
-          titleColor: '#e2e8f0', bodyColor: '#f8fafc', footerColor: '#6ee7b7',
-          callbacks: {
-            title: (items) => (items[0].dataIndex === 0 ? 'Today' : `After ${items[0].dataIndex} year${items[0].dataIndex > 1 ? 's' : ''}`),
-            label: (ctx) => ` ${ctx.datasetIndex === 0 ? 'Saving the extra' : 'As you are'}: ${nice(ctx.parsed.y)}`,
-            footer: (items) => {
-              const a = items.find((i) => i.datasetIndex === 0);
-              const b = items.find((i) => i.datasetIndex === 1);
-              return a && b ? `You'd have ${nice(a.parsed.y - b.parsed.y)} more` : '';
-            }
-          }
-        }
-      },
-      scales: {
-        x: { grid: { display: false }, border: { color: p.grid }, ticks: { color: p.axis, maxRotation: 0, autoSkip: true, maxTicksLimit: 8 } },
-        y: { beginAtZero: true, border: { display: false }, grid: { color: p.grid },
-          ticks: { color: p.axis, maxTicksLimit: 6, callback: (v) => moneyShort(v, currency) } }
-      }
-    },
-    plugins: [crosshair, endLabels]
-  };
+/** A round tick step (1, 2, 2.5 or 5 x 10^n) giving about `count` gridlines. */
+export function niceStep(max, count = 5) {
+  if (!(max > 0)) return 1;
+  const raw = max / count;
+  const mag = 10 ** Math.floor(Math.log10(raw));
+  const r = raw / mag;
+  return (r <= 1 ? 1 : r <= 2 ? 2 : r <= 2.5 ? 2.5 : r <= 5 ? 5 : 10) * mag;
 }
 
-function restyle() {
-  if (!chart) return;
-  const p = palette();
-  const [a, b] = chart.data.datasets;
-  Object.assign(a, { borderColor: p.alt, backgroundColor: p.altFill, pointHoverBackgroundColor: p.alt });
-  Object.assign(b, { borderColor: p.cur, pointHoverBackgroundColor: p.cur });
-  chart.options.scales.x.ticks.color = p.axis;
-  chart.options.scales.y.ticks.color = p.axis;
-  chart.options.scales.y.grid.color = p.grid;
-  chart.options.scales.x.border.color = p.grid;
-  chart.update('none');
+/** Pixel geometry for one box size, shared by drawing and hovering. */
+function layout(d, w, h) {
+  const pick = (s) => (d.showReal ? s.real : s.nominal);
+  const alt = pick(d.alt);
+  const cur = pick(d.cur);
+  const n = alt.length;
+  const max = Math.max(...alt, ...cur);
+  const step = niceStep(max);
+  const top = max > 0 ? Math.ceil(max / step) * step : 1;
+  const ticks = [];
+  for (let v = 0; v <= top + step / 2; v += step) ticks.push(v);
+  const tickText = ticks.map((v) => moneyShort(v, currency));
+  // Room for the widest axis label (about 6.5px a character at 11px)
+  const l = Math.min(96, 10 + Math.max(...tickText.map((t) => t.length)) * 6.5);
+  const x = (i) => l + (i * (w - l - PAD.r)) / Math.max(1, n - 1);
+  const y = (v) => PAD.t + (1 - v / top) * (h - PAD.t - PAD.b);
+  return { alt, cur, n, ticks, tickText, l, x, y, w, h };
+}
+
+const linePath = (vals, g) => vals.map((v, i) => `${i ? 'L' : 'M'}${g.x(i).toFixed(1)},${g.y(v).toFixed(1)}`).join('');
+
+function chartSvg(g) {
+  const { alt, cur, n, w, h } = g;
+  const bottom = h - PAD.b;
+  const grid = g.ticks.map((v, i) => `
+    <line x1="${g.l}" x2="${w - PAD.r}" y1="${g.y(v)}" y2="${g.y(v)}" class="${i ? 'stroke-slate-100 dark:stroke-slate-800' : 'stroke-slate-200 dark:stroke-slate-700'}"/>
+    <text x="${g.l - 8}" y="${g.y(v)}" text-anchor="end" dominant-baseline="middle" class="fill-slate-500 dark:fill-slate-400">${esc(g.tickText[i])}</text>`).join('');
+  // About one x label per 70px; the last year always shows, and a regular
+  // label too close to it is skipped
+  const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor((w - g.l) / 70))));
+  const showX = (i) => i === n - 1 || (i % every === 0 && n - 1 - i >= every / 2);
+  const xLabels = alt.map((_, i) => (showX(i)
+    ? `<text x="${g.x(i)}" y="${bottom + 17}" text-anchor="${i === n - 1 ? 'end' : i === 0 ? 'start' : 'middle'}" class="fill-slate-500 dark:fill-slate-400">${i === 0 ? 'Now' : `Year ${i}`}</text>`
+    : '')).join('');
+  const area = `${linePath(alt, g)}L${g.x(n - 1).toFixed(1)},${bottom}L${g.x(0).toFixed(1)},${bottom}Z`;
+
+  // Values at the end of each line, nudged apart when they'd overlap
+  let yAlt = g.y(alt.at(-1)) - 14;
+  let yCur = g.y(cur.at(-1)) + 16;
+  if (yCur - yAlt < 18) { yAlt -= 6; yCur += 6; }
+  const clampY = (v) => Math.max(PAD.t - 6, Math.min(bottom - 8, v));
+  const endLabel = (v, yy) => `<text x="${g.x(n - 1) - 8}" y="${clampY(yy)}" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke-width="4" stroke-linejoin="round" class="fill-slate-900 stroke-white font-bold dark:fill-slate-50 dark:stroke-slate-900" style="font-size:12px">${esc(moneyShort(v, currency))}</text>`;
+
+  return `<g style="font-size:11px">${grid}${xLabels}</g>
+    <path d="${area}" class="fill-emerald-700/[0.07] dark:fill-emerald-400/10"/>
+    <path d="${linePath(cur, g)}" fill="none" stroke-width="2" stroke-dasharray="6 4" stroke-linejoin="round" class="stroke-slate-500 dark:stroke-slate-400"/>
+    <path d="${linePath(alt, g)}" fill="none" stroke-width="2.5" stroke-linejoin="round" class="stroke-emerald-700 dark:stroke-emerald-400"/>
+    ${endLabel(alt.at(-1), yAlt)}${endLabel(cur.at(-1), yCur)}
+    <g id="chartHover"></g>`;
+}
+
+/** Guide line, dots and tooltip for the year under the pointer. */
+function drawHover(g) {
+  const layer = $('chartHover');
+  const tip = $('chartTip');
+  if (!layer) return;
+  if (hoverIndex == null || hoverIndex >= g.n) {
+    layer.innerHTML = '';
+    tip.hidden = true;
+    return;
+  }
+  const i = hoverIndex;
+  const x = g.x(i);
+  const dot = (v, cls) => `<circle cx="${x}" cy="${g.y(v)}" r="5" stroke-width="2" class="stroke-white dark:stroke-slate-900 ${cls}"/>`;
+  layer.innerHTML = `<line x1="${x}" x2="${x}" y1="${PAD.t}" y2="${g.h - PAD.b}" stroke-dasharray="3 3" class="stroke-slate-400 dark:stroke-slate-500"/>
+    ${dot(g.cur[i], 'fill-slate-500 dark:fill-slate-400')}${dot(g.alt[i], 'fill-emerald-700 dark:fill-emerald-400')}`;
+
+  const diff = g.alt[i] - g.cur[i];
+  tip.innerHTML = `<p class="mb-1.5 font-semibold text-slate-300">${i === 0 ? 'Today' : `After ${i} year${i > 1 ? 's' : ''}`}</p>
+    <p class="flex items-center gap-2"><span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>Saving the extra: <strong class="tabular-nums">${esc(nice(g.alt[i]))}</strong></p>
+    <p class="mt-0.5 flex items-center gap-2"><span class="inline-block h-2.5 w-2.5 rounded-full bg-slate-400"></span>As you are: <strong class="tabular-nums">${esc(nice(g.cur[i]))}</strong></p>
+    ${diff > 0.5 ? `<p class="mt-1.5 font-semibold text-emerald-300">You’d have ${esc(nice(diff))} more</p>` : ''}`;
+  tip.hidden = false;
+  // Keep the tooltip inside the box, on whichever side of the line has room
+  const tw = tip.offsetWidth;
+  tip.style.left = `${x + 14 + tw <= g.w ? x + 14 : Math.max(0, x - 14 - tw)}px`;
 }
 
 function draw() {
-  if (!chart || !lastData) return;
-  const d = lastData;
-  const series = (s) => (d.showReal ? s.real : s.nominal);
-  chart.data.labels = d.cur.nominal.map((_, i) => (i === 0 ? 'Now' : `Year ${i}`));
-  chart.data.datasets[0].data = series(d.alt);
-  chart.data.datasets[1].data = series(d.cur);
-  chart.update();
+  const box = $('chartBox');
+  if (!lastData || !box) return;
+  const w = box.clientWidth;
+  const h = box.clientHeight;
+  if (!w || !h) return;
+  geom = layout(lastData, w, h);
+  const svg = $('growthChart');
+  setAttr(svg, 'viewBox', `0 0 ${w} ${h}`);
+  setHTML(svg, chartSvg(geom));
+  drawHover(geom);
 }
 
-async function loadChart() {
-  if (chart) return;
-  try {
-    const { Chart } = await import('./chart-lib.js');
-    chart = new Chart($('growthChart'), chartConfig());
-    $('chartSkeleton').hidden = true;
-    $('growthChart').hidden = false;
-    draw();
-  } catch {
-    setText($('chartSkeleton'), 'The chart could not load. The summary below has the same numbers.');
-  }
+function initChartHover() {
+  const box = $('chartBox');
+  const pick = (e) => {
+    if (!geom) return;
+    const px = e.clientX - box.getBoundingClientRect().left;
+    const span = (geom.w - geom.l - PAD.r) / Math.max(1, geom.n - 1);
+    const i = Math.max(0, Math.min(geom.n - 1, Math.round((px - geom.l) / span)));
+    if (i !== hoverIndex) {
+      hoverIndex = i;
+      drawHover(geom);
+    }
+  };
+  box.addEventListener('pointermove', pick);
+  box.addEventListener('pointerdown', pick);
+  box.addEventListener('pointerleave', (e) => {
+    if (e.pointerType === 'touch') return; // a tap keeps its tooltip
+    hoverIndex = null;
+    if (geom) drawHover(geom);
+  });
+  if ('ResizeObserver' in window) new ResizeObserver(draw).observe(box);
+  else window.addEventListener('resize', draw);
 }
 
 export function renderProjection(state, result, view) {
@@ -210,7 +193,7 @@ export function renderProjection(state, result, view) {
   setText($('projectionSummary'), summary);
   setAttr($('growthChart'), 'aria-label', `Line chart. ${summary}`);
 
-  // Accessible year-by-year table (also used when the chart can't load)
+  // Accessible year-by-year table
   setHTML($('projectionTable'), pick(d.cur).map((c, i) => i === 0 ? '' : `<tr><th scope="row" class="px-3 py-1.5 text-left font-medium">Year ${i}</th><td class="px-3 py-1.5 text-right">${view.rawS(c)}</td><td class="px-3 py-1.5 text-right">${view.rawS(pick(d.alt)[i])}</td></tr>`).join(''));
 
   draw();
@@ -225,19 +208,5 @@ export function initCharts() {
     const v = Math.min(20, Math.max(0, Number(e.target.value) || 0));
     setState((s) => { s.projection.inflation = v; }, { reason: 'input' });
   });
-
-  window.addEventListener('themechange', restyle);
-
-  const box = $('chartBox');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) {
-        io.disconnect();
-        loadChart();
-      }
-    }, { rootMargin: '300px 0px' });
-    io.observe(box);
-  } else {
-    loadChart();
-  }
+  initChartHover();
 }

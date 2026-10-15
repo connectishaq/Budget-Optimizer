@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@source not "../legacy";
 
 /* Class-based dark mode so the toggle can override the system preference */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -12,8 +11,6 @@
  */
 @theme {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --animate-shimmer: shimmer 1.4s linear infinite;
-  @keyframes shimmer { from { background-position: -400px 0; } to { background-position: 400px 0; } }
 }
 
 @layer base {
@@ -117,8 +114,6 @@
   details.row > summary::-webkit-details-marker { display: none; }
   details.row[open] > summary .chev { transform: rotate(180deg); }
 
-  .skeleton { @apply rounded-lg bg-slate-100 dark:bg-slate-900; background-image: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent); background-size: 400px 100%; background-repeat: no-repeat; animation: var(--animate-shimmer); }
-  .dark .skeleton { background-image: linear-gradient(90deg, transparent, rgba(255,255,255,.05), transparent); }
 
   .ad-slot { @apply hidden; }
   .ads-on .ad-slot, .ads-preview .ad-slot { @apply flex items-center justify-center overflow-hidden rounded-lg; }
@@ -176,7 +171,6 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
 
 /* ---------- Lite mode (low-end devices / Save-Data) ---------- */
 .lite *, .lite *::before, .lite *::after { box-shadow: none !important; backdrop-filter: none !important; transition-duration: 0s !important; }
-.lite .skeleton { animation: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

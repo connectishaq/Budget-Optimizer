@@ -22,8 +22,17 @@ function siteConfig(env) {
       isBuild = config.command === 'build' && !process.env.VITEST;
     },
     transformIndexHtml(html) {
+      // Social networks need an absolute image URL, so the share image needs the domain too
       const urlTags = siteUrl
-        ? `<link rel="canonical" href="${siteUrl}/">\n    <meta property="og:url" content="${siteUrl}/">`
+        ? [
+          `<link rel="canonical" href="${siteUrl}/">`,
+          `<meta property="og:url" content="${siteUrl}/">`,
+          `<meta property="og:image" content="${siteUrl}/og-image.png">`,
+          '<meta property="og:image:width" content="1200">',
+          '<meta property="og:image:height" content="630">',
+          '<meta property="og:image:alt" content="Household Budget Optimizer: an example month showing income, bills and money to save">',
+          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`
+        ].join('\n  ')
         : '';
       const contact = contactEmail
         ? `<a href="mailto:${contactEmail}" class="font-semibold text-indigo-300 underline-offset-2 hover:underline">${contactEmail}</a>`
@@ -49,7 +58,7 @@ function siteConfig(env) {
         // Without a domain a sitemap would be invalid, so drop it and the robots.txt reference.
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/^Sitemap:.*$/m, '').trimEnd() + '\n');
         fs.rmSync(sitemap, { force: true });
-        console.warn('\n⚠  SITE_URL is not set in .env — canonical tag, og:url and sitemap.xml were skipped.\n');
+        console.warn('\n⚠  SITE_URL is not set in .env — canonical tag, og:url, the share image and sitemap.xml were skipped.\n');
       }
       if (!adsClient) console.warn('ℹ  VITE_ADSENSE_CLIENT is not set — ad slots are hidden in this build.');
       if (!contactEmail) console.warn('ℹ  VITE_CONTACT_EMAIL is not set — the Contact section shows a generic line.');

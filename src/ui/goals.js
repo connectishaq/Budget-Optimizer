@@ -14,7 +14,7 @@ const BUCKET_WHY = { emergency: 'your emergency fund is already at 6 months', de
 // ---------------- Savings split ----------------
 function renderAllocation(state, result, view) {
   const a = state.allocation;
-  const { shares, amounts, inactive, unassigned } = result.allocation;
+  const { shares, amounts, inactive, unassigned, monthly } = result.allocation;
   document.querySelectorAll('[data-preset]').forEach((b) => {
     const on = a.preset === b.dataset.preset;
     setAttr(b, 'aria-pressed', String(on));
@@ -26,13 +26,14 @@ function renderAllocation(state, result, view) {
     slider.style.setProperty('--fill', `${a[k]}%`);
     setAttr(slider, 'aria-valuetext', `${a[k]}%, ${view.rawS(amounts[k])} a month`);
     setText($(`alloc-${k}-pct`), `${a[k]}%`);
-    setText($(`alloc-${k}-amt`), result.savings > 0 ? `${view.rawS(amounts[k])}/month` : '—');
+    setText($(`alloc-${k}-amt`), monthly > 0 ? `${view.rawS(amounts[k])}/month` : '—');
   }
   let note;
-  if (!(result.savings > 0)) note = 'Add ideas to your plan first. Then you can choose where the money goes.';
+  if (result.payday?.short > 0) note = `Your bills cost ${view.rawS(result.payday.short)} a month more than you earn, so there’s nothing to share out yet. Add more ideas to your plan to close the gap.`;
+  else if (!(monthly > 0)) note = 'Add your income and some ideas to your plan first. Then you can choose where the money goes.';
   else if (unassigned) note = 'You have nothing to save towards yet. Add a goal, a loan or an emergency fund target.';
   else if (inactive.length) note = `Because ${inactive.map((k) => BUCKET_WHY[k]).join(' and ')}, that share goes to your other priorities.`;
-  else note = `Your plan frees up ${view.rawS(result.savings)} a month. The three amounts above add up to that.`;
+  else note = `After your bills${result.savings > 0 ? ' and your plan' : ''}, you have ${view.rawS(monthly)} a month left to save. The three amounts above add up to that.`;
   setText($('allocNote'), note);
   // Hide amount when a bucket is inactive to avoid confusion
   for (const k of BUCKETS) $(`alloc-${k}-amt`).classList.toggle('line-through', inactive.includes(k) && shares[k] === 0);
@@ -153,9 +154,10 @@ function renderDebt(state, result, view) {
 function renderRowSummaries(state, result, view) {
   const { amounts } = result.allocation;
   const preset = ALLOCATION_PRESETS[state.allocation.preset];
-  setText($('sumAlloc'), result.savings > 0
+  setText($('sumAlloc'), result.allocation.monthly > 0
     ? `${preset ? preset.label : 'Your own split'}: ${view.rawS(amounts.emergency)} emergency · ${view.rawS(amounts.debt)} debt · ${view.rawS(amounts.goals)} goals a month`
-    : 'Switch on some ideas first, then choose where the money goes.');
+    : result.payday?.short > 0 ? 'Your bills cost more than you earn, so nothing is left to share out yet.'
+      : 'Add your income and some ideas first, then choose where the money goes.');
 
   const e = emergencyFundStatus(result.totals.needs, result.totals.values.emergencyFund, amounts.emergency);
   setText($('sumEmergency'), !(e.essentials > 0) ? 'Add your bills to check this.'

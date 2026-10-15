@@ -63,7 +63,7 @@ export const HELP = {
   years: 'How long you keep saving. More years give your money more time to grow.',
   rate: 'How much your savings grow each year on average. Safe accounts grow slowly; investing can grow faster but goes up and down.',
   inflation: 'Prices rise over time, so the same money buys less in future. This shows future amounts in today’s money.',
-  allocation: 'Your plan frees up money each month. Choose how to share it between your emergency fund, your debt and your goals.',
+  allocation: 'This is the money left each month after your bills and your plan. Choose how to share it between your emergency fund, your debt and your goals.',
   goals: 'Things you’re saving for. We work out when you’ll reach each one using the share of savings you give to goals.',
   emergency: 'Money kept aside for surprises like losing your job or a car repair. Aim for 3 to 6 months of essential bills.',
   debtFree: 'When your loans would be fully paid off: now, and if you put your debt share of savings towards them.',

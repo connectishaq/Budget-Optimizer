@@ -151,10 +151,74 @@ const PKR = {
   }
 };
 
-export const BENCHMARKS = { USD, PKR };
+// Indian households in a metro or large city (2025–26 price levels).
+// Electricity is cheap until the AC runs; cooking gas is LPG; household help
+// and money sent home to family are common; credit cards charge about 3.5%
+// a month (around 42% a year); car insurance is paid yearly, shown monthly.
+const INR = {
+  approximate: false,
+  costs: { ledKit: 1500, smartThermostat: 8000, tuneup: 800 },
+  profiles: {
+    single: {
+      ranges: {
+        income: [50000, 90000], rent: [15000, 30000], homeIns: [0, 500],
+        electricity: [1000, 2500], waterGas: [800, 1500], internet: [700, 1500],
+        fuel: [2000, 4000], transit: [1500, 4000], carIns: [0, 1500], carLoan: [0, 12000],
+        school: [0, 0], groceries: [6000, 10000], dining: [3000, 7000], misc: [3000, 6000],
+        medical: [500, 2000], homeHelp: [0, 3000], familySupport: [0, 15000], giving: [0, 2000], other: [0, 4000]
+      },
+      thresholds: { utilities: 4000, fuel: 4000, transit: 4000, internet: 1500, insurance: 2000, carLoan: 12000, school: 10000, diningFloor: 1500, subsActive: 1200 },
+      categoryShare: { housing: 0.30, utilities: 0.06, transport: 0.10, family: 0.30, debt: 0.10, subscriptions: 0.02, care: 0.10, yearly: 0.05 }
+    },
+    suburban: {
+      ranges: {
+        income: [120000, 250000], rent: [25000, 50000], homeIns: [0, 1000],
+        electricity: [2500, 6000], waterGas: [1200, 2500], internet: [1200, 2500],
+        fuel: [5000, 9000], transit: [0, 3000], carIns: [1500, 3500], carLoan: [0, 20000],
+        school: [10000, 30000], groceries: [15000, 25000], dining: [4000, 10000], misc: [5000, 10000],
+        medical: [2000, 6000], homeHelp: [4000, 12000], familySupport: [0, 20000], giving: [0, 5000], other: [0, 8000]
+      },
+      thresholds: { utilities: 8500, fuel: 9000, transit: 3000, internet: 2500, insurance: 3500, carLoan: 20000, school: 30000, diningFloor: 2500, subsActive: 1500 },
+      categoryShare: { housing: 0.25, utilities: 0.06, transport: 0.12, family: 0.38, debt: 0.10, subscriptions: 0.02, care: 0.12, yearly: 0.06 }
+    },
+    youngpro: {
+      ranges: {
+        income: [80000, 160000], rent: [20000, 40000], homeIns: [0, 500],
+        electricity: [1500, 3500], waterGas: [800, 1500], internet: [1000, 2000],
+        fuel: [3000, 6000], transit: [1500, 4000], carIns: [1000, 2500], carLoan: [0, 15000],
+        school: [0, 5000], groceries: [7000, 12000], dining: [6000, 15000], misc: [4000, 8000],
+        medical: [800, 3000], homeHelp: [0, 5000], familySupport: [0, 20000], giving: [0, 3000], other: [0, 6000]
+      },
+      thresholds: { utilities: 5000, fuel: 6000, transit: 4000, internet: 2000, insurance: 2500, carLoan: 15000, school: 5000, diningFloor: 2500, subsActive: 1500 },
+      categoryShare: { housing: 0.28, utilities: 0.05, transport: 0.14, family: 0.30, debt: 0.10, subscriptions: 0.02, care: 0.12, yearly: 0.05 }
+    }
+  },
+  samples: {
+    single: {
+      values: { income: 75000, rent: 22000, homeIns: 0, electricity: 1800, waterGas: 1000, internet: 1600, fuel: 3500, transit: 4200, carIns: 0, carLoan: 0, school: 0, groceries: 9000, dining: 7500, misc: 5500, medical: 1000, homeHelp: 2500, familySupport: 8000, giving: 500, emergencyFund: 60000 },
+      debts: [{ type: 'card', name: 'Credit card', balance: 45000, apr: 42, payment: 4000 }],
+      subscriptions: [{ name: 'Netflix', cost: 499, rarely: false }, { name: 'Spotify', cost: 139, rarely: false }, { name: 'Gym membership', cost: 2000, rarely: true }],
+      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 25000 }]
+    },
+    suburban: {
+      values: { income: 190000, rent: 35000, homeIns: 0, electricity: 5500, waterGas: 2000, internet: 1800, fuel: 9500, transit: 1500, carIns: 2500, carLoan: 15000, school: 22000, groceries: 24000, dining: 9000, misc: 9000, medical: 4000, homeHelp: 9000, giving: 2000, emergencyFund: 200000 },
+      debts: [{ type: 'card', name: 'Credit card', balance: 120000, apr: 42, payment: 10000 }],
+      subscriptions: [{ name: 'Netflix', cost: 649, rarely: false }, { name: 'JioHotstar', cost: 299, rarely: true }, { name: 'Amazon Prime', cost: 299, rarely: false }, { name: 'Swiggy One', cost: 149, rarely: true }],
+      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 60000 }, { name: 'School books, uniforms and admission', cost: 40000 }, { name: 'Car service and repairs', cost: 15000 }]
+    },
+    youngpro: {
+      values: { income: 120000, rent: 30000, homeIns: 0, electricity: 2800, waterGas: 1200, internet: 1800, fuel: 6500, transit: 3000, carIns: 1800, carLoan: 12000, school: 0, groceries: 10000, dining: 15000, misc: 7000, medical: 1500, familySupport: 10000, giving: 1000, emergencyFund: 80000 },
+      debts: [{ type: 'card', name: 'Credit card', balance: 80000, apr: 42, payment: 6000 }],
+      subscriptions: [{ name: 'Netflix', cost: 499, rarely: false }, { name: 'Spotify', cost: 139, rarely: false }, { name: 'Google One', cost: 130, rarely: false }, { name: 'Language app', cost: 500, rarely: true }, { name: 'Gym membership', cost: 2500, rarely: true }],
+      yearly: [{ name: 'Travel and trips home', cost: 30000 }]
+    }
+  }
+};
+
+export const BENCHMARKS = { USD, PKR, INR };
 
 /** Rough cost-of-living factors, used ONLY for currencies without their own set. */
-const FALLBACK_SCALE = { CAD: 1.3, AUD: 1.45, GBP: 0.75, EUR: 0.85, AED: 3, INR: 28 };
+const FALLBACK_SCALE = { CAD: 1.3, AUD: 1.45, GBP: 0.75, EUR: 0.85, AED: 3 };
 
 const round = (n) => (n >= 100 ? Math.round(n / 5) * 5 : Math.round(n * 100) / 100);
 const mapObj = (o, fn) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, fn(v)]));
