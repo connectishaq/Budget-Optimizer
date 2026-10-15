@@ -53,11 +53,17 @@ function renderSummary(result, view) {
 
 /** The till receipt: income − bills = left over, + plan savings = left with your plan. */
 function renderReceipt(result, view) {
-  const { income, spend } = result.totals;
+  const { income, spend, pay, extrasMonthly } = result.totals;
   document.querySelectorAll('[data-period-word]').forEach((el) => setText(el, view.periodWord));
   const put = (id, text, exact) => setMoney($(id), text, exact);
   const left = income - spend;
-  put('rcIncome', income > 0 ? view.m(income) : 'not added', income > 0 ? view.full(income * view.f) : '');
+  // With bonuses, show take-home pay and the bonuses' monthly share separately
+  const split = extrasMonthly > 0;
+  setText($('rcIncomeLabel'), split ? 'Take-home pay' : 'Income');
+  const first = split ? pay : income;
+  put('rcIncome', first > 0 ? view.m(first) : split ? view.m(0) : 'not added', first > 0 ? view.full(first * view.f) : '');
+  $('rcExtrasRow').hidden = !split;
+  if (split) put('rcExtras', `+${view.m(extrasMonthly)}`, `+${view.full(extrasMonthly * view.f)}`);
   put('rcBills', `−${view.m(spend)}`, `−${view.full(spend * view.f)}`);
   setText($('rcLeftLabel'), left < 0 && income > 0 ? 'Short by' : 'Left over');
   put('rcLeft', income > 0 ? view.m(Math.abs(left)) : '–', income > 0 ? view.full(Math.abs(left) * view.f) : '');
@@ -85,6 +91,8 @@ function renderBanners(state, result, view) {
   $('incomeBanner').hidden = !(hasData(state) && !(income > 0));
   $('sampleBanner').hidden = !state.ui.sample;
   setText($('sampleProfile'), PROFILES[state.profile].name);
+  // Only the family example fills in everything; point people to it from the others
+  $('sampleTip').hidden = !state.ui.sample || state.profile === 'suburban';
   const empty = !hasData(state);
   $('emptyState').hidden = !empty;
   $('dashboard').hidden = empty;

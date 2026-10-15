@@ -11,7 +11,6 @@
   <!--SITE_URL_TAGS-->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Household Budget Optimizer">
@@ -34,7 +33,7 @@
       // Returning visitors with saved numbers see results first; decided before paint so nothing jumps
       try {
         var st = JSON.parse(localStorage.getItem('hbo:v3') || 'null'), v = (st && st.values) || {};
-        if (st && (Object.keys(v).some(function (k) { return v[k] > 0; }) || (st.debts || []).length || (st.subscriptions || []).length || (st.yearly || []).length)) d.classList.add('returning');
+        if (st && (Object.keys(v).some(function (k) { return v[k] > 0; }) || (st.debts || []).length || (st.subscriptions || []).length || (st.yearly || []).length || (st.extras || []).length)) d.classList.add('returning');
       } catch (e) {}
     })();
   </script>
@@ -136,6 +135,8 @@
     <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
     <symbol id="i-list-check" viewBox="0 0 24 24"><path d="M11 18H3M15 6H3M11 12H3M15 18l2 2 4-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></symbol>
   </svg>
 
@@ -233,8 +234,12 @@
         <div class="panel">
           <div class="flex items-center justify-between gap-2 text-sm">
             <p id="wizStepLabel" class="font-medium text-slate-900 dark:text-white">Step 1 of 4</p>
-            <button type="button" id="wizSkip" class="min-h-11 px-1 link">Skip to results</button>
+            <div class="flex items-center gap-2">
+              <span id="wizStartWrap" class="flex items-center gap-2"><button type="button" id="wizStartOver" class="min-h-11 px-1 link">Start over</button><span class="text-slate-300 dark:text-slate-600" aria-hidden="true">·</span></span>
+              <button type="button" id="wizSkip" class="min-h-11 px-1 link">Skip to results</button>
+            </div>
           </div>
+          <p id="wizEditing" hidden class="mt-2 flex flex-wrap items-center gap-x-3 rounded-lg bg-amber-50 px-3 py-1 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200"><span data-editing-text></span><button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month>Back to this month</button></p>
           <div id="wizProgress" role="progressbar" aria-label="Your progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
             <div id="wizBar" class="h-full rounded-full bg-emerald-700 transition-all duration-300 dark:bg-emerald-500" style="width:25%"></div>
           </div>
@@ -274,6 +279,7 @@
           <li><a href="#spending" class="secnav">Spending</a></li>
           <li><a href="#projection" class="secnav">Growth</a></li>
           <li><a href="#goals" class="secnav">Plan ahead</a></li>
+          <li><a href="#months" class="secnav">History</a></li>
         </ul>
       </nav>
 
@@ -309,7 +315,7 @@
                 </fieldset>
                 <div class="flex gap-1">
                   <button type="button" class="btn btn-ghost px-3" data-action="sample">Example</button>
-                  <button type="button" id="btnReset" class="btn-icon hover:text-rose-700" aria-label="Delete all my numbers"><svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg></button>
+                  <button type="button" id="btnReset" class="btn-icon hover:text-rose-700" aria-label="Start over"><svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg></button>
                 </div>
               </div>
             </div>
@@ -325,6 +331,38 @@
             <div id="sampleBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
               <p>This is an <strong class="font-semibold">example budget</strong> for a <span id="sampleProfile">Suburban Family of 4</span>.</p>
               <button type="button" id="clearSample" class="min-h-11 link">Use my own numbers</button>
+              <p id="sampleTip" hidden class="w-full pb-1 text-xs muted">Tip: the <button type="button" id="sampleFull" class="link">Suburban Family of 4 example</button> shows every kind of income and bill you can add.</p>
+            </div>
+            <div id="editingBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
+              <p data-editing-text></p>
+              <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month>Back to this month</button>
+            </div>
+            <div id="welcomeBanner" hidden class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900 py-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="min-w-0">
+                  <p id="welcomeTitle" class="font-semibold text-slate-900 dark:text-white">Welcome back</p>
+                  <ul id="welcomeList" class="mt-1.5 space-y-1"></ul>
+                </div>
+                <button type="button" id="welcomeClose" class="btn-icon -mr-2 -mt-1.5 h-9 w-9 shrink-0" aria-label="Close the welcome note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+              </div>
+            </div>
+            <div id="copiedBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
+              <p id="copiedText">We’ve copied last month’s numbers. Update anything that changed.</p>
+              <button type="button" id="startBlank" class="min-h-11 link">Start from blank instead</button>
+            </div>
+            <div id="capBanner" hidden role="alert" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
+              <p id="capText"></p>
+              <div class="flex flex-wrap gap-x-4">
+                <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-backup>Download backup</button>
+                <button type="button" id="capConfirm" class="min-h-11 font-medium underline underline-offset-2"></button>
+              </div>
+            </div>
+            <div id="backupBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
+              <p>It’s been over 30 days since your last backup. Your history is only in this browser.</p>
+              <div class="flex flex-wrap gap-x-4">
+                <button type="button" class="min-h-11 link" data-backup>Download backup</button>
+                <button type="button" id="backupLater" class="min-h-11 font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">Not now</button>
+              </div>
             </div>
             <div id="overBanner" hidden role="alert" class="flex gap-3 rounded-xl bg-rose-50 px-4 py-3 text-sm text-rose-900 dark:bg-rose-950/60 dark:text-rose-200">
               <svg class="icon mt-0.5 shrink-0" aria-hidden="true"><use href="#i-alert"></use></svg><p id="overText"></p>
@@ -378,7 +416,8 @@
                   <svg class="icon text-slate-400" aria-hidden="true"><use href="#i-receipt"></use></svg>
                 </div>
                 <dl class="mt-4 space-y-2 font-mono text-[13px] text-slate-700 dark:text-slate-300">
-                  <div class="flex justify-between gap-3"><dt>Income</dt><dd id="rcIncome" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3"><dt id="rcIncomeLabel">Income</dt><dd id="rcIncome" class="tabular-nums">–</dd></div>
+                  <div id="rcExtrasRow" hidden class="flex justify-between gap-3"><dt>+ Bonuses (spread over the year)</dt><dd id="rcExtras" class="tabular-nums">–</dd></div>
                   <div class="flex justify-between gap-3"><dt>Bills you entered</dt><dd id="rcBills" class="tabular-nums">–</dd></div>
                   <div class="rule !my-3"></div>
                   <div class="flex justify-between gap-3"><dt id="rcLeftLabel">Left over</dt><dd id="rcLeft" class="tabular-nums">–</dd></div>
@@ -567,38 +606,12 @@
                   </div>
                 </details>
                 <details class="row" id="history">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-history"></use></svg><span class="min-w-0 flex-1"><span id="historyTitle" class="block text-sm font-medium text-slate-900 dark:text-white">Save, print or share</span><span class="block text-sm muted">Track each month, keep a copy, or make a link.</span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-printer"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="historyTitle">Print or share</span><span id="sumShare" class="block text-sm muted">Print your plan, or make a link to it.</span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="space-y-8 pb-6 sm:pl-8">
                     <div>
-                      <div class="flex flex-wrap items-center justify-between gap-3">
-                        <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Track your progress</h4>
-                        <button type="button" id="btnSnapshot" class="btn btn-secondary">Save this month</button>
-                      </div>
-                      <p id="historyEmpty" class="mt-2 text-sm muted">Nothing saved yet. Save this month, then come back next month to compare.</p>
-                      <div id="historyTrend" hidden class="mt-3">
-                        <div class="flex flex-wrap gap-4 text-xs muted">
-                          <span class="flex items-center gap-1.5"><span class="inline-block w-4 border-t-2 border-dashed border-slate-500"></span>What you spent</span>
-                          <span class="flex items-center gap-1.5"><span class="inline-block w-4 border-t-2 border-emerald-700"></span>What you could spend</span>
-                        </div>
-                        <div id="trendSvg" class="mt-2"></div>
-                        <p id="trendNote" hidden class="mt-1 text-xs muted"></p>
-                      </div>
-                      <div class="mt-2 overflow-x-auto">
-                        <table class="w-full text-sm">
-                          <caption class="sr-only">Saved months</caption>
-                          <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-medium">Month</th><th scope="col" class="px-2 py-2 text-right font-medium">Spent</th><th scope="col" class="px-2 py-2 text-right font-medium">Could save</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell">Score</th><th scope="col" class="px-2 py-2 text-right font-medium">vs last month</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
-                          <tbody id="snapshotRows"></tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Keep a copy or print</h4>
-                      <p class="mt-1 text-sm muted">Your numbers live only in this browser. Download a copy to move them to another device.</p>
-                      <div class="mt-3 flex flex-wrap gap-2">
-                        <button type="button" id="btnExport" class="btn btn-secondary">Download a copy</button>
-                        <label class="btn btn-secondary cursor-pointer focus-within:outline-2 focus-within:outline-emerald-700">Open a copy<input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
-                        <button type="button" id="btnPrint" class="btn btn-secondary">Print or save as PDF</button>
-                      </div>
+                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Print</h4>
+                      <p class="mt-1 text-sm muted">A one-page plan with your numbers and the changes you chose.</p>
+                      <button type="button" id="btnPrint" class="btn btn-secondary mt-3">Print or save as PDF</button>
                     </div>
                     <div>
                       <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Share a link</h4>
@@ -609,6 +622,107 @@
                         <input id="shareUrl" type="text" readonly class="input text-xs">
                         <button type="button" id="btnCopyShare" class="btn btn-primary shrink-0">Copy</button>
                       </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </section>
+
+            <!-- ===== Month by month ===== -->
+            <section id="months" aria-labelledby="monthsTitle" class="panel">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div class="min-w-0">
+                  <h3 id="monthsTitle" class="h-section">Month by month</h3>
+                  <p id="monthsStatus" class="mt-1 text-sm muted" aria-live="polite"></p>
+                </div>
+                <button type="button" id="btnSnapshot" class="btn btn-secondary">Save this month</button>
+              </div>
+              <p class="mt-3 flex items-start gap-2 text-sm muted"><svg class="icon icon-sm mt-0.5 text-slate-400" aria-hidden="true"><use href="#i-lock"></use></svg><span>Your history is saved only in this browser on this device. Use Backup to keep a copy or move it to another device.</span></p>
+              <div id="safariNote" hidden class="mt-3 flex items-start gap-3 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200 py-3">
+                <svg class="icon icon-sm mt-0.5 shrink-0" aria-hidden="true"><use href="#i-info"></use></svg>
+                <p class="min-w-0 flex-1">On iPhone and iPad, Safari may clear website data after some days without visits, and your history with it. Download a backup each month to keep a safe copy.</p>
+                <button type="button" id="safariClose" class="btn-icon -my-2 -mr-2 h-9 w-9 shrink-0" aria-label="Close this note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+              </div>
+
+              <p id="monthsEmpty" class="mt-5 text-sm muted">Nothing saved yet. This month saves by itself as you enter your numbers. Come back next month to see what changed.</p>
+
+              <div id="monthsBody" hidden>
+                <dl id="monthsStats" class="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3"></dl>
+                <div id="trendWrap" class="mt-6">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Over time</h4>
+                    <fieldset>
+                      <legend class="sr-only">What the chart shows</legend>
+                      <div class="seg" id="trendPick">
+                        <label><input type="radio" name="trendKind" value="spend" checked><span>Spending</span></label>
+                        <label><input type="radio" name="trendKind" value="leftOver"><span>Left over</span></label>
+                        <label><input type="radio" name="trendKind" value="score"><span>Score</span></label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div id="trendBox" class="relative mt-3 h-56 touch-pan-y select-none">
+                    <svg id="trendChart" class="block h-full w-full" role="img" aria-label="Chart of your saved months"></svg>
+                    <div id="trendTip" hidden class="pointer-events-none absolute top-2 z-10 w-max max-w-[16rem] rounded-xl bg-slate-900 px-3 py-2.5 text-xs text-slate-50 shadow-lg ring-1 ring-white/10" aria-hidden="true"></div>
+                  </div>
+                  <p id="trendNote" class="mt-2 text-xs muted"></p>
+                </div>
+                <p id="trendOne" hidden class="mt-6 text-sm muted">Your chart appears once two months are saved.</p>
+                <div id="barsWrap" class="mt-8">
+                  <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Each month</h4>
+                    <fieldset>
+                      <legend class="sr-only">What the bars show</legend>
+                      <div class="seg">
+                        <label><input type="radio" name="barKind" value="flow" checked><span>Income vs spending</span></label>
+                        <label><input type="radio" name="barKind" value="cats"><span>By category</span></label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <ul id="barLegend" class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs muted" aria-label="Chart key"></ul>
+                  <div id="barBox" class="relative mt-3 h-60 touch-pan-y select-none">
+                    <svg id="barChart" class="block h-full w-full" role="img" aria-label="Bar chart of your saved months"></svg>
+                    <div id="barTip" hidden class="pointer-events-none absolute top-2 z-10 w-max max-w-[16rem] rounded-xl bg-slate-900 px-3 py-2.5 text-xs text-slate-50 shadow-lg ring-1 ring-white/10" aria-hidden="true"></div>
+                  </div>
+                  <p id="barNote" class="mt-2 text-xs muted"></p>
+                </div>
+              </div>
+
+              <div class="mt-6 divide-y divide-slate-100 border-t border-slate-100 dark:divide-slate-800 dark:border-slate-800">
+                <details class="row" id="alertsRow" data-needs-months>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-trending-up"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">What’s changing</span><span id="sumAlerts" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <ul id="alertList" class="space-y-2 pb-5 sm:pl-8"></ul>
+                </details>
+                <details class="row" id="compareRow" data-needs-months>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-scale"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Compare two months</span><span id="sumCompare" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <div class="pb-5 sm:pl-8">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div><label for="cmpA" class="label">First month</label><select id="cmpA" class="input select mt-1.5"></select></div>
+                      <div><label for="cmpB" class="label">Second month</label><select id="cmpB" class="input select mt-1.5"></select></div>
+                    </div>
+                    <div id="cmpBody" class="mt-4"></div>
+                  </div>
+                </details>
+                <details class="row" id="goalsTimeRow" data-needs-months>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-target"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Goals over time</span><span id="sumGoalsTime" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <ul id="goalsTime" class="space-y-4 pb-5 sm:pl-8"></ul>
+                </details>
+                <details class="row" id="monthsListRow" data-needs-months>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Saved months</span><span id="sumMonthsList" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <div class="overflow-x-auto pb-5 sm:pl-8">
+                    <table class="w-full text-sm">
+                      <caption class="sr-only">Saved months</caption>
+                      <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-medium">Month</th><th scope="col" class="px-2 py-2 text-right font-medium">Spent</th><th scope="col" class="px-2 py-2 text-right font-medium">Left over</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell">Score</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell">vs month before</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                      <tbody id="snapshotRows"></tbody>
+                    </table>
+                  </div>
+                </details>
+                <details class="row" id="backupRow">
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-download"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Backup</span><span id="sumBackup" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <div class="pb-5 sm:pl-8">
+                    <p class="text-sm muted">One file with every saved month and your settings. Keep it somewhere safe, or open it on another device to carry on there.</p>
+                    <div class="mt-3 flex flex-wrap gap-2">
+                      <button type="button" id="btnExport" class="btn btn-secondary" data-backup><svg class="icon icon-sm" aria-hidden="true"><use href="#i-download"></use></svg>Download backup</button>
+                      <label class="btn btn-secondary cursor-pointer focus-within:outline-2 focus-within:outline-emerald-700"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-upload"></use></svg>Open a backup<input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
                     </div>
                   </div>
                 </details>
@@ -876,6 +990,7 @@
       <p id="confirmMessage" class="mt-2 text-sm muted"></p>
       <div class="mt-6 flex flex-wrap justify-end gap-2">
         <button id="confirmCancel" value="cancel" class="btn btn-secondary">Cancel</button>
+        <button id="confirmAlt" value="alt" hidden class="btn btn-secondary"></button>
         <button id="confirmOk" value="ok" class="btn btn-primary">Confirm</button>
       </div>
     </form>

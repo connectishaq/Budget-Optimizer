@@ -21,7 +21,7 @@ export const RETURN_OPTIONS = [
 
 export function defaultState() {
   return {
-    version: 3,
+    version: 4,
     profile: 'suburban',
     currency: 'USD',
     period: 'monthly',
@@ -30,6 +30,8 @@ export function defaultState() {
     subscriptions: [],
     // Costs that come once a year (festivals, school books…), amount per year
     yearly: [],
+    // Money that doesn't come every month (bonuses, overtime…), amount per year
+    extras: [],
     plan: { committed: {}, pct: {}, sort: 'savings' },
     projection: { years: 10, rate: 0.08, inflationOn: false, inflation: 3 },
     goals: [],
@@ -82,6 +84,9 @@ export function normalizeState(raw) {
   }
   if (Array.isArray(raw.yearly)) {
     s.yearly = raw.yearly.slice(0, 30).filter(isObj).map((x) => ({ id: id(x.id, 'y'), name: str(x.name), cost: n(x.cost) }));
+  }
+  if (Array.isArray(raw.extras)) {
+    s.extras = raw.extras.slice(0, 20).filter(isObj).map((x) => ({ id: id(x.id, 'x'), name: str(x.name), amount: n(x.amount) }));
   }
   if (isObj(raw.payday)) {
     const p = raw.payday;
@@ -188,7 +193,8 @@ export function clearStorage() {
 
 /** True when the user has entered anything worth calculating. */
 export function hasData(s = state) {
-  return Object.values(s.values).some((v) => v > 0) || s.debts.length > 0 || s.subscriptions.length > 0 || s.yearly.length > 0;
+  return Object.values(s.values).some((v) => v > 0) || s.debts.length > 0 || s.subscriptions.length > 0
+    || s.yearly.length > 0 || (s.extras || []).length > 0;
 }
 
 // ---------------- Theme ----------------

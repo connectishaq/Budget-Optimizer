@@ -49,14 +49,20 @@ export function cleanInputs(state) {
   }));
   const subs = (state.subscriptions || []).map((s) => ({ ...s, cost: num(s.cost), rarely: !!s.rarely, kind: subKind(s) }));
   const yearly = (state.yearly || []).map((y) => ({ ...y, cost: num(y.cost) }));
-  return { values, debts, subs, yearly };
+  // Bonuses, overtime and other money that doesn't come every month, per year
+  const extras = (state.extras || []).map((x) => ({ ...x, amount: num(x.amount) }));
+  return { values, debts, subs, yearly, extras };
 }
 
 /** Totals, category breakdown and 50/30/20 buckets for the current budget. */
 export function computeTotals(state) {
-  const { values, debts, subs, yearly } = cleanInputs(state);
+  const { values, debts, subs, yearly, extras } = cleanInputs(state);
   const B = benchmarkFor(state.currency, state.profile);
-  const income = values.income;
+  // Income = monthly take-home pay + the year's extras spread evenly over 12 months
+  const pay = values.income;
+  const extrasYearly = sum(extras.map((x) => x.amount));
+  const extrasMonthly = extrasYearly / 12;
+  const income = pay + extrasMonthly;
   // A debt row with no balance left no longer needs a payment.
   const debtPayments = sum(debts.map((d) => (d.balance > 0 ? d.payment : 0)));
   const subsTotal = sum(subs.map((s) => s.cost));
@@ -81,7 +87,8 @@ export function computeTotals(state) {
   const wants = sum(WANTS_FIELDS.map((f) => values[f])) + subsTotal - subsNeeds;
 
   return {
-    values, debts, subs, yearly, income, debtPayments, subsTotal, subsByKind, yearlyTotal, yearlyMonthly,
+    values, debts, subs, yearly, extras, income, pay, extrasYearly, extrasMonthly,
+    debtPayments, subsTotal, subsByKind, yearlyTotal, yearlyMonthly,
     categories, spend, needs, wants, surplus: income - spend
   };
 }
@@ -312,6 +319,8 @@ export function paydayPlan(totals, plan, optimized) {
     yearlyMonthly: totals.yearlyMonthly,
     yearlyTotal: totals.yearlyTotal,
     yearlyNames: totals.yearly.filter((y) => y.cost > 0).map((y) => y.name).filter(Boolean),
+    extrasMonthly: totals.extrasMonthly,
+    extrasNames: totals.extras.filter((x) => x.amount > 0).map((x) => x.name).filter(Boolean),
     toSave: Math.max(0, left),
     short: Math.max(0, -left),
     funMonthly,

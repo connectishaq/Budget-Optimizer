@@ -1,12 +1,12 @@
 // Form rendering, validation and the settings card (profile, currency, period,
-// sample data, reset). Group markup is built once; afterwards only the parts
+// sample data; starting over lives in reset.js). Group markup is built once; afterwards only the parts
 // that change (subtotals, hints, dynamic rows) are touched. The wizard moves
 // these same group elements into its steps, so there is one set of inputs.
 
-import { getState, setState, replaceState, defaultState, clearStorage } from '../state.js';
+import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
 import { CURRENCIES, parseAmount, moneyNice } from '../utils/format.js';
-import { $, icon, esc, setText, setAttr, toast, confirmDialog } from './dom.js';
+import { $, icon, esc, setText, setAttr, toast } from './dom.js';
 import { helpBtn, HELP } from './help.js';
 import { SUB_KINDS, subKind } from '../engine/subscriptions.js';
 
@@ -14,6 +14,7 @@ export const GROUPS = [
   { id: 'income', title: 'Income', icon: 'wallet', fields: [
     { key: 'income', label: 'Monthly take-home pay', icon: 'wallet', help: 'After tax. The amount that reaches your bank account.' }
   ] },
+  { id: 'extras', title: 'Extra income during the year', icon: 'gift', list: 'extras', blurb: 'Bonuses, overtime, side work… Enter the total for the whole year and we’ll spread it over 12 months. Skip if none.' },
   { id: 'housing', title: 'Housing', icon: 'home', blurb: 'Rent or mortgage, and home insurance.', fields: [
     { key: 'rent', label: 'Rent or mortgage', icon: 'key' },
     { key: 'homeIns', label: "Home or renter's insurance", icon: 'umbrella' }
@@ -51,6 +52,9 @@ export const GROUPS = [
 ];
 
 const errors = new Map(); // input id -> message
+
+/** One-tap suggestions for money that doesn't come every month. */
+export const EXTRA_PRESETS = ['Festival bonus (Eid, Diwali, Christmas…)', 'Yearly performance bonus', 'Appreciation bonus', 'Overtime', 'Extra work or side jobs', '13th-month salary', 'Tax refund'];
 
 /** One-tap suggestions for the once-a-year list. */
 export const YEARLY_PRESETS = ['Festivals (Eid, Diwali, Christmas…)', 'Weddings and gifts', 'School books, uniforms and admission', 'Car service and repairs', 'Yearly insurance', 'Travel and trips home', 'Home repairs'];
@@ -98,6 +102,11 @@ function groupCard(g, index, collapsed) {
        <div id="yearlyChips" class="mb-4 flex flex-wrap gap-2" role="group" aria-labelledby="yearlyChipsLabel"></div>
        <div id="yearlyRows" class="space-y-3"></div>
        <button type="button" class="btn btn-ghost mt-3" data-add="yearly">${icon('plus', 'icon-sm')}Add your own</button>`;
+  } else if (g.list === 'extras') {
+    body = `<p class="mb-2 text-xs font-medium muted" id="extraChipsLabel">Tap to add</p>
+       <div id="extraChips" class="mb-4 flex flex-wrap gap-2" role="group" aria-labelledby="extraChipsLabel"></div>
+       <div id="extraRows" class="space-y-3"></div>
+       <button type="button" class="btn btn-ghost mt-3" data-add="extra">${icon('plus', 'icon-sm')}Add your own</button>`;
   } else if (g.list === 'subscriptions') {
     body = `<div id="subRows" class="space-y-3"></div>
          <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}Add a subscription</button>
@@ -203,6 +212,36 @@ function yearlyRow(y) {
   </div>`;
 }
 
+function extraRow(x) {
+  return `
+  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
+    <div class="flex items-end gap-2">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+        <div class="min-w-0">
+          <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">What is it?</label>
+          <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="extras" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="e.g. Eid bonus">
+        </div>
+        ${numInput('extras', x, 'amount', 'Amount for the whole year', 'extraAmount')}
+      </div>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="extras" data-id="${x.id}" aria-label="Remove ${esc(x.name || 'this income')}">${icon('trash')}</button>
+    </div>
+    <p class="mt-2 text-xs muted empty:hidden" data-extra-month="${x.id}"></p>
+  </div>`;
+}
+
+/** Tap-to-add chips for the names not on a list yet. */
+function renderChips(boxId, labelId, presets, rows, list, force) {
+  const have = new Set(rows.map((r) => r.name.trim().toLowerCase()));
+  const chips = presets.filter((name) => !have.has(name.toLowerCase()));
+  const box = $(boxId);
+  const sig = chips.join('|');
+  if (!force && box.__sig === sig) return;
+  box.__sig = sig;
+  box.innerHTML = chips.map((name) => `<button type="button" class="suggest" data-add="${list}" data-name="${esc(name)}">${icon('plus', 'icon-sm')}${esc(name)}</button>`).join('');
+  box.hidden = !chips.length;
+  $(labelId).hidden = !chips.length;
+}
+
 const listSignature = (arr) => arr.map((x) => x.id + (x.type || '')).join('|');
 
 function renderRows(force = false) {
@@ -220,17 +259,14 @@ function renderRows(force = false) {
     yearlyBox.__sig = ySig;
     yearlyBox.innerHTML = s.yearly.length ? s.yearly.map(yearlyRow).join('') : '<p class="text-sm muted">Nothing added yet. Tap a suggestion above, or add your own.</p>';
   }
-  // Suggestions that aren't on the list yet
-  const have = new Set(s.yearly.map((y) => y.name.trim().toLowerCase()));
-  const chips = YEARLY_PRESETS.filter((name) => !have.has(name.toLowerCase()));
-  const chipBox = $('yearlyChips');
-  const cSig = chips.join('|');
-  if (force || chipBox.__sig !== cSig) {
-    chipBox.__sig = cSig;
-    chipBox.innerHTML = chips.map((name) => `<button type="button" class="suggest" data-add="yearly" data-name="${esc(name)}">${icon('plus', 'icon-sm')}${esc(name)}</button>`).join('');
-    chipBox.hidden = !chips.length;
-    $('yearlyChipsLabel').hidden = !chips.length;
+  renderChips('yearlyChips', 'yearlyChipsLabel', YEARLY_PRESETS, s.yearly, 'yearly', force);
+  const extraBox = $('extraRows');
+  const xSig = listSignature(s.extras);
+  if (force || extraBox.__sig !== xSig) {
+    extraBox.__sig = xSig;
+    extraBox.innerHTML = s.extras.length ? s.extras.map(extraRow).join('') : '<p class="text-sm muted">Nothing added yet. Tap a suggestion above, or add your own.</p>';
   }
+  renderChips('extraChips', 'extraChipsLabel', EXTRA_PRESETS, s.extras, 'extra', force);
   const sSig = listSignature(s.subscriptions);
   if (force || subBox.__sig !== sSig) {
     subBox.__sig = sSig;
@@ -256,7 +292,7 @@ export function syncInputs() {
 
 // ---------------- Render (called after every recompute) ----------------
 export function renderInputs(state, result, view) {
-  const { values, subsTotal, debtPayments, yearly, yearlyMonthly } = result.totals;
+  const { values, subsTotal, debtPayments, yearly, yearlyMonthly, extras, extrasMonthly } = result.totals;
   const subtotal = (fields) => fields.reduce((a, f) => a + (values[f] || 0), 0);
   const B = benchmarkFor(state.currency, state.profile);
   const who = PROFILES[state.profile];
@@ -270,6 +306,7 @@ export function renderInputs(state, result, view) {
     if (g.id === 'income') txt = values.income ? `${view.m(values.income)}${view.per}` : 'Start here';
     else if (g.id === 'savings') txt = values.emergencyFund ? `${view.raw(values.emergencyFund)} saved` : 'Optional';
     else if (g.list === 'debts') txt = state.debts.length ? `${view.m(debtPayments)}${view.per} · ${state.debts.length} added` : 'Optional';
+    else if (g.list === 'extras') txt = state.extras.length ? `+${view.m(extrasMonthly)}${view.per} · ${state.extras.length} added` : 'Optional';
     else if (g.list === 'yearly') txt = state.yearly.length ? `${view.m(yearlyMonthly)}${view.per} · ${state.yearly.length} added` : 'Optional';
     else if (g.list === 'subscriptions') txt = state.subscriptions.length ? `${view.m(subsTotal)}${view.per} · ${state.subscriptions.length} added` : 'Optional';
     else txt = `${view.m(subtotal(g.fields.map((f) => f.key)))}${view.per}`;
@@ -320,6 +357,9 @@ export function renderInputs(state, result, view) {
   renderSubKinds(state, result, view);
   for (const y of yearly) {
     setText(document.querySelector(`[data-yearly-month="${y.id}"]`), y.cost > 0 ? `That’s ${view.raw(y.cost / 12)} to put aside each month.` : '');
+  }
+  for (const x of extras) {
+    setText(document.querySelector(`[data-extra-month="${x.id}"]`), x.amount > 0 ? `That adds about ${view.raw(x.amount / 12)} a month to your income.` : '');
   }
 }
 
@@ -416,15 +456,18 @@ export function initInputs() {
     const add = e.target.closest('[data-add]');
     if (add) {
       const kind = add.dataset.add;
-      const LIST = { sub: 'subscriptions', yearly: 'yearly' };
+      const LIST = { sub: 'subscriptions', yearly: 'yearly', extra: 'extras' };
       const row = kind === 'sub'
         ? { id: newId('s'), name: '', cost: 0, rarely: false, kind: '' }
         : kind === 'yearly'
           ? { id: newId('y'), name: add.dataset.name || '', cost: 0 }
-          : { id: newId('d'), type: kind, name: '', balance: 0, apr: kind === 'card' ? (getState().currency === 'PKR' ? 38 : 22) : 8, payment: 0 };
+          : kind === 'extra'
+            ? { id: newId('x'), name: add.dataset.name || '', amount: 0 }
+            : { id: newId('d'), type: kind, name: '', balance: 0, apr: kind === 'card' ? (getState().currency === 'PKR' ? 38 : 22) : 8, payment: 0 };
       setState((st) => { st[LIST[kind] || 'debts'].push(row); });
       // A suggestion already has its name, so jump straight to the amount
-      requestAnimationFrame(() => document.querySelector(row.name ? `#r-${row.id}-cost` : `[data-row="${row.id}"] input`)?.focus());
+      const amountKey = kind === 'extra' ? 'amount' : 'cost';
+      requestAnimationFrame(() => document.querySelector(row.name ? `#r-${row.id}-${amountKey}` : `[data-row="${row.id}"] input`)?.focus());
       return;
     }
     const rm = e.target.closest('[data-remove]');
@@ -434,7 +477,7 @@ export function initInputs() {
       const idx = st[list].findIndex((x) => x.id === id);
       const removed = st[list][idx];
       setState((x) => { x[list] = x[list].filter((r) => r.id !== id); });
-      toast(`${removed?.name || { debts: 'Loan', subscriptions: 'Subscription', yearly: 'Cost' }[list]} removed`, {
+      toast(`${removed?.name || { debts: 'Loan', subscriptions: 'Subscription', yearly: 'Cost', extras: 'Extra income' }[list]} removed`, {
         action: { label: 'Undo', onClick: () => setState((x) => { x[list].splice(idx, 0, removed); }) }
       });
     }
@@ -447,7 +490,11 @@ export function initInputs() {
     r.addEventListener('change', () => setState((st) => { st.period = r.value; }))
   );
   document.querySelectorAll('[data-action="sample"]').forEach((b) => b.addEventListener('click', loadSample));
-  $('btnReset').addEventListener('click', resetAll);
+  // "Tip: the family example shows everything you can add"
+  $('sampleFull').addEventListener('click', () => {
+    setState((st) => { st.profile = 'suburban'; }, { reason: 'ui' });
+    loadSample();
+  });
 
   syncInputs();
 }
@@ -464,6 +511,7 @@ export function loadSample() {
     debts: sample.debts,
     subscriptions: sample.subscriptions,
     yearly: sample.yearly,
+    extras: sample.extras,
     housingFree: null,
     plan: { committed: {}, pct: {}, sort: st.plan.sort },
     goals: st.goals.length ? st.goals : [
@@ -475,18 +523,4 @@ export function loadSample() {
   toast(`Example budget loaded for a ${PROFILES[st.profile].name}`, {
     action: { label: 'Undo', onClick: () => replaceState(prev) }
   });
-}
-
-async function resetAll() {
-  const ok = await confirmDialog({
-    title: 'Delete all your numbers?',
-    message: 'This removes every amount, plan choice, goal and saved month from this device. You can’t undo this.',
-    confirmLabel: 'Yes, delete everything',
-    danger: true
-  });
-  if (!ok) return;
-  const keep = getState();
-  clearStorage();
-  replaceState({ ...defaultState(), profile: keep.profile, currency: keep.currency }, 'reset');
-  toast('All your numbers were deleted from this device', { tone: 'info' });
 }

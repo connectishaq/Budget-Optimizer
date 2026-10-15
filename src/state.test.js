@@ -91,3 +91,23 @@ describe('hasData', () => {
     expect(hasData({ ...defaultState(), yearly: [{ cost: 100 }] })).toBe(true);
   });
 });
+
+describe('extra income in saved data', () => {
+  it('keeps valid extras and cleans bad ones', () => {
+    const s = normalizeState({ extras: [{ id: 'x1', name: 'Overtime', amount: '1200' }, { name: 'y'.repeat(99), amount: -4 }, 'junk'] });
+    expect(s.extras).toHaveLength(2);
+    expect(s.extras[0]).toEqual({ id: 'x1', name: 'Overtime', amount: 1200 });
+    expect(s.extras[1].name).toHaveLength(60);
+    expect(s.extras[1].amount).toBe(0);
+    expect(s.extras[1].id).toMatch(/^x/);
+  });
+
+  it('caps extras at 20 and treats old data without them as none', () => {
+    expect(normalizeState({ extras: Array.from({ length: 30 }, () => ({ amount: 1 })) }).extras).toHaveLength(20);
+    expect(normalizeState({ values: { income: 100 } }).extras).toEqual([]);
+  });
+
+  it('counts a budget with only extras as having data', () => {
+    expect(hasData({ ...defaultState(), extras: [{ amount: 100 }] })).toBe(true);
+  });
+});

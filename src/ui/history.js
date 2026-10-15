@@ -1,81 +1,15 @@
-// Persistence & sharing: monthly snapshots + trend, opt-in share links,
-// JSON export/import and the one-page printable action plan.
+// Backup files (download / open with merge or replace), opt-in share links
+// and the one-page printable action plan. Month-by-month history itself
+// lives in months.js.
 
-import { getState, setState, replaceState, normalizeState, hasData } from '../state.js';
+import { getState, replaceState, normalizeState, hasData } from '../state.js';
 import { PROFILES } from '../engine/profiles.js';
 import { EFFORT_LABEL } from '../engine/rules.js';
-// Snapshot amounts use the same lakh/crore display as the rest of the page
-import { moneyNice as money } from '../utils/format.js';
-import { $, icon, esc, setText, setHTML, toast, confirmDialog } from './dom.js';
+import { makeBackup, parseBackup, backupFileName, describeMonths, mergeHistory, monthLabel, MAX_MONTHS } from '../engine/history.js';
+import { getHistory, importMonths, markBackup } from '../history-store.js';
+import { $, esc, toast, confirmDialog, choiceDialog } from './dom.js';
 
 let latest = null; // { state, result, view } from the most recent render
-
-// ---------------- Snapshots ----------------
-const monthKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-const monthLabel = (key) => {
-  const [y, m] = key.split('-').map(Number);
-  return new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-};
-
-function saveSnapshot() {
-  if (!latest) return;
-  const { result, state } = latest;
-  const key = monthKey();
-  const snap = {
-    id: `h${Date.now().toString(36)}`, month: key, savedAt: new Date().toISOString(), currency: state.currency,
-    income: result.totals.income, spend: result.totals.spend, optimized: result.optimized,
-    savings: result.savings, score: result.health ? result.health.score : null
-  };
-  const replaced = state.snapshots.some((s) => s.month === key);
-  setState((s) => {
-    s.snapshots = s.snapshots.filter((x) => x.month !== key).concat(snap).sort((a, b) => a.month.localeCompare(b.month)).slice(-36);
-  });
-  toast(replaced ? `${monthLabel(key)} updated` : 'This month is saved');
-}
-
-/** Small two-line SVG trend: spend vs optimized spend across snapshots. */
-function trendSvg(snaps) {
-  const W = 320, H = 96, P = 8;
-  const vals = snaps.flatMap((s) => [s.spend, s.optimized]);
-  const max = Math.max(...vals), min = Math.min(...vals);
-  const span = max - min || 1;
-  const x = (i) => P + (i * (W - 2 * P)) / Math.max(1, snaps.length - 1);
-  const y = (v) => H - P - ((v - min) / span) * (H - 2 * P);
-  const line = (key) => snaps.map((s, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(s[key]).toFixed(1)}`).join(' ');
-  const dots = (key, color) => snaps.map((s, i) => `<circle cx="${x(i)}" cy="${y(s[key])}" r="3.5" fill="${color}" stroke="var(--dot-ring,#fff)" stroke-width="2"><title>${monthLabel(s.month)}: ${money(s[key], s.currency)}</title></circle>`).join('');
-  return `<svg viewBox="0 0 ${W} ${H}" class="h-24 w-full [--dot-ring:#fff] dark:[--dot-ring:#0f172a]" role="img" aria-label="Trend of total spend and optimized spend across ${snaps.length} snapshots">
-    <path d="${line('spend')}" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="5 4"/>
-    <path d="${line('optimized')}" fill="none" stroke="#047857" stroke-width="2"/>
-    ${dots('spend', '#64748b')}${dots('optimized', '#047857')}
-  </svg>`;
-}
-
-function renderSnapshots(state) {
-  const snaps = state.snapshots;
-  // Amounts in different currencies can't share one line, so the trend only
-  // shows months saved in the currency picked now
-  const same = snaps.filter((s) => s.currency === state.currency);
-  const other = snaps.length - same.length;
-  $('historyEmpty').hidden = snaps.length > 0;
-  $('historyTrend').hidden = same.length < 2;
-  if (same.length >= 2) setHTML($('trendSvg'), trendSvg(same));
-  $('trendNote').hidden = !other;
-  setText($('trendNote'), `${other} month${other === 1 ? '' : 's'} saved in another currency ${other === 1 ? 'is' : 'are'} left out of this line.`);
-  setHTML($('snapshotRows'), [...snaps].reverse().map((s, i, arr) => {
-    const prev = arr[i + 1];
-    const delta = prev && prev.currency === s.currency ? s.spend - prev.spend : null;
-    const deltaTxt = delta == null ? '<span class="muted">—</span>'
-      : `<span class="${delta <= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'} font-semibold">${delta <= 0 ? '▼' : '▲'} ${money(Math.abs(delta), s.currency)}</span>`;
-    return `<tr class="border-t border-slate-100 dark:border-slate-800">
-      <th scope="row" class="py-2 pr-2 text-left font-semibold text-slate-900 dark:text-white">${monthLabel(s.month)}</th>
-      <td class="px-2 py-2 text-right tabular-nums">${money(s.spend, s.currency)}</td>
-      <td class="px-2 py-2 text-right tabular-nums text-emerald-700 dark:text-emerald-400">${money(s.savings, s.currency)}</td>
-      <td class="hidden px-2 py-2 text-right tabular-nums sm:table-cell">${s.score ?? '—'}</td>
-      <td class="px-2 py-2 text-right tabular-nums">${deltaTxt}</td>
-      <td class="py-1 pl-1 text-right"><button type="button" class="btn-icon h-9 w-9 hover:text-rose-600" data-del-snap="${s.id}" aria-label="Delete snapshot ${monthLabel(s.month)}">${icon('trash', 'icon-sm')}</button></td>
-    </tr>`;
-  }).join(''));
-}
 
 // ---------------- Share link (opt-in) ----------------
 const toB64Url = (str) => {
@@ -90,8 +24,8 @@ const fromB64Url = (b64) => {
 };
 
 function shareableState(s) {
-  const { profile, currency, period, values, debts, subscriptions, yearly, plan, projection, goals, allocation, housingFree } = s;
-  return { profile, currency, period, values, debts, subscriptions, yearly, plan, projection, goals, allocation, housingFree };
+  const { profile, currency, period, values, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree } = s;
+  return { profile, currency, period, values, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree };
 }
 
 function createShareLink() {
@@ -122,47 +56,72 @@ async function checkSharedHash() {
   if (!data) { toast('That share link is invalid or incomplete', { tone: 'error' }); return; }
   const ok = await confirmDialog({
     title: 'Open shared budget?',
-    message: 'This link contains budget numbers someone shared with you. Loading it replaces the values currently saved on this device (your snapshots are kept).',
+    message: 'This link contains budget numbers someone shared with you. Loading it replaces the numbers you’re working on now. Your saved months are kept.',
     confirmLabel: 'Load shared budget'
   });
   if (!ok) return;
   const cur = getState();
-  replaceState({ ...normalizeState(data), snapshots: cur.snapshots, ui: { ...cur.ui, mode: 'results', sample: false } }, 'import');
+  replaceState({ ...normalizeState(data), ui: { ...cur.ui, mode: 'results', sample: false } }, 'import');
   toast('Shared budget loaded');
 }
 
-// ---------------- Export / import ----------------
-function exportJson() {
-  const blob = new Blob([JSON.stringify({ app: 'household-budget-optimizer', exportedAt: new Date().toISOString(), data: getState() }, null, 2)], { type: 'application/json' });
+// ---------------- Backup ----------------
+/** Downloads one file with every saved month and the current budget. */
+export function downloadBackup() {
+  const now = new Date();
+  const blob = new Blob([JSON.stringify(makeBackup(getState(), getHistory().months, now), null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `budget-optimizer-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = backupFileName(now);
   document.body.append(a);
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  toast('Backup file downloaded');
+  markBackup(now);
+  toast('Backup downloaded');
 }
 
-async function importJson(file) {
+const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+/** "18 saved months (Apr 2025 – Oct 2026)" */
+function monthsText(months) {
+  const d = describeMonths(months);
+  if (!d.count) return 'no saved months';
+  return d.count === 1 ? `1 saved month (${monthLabel(d.from)})` : `${plural(d.count, 'saved month')} (${monthLabel(d.from)} – ${monthLabel(d.to)})`;
+}
+
+async function openBackup(file) {
   if (!file) return;
-  if (file.size > 1_000_000) { toast('That file is too large to be a budget backup', { tone: 'error' }); return; }
-  let parsed;
-  try { parsed = JSON.parse(await file.text()); } catch { parsed = null; }
-  const data = parsed?.data ?? parsed;
-  if (!data || typeof data !== 'object' || !('values' in data)) {
-    toast("That file isn't a Budget Optimizer backup", { tone: 'error' });
-    return;
-  }
-  const ok = await confirmDialog({
-    title: 'Import this backup?',
-    message: `This replaces everything saved on this device with "${file.name}".`,
-    confirmLabel: 'Import'
+  if (file.size > 5_000_000) { toast('That file is too large to be a budget backup', { tone: 'error' }); return; }
+  let raw;
+  try { raw = JSON.parse(await file.text()); } catch { raw = null; }
+  const parsed = parseBackup(raw);
+  if (!parsed.ok) { toast("That file isn't a budget backup", { tone: 'error' }); return; }
+
+  const here = getHistory().months;
+  const merged = mergeHistory(here, parsed.months, 'merge');
+  const overflow = merged.dropped.length
+    ? ` Only the newest ${MAX_MONTHS} months are kept, so merging would remove ${plural(merged.dropped.length, 'older month')}.`
+    : '';
+  const choice = await choiceDialog({
+    title: 'Open this backup?',
+    message: `“${file.name}” has ${monthsText(parsed.months)}, plus your numbers and settings. This device has ${monthsText(here)}.`
+      + ` Merge adds the backup’s months to these (where both have the same month, the one saved most recently is kept).`
+      + ` Replace swaps everything here for the backup.${overflow}`,
+    confirmLabel: 'Merge',
+    altLabel: 'Replace',
+    altDanger: true
   });
-  if (!ok) return;
-  // Keep the screen the user is on; a backup's saved screen may be step 1
-  replaceState({ ...data, ui: { ...getState().ui, mode: 'results', sample: false } }, 'import');
-  toast('Backup imported');
+  if (!choice) return;
+  const mode = choice === 'alt' ? 'replace' : 'merge';
+  const cur = getState();
+  const dropped = importMonths(parsed.months, mode);
+  // Merging keeps the numbers you're working on, unless there are none yet
+  if (mode === 'replace' || !hasData(cur)) {
+    replaceState({ ...parsed.state, ui: { ...cur.ui, mode: 'results', sample: false } }, 'import');
+  }
+  const count = getHistory().months.length;
+  toast(`${mode === 'replace' ? 'Backup opened' : 'Backup merged'}: ${plural(count, 'saved month')} on this device${dropped.length ? `, ${plural(dropped.length, 'older month')} left out` : ''}`);
 }
 
 // ---------------- Print ----------------
@@ -189,27 +148,15 @@ function buildPrintPlan() {
 
 export function renderHistory(state, result, view) {
   latest = { state, result, view };
-  renderSnapshots(state);
-  $('btnSnapshot').disabled = !hasData(state);
 }
 
 export function initHistory() {
-  $('btnSnapshot').addEventListener('click', saveSnapshot);
-  $('snapshotRows').addEventListener('click', (e) => {
-    const b = e.target.closest('[data-del-snap]');
-    if (!b) return;
-    const id = b.dataset.delSnap;
-    const st = getState();
-    const idx = st.snapshots.findIndex((s) => s.id === id);
-    const removed = st.snapshots[idx];
-    setState((s) => { s.snapshots = s.snapshots.filter((x) => x.id !== id); });
-    toast('Snapshot deleted', { action: { label: 'Undo', onClick: () => setState((s) => { s.snapshots.splice(idx, 0, removed); }) } });
-  });
   $('btnShare').addEventListener('click', createShareLink);
   $('btnCopyShare').addEventListener('click', copyShareLink);
-  $('btnExport').addEventListener('click', exportJson);
+  // Every "Download backup" button on the page
+  document.addEventListener('click', (e) => { if (e.target.closest('[data-backup]')) downloadBackup(); });
   $('importFile').addEventListener('change', (e) => {
-    importJson(e.target.files[0]);
+    openBackup(e.target.files[0]);
     e.target.value = '';
   });
   $('btnPrint').addEventListener('click', () => { buildPrintPlan(); window.print(); });

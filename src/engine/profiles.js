@@ -20,7 +20,9 @@ export const PROFILE_KEYS = Object.keys(PROFILES);
  *     ranges:        [low, high] typical monthly amount per input field
  *     thresholds:    amounts above which a rule fires
  *     categoryShare: typical share of income per spending category
- *   samples:   example budget per profile (values, debts, subscriptions, yearly costs)
+ *   samples:   example budget per profile (values, debts, subscriptions, yearly
+ *              costs, extra income); `suburban` is the complete one with every
+ *              kind of bill and income filled in
  */
 
 const USD = {
@@ -63,28 +65,41 @@ const USD = {
   },
   samples: {
     single: {
-      values: { income: 4100, rent: 1650, homeIns: 18, electricity: 70, waterGas: 40, internet: 95, fuel: 140, transit: 127, carIns: 120, carLoan: 0, school: 0, groceries: 420, dining: 260, misc: 210, medical: 40, giving: 30, emergencyFund: 2500 },
+      values: { income: 4100, rent: 1650, homeIns: 18, electricity: 70, waterGas: 40, internet: 95, fuel: 140, transit: 127, carIns: 120, carLoan: 0, school: 0, groceries: 420, dining: 260, misc: 210, medical: 40, familySupport: 100, giving: 30, other: 40, emergencyFund: 2500 },
       debts: [{ type: 'card', name: 'Visa card', balance: 3200, apr: 24.9, payment: 120 }],
       subscriptions: [{ name: 'Netflix', cost: 15.49, rarely: false }, { name: 'Spotify', cost: 11.99, rarely: false }, { name: 'Gym membership', cost: 45, rarely: true }],
-      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 600 }]
+      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 600 }],
+      extras: [{ name: 'Overtime', amount: 1800 }, { name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 500 }]
     },
+    // The complete example: every bill, every kind of subscription, loans,
+    // once-a-year costs and extra income, so people see everything they can add
     suburban: {
-      values: { income: 7200, rent: 2100, homeIns: 160, electricity: 165, waterGas: 85, internet: 120, fuel: 320, transit: 45, carIns: 260, carLoan: 480, school: 450, groceries: 1150, dining: 380, misc: 260, medical: 120, giving: 100, emergencyFund: 6000 },
+      values: { income: 7200, rent: 2100, homeIns: 160, electricity: 165, waterGas: 85, internet: 120, fuel: 320, transit: 45, carIns: 260, carLoan: 480, school: 450, groceries: 1150, dining: 380, misc: 260, medical: 120, homeHelp: 240, familySupport: 200, giving: 100, other: 90, emergencyFund: 6000 },
       debts: [
         { type: 'card', name: 'Store credit card', balance: 5400, apr: 22.9, payment: 180 },
         { type: 'loan', name: 'Personal loan', balance: 7800, apr: 9.5, payment: 250 }
       ],
-      subscriptions: [{ name: 'Netflix', cost: 22.99, rarely: false }, { name: 'Disney+', cost: 13.99, rarely: true }, { name: 'Amazon Prime', cost: 14.99, rarely: false }, { name: 'Meal-kit box', cost: 59.99, rarely: true }],
-      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 1800 }, { name: 'Car service and repairs', cost: 900 }]
+      subscriptions: [
+        { name: 'Netflix', cost: 22.99, rarely: false }, { name: 'Disney+', cost: 13.99, rarely: true },
+        { name: 'Microsoft 365', cost: 9.99, rarely: false }, { name: 'iCloud storage', cost: 2.99, rarely: false },
+        { name: 'Gym membership', cost: 59.99, rarely: true }, { name: 'Duolingo', cost: 12.99, rarely: true },
+        { name: 'Amazon Prime', cost: 14.99, rarely: false }
+      ],
+      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 1800 }, { name: 'School books, uniforms and admission', cost: 600 }, { name: 'Car service and repairs', cost: 900 }],
+      extras: [
+        { name: 'Yearly performance bonus', amount: 6000 }, { name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 1000 },
+        { name: 'Overtime', amount: 2400 }, { name: 'Extra work or side jobs', amount: 1800 }
+      ]
     },
     youngpro: {
-      values: { income: 5600, rent: 1950, homeIns: 22, electricity: 95, waterGas: 55, internet: 110, fuel: 210, transit: 60, carIns: 170, carLoan: 380, school: 250, groceries: 480, dining: 520, misc: 340, medical: 50, giving: 50, emergencyFund: 4000 },
+      values: { income: 5600, rent: 1950, homeIns: 22, electricity: 95, waterGas: 55, internet: 110, fuel: 210, transit: 60, carIns: 170, carLoan: 380, school: 250, groceries: 480, dining: 520, misc: 340, medical: 50, familySupport: 150, giving: 50, other: 60, emergencyFund: 4000 },
       debts: [
         { type: 'card', name: 'Rewards card', balance: 4100, apr: 27.4, payment: 160 },
         { type: 'loan', name: 'Student loan', balance: 18500, apr: 5.5, payment: 210 }
       ],
       subscriptions: [{ name: 'Streaming bundle', cost: 19.99, rarely: false }, { name: 'Cloud storage', cost: 9.99, rarely: false }, { name: 'Language app', cost: 12.99, rarely: true }, { name: 'Fitness app', cost: 14.99, rarely: true }],
-      yearly: [{ name: 'Travel and trips home', cost: 1200 }]
+      yearly: [{ name: 'Travel and trips home', cost: 1200 }],
+      extras: [{ name: 'Yearly performance bonus', amount: 4000 }, { name: 'Extra work or side jobs', amount: 2400 }]
     }
   }
 };
@@ -131,22 +146,37 @@ const PKR = {
   },
   samples: {
     single: {
-      values: { income: 150000, rent: 35000, homeIns: 0, electricity: 12000, waterGas: 2500, internet: 4500, fuel: 12000, transit: 9000, carIns: 0, carLoan: 0, school: 0, groceries: 30000, dining: 14000, misc: 12000, medical: 2500, emergencyFund: 50000 },
+      values: { income: 150000, rent: 35000, homeIns: 0, electricity: 12000, waterGas: 2500, internet: 4500, fuel: 12000, transit: 9000, carIns: 0, carLoan: 0, school: 0, groceries: 30000, dining: 14000, misc: 12000, medical: 2500, homeHelp: 3000, familySupport: 5000, giving: 1500, other: 2000, emergencyFund: 50000 },
       debts: [{ type: 'card', name: 'Credit card', balance: 60000, apr: 38, payment: 5000 }],
       subscriptions: [{ name: 'Netflix', cost: 1100, rarely: false }, { name: 'Spotify', cost: 349, rarely: false }, { name: 'Gym membership', cost: 4000, rarely: true }],
-      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 30000 }]
+      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 30000 }],
+      extras: [{ name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 75000 }, { name: 'Overtime', amount: 60000 }]
     },
+    // The complete example (see the USD note)
     suburban: {
-      values: { income: 400000, rent: 60000, homeIns: 0, electricity: 36000, waterGas: 6000, internet: 9000, fuel: 32000, transit: 2000, carIns: 6000, carLoan: 0, school: 35000, groceries: 90000, dining: 15000, misc: 22000, medical: 6000, homeHelp: 15000, giving: 4000, emergencyFund: 150000 },
-      debts: [{ type: 'card', name: 'Credit card', balance: 180000, apr: 40, payment: 12000 }],
-      subscriptions: [{ name: 'Netflix', cost: 1100, rarely: false }, { name: 'YouTube Premium', cost: 479, rarely: false }, { name: 'Gym membership', cost: 6000, rarely: true }],
-      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 120000 }, { name: 'School books, uniforms and admission', cost: 60000 }, { name: 'Car service and repairs', cost: 40000 }]
+      values: { income: 400000, rent: 60000, homeIns: 1500, electricity: 36000, waterGas: 6000, internet: 9000, fuel: 32000, transit: 2000, carIns: 6000, carLoan: 35000, school: 35000, groceries: 90000, dining: 15000, misc: 22000, medical: 6000, homeHelp: 15000, familySupport: 20000, giving: 4000, other: 6000, emergencyFund: 150000 },
+      debts: [
+        { type: 'card', name: 'Credit card', balance: 180000, apr: 40, payment: 12000 },
+        { type: 'loan', name: 'Personal loan', balance: 400000, apr: 22, payment: 15000 }
+      ],
+      subscriptions: [
+        { name: 'Netflix', cost: 1100, rarely: false }, { name: 'YouTube Premium', cost: 479, rarely: true },
+        { name: 'Microsoft 365', cost: 1800, rarely: false }, { name: 'Google One storage', cost: 650, rarely: false },
+        { name: 'Gym membership', cost: 6000, rarely: true }, { name: 'Duolingo', cost: 1500, rarely: true },
+        { name: 'Foodpanda Pro', cost: 450, rarely: false }
+      ],
+      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 120000 }, { name: 'School books, uniforms and admission', cost: 60000 }, { name: 'Car service and repairs', cost: 40000 }],
+      extras: [
+        { name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 200000 }, { name: 'Yearly performance bonus', amount: 400000 },
+        { name: 'Overtime', amount: 120000 }, { name: 'Extra work or side jobs', amount: 180000 }
+      ]
     },
     youngpro: {
-      values: { income: 290000, rent: 60000, homeIns: 0, electricity: 20000, waterGas: 3500, internet: 6500, fuel: 26000, transit: 4000, carIns: 5000, carLoan: 45000, school: 0, groceries: 32000, dining: 34000, misc: 17000, medical: 3000, giving: 2000, emergencyFund: 80000 },
+      values: { income: 290000, rent: 60000, homeIns: 0, electricity: 20000, waterGas: 3500, internet: 6500, fuel: 26000, transit: 4000, carIns: 5000, carLoan: 45000, school: 0, groceries: 32000, dining: 34000, misc: 17000, medical: 3000, familySupport: 15000, giving: 2000, other: 4000, emergencyFund: 80000 },
       debts: [{ type: 'card', name: 'Credit card', balance: 120000, apr: 40, payment: 9000 }],
       subscriptions: [{ name: 'Netflix', cost: 1100, rarely: false }, { name: 'Spotify', cost: 349, rarely: false }, { name: 'Cloud storage', cost: 650, rarely: false }, { name: 'Language app', cost: 1200, rarely: true }, { name: 'Gym membership', cost: 7000, rarely: true }],
-      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 40000 }]
+      yearly: [{ name: 'Festivals (Eid, Diwali, Christmas…)', cost: 40000 }],
+      extras: [{ name: 'Yearly performance bonus', amount: 250000 }, { name: 'Extra work or side jobs', amount: 150000 }]
     }
   }
 };
@@ -195,22 +225,37 @@ const INR = {
   },
   samples: {
     single: {
-      values: { income: 75000, rent: 22000, homeIns: 0, electricity: 1800, waterGas: 1000, internet: 1600, fuel: 3500, transit: 4200, carIns: 0, carLoan: 0, school: 0, groceries: 9000, dining: 7500, misc: 5500, medical: 1000, homeHelp: 2500, familySupport: 8000, giving: 500, emergencyFund: 60000 },
+      values: { income: 75000, rent: 22000, homeIns: 0, electricity: 1800, waterGas: 1000, internet: 1600, fuel: 3500, transit: 4200, carIns: 0, carLoan: 0, school: 0, groceries: 9000, dining: 7500, misc: 5500, medical: 1000, homeHelp: 2500, familySupport: 8000, giving: 500, other: 1500, emergencyFund: 60000 },
       debts: [{ type: 'card', name: 'Credit card', balance: 45000, apr: 42, payment: 4000 }],
       subscriptions: [{ name: 'Netflix', cost: 499, rarely: false }, { name: 'Spotify', cost: 139, rarely: false }, { name: 'Gym membership', cost: 2000, rarely: true }],
-      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 25000 }]
+      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 25000 }],
+      extras: [{ name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 40000 }, { name: 'Overtime', amount: 30000 }]
     },
+    // The complete example (see the USD note)
     suburban: {
-      values: { income: 190000, rent: 35000, homeIns: 0, electricity: 5500, waterGas: 2000, internet: 1800, fuel: 9500, transit: 1500, carIns: 2500, carLoan: 15000, school: 22000, groceries: 24000, dining: 9000, misc: 9000, medical: 4000, homeHelp: 9000, giving: 2000, emergencyFund: 200000 },
-      debts: [{ type: 'card', name: 'Credit card', balance: 120000, apr: 42, payment: 10000 }],
-      subscriptions: [{ name: 'Netflix', cost: 649, rarely: false }, { name: 'JioHotstar', cost: 299, rarely: true }, { name: 'Amazon Prime', cost: 299, rarely: false }, { name: 'Swiggy One', cost: 149, rarely: true }],
-      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 60000 }, { name: 'School books, uniforms and admission', cost: 40000 }, { name: 'Car service and repairs', cost: 15000 }]
+      values: { income: 180000, rent: 35000, homeIns: 800, electricity: 5500, waterGas: 2000, internet: 1800, fuel: 9500, transit: 1500, carIns: 2500, carLoan: 15000, school: 22000, groceries: 24000, dining: 9000, misc: 9000, medical: 4000, homeHelp: 9000, familySupport: 10000, giving: 2000, other: 3000, emergencyFund: 200000 },
+      debts: [
+        { type: 'card', name: 'Credit card', balance: 120000, apr: 42, payment: 10000 },
+        { type: 'loan', name: 'Personal loan', balance: 250000, apr: 13, payment: 8000 }
+      ],
+      subscriptions: [
+        { name: 'Netflix', cost: 649, rarely: false }, { name: 'JioHotstar', cost: 299, rarely: true },
+        { name: 'Microsoft 365', cost: 489, rarely: false }, { name: 'Google One storage', cost: 130, rarely: false },
+        { name: 'Gym membership', cost: 2000, rarely: true }, { name: 'Duolingo', cost: 500, rarely: true },
+        { name: 'Swiggy One', cost: 149, rarely: false }
+      ],
+      yearly: [{ name: 'Festivals (Diwali, Eid, Christmas…)', cost: 60000 }, { name: 'School books, uniforms and admission', cost: 40000 }, { name: 'Car service and repairs', cost: 15000 }],
+      extras: [
+        { name: 'Festival bonus (Eid, Diwali, Christmas…)', amount: 60000 }, { name: 'Yearly performance bonus', amount: 150000 },
+        { name: 'Overtime', amount: 36000 }, { name: 'Extra work or side jobs', amount: 60000 }
+      ]
     },
     youngpro: {
-      values: { income: 120000, rent: 30000, homeIns: 0, electricity: 2800, waterGas: 1200, internet: 1800, fuel: 6500, transit: 3000, carIns: 1800, carLoan: 12000, school: 0, groceries: 10000, dining: 15000, misc: 7000, medical: 1500, familySupport: 10000, giving: 1000, emergencyFund: 80000 },
+      values: { income: 120000, rent: 30000, homeIns: 0, electricity: 2800, waterGas: 1200, internet: 1800, fuel: 6500, transit: 3000, carIns: 1800, carLoan: 12000, school: 0, groceries: 10000, dining: 15000, misc: 7000, medical: 1500, homeHelp: 2500, familySupport: 10000, giving: 1000, other: 2000, emergencyFund: 80000 },
       debts: [{ type: 'card', name: 'Credit card', balance: 80000, apr: 42, payment: 6000 }],
       subscriptions: [{ name: 'Netflix', cost: 499, rarely: false }, { name: 'Spotify', cost: 139, rarely: false }, { name: 'Google One', cost: 130, rarely: false }, { name: 'Language app', cost: 500, rarely: true }, { name: 'Gym membership', cost: 2500, rarely: true }],
-      yearly: [{ name: 'Travel and trips home', cost: 30000 }]
+      yearly: [{ name: 'Travel and trips home', cost: 30000 }],
+      extras: [{ name: 'Yearly performance bonus', amount: 120000 }, { name: 'Extra work or side jobs', amount: 60000 }]
     }
   }
 };
@@ -236,7 +281,8 @@ function scaledSet(base, k) {
       values: mapObj(s.values, (v) => Math.round(v * k)),
       debts: s.debts.map((d) => ({ ...d, balance: Math.round(d.balance * k), payment: Math.round(d.payment * k) })),
       subscriptions: s.subscriptions.map((x) => ({ ...x, cost: round(x.cost * k) })),
-      yearly: s.yearly.map((x) => ({ ...x, cost: Math.round(x.cost * k) }))
+      yearly: s.yearly.map((x) => ({ ...x, cost: Math.round(x.cost * k) })),
+      extras: (s.extras || []).map((x) => ({ ...x, amount: Math.round(x.amount * k) }))
     }))
   };
 }
@@ -272,7 +318,8 @@ export function sampleFor(profile, currency) {
     values: { ...s.values },
     debts: s.debts.map((d) => ({ id: rid('d'), ...d })),
     subscriptions: s.subscriptions.map((x) => ({ id: rid('s'), ...x })),
-    yearly: s.yearly.map((x) => ({ id: rid('y'), ...x }))
+    yearly: s.yearly.map((x) => ({ id: rid('y'), ...x })),
+    extras: (s.extras || []).map((x) => ({ id: rid('x'), ...x }))
   };
 }
 

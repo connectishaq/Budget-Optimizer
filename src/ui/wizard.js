@@ -17,7 +17,7 @@ const BILL_PAGES = [
 ];
 
 const STEPS = {
-  1: { title: 'What’s your monthly income?', sub: 'Your take-home pay after tax. You can change it any time.', groups: ['income'], settings: true },
+  1: { title: 'What’s your monthly income?', sub: 'Your take-home pay after tax, plus any bonuses or overtime during the year. You can change it any time.', groups: ['income', 'extras'], settings: true },
   2: { title: 'Where does your money go?', sub: 'Type what you usually spend in a month. Leave a box empty if it doesn’t apply.' },
   3: { title: 'Any loans or subscriptions?', sub: 'This step is optional. Skip it if you have none.', groups: ['debt', 'subs', 'savings'] }
 };

@@ -32,6 +32,7 @@ export const HELP = {
   familySupport: 'Money you regularly send to parents or other family members.',
   giving: 'Donations to charity and religious giving, such as zakat, tithes or offerings at your mosque, church or temple, as a monthly amount.',
   other: 'Any regular monthly cost that doesn’t fit the boxes above, like pet food, a committee payment or tuition classes.',
+  extraAmount: 'The total you expect for the whole year, after tax. We divide it by 12 and add it to your monthly income. For overtime that changes, use a rough yearly total.',
   yearlyCost: 'The total for the whole year. We divide it by 12 to show what to put aside each month.',
   emergencyFund: 'Money you’ve already put aside for surprises, like losing your job or a big repair. This is a total, not a monthly amount.',
   debtName: 'A name to recognise this card or loan, like “Bank card”.',

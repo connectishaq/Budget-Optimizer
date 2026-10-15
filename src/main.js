@@ -13,6 +13,8 @@ import { initHistory, renderHistory } from './ui/history.js';
 import { initWizard, renderFlow } from './ui/wizard.js';
 import { initPayday, renderPayday } from './ui/payday.js';
 import { initHelp } from './ui/help.js';
+import { startMonths, initMonths, renderMonths, noteBudgetChange, loadThisMonth } from './ui/months.js';
+import { initReset } from './ui/reset.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { initAds } from './ads.js';
 
@@ -31,6 +33,7 @@ function render() {
   renderProjection(state, result, view);
   renderGoals(state, result, view);
   renderHistory(state, result, view);
+  renderMonths(state, result, view);
 
   if (lastSavings !== null && Math.round(result.savings) !== Math.round(lastSavings)) {
     announce(`Money you could save each month: ${view.rawS(result.savings)}.`);
@@ -73,6 +76,8 @@ function boot() {
   // everyone else starts the guided steps.
   if (restored && hasData()) getState().ui.mode = 'results';
   if (!restored) replaceState(defaultState(), 'boot');
+  // History: load this month, or copy last month's numbers, before the form fills
+  startMonths(restored);
 
   initTheme();
   initSavedIndicator();
@@ -84,6 +89,8 @@ function boot() {
   initCharts();
   initGoals();
   initHistory();
+  initMonths();
+  initReset();
   syncPlanControls(getState());
 
   subscribe((reason) => {
@@ -92,12 +99,15 @@ function boot() {
       syncPlanControls(getState());
     }
     if (reason === 'ui') return;
+    noteBudgetChange(reason);
     reason === 'input' ? renderSoon() : render();
   });
 
   $('clearSample').addEventListener('click', () => {
+    // Back to this month's saved numbers if there are any, otherwise a blank form
+    if (loadThisMonth()) return;
     const st = getState();
-    replaceState({ ...defaultState(), profile: st.profile, currency: st.currency, period: st.period, snapshots: st.snapshots }, 'reset');
+    replaceState({ ...defaultState(), profile: st.profile, currency: st.currency, period: st.period }, 'reset');
   });
 
   setText($('year'), String(new Date().getFullYear()));
@@ -105,15 +115,6 @@ function boot() {
   // JS now controls which view is shown
   document.documentElement.classList.remove('returning');
   initAds();
-  registerOffline();
-}
-
-/** Lets the page open with no connection after the first visit (production only). */
-function registerOffline() {
-  if (!('serviceWorker' in navigator) || !import.meta.env.PROD) return;
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => { /* offline support is optional */ });
-  }, { once: true });
 }
 
 boot();

@@ -132,23 +132,35 @@ export function announce(message, delay = 900) {
 }
 
 // ---------------- Confirm dialog ----------------
-/** Promise-based wrapper around the native <dialog> element. */
-export function confirmDialog({ title, message, confirmLabel = 'Confirm', danger = false }) {
+/**
+ * Promise-based wrapper around the native <dialog> element. Resolves to
+ * 'ok', 'alt' (the optional middle button) or null when cancelled.
+ */
+export function choiceDialog({ title, message, confirmLabel = 'Confirm', danger = false, altLabel = '', altDanger = false }) {
   const dlg = $('confirmDialog');
   $('confirmTitle').textContent = title;
   $('confirmMessage').textContent = message;
   const ok = $('confirmOk');
   ok.textContent = confirmLabel;
   ok.className = `btn ${danger ? 'btn-danger' : 'btn-primary'}`;
+  const alt = $('confirmAlt');
+  alt.hidden = !altLabel;
+  alt.textContent = altLabel;
+  alt.className = `btn ${altDanger ? 'btn-danger' : 'btn-secondary'}`;
   return new Promise((resolve) => {
     const done = (value) => {
       dlg.removeEventListener('close', onClose);
       resolve(value);
     };
-    const onClose = () => done(dlg.returnValue === 'ok');
+    const onClose = () => done(dlg.returnValue === 'ok' || dlg.returnValue === 'alt' ? dlg.returnValue : null);
     dlg.addEventListener('close', onClose);
     dlg.returnValue = '';
     dlg.showModal();
     $('confirmCancel').focus();
   });
+}
+
+/** Yes/no version of choiceDialog. */
+export async function confirmDialog(opts) {
+  return (await choiceDialog(opts)) === 'ok';
 }

@@ -105,11 +105,10 @@ describe('evaluatePlan', () => {
     expect(item.flag).toMatch(/40%/);
   });
 
-  it('every sample profile produces a plan with cash savings, in USD and PKR', () => {
-    for (const currency of ['USD', 'PKR']) {
+  it('every sample profile produces a plan with cash savings, in USD, PKR and INR', () => {
+    for (const currency of ['USD', 'PKR', 'INR']) {
       for (const p of ['single', 'suburban', 'youngpro']) {
-        const smp = sampleFor(p, currency);
-        const r = computeBudget(base({ profile: p, currency, values: smp.values, debts: smp.debts, subscriptions: smp.subscriptions }));
+        const r = computeBudget(base({ profile: p, currency, ...sampleFor(p, currency) }));
         expect(r.plan.length).toBeGreaterThan(3);
         expect(r.savings).toBeGreaterThan(0);
         expect(r.totals.income).toBeGreaterThan(r.totals.spend); // samples are realistic, not overspending
@@ -461,6 +460,12 @@ describe('payday plan', () => {
     expect(r.payday.yearlyNames).toEqual(['Gifts']);
   });
 
+  it('names the extras so the payday plan can say when a bonus comes in', () => {
+    const r = computeBudget(base({ values: { income: 3000, rent: 1000 }, extras: [{ id: 'x', name: 'Overtime', amount: 2400 }, { id: 'z', name: '', amount: 0 }] }));
+    expect(r.payday.extrasMonthly).toBe(200);
+    expect(r.payday.extrasNames).toEqual(['Overtime']);
+  });
+
   it('reports a shortfall instead of savings when costs beat income', () => {
     const t = computeTotals(base({ values: { income: 1000, rent: 1500 } }));
     const p = paydayPlan(t, [], t.spend);
@@ -518,5 +523,54 @@ describe('subscription types', () => {
     const plan = evaluatePlan(s, computeTotals(s));
     expect(ids(plan)).not.toContain('subs-rotate');
     expect(plan.find((p) => p.id === 'subs-tools-yearly').monthly).toBeCloseTo(9, 5);
+  });
+});
+
+describe('extra income (bonuses, overtime…)', () => {
+  it('spreads the yearly extras over 12 months and adds them to income', () => {
+    const t = computeTotals(base({
+      values: { income: 5000, rent: 1500 },
+      extras: [{ id: 'a', name: 'Eid bonus', amount: 6000 }, { id: 'b', name: 'Overtime', amount: 1800 }]
+    }));
+    expect(t.pay).toBe(5000);
+    expect(t.extrasYearly).toBe(7800);
+    expect(t.extrasMonthly).toBe(650);
+    expect(t.income).toBe(5650);
+    expect(t.surplus).toBe(4150);
+  });
+
+  it('counts extras in the health score and the 50/30/20 split', () => {
+    const without = computeBudget(base({ values: { income: 3000, rent: 1400, groceries: 600, dining: 400 } }));
+    const withBonus = computeBudget(base({ values: { income: 3000, rent: 1400, groceries: 600, dining: 400 }, extras: [{ id: 'x', name: 'Bonus', amount: 12000 }] }));
+    expect(withBonus.health.score).toBeGreaterThan(without.health.score);
+    // (3000 + 12000 / 12 − 2400) ÷ 4000
+    expect(withBonus.split.share.savings).toBeCloseTo(1600 / 4000, 10);
+  });
+
+  it('ignores negative or broken amounts', () => {
+    const t = computeTotals(base({ values: { income: 1000 }, extras: [{ id: 'x', name: 'Oops', amount: -500 }, { id: 'y', name: 'Text', amount: 'abc' }] }));
+    expect(t.income).toBe(1000);
+  });
+});
+
+describe('the complete example budget', () => {
+  it('fills in every bill, every subscription type, loans, yearly costs and extra income', () => {
+    for (const currency of ['USD', 'PKR', 'INR', 'GBP']) {
+      const smp = sampleFor('suburban', currency);
+      const empty = Object.keys(computeTotals(base({ values: {} })).values)
+        .filter((f) => f !== 'emergencyFund' && !(smp.values[f] > 0));
+      expect(empty, currency).toEqual([]);
+      expect(new Set(smp.debts.map((d) => d.type)), currency).toEqual(new Set(['card', 'loan']));
+      expect(new Set(smp.subscriptions.map(subKind)), currency).toEqual(new Set(['streaming', 'tools', 'cloud', 'fitness', 'learning', 'membership']));
+      expect(smp.yearly.length, currency).toBeGreaterThanOrEqual(3);
+      expect(smp.extras.length, currency).toBeGreaterThanOrEqual(4);
+      expect(smp.values.emergencyFund, currency).toBeGreaterThan(0);
+    }
+  });
+
+  it('gives every other example some extra income too', () => {
+    for (const currency of ['USD', 'PKR', 'INR']) {
+      for (const p of ['single', 'youngpro']) expect(sampleFor(p, currency).extras.length).toBeGreaterThan(0);
+    }
   });
 });

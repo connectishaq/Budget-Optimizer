@@ -11,8 +11,8 @@ const monthKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() +
 const monthName = () => new Date().toLocaleDateString('en-US', { month: 'long' });
 
 /** "A, B and 2 more" */
-function listNames(names) {
-  if (!names.length) return 'your yearly costs';
+function listNames(names, fallback = 'your yearly costs') {
+  if (!names.length) return fallback;
   if (names.length <= 2) return names.join(' and ');
   return `${names.slice(0, 2).join(', ')} and ${names.length - 2} more`;
 }
@@ -61,6 +61,14 @@ function buildSteps(p, view) {
       title: `Spend up to ${amt(p.funWeekly)} a week on eating out and shopping`,
       text: `That’s ${esc(view.raw(p.funMonthly))} a month, after the ideas in your plan. Move it to a separate card or take it as cash each week. When it’s gone, wait for next week.`,
       plain: `Spend up to ${view.raw(p.funWeekly)} a week on eating out and shopping`
+    });
+  }
+  // Not a monthly tick-box, so it goes after the numbered steps
+  if (p.extrasMonthly > 0) {
+    steps.push({
+      key: 'bonus', icon: 'gift', nudge: true,
+      title: 'When a bonus comes in, save it first',
+      text: `${p.extrasNames.length > 1 ? `${esc(listNames(p.extrasNames))} add` : `${esc(p.extrasNames[0] || 'Your extra income')} adds`} about ${esc(view.raw(p.extrasMonthly))} a month on average, but it doesn’t come every month. Put each payment straight into savings or towards your yearly costs, so everyday bills never depend on it.`
     });
   }
   return steps;
