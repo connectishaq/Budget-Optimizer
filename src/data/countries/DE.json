@@ -1,0 +1,1190 @@
+{
+  "code": "DE",
+  "currency": "EUR",
+  "locale": "de-DE",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 2.5,
+    "verify": true,
+    "note": "Destatis CPI was 2.8% (Jul), 2.9% (Aug) and 3.3% (Sep 2026, energy-driven; core 2.4%); ECB target is 2%. 2.5 is a blended long-run default"
+  },
+  "returns": {
+    "savings": {
+      "value": 2.5,
+      "verify": true,
+      "note": "ECB deposit rate 2.50% from 16 Sep 2026; best Tagesgeld offers track it, the average account pays less"
+    },
+    "balanced": {
+      "value": 4.5,
+      "verify": true,
+      "note": "Judgment: mix of Tagesgeld/bonds and a world or DAX ETF"
+    },
+    "longTerm": 7.8,
+    "shares": {
+      "value": 8.5,
+      "verify": true,
+      "note": "Judgment: slightly above the DAX long-run average for an all-equity portfolio"
+    }
+  },
+  "defaults": {
+    "cardApr": 17,
+    "loanApr": 6
+  },
+  "costs": {
+    "ledKit": {
+      "value": 35,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    },
+    "smartThermostat": {
+      "value": 150,
+      "verify": true,
+      "note": "Smart radiator-thermostat starter set (e.g. tado°, AVM FRITZ!DECT) estimate"
+    },
+    "tuneup": {
+      "value": 15,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            2200,
+            3000
+          ],
+          "verify": true,
+          "note": "Destatis 2025 full-time median gross €54,066/yr; net for a single roughly €2,300–2,800/month (secondary sources). Family adds a second (part-time) earner and Kindergeld (~€259/child, verify) (single city renter)"
+        },
+        "rent": {
+          "value": [
+            700,
+            1150
+          ],
+          "verify": true,
+          "note": "Derived from Greix Q2 2026 asking rents (avg €14.30/m² across 37 cities; Munich €23.70, Berlin €15.30, Leipzig €10.50) × assumed size (single 45–55 m², family 95–110 m², young pro 65–75 m²) plus ~€2.5/m² cold service charges (Nebenkosten), heating excluded (single city renter)"
+        },
+        "homeIns": {
+          "value": [
+            8,
+            15
+          ],
+          "verify": true,
+          "note": "Hausrat + Privathaftpflicht premium estimate (single city renter)"
+        },
+        "electricity": {
+          "value": [
+            40,
+            65
+          ],
+          "verify": true,
+          "note": "Derived: ~30–37 ct/kWh (StromAuskunft/BDEW 2026) × 1,500 / 4,000 / 2,500 kWh a year incl. standing charge (single city renter)"
+        },
+        "waterGas": {
+          "value": [
+            50,
+            90
+          ],
+          "verify": true,
+          "note": "Derived: gas ~9–12.5 ct/kWh new-customer 2026 (Verivox/BDEW) × 5,000–15,000 kWh heating + water/sewage advance (single city renter)"
+        },
+        "internet": {
+          "value": [
+            40,
+            65
+          ],
+          "verify": true,
+          "note": "Home broadband + mobile contracts estimate (single city renter)"
+        },
+        "fuel": {
+          "value": [
+            40,
+            110
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.70–1.85/l petrol; many city singles have no car (single city renter)"
+        },
+        "transit": {
+          "value": [
+            45,
+            70
+          ],
+          "verify": true,
+          "note": "Anchored on the Deutschlandticket at €63/month (2026); Jobticket discounts lower it, couples/teens raise it (single city renter)"
+        },
+        "carIns": {
+          "value": [
+            25,
+            50
+          ],
+          "verify": true,
+          "note": "Kfz-Versicherung (Haftpflicht + Teilkasko) estimate, yearly premium shown monthly (single city renter)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Car finance / leasing instalment estimate (single city renter)"
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            230,
+            330
+          ],
+          "verify": true,
+          "note": "Estimate; Destatis puts food/drink/tobacco at ~14% of household consumption (single city renter)"
+        },
+        "dining": {
+          "value": [
+            80,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "misc": {
+          "value": [
+            80,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "medical": {
+          "value": [
+            10,
+            40
+          ],
+          "verify": true,
+          "note": "Out-of-pocket only (Zuzahlungen, glasses, dentist extras); statutory health insurance is deducted from pay (single city renter)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner (Minijob/Putzhilfe) a few hours a month (single city renter)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "giving": {
+          "value": [
+            0,
+            50
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "other": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 140,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "fuel": {
+          "value": 100,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "transit": {
+          "value": 70,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "internet": {
+          "value": 55,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "insurance": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "carLoan": {
+          "value": 250,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "school": {
+          "value": 150,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "diningFloor": {
+          "value": 50,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "subsActive": {
+          "value": 30,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "transport": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "care": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            4500,
+            6500
+          ],
+          "verify": true,
+          "note": "Destatis 2025 full-time median gross €54,066/yr; net for a single roughly €2,300–2,800/month (secondary sources). Family adds a second (part-time) earner and Kindergeld (~€259/child, verify) (family of four in a suburb/second city)"
+        },
+        "rent": {
+          "value": [
+            1200,
+            1800
+          ],
+          "verify": true,
+          "note": "Derived from Greix Q2 2026 asking rents (avg €14.30/m² across 37 cities; Munich €23.70, Berlin €15.30, Leipzig €10.50) × assumed size (single 45–55 m², family 95–110 m², young pro 65–75 m²) plus ~€2.5/m² cold service charges (Nebenkosten), heating excluded (family of four in a suburb/second city)"
+        },
+        "homeIns": {
+          "value": [
+            15,
+            60
+          ],
+          "verify": true,
+          "note": "Hausrat + Privathaftpflicht premium estimate (family of four in a suburb/second city)"
+        },
+        "electricity": {
+          "value": [
+            100,
+            150
+          ],
+          "verify": true,
+          "note": "Derived: ~30–37 ct/kWh (StromAuskunft/BDEW 2026) × 1,500 / 4,000 / 2,500 kWh a year incl. standing charge (family of four in a suburb/second city)"
+        },
+        "waterGas": {
+          "value": [
+            150,
+            230
+          ],
+          "verify": true,
+          "note": "Derived: gas ~9–12.5 ct/kWh new-customer 2026 (Verivox/BDEW) × 5,000–15,000 kWh heating + water/sewage advance (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": [
+            70,
+            110
+          ],
+          "verify": true,
+          "note": "Home broadband + mobile contracts estimate (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": [
+            150,
+            280
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.70–1.85/l petrol; many city singles have no car (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": [
+            30,
+            130
+          ],
+          "verify": true,
+          "note": "Anchored on the Deutschlandticket at €63/month (2026); Jobticket discounts lower it, couples/teens raise it (family of four in a suburb/second city)"
+        },
+        "carIns": {
+          "value": [
+            70,
+            130
+          ],
+          "verify": true,
+          "note": "Kfz-Versicherung (Haftpflicht + Teilkasko) estimate, yearly premium shown monthly (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            450
+          ],
+          "verify": true,
+          "note": "Car finance / leasing instalment estimate (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Kita fees vary by state (free in Berlin, several hundred € elsewhere) plus OGS/Hort, school trips and supplies (family of four in a suburb/second city)"
+        },
+        "groceries": {
+          "value": [
+            700,
+            950
+          ],
+          "verify": true,
+          "note": "Estimate; Destatis puts food/drink/tobacco at ~14% of household consumption (family of four in a suburb/second city)"
+        },
+        "dining": {
+          "value": [
+            120,
+            300
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "misc": {
+          "value": [
+            150,
+            300
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "medical": {
+          "value": [
+            30,
+            90
+          ],
+          "verify": true,
+          "note": "Out-of-pocket only (Zuzahlungen, glasses, dentist extras); statutory health insurance is deducted from pay (family of four in a suburb/second city)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Cleaner (Minijob/Putzhilfe) a few hours a month (family of four in a suburb/second city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "other": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 340,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": 250,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": 130,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": 90,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "insurance": {
+          "value": 160,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": 400,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "utilities": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "family": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "care": {
+          "value": 0.03,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            4000,
+            6000
+          ],
+          "verify": true,
+          "note": "Destatis 2025 full-time median gross €54,066/yr; net for a single roughly €2,300–2,800/month (secondary sources). Family adds a second (part-time) earner and Kindergeld (~€259/child, verify) (young professional / couple in a big city)"
+        },
+        "rent": {
+          "value": [
+            1300,
+            1900
+          ],
+          "verify": true,
+          "note": "Derived from Greix Q2 2026 asking rents (avg €14.30/m² across 37 cities; Munich €23.70, Berlin €15.30, Leipzig €10.50) × assumed size (single 45–55 m², family 95–110 m², young pro 65–75 m²) plus ~€2.5/m² cold service charges (Nebenkosten), heating excluded (young professional / couple in a big city)"
+        },
+        "homeIns": {
+          "value": [
+            10,
+            20
+          ],
+          "verify": true,
+          "note": "Hausrat + Privathaftpflicht premium estimate (young professional / couple in a big city)"
+        },
+        "electricity": {
+          "value": [
+            50,
+            80
+          ],
+          "verify": true,
+          "note": "Derived: ~30–37 ct/kWh (StromAuskunft/BDEW 2026) × 1,500 / 4,000 / 2,500 kWh a year incl. standing charge (young professional / couple in a big city)"
+        },
+        "waterGas": {
+          "value": [
+            60,
+            100
+          ],
+          "verify": true,
+          "note": "Derived: gas ~9–12.5 ct/kWh new-customer 2026 (Verivox/BDEW) × 5,000–15,000 kWh heating + water/sewage advance (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": [
+            55,
+            85
+          ],
+          "verify": true,
+          "note": "Home broadband + mobile contracts estimate (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": [
+            80,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.70–1.85/l petrol; many city singles have no car (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": [
+            63,
+            130
+          ],
+          "verify": true,
+          "note": "Anchored on the Deutschlandticket at €63/month (2026); Jobticket discounts lower it, couples/teens raise it (young professional / couple in a big city)"
+        },
+        "carIns": {
+          "value": [
+            35,
+            70
+          ],
+          "verify": true,
+          "note": "Kfz-Versicherung (Haftpflicht + Teilkasko) estimate, yearly premium shown monthly (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Car finance / leasing instalment estimate (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Kita fees vary by state (free in Berlin, several hundred € elsewhere) plus OGS/Hort, school trips and supplies (young professional / couple in a big city)"
+        },
+        "groceries": {
+          "value": [
+            400,
+            550
+          ],
+          "verify": true,
+          "note": "Estimate; Destatis puts food/drink/tobacco at ~14% of household consumption (young professional / couple in a big city)"
+        },
+        "dining": {
+          "value": [
+            200,
+            400
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "misc": {
+          "value": [
+            120,
+            250
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "medical": {
+          "value": [
+            15,
+            50
+          ],
+          "verify": true,
+          "note": "Out-of-pocket only (Zuzahlungen, glasses, dentist extras); statutory health insurance is deducted from pay (young professional / couple in a big city)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            120
+          ],
+          "verify": true,
+          "note": "Cleaner (Minijob/Putzhilfe) a few hours a month (young professional / couple in a big city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            80
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "other": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 170,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": 140,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": 130,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": 75,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "insurance": {
+          "value": 80,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": 200,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "family": {
+          "value": 0.22,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "care": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 2600,
+        "rent": 950,
+        "homeIns": 12,
+        "electricity": 55,
+        "waterGas": 75,
+        "internet": 60,
+        "fuel": 0,
+        "transit": 63,
+        "carIns": 0,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 300,
+        "dining": 190,
+        "misc": 140,
+        "medical": 20,
+        "homeHelp": 0,
+        "familySupport": 0,
+        "giving": 20,
+        "other": 50,
+        "emergencyFund": 4000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Kreditkarte (Teilzahlung)",
+          "balance": 1800,
+          "apr": 17,
+          "payment": 90
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 13.99,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 12.99,
+          "rarely": false
+        },
+        {
+          "name": "Fitnessstudio",
+          "cost": 29.9,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 400
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 1200
+        },
+        {
+          "name": "Tax refund",
+          "amount": 800
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 5600,
+        "rent": 1550,
+        "homeIns": 35,
+        "electricity": 140,
+        "waterGas": 210,
+        "internet": 95,
+        "fuel": 260,
+        "transit": 90,
+        "carIns": 110,
+        "carLoan": 380,
+        "school": 280,
+        "groceries": 880,
+        "dining": 220,
+        "misc": 260,
+        "medical": 50,
+        "homeHelp": 120,
+        "familySupport": 100,
+        "giving": 40,
+        "other": 90,
+        "emergencyFund": 10000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Kreditkarte (Teilzahlung)",
+          "balance": 2600,
+          "apr": 19.9,
+          "payment": 120
+        },
+        {
+          "type": "loan",
+          "name": "Ratenkredit",
+          "balance": 9500,
+          "apr": 6.5,
+          "payment": 290
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 13.99,
+          "rarely": false
+        },
+        {
+          "name": "Disney+",
+          "cost": 9.99,
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365 Family",
+          "cost": 12.99,
+          "rarely": false
+        },
+        {
+          "name": "iCloud+",
+          "cost": 2.99,
+          "rarely": false
+        },
+        {
+          "name": "Fitnessstudio",
+          "cost": 29.9,
+          "rarely": true
+        },
+        {
+          "name": "RTL+",
+          "cost": 7.99,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 8.99,
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 900
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 800
+        },
+        {
+          "name": "Travel and trips home",
+          "cost": 2500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 2500
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 2000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 1100
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 2400
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 4800,
+        "rent": 1650,
+        "homeIns": 15,
+        "electricity": 70,
+        "waterGas": 85,
+        "internet": 80,
+        "fuel": 120,
+        "transit": 126,
+        "carIns": 55,
+        "carLoan": 320,
+        "school": 0,
+        "groceries": 480,
+        "dining": 380,
+        "misc": 220,
+        "medical": 25,
+        "homeHelp": 80,
+        "familySupport": 100,
+        "giving": 30,
+        "other": 80,
+        "emergencyFund": 8000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Kreditkarte (Teilzahlung)",
+          "balance": 2200,
+          "apr": 16.6,
+          "payment": 110
+        },
+        {
+          "type": "loan",
+          "name": "Autokredit",
+          "balance": 14000,
+          "apr": 5.9,
+          "payment": 320
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 13.99,
+          "rarely": false
+        },
+        {
+          "name": "Spotify Duo",
+          "cost": 17.99,
+          "rarely": false
+        },
+        {
+          "name": "iCloud+",
+          "cost": 2.99,
+          "rarely": false
+        },
+        {
+          "name": "Babbel",
+          "cost": 12.99,
+          "rarely": true
+        },
+        {
+          "name": "Urban Sports Club",
+          "cost": 59,
+          "rarely": true,
+          "kind": "fitness"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 2000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 4000
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 2000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "rundfunkbeitrag",
+      "label": "Broadcast fee (Rundfunkbeitrag)",
+      "group": "utilities",
+      "need": true,
+      "help": "The licence fee every household pays (€18.36 a month in 2026, usually billed every three months as €55.08).",
+      "ranges": {
+        "single": [
+          18.36,
+          18.36
+        ],
+        "suburban": [
+          18.36,
+          18.36
+        ],
+        "youngpro": [
+          18.36,
+          18.36
+        ]
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "de-energy-switch",
+      "pool": "electricity",
+      "title": "Leave the default electricity tariff",
+      "why": "Households still on the local supplier’s default tariff (Grundversorgung) pay around 40 ct/kWh, while the cheapest new-customer tariffs are around 30 ct/kWh.",
+      "tips": [
+        "Find your yearly kWh on your last bill and compare tariffs on Check24 or Verivox.",
+        "Pick a tariff with a 12-month price guarantee and no prepayment.",
+        "Set a reminder to compare again before the first year ends, when bonuses run out."
+      ],
+      "pct": {
+        "value": 0.15,
+        "verify": true,
+        "note": "Derived from ~40.4 vs ~29.9 ct/kWh (StromAuskunft, Oct 2026) after standing charges; only for households in Grundversorgung or old contracts"
+      }
+    },
+    {
+      "id": "de-gas-switch",
+      "pool": "waterGas",
+      "title": "Switch your gas supplier",
+      "why": "Gas prices for new customers are well below the default tariff and many long-standing contracts.",
+      "tips": [
+        "Compare gas tariffs with your yearly kWh from the last statement.",
+        "Check your monthly prepayment (Abschlag) matches your real use so you avoid a big back-payment.",
+        "Bleed radiators and turn the heating down 1°C; each degree saves about 6%."
+      ],
+      "pct": {
+        "value": 0.1,
+        "verify": true,
+        "note": "Estimate; gap between default (~13.6 ct) and new-customer (~9–12 ct) gas prices in 2026 sources"
+      }
+    },
+    {
+      "id": "de-jobticket",
+      "pool": "transit",
+      "title": "Ask for a Deutschlandticket Job",
+      "why": "If your employer pays at least 25% of the Deutschlandticket, the price drops a further 5%, so your share can fall well below €63.",
+      "tips": [
+        "Ask HR whether they offer the Deutschlandticket Job.",
+        "Cancel single tickets and local monthly passes the Deutschlandticket already covers.",
+        "Check whether your state offers a cheaper student or social version."
+      ],
+      "pct": {
+        "value": 0.3,
+        "verify": true,
+        "note": "Estimate: employer pays ≥25% plus 5% discount; depends on the employer"
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "Destatis press release No. 364 (CPI September 2026)",
+      "url": "https://www.destatis.de/EN/Press/2026/10/PE26_364_611.html",
+      "usedFor": "inflation"
+    },
+    {
+      "title": "Greix rent index Q2 2026 via dpa (Mietpreise: Stärkster Anstieg in Köln, Rückgang in Berlin)",
+      "url": "https://www.boerse-online.de/dpa-afx/mietpreise-staerkster-anstieg-in-koeln-rueckgang-in-berlin-539503.html",
+      "usedFor": "rent"
+    },
+    {
+      "title": "StromAuskunft: Strompreis aktuell",
+      "url": "https://www.stromauskunft.de/strompreise/",
+      "usedFor": "electricity, de-energy-switch"
+    },
+    {
+      "title": "Finanztip: Strompreis 2026 (BDEW average)",
+      "url": "https://finanztip.de/stromvergleich/strompreis/",
+      "usedFor": "electricity"
+    },
+    {
+      "title": "Vergleich.de: Gaspreise 2026",
+      "url": "https://www.vergleich.de/gaspreise.html",
+      "usedFor": "gas/heating, de-gas-switch"
+    },
+    {
+      "title": "Finanztip: Deutschlandticket wird 2026 teurer",
+      "url": "https://finanztip.de/daily/deutschlandticket-wird-2026-teurer-preis-steht-fest/",
+      "usedFor": "transit (€63)"
+    },
+    {
+      "title": "Finanztip: Rundfunkbeitrag 2026",
+      "url": "https://finanztip.de/rundfunkbeitrag/",
+      "usedFor": "rundfunkbeitrag (€18.36)"
+    },
+    {
+      "title": "Ingenieur.de: Destatis median gross earnings 2025",
+      "url": "https://www.ingenieur.de/karriere/gehalt/54-066-euro-im-jahr-verdient-deutschland-wirklich-so-viel/",
+      "usedFor": "income"
+    },
+    {
+      "title": "Capitalo: Kreditkarte mit Ratenzahlung (card rates 15.75–27.57%)",
+      "url": "https://www.capitalo.de/kreditkarte/ratgeber/kreditkarte-mit-ratenzahlung",
+      "usedFor": "cardApr"
+    },
+    {
+      "title": "Finanztip: Amazon Visa raises card rate to 16.63%",
+      "url": "https://www.finanztip.de/daily/zins-bei-amazon-visa-steigt-so-entgehst-du-der-kostenfalle/",
+      "usedFor": "cardApr"
+    },
+    {
+      "title": "Vergleich.de: Kreditzinsen 2026 (median 6.05%)",
+      "url": "https://www.vergleich.de/kreditzinsen.html",
+      "usedFor": "loanApr"
+    },
+    {
+      "title": "Biallo: EZB-Zinsentscheidung (deposit rate 2.50% from 16 Sep 2026)",
+      "url": "https://www.biallo.de/geldanlage/news/naechste-zinserhoehung-der-ezb",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "aktienwelt360: 35 Jahre DAX (7.8% a year, performance index 1988–2023)",
+      "url": "https://www.aktienwelt360.de/2023/07/06/der-dax-wird-35-jahre-alt-3-ernuechternde-fakten/",
+      "usedFor": "returns.longTerm"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

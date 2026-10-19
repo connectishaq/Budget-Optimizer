@@ -1,0 +1,1247 @@
+{
+  "code": "GB",
+  "currency": "GBP",
+  "locale": "en-GB",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": 3,
+  "returns": {
+    "savings": {
+      "value": 4,
+      "verify": true,
+      "note": "Bank Rate 3.75%; best easy-access deals 4.5–5% (often bonus-led) per Moneyfacts Sept 2026, typical high-street accounts lower."
+    },
+    "balanced": {
+      "value": 5.5,
+      "verify": true,
+      "note": "Estimate between cash and shares."
+    },
+    "longTerm": {
+      "value": 7,
+      "verify": true,
+      "note": "Rough long-run nominal total return for UK shares (FTSE All-Share); check against a long-run study such as the Barclays Equity Gilt Study."
+    },
+    "shares": {
+      "value": 9,
+      "verify": true,
+      "note": "Estimate for a mostly-equity global portfolio; never guaranteed."
+    }
+  },
+  "defaults": {
+    "cardApr": 25,
+    "loanApr": {
+      "value": 7.5,
+      "verify": true,
+      "note": "Typical personal loan APR for good credit; best-buy rates are lower and many people pay more. Estimate."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 30,
+      "verify": true,
+      "note": "Pack of LED bulbs; estimate."
+    },
+    "smartThermostat": {
+      "value": 150,
+      "verify": true,
+      "note": "Hive/Nest/tado smart thermostat street price; estimate."
+    },
+    "tuneup": {
+      "value": 15,
+      "verify": true,
+      "note": "Draught-proofing and radiator reflector kit; estimate."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            2300,
+            3400
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+        },
+        "rent": {
+          "value": [
+            900,
+            1400
+          ],
+          "verify": true,
+          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); one-bedroom flat outside London. London is much higher."
+        },
+        "homeIns": {
+          "value": [
+            8,
+            15
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, buildings and contents for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            45,
+            75
+          ],
+          "verify": true,
+          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            60,
+            100
+          ],
+          "verify": true,
+          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+        },
+        "internet": {
+          "value": [
+            35,
+            60
+          ],
+          "verify": true,
+          "note": "Broadband plus mobile phone; estimate."
+        },
+        "fuel": {
+          "value": [
+            60,
+            120
+          ],
+          "verify": true,
+          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            80,
+            160
+          ],
+          "verify": true,
+          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+        },
+        "carIns": {
+          "value": [
+            40,
+            80
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "PCP or car loan payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+        },
+        "groceries": {
+          "value": [
+            180,
+            280
+          ],
+          "verify": true,
+          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+        },
+        "dining": {
+          "value": [
+            100,
+            250
+          ],
+          "verify": true,
+          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            60,
+            120
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            5,
+            30
+          ],
+          "verify": true,
+          "note": "NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; uncommon; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            60
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            120
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 120,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 55,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 90,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 300,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 40,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.18,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.03,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            4500,
+            7000
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+        },
+        "rent": {
+          "value": [
+            1300,
+            1900
+          ],
+          "verify": true,
+          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 3-bedroom house outside London. London is much higher."
+        },
+        "homeIns": {
+          "value": [
+            25,
+            50
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, buildings and contents for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            80,
+            130
+          ],
+          "verify": true,
+          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            110,
+            170
+          ],
+          "verify": true,
+          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+        },
+        "internet": {
+          "value": [
+            50,
+            90
+          ],
+          "verify": true,
+          "note": "Broadband plus mobile phone; estimate."
+        },
+        "fuel": {
+          "value": [
+            150,
+            250
+          ],
+          "verify": true,
+          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            20,
+            80
+          ],
+          "verify": true,
+          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+        },
+        "carIns": {
+          "value": [
+            80,
+            140
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate."
+        },
+        "carLoan": {
+          "value": [
+            200,
+            450
+          ],
+          "verify": true,
+          "note": "PCP or car loan payment; estimate."
+        },
+        "school": {
+          "value": [
+            100,
+            600
+          ],
+          "verify": true,
+          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+        },
+        "groceries": {
+          "value": [
+            550,
+            800
+          ],
+          "verify": true,
+          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+        },
+        "dining": {
+          "value": [
+            150,
+            350
+          ],
+          "verify": true,
+          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            100,
+            200
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            20,
+            80
+          ],
+          "verify": true,
+          "note": "NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; uncommon; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 290,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 250,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 80,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 80,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 150,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 450,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 600,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 40,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.13,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            3400,
+            5500
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+        },
+        "rent": {
+          "value": [
+            1300,
+            2000
+          ],
+          "verify": true,
+          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 1–2 bed flat in a big city. London is much higher."
+        },
+        "homeIns": {
+          "value": [
+            10,
+            20
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, buildings and contents for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            55,
+            90
+          ],
+          "verify": true,
+          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            70,
+            120
+          ],
+          "verify": true,
+          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+        },
+        "internet": {
+          "value": [
+            45,
+            75
+          ],
+          "verify": true,
+          "note": "Broadband plus mobile phone; estimate."
+        },
+        "fuel": {
+          "value": [
+            80,
+            160
+          ],
+          "verify": true,
+          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            100,
+            200
+          ],
+          "verify": true,
+          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+        },
+        "carIns": {
+          "value": [
+            50,
+            100
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate."
+        },
+        "carLoan": {
+          "value": [
+            150,
+            350
+          ],
+          "verify": true,
+          "note": "PCP or car loan payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+        },
+        "groceries": {
+          "value": [
+            280,
+            420
+          ],
+          "verify": true,
+          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+        },
+        "dining": {
+          "value": [
+            200,
+            400
+          ],
+          "verify": true,
+          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            80,
+            160
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            10,
+            50
+          ],
+          "verify": true,
+          "note": "NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; uncommon; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 70,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 110,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 350,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 40,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 2800,
+        "rent": 1150,
+        "homeIns": 12,
+        "electricity": 60,
+        "waterGas": 80,
+        "internet": 50,
+        "fuel": 90,
+        "transit": 120,
+        "carIns": 55,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 240,
+        "dining": 180,
+        "misc": 110,
+        "medical": 15,
+        "homeHelp": 0,
+        "familySupport": 50,
+        "giving": 20,
+        "other": 40,
+        "emergencyFund": 2500,
+        "councilTax": 130,
+        "tvLicence": 15
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 2400,
+          "apr": 24.9,
+          "payment": 90
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 29.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Overtime",
+          "amount": 1200
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 300
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 5600,
+        "rent": 1600,
+        "homeIns": 35,
+        "electricity": 110,
+        "waterGas": 145,
+        "internet": 75,
+        "fuel": 220,
+        "transit": 40,
+        "carIns": 110,
+        "carLoan": 320,
+        "school": 400,
+        "groceries": 700,
+        "dining": 240,
+        "misc": 160,
+        "medical": 40,
+        "homeHelp": 80,
+        "familySupport": 100,
+        "giving": 50,
+        "other": 80,
+        "emergencyFund": 6000,
+        "councilTax": 200,
+        "tvLicence": 15
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 4200,
+          "apr": 24.9,
+          "payment": 150
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 8000,
+          "apr": 7.9,
+          "payment": 250
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Disney+",
+          "cost": {
+            "value": 9.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": {
+            "value": 10.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "iCloud+ storage",
+          "cost": {
+            "value": 2.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 34.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "NOW Entertainment",
+          "cost": {
+            "value": 9.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": {
+            "value": 8.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 1200
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 300
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 600
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 3000
+        },
+        {
+          "name": "Overtime",
+          "amount": 1500
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 1200
+        },
+        {
+          "name": "Tax refund",
+          "amount": 300
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 4300,
+        "rent": 1650,
+        "homeIns": 15,
+        "electricity": 70,
+        "waterGas": 95,
+        "internet": 60,
+        "fuel": 110,
+        "transit": 150,
+        "carIns": 70,
+        "carLoan": 250,
+        "school": 0,
+        "groceries": 350,
+        "dining": 330,
+        "misc": 140,
+        "medical": 20,
+        "homeHelp": 0,
+        "familySupport": 80,
+        "giving": 30,
+        "other": 60,
+        "emergencyFund": 4000,
+        "councilTax": 160,
+        "tvLicence": 15
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 3000,
+          "apr": 26.9,
+          "payment": 120
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "iCloud+ storage",
+          "cost": {
+            "value": 2.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": {
+            "value": 9.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 39.99,
+            "verify": true,
+            "note": "UK list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 1000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 3000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 1500
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "councilTax",
+      "label": "Council tax",
+      "group": "housing",
+      "need": true,
+      "help": "Your monthly council tax bill. Most councils bill in 10 instalments; spread it over 12 months here. Living alone usually gets 25% off.",
+      "ranges": {
+        "single": {
+          "value": [
+            100,
+            170
+          ],
+          "verify": true,
+          "note": "Band A–C bill with the 25% single-person discount; England average Band D is £2,392 a year (£199 a month) in 2026-27. Estimate by band."
+        },
+        "suburban": {
+          "value": [
+            160,
+            260
+          ],
+          "verify": true,
+          "note": "Band C–E bill; England average Band D £2,392 a year in 2026-27 (gov.uk). Estimate by band."
+        },
+        "youngpro": {
+          "value": [
+            130,
+            220
+          ],
+          "verify": true,
+          "note": "Band B–D bill, no discount for a couple; England average Band D £2,392 a year in 2026-27. Estimate by band."
+        }
+      }
+    },
+    {
+      "key": "tvLicence",
+      "label": "TV licence",
+      "group": "utilities",
+      "need": false,
+      "help": "Needed to watch live TV or use BBC iPlayer. £180 a year from April 2026, about £15 a month.",
+      "ranges": {
+        "single": [
+          0,
+          15
+        ],
+        "suburban": [
+          0,
+          15
+        ],
+        "youngpro": [
+          0,
+          15
+        ]
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "gb-energy-switch",
+      "pool": "electricity",
+      "title": "Check for a fixed energy deal below the price cap",
+      "why": "Most homes on a standard variable tariff pay the Ofgem price cap rate. Fixed deals and smart time-of-use tariffs are sometimes cheaper.",
+      "tips": [
+        "Compare fixed tariffs against the current price cap on a comparison site before the next cap change (January, April, July, October).",
+        "Give a meter reading and switch to paying by Direct Debit, which is cheaper than paying on receipt of bill.",
+        "If you have a smart meter and can shift usage, look at time-of-use tariffs with cheaper overnight rates."
+      ],
+      "pct": {
+        "value": 0.08,
+        "verify": true,
+        "note": "Assumed saving versus the price cap; depends on deals available at the time."
+      }
+    },
+    {
+      "id": "gb-council-tax-discount",
+      "pool": "councilTax",
+      "title": "Claim council tax discounts you are entitled to",
+      "why": "If only one adult lives in a home, the bill is 25% lower, and some bands are wrong.",
+      "tips": [
+        "If you live alone (or the only other adults are students or apprentices), apply for the 25% single person discount on your council’s website.",
+        "Check your band against similar homes on your street on the Valuation Office Agency (or Scottish Assessors) site.",
+        "Ask your council about Council Tax Reduction if your income is low."
+      ],
+      "pct": {
+        "value": 0.25,
+        "verify": true,
+        "note": "Single person discount is 25%; only applies to people living alone."
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "ONS Private rent and house prices, UK: September 2026",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/september2026",
+      "usedFor": "rent (UK average £1,400, England £1,459, Aug 2026)"
+    },
+    {
+      "title": "Ofgem energy price cap Oct–Dec 2026 (summarised by Octopus Energy)",
+      "url": "https://octopus.energy/blog/energy-prices-from-october-2026-and-what-they-mean-for-you/",
+      "usedFor": "electricity and gas (typical dual fuel £1,723 a year, unit rates and standing charges)"
+    },
+    {
+      "title": "Council Tax levels set by local authorities in England 2026 to 2027 (gov.uk)",
+      "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027",
+      "usedFor": "council tax (average Band D £2,392)"
+    },
+    {
+      "title": "Cost of TV licence fee set for 2026/27 (gov.uk)",
+      "url": "https://www.gov.uk/government/news/cost-of-tv-licence-fee-set-for-202627",
+      "usedFor": "TV licence (£180 a year)"
+    },
+    {
+      "title": "ONS Family spending in the UK: April 2024 to March 2025",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/april2024tomarch2025",
+      "usedFor": "groceries, dining, category shares (average £676.60 a week)"
+    },
+    {
+      "title": "UK CPI August 2026 (Investment Week)",
+      "url": "https://www.investmentweek.co.uk/news/4535806/uk-inflation-rises-31-thanks-fuel-price-increase",
+      "usedFor": "inflation (3.1% a year)"
+    },
+    {
+      "title": "Moneyfacts easy access savings accounts",
+      "url": "https://moneyfactscompare.co.uk/savings-accounts/easy-access-savings-accounts/",
+      "usedFor": "savings return"
+    },
+    {
+      "title": "Average credit card interest rate UK (ClearScore, citing Bank of England)",
+      "url": "https://www.clearscore.com/learn/credit-cards/average-credit-card-interest-rate-apr-uk",
+      "usedFor": "card APR (24.66% average, Dec 2025)"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

@@ -1,0 +1,1234 @@
+{
+  "code": "AU",
+  "currency": "AUD",
+  "locale": "en-AU",
+  "lakh": false,
+  "payFrequency": "biweekly",
+  "inflation": {
+    "value": 3.5,
+    "verify": true,
+    "note": "Monthly CPI 4.0% and trimmed mean 3.6% (Aug 2026) versus the RBA 2–3% target band; 3.5% is a middle figure."
+  },
+  "returns": {
+    "savings": {
+      "value": 4.75,
+      "verify": true,
+      "note": "RBA cash rate reported at 4.35–4.60% (2026, unconfirmed); best ongoing no-conditions savings ~5%, bonus/intro rates higher. Estimate."
+    },
+    "balanced": {
+      "value": 6,
+      "verify": true,
+      "note": "Estimate between cash and shares."
+    },
+    "longTerm": {
+      "value": 9,
+      "verify": true,
+      "note": "Rough long-run nominal total return (with dividends reinvested) for Australian shares (ASX 200 / All Ords accumulation); check a long-run source."
+    },
+    "shares": {
+      "value": 10,
+      "verify": true,
+      "note": "Estimate for a mostly-equity portfolio; never guaranteed."
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 20.99,
+      "verify": true,
+      "note": "Standard Australian card purchase rates cluster around 19.99–21.99%; not from a cited average."
+    },
+    "loanApr": {
+      "value": 11,
+      "verify": true,
+      "note": "Typical unsecured personal loan rate; estimate."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 50,
+      "verify": true,
+      "note": "Pack of LED bulbs (some state programs give them free); estimate."
+    },
+    "smartThermostat": {
+      "value": 250,
+      "verify": true,
+      "note": "Smart thermostat or smart AC controller; uncommon in Australian homes; estimate."
+    },
+    "tuneup": {
+      "value": 20,
+      "verify": true,
+      "note": "Door seals and draught stoppers; estimate."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            4500,
+            6500
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate."
+        },
+        "rent": {
+          "value": [
+            2200,
+            2900
+          ],
+          "verify": true,
+          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); one-bedroom unit. Weekly rent × 52 ÷ 12."
+        },
+        "homeIns": {
+          "value": [
+            20,
+            45
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate."
+        },
+        "electricity": {
+          "value": [
+            80,
+            140
+          ],
+          "verify": true,
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            30,
+            80
+          ],
+          "verify": true,
+          "note": "Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate."
+        },
+        "internet": {
+          "value": [
+            100,
+            150
+          ],
+          "verify": true,
+          "note": "NBN plan plus mobile plan(s); estimate."
+        },
+        "fuel": {
+          "value": [
+            150,
+            250
+          ],
+          "verify": true,
+          "note": "Petrol around $1.90–2.10 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate."
+        },
+        "carIns": {
+          "value": [
+            100,
+            180
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (CTP is in rego, a yearly cost); estimate."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            600
+          ],
+          "verify": true,
+          "note": "Car loan or novated lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Public school is low-cost; mostly childcare gap fees after the Child Care Subsidy, plus school contributions and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            400,
+            600
+          ],
+          "verify": true,
+          "note": "Estimate based on ABS household spending patterns and current supermarket prices; not from a single source."
+        },
+        "dining": {
+          "value": [
+            200,
+            450
+          ],
+          "verify": true,
+          "note": "Eating out, takeaway and delivery; estimate."
+        },
+        "misc": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            30,
+            100
+          ],
+          "verify": true,
+          "note": "Out-of-pocket gap fees, dentist and pharmacy (Medicare covers much GP care); private health insurance is a separate field; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 210,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 250,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 220,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 140,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 210,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 600,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 400,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 80,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.11,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            9000,
+            13000
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate."
+        },
+        "rent": {
+          "value": [
+            2800,
+            3600
+          ],
+          "verify": true,
+          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); 3–4 bedroom house in a suburb. Weekly rent × 52 ÷ 12."
+        },
+        "homeIns": {
+          "value": [
+            150,
+            280
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate."
+        },
+        "electricity": {
+          "value": [
+            180,
+            300
+          ],
+          "verify": true,
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate."
+        },
+        "internet": {
+          "value": [
+            160,
+            260
+          ],
+          "verify": true,
+          "note": "NBN plan plus mobile plan(s); estimate."
+        },
+        "fuel": {
+          "value": [
+            350,
+            550
+          ],
+          "verify": true,
+          "note": "Petrol around $1.90–2.10 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            30,
+            150
+          ],
+          "verify": true,
+          "note": "Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate."
+        },
+        "carIns": {
+          "value": [
+            200,
+            320
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (CTP is in rego, a yearly cost); estimate."
+        },
+        "carLoan": {
+          "value": [
+            600,
+            1100
+          ],
+          "verify": true,
+          "note": "Car loan or novated lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            300,
+            1000
+          ],
+          "verify": true,
+          "note": "Public school is low-cost; mostly childcare gap fees after the Child Care Subsidy, plus school contributions and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            1200,
+            1700
+          ],
+          "verify": true,
+          "note": "Estimate based on ABS household spending patterns and current supermarket prices; not from a single source."
+        },
+        "dining": {
+          "value": [
+            300,
+            600
+          ],
+          "verify": true,
+          "note": "Eating out, takeaway and delivery; estimate."
+        },
+        "misc": {
+          "value": [
+            200,
+            350
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            100,
+            300
+          ],
+          "verify": true,
+          "note": "Out-of-pocket gap fees, dentist and pharmacy (Medicare covers much GP care); private health insurance is a separate field; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 480,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 550,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 150,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 240,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 550,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 1100,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 1000,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 80,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.27,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            7000,
+            10500
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate."
+        },
+        "rent": {
+          "value": [
+            2700,
+            3500
+          ],
+          "verify": true,
+          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); unit in Sydney/Melbourne-type city. Weekly rent × 52 ÷ 12."
+        },
+        "homeIns": {
+          "value": [
+            25,
+            50
+          ],
+          "verify": true,
+          "note": "Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate."
+        },
+        "electricity": {
+          "value": [
+            100,
+            170
+          ],
+          "verify": true,
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+        },
+        "waterGas": {
+          "value": [
+            40,
+            100
+          ],
+          "verify": true,
+          "note": "Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate."
+        },
+        "internet": {
+          "value": [
+            130,
+            200
+          ],
+          "verify": true,
+          "note": "NBN plan plus mobile plan(s); estimate."
+        },
+        "fuel": {
+          "value": [
+            200,
+            320
+          ],
+          "verify": true,
+          "note": "Petrol around $1.90–2.10 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            120,
+            240
+          ],
+          "verify": true,
+          "note": "Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate."
+        },
+        "carIns": {
+          "value": [
+            120,
+            200
+          ],
+          "verify": true,
+          "note": "Comprehensive car insurance (CTP is in rego, a yearly cost); estimate."
+        },
+        "carLoan": {
+          "value": [
+            400,
+            800
+          ],
+          "verify": true,
+          "note": "Car loan or novated lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Public school is low-cost; mostly childcare gap fees after the Child Care Subsidy, plus school contributions and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            600,
+            850
+          ],
+          "verify": true,
+          "note": "Estimate based on ABS household spending patterns and current supermarket prices; not from a single source."
+        },
+        "dining": {
+          "value": [
+            400,
+            750
+          ],
+          "verify": true,
+          "note": "Eating out, takeaway and delivery; estimate."
+        },
+        "misc": {
+          "value": [
+            150,
+            280
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            50,
+            150
+          ],
+          "verify": true,
+          "note": "Out-of-pocket gap fees, dentist and pharmacy (Medicare covers much GP care); private health insurance is a separate field; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Cleaner a few hours a month; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 260,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 320,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 240,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 190,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 240,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 800,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 300,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 80,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.34,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.22,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 5400,
+        "rent": 2500,
+        "homeIns": 30,
+        "electricity": 110,
+        "waterGas": 50,
+        "internet": 125,
+        "fuel": 200,
+        "transit": 180,
+        "carIns": 140,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 520,
+        "dining": 350,
+        "misc": 180,
+        "medical": 50,
+        "homeHelp": 0,
+        "familySupport": 100,
+        "giving": 40,
+        "other": 80,
+        "emergencyFund": 4000,
+        "privateHealth": 180
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 3800,
+          "apr": 20.99,
+          "payment": 150
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 20.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 15.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 65,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 800
+        }
+      ],
+      "extras": [
+        {
+          "name": "Tax refund",
+          "amount": 1500
+        },
+        {
+          "name": "Overtime",
+          "amount": 2000
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 11000,
+        "rent": 3200,
+        "homeIns": 220,
+        "electricity": 250,
+        "waterGas": 170,
+        "internet": 220,
+        "fuel": 480,
+        "transit": 80,
+        "carIns": 280,
+        "carLoan": 850,
+        "school": 700,
+        "groceries": 1550,
+        "dining": 450,
+        "misc": 300,
+        "medical": 180,
+        "homeHelp": 200,
+        "familySupport": 150,
+        "giving": 100,
+        "other": 150,
+        "emergencyFund": 10000,
+        "privateHealth": 480
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 7000,
+          "apr": 20.99,
+          "payment": 250
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 12000,
+          "apr": 11.5,
+          "payment": 400
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 20.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Stan",
+          "cost": {
+            "value": 17,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": {
+            "value": 15,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "iCloud+ storage",
+          "cost": {
+            "value": 4.49,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 70,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Kayo Sports",
+          "cost": {
+            "value": 30,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": {
+            "value": 9.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 2000
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 800
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 1200
+        }
+      ],
+      "extras": [
+        {
+          "name": "Tax refund",
+          "amount": 2500
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 5000
+        },
+        {
+          "name": "Overtime",
+          "amount": 3000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 2000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 8500,
+        "rent": 3100,
+        "homeIns": 35,
+        "electricity": 140,
+        "waterGas": 70,
+        "internet": 170,
+        "fuel": 260,
+        "transit": 200,
+        "carIns": 160,
+        "carLoan": 600,
+        "school": 0,
+        "groceries": 750,
+        "dining": 650,
+        "misc": 240,
+        "medical": 80,
+        "homeHelp": 100,
+        "familySupport": 150,
+        "giving": 60,
+        "other": 100,
+        "emergencyFund": 7000,
+        "privateHealth": 300
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 5000,
+          "apr": 20.99,
+          "payment": 200
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 9000,
+          "apr": 11.5,
+          "payment": 320
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 20.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 15.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": {
+            "value": 4.49,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": {
+            "value": 14.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Fitness app",
+          "cost": {
+            "value": 19.99,
+            "verify": true,
+            "note": "Australian list price as remembered for late 2025/2026; prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 2500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 6000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 1500
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "privateHealth",
+      "label": "Private health insurance",
+      "group": "care",
+      "need": false,
+      "help": "Your monthly hospital and/or extras cover premium after the government rebate. Optional, but many people hold hospital cover to avoid the Medicare levy surcharge.",
+      "ranges": {
+        "single": {
+          "value": [
+            120,
+            260
+          ],
+          "verify": true,
+          "note": "Average hospital + extras policy about $3,560 a year (~$300 a month) per Compare the Market 2025 data; singles often pay less on basic/bronze cover. Estimate."
+        },
+        "suburban": {
+          "value": [
+            350,
+            650
+          ],
+          "verify": true,
+          "note": "Family hospital + extras cover; no direct family average found. Estimate."
+        },
+        "youngpro": {
+          "value": [
+            200,
+            500
+          ],
+          "verify": true,
+          "note": "Couple or single hospital + extras cover; estimate."
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "au-energy-made-easy",
+      "pool": "electricity",
+      "title": "Compare your electricity plan on Energy Made Easy",
+      "why": "Many households are on plans priced at or near the Default Market Offer, while market offers from the same or other retailers are often cheaper.",
+      "tips": [
+        "Upload your bill to Energy Made Easy (or Victorian Energy Compare in Victoria) to see cheaper plans for your actual usage.",
+        "Ask your current retailer to match the best offer before switching.",
+        "If you have solar or can shift usage, compare time-of-use plans with cheap midday rates."
+      ],
+      "pct": {
+        "value": 0.1,
+        "verify": true,
+        "note": "Assumed saving from switching to a market offer; estimate."
+      }
+    },
+    {
+      "id": "au-health-cover-review",
+      "pool": "privateHealth",
+      "title": "Review your private health cover tier and extras",
+      "why": "Premiums rise every April, and many people pay for extras or hospital services they never use.",
+      "tips": [
+        "Compare policies on privatehealth.gov.au, the government’s free comparison site.",
+        "Check whether you use your extras enough to beat the premium; if not, drop extras or pick a cheaper tier.",
+        "A higher excess lowers the premium; consider paying annually before 1 April to lock in the old price."
+      ],
+      "pct": {
+        "value": 0.12,
+        "verify": true,
+        "note": "Assumed saving from changing tier/excess; estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab",
+    "smart-thermostat"
+  ],
+  "sources": [
+    {
+      "title": "Cotality Quarterly Rental Review, September 2026 (via savings.com.au)",
+      "url": "https://www.savings.com.au/news/rental-growth-slows-as-affordability-pressures-bite",
+      "usedFor": "rent (national median $713 a week)"
+    },
+    {
+      "title": "AER Default Market Offer 2026-27 information kit",
+      "url": "https://www.aer.gov.au/system/files/2026-05/Information%20Kit%20-%20Default%20Market%20Offer%20-%202026-27_0.pdf",
+      "usedFor": "electricity (Ausgrid $1,899 a year at 3,900 kWh)"
+    },
+    {
+      "title": "Australian CPI August 2026 (QNA / ABS release)",
+      "url": "https://qna.org.qa/en/News-Area/News/2026-9/30/australia-cpi-inflation-rises-to-4-in-august",
+      "usedFor": "inflation (4.0% headline, trimmed mean 3.6%)"
+    },
+    {
+      "title": "Compare the Market: about health insurance premiums",
+      "url": "https://www.comparethemarket.com.au/health-insurance/about",
+      "usedFor": "private health insurance (average $3,560 a year hospital + extras)"
+    },
+    {
+      "title": "Canstar best savings account interest rates",
+      "url": "https://www.canstar.com.au/savings-accounts/compare/best-savings-account-interest-rates/",
+      "usedFor": "savings return"
+    },
+    {
+      "title": "Energy Made Easy (Australian Government)",
+      "url": "https://www.energymadeeasy.gov.au/",
+      "usedFor": "local tip"
+    },
+    {
+      "title": "privatehealth.gov.au",
+      "url": "https://www.privatehealth.gov.au/",
+      "usedFor": "local tip"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

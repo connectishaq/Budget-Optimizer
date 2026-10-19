@@ -1,0 +1,1268 @@
+{
+  "code": "ID",
+  "currency": "IDR",
+  "locale": "id-ID",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 3,
+    "verify": true,
+    "note": "BPS: 3.19% year on year in August 2026; BI target 2.5% ± 1%. 3% is a rounded planning figure."
+  },
+  "returns": {
+    "savings": 3,
+    "balanced": {
+      "value": 5.5,
+      "verify": true,
+      "note": "Blend of deposits/government bonds (SBN retail ~6%) and equity; judgement."
+    },
+    "longTerm": {
+      "value": 8,
+      "verify": true,
+      "note": "Reku cites ~8–9% a year for the IDX Composite (IHSG) over the last decade; a price-only calculation from end-2015 (~4,593, unverified) to end-2025 (8,646.94) gives ~6.5%."
+    },
+    "shares": {
+      "value": 9,
+      "verify": true,
+      "note": "Judgement; mostly-shares portfolio."
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 21,
+      "verify": true,
+      "note": "Bank Indonesia caps card interest at 1.75% a month (~21% a year) since July 2021, per Cermati; not re-confirmed for 2026."
+    },
+    "loanApr": {
+      "value": 16,
+      "verify": true,
+      "note": "Unsecured personal loans (KTA) are quoted at ~0.8–1.5% flat a month, roughly 15–30% effective a year; judgement."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 250000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    },
+    "smartThermostat": {
+      "value": 1500000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    },
+    "tuneup": {
+      "value": 150000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            6000000,
+            12000000
+          ],
+          "verify": true,
+          "note": "Jakarta minimum wage (UMP) 2026 is Rp5,729,876; a city professional earns somewhat more. No official average take-home for this group."
+        },
+        "rent": {
+          "value": [
+            1500000,
+            3500000
+          ],
+          "verify": true,
+          "note": "Kos (boarding room) in Jakarta; no 2026 survey found."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            200000,
+            450000
+          ],
+          "verify": true,
+          "note": "PLN R-1 1,300 VA at Rp1,444.70/kWh, 140–300 kWh a month."
+        },
+        "waterGas": {
+          "value": [
+            80000,
+            200000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            250000,
+            450000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            300000,
+            700000
+          ],
+          "verify": true,
+          "note": "Motorbike on Pertalite (Rp10,000 a litre), 30–70 litres a month."
+        },
+        "transit": {
+          "value": [
+            300000,
+            900000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            0,
+            300000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            1500000
+          ],
+          "verify": true,
+          "note": "Mostly motorbike instalments for this group."
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            1200000,
+            2200000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            800000,
+            2000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            400000,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            100000,
+            400000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            2000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 650000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 700000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 900000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 450000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 300000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 1500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 1500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 150000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            12000000,
+            25000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "rent": {
+          "value": [
+            2000000,
+            5000000
+          ],
+          "verify": true,
+          "note": "House contract (rumah kontrakan) in greater Jakarta is commonly Rp20–50 million a year (Dealls cost-of-living guide), i.e. ~Rp1.7–4.2 million a month."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            500000,
+            1200000
+          ],
+          "verify": true,
+          "note": "PLN R-1 2,200 VA at Rp1,444.70/kWh, 350–800 kWh a month."
+        },
+        "waterGas": {
+          "value": [
+            200000,
+            450000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            350000,
+            600000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            800000,
+            1600000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            200000,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            2500000,
+            5500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": {
+          "value": [
+            1500000,
+            5000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "groceries": {
+          "value": [
+            3500000,
+            5500000
+          ],
+          "verify": true,
+          "note": "BPS/Susenas: Jakarta food spending ~Rp1.15 million per person a month (incl. prepared food) in 2025 → ~Rp4.6 million for four."
+        },
+        "dining": {
+          "value": [
+            800000,
+            2000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            700000,
+            1500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            300000,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            1500000,
+            3000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            3000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 1500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 1600000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 550000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 5500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 4500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 600000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 200000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            15000000,
+            35000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "rent": {
+          "value": [
+            4000000,
+            9000000
+          ],
+          "verify": true,
+          "note": "2-bedroom apartments in central Jakarta listed ~Rp6.8–11.2 million a month (Jendela360, Dealls); 1-bedroom and outer areas lower."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            400000,
+            900000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "waterGas": {
+          "value": [
+            150000,
+            350000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            400000,
+            700000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            500000,
+            1200000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            400000,
+            1500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            5000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": {
+          "value": [
+            0,
+            2000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "groceries": {
+          "value": [
+            2000000,
+            3500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            2000000,
+            5000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            1000000,
+            2500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            200000,
+            700000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            1500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            4000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 1100000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 1200000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 1500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 650000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 500000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 5000000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 2000000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 1000000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 250000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.33,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 10000000,
+        "rent": 2200000,
+        "homeIns": 0,
+        "electricity": 300000,
+        "waterGas": 120000,
+        "internet": 350000,
+        "fuel": 450000,
+        "transit": 500000,
+        "carIns": 0,
+        "carLoan": 700000,
+        "school": 0,
+        "groceries": 1500000,
+        "dining": 1000000,
+        "misc": 600000,
+        "medical": 150000,
+        "homeHelp": 0,
+        "familySupport": 600000,
+        "giving": 200000,
+        "other": 200000,
+        "emergencyFund": 15000000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 6000000,
+          "apr": 21,
+          "payment": 600000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 54000,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 54990,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 350000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 4000000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 10000000
+        },
+        {
+          "name": "Overtime",
+          "amount": 3000000
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 24000000,
+        "rent": 3000000,
+        "homeIns": 100000,
+        "electricity": 900000,
+        "waterGas": 300000,
+        "internet": 450000,
+        "fuel": 1100000,
+        "transit": 200000,
+        "carIns": 350000,
+        "carLoan": 3500000,
+        "school": 2500000,
+        "groceries": 4200000,
+        "dining": 900000,
+        "misc": 700000,
+        "medical": 500000,
+        "homeHelp": 1800000,
+        "familySupport": 800000,
+        "giving": 400000,
+        "other": 300000,
+        "galon": 250000,
+        "estateFees": 150000,
+        "arisan": 500000,
+        "emergencyFund": 40000000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 8000000,
+          "apr": 21,
+          "payment": 700000
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 25000000,
+          "apr": 16,
+          "payment": 1200000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 65000,
+          "rarely": false
+        },
+        {
+          "name": "Vidio Platinum",
+          "cost": 32480,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Spotify",
+          "cost": 54990,
+          "rarely": false
+        },
+        {
+          "name": "YouTube Premium",
+          "cost": 59000,
+          "rarely": true
+        },
+        {
+          "name": "Google One storage",
+          "cost": 26900,
+          "rarely": false
+        },
+        {
+          "name": "GoPay Plus",
+          "cost": 25000,
+          "rarely": false,
+          "kind": "membership"
+        },
+        {
+          "name": "Gym membership",
+          "cost": 400000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 6000000
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 5000000
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 3000000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 24000000
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 15000000
+        },
+        {
+          "name": "Overtime",
+          "amount": 3000000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 6000000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 24000000,
+        "rent": 6000000,
+        "homeIns": 0,
+        "electricity": 600000,
+        "waterGas": 200000,
+        "internet": 500000,
+        "fuel": 800000,
+        "transit": 800000,
+        "carIns": 300000,
+        "carLoan": 3000000,
+        "school": 0,
+        "groceries": 2500000,
+        "dining": 3500000,
+        "misc": 1500000,
+        "medical": 300000,
+        "homeHelp": 500000,
+        "familySupport": 1500000,
+        "giving": 300000,
+        "other": 300000,
+        "emergencyFund": 40000000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 10000000,
+          "apr": 21,
+          "payment": 1000000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 120000,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 54990,
+          "rarely": false
+        },
+        {
+          "name": "Vidio Platinum",
+          "cost": 32480,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 26900,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 500000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 6000000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 24000000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 8000000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "galon",
+      "label": "Drinking water (galon refills)",
+      "group": "utilities",
+      "need": true,
+      "help": "Bottled drinking water — 19-litre galon refills from a depot or a brand like Aqua — as a monthly amount. Tap (PDAM) water goes in the water and gas box.",
+      "ranges": {
+        "single": {
+          "value": [
+            50000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate: 4–8 galons a month at Rp7,000 (depot refill) to Rp25,000 (branded)."
+        },
+        "suburban": {
+          "value": [
+            150000,
+            350000
+          ],
+          "verify": true,
+          "note": "Estimate: 10–16 galons a month."
+        },
+        "youngpro": {
+          "value": [
+            80000,
+            200000
+          ],
+          "verify": true,
+          "note": "Estimate."
+        }
+      }
+    },
+    {
+      "key": "estateFees",
+      "label": "Neighbourhood or building fees (IPL, iuran RT/RW)",
+      "group": "housing",
+      "need": true,
+      "help": "Monthly fees for your neighbourhood or building: iuran RT/RW, security, rubbish collection, or the apartment service charge (IPL) if it is not included in your rent.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate; kos rooms usually include these."
+        },
+        "suburban": {
+          "value": [
+            50000,
+            300000
+          ],
+          "verify": true,
+          "note": "Estimate for a housing estate (perumahan)."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate: apartment IPL is often Rp15,000–25,000 per m² a month if not in the rent."
+        }
+      }
+    },
+    {
+      "key": "arisan",
+      "label": "Arisan contribution",
+      "group": "care",
+      "need": false,
+      "help": "Your monthly payment into an arisan — a rotating savings group where every member pays in and one member wins the whole pot each round. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        },
+        "suburban": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            1000000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "id-va-power",
+      "pool": "electricity",
+      "title": "Check your PLN power level and token habits",
+      "why": "All households from 1,300 VA up pay the same Rp1,444.70 per kWh, so savings come from using fewer kWh, mainly AC and water heaters.",
+      "tips": [
+        "Set the AC to 25–26°C with a timer and close doors to the room you are cooling.",
+        "Buy prepaid tokens in larger amounts: the admin fee is per purchase.",
+        "Swap old fluorescent tubes and incandescent bulbs for LED."
+      ],
+      "pct": {
+        "value": 0.1,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "id-krl-tj",
+      "pool": "transit",
+      "title": "Mix KRL, TransJakarta and MRT instead of daily ojek",
+      "why": "TransJakarta costs Rp3,500 a trip and KRL fares start from a few thousand rupiah, far below ride-hailing for the same distance.",
+      "tips": [
+        "Use ojek only for the first and last kilometre to the station.",
+        "Use one card (e.g. JakLingko-linked) so transfers are integrated and cheaper.",
+        "Compare a week of ride-hailing receipts with the public transport cost of the same trips."
+      ],
+      "pct": {
+        "value": 0.25,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "id-galon-depot",
+      "pool": "galon",
+      "title": "Switch branded galons for a trusted refill depot",
+      "why": "Refilling at a licensed depot costs a fraction of branded galons.",
+      "tips": [
+        "Choose a depot that shows a current health/hygiene certificate.",
+        "Or boil and filter PDAM water for cooking.",
+        "Buy galons in a monthly delivery plan if your depot offers one."
+      ],
+      "pct": {
+        "value": 0.4,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "smart-thermostat"
+  ],
+  "sources": [
+    {
+      "title": "Katadata/Kompas TV — UMP Jakarta 2026 Rp5,729,876",
+      "url": "https://katadata.co.id/amp/berita/industri/694bb57d97fa5/ump-jakarta-2026-resmi-naik-jadi-rp-5-72-juta/",
+      "usedFor": "income (context)"
+    },
+    {
+      "title": "Databoks (BPS Susenas) — Jakarta per-capita spending 2025 Rp2.96 million/month, food 38.9%",
+      "url": "https://databoks.katadata.co.id/datapublish/2026/08/03/pengeluaran-per-kapita-dki-jakarta",
+      "usedFor": "groceries, category shares (context)"
+    },
+    {
+      "title": "JournalArta — PLN tariffs Q4 2026 (R-1 1,300 VA Rp1,444.70/kWh)",
+      "url": "https://journalarta.com/news/2026/10/12/tarif-listrik-pln-oktober-2026/",
+      "usedFor": "electricity"
+    },
+    {
+      "title": "Bisnis.com — fuel prices 15 Oct 2026 (Pertalite Rp10,000; Pertamax Rp15,950)",
+      "url": "https://ekonomi.bisnis.com/read/20261015/44/2012744/daftar-lengkap-harga-bbm-terbaru-15-oktober-2026-mana-yang-termurah",
+      "usedFor": "fuel"
+    },
+    {
+      "title": "Dealls — biaya hidup di Jakarta (2-bed apartment Rp7m+, rumah kontrakan Rp20–50m a year)",
+      "url": "https://dealls.com/pengembangan-karir/biaya-hidup-di-jakarta",
+      "usedFor": "rent"
+    },
+    {
+      "title": "Jendela360 — Cosmo Terrace 2-bedroom rents",
+      "url": "https://jendela360.com/sewa-apartemen-cosmo-terrace-jakarta-residence-thamrin-city/2-kamar",
+      "usedFor": "rent (youngpro)"
+    },
+    {
+      "title": "Bisnis.com — highest bank deposit rates October 2026 (BRI/BCA up to 3%)",
+      "url": "https://finansial.bisnis.com/read/20261009/90/2010894/bunga-deposito-bank-tertinggi-oktober-2026-ada-yang-sentuh-3",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "Bisnis.com — BI holds BI Rate at 5.75%, August 2026 inflation 3.19%",
+      "url": "https://finansial.bisnis.com/read/20260923/11/2006538/alasan-bank-indonesia-tahan-bi-rate-september-2026-di-575",
+      "usedFor": "inflation"
+    },
+    {
+      "title": "Investortrust — IHSG closes 2025 at 8,646.94",
+      "url": "https://investortrust.id/market/89926/ihsg-menguat-22-13-selama-2025-alami-24-kali-all-time-high",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "Reku — IHSG vs S&P 500",
+      "url": "https://reku.id/analysis/ihsg-vs-sp500",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "Cermati — suku bunga kartu kredit di Indonesia (cap 1.75% a month)",
+      "url": "https://www.cermati.com/artikel/suku-bunga-kartu-kredit-di-indonesia",
+      "usedFor": "defaults.cardApr"
+    },
+    {
+      "title": "Bisnis.com — Vidio Platinum Rp32,480 incl. 12% VAT (Jan 2025)",
+      "url": "https://teknologi.bisnis.com/read/20250102/266/1828401/vidio-terapkan-ppn-12-langganan-streaming-platinium-jadi-segini-harganya",
+      "usedFor": "sample subscriptions"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

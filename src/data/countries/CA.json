@@ -1,0 +1,1186 @@
+{
+  "code": "CA",
+  "currency": "CAD",
+  "locale": "en-CA",
+  "lakh": false,
+  "payFrequency": "biweekly",
+  "inflation": {
+    "value": 2.5,
+    "verify": true,
+    "note": "Headline CPI 3.0% (Aug 2026, gasoline-driven) but core measures ~2% and the Bank of Canada target is 2%; 2.5% is a middle figure."
+  },
+  "returns": {
+    "savings": {
+      "value": 2.5,
+      "verify": true,
+      "note": "Policy rate 2.25%; ongoing HISA rates ~1–3%, promotional rates up to ~4.75%. Estimate."
+    },
+    "balanced": {
+      "value": 5,
+      "verify": true,
+      "note": "Estimate between cash and shares."
+    },
+    "longTerm": {
+      "value": 8,
+      "verify": true,
+      "note": "Rough long-run nominal total return for the S&P/TSX Composite; check a long-run source."
+    },
+    "shares": {
+      "value": 9.5,
+      "verify": true,
+      "note": "Estimate for a mostly-equity portfolio; never guaranteed."
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 20.99,
+      "verify": true,
+      "note": "Most standard Canadian cards charge 19.99–20.99% on purchases (cash advances ~22.99%); not from a cited average."
+    },
+    "loanApr": {
+      "value": 9,
+      "verify": true,
+      "note": "Typical unsecured personal loan / line of credit rate at a bank; estimate."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 45,
+      "verify": true,
+      "note": "Pack of LED bulbs; estimate."
+    },
+    "smartThermostat": {
+      "value": 180,
+      "verify": true,
+      "note": "ecobee/Nest street price; utility rebates often available; estimate."
+    },
+    "tuneup": {
+      "value": 20,
+      "verify": true,
+      "note": "Weatherstripping and draught kit; estimate."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            3600,
+            5200
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate."
+        },
+        "rent": {
+          "value": [
+            1500,
+            2100
+          ],
+          "verify": true,
+          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); one-bedroom apartment. Varies hugely by city."
+        },
+        "homeIns": {
+          "value": [
+            20,
+            40
+          ],
+          "verify": true,
+          "note": "Tenant insurance for renters, home insurance for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            50,
+            90
+          ],
+          "verify": true,
+          "note": "Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate."
+        },
+        "waterGas": {
+          "value": [
+            30,
+            70
+          ],
+          "verify": true,
+          "note": "Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate."
+        },
+        "internet": {
+          "value": [
+            90,
+            150
+          ],
+          "verify": true,
+          "note": "Home internet plus mobile plan(s); Canadian prices are high; estimate."
+        },
+        "fuel": {
+          "value": [
+            80,
+            160
+          ],
+          "verify": true,
+          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            100,
+            160
+          ],
+          "verify": true,
+          "note": "Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate."
+        },
+        "carIns": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            550
+          ],
+          "verify": true,
+          "note": "Car loan or lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            300,
+            450
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+        },
+        "dining": {
+          "value": [
+            150,
+            350
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            80,
+            150
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            30,
+            100
+          ],
+          "verify": true,
+          "note": "Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner or babysitter; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 160,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 150,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 550,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 300,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 50,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.38,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            7500,
+            11000
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate."
+        },
+        "rent": {
+          "value": [
+            2200,
+            3000
+          ],
+          "verify": true,
+          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 3-bedroom townhouse or house. Varies hugely by city."
+        },
+        "homeIns": {
+          "value": [
+            100,
+            180
+          ],
+          "verify": true,
+          "note": "Tenant insurance for renters, home insurance for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            110,
+            200
+          ],
+          "verify": true,
+          "note": "Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate."
+        },
+        "waterGas": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate."
+        },
+        "internet": {
+          "value": [
+            150,
+            250
+          ],
+          "verify": true,
+          "note": "Home internet plus mobile plan(s); Canadian prices are high; estimate."
+        },
+        "fuel": {
+          "value": [
+            250,
+            400
+          ],
+          "verify": true,
+          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate."
+        },
+        "carIns": {
+          "value": [
+            220,
+            380
+          ],
+          "verify": true,
+          "note": "Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate."
+        },
+        "carLoan": {
+          "value": [
+            500,
+            900
+          ],
+          "verify": true,
+          "note": "Car loan or lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            200,
+            800
+          ],
+          "verify": true,
+          "note": "Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            1100,
+            1500
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+        },
+        "dining": {
+          "value": [
+            250,
+            500
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            150,
+            250
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            100,
+            300
+          ],
+          "verify": true,
+          "note": "Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Cleaner or babysitter; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 380,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 400,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 100,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 230,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 450,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 900,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 800,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 50,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            5500,
+            8500
+          ],
+          "verify": true,
+          "note": "Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate."
+        },
+        "rent": {
+          "value": [
+            1900,
+            2600
+          ],
+          "verify": true,
+          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 1–2 bed in Toronto/Vancouver-type city. Varies hugely by city."
+        },
+        "homeIns": {
+          "value": [
+            20,
+            45
+          ],
+          "verify": true,
+          "note": "Tenant insurance for renters, home insurance for families; estimate."
+        },
+        "electricity": {
+          "value": [
+            60,
+            110
+          ],
+          "verify": true,
+          "note": "Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate."
+        },
+        "waterGas": {
+          "value": [
+            40,
+            90
+          ],
+          "verify": true,
+          "note": "Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate."
+        },
+        "internet": {
+          "value": [
+            120,
+            200
+          ],
+          "verify": true,
+          "note": "Home internet plus mobile plan(s); Canadian prices are high; estimate."
+        },
+        "fuel": {
+          "value": [
+            120,
+            220
+          ],
+          "verify": true,
+          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+        },
+        "transit": {
+          "value": [
+            100,
+            200
+          ],
+          "verify": true,
+          "note": "Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate."
+        },
+        "carIns": {
+          "value": [
+            150,
+            260
+          ],
+          "verify": true,
+          "note": "Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate."
+        },
+        "carLoan": {
+          "value": [
+            300,
+            650
+          ],
+          "verify": true,
+          "note": "Car loan or lease payment; estimate."
+        },
+        "school": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate."
+        },
+        "groceries": {
+          "value": [
+            450,
+            650
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+        },
+        "dining": {
+          "value": [
+            300,
+            550
+          ],
+          "verify": true,
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+        },
+        "misc": {
+          "value": [
+            100,
+            200
+          ],
+          "verify": true,
+          "note": "Clothes, household items and personal spending; estimate."
+        },
+        "medical": {
+          "value": [
+            50,
+            150
+          ],
+          "verify": true,
+          "note": "Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner or babysitter; estimate."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Money sent to family; estimate."
+        },
+        "giving": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Charity and gifts; estimate."
+        },
+        "other": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Anything else; estimate."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 190,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "fuel": {
+          "value": 220,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "transit": {
+          "value": 200,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "internet": {
+          "value": 180,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "insurance": {
+          "value": 260,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "carLoan": {
+          "value": 650,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "school": {
+          "value": 300,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        },
+        "subsActive": {
+          "value": 50,
+          "verify": true,
+          "note": "Set near the top of the estimated typical range; estimate."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.33,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "transport": {
+          "value": 0.13,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "family": {
+          "value": 0.22,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Estimated typical share of take-home pay; not from a single source."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 4300,
+        "rent": 1800,
+        "homeIns": 28,
+        "electricity": 70,
+        "waterGas": 45,
+        "internet": 130,
+        "fuel": 130,
+        "transit": 156,
+        "carIns": 170,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 400,
+        "dining": 260,
+        "misc": 120,
+        "medical": 50,
+        "homeHelp": 0,
+        "familySupport": 100,
+        "giving": 30,
+        "other": 50,
+        "emergencyFund": 3000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 3500,
+          "apr": 20.99,
+          "payment": 130
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 18.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 50,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 700
+        }
+      ],
+      "extras": [
+        {
+          "name": "Tax refund",
+          "amount": 900
+        },
+        {
+          "name": "Overtime",
+          "amount": 1500
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 9200,
+        "rent": 2700,
+        "homeIns": 140,
+        "electricity": 170,
+        "waterGas": 180,
+        "internet": 210,
+        "fuel": 360,
+        "transit": 40,
+        "carIns": 320,
+        "carLoan": 650,
+        "school": 500,
+        "groceries": 1400,
+        "dining": 380,
+        "misc": 220,
+        "medical": 160,
+        "homeHelp": 200,
+        "familySupport": 150,
+        "giving": 100,
+        "other": 100,
+        "emergencyFund": 8000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 6000,
+          "apr": 20.99,
+          "payment": 220
+        },
+        {
+          "type": "loan",
+          "name": "Line of credit",
+          "balance": 9000,
+          "apr": 9.5,
+          "payment": 300
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 18.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Crave",
+          "cost": {
+            "value": 22,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": {
+            "value": 13.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "iCloud+ storage",
+          "cost": {
+            "value": 3.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": {
+            "value": 60,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Disney+",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": {
+            "value": 9.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 1800
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 500
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 1200
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 5000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 1800
+        },
+        {
+          "name": "Overtime",
+          "amount": 2400
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 1500
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 6800,
+        "rent": 2400,
+        "homeIns": 30,
+        "electricity": 85,
+        "waterGas": 60,
+        "internet": 170,
+        "fuel": 180,
+        "transit": 156,
+        "carIns": 210,
+        "carLoan": 450,
+        "school": 0,
+        "groceries": 560,
+        "dining": 480,
+        "misc": 180,
+        "medical": 70,
+        "homeHelp": 0,
+        "familySupport": 150,
+        "giving": 50,
+        "other": 80,
+        "emergencyFund": 5000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 4500,
+          "apr": 20.99,
+          "payment": 170
+        },
+        {
+          "type": "loan",
+          "name": "Line of credit",
+          "balance": 12000,
+          "apr": 9.5,
+          "payment": 280
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": {
+            "value": 18.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": {
+            "value": 3.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": {
+            "value": 12.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        },
+        {
+          "name": "Fitness app",
+          "cost": {
+            "value": 14.99,
+            "verify": true,
+            "note": "Canadian list price as remembered for late 2025/2026 (before tax); prices change often."
+          },
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 1500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 5000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 1200
+        }
+      ]
+    }
+  },
+  "extraFields": [],
+  "localTips": [
+    {
+      "id": "ca-phone-flanker",
+      "pool": "internet",
+      "title": "Move your phone plan to a lower-cost brand",
+      "why": "The big three carriers own cheaper brands on the same networks, and their plans often cost much less for the same data.",
+      "tips": [
+        "Compare your plan with Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom or Virgin Plus; you can keep your number.",
+        "Call your internet provider’s retention department and ask for the new-customer price, or switch.",
+        "If you pay off a phone through your plan, check when it ends and move to a cheaper bring-your-own-phone plan."
+      ],
+      "pct": {
+        "value": 0.2,
+        "verify": true,
+        "note": "Assumed saving from switching; estimate."
+      }
+    },
+    {
+      "id": "ca-home-energy-rebates",
+      "pool": "waterGas",
+      "title": "Use home energy rebates before winter",
+      "why": "Heating is the biggest energy cost in most Canadian homes, and provinces and utilities pay for many upgrades.",
+      "tips": [
+        "Check your province’s and gas utility’s rebate programs (for example Enbridge or FortisBC) for insulation, smart thermostats and heat pumps.",
+        "Seal drafts around doors and windows and turn the heat down 2–3°C at night and when you are out.",
+        "If your utility offers equal monthly billing, use it to avoid winter bill shocks (it does not lower the total)."
+      ],
+      "pct": {
+        "value": 0.08,
+        "verify": true,
+        "note": "Assumed saving; estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "Rentals.ca / Urbanation National Rent Report, September 2026 (CTV News)",
+      "url": "https://www.ctvnews.ca/business/real-estate/article/average-asking-rents-fall-42-in-september-marking-24-months-of-decreases",
+      "usedFor": "rent (average asking rent $2,034)"
+    },
+    {
+      "title": "Statistics Canada: How Canadian households spent their money in 2023",
+      "url": "https://www150.statcan.gc.ca/n1/pub/11-627-m/11-627-m2025026-eng.htm",
+      "usedFor": "groceries, dining, category shares (shelter 32.1%, transportation 15.8%, food 15.7%)"
+    },
+    {
+      "title": "Statistics Canada: Survey of Household Spending, 2023 (The Daily)",
+      "url": "https://www150.statcan.gc.ca/n1/daily-quotidien/250521/dq250521a-eng.htm",
+      "usedFor": "household spending totals"
+    },
+    {
+      "title": "Canada CPI August 2026 (Investinglive)",
+      "url": "https://investinglive.com/news/canada-august-cpi-y-y-vs-3-0-expected/",
+      "usedFor": "inflation (3.0% headline, core ~2%)"
+    },
+    {
+      "title": "Best high-interest savings accounts in Canada (Finder)",
+      "url": "https://www.finder.com/ca/savings-accounts/best-savings-accounts",
+      "usedFor": "savings return"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

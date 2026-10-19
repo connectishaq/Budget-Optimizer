@@ -1,0 +1,1269 @@
+{
+  "code": "NG",
+  "currency": "NGN",
+  "locale": "en-NG",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": 15.9,
+  "returns": {
+    "savings": {
+      "value": 16,
+      "verify": true,
+      "note": "Savings accounts pay only ~2–8%, fixed deposits ~18–24% (mid-2026) and the CBN’s weighted 3-month deposit rate was ~12% in Jan 2026; 16% assumes a fixed deposit or money-market fund."
+    },
+    "balanced": {
+      "value": 18,
+      "verify": true,
+      "note": "Judgement; blend of fixed income (~18–20% T-bills/FDs) and equity."
+    },
+    "longTerm": {
+      "value": 18,
+      "verify": true,
+      "note": "NGX ASI rose from ~28,600 (end-2015, from memory — check) to 155,613 (end-2025): ~18% a year in naira, price only."
+    },
+    "shares": {
+      "value": 20,
+      "verify": true,
+      "note": "Judgement; NGX returned 37.65% in 2024 and 51.19% in 2025, but long-run returns in naira track inflation plus a few points."
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 36,
+      "verify": true,
+      "note": "No published card-rate average found. Bank consumer lending runs ~24–42% (GTBank Quick Credit 2.95%/month ≈ 35.4%); naira cards assumed similar."
+    },
+    "loanApr": {
+      "value": 30,
+      "verify": true,
+      "note": "Bank maximum lending rates 32–46% and personal loans 18–36% (mid-2026); 30% is a middle figure."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 15000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    },
+    "smartThermostat": {
+      "value": 150000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    },
+    "tuneup": {
+      "value": 10000,
+      "verify": true,
+      "note": "Typical retail prices; judgement."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            250000,
+            700000
+          ],
+          "verify": true,
+          "note": "Formal-sector survey average ~₦375,000 a month (range ₦150,000–600,000); Lagos formal-sector guides ₦400,000–800,000. Federal minimum wage ₦70,000."
+        },
+        "rent": {
+          "value": [
+            80000,
+            250000
+          ],
+          "verify": true,
+          "note": "Lagos affordable areas ₦50,000–180,000 a month, mid-market ₦120,000–350,000 (Ownkey rental guide; lower-authority source). Rent is paid 1–2 years upfront."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            5000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            15000,
+            45000
+          ],
+          "verify": true,
+          "note": "Band A ₦225/kWh (before VAT) × 70–200 kWh; Band B–E customers pay much less per kWh but get fewer hours."
+        },
+        "waterGas": {
+          "value": [
+            8000,
+            25000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            10000,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            0,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            30000,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            0,
+            10000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            80000,
+            180000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            30000,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            20000,
+            70000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            5000,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 70000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 80000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 100000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 30000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 15000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 150000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 100000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 20000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 15000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            900000,
+            2500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "rent": {
+          "value": [
+            200000,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            15000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            40000,
+            120000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "waterGas": {
+          "value": [
+            20000,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            25000,
+            60000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            100000,
+            250000
+          ],
+          "verify": true,
+          "note": "Petrol ~₦1,304–1,331 a litre (Oct 2026); 80–180 litres a month for a family car."
+        },
+        "transit": {
+          "value": [
+            0,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            5000,
+            40000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            400000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": {
+          "value": [
+            150000,
+            500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "groceries": {
+          "value": [
+            300000,
+            600000
+          ],
+          "verify": true,
+          "note": "NBS: 50 kg local rice averaged ₦112,000 in March 2026 (market surveys ₦53,000–82,000 in May); no official household food-spend figure."
+        },
+        "dining": {
+          "value": [
+            40000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            50000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            20000,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            40000,
+            120000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            60000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 160000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 250000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 50000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 60000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 40000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 400000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 450000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 30000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 25000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.42,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            600000,
+            1500000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "rent": {
+          "value": [
+            250000,
+            600000
+          ],
+          "verify": true,
+          "note": "Mainland mid-market (Yaba, Surulere, Ikeja) to Lekki/Ikate; Lekki Phase 1 2-bed averages ₦10m a year (₦833k a month), above this range."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            10000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            30000,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "waterGas": {
+          "value": [
+            12000,
+            35000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            20000,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            60000,
+            180000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            40000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            5000,
+            30000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            350000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": {
+          "value": [
+            0,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "groceries": {
+          "value": [
+            120000,
+            250000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            80000,
+            250000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            50000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            10000,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            60000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            60000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            60000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 110000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 180000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 150000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 50000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 30000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 350000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 100000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 50000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 25000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.32,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 650000,
+        "rent": 150000,
+        "homeIns": 0,
+        "electricity": 30000,
+        "waterGas": 15000,
+        "internet": 20000,
+        "fuel": 0,
+        "transit": 70000,
+        "carIns": 0,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 120000,
+        "dining": 50000,
+        "misc": 30000,
+        "medical": 10000,
+        "homeHelp": 0,
+        "familySupport": 40000,
+        "giving": 15000,
+        "other": 10000,
+        "emergencyFund": 300000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 200000,
+          "apr": 36,
+          "payment": 20000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Showmax",
+          "cost": 3500,
+          "rarely": false,
+          "kind": "streaming"
+        },
+        {
+          "name": "Spotify",
+          "cost": 1300,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 25000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 150000
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 650000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 300000
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 2100000,
+        "rent": 300000,
+        "homeIns": 5000,
+        "electricity": 70000,
+        "waterGas": 30000,
+        "internet": 35000,
+        "fuel": 150000,
+        "transit": 20000,
+        "carIns": 12000,
+        "carLoan": 150000,
+        "school": 250000,
+        "groceries": 400000,
+        "dining": 60000,
+        "misc": 70000,
+        "medical": 30000,
+        "homeHelp": 60000,
+        "familySupport": 60000,
+        "giving": 40000,
+        "other": 25000,
+        "generatorFuel": 120000,
+        "estateDues": 20000,
+        "esusu": 40000,
+        "emergencyFund": 1500000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 400000,
+          "apr": 36,
+          "payment": 30000
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 1500000,
+          "apr": 30,
+          "payment": 80000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "DStv Compact",
+          "cost": 19000,
+          "rarely": false
+        },
+        {
+          "name": "Netflix",
+          "cost": 7000,
+          "rarely": true
+        },
+        {
+          "name": "Showmax",
+          "cost": 3500,
+          "rarely": false,
+          "kind": "streaming"
+        },
+        {
+          "name": "Spotify",
+          "cost": 1300,
+          "rarely": true
+        },
+        {
+          "name": "Google One storage",
+          "cost": 1500,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 30000,
+          "rarely": true
+        },
+        {
+          "name": "Chowdeck Plus",
+          "cost": 2500,
+          "rarely": false,
+          "kind": "membership"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 500000
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 400000
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 300000
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 1200000
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 1500000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 900000
+        },
+        {
+          "name": "Overtime",
+          "amount": 300000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 1100000,
+        "rent": 350000,
+        "homeIns": 0,
+        "electricity": 50000,
+        "waterGas": 20000,
+        "internet": 30000,
+        "fuel": 100000,
+        "transit": 60000,
+        "carIns": 10000,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 150000,
+        "dining": 120000,
+        "misc": 70000,
+        "medical": 20000,
+        "homeHelp": 20000,
+        "familySupport": 60000,
+        "giving": 30000,
+        "other": 20000,
+        "emergencyFund": 600000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 300000,
+          "apr": 36,
+          "payment": 25000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 7000,
+          "rarely": false
+        },
+        {
+          "name": "Showmax",
+          "cost": 3500,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Spotify",
+          "cost": 1300,
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 1500,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 35000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 300000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 1000000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 600000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "generatorFuel",
+      "label": "Generator / inverter fuel",
+      "group": "utilities",
+      "need": true,
+      "help": "Petrol or diesel for your generator (or for charging an inverter) when grid power is off, as a monthly amount. Don’t include the cost of buying the generator, inverter or batteries (add those as yearly costs).",
+      "ranges": {
+        "single": {
+          "value": [
+            20000,
+            80000
+          ],
+          "verify": true,
+          "note": "Estimate: small petrol generator ~1 litre/hour, 15–60 litres a month at ~₦1,300 a litre."
+        },
+        "suburban": {
+          "value": [
+            80000,
+            250000
+          ],
+          "verify": true,
+          "note": "Estimate: 60–150 litres of petrol or diesel (₦1,300–1,800 a litre) a month."
+        },
+        "youngpro": {
+          "value": [
+            40000,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate."
+        }
+      }
+    },
+    {
+      "key": "estateDues",
+      "label": "Estate dues and waste bill",
+      "group": "housing",
+      "need": true,
+      "help": "Monthly estate or landlord association dues (security, roads, street lights) and your waste collection bill (for example LAWMA in Lagos). If your service charge is paid yearly, enter it divided by 12.",
+      "ranges": {
+        "single": {
+          "value": [
+            3000,
+            15000
+          ],
+          "verify": true,
+          "note": "Estimate."
+        },
+        "suburban": {
+          "value": [
+            10000,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate; gated estates in Lekki/Ajah can charge far more."
+        },
+        "youngpro": {
+          "value": [
+            10000,
+            40000
+          ],
+          "verify": true,
+          "note": "Estimate."
+        }
+      }
+    },
+    {
+      "key": "esusu",
+      "label": "Ajo / esusu contribution",
+      "group": "care",
+      "need": false,
+      "help": "Your monthly payment into an ajo, esusu or adashi — a rotating savings group where every member pays in and one member takes the whole pot each round. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        },
+        "suburban": {
+          "value": [
+            0,
+            150000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            100000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average."
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "ng-solar-inverter",
+      "pool": "generatorFuel",
+      "title": "Move from generator to a solar inverter",
+      "why": "Generator fuel is often the single biggest power cost in Nigerian homes, and petrol and diesel prices swing with the exchange rate.",
+      "tips": [
+        "Price a 2–5 kVA inverter with lithium batteries and a few solar panels; many vendors offer instalment plans.",
+        "Run only fans, lights, TV and router on backup; save heavy loads for grid hours.",
+        "Service the generator regularly and switch it off once the inverter is charged."
+      ],
+      "pct": {
+        "value": 0.5,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "ng-meter-band",
+      "pool": "electricity",
+      "title": "Get a prepaid meter and check your band",
+      "why": "Estimated (“crazy”) billing and paying Band A rates without Band A hours both inflate the electricity bill.",
+      "tips": [
+        "Apply for a prepaid meter through your DisCo’s MAP scheme instead of paying estimated bills.",
+        "Track your supply hours for a week; if you get fewer than 20 a day on Band A, complain to the DisCo and NERC.",
+        "Buy units through your bank app to avoid vendor charges."
+      ],
+      "pct": {
+        "value": 0.15,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "ng-rent-yearly",
+      "pool": "rent",
+      "title": "Plan for rent paid a year or two in advance",
+      "why": "Landlords usually ask for 1–2 years’ rent upfront, plus agency and legal fees. Enter rent here as the yearly amount divided by 12, and save towards the next payment every month.",
+      "tips": [
+        "Set aside the monthly share of next year’s rent in a separate savings account or money-market fund.",
+        "Negotiate the renewal early, before the landlord advertises the flat.",
+        "Ask if the landlord accepts rent in two halves instead of one lump sum."
+      ],
+      "pct": {
+        "value": 0.05,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "smart-thermostat"
+  ],
+  "sources": [
+    {
+      "title": "Nairametrics — CBN retains MPR at 26.5%, inflation 15.91% (June 2026)",
+      "url": "https://nairametrics.com/2026/07/21/cbn-retains-interest-rate-at-26-5/",
+      "usedFor": "inflation"
+    },
+    {
+      "title": "GlobalPetrolPrices — Nigeria fuel prices (petrol ₦1,304, diesel ₦1,715.50, 5 Oct 2026)",
+      "url": "https://www.globalpetrolprices.com/Nigeria/",
+      "usedFor": "fuel, generatorFuel"
+    },
+    {
+      "title": "BusinessAM — NERC Band A tariff ₦225/kWh",
+      "url": "https://businessamlive.com/nerc-ups-tariffs-to-n225-kwh-for-band-a-electricity-consumers/",
+      "usedFor": "electricity"
+    },
+    {
+      "title": "Ownkey — houses for rent in Lagos (monthly ranges by area)",
+      "url": "https://ownkey.com/ng/blog/houses-for-rent-lagos",
+      "usedFor": "rent"
+    },
+    {
+      "title": "Legit.ng / Lagos Realty — Lagos Island 2-bed rents 2026",
+      "url": "https://www.legit.ng/business-economy/industry/1724456-lagos-rent-roof-2-bedroom-flats-hit-n1725-million-locations/",
+      "usedFor": "rent (upper bound)"
+    },
+    {
+      "title": "HiveDesk — average salary in Nigeria 2026",
+      "url": "https://www.hivedesk.com/salary-guides/nigeria",
+      "usedFor": "income (context)"
+    },
+    {
+      "title": "The Sun (NBS Selected Food Prices) — 50 kg local rice ₦112,000 in March 2026",
+      "url": "https://thesun.ng/rice-prices-jump-20-5-as-50kg-hits-₦112000-nbs/",
+      "usedFor": "groceries (context)"
+    },
+    {
+      "title": "NairaCompare — Nigeria H2 2026 investment outlook (FDs 18–24%)",
+      "url": "https://nairacompare.ng/blogs/nigerias-h2-2026-investment-outlook-where-to-put-your-money",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "Trading Economics — Nigeria deposit interest rate",
+      "url": "https://tradingeconomics.com/nigeria/deposit-interest-rate",
+      "usedFor": "returns.savings (context)"
+    },
+    {
+      "title": "Investdata — NGX 2025 year-end review (ASI +51.19%, 155,613)",
+      "url": "https://investdata.com.ng/ngx-2025-year-end-review-consumer-goods-industrials-drive-historic-51-surge-set-stage-for-2026-on-nigerian-bourse/",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "Nairametrics — bank lending rates GTBank/Zenith/Access June 2026",
+      "url": "https://nairametrics.com/2026/06/20/nigerian-bank-lending-rates-how-gtbank-zenith-access-compare-in-june-2026/",
+      "usedFor": "defaults.cardApr, defaults.loanApr"
+    },
+    {
+      "title": "VTpass — DStv packages and prices 2026 (Compact ₦19,000)",
+      "url": "https://vtpass.com/blog/2026-dstv-packages-and-prices-in-nigeria-what-you-need-to-know/",
+      "usedFor": "sample subscriptions"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

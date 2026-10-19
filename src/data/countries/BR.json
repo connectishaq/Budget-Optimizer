@@ -1,0 +1,1215 @@
+{
+  "code": "BR",
+  "currency": "BRL",
+  "locale": "pt-BR",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": 4.2,
+  "returns": {
+    "savings": {
+      "value": 10,
+      "verify": true,
+      "note": "Selic 13.75% (Copom, 16 Sep 2026); Tesouro Selic / CDB at 100% CDI pay ~13.6% gross, ~10.5–11.5% after income tax. Rounded down for expected further cuts"
+    },
+    "balanced": {
+      "value": 11,
+      "verify": true,
+      "note": "Judgment: CDI-linked fixed income plus some equities"
+    },
+    "longTerm": {
+      "value": 12,
+      "verify": true,
+      "note": "Ibovespa ~13% a year nominal 1995–2024 (Suno), but the last 20 years were weak (real premium ~1.8%/yr over IPCA 2000–2024). 12 is a cautious nominal figure"
+    },
+    "shares": {
+      "value": 13,
+      "verify": true,
+      "note": "Judgment: matches the 1995–2024 nominal Ibovespa average"
+    }
+  },
+  "defaults": {
+    "cardApr": 445,
+    "loanApr": {
+      "value": 80,
+      "verify": true,
+      "note": "Estimate for non-payroll personal loans (crédito pessoal não consignado); payroll-deducted consignado is far cheaper (~25–45%). Check the BCB monthly credit statistics"
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 120,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    },
+    "smartThermostat": {
+      "value": 600,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source; rule hidden for BR"
+    },
+    "tuneup": {
+      "value": 60,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            3000,
+            6000
+          ],
+          "verify": true,
+          "note": "IBGE PNAD Contínua: average monthly earnings from work R$3,722 (Q1 2026). Ranges are for urban middle-income households likely to use a budgeting tool, above the national average; take-home after INSS and IR (single city renter)"
+        },
+        "rent": {
+          "value": [
+            1800,
+            3000
+          ],
+          "verify": true,
+          "note": "Derived from FipeZap residential rent (São Paulo R$65.36/m² Aug 2026; Rio R$55.86, BH R$48.18 in Jan 2026) × assumed size (single 30–45 m², family 70–90 m² in a cheaper city, young pro 50–65 m²). Excludes condomínio and IPTU (single city renter)"
+        },
+        "homeIns": {
+          "value": [
+            0,
+            40
+          ],
+          "verify": true,
+          "note": "Seguro residencial is uncommon and cheap (single city renter)"
+        },
+        "electricity": {
+          "value": [
+            120,
+            250
+          ],
+          "verify": true,
+          "note": "Derived: ~R$0.95–1.20/kWh with taxes (Aneel residential tariff R$998/MWh before tax, 2026) × 130–200 / 300–450 / 180–280 kWh a month; bandeira surcharges excluded (single city renter)"
+        },
+        "waterGas": {
+          "value": [
+            70,
+            150
+          ],
+          "verify": true,
+          "note": "Water/sewage bill plus bottled gas (botijão 13 kg) estimate (single city renter)"
+        },
+        "internet": {
+          "value": [
+            100,
+            180
+          ],
+          "verify": true,
+          "note": "Fibre + mobile plans (Vivo, Claro, TIM) estimate (single city renter)"
+        },
+        "fuel": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "ANP: gasoline ~R$6.53/l (Aug 2026) × typical use; many city singles have no car (single city renter)"
+        },
+        "transit": {
+          "value": [
+            150,
+            350
+          ],
+          "verify": true,
+          "note": "Bus/metro fares and app rides; vale-transporte covers part for formal employees (single city renter)"
+        },
+        "carIns": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Seguro auto estimate, yearly premium shown monthly (single city renter)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            1200
+          ],
+          "verify": true,
+          "note": "Car finance (financiamento/CDC) instalment estimate (single city renter)"
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            600,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate for supermarket + feira (single city renter)"
+        },
+        "dining": {
+          "value": [
+            300,
+            700
+          ],
+          "verify": true,
+          "note": "Includes delivery apps (iFood) (single city renter)"
+        },
+        "misc": {
+          "value": [
+            250,
+            500
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "medical": {
+          "value": [
+            50,
+            200
+          ],
+          "verify": true,
+          "note": "Pharmacy and consultations outside the health plan (single city renter)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Diarista (day cleaner) or mensalista domestic worker; a full-time worker at minimum wage plus charges sits at the top of the family range (single city renter)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            500
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "giving": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Includes dízimo (church tithe) for some households (single city renter)"
+        },
+        "other": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "fuel": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "transit": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "internet": {
+          "value": 160,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "insurance": {
+          "value": 220,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "carLoan": {
+          "value": 1000,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "school": {
+          "value": 800,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "diningFloor": {
+          "value": 200,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "subsActive": {
+          "value": 80,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.32,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "utilities": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "family": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "debt": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            7000,
+            14000
+          ],
+          "verify": true,
+          "note": "IBGE PNAD Contínua: average monthly earnings from work R$3,722 (Q1 2026). Ranges are for urban middle-income households likely to use a budgeting tool, above the national average; take-home after INSS and IR (family of four in a suburb/second city)"
+        },
+        "rent": {
+          "value": [
+            2200,
+            3800
+          ],
+          "verify": true,
+          "note": "Derived from FipeZap residential rent (São Paulo R$65.36/m² Aug 2026; Rio R$55.86, BH R$48.18 in Jan 2026) × assumed size (single 30–45 m², family 70–90 m² in a cheaper city, young pro 50–65 m²). Excludes condomínio and IPTU (family of four in a suburb/second city)"
+        },
+        "homeIns": {
+          "value": [
+            0,
+            80
+          ],
+          "verify": true,
+          "note": "Seguro residencial is uncommon and cheap (family of four in a suburb/second city)"
+        },
+        "electricity": {
+          "value": [
+            300,
+            550
+          ],
+          "verify": true,
+          "note": "Derived: ~R$0.95–1.20/kWh with taxes (Aneel residential tariff R$998/MWh before tax, 2026) × 130–200 / 300–450 / 180–280 kWh a month; bandeira surcharges excluded (family of four in a suburb/second city)"
+        },
+        "waterGas": {
+          "value": [
+            180,
+            320
+          ],
+          "verify": true,
+          "note": "Water/sewage bill plus bottled gas (botijão 13 kg) estimate (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": [
+            180,
+            320
+          ],
+          "verify": true,
+          "note": "Fibre + mobile plans (Vivo, Claro, TIM) estimate (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": [
+            600,
+            1200
+          ],
+          "verify": true,
+          "note": "ANP: gasoline ~R$6.53/l (Aug 2026) × typical use; many city singles have no car (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Bus/metro fares and app rides; vale-transporte covers part for formal employees (family of four in a suburb/second city)"
+        },
+        "carIns": {
+          "value": [
+            250,
+            500
+          ],
+          "verify": true,
+          "note": "Seguro auto estimate, yearly premium shown monthly (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            2000
+          ],
+          "verify": true,
+          "note": "Car finance (financiamento/CDC) instalment estimate (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": [
+            1500,
+            5000
+          ],
+          "verify": true,
+          "note": "Private school (escola particular) fees are common for middle-class families (family of four in a suburb/second city)"
+        },
+        "groceries": {
+          "value": [
+            1800,
+            2800
+          ],
+          "verify": true,
+          "note": "Estimate for supermarket + feira (family of four in a suburb/second city)"
+        },
+        "dining": {
+          "value": [
+            400,
+            900
+          ],
+          "verify": true,
+          "note": "Includes delivery apps (iFood) (family of four in a suburb/second city)"
+        },
+        "misc": {
+          "value": [
+            500,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "medical": {
+          "value": [
+            150,
+            500
+          ],
+          "verify": true,
+          "note": "Pharmacy and consultations outside the health plan (family of four in a suburb/second city)"
+        },
+        "homeHelp": {
+          "value": [
+            600,
+            2500
+          ],
+          "verify": true,
+          "note": "Diarista (day cleaner) or mensalista domestic worker; a full-time worker at minimum wage plus charges sits at the top of the family range (family of four in a suburb/second city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            500
+          ],
+          "verify": true,
+          "note": "Includes dízimo (church tithe) for some households (family of four in a suburb/second city)"
+        },
+        "other": {
+          "value": [
+            0,
+            500
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 750,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": 1000,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": 280,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "insurance": {
+          "value": 450,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": 1600,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": 3500,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "diningFloor": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "subsActive": {
+          "value": 100,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.26,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "family": {
+          "value": 0.38,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "debt": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "care": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            8000,
+            16000
+          ],
+          "verify": true,
+          "note": "IBGE PNAD Contínua: average monthly earnings from work R$3,722 (Q1 2026). Ranges are for urban middle-income households likely to use a budgeting tool, above the national average; take-home after INSS and IR (young professional / couple in a big city)"
+        },
+        "rent": {
+          "value": [
+            3000,
+            4500
+          ],
+          "verify": true,
+          "note": "Derived from FipeZap residential rent (São Paulo R$65.36/m² Aug 2026; Rio R$55.86, BH R$48.18 in Jan 2026) × assumed size (single 30–45 m², family 70–90 m² in a cheaper city, young pro 50–65 m²). Excludes condomínio and IPTU (young professional / couple in a big city)"
+        },
+        "homeIns": {
+          "value": [
+            0,
+            50
+          ],
+          "verify": true,
+          "note": "Seguro residencial is uncommon and cheap (young professional / couple in a big city)"
+        },
+        "electricity": {
+          "value": [
+            180,
+            350
+          ],
+          "verify": true,
+          "note": "Derived: ~R$0.95–1.20/kWh with taxes (Aneel residential tariff R$998/MWh before tax, 2026) × 130–200 / 300–450 / 180–280 kWh a month; bandeira surcharges excluded (young professional / couple in a big city)"
+        },
+        "waterGas": {
+          "value": [
+            100,
+            200
+          ],
+          "verify": true,
+          "note": "Water/sewage bill plus bottled gas (botijão 13 kg) estimate (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": [
+            150,
+            250
+          ],
+          "verify": true,
+          "note": "Fibre + mobile plans (Vivo, Claro, TIM) estimate (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": [
+            300,
+            700
+          ],
+          "verify": true,
+          "note": "ANP: gasoline ~R$6.53/l (Aug 2026) × typical use; many city singles have no car (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": [
+            100,
+            400
+          ],
+          "verify": true,
+          "note": "Bus/metro fares and app rides; vale-transporte covers part for formal employees (young professional / couple in a big city)"
+        },
+        "carIns": {
+          "value": [
+            180,
+            400
+          ],
+          "verify": true,
+          "note": "Seguro auto estimate, yearly premium shown monthly (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            1800
+          ],
+          "verify": true,
+          "note": "Car finance (financiamento/CDC) instalment estimate (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": [
+            0,
+            1500
+          ],
+          "verify": true,
+          "note": "Private school (escola particular) fees are common for middle-class families (young professional / couple in a big city)"
+        },
+        "groceries": {
+          "value": [
+            1000,
+            1600
+          ],
+          "verify": true,
+          "note": "Estimate for supermarket + feira (young professional / couple in a big city)"
+        },
+        "dining": {
+          "value": [
+            600,
+            1300
+          ],
+          "verify": true,
+          "note": "Includes delivery apps (iFood) (young professional / couple in a big city)"
+        },
+        "misc": {
+          "value": [
+            400,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "medical": {
+          "value": [
+            80,
+            300
+          ],
+          "verify": true,
+          "note": "Pharmacy and consultations outside the health plan (young professional / couple in a big city)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Diarista (day cleaner) or mensalista domestic worker; a full-time worker at minimum wage plus charges sits at the top of the family range (young professional / couple in a big city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Includes dízimo (church tithe) for some households (young professional / couple in a big city)"
+        },
+        "other": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 480,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": 600,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": 220,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "insurance": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": 1500,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": 1200,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "diningFloor": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "subsActive": {
+          "value": 100,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "transport": {
+          "value": 0.13,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "family": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "debt": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 4500,
+        "rent": 2200,
+        "homeIns": 0,
+        "electricity": 190,
+        "waterGas": 110,
+        "internet": 150,
+        "fuel": 0,
+        "transit": 280,
+        "carIns": 0,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 850,
+        "dining": 550,
+        "misc": 350,
+        "medical": 100,
+        "homeHelp": 0,
+        "familySupport": 200,
+        "giving": 50,
+        "other": 100,
+        "emergencyFund": 5000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Cartão de crédito (rotativo)",
+          "balance": 1500,
+          "apr": 445,
+          "payment": 700
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 51.9,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 23.9,
+          "rarely": false
+        },
+        {
+          "name": "Smart Fit",
+          "cost": 129.9,
+          "rarely": true,
+          "kind": "fitness"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 1200
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 4500
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 2400
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 11000,
+        "rent": 3000,
+        "homeIns": 50,
+        "electricity": 480,
+        "waterGas": 260,
+        "internet": 260,
+        "fuel": 1000,
+        "transit": 150,
+        "carIns": 400,
+        "carLoan": 1400,
+        "school": 3200,
+        "groceries": 2500,
+        "dining": 700,
+        "misc": 800,
+        "medical": 300,
+        "homeHelp": 1200,
+        "familySupport": 400,
+        "giving": 300,
+        "other": 250,
+        "emergencyFund": 20000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Cartão de crédito (parcelamento da fatura)",
+          "balance": 4000,
+          "apr": 192,
+          "payment": 900
+        },
+        {
+          "type": "loan",
+          "name": "Empréstimo consignado",
+          "balance": 15000,
+          "apr": 28,
+          "payment": 650
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 51.9,
+          "rarely": false
+        },
+        {
+          "name": "Globoplay",
+          "cost": 35.9,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 19.9,
+          "rarely": false
+        },
+        {
+          "name": "Google One",
+          "cost": 9.99,
+          "rarely": false
+        },
+        {
+          "name": "Smart Fit",
+          "cost": 129.9,
+          "rarely": true,
+          "kind": "fitness"
+        },
+        {
+          "name": "Clube iFood",
+          "cost": 12.9,
+          "rarely": false
+        },
+        {
+          "name": "Max",
+          "cost": 34.9,
+          "rarely": true,
+          "kind": "streaming"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 2500
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 3000
+        },
+        {
+          "name": "IPVA and car licensing",
+          "cost": 3200
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 11000
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 6000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 1500
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 4000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 12000,
+        "rent": 3800,
+        "homeIns": 30,
+        "electricity": 260,
+        "waterGas": 140,
+        "internet": 200,
+        "fuel": 500,
+        "transit": 300,
+        "carIns": 300,
+        "carLoan": 1500,
+        "school": 0,
+        "groceries": 1300,
+        "dining": 1100,
+        "misc": 600,
+        "medical": 150,
+        "homeHelp": 400,
+        "familySupport": 500,
+        "giving": 100,
+        "other": 200,
+        "emergencyFund": 15000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Cartão de crédito (rotativo)",
+          "balance": 3000,
+          "apr": 445,
+          "payment": 1300
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 51.9,
+          "rarely": false
+        },
+        {
+          "name": "Spotify Duo",
+          "cost": 31.9,
+          "rarely": false
+        },
+        {
+          "name": "iCloud+",
+          "cost": 14.9,
+          "rarely": false
+        },
+        {
+          "name": "Duolingo",
+          "cost": 49.9,
+          "rarely": true
+        },
+        {
+          "name": "Smart Fit",
+          "cost": 149.9,
+          "rarely": true,
+          "kind": "fitness"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 4000
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 12000
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 8000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "condominio",
+      "label": "Building fee (condomínio)",
+      "group": "housing",
+      "need": true,
+      "help": "Your monthly condomínio fee for the building or gated community, if you pay it separately from rent.",
+      "ranges": {
+        "single": {
+          "value": [
+            400,
+            900
+          ],
+          "verify": true,
+          "note": "Estimate for a small flat in a capital; not from a cited index"
+        },
+        "suburban": {
+          "value": [
+            300,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate; houses outside condomínios pay nothing, gated communities with pools more"
+        },
+        "youngpro": {
+          "value": [
+            600,
+            1400
+          ],
+          "verify": true,
+          "note": "Estimate for a building with amenities in São Paulo/Rio"
+        }
+      }
+    },
+    {
+      "key": "planoSaude",
+      "label": "Health plan (plano de saúde)",
+      "group": "care",
+      "need": true,
+      "help": "Your monthly health-plan bill, including any co-payments. If your employer pays it in full, leave this empty.",
+      "ranges": {
+        "single": {
+          "value": [
+            200,
+            600
+          ],
+          "verify": true,
+          "note": "Estimate; ANS capped 2026–27 individual plan increases at 5.11% but publishes no average price"
+        },
+        "suburban": {
+          "value": [
+            800,
+            2500
+          ],
+          "verify": true,
+          "note": "Estimate for a family of four on an individual/adhesion plan"
+        },
+        "youngpro": {
+          "value": [
+            400,
+            1200
+          ],
+          "verify": true,
+          "note": "Estimate; often partly paid by the employer"
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "br-sair-do-rotativo",
+      "pool": "cardInterest",
+      "title": "Get off the card rotativo now",
+      "why": "The card rotativo averaged about 445% a year in August 2026 and the bill-instalment plan about 192% a year. Almost any other credit is cheaper.",
+      "tips": [
+        "Pay the full card bill if you possibly can; paying only the minimum puts the rest on the rotativo.",
+        "If you can’t, swap the balance for a payroll-deducted loan (consignado) or a personal loan at a much lower rate instead of the bank’s instalment offer.",
+        "Renegotiate overdue card debt through your bank or Serasa Limpa Nome, where discounts are common."
+      ],
+      "pct": {
+        "value": 0.8,
+        "verify": true,
+        "note": "Derived: moving from ~445% (rotativo) to ~30–80% (consignado/personal loan) avoids most of the interest"
+      }
+    },
+    {
+      "id": "br-bandeira-chuveiro",
+      "pool": "electricity",
+      "title": "Tame the electric shower and the bandeira",
+      "why": "Electric showers are one of the biggest power users in Brazilian homes, and red-flag (bandeira vermelha) months add a surcharge to every kWh.",
+      "tips": [
+        "Set the shower to the \"verão\" (summer) setting and keep showers to 5–8 minutes.",
+        "Check the bandeira on your bill and cut AC and dryer use in red-flag months.",
+        "Ask your distributor whether you qualify for the Tarifa Social discount."
+      ],
+      "pct": {
+        "value": 0.12,
+        "verify": true,
+        "note": "Estimate; not from a cited study"
+      }
+    }
+  ],
+  "hideRules": [
+    "smart-thermostat",
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "Meus Dividendos: IPCA (Aug 2026, 4.22% over 12 months)",
+      "url": "https://www.meusdividendos.com/indicadores/ipca",
+      "usedFor": "inflation"
+    },
+    {
+      "title": "Atlas Público: Copom cuts Selic to 13.75% (16 Sep 2026)",
+      "url": "https://atlaspublico.com.br/bcb/noticias/copom-reduz-selic-para-13-75pct-ao-ano-em-decisao-unanime-87748",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "Jornal do Comércio: card rotativo rises to 444.9% a year in August (BCB)",
+      "url": "https://www.jornaldocomercio.com/economia/2026/09/1265047-juro-medio-do-rotativo-do-cartao-de-credito-sobe-a-4449-ao-ano-em-agosto-diz-bc.html",
+      "usedFor": "cardApr (rotativo 444.9%, parcelado 192.1%)"
+    },
+    {
+      "title": "Correio da Manhã: average worker earnings R$3,722 in Q1 2026 (IBGE PNAD)",
+      "url": "https://www.correiodamanha.com.br/economia/2026/04/amp/282055-salario-medio-do-trabalhador-chega-a-rs-3-722-e-bate-recorde-no-primeiro-trimestre.html",
+      "usedFor": "income"
+    },
+    {
+      "title": "Poder360: FipeZap rents (São Paulo R$65.36/m² Aug 2026)",
+      "url": "https://www.poder360.com.br/poder-economia/aluguel-sobe-o-dobro-da-inflacao-no-ano-diz-pesquisa-fipezap/",
+      "usedFor": "rent"
+    },
+    {
+      "title": "Canal Solar: Aneel raises 2026 tariff projection to 9.4%",
+      "url": "https://canalsolar.com.br/aneel-eleva-94-alta-tarifas-energia/",
+      "usedFor": "electricity"
+    },
+    {
+      "title": "Diário do Grande ABC: ANP fuel prices (gasoline R$6.53/l)",
+      "url": "https://www.dgabc.com.br/Noticia/4341258/diesel-s-10-gasolina-e-gas-de-cozinha-fecham-em-queda-diz-anp",
+      "usedFor": "fuel"
+    },
+    {
+      "title": "Canaltech: Netflix raises prices in Brazil (Oct 2026)",
+      "url": "https://canaltech.com.br/apps/netflix-aumenta-precos-no-brasil-e-plano-mais-caro-passa-dos-r-70-veja-novos-valores/",
+      "usedFor": "sample subscriptions"
+    },
+    {
+      "title": "Vivo: Globoplay price change notice (2026)",
+      "url": "https://vivo.com.br/para-voce/comunicados/regulatorios/comunicado-alteracao-valor-globoplay",
+      "usedFor": "sample subscriptions"
+    },
+    {
+      "title": "O Povo / Agência Brasil: ANS caps individual plan increase at 5.11%",
+      "url": "https://www.opovo.com.br/noticias/saude/2026/05/29/plano-de-saude-individual-tera-reajuste-maximo-de-511-decide-ans.html",
+      "usedFor": "planoSaude"
+    },
+    {
+      "title": "Suno: quanto rende investir no Ibovespa",
+      "url": "https://www.suno.com.br/noticias/ibovespa-quanto-rende-investir-go/amp/",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "Clube dos Poupadores: tabela de investimentos 2000–2024",
+      "url": "https://clubedospoupadores.com/carteira-investimentos/tabela.html",
+      "usedFor": "returns.longTerm (caveat)"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

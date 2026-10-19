@@ -1,0 +1,1195 @@
+{
+  "code": "PK",
+  "currency": "PKR",
+  "locale": "en-PK",
+  "lakh": true,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 10,
+    "verify": true,
+    "note": "SBP expected inflation to stay in double digits after 10.9–11.7% in Apr–May 2026, easing towards its 5–7% target; 10% is a middle-of-the-road planning figure."
+  },
+  "returns": {
+    "savings": 11,
+    "balanced": {
+      "value": 12.5,
+      "verify": true,
+      "note": "Blend of ~11% National Savings / bank deposits and ~14% equity; judgement."
+    },
+    "longTerm": 14,
+    "shares": {
+      "value": 16,
+      "verify": true,
+      "note": "KSE-100 has averaged ~21–22% a year over 10–20 years (arithmetic, nominal) but compounds nearer 14% over 30 years; 16% is a cautious middle figure."
+    }
+  },
+  "defaults": {
+    "cardApr": 38,
+    "loanApr": {
+      "value": 22,
+      "verify": true,
+      "note": "From the v1 PKR personal-loan sample; with the policy rate at 11.5% bank personal loans are typically KIBOR + 6–10%."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 6000,
+      "verify": true,
+      "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+    },
+    "smartThermostat": {
+      "value": 30000,
+      "verify": true,
+      "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+    },
+    "tuneup": {
+      "value": 2500,
+      "verify": true,
+      "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            90000,
+            160000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "rent": {
+          "value": [
+            25000,
+            40000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            1000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "electricity": {
+          "value": [
+            6000,
+            14000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "waterGas": {
+          "value": [
+            1500,
+            4000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": [
+            3000,
+            6000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": [
+            5000,
+            10000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": [
+            3000,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carIns": {
+          "value": [
+            0,
+            3000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            25000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "groceries": {
+          "value": [
+            18000,
+            28000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "dining": {
+          "value": [
+            5000,
+            12000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "misc": {
+          "value": [
+            5000,
+            10000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "medical": {
+          "value": [
+            1500,
+            5000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            20000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "giving": {
+          "value": [
+            0,
+            5000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "other": {
+          "value": [
+            0,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 18000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": 10000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": 8000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": 6000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "insurance": {
+          "value": 3000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": 25000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": 15000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "diningFloor": {
+          "value": 3000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subsActive": {
+          "value": 2500,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "utilities": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "family": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            220000,
+            400000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "rent": {
+          "value": [
+            50000,
+            90000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            2000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "electricity": {
+          "value": [
+            15000,
+            32000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "waterGas": {
+          "value": [
+            3000,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": [
+            4000,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": [
+            18000,
+            28000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": [
+            0,
+            6000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carIns": {
+          "value": [
+            3000,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            60000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": [
+            20000,
+            50000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "groceries": {
+          "value": [
+            60000,
+            85000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "dining": {
+          "value": [
+            8000,
+            20000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "misc": {
+          "value": [
+            10000,
+            18000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "medical": {
+          "value": [
+            5000,
+            15000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeHelp": {
+          "value": [
+            10000,
+            30000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            30000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "giving": {
+          "value": [
+            0,
+            10000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "other": {
+          "value": [
+            0,
+            15000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 40000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": 28000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": 6000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": 8000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "insurance": {
+          "value": 8000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": 60000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": 45000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "diningFloor": {
+          "value": 5000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subsActive": {
+          "value": 3000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "utilities": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "family": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "care": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            150000,
+            300000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "rent": {
+          "value": [
+            40000,
+            75000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeIns": {
+          "value": [
+            0,
+            1500
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "electricity": {
+          "value": [
+            10000,
+            22000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "waterGas": {
+          "value": [
+            2000,
+            5000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": [
+            4000,
+            7000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": [
+            12000,
+            22000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": [
+            3000,
+            7000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carIns": {
+          "value": [
+            3000,
+            7000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            50000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": [
+            0,
+            15000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "groceries": {
+          "value": [
+            25000,
+            38000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "dining": {
+          "value": [
+            12000,
+            28000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "misc": {
+          "value": [
+            8000,
+            15000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "medical": {
+          "value": [
+            2000,
+            7000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            12000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            25000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "giving": {
+          "value": [
+            0,
+            8000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "other": {
+          "value": [
+            0,
+            10000
+          ],
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 27000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "fuel": {
+          "value": 22000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transit": {
+          "value": 7000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "internet": {
+          "value": 7000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "insurance": {
+          "value": 6000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "carLoan": {
+          "value": 50000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "school": {
+          "value": 15000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "diningFloor": {
+          "value": 5000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subsActive": {
+          "value": 3000,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "utilities": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "transport": {
+          "value": 0.18,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "family": {
+          "value": 0.32,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 150000,
+        "rent": 35000,
+        "homeIns": 0,
+        "electricity": 12000,
+        "waterGas": 2500,
+        "internet": 4500,
+        "fuel": 12000,
+        "transit": 9000,
+        "carIns": 0,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 30000,
+        "dining": 14000,
+        "misc": 12000,
+        "medical": 2500,
+        "homeHelp": 3000,
+        "familySupport": 5000,
+        "giving": 1500,
+        "other": 2000,
+        "emergencyFund": 50000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 60000,
+          "apr": 38,
+          "payment": 5000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 1100,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 349,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 4000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 30000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 75000
+        },
+        {
+          "name": "Overtime",
+          "amount": 60000
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 400000,
+        "rent": 60000,
+        "homeIns": 1500,
+        "electricity": 36000,
+        "waterGas": 6000,
+        "internet": 9000,
+        "fuel": 32000,
+        "transit": 2000,
+        "carIns": 6000,
+        "carLoan": 35000,
+        "school": 35000,
+        "groceries": 90000,
+        "dining": 15000,
+        "misc": 22000,
+        "medical": 6000,
+        "homeHelp": 15000,
+        "familySupport": 20000,
+        "giving": 4000,
+        "other": 6000,
+        "emergencyFund": 150000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 180000,
+          "apr": 40,
+          "payment": 12000
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 400000,
+          "apr": 22,
+          "payment": 15000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 1100,
+          "rarely": false
+        },
+        {
+          "name": "YouTube Premium",
+          "cost": 479,
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": 1800,
+          "rarely": false
+        },
+        {
+          "name": "Google One storage",
+          "cost": 650,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 6000,
+          "rarely": true
+        },
+        {
+          "name": "Duolingo",
+          "cost": 1500,
+          "rarely": true
+        },
+        {
+          "name": "Foodpanda Pro",
+          "cost": 450,
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 120000
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 60000
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 40000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 200000
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 400000
+        },
+        {
+          "name": "Overtime",
+          "amount": 120000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 180000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 290000,
+        "rent": 60000,
+        "homeIns": 0,
+        "electricity": 20000,
+        "waterGas": 3500,
+        "internet": 6500,
+        "fuel": 26000,
+        "transit": 4000,
+        "carIns": 5000,
+        "carLoan": 45000,
+        "school": 0,
+        "groceries": 32000,
+        "dining": 34000,
+        "misc": 17000,
+        "medical": 3000,
+        "homeHelp": 0,
+        "familySupport": 15000,
+        "giving": 2000,
+        "other": 4000,
+        "emergencyFund": 80000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 120000,
+          "apr": 40,
+          "payment": 9000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 1100,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 349,
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 650,
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": 1200,
+          "rarely": true
+        },
+        {
+          "name": "Gym membership",
+          "cost": 7000,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 40000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 250000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 150000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "generatorFuel",
+      "label": "Generator / UPS running costs",
+      "group": "utilities",
+      "need": true,
+      "help": "Petrol or diesel for a generator, plus UPS battery top-ups, during load-shedding — as a monthly amount. Don’t include the cost of buying the generator or UPS itself (add that as a yearly cost).",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            5000
+          ],
+          "verify": true,
+          "note": "Estimate: a small UPS costs little to run; generator use varies hugely by city and feeder."
+        },
+        "suburban": {
+          "value": [
+            5000,
+            20000
+          ],
+          "verify": true,
+          "note": "Estimate: 1–3 hours of petrol generator a day at ~1 litre/hour; depends on load-shedding schedule."
+        },
+        "youngpro": {
+          "value": [
+            2000,
+            12000
+          ],
+          "verify": true,
+          "note": "Estimate."
+        }
+      }
+    },
+    {
+      "key": "committee",
+      "label": "Committee / BC payment",
+      "group": "care",
+      "need": false,
+      "help": "Your monthly payment into a committee (BC) — a rotating savings group where every member pays in each month and one member takes the whole pot each turn. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            20000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average for committee contributions."
+        },
+        "suburban": {
+          "value": [
+            0,
+            50000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average for committee contributions."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            40000
+          ],
+          "verify": true,
+          "note": "Estimate; no published average for committee contributions."
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "pk-protected-slab",
+      "pool": "electricity",
+      "title": "Stay in the protected 200-unit slab in winter",
+      "why": "Homes that use up to 200 units a month for six months in a row pay a much lower “protected” rate. One month over can cost you that status for the next six months.",
+      "tips": [
+        "Check the last 6 months of “units” on your bill to see if you are close to protected status.",
+        "In winter, switch off the geyser’s electric element and use gas or an instant geyser instead.",
+        "Read your meter mid-month so you can cut back before you cross 200 units."
+      ],
+      "pct": {
+        "value": 0.2,
+        "verify": true,
+        "note": "Judgement estimate; the saving depends on the slab rates in your DISCO’s current tariff."
+      }
+    },
+    {
+      "id": "pk-solar-ups",
+      "pool": "generatorFuel",
+      "title": "Swap generator hours for a solar + battery setup",
+      "why": "Petrol for a generator is one of the most expensive ways to make electricity. A small solar panel and lithium battery can cover fans, lights and the router during load-shedding.",
+      "tips": [
+        "Price a 1–3 kW solar kit with an inverter that can also charge from the grid.",
+        "Run only fans, lights and Wi-Fi on backup; keep the AC and iron for grid hours.",
+        "Service the generator and UPS batteries before summer so they don’t waste fuel or charge."
+      ],
+      "pct": {
+        "value": 0.4,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "pk-gas-geyser",
+      "pool": "waterGas",
+      "title": "Fit a geyser timer or instant geyser",
+      "why": "Gas geysers left on all day are a big part of winter gas bills, and gas tariffs rise steeply in higher slabs.",
+      "tips": [
+        "Put a timer on the geyser so it heats water only morning and evening.",
+        "Consider an instant (tankless) geyser when the old one needs replacing.",
+        "Insulate the hot-water pipes on the roof."
+      ],
+      "pct": {
+        "value": 0.15,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "smart-thermostat"
+  ],
+  "sources": [
+    {
+      "title": "v1 PKR benchmark set (src/engine/profiles.js, commit ee4576a)",
+      "url": "git:ee4576a:src/engine/profiles.js",
+      "usedFor": "all ranges, thresholds, category shares, one-off costs and sample budgets (ported unchanged)"
+    },
+    {
+      "title": "SBP keeps policy rate at 11.5% (July 2026); inflation 10.9% Apr, 11.7% May 2026 — ARY News",
+      "url": "https://arynews.tv/sbp-retains-policy-rate-at-11-5-percent",
+      "usedFor": "inflation (context)"
+    },
+    {
+      "title": "CDNS cuts National Savings profit rates, Special Savings Certificate 11.2% (July 2026) — Express Tribune",
+      "url": "https://tribune.com.pk/story/2619071/govt-cuts-profit-rates-on-savings-schemes",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "KSE-100 posts ~14% compounded annual growth over 30 years — Business Recorder",
+      "url": "https://www.brecorder.com/news/amp/40110781",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "PSX returns 2025 (avg annual gains ~22% over 10 years, 21% over 20) — Nukta",
+      "url": "https://nukta.com/psx-returns-2025",
+      "usedFor": "returns.shares (context)"
+    },
+    {
+      "title": "MCB credit card summary box Jul–Dec 2026 (APR up to 44%); Allied Bank cards 34% p.a.",
+      "url": "https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf",
+      "usedFor": "defaults.cardApr (38% sits inside the 34–44% range)"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

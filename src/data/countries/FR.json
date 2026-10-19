@@ -1,0 +1,1216 @@
+{
+  "code": "FR",
+  "currency": "EUR",
+  "locale": "fr-FR",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 2.2,
+    "verify": true,
+    "note": "INSEE: CPI 3.1% in Sep 2026 (energy +21%), core 1.5%; ECB target 2%. 2.2 is a blended long-run default"
+  },
+  "returns": {
+    "savings": 1.7,
+    "balanced": {
+      "value": 4,
+      "verify": true,
+      "note": "Judgment: assurance-vie fonds euros plus some equity units of account"
+    },
+    "longTerm": 8.5,
+    "shares": {
+      "value": 9,
+      "verify": true,
+      "note": "Judgment: all-equity portfolio, close to the CAC 40 GR long-run average"
+    }
+  },
+  "defaults": {
+    "cardApr": 19,
+    "loanApr": {
+      "value": 7,
+      "verify": true,
+      "note": "Banque de France usury table Q4 2026: average 17.7% for loans ≤ €3,000; loans above €6,000 capped at 8.56%. 7% is a mid-size personal-loan estimate"
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 35,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    },
+    "smartThermostat": {
+      "value": 150,
+      "verify": true,
+      "note": "Smart thermostat (e.g. Netatmo) estimate"
+    },
+    "tuneup": {
+      "value": 15,
+      "verify": true,
+      "note": "Typical retail price estimate, not from a cited source"
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            1900,
+            2800
+          ],
+          "verify": true,
+          "note": "INSEE 2024 net median full-time-equivalent salary €2,190/month (€2,247 excl. apprentices). Family = two earners plus allocations familiales; young pro = higher earner or couple (single city renter)"
+        },
+        "rent": {
+          "value": [
+            600,
+            950
+          ],
+          "verify": true,
+          "note": "Derived from SeLoger 2026 asking rents (avg €14/m², apartments €17/m², Île-de-France €23/m²) × assumed size (single 30–45 m², family 85–100 m² house, young pro 50–60 m²), charges included (single city renter)"
+        },
+        "homeIns": {
+          "value": [
+            10,
+            20
+          ],
+          "verify": true,
+          "note": "Assurance habitation estimate (compulsory for tenants) (single city renter)"
+        },
+        "electricity": {
+          "value": [
+            40,
+            90
+          ],
+          "verify": true,
+          "note": "Derived: TRV Base ~€0.20/kWh (Aug 2026) plus ~€13/month standing charge × 1,800–2,500 / 6,000–9,000 / 2,500–4,000 kWh (electric heating is common) (single city renter)"
+        },
+        "waterGas": {
+          "value": [
+            15,
+            60
+          ],
+          "verify": true,
+          "note": "Gas heating where present plus water if not in rental charges (single city renter)"
+        },
+        "internet": {
+          "value": [
+            25,
+            45
+          ],
+          "verify": true,
+          "note": "Box (fibre) plus mobile plans; French plans are cheap (Free, Bouygues, SFR, Orange) (single city renter)"
+        },
+        "fuel": {
+          "value": [
+            30,
+            100
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.75–1.90/l petrol/diesel (single city renter)"
+        },
+        "transit": {
+          "value": [
+            30,
+            90
+          ],
+          "verify": true,
+          "note": "Monthly pass (Navigo ~€90 in Île-de-France, €30–70 elsewhere) after the 50% employer refund, plus occasional tickets (single city renter)"
+        },
+        "carIns": {
+          "value": [
+            25,
+            55
+          ],
+          "verify": true,
+          "note": "Car insurance estimate, yearly premium shown monthly (single city renter)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            250
+          ],
+          "verify": true,
+          "note": "Car loan or LOA/LLD lease instalment estimate (single city renter)"
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            220,
+            320
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "dining": {
+          "value": [
+            80,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "misc": {
+          "value": [
+            80,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "medical": {
+          "value": [
+            10,
+            40
+          ],
+          "verify": true,
+          "note": "Out-of-pocket after Sécurité sociale and mutuelle (dépassements, optique, dentaire) (single city renter)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "Cleaner or childminder hours after the 50% tax credit (single city renter)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "giving": {
+          "value": [
+            0,
+            40
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        },
+        "other": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (single city renter)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 120,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "fuel": {
+          "value": 90,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "transit": {
+          "value": 90,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "internet": {
+          "value": 40,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "insurance": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "carLoan": {
+          "value": 250,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "school": {
+          "value": 150,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "diningFloor": {
+          "value": 50,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        },
+        "subsActive": {
+          "value": 30,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (single city renter)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.33,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (single city renter)"
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            4200,
+            6000
+          ],
+          "verify": true,
+          "note": "INSEE 2024 net median full-time-equivalent salary €2,190/month (€2,247 excl. apprentices). Family = two earners plus allocations familiales; young pro = higher earner or couple (family of four in a suburb/second city)"
+        },
+        "rent": {
+          "value": [
+            1000,
+            1500
+          ],
+          "verify": true,
+          "note": "Derived from SeLoger 2026 asking rents (avg €14/m², apartments €17/m², Île-de-France €23/m²) × assumed size (single 30–45 m², family 85–100 m² house, young pro 50–60 m²), charges included (family of four in a suburb/second city)"
+        },
+        "homeIns": {
+          "value": [
+            25,
+            50
+          ],
+          "verify": true,
+          "note": "Assurance habitation estimate (compulsory for tenants) (family of four in a suburb/second city)"
+        },
+        "electricity": {
+          "value": [
+            110,
+            200
+          ],
+          "verify": true,
+          "note": "Derived: TRV Base ~€0.20/kWh (Aug 2026) plus ~€13/month standing charge × 1,800–2,500 / 6,000–9,000 / 2,500–4,000 kWh (electric heating is common) (family of four in a suburb/second city)"
+        },
+        "waterGas": {
+          "value": [
+            60,
+            150
+          ],
+          "verify": true,
+          "note": "Gas heating where present plus water if not in rental charges (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": [
+            50,
+            90
+          ],
+          "verify": true,
+          "note": "Box (fibre) plus mobile plans; French plans are cheap (Free, Bouygues, SFR, Orange) (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": [
+            150,
+            280
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.75–1.90/l petrol/diesel (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": [
+            0,
+            100
+          ],
+          "verify": true,
+          "note": "Monthly pass (Navigo ~€90 in Île-de-France, €30–70 elsewhere) after the 50% employer refund, plus occasional tickets (family of four in a suburb/second city)"
+        },
+        "carIns": {
+          "value": [
+            70,
+            130
+          ],
+          "verify": true,
+          "note": "Car insurance estimate, yearly premium shown monthly (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            450
+          ],
+          "verify": true,
+          "note": "Car loan or LOA/LLD lease instalment estimate (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": [
+            80,
+            400
+          ],
+          "verify": true,
+          "note": "Crèche/assistante maternelle (after CAF aid), cantine and périscolaire estimate (family of four in a suburb/second city)"
+        },
+        "groceries": {
+          "value": [
+            650,
+            900
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "dining": {
+          "value": [
+            100,
+            250
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "misc": {
+          "value": [
+            150,
+            300
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "medical": {
+          "value": [
+            30,
+            90
+          ],
+          "verify": true,
+          "note": "Out-of-pocket after Sécurité sociale and mutuelle (dépassements, optique, dentaire) (family of four in a suburb/second city)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            300
+          ],
+          "verify": true,
+          "note": "Cleaner or childminder hours after the 50% tax credit (family of four in a suburb/second city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            80
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        },
+        "other": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (family of four in a suburb/second city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 280,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "fuel": {
+          "value": 250,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "transit": {
+          "value": 100,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "internet": {
+          "value": 75,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "insurance": {
+          "value": 150,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "carLoan": {
+          "value": 400,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "school": {
+          "value": 300,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (family of four in a suburb/second city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.27,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "transport": {
+          "value": 0.14,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "family": {
+          "value": 0.28,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "care": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (family of four in a suburb/second city)"
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            3500,
+            5500
+          ],
+          "verify": true,
+          "note": "INSEE 2024 net median full-time-equivalent salary €2,190/month (€2,247 excl. apprentices). Family = two earners plus allocations familiales; young pro = higher earner or couple (young professional / couple in a big city)"
+        },
+        "rent": {
+          "value": [
+            1000,
+            1500
+          ],
+          "verify": true,
+          "note": "Derived from SeLoger 2026 asking rents (avg €14/m², apartments €17/m², Île-de-France €23/m²) × assumed size (single 30–45 m², family 85–100 m² house, young pro 50–60 m²), charges included (young professional / couple in a big city)"
+        },
+        "homeIns": {
+          "value": [
+            12,
+            25
+          ],
+          "verify": true,
+          "note": "Assurance habitation estimate (compulsory for tenants) (young professional / couple in a big city)"
+        },
+        "electricity": {
+          "value": [
+            50,
+            100
+          ],
+          "verify": true,
+          "note": "Derived: TRV Base ~€0.20/kWh (Aug 2026) plus ~€13/month standing charge × 1,800–2,500 / 6,000–9,000 / 2,500–4,000 kWh (electric heating is common) (young professional / couple in a big city)"
+        },
+        "waterGas": {
+          "value": [
+            20,
+            70
+          ],
+          "verify": true,
+          "note": "Gas heating where present plus water if not in rental charges (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": [
+            40,
+            70
+          ],
+          "verify": true,
+          "note": "Box (fibre) plus mobile plans; French plans are cheap (Free, Bouygues, SFR, Orange) (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": [
+            60,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate at ~€1.75–1.90/l petrol/diesel (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": [
+            40,
+            120
+          ],
+          "verify": true,
+          "note": "Monthly pass (Navigo ~€90 in Île-de-France, €30–70 elsewhere) after the 50% employer refund, plus occasional tickets (young professional / couple in a big city)"
+        },
+        "carIns": {
+          "value": [
+            35,
+            70
+          ],
+          "verify": true,
+          "note": "Car insurance estimate, yearly premium shown monthly (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            350
+          ],
+          "verify": true,
+          "note": "Car loan or LOA/LLD lease instalment estimate (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Crèche/assistante maternelle (after CAF aid), cantine and périscolaire estimate (young professional / couple in a big city)"
+        },
+        "groceries": {
+          "value": [
+            380,
+            520
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "dining": {
+          "value": [
+            180,
+            380
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "misc": {
+          "value": [
+            120,
+            250
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "medical": {
+          "value": [
+            15,
+            50
+          ],
+          "verify": true,
+          "note": "Out-of-pocket after Sécurité sociale and mutuelle (dépassements, optique, dentaire) (young professional / couple in a big city)"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Cleaner or childminder hours after the 50% tax credit (young professional / couple in a big city)"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            200
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "giving": {
+          "value": [
+            0,
+            60
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        },
+        "other": {
+          "value": [
+            0,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate, not from a cited per-household statistic (young professional / couple in a big city)"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 150,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "fuel": {
+          "value": 130,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "transit": {
+          "value": 110,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "internet": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "insurance": {
+          "value": 80,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "carLoan": {
+          "value": 350,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "school": {
+          "value": 200,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "diningFloor": {
+          "value": 60,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        },
+        "subsActive": {
+          "value": 35,
+          "verify": true,
+          "note": "Judgment: set near the upper end of the typical range for this household type, not from a published statistic (young professional / couple in a big city)"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "family": {
+          "value": 0.22,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "debt": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgment informed by national household-spending shares; not a published per-household-type figure (young professional / couple in a big city)"
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 2300,
+        "rent": 780,
+        "homeIns": 14,
+        "electricity": 60,
+        "waterGas": 25,
+        "internet": 35,
+        "fuel": 0,
+        "transit": 45,
+        "carIns": 0,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 280,
+        "dining": 170,
+        "misc": 120,
+        "medical": 20,
+        "homeHelp": 0,
+        "familySupport": 50,
+        "giving": 15,
+        "other": 40,
+        "emergencyFund": 3500
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Crédit renouvelable",
+          "balance": 2000,
+          "apr": 19.5,
+          "payment": 100
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 14.99,
+          "rarely": false
+        },
+        {
+          "name": "Deezer",
+          "cost": 11.99,
+          "rarely": false
+        },
+        {
+          "name": "Basic-Fit",
+          "cost": 29.99,
+          "rarely": true,
+          "kind": "fitness"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 400
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 2100
+        },
+        {
+          "name": "Overtime",
+          "amount": 600
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 5000,
+        "rent": 1250,
+        "homeIns": 40,
+        "electricity": 170,
+        "waterGas": 90,
+        "internet": 75,
+        "fuel": 270,
+        "transit": 45,
+        "carIns": 115,
+        "carLoan": 330,
+        "school": 260,
+        "groceries": 820,
+        "dining": 180,
+        "misc": 240,
+        "medical": 40,
+        "homeHelp": 150,
+        "familySupport": 80,
+        "giving": 30,
+        "other": 80,
+        "emergencyFund": 9000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Crédit renouvelable",
+          "balance": 3200,
+          "apr": 20.5,
+          "payment": 150
+        },
+        {
+          "type": "loan",
+          "name": "Prêt personnel",
+          "balance": 8000,
+          "apr": 6.9,
+          "payment": 250
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 14.99,
+          "rarely": false
+        },
+        {
+          "name": "Canal+",
+          "cost": 24.99,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Disney+",
+          "cost": 9.99,
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": 9.99,
+          "rarely": false
+        },
+        {
+          "name": "Basic-Fit",
+          "cost": 29.99,
+          "rarely": true,
+          "kind": "fitness"
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 6.99,
+          "rarely": false
+        },
+        {
+          "name": "Deezer Famille",
+          "cost": 19.99,
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 800
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 400
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 700
+        }
+      ],
+      "extras": [
+        {
+          "name": "13th-month salary",
+          "amount": 3200
+        },
+        {
+          "name": "Yearly performance bonus",
+          "amount": 2000
+        },
+        {
+          "name": "Tax refund",
+          "amount": 600
+        },
+        {
+          "name": "Overtime",
+          "amount": 1000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 4300,
+        "rent": 1350,
+        "homeIns": 18,
+        "electricity": 75,
+        "waterGas": 35,
+        "internet": 55,
+        "fuel": 90,
+        "transit": 90,
+        "carIns": 50,
+        "carLoan": 280,
+        "school": 0,
+        "groceries": 450,
+        "dining": 350,
+        "misc": 200,
+        "medical": 25,
+        "homeHelp": 80,
+        "familySupport": 100,
+        "giving": 20,
+        "other": 70,
+        "emergencyFund": 7000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Crédit renouvelable",
+          "balance": 2500,
+          "apr": 18.9,
+          "payment": 120
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 14.99,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 11.12,
+          "rarely": false
+        },
+        {
+          "name": "iCloud+",
+          "cost": 2.99,
+          "rarely": false
+        },
+        {
+          "name": "Babbel",
+          "cost": 12.99,
+          "rarely": true
+        },
+        {
+          "name": "Basic-Fit",
+          "cost": 29.99,
+          "rarely": true,
+          "kind": "fitness"
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 1500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 3500
+        },
+        {
+          "name": "13th-month salary",
+          "amount": 2800
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "mutuelle",
+      "label": "Top-up health insurance (mutuelle)",
+      "group": "care",
+      "need": true,
+      "help": "Your monthly mutuelle (complémentaire santé). If your employer’s plan is taken from your payslip, leave this empty.",
+      "ranges": {
+        "single": {
+          "value": [
+            35,
+            90
+          ],
+          "verify": true,
+          "note": "Magnolia: 2026 average €86–122/month across ages; 18–24-year-olds ~€45. Lower bound assumes a basic individual plan"
+        },
+        "suburban": {
+          "value": [
+            150,
+            260
+          ],
+          "verify": true,
+          "note": "Selectra: family with two children a little over €250/month in 2026; basic family plans ~€165"
+        },
+        "youngpro": {
+          "value": [
+            50,
+            120
+          ],
+          "verify": true,
+          "note": "Estimate between Magnolia age-band averages for 25–44"
+        }
+      }
+    },
+    {
+      "key": "taxeFonciere",
+      "label": "Property tax (taxe foncière)",
+      "group": "housing",
+      "need": true,
+      "help": "Owners only: your yearly taxe foncière shown as a monthly amount. Tenants leave this empty.",
+      "ranges": {
+        "single": [
+          0,
+          0
+        ],
+        "suburban": {
+          "value": [
+            70,
+            180
+          ],
+          "verify": true,
+          "note": "Estimate: ~€850–2,150 a year for a family house; varies widely by commune"
+        },
+        "youngpro": {
+          "value": [
+            0,
+            120
+          ],
+          "verify": true,
+          "note": "Estimate: most are tenants; owners of a city flat pay roughly €600–1,400 a year"
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "fr-prime-transport",
+      "pool": "transit",
+      "title": "Claim your 50% transit refund",
+      "why": "Employers must reimburse half of your public-transport pass (prime transport). Some people never claim it.",
+      "tips": [
+        "Send your Navigo or local pass receipt to HR or payroll.",
+        "Choose the yearly pass (Navigo Annuel) if you use it every month.",
+        "Ask about the forfait mobilités durables if you cycle or carpool."
+      ],
+      "pct": {
+        "value": 0.3,
+        "verify": true,
+        "note": "Estimate: only applies to people not already claiming the 50% refund"
+      }
+    },
+    {
+      "id": "fr-energy-offer",
+      "pool": "electricity",
+      "title": "Compare offers to the regulated tariff",
+      "why": "Many market offers are cheaper than the tarif réglementé (TRV), and the off-peak option can lower bills if you run appliances at night.",
+      "tips": [
+        "Compare offers on energie-info.fr, the national energy ombudsman’s comparison site.",
+        "Check that your meter power (kVA) is not higher than you need.",
+        "Ask whether you are eligible for the chèque énergie."
+      ],
+      "pct": {
+        "value": 0.1,
+        "verify": true,
+        "note": "Estimate; market offers typically sit a few % to ~15% below the TRV"
+      }
+    },
+    {
+      "id": "fr-loi-hamon",
+      "pool": "carIns",
+      "title": "Switch insurer at any time after one year",
+      "why": "Under the loi Hamon you can cancel home and car insurance at any time after the first year, and the new insurer handles it.",
+      "tips": [
+        "Get 3 quotes for the same cover and excess.",
+        "Let the new insurer cancel the old contract for you.",
+        "Combine home and car with one insurer for a discount."
+      ],
+      "pct": {
+        "value": 0.12,
+        "verify": true,
+        "note": "Same as the general insurance re-quote rule; not a French statistic"
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "INSEE Informations Rapides n°247 (CPI September 2026)",
+      "url": "https://www.insee.fr/fr/statistiques/9080209",
+      "usedFor": "inflation"
+    },
+    {
+      "title": "Tout sur mes finances: Livret A 2026 (1.70% from 1 Aug 2026)",
+      "url": "https://www.toutsurmesfinances.com/placements/livret-a-taux-plafond-interets-fiscalite-l-essentiel-a-savoir.html",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "Lefebvre Dalloz: taux d’usure au 1er octobre 2026",
+      "url": "https://open.lefebvre-dalloz.fr/baremes-taux/droit-affaires/taux-usure-taux-usure-1er-octobre-2026_daf-usure-usure-septembre-2026",
+      "usedFor": "cardApr, loanApr"
+    },
+    {
+      "title": "Selectra: taux du crédit conso (revolving 15–21%)",
+      "url": "https://selectra.info/finance/credit-conso/taux",
+      "usedFor": "cardApr"
+    },
+    {
+      "title": "Tout sur mes finances: salaire médian (INSEE €2,190 net EQTP 2024)",
+      "url": "https://www.toutsurmesfinances.com/argent/a/salaire-median-salaire-moyen-en-france-montant-brut-et-net-evolution",
+      "usedFor": "income"
+    },
+    {
+      "title": "SeLoger: prix des loyers en France",
+      "url": "https://edito.seloger.com/conseils-d-experts/louer/prix-loyers-france-classement-ville-ville-article-17327.html",
+      "usedFor": "rent"
+    },
+    {
+      "title": "La Prime Énergie: tarif électricité 2026 (TRV Base €0.2001/kWh)",
+      "url": "https://www.laprimeenergie.fr/energie/comparateur-fournisseur-electricite/tarif",
+      "usedFor": "electricity"
+    },
+    {
+      "title": "Magnolia: prix d’une mutuelle santé en 2026",
+      "url": "https://www.magnolia.fr/mutuelle-sante/prix",
+      "usedFor": "mutuelle"
+    },
+    {
+      "title": "Selectra: prix mutuelle santé",
+      "url": "https://selectra.info/assurance/guides/mutuelle-sante/prix",
+      "usedFor": "mutuelle (family)"
+    },
+    {
+      "title": "AFG: CAC 40 évolution et performance (GR +9.2%/yr since 1987, to 2021)",
+      "url": "https://afg.asso.fr/app/uploads/2021/11/21-11-04-tribune-afg-cac40-volution-et-performance-vf.pdf",
+      "usedFor": "returns.longTerm"
+    },
+    {
+      "title": "Avenue des Investisseurs: ETF CAC 40 (~8.5%/yr since 1987, to 2022)",
+      "url": "https://avenuedesinvestisseurs.fr/etf-cac-40/",
+      "usedFor": "returns.longTerm"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

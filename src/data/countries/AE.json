@@ -1,0 +1,1203 @@
+{
+  "code": "AE",
+  "currency": "AED",
+  "locale": "en-AE",
+  "lakh": false,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 2.5,
+    "verify": true,
+    "note": "CBUAE projects 1.8% for 2026, but Dubai CPI ran 5.3–5.7% in mid-2026 on fuel and rents; 2.5% is a long-run planning figure."
+  },
+  "returns": {
+    "savings": 3.4,
+    "balanced": {
+      "value": 5,
+      "verify": true,
+      "note": "Blend of ~3.5% deposits and ~7% equity; judgement."
+    },
+    "longTerm": {
+      "value": 7,
+      "verify": true,
+      "note": "No clean long-run DFM/ADX average found; 7% is a judgement figure for a diversified (global + local) index fund in AED, which is pegged to the US dollar."
+    },
+    "shares": {
+      "value": 8,
+      "verify": true,
+      "note": "Judgement; mostly-shares portfolio, USD-pegged currency."
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 39,
+      "verify": true,
+      "note": "UAE cards typically charge ~3.25–3.5% a month; an older Souqalmal survey put the average at 41.3% a year. No current published average."
+    },
+    "loanApr": {
+      "value": 7,
+      "verify": true,
+      "note": "Personal loans with salary transfer are often quoted as ~3–4% flat, roughly 6–8% APR (reducing balance); EIBOR 12-month ~5.1%."
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 100,
+      "verify": true,
+      "note": "Typical retail prices in the UAE; judgement, not checked against a price survey."
+    },
+    "smartThermostat": {
+      "value": 600,
+      "verify": true,
+      "note": "Typical retail prices in the UAE; judgement, not checked against a price survey."
+    },
+    "tuneup": {
+      "value": 60,
+      "verify": true,
+      "note": "Typical retail prices in the UAE; judgement, not checked against a price survey."
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": {
+          "value": [
+            9000,
+            16000
+          ],
+          "verify": true,
+          "note": "No official wage data (last UAE wage dataset is from 2008). Based on crowdsourced/recruiter figures: Dubai median ~AED 12,000–15,000 a month."
+        },
+        "rent": [
+          4500,
+          8000
+        ],
+        "homeIns": {
+          "value": [
+            0,
+            60
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            250,
+            600
+          ],
+          "verify": true,
+          "note": "DEWA bill guides give AED 400–750 in summer for a 1-bed, much less in winter; averaged over the year."
+        },
+        "waterGas": {
+          "value": [
+            100,
+            250
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            350,
+            600
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            300,
+            700
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            200,
+            600
+          ],
+          "verify": true,
+          "note": "Nol monthly pass ~AED 350 (unofficial) plus Salik at AED 6.30 peak / 4.20 off-peak."
+        },
+        "carIns": {
+          "value": [
+            100,
+            250
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            1800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": [
+          0,
+          0
+        ],
+        "groceries": {
+          "value": [
+            1000,
+            1800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            600,
+            1500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            400,
+            900
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            50,
+            300
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            600
+          ],
+          "verify": true,
+          "note": "Part-time cleaner a few hours a week; judgement."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            3000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            600
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 800,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 700,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 600,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 550,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 250,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 1800,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 2000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 300,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 120,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": {
+          "value": [
+            22000,
+            40000
+          ],
+          "verify": true,
+          "note": "Two-income expat family; no official household income data published. Judgement from recruiter salary guides."
+        },
+        "rent": [
+          8000,
+          15000
+        ],
+        "homeIns": {
+          "value": [
+            40,
+            150
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            700,
+            1500
+          ],
+          "verify": true,
+          "note": "DEWA guides: 2–3 bed apartment AED 700–1,400 in summer, 3-bed villa 1,500–2,500; averaged over the year."
+        },
+        "waterGas": {
+          "value": [
+            250,
+            600
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            450,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            700,
+            1300
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            0,
+            400
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            250,
+            500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            1500,
+            3500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": [
+          4000,
+          10000
+        ],
+        "groceries": {
+          "value": [
+            3000,
+            5000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            800,
+            2000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            800,
+            1500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            200,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            3500
+          ],
+          "verify": true,
+          "note": "Live-in domestic worker salary plus food; varies by nationality and contract."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            5000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            1200
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 2000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 1300,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 400,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 700,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 500,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 3500,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 9000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 500,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 150,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.32,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.4,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.06,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": {
+          "value": [
+            16000,
+            30000
+          ],
+          "verify": true,
+          "note": "Recruiter guides: most professional roles AED 10,000–40,000 a month; no official data."
+        },
+        "rent": [
+          7000,
+          12000
+        ],
+        "homeIns": {
+          "value": [
+            0,
+            80
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "electricity": {
+          "value": [
+            400,
+            900
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "waterGas": {
+          "value": [
+            150,
+            350
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "internet": {
+          "value": [
+            400,
+            700
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "fuel": {
+          "value": [
+            500,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "transit": {
+          "value": [
+            200,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carIns": {
+          "value": [
+            180,
+            400
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "carLoan": {
+          "value": [
+            0,
+            3000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "school": {
+          "value": [
+            0,
+            3000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "groceries": {
+          "value": [
+            1500,
+            2500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "dining": {
+          "value": [
+            1500,
+            3500
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "misc": {
+          "value": [
+            800,
+            1600
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "medical": {
+          "value": [
+            100,
+            400
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "familySupport": {
+          "value": [
+            0,
+            4000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "giving": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        },
+        "other": {
+          "value": [
+            0,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate built from the cited 2026 price points for this household type; not a published average."
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 1200,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "fuel": {
+          "value": 1000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "transit": {
+          "value": 800,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "internet": {
+          "value": 650,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "insurance": {
+          "value": 400,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "carLoan": {
+          "value": 3000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "school": {
+          "value": 3000,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "diningFloor": {
+          "value": 600,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        },
+        "subsActive": {
+          "value": 150,
+          "verify": true,
+          "note": "Set near the top of the typical range for this household; judgement."
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.35,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "utilities": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "family": {
+          "value": 0.25,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "care": {
+          "value": 0.08,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "Judgement estimate of typical share of take-home pay."
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 14000,
+        "rent": 6000,
+        "homeIns": 30,
+        "electricity": 400,
+        "waterGas": 150,
+        "internet": 450,
+        "fuel": 500,
+        "transit": 300,
+        "carIns": 150,
+        "carLoan": 800,
+        "school": 0,
+        "groceries": 1300,
+        "dining": 900,
+        "misc": 600,
+        "medical": 100,
+        "homeHelp": 200,
+        "familySupport": 1000,
+        "giving": 150,
+        "other": 200,
+        "emergencyFund": 15000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 9000,
+          "apr": 39,
+          "payment": 600
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 39,
+          "rarely": false
+        },
+        {
+          "name": "Anghami Plus",
+          "cost": 22,
+          "rarely": false,
+          "kind": "streaming"
+        },
+        {
+          "name": "Gym membership",
+          "cost": 250,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 5000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 14000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 6000
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 36000,
+        "rent": 10000,
+        "homeIns": 80,
+        "electricity": 1100,
+        "waterGas": 400,
+        "internet": 600,
+        "fuel": 1000,
+        "transit": 150,
+        "carIns": 350,
+        "carLoan": 2200,
+        "school": 6000,
+        "groceries": 4000,
+        "dining": 1200,
+        "misc": 1000,
+        "medical": 400,
+        "homeHelp": 2200,
+        "familySupport": 2000,
+        "giving": 400,
+        "other": 500,
+        "chillerFee": 300,
+        "housingFee": 420,
+        "emergencyFund": 45000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Credit card",
+          "balance": 18000,
+          "apr": 39,
+          "payment": 1200
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 60000,
+          "apr": 7.5,
+          "payment": 2000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 56,
+          "rarely": false
+        },
+        {
+          "name": "OSN+",
+          "cost": 35,
+          "rarely": true
+        },
+        {
+          "name": "Shahid VIP",
+          "cost": 25,
+          "rarely": false
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 16,
+          "rarely": false
+        },
+        {
+          "name": "Anghami Plus",
+          "cost": 22,
+          "rarely": true,
+          "kind": "streaming"
+        },
+        {
+          "name": "Careem Plus",
+          "cost": 19,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 300,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 15000
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 4000
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 2500
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 30000
+        },
+        {
+          "name": "Overtime",
+          "amount": 6000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 12000
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 3000
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 24000,
+        "rent": 9000,
+        "homeIns": 50,
+        "electricity": 650,
+        "waterGas": 250,
+        "internet": 550,
+        "fuel": 800,
+        "transit": 400,
+        "carIns": 300,
+        "carLoan": 2000,
+        "school": 0,
+        "groceries": 2000,
+        "dining": 2500,
+        "misc": 1200,
+        "medical": 200,
+        "homeHelp": 400,
+        "familySupport": 1500,
+        "giving": 300,
+        "other": 400,
+        "emergencyFund": 30000
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 15000,
+          "apr": 39,
+          "payment": 1000
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 56,
+          "rarely": false
+        },
+        {
+          "name": "OSN+",
+          "cost": 35,
+          "rarely": true
+        },
+        {
+          "name": "Spotify",
+          "cost": 22,
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 11,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 350,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 8000
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 24000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 8000
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "chillerFee",
+      "label": "District cooling (chiller) bill",
+      "group": "utilities",
+      "need": true,
+      "help": "If your building’s air-conditioning comes from a district cooling company (for example Empower or Emicool), its monthly bill. This is separate from DEWA, ADDC or SEWA. Leave at 0 if cooling is included in your rent or comes from your own AC units.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            600
+          ],
+          "verify": true,
+          "note": "Bill guides quote AED 500–2,000+ for district cooling; many units have cooling included, so the low end is 0."
+        },
+        "suburban": {
+          "value": [
+            0,
+            1000
+          ],
+          "verify": true,
+          "note": "Estimate; villas usually have their own AC units (0)."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Estimate."
+        }
+      }
+    },
+    {
+      "key": "housingFee",
+      "label": "Municipality housing fee",
+      "group": "housing",
+      "need": true,
+      "help": "In Dubai, renters pay a housing fee of 5% of the yearly rent, added to the DEWA bill in monthly instalments. Other emirates charge similar fees (Abu Dhabi’s is collected with the ADDC bill). Enter what you pay each month.",
+      "ranges": {
+        "single": [
+          190,
+          330
+        ],
+        "suburban": [
+          330,
+          625
+        ],
+        "youngpro": [
+          290,
+          500
+        ]
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "ae-rent-cheques",
+      "pool": "rent",
+      "title": "Offer fewer rent cheques for a lower rent",
+      "why": "Rent is agreed per year and paid in 1–12 post-dated cheques. Landlords often take less if you pay in 1 or 2 cheques. Enter your rent here as the yearly amount divided by 12.",
+      "tips": [
+        "Ask what the rent would be with 1 or 2 cheques instead of 4 or more.",
+        "Check the RERA rental index calculator before renewing: it shows whether your landlord can raise the rent.",
+        "Start looking 90 days before your contract ends; landlords must give 90 days’ notice of any increase."
+      ],
+      "pct": {
+        "value": 0.05,
+        "verify": true,
+        "note": "Judgement estimate of the discount for paying in fewer cheques."
+      }
+    },
+    {
+      "id": "ae-dewa-slab",
+      "pool": "electricity",
+      "title": "Keep electricity out of the higher DEWA slabs",
+      "why": "DEWA charges more per kWh as your monthly use moves through its slabs, so the summer AC months cost far more per unit.",
+      "tips": [
+        "Set the AC to 24°C or higher and use timers so it isn’t cooling empty rooms.",
+        "Get the AC ducts and filters cleaned before summer.",
+        "Compare your monthly kWh on the DEWA app with the slab limits on your bill."
+      ],
+      "pct": {
+        "value": 0.12,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    },
+    {
+      "id": "ae-salik-nol",
+      "pool": "transit",
+      "title": "Cut Salik gates and use Nol for the commute",
+      "why": "Each Salik crossing costs AED 6.30 at peak and 4.20 off-peak; four peak crossings a working day add up to over AED 500 a month.",
+      "tips": [
+        "Check if a route without Salik gates adds only a few minutes.",
+        "Travel just before 6 am or after 8 pm when the toll is lower.",
+        "Try the Metro with a Nol card a few days a week and compare the cost."
+      ],
+      "pct": {
+        "value": 0.2,
+        "verify": true,
+        "note": "Judgement estimate."
+      }
+    }
+  ],
+  "hideRules": [],
+  "sources": [
+    {
+      "title": "Driven Properties — apartments for rent in Dubai (studio ~AED 60,000, 1-bed ~97,000, 2-bed ~135,000 a year)",
+      "url": "https://www.drivenproperties.com/apartments-for-rent-in-dubai?page_no=55",
+      "usedFor": "rent"
+    },
+    {
+      "title": "Engel & Völkers / Property Monitor — Dubai villa rents May 2026 (3-bed AED 212,220 a year)",
+      "url": "https://www.engelvoelkers.com/ae/en/resources/villa-rental-prices",
+      "usedFor": "rent (suburban upper end)"
+    },
+    {
+      "title": "Oliva — DEWA bills explained (2026 summer bill table)",
+      "url": "https://joinoliva.com/en/learn/blog/dewa-bills-understanding-electricity-costs",
+      "usedFor": "electricity, waterGas"
+    },
+    {
+      "title": "Real Estate Club Dubai — utilities and monthly bills (5% housing fee, district cooling)",
+      "url": "https://realestateclubdubai.com/blog/dubai-life/utilities-monthly-bills-dubai",
+      "usedFor": "housingFee, chillerFee"
+    },
+    {
+      "title": "Khaleej Times — UAE fuel prices October 2026 (Special 95 AED 4.28)",
+      "url": "https://www.khaleejtimes.com/uae/petrol-diesel-prices-october-2026-announced",
+      "usedFor": "fuel"
+    },
+    {
+      "title": "Yallamotor — Salik with 5% VAT from June 2026 (AED 6.30 peak / 4.20 off-peak)",
+      "url": "https://www.yallamotor.com/news/salik-vat-uae-2026-5-percent-tolls-parking-55390",
+      "usedFor": "transit, localTips"
+    },
+    {
+      "title": "iSchoolAdvisor — Dubai international school fees 2026",
+      "url": "https://www.ischooladvisor.com/articles/schooling-and-school-choice/costs-and-fees-understanding-funding/international-school-fees-in-dubai-2026-cost-guide",
+      "usedFor": "school"
+    },
+    {
+      "title": "WAM — KHDA confirms no fee increase for 2026–27",
+      "url": "https://www.wam.ae/en/article/c0ca92k-khda-confirms-fee-increase-for-dubai’s-private",
+      "usedFor": "school"
+    },
+    {
+      "title": "StashAway — best fixed deposit rates in the UAE (Aug 2026; FAB 12-month 3.39%)",
+      "url": "https://www.stashaway.ae/en-AE/r/best-fixed-deposit-rates-uae",
+      "usedFor": "returns.savings"
+    },
+    {
+      "title": "Focus Economics — UAE/Dubai inflation July 2026",
+      "url": "https://www.focus-economics.com/countries/uae/news/inflation/uae-consumer-prices-e-20-08-2026-inflation-eases-in-july-from-the-prior-month/",
+      "usedFor": "inflation (context)"
+    },
+    {
+      "title": "CBUAE — EIBOR rates",
+      "url": "https://www.centralbank.ae/en/forex-eibor/eibor-rates/",
+      "usedFor": "defaults.loanApr (context)"
+    },
+    {
+      "title": "Y-Axis — average salary in Dubai (unofficial)",
+      "url": "https://www.y-axis.com/blog/average-salary-in-dubai/",
+      "usedFor": "income (context)"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}

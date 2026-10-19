@@ -1,0 +1,672 @@
+{
+  "code": "US",
+  "currency": "USD",
+  "locale": "en-US",
+  "lakh": false,
+  "payFrequency": "biweekly",
+  "inflation": {
+    "value": 3,
+    "verify": true,
+    "note": "Kept the app's existing default of 3%. Fed target is 2%; CPI was about 3.7% a year in Sept 2026 (energy-driven), so check the recent trend."
+  },
+  "returns": {
+    "savings": 4,
+    "balanced": 6,
+    "longTerm": {
+      "value": 8,
+      "verify": true,
+      "note": "Existing app value. S&P 500 long-run nominal total return is closer to 10%; 8% is a deliberately cautious figure."
+    },
+    "shares": {
+      "value": 10,
+      "verify": true,
+      "note": "Existing app value; roughly the long-run S&P 500 nominal total return, never guaranteed."
+    }
+  },
+  "defaults": {
+    "cardApr": 22,
+    "loanApr": 8
+  },
+  "costs": {
+    "ledKit": 40,
+    "smartThermostat": 130,
+    "tuneup": 15
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": [
+          3200,
+          5200
+        ],
+        "rent": [
+          1200,
+          1800
+        ],
+        "homeIns": [
+          12,
+          25
+        ],
+        "electricity": [
+          45,
+          85
+        ],
+        "waterGas": [
+          25,
+          55
+        ],
+        "internet": [
+          55,
+          85
+        ],
+        "fuel": [
+          60,
+          120
+        ],
+        "transit": [
+          80,
+          130
+        ],
+        "carIns": [
+          90,
+          160
+        ],
+        "carLoan": [
+          0,
+          350
+        ],
+        "school": [
+          0,
+          0
+        ],
+        "groceries": [
+          250,
+          350
+        ],
+        "dining": [
+          150,
+          300
+        ],
+        "misc": [
+          60,
+          100
+        ],
+        "medical": [
+          20,
+          80
+        ],
+        "homeHelp": [
+          0,
+          0
+        ],
+        "familySupport": [
+          0,
+          200
+        ],
+        "giving": [
+          0,
+          100
+        ],
+        "other": [
+          0,
+          150
+        ]
+      },
+      "thresholds": {
+        "utilities": 120,
+        "fuel": 120,
+        "transit": 130,
+        "internet": 80,
+        "insurance": 100,
+        "carLoan": 350,
+        "school": 200,
+        "diningFloor": 50,
+        "subsActive": 45
+      },
+      "categoryShare": {
+        "housing": 0.35,
+        "utilities": 0.06,
+        "transport": 0.1,
+        "family": 0.2,
+        "debt": 0.1,
+        "subscriptions": 0.02,
+        "care": 0.04,
+        "yearly": 0.04
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": [
+          6000,
+          9500
+        ],
+        "rent": [
+          1800,
+          2600
+        ],
+        "homeIns": [
+          100,
+          180
+        ],
+        "electricity": [
+          110,
+          170
+        ],
+        "waterGas": [
+          60,
+          110
+        ],
+        "internet": [
+          70,
+          110
+        ],
+        "fuel": [
+          150,
+          200
+        ],
+        "transit": [
+          20,
+          60
+        ],
+        "carIns": [
+          180,
+          280
+        ],
+        "carLoan": [
+          400,
+          700
+        ],
+        "school": [
+          200,
+          600
+        ],
+        "groceries": [
+          800,
+          950
+        ],
+        "dining": [
+          200,
+          400
+        ],
+        "misc": [
+          100,
+          150
+        ],
+        "medical": [
+          80,
+          250
+        ],
+        "homeHelp": [
+          0,
+          400
+        ],
+        "familySupport": [
+          0,
+          300
+        ],
+        "giving": [
+          0,
+          250
+        ],
+        "other": [
+          0,
+          250
+        ]
+      },
+      "thresholds": {
+        "utilities": 200,
+        "fuel": 200,
+        "transit": 100,
+        "internet": 80,
+        "insurance": 100,
+        "carLoan": 350,
+        "school": 200,
+        "diningFloor": 50,
+        "subsActive": 45
+      },
+      "categoryShare": {
+        "housing": 0.3,
+        "utilities": 0.07,
+        "transport": 0.15,
+        "family": 0.28,
+        "debt": 0.1,
+        "subscriptions": 0.02,
+        "care": 0.06,
+        "yearly": 0.05
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": [
+          4500,
+          7000
+        ],
+        "rent": [
+          1400,
+          2100
+        ],
+        "homeIns": [
+          15,
+          30
+        ],
+        "electricity": [
+          55,
+          95
+        ],
+        "waterGas": [
+          30,
+          60
+        ],
+        "internet": [
+          65,
+          95
+        ],
+        "fuel": [
+          100,
+          150
+        ],
+        "transit": [
+          60,
+          120
+        ],
+        "carIns": [
+          120,
+          200
+        ],
+        "carLoan": [
+          250,
+          450
+        ],
+        "school": [
+          0,
+          300
+        ],
+        "groceries": [
+          300,
+          400
+        ],
+        "dining": [
+          250,
+          450
+        ],
+        "misc": [
+          80,
+          120
+        ],
+        "medical": [
+          30,
+          120
+        ],
+        "homeHelp": [
+          0,
+          0
+        ],
+        "familySupport": [
+          0,
+          250
+        ],
+        "giving": [
+          0,
+          150
+        ],
+        "other": [
+          0,
+          200
+        ]
+      },
+      "thresholds": {
+        "utilities": 150,
+        "fuel": 150,
+        "transit": 100,
+        "internet": 80,
+        "insurance": 100,
+        "carLoan": 350,
+        "school": 200,
+        "diningFloor": 50,
+        "subsActive": 45
+      },
+      "categoryShare": {
+        "housing": 0.3,
+        "utilities": 0.06,
+        "transport": 0.12,
+        "family": 0.22,
+        "debt": 0.1,
+        "subscriptions": 0.02,
+        "care": 0.05,
+        "yearly": 0.04
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 4100,
+        "rent": 1650,
+        "homeIns": 18,
+        "electricity": 70,
+        "waterGas": 40,
+        "internet": 95,
+        "fuel": 140,
+        "transit": 127,
+        "carIns": 120,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 420,
+        "dining": 260,
+        "misc": 210,
+        "medical": 40,
+        "homeHelp": 0,
+        "familySupport": 100,
+        "giving": 30,
+        "other": 40,
+        "emergencyFund": 2500,
+        "healthPremium": 120
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Visa card",
+          "balance": 3200,
+          "apr": 24.9,
+          "payment": 120
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 15.49,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 11.99,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 45,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 600
+        }
+      ],
+      "extras": [
+        {
+          "name": "Overtime",
+          "amount": 1800
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 500
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 7200,
+        "rent": 2100,
+        "homeIns": 160,
+        "electricity": 165,
+        "waterGas": 85,
+        "internet": 120,
+        "fuel": 320,
+        "transit": 45,
+        "carIns": 260,
+        "carLoan": 480,
+        "school": 450,
+        "groceries": 1150,
+        "dining": 380,
+        "misc": 260,
+        "medical": 120,
+        "homeHelp": 240,
+        "familySupport": 200,
+        "giving": 100,
+        "other": 90,
+        "emergencyFund": 6000,
+        "healthPremium": 570
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Store credit card",
+          "balance": 5400,
+          "apr": 22.9,
+          "payment": 180
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 7800,
+          "apr": 9.5,
+          "payment": 250
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 22.99,
+          "rarely": false
+        },
+        {
+          "name": "Disney+",
+          "cost": 13.99,
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": 9.99,
+          "rarely": false
+        },
+        {
+          "name": "iCloud storage",
+          "cost": 2.99,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 59.99,
+          "rarely": true
+        },
+        {
+          "name": "Duolingo",
+          "cost": 12.99,
+          "rarely": true
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 14.99,
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 1800
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 600
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 900
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 6000
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 1000
+        },
+        {
+          "name": "Overtime",
+          "amount": 2400
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 1800
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 5600,
+        "rent": 1950,
+        "homeIns": 22,
+        "electricity": 95,
+        "waterGas": 55,
+        "internet": 110,
+        "fuel": 210,
+        "transit": 60,
+        "carIns": 170,
+        "carLoan": 380,
+        "school": 250,
+        "groceries": 480,
+        "dining": 520,
+        "misc": 340,
+        "medical": 50,
+        "homeHelp": 0,
+        "familySupport": 150,
+        "giving": 50,
+        "other": 60,
+        "emergencyFund": 4000,
+        "healthPremium": 250
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 4100,
+          "apr": 27.4,
+          "payment": 160
+        },
+        {
+          "type": "loan",
+          "name": "Student loan",
+          "balance": 18500,
+          "apr": 5.5,
+          "payment": 210
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Streaming bundle",
+          "cost": 19.99,
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 9.99,
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": 12.99,
+          "rarely": true
+        },
+        {
+          "name": "Fitness app",
+          "cost": 14.99,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 1200
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 4000
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 2400
+        }
+      ]
+    }
+  },
+  "extraFields": [
+    {
+      "key": "healthPremium",
+      "label": "Health insurance premium",
+      "group": "care",
+      "need": true,
+      "help": "What you pay each month for health insurance, including the amount taken from your paycheck for an employer plan or a Marketplace plan after any tax credit.",
+      "ranges": {
+        "single": {
+          "value": [
+            80,
+            200
+          ],
+          "verify": true,
+          "note": "Built around the KFF 2025 average worker contribution for single coverage ($1,440 a year, about $120 a month); spread is an estimate."
+        },
+        "suburban": {
+          "value": [
+            350,
+            800
+          ],
+          "verify": true,
+          "note": "Built around the KFF 2025 average worker contribution for family coverage ($6,850 a year, about $570 a month); spread is an estimate."
+        },
+        "youngpro": {
+          "value": [
+            100,
+            350
+          ],
+          "verify": true,
+          "note": "Between KFF single and family worker contributions (employee + spouse is not in our source); estimate."
+        }
+      }
+    }
+  ],
+  "localTips": [
+    {
+      "id": "us-open-enrollment",
+      "pool": "healthPremium",
+      "title": "Compare health plans at open enrollment",
+      "why": "Employer and Marketplace plans change prices every year, and the default is often to roll over into the same plan.",
+      "tips": [
+        "At open enrollment, compare the premium plus the deductible you realistically expect to pay, not the premium alone.",
+        "If you are both covered at work, check whether one family plan or two separate plans costs less.",
+        "If you buy on HealthCare.gov or a state Marketplace, update your income: you may qualify for a bigger tax credit."
+      ],
+      "pct": {
+        "value": 0.1,
+        "verify": true,
+        "note": "Assumed saving from switching plans; estimate."
+      }
+    }
+  ],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "KFF 2025 Employer Health Benefits Survey (summary)",
+      "url": "https://www.kff.org/health-costs/",
+      "usedFor": "health insurance premium ranges (worker contributions $1,440 single / $6,850 family)"
+    },
+    {
+      "title": "Best high-yield savings rates, Oct 2026 (The College Investor)",
+      "url": "https://thecollegeinvestor.com/90524/best-high-yield-savings-rates-for-october-14-2026/",
+      "usedFor": "savings return (top online savings around 4.2–4.35% APY)"
+    },
+    {
+      "title": "US CPI September 2026 (Forex Fundamentals summary of BLS release)",
+      "url": "https://forexfundamentals.com/economic-calendar/us-cpi/2026-10-14",
+      "usedFor": "inflation context (3.7% a year)"
+    }
+  ],
+  "lastReviewed": "2026-10-19"
+}
