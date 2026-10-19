@@ -32,14 +32,14 @@ describe('normalizeState: saved, shared and imported data', () => {
   it('clamps numbers and drops bad values', () => {
     const s = normalizeState({
       values: { income: '5000', rent: -200, groceries: 'lots', dining: Infinity, notAField: 99 },
-      debts: [{ balance: 1000, apr: 250, payment: -5, type: 'mortgage' }]
+      debts: [{ balance: 1000, apr: 999, payment: -5, type: 'mortgage' }]
     });
     expect(s.values.income).toBe(5000);
     expect(s.values.rent).toBe(0);
     expect(s.values.groceries).toBe(0);
     expect(s.values.dining).toBe(0);
     expect(s.values.notAField).toBeUndefined();
-    expect(s.debts[0]).toMatchObject({ type: 'card', apr: 100, payment: 0, balance: 1000 });
+    expect(s.debts[0]).toMatchObject({ type: 'card', apr: 300, payment: 0, balance: 1000 }); // high enough for Brazil's card rates
     expect(s.debts[0].id).toMatch(/^d/);
   });
 
@@ -71,6 +71,14 @@ describe('normalizeState: saved, shared and imported data', () => {
   it('only accepts known growth rates and keeps years in range', () => {
     expect(normalizeState({ projection: { rate: 0.5, years: 99 } }).projection).toMatchObject({ rate: 0.08, years: 20 });
     expect(normalizeState({ projection: { rate: 0.04, years: 0 } }).projection).toMatchObject({ rate: 0.04, years: 1 });
+  });
+
+  it('keeps a known country, or works it out from the currency of older saves', () => {
+    expect(normalizeState({ country: 'DE', currency: 'EUR' }).country).toBe('DE');
+    expect(normalizeState({ currency: 'GBP' }).country).toBe('GB');
+    expect(normalizeState({ currency: 'PKR' }).country).toBe('PK');
+    expect(normalizeState({ currency: 'EUR' }).country).toBe('GLOBAL'); // EUR alone doesn't say which country
+    expect(normalizeState({ country: 'XX', currency: 'USD' }).country).toBe('US');
   });
 
   it('checks the payday plan', () => {

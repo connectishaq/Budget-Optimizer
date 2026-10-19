@@ -699,7 +699,6 @@
       "nothing": "généralement rien",
       "range": "généralement de {min} à {max} par mois",
       "tip": "{help} Pour {group}, c’est {range}{approx}.",
-      "approximate": " (repère approximatif pour cette devise)",
       "higher": "Plus élevé que d’habitude pour {group} (généralement jusqu’à {max})"
     },
     "toast": {
@@ -1159,7 +1158,6 @@
       "title_html": "Optimiseur de budget familial <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; simulateur d’épargne</span>",
       "lead": "Ajoutez vos dépenses mensuelles. Voyez où va votre argent, des moyens simples de dépenser moins, et combien vous pourriez économiser.",
       "start": "Commencer : environ 2 minutes",
-      "note": "Gratuit. Sans inscription. Fonctionne en 8 devises, dont les roupies en lakh et crore.",
       "receipt": {
         "title": "Votre mois",
         "badge": "Exemple",
@@ -1465,8 +1463,7 @@
       "a6": "Un compte d’épargne sans risque a récemment rapporté environ 4 % par an. Sur de longues périodes, investir à long terme dans un large panier d’actions a rapporté en moyenne environ 8 % par an, mais avec des hauts et des bas. La croissance n’est jamais garantie : essayez plusieurs options et activez « Afficher en valeur d’aujourd’hui » pour tenir compte de la hausse des prix.",
       "q7": "Quel doit être le montant de mon épargne de précaution ?",
       "a7": "Un repère courant est de 3 à 6 mois de dépenses obligatoires. Visez le haut de la fourchette si votre foyer n’a qu’un seul revenu, un salaire variable ou des personnes à charge. L’outil montre combien de temps vous tiendriez aujourd’hui et combien de temps il faut pour atteindre chaque niveau.",
-      "q8": "Puis-je utiliser des roupies et d’autres devises ?",
-      "a8": "Oui. Vous pouvez choisir entre USD, GBP, EUR, INR, PKR, AED, CAD et AUD. Les roupies pakistanaises et indiennes utilisent des montants habituels pour les foyers au Pakistan et en Inde, et les montants en roupies s’affichent en lakh et crore. Les autres devises utilisent un repère approximatif basé sur des chiffres américains."
+      "q8": "Puis-je utiliser des roupies et d’autres devises ?"
     },
     "glossary": {
       "title": "Les mots de l’argent, expliqués simplement",
@@ -1552,8 +1549,7 @@
       "a6": "Un compte d’épargne sans risque a récemment rapporté environ 4 % par an. Sur de longues périodes, investir à long terme dans un large panier d’actions a rapporté en moyenne environ 8 % par an, mais avec des hauts et des bas. La croissance n’est jamais garantie : essayez plusieurs options et activez « Afficher en valeur d’aujourd’hui » pour tenir compte de la hausse des prix.",
       "q7": "Quel doit être le montant de mon épargne de précaution ?",
       "a7": "Un repère courant est de 3 à 6 mois de dépenses obligatoires. Visez le haut de la fourchette si votre foyer n’a qu’un seul revenu, un salaire variable ou des personnes à charge. L’outil montre combien de temps vous tiendriez aujourd’hui et combien de temps il faut pour atteindre chaque niveau.",
-      "q8": "Puis-je utiliser des roupies et d’autres devises ?",
-      "a8": "Oui. Vous pouvez choisir entre USD, GBP, EUR, INR, PKR, AED, CAD et AUD. Les roupies pakistanaises et indiennes utilisent des montants habituels pour les foyers au Pakistan et en Inde, et les montants en roupies s’affichent en lakh et crore. Les autres devises utilisent un repère approximatif basé sur des chiffres américains."
+      "q8": "Puis-je utiliser des roupies et d’autres devises ?"
     }
   },
   "dashboard": {
@@ -1622,7 +1618,6 @@
     },
     "categories": {
       "basisIncome": "Part de vos revenus, comparée à un profil type « {profile} ».",
-      "basisIncomeApprox": "Part de vos revenus, comparée à un profil type « {profile} » (repère approximatif pour cette devise).",
       "basisSpend": "Part de vos dépenses totales. Ajoutez vos revenus pour comparer avec des foyers types.",
       "typical": "Habituel : {pct} des revenus",
       "higher": "Plus élevé que d’habitude (environ {pct})",

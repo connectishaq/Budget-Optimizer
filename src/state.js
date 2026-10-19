@@ -8,28 +8,35 @@ import { CURRENCIES } from './utils/format.js';
 import { VALUE_FIELDS, ALLOCATION_PRESETS, BUCKETS } from './engine/calculate.js';
 import { SUB_KINDS } from './engine/subscriptions.js';
 import { t } from './i18n/index.js';
+import { countryData, RETURN_KINDS } from './engine/countries.js';
+import { isCountry, countryForCurrency } from './i18n/countries.js';
 
 const STORAGE_KEY = 'hbo:v3';
 const THEME_KEY = 'hbo:theme';
 const SAVE_DELAY = 400;
 
-// label/hint are getters so they follow the current language
-const returnOption = (value, key) => ({
-  value,
-  get label() { return t(`charts.returns.${key}.label`); },
-  get hint() { return t(`charts.returns.${key}.hint`); }
-});
-export const RETURN_OPTIONS = [
-  returnOption(0.04, 'safe'),
-  returnOption(0.06, 'mixed'),
-  returnOption(0.08, 'longTerm'),
-  returnOption(0.1, 'shares')
-];
+// The four growth-rate choices; their rates come from the selected country.
+// label/hint are getters so they follow the current language.
+const RETURN_KEYS = { savings: 'safe', balanced: 'mixed', longTerm: 'longTerm', shares: 'shares' };
+export function returnOptions(country) {
+  const { returns } = countryData(country);
+  return RETURN_KINDS.map((kind) => {
+    const pct = returns[kind];
+    return {
+      kind,
+      value: Math.round(pct * 100) / 10000,
+      get label() { return t(`charts.returns.${RETURN_KEYS[kind]}.label`, { pct }); },
+      get hint() { return t(`charts.returns.${RETURN_KEYS[kind]}.hint`); }
+    };
+  });
+}
 
 export function defaultState() {
   return {
     version: 4,
     profile: 'suburban',
+    // Benchmarks, defaults and local tips come from the country (src/data/countries)
+    country: 'US',
     currency: 'USD',
     period: 'monthly',
     values: {},
@@ -74,12 +81,14 @@ export function normalizeState(raw) {
   const s = d;
   if (PROFILES[raw.profile]) s.profile = raw.profile;
   if (CURRENCIES[raw.currency]) s.currency = raw.currency;
+  // Saved before countries existed: the currency tells us where (EUR is ambiguous -> GLOBAL)
+  s.country = isCountry(raw.country) ? raw.country : countryForCurrency(s.currency);
   if (raw.period === 'annual') s.period = 'annual';
   if (isObj(raw.values)) for (const f of VALUE_FIELDS) if (raw.values[f] != null) s.values[f] = n(raw.values[f]);
   if (Array.isArray(raw.debts)) {
     s.debts = raw.debts.slice(0, 20).filter(isObj).map((x) => ({
       id: id(x.id, 'd'), type: x.type === 'loan' ? 'loan' : 'card', name: str(x.name),
-      balance: n(x.balance), apr: n(x.apr, 0, 100), payment: n(x.payment)
+      balance: n(x.balance), apr: n(x.apr, 0, 300), payment: n(x.payment)
     }));
   }
   if (Array.isArray(raw.subscriptions)) {
@@ -109,7 +118,8 @@ export function normalizeState(raw) {
   if (isObj(raw.projection)) {
     const p = raw.projection;
     s.projection.years = Math.round(n(p.years, 1, 20)) || 10;
-    if (RETURN_OPTIONS.some((o) => o.value === Number(p.rate))) s.projection.rate = Number(p.rate);
+    // Any sensible yearly rate; the options themselves depend on the country
+    if (Number(p.rate) > 0 && Number(p.rate) <= 0.4) s.projection.rate = Number(p.rate);
     s.projection.inflationOn = !!p.inflationOn;
     s.projection.inflation = p.inflation == null ? 3 : n(p.inflation, 0, 20);
   }

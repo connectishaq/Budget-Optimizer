@@ -651,7 +651,7 @@
       "apr": "Effektiver Jahreszins %",
       "payment": "Monatliche Rate",
       "empty": "Keine Kredite oder Karten hinzugefügt. Das ist okay. Überspring das, wenn du keine hast.",
-      "aprCapped": "Zinsen über 100 % sind sehr ungewöhnlich, daher haben wir 100 % verwendet. Prüf deinen Kontoauszug."
+      "aprCapped": "Zinsen über {max} % sind sehr ungewöhnlich, daher haben wir {max} % verwendet. Prüf deinen Kontoauszug."
     },
     "subs": {
       "add": "Abo hinzufügen",
@@ -689,7 +689,6 @@
       "nothing": "meist nichts",
       "range": "meist {min} bis {max} im Monat",
       "tip": "{help} Für {group} sind das {range}{approx}.",
-      "approximate": " (grober Richtwert für diese Währung)",
       "higher": "Höher als üblich für {group} (meist bis zu {max})"
     },
     "toast": {
@@ -1130,7 +1129,6 @@
       "title_html": "Haushaltsbudget-Optimierer <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Sparrechner</span>",
       "lead": "Trag deine monatlichen Rechnungen ein. Sieh, wohin dein Geld geht, wie du einfach weniger ausgibst und wie viel du sparen könntest.",
       "start": "Start: ca. 2 Minuten",
-      "note": "Kostenlos. Ohne Anmeldung. Funktioniert in 8 Währungen, auch mit Rupien in Lakh und Crore.",
       "receipt": {
         "title": "Dein Monat",
         "badge": "Beispiel",
@@ -1436,8 +1434,7 @@
       "a6": "Ein sicheres Sparkonto hat zuletzt etwa 4 % im Jahr gebracht. Langfristiges Anlegen in einer breiten Mischung aus Aktien hat über lange Zeiträume im Schnitt etwa 8 % im Jahr gebracht, schwankt aber. Wachstum ist nie garantiert – probier also ein paar Optionen aus und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
       "q7": "Wie groß sollte mein Notgroschen sein?",
       "a7": "Eine gängige Faustregel sind 3 bis 6 Monate an Pflichtausgaben. Peile das obere Ende an, wenn dein Haushalt nur ein Einkommen hat, dein Einkommen schwankt oder Menschen auf dich angewiesen sind. Das Tool zeigt, wie lange dein Polster jetzt reicht und wie lange es dauert, jede Stufe zu erreichen.",
-      "q8": "Kann ich Rupien und andere Währungen nutzen?",
-      "a8": "Ja. Du kannst zwischen USD, GBP, EUR, INR, PKR, AED, CAD und AUD wechseln. Pakistanische und indische Rupien nutzen typische Beträge für Haushalte in Pakistan und Indien, und Rupien-Beträge werden in Lakh und Crore angezeigt. Andere Währungen nutzen einen groben Richtwert auf Basis von US-Zahlen."
+      "q8": "Kann ich Rupien und andere Währungen nutzen?"
     },
     "glossary": {
       "title": "Geldbegriffe einfach erklärt",
@@ -1523,8 +1520,7 @@
       "a6": "Ein sicheres Sparkonto hat zuletzt etwa 4 % im Jahr gebracht. Langfristiges Anlegen in einer breiten Mischung aus Aktien hat über lange Zeiträume im Schnitt etwa 8 % im Jahr gebracht, schwankt aber. Wachstum ist nie garantiert – probier also ein paar Optionen aus und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
       "q7": "Wie groß sollte mein Notgroschen sein?",
       "a7": "Eine gängige Faustregel sind 3 bis 6 Monate an Pflichtausgaben. Peile das obere Ende an, wenn dein Haushalt nur ein Einkommen hat, dein Einkommen schwankt oder Menschen auf dich angewiesen sind. Das Tool zeigt, wie lange dein Polster jetzt reicht und wie lange es dauert, jede Stufe zu erreichen.",
-      "q8": "Kann ich Rupien und andere Währungen nutzen?",
-      "a8": "Ja. Du kannst zwischen USD, GBP, EUR, INR, PKR, AED, CAD und AUD wechseln. Pakistanische und indische Rupien nutzen typische Beträge für Haushalte in Pakistan und Indien, und Rupien-Beträge werden in Lakh und Crore angezeigt. Andere Währungen nutzen einen groben Richtwert auf Basis von US-Zahlen."
+      "q8": "Kann ich Rupien und andere Währungen nutzen?"
     }
   },
   "dashboard": {
@@ -1591,7 +1587,6 @@
     },
     "categories": {
       "basisIncome": "Anteil an deinem Einkommen, verglichen mit einem typischen Haushalt „{profile}“.",
-      "basisIncomeApprox": "Anteil an deinem Einkommen, verglichen mit einem typischen Haushalt „{profile}“ (grober Richtwert für diese Währung).",
       "basisSpend": "Anteil an deinen Gesamtausgaben. Trag dein Einkommen ein, um mit typischen Haushalten zu vergleichen.",
       "typical": "Üblich: {pct} des Einkommens",
       "higher": "Höher als üblich (etwa {pct})",
@@ -1829,19 +1824,19 @@
   "charts": {
     "returns": {
       "safe": {
-        "label": "4 %: Sicheres Sparkonto",
+        "label": "{pct} %: Sicheres Sparkonto",
         "hint": "Wächst langsam, mit sehr wenig Risiko."
       },
       "mixed": {
-        "label": "6 %: Sparen und Anlegen",
+        "label": "{pct} %: Sparen und Anlegen",
         "hint": "Unterwegs gibt es ein paar Schwankungen."
       },
       "longTerm": {
-        "label": "8 %: Langfristig anlegen",
+        "label": "{pct} %: Langfristig anlegen",
         "hint": "Stärkere Schwankungen. Am besten über 10+ Jahre."
       },
       "shares": {
-        "label": "10 %: Überwiegend Aktien",
+        "label": "{pct} %: Überwiegend Aktien",
         "hint": "Große Schwankungen und nie garantiert."
       }
     },

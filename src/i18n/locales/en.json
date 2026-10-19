@@ -445,7 +445,12 @@
       "PKR": "PKR — Pakistani Rupee",
       "AED": "AED — UAE Dirham",
       "CAD": "CAD — Canadian Dollar",
-      "AUD": "AUD — Australian Dollar"
+      "AUD": "AUD — Australian Dollar",
+      "SAR": "SAR — Saudi Riyal",
+      "BRL": "BRL — Brazilian Real",
+      "MXN": "MXN — Mexican Peso",
+      "IDR": "IDR — Indonesian Rupiah",
+      "NGN": "NGN — Nigerian Naira"
     },
     "lakh": "{amount} lakh",
     "crore": "{amount} crore",
@@ -644,7 +649,7 @@
       "apr": "Yearly interest rate (APR) %",
       "payment": "Monthly payment",
       "empty": "No loans or cards added. That’s fine. Skip this if you don’t have any.",
-      "aprCapped": "Rates above 100% are very unusual, so we’ve used 100%. Check your statement."
+      "aprCapped": "Rates above {max}% are very unusual, so we’ve used {max}%. Check your statement."
     },
     "subs": {
       "add": "Add a subscription",
@@ -682,7 +687,7 @@
       "nothing": "usually nothing",
       "range": "usually {min} to {max} a month",
       "tip": "{help} For {group}, this is {range}{approx}.",
-      "approximate": " (a rough guide for this currency)",
+      "approximate": " (a rough guide, worked out from your income because we don't have figures for your country yet)",
       "higher": "Higher than typical for {group} (usually up to {max})"
     },
     "toast": {
@@ -1119,7 +1124,7 @@
       "title_html": "Household Budget Optimizer <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Savings Simulator</span>",
       "lead": "Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.",
       "start": "Start: about 2 minutes",
-      "note": "Free. No sign-up. Works in 8 currencies, including rupees in lakh and crore.",
+      "note": "Free. No sign-up. Works in 13 currencies, including rupees in lakh and crore.",
       "receipt": {
         "title": "Your month",
         "badge": "Example",
@@ -1426,7 +1431,7 @@
       "q7": "How big should my emergency fund be?",
       "a7": "A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.",
       "q8": "Can I use rupees and other currencies?",
-      "a8": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures."
+      "a8": "Yes. Choose your country at the top of the page and the calculator uses its currency, typical household amounts and local tips. You can switch between USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR and NGN, and rupee amounts are shown in lakh and crore. For other countries, typical amounts are worked out as shares of your income."
     },
     "glossary": {
       "title": "Money words, explained simply",
@@ -1494,7 +1499,7 @@
         "Once-a-year costs spread into monthly amounts",
         "Emergency fund check",
         "Debt-free date",
-        "Eight currencies with lakh and crore display"
+        "13 currencies with lakh and crore display"
       ]
     },
     "faq": {
@@ -1513,7 +1518,7 @@
       "q7": "How big should my emergency fund be?",
       "a7": "A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.",
       "q8": "Can I use rupees and other currencies?",
-      "a8": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures."
+      "a8": "Yes. Choose your country at the top of the page and the calculator uses its currency, typical household amounts and local tips. You can switch between USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR and NGN, and rupee amounts are shown in lakh and crore. For other countries, typical amounts are worked out as shares of your income."
     }
   },
   "dashboard": {
@@ -1580,7 +1585,7 @@
     },
     "categories": {
       "basisIncome": "Share of your income, compared with a typical {profile}.",
-      "basisIncomeApprox": "Share of your income, compared with a typical {profile} (a rough guide for this currency).",
+      "basisIncomeApprox": "Share of your income, compared with a typical {profile} (a rough guide, as we don't have figures for your country yet).",
       "basisSpend": "Share of your total spending. Add your income to compare with typical households.",
       "typical": "Typical: {pct} of income",
       "higher": "Higher than typical (about {pct})",
@@ -1818,19 +1823,19 @@
   "charts": {
     "returns": {
       "safe": {
-        "label": "4%: Safe savings account",
+        "label": "{pct}%: Safe savings account",
         "hint": "Grows slowly, with very little risk."
       },
       "mixed": {
-        "label": "6%: Savings and investing",
+        "label": "{pct}%: Savings and investing",
         "hint": "Some ups and downs along the way."
       },
       "longTerm": {
-        "label": "8%: Long-term investing",
+        "label": "{pct}%: Long-term investing",
         "hint": "More ups and downs. Works best over 10+ years."
       },
       "shares": {
-        "label": "10%: Mostly shares",
+        "label": "{pct}%: Mostly shares",
         "hint": "Big ups and downs, and never guaranteed."
       }
     },

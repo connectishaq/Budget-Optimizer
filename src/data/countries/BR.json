@@ -28,7 +28,11 @@
     }
   },
   "defaults": {
-    "cardApr": 445,
+    "cardApr": {
+      "value": 180,
+      "verify": true,
+      "note": "The calculator charges APR/12 a month. BCB's revolving-card rate (rotativo) is about 445% a year effective, i.e. about 15% a month; 180 is that monthly rate x 12. Check the BCB monthly credit statistics"
+    },
     "loanApr": {
       "value": 80,
       "verify": true,

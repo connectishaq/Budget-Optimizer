@@ -169,7 +169,7 @@ function renderSplit(result, view) {
 function renderCategories(state, result, view) {
   const { categories, income, spend } = result.totals;
   const denom = income > 0 ? income : spend || 1;
-  const B = benchmarkFor(state.currency, state.profile);
+  const B = benchmarkFor(state.country, state.profile, income);
   $('categoryLegend').hidden = !(income > 0);
   setText($('categoryBasis'), income > 0
     ? t(B.approximate ? 'dashboard.categories.basisIncomeApprox' : 'dashboard.categories.basisIncome', { profile: PROFILES[state.profile].name })

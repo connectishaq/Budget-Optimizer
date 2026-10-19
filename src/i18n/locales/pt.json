@@ -699,7 +699,6 @@
       "nothing": "geralmente nada",
       "range": "geralmente de {min} a {max} por mês",
       "tip": "{help} Para {group}, isso é {range}{approx}.",
-      "approximate": " (uma referência aproximada para esta moeda)",
       "higher": "Acima do comum para {group} (geralmente até {max})"
     },
     "toast": {
@@ -1159,7 +1158,6 @@
       "title_html": "Otimizador de Orçamento Doméstico <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Simulador de Economia</span>",
       "lead": "Adicione suas contas do mês. Veja para onde vai o seu dinheiro, jeitos simples de gastar menos e quanto você poderia economizar.",
       "start": "Começar: cerca de 2 minutos",
-      "note": "Grátis. Sem cadastro. Funciona com 8 moedas, incluindo rupias em lakh e crore.",
       "receipt": {
         "title": "Seu mês",
         "badge": "Exemplo",
@@ -1465,8 +1463,7 @@
       "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
       "q7": "De quanto deve ser minha reserva de emergência?",
       "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
-      "q8": "Posso usar rupias e outras moedas?",
-      "a8": "Sim. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, CAD e AUD. As rupias paquistanesa e indiana usam valores típicos de famílias no Paquistão e na Índia, e os valores em rupias aparecem em lakh e crore. As outras moedas usam uma referência aproximada baseada em números dos EUA."
+      "q8": "Posso usar rupias e outras moedas?"
     },
     "glossary": {
       "title": "Termos de dinheiro, explicados de forma simples",
@@ -1552,8 +1549,7 @@
       "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
       "q7": "De quanto deve ser minha reserva de emergência?",
       "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
-      "q8": "Posso usar rupias e outras moedas?",
-      "a8": "Sim. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, CAD e AUD. As rupias paquistanesa e indiana usam valores típicos de famílias no Paquistão e na Índia, e os valores em rupias aparecem em lakh e crore. As outras moedas usam uma referência aproximada baseada em números dos EUA."
+      "q8": "Posso usar rupias e outras moedas?"
     }
   },
   "dashboard": {
@@ -1622,7 +1618,6 @@
     },
     "categories": {
       "basisIncome": "Parte da sua renda, comparada com o perfil típico: {profile}.",
-      "basisIncomeApprox": "Parte da sua renda, comparada com o perfil típico: {profile} (uma referência aproximada para esta moeda).",
       "basisSpend": "Parte do seu gasto total. Adicione sua renda para comparar com famílias típicas.",
       "typical": "Típico: {pct} da renda",
       "higher": "Acima do típico (cerca de {pct})",

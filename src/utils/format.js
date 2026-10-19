@@ -12,7 +12,12 @@ export const CURRENCIES = {
   PKR: { get label() { return t('format.currencies.PKR'); }, locale: 'en-PK' },
   AED: { get label() { return t('format.currencies.AED'); }, locale: 'en-AE' },
   CAD: { get label() { return t('format.currencies.CAD'); }, locale: 'en-CA' },
-  AUD: { get label() { return t('format.currencies.AUD'); }, locale: 'en-AU' }
+  AUD: { get label() { return t('format.currencies.AUD'); }, locale: 'en-AU' },
+  SAR: { get label() { return t('format.currencies.SAR'); }, locale: 'en-SA' },
+  BRL: { get label() { return t('format.currencies.BRL'); }, locale: 'en-BR' },
+  MXN: { get label() { return t('format.currencies.MXN'); }, locale: 'en-MX' },
+  IDR: { get label() { return t('format.currencies.IDR'); }, locale: 'en-ID' },
+  NGN: { get label() { return t('format.currencies.NGN'); }, locale: 'en-NG' }
 };
 
 /** Currencies whose readers count large amounts in lakh (100,000) and crore (10,000,000). */

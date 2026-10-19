@@ -22,9 +22,10 @@
 //   tips(ctx)            three short action steps, most useful first
 //   flag(ctx)            optional warning line
 //
-// ctx = { v, profile, P, B, currency, income, debts, subs, fmt }
+// ctx = { v, profile, P, B, C, country, currency, income, debts, subs, fmt }
 //   v: monthly inputs · P: PROFILES[profile] (name, group) · B: benchmarks for
-//   this currency + profile · fmt: currency formatter for sentences.
+//   this country + profile · C: the country's data file (src/data/countries) ·
+//   fmt: currency formatter for sentences. Rules listed in C.hideRules never run.
 //
 // Text is looked up in the "rules" messages when read (getters and functions),
 // so it follows the active language.
@@ -45,8 +46,8 @@ const activeSubs = (c, kind) => c.subs.filter((s) => !s.rarely && s.kind === kin
 
 // South Asian households get ideas that fit local bills: slab-based
 // electricity tariffs, prepaid mobile bundles, few 0% balance-transfer cards.
-const LOCAL_CURRENCIES = ['PKR', 'INR'];
-export const isLocal = (c) => LOCAL_CURRENCIES.includes(c.currency);
+const SOUTH_ASIA = ['PK', 'IN'];
+export const isLocal = (c) => SOUTH_ASIA.includes(c.country);
 
 export const RULES = [
   // ---------------- Housing ----------------

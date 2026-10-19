@@ -13,6 +13,9 @@ const COUNTRY_FOR_CURRENCY = { USD: 'US', GBP: 'GB', CAD: 'CA', AUD: 'AU', INR: 
 
 export const isCountry = (c) => ALL_COUNTRIES.includes(c);
 
+/** The country a currency most likely belongs to; GLOBAL when it's ambiguous (EUR) or unknown. */
+export const countryForCurrency = (currency) => COUNTRY_FOR_CURRENCY[currency] || GLOBAL;
+
 /** 🇺🇸 from "US" (regional indicator symbols); 🌐 for any other country. */
 export function flagOf(code) {
   if (!COUNTRY_CODES.includes(code)) return '🌐';

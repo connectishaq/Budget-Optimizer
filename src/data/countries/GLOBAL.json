@@ -1,0 +1,1061 @@
+{
+  "code": "GLOBAL",
+  "currency": null,
+  "locale": null,
+  "lakh": false,
+  "relative": true,
+  "payFrequency": "monthly",
+  "inflation": {
+    "value": 3,
+    "verify": true,
+    "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+  },
+  "returns": {
+    "savings": {
+      "value": 4,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "balanced": {
+      "value": 6,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "longTerm": {
+      "value": 8,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "shares": {
+      "value": 10,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    }
+  },
+  "defaults": {
+    "cardApr": {
+      "value": 22,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "loanApr": {
+      "value": 8,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    }
+  },
+  "costs": {
+    "ledKit": {
+      "value": 0.0052,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "smartThermostat": {
+      "value": 0.0168,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    },
+    "tuneup": {
+      "value": 0.0019,
+      "verify": true,
+      "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+    }
+  },
+  "profiles": {
+    "single": {
+      "ranges": {
+        "income": [
+          0,
+          0
+        ],
+        "rent": {
+          "value": [
+            0.2857,
+            0.4286
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeIns": {
+          "value": [
+            0.0029,
+            0.006
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "electricity": {
+          "value": [
+            0.0107,
+            0.0202
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "waterGas": {
+          "value": [
+            0.006,
+            0.0131
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": [
+            0.0131,
+            0.0202
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": [
+            0.0143,
+            0.0286
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": [
+            0.019,
+            0.031
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carIns": {
+          "value": [
+            0.0214,
+            0.0381
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": [
+            0,
+            0.0833
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "groceries": {
+          "value": [
+            0.0595,
+            0.0833
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "dining": {
+          "value": [
+            0.0357,
+            0.0714
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "misc": {
+          "value": [
+            0.0143,
+            0.0238
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "medical": {
+          "value": [
+            0.0048,
+            0.019
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            0.0476
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "giving": {
+          "value": [
+            0,
+            0.0238
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "other": {
+          "value": [
+            0,
+            0.0357
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 0.0286,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": 0.0286,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": 0.031,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": 0.019,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "insurance": {
+          "value": 0.0238,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": 0.0833,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": 0.0476,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "diningFloor": {
+          "value": 0.0119,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subsActive": {
+          "value": 0.0107,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.35,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transport": {
+          "value": 0.1,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "family": {
+          "value": 0.2,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "care": {
+          "value": 0.04,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      }
+    },
+    "suburban": {
+      "ranges": {
+        "income": [
+          0,
+          0
+        ],
+        "rent": {
+          "value": [
+            0.2323,
+            0.3355
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeIns": {
+          "value": [
+            0.0129,
+            0.0232
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "electricity": {
+          "value": [
+            0.0142,
+            0.0219
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "waterGas": {
+          "value": [
+            0.0077,
+            0.0142
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": [
+            0.009,
+            0.0142
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": [
+            0.0194,
+            0.0258
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": [
+            0.0026,
+            0.0077
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carIns": {
+          "value": [
+            0.0232,
+            0.0361
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": [
+            0.0516,
+            0.0903
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": [
+            0.0258,
+            0.0774
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "groceries": {
+          "value": [
+            0.1032,
+            0.1226
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "dining": {
+          "value": [
+            0.0258,
+            0.0516
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "misc": {
+          "value": [
+            0.0129,
+            0.0194
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "medical": {
+          "value": [
+            0.0103,
+            0.0323
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0.0516
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            0.0387
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "giving": {
+          "value": [
+            0,
+            0.0323
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "other": {
+          "value": [
+            0,
+            0.0323
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 0.0258,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": 0.0258,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": 0.0129,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": 0.0103,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "insurance": {
+          "value": 0.0129,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": 0.0452,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": 0.0258,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "diningFloor": {
+          "value": 0.0065,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subsActive": {
+          "value": 0.0058,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "utilities": {
+          "value": 0.07,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transport": {
+          "value": 0.15,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "family": {
+          "value": 0.28,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "care": {
+          "value": 0.06,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "yearly": {
+          "value": 0.05,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      }
+    },
+    "youngpro": {
+      "ranges": {
+        "income": [
+          0,
+          0
+        ],
+        "rent": {
+          "value": [
+            0.2435,
+            0.3652
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeIns": {
+          "value": [
+            0.0026,
+            0.0052
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "electricity": {
+          "value": [
+            0.0096,
+            0.0165
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "waterGas": {
+          "value": [
+            0.0052,
+            0.0104
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": [
+            0.0113,
+            0.0165
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": [
+            0.0174,
+            0.0261
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": [
+            0.0104,
+            0.0209
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carIns": {
+          "value": [
+            0.0209,
+            0.0348
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": [
+            0.0435,
+            0.0783
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": [
+            0,
+            0.0522
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "groceries": {
+          "value": [
+            0.0522,
+            0.0696
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "dining": {
+          "value": [
+            0.0435,
+            0.0783
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "misc": {
+          "value": [
+            0.0139,
+            0.0209
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "medical": {
+          "value": [
+            0.0052,
+            0.0209
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "homeHelp": {
+          "value": [
+            0,
+            0
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "familySupport": {
+          "value": [
+            0,
+            0.0435
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "giving": {
+          "value": [
+            0,
+            0.0261
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "other": {
+          "value": [
+            0,
+            0.0348
+          ],
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "thresholds": {
+        "utilities": {
+          "value": 0.0261,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "fuel": {
+          "value": 0.0261,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transit": {
+          "value": 0.0174,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "internet": {
+          "value": 0.0139,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "insurance": {
+          "value": 0.0174,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "carLoan": {
+          "value": 0.0609,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "school": {
+          "value": 0.0348,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "diningFloor": {
+          "value": 0.0087,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subsActive": {
+          "value": 0.0078,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      },
+      "categoryShare": {
+        "housing": {
+          "value": 0.3,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "utilities": {
+          "value": 0.06,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "transport": {
+          "value": 0.12,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "family": {
+          "value": 0.22,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "debt": {
+          "value": 0.1,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "subscriptions": {
+          "value": 0.02,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "care": {
+          "value": 0.05,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        },
+        "yearly": {
+          "value": 0.04,
+          "verify": true,
+          "note": "US benchmark as a share of take-home pay; applied to any country, so only a rough guide"
+        }
+      }
+    }
+  },
+  "samples": {
+    "single": {
+      "values": {
+        "income": 1,
+        "rent": 0.4024,
+        "homeIns": 0.0044,
+        "electricity": 0.0171,
+        "waterGas": 0.0098,
+        "internet": 0.0232,
+        "fuel": 0.0341,
+        "transit": 0.031,
+        "carIns": 0.0293,
+        "carLoan": 0,
+        "school": 0,
+        "groceries": 0.1024,
+        "dining": 0.0634,
+        "misc": 0.0512,
+        "medical": 0.0098,
+        "homeHelp": 0,
+        "familySupport": 0.0244,
+        "giving": 0.0073,
+        "other": 0.0098,
+        "emergencyFund": 0.6098,
+        "healthPremium": 0.0293
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Visa card",
+          "balance": 0.7805,
+          "apr": 24.9,
+          "payment": 0.0293
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 0.0038,
+          "rarely": false
+        },
+        {
+          "name": "Spotify",
+          "cost": 0.0029,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 0.011,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 0.1463
+        }
+      ],
+      "extras": [
+        {
+          "name": "Overtime",
+          "amount": 0.439
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 0.122
+        }
+      ]
+    },
+    "suburban": {
+      "values": {
+        "income": 1,
+        "rent": 0.2917,
+        "homeIns": 0.0222,
+        "electricity": 0.0229,
+        "waterGas": 0.0118,
+        "internet": 0.0167,
+        "fuel": 0.0444,
+        "transit": 0.0063,
+        "carIns": 0.0361,
+        "carLoan": 0.0667,
+        "school": 0.0625,
+        "groceries": 0.1597,
+        "dining": 0.0528,
+        "misc": 0.0361,
+        "medical": 0.0167,
+        "homeHelp": 0.0333,
+        "familySupport": 0.0278,
+        "giving": 0.0139,
+        "other": 0.0125,
+        "emergencyFund": 0.8333,
+        "healthPremium": 0.0792
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Store credit card",
+          "balance": 0.75,
+          "apr": 22.9,
+          "payment": 0.025
+        },
+        {
+          "type": "loan",
+          "name": "Personal loan",
+          "balance": 1.0833,
+          "apr": 9.5,
+          "payment": 0.0347
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Netflix",
+          "cost": 0.0032,
+          "rarely": false
+        },
+        {
+          "name": "Disney+",
+          "cost": 0.0019,
+          "rarely": true
+        },
+        {
+          "name": "Microsoft 365",
+          "cost": 0.0014,
+          "rarely": false
+        },
+        {
+          "name": "iCloud storage",
+          "cost": 0.0004,
+          "rarely": false
+        },
+        {
+          "name": "Gym membership",
+          "cost": 0.0083,
+          "rarely": true
+        },
+        {
+          "name": "Duolingo",
+          "cost": 0.0018,
+          "rarely": true
+        },
+        {
+          "name": "Amazon Prime",
+          "cost": 0.0021,
+          "rarely": false
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Festivals (Eid, Diwali, Christmas…)",
+          "cost": 0.25
+        },
+        {
+          "name": "School books, uniforms and admission",
+          "cost": 0.0833
+        },
+        {
+          "name": "Car service and repairs",
+          "cost": 0.125
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 0.8333
+        },
+        {
+          "name": "Festival bonus (Eid, Diwali, Christmas…)",
+          "amount": 0.1389
+        },
+        {
+          "name": "Overtime",
+          "amount": 0.3333
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 0.25
+        }
+      ]
+    },
+    "youngpro": {
+      "values": {
+        "income": 1,
+        "rent": 0.3482,
+        "homeIns": 0.0039,
+        "electricity": 0.017,
+        "waterGas": 0.0098,
+        "internet": 0.0196,
+        "fuel": 0.0375,
+        "transit": 0.0107,
+        "carIns": 0.0304,
+        "carLoan": 0.0679,
+        "school": 0.0446,
+        "groceries": 0.0857,
+        "dining": 0.0929,
+        "misc": 0.0607,
+        "medical": 0.0089,
+        "homeHelp": 0,
+        "familySupport": 0.0268,
+        "giving": 0.0089,
+        "other": 0.0107,
+        "emergencyFund": 0.7143,
+        "healthPremium": 0.0446
+      },
+      "debts": [
+        {
+          "type": "card",
+          "name": "Rewards card",
+          "balance": 0.7321,
+          "apr": 27.4,
+          "payment": 0.0286
+        },
+        {
+          "type": "loan",
+          "name": "Student loan",
+          "balance": 3.3036,
+          "apr": 5.5,
+          "payment": 0.0375
+        }
+      ],
+      "subscriptions": [
+        {
+          "name": "Streaming bundle",
+          "cost": 0.0036,
+          "rarely": false
+        },
+        {
+          "name": "Cloud storage",
+          "cost": 0.0018,
+          "rarely": false
+        },
+        {
+          "name": "Language app",
+          "cost": 0.0023,
+          "rarely": true
+        },
+        {
+          "name": "Fitness app",
+          "cost": 0.0027,
+          "rarely": true
+        }
+      ],
+      "yearly": [
+        {
+          "name": "Travel and trips home",
+          "cost": 0.2143
+        }
+      ],
+      "extras": [
+        {
+          "name": "Yearly performance bonus",
+          "amount": 0.7143
+        },
+        {
+          "name": "Extra work or side jobs",
+          "amount": 0.4286
+        }
+      ]
+    }
+  },
+  "extraFields": [],
+  "localTips": [],
+  "hideRules": [
+    "electricity-slab"
+  ],
+  "sources": [
+    {
+      "title": "Derived from the US benchmark set (src/data/countries/US.json)",
+      "url": "https://www.bls.gov/cex/",
+      "usedFor": "shares of income for every range, threshold and cost"
+    }
+  ],
+  "lastReviewed": "2026-10-19",
+  "_about": "Any country without its own file. Every amount is a share of monthly take-home pay (relative: true); sample values are shares of the sample income, scaled to the user's own income (or 5,000 in their currency when none is entered)."
+}

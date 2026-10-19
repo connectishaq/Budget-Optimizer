@@ -3,6 +3,7 @@
 
 import { RULES, highAprCards } from './rules.js';
 import { PROFILES, benchmarkFor } from './profiles.js';
+import { countryData } from './countries.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
 import { t } from '../i18n/index.js';
 
@@ -58,12 +59,12 @@ export function cleanInputs(state) {
 /** Totals, category breakdown and 50/30/20 buckets for the current budget. */
 export function computeTotals(state) {
   const { values, debts, subs, yearly, extras } = cleanInputs(state);
-  const B = benchmarkFor(state.currency, state.profile);
   // Income = monthly take-home pay + the year's extras spread evenly over 12 months
   const pay = values.income;
   const extrasYearly = sum(extras.map((x) => x.amount));
   const extrasMonthly = extrasYearly / 12;
   const income = pay + extrasMonthly;
+  const B = benchmarkFor(state.country, state.profile, income);
   // A debt row with no balance left no longer needs a payment.
   const debtPayments = sum(debts.map((d) => (d.balance > 0 ? d.payment : 0)));
   const subsTotal = sum(subs.map((s) => s.cost));
@@ -108,9 +109,11 @@ export function paybackMonths(upfront, monthly) {
  */
 export function evaluatePlan(state, totals, fmt = plainFmt) {
   const profile = PROFILES[state.profile] ? state.profile : 'suburban';
-  const B = benchmarkFor(state.currency, profile);
+  const B = benchmarkFor(state.country, profile, totals.income);
+  const C = countryData(state.country);
+  const hidden = new Set(C.hideRules || []);
   const ctx = {
-    v: totals.values, profile, P: PROFILES[profile], B, currency: state.currency,
+    v: totals.values, profile, P: PROFILES[profile], B, C, country: state.country, currency: state.currency,
     income: totals.income, debts: totals.debts, subs: totals.subs, fmt
   };
   const val = (x) => (typeof x === 'function' ? x(ctx) : x);
@@ -128,7 +131,7 @@ export function evaluatePlan(state, totals, fmt = plainFmt) {
   const pools = {};
   const items = [];
   for (const rule of RULES) {
-    if (!rule.when(ctx)) continue;
+    if (hidden.has(rule.id) || !rule.when(ctx)) continue;
     for (const key of rule.pools) if (!(key in pools)) pools[key] = poolValue(key);
 
     const rawBase = sum(rule.pools.map(poolValue)); // the bill as the user entered it

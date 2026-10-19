@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import {
   computeTotals, evaluatePlan, computeBudget, projectGrowth, simulateDebts,
   debtFreeComparison, goalTimeline, emergencyFundStatus, healthScore,
@@ -10,10 +10,15 @@ import { RULES } from './rules.js';
 import { paydayIcs, nextPayday } from '../utils/ics.js';
 import { guessSubKind, subKind } from './subscriptions.js';
 import { sampleFor, benchmarkFor } from './profiles.js';
+import { loadCountry } from './countries.js';
+
+// Country files load lazily in the app; the tests load the ones they use up front
+beforeAll(() => Promise.all(['US', 'PK', 'IN', 'GB'].map(loadCountry)));
 import { parseAmount, duration, moneyNice, roundFriendly, pctWords } from '../utils/format.js';
 
 const base = (over = {}) => ({
   profile: 'suburban',
+  country: 'US',
   currency: 'USD',
   values: { income: 6000 },
   debts: [],
@@ -138,47 +143,58 @@ describe('debt interest is not cash savings', () => {
 });
 
 describe('country benchmarks', () => {
-  it('PKR has its own hand-written set (not scaled from USD)', () => {
-    const pk = benchmarkFor('PKR', 'suburban');
+  it('Pakistan has its own data (not scaled from the US)', () => {
+    const pk = benchmarkFor('PK', 'suburban');
     expect(pk.approximate).toBe(false);
     expect(pk.thresholds.utilities).toBe(40000);
     expect(pk.ranges.fuel).toEqual([18000, 28000]);
   });
 
-  it('INR has its own hand-written set', () => {
-    const inr = benchmarkFor('INR', 'suburban');
+  it('India has its own data', () => {
+    const inr = benchmarkFor('IN', 'suburban');
     expect(inr.approximate).toBe(false);
     expect(inr.thresholds.utilities).toBe(8500);
     expect(inr.ranges.homeHelp).toEqual([4000, 12000]);
   });
 
-  it('INR thresholds drive the rules, including local ideas', () => {
-    const s = base({ currency: 'INR', values: { income: 180000, fuel: 9500, electricity: 7000 } });
+  it('Indian thresholds drive the rules, including local ideas', () => {
+    const s = base({ country: 'IN', currency: 'INR', values: { income: 180000, fuel: 9500, electricity: 7000 } });
     const got = ids(evaluatePlan(s, computeTotals(s)));
     expect(got).toContain('fuel-carpool');
     expect(got).toContain('electricity-slab');
     expect(got).not.toContain('smart-thermostat');
   });
 
-  it('every INR sample leaves the household in a believable spot', () => {
+  it('every Indian sample leaves the household in a believable spot', () => {
     for (const p of ['single', 'suburban', 'youngpro']) {
-      const r = computeBudget({ ...base({ profile: p, currency: 'INR' }), ...sampleFor(p, 'INR') });
+      const r = computeBudget({ ...base({ profile: p, country: 'IN', currency: 'INR' }), ...sampleFor(p, 'IN') });
       expect(r.totals.spend).toBeGreaterThan(r.totals.income * 0.7);
       expect(r.totals.spend).toBeLessThan(r.totals.income * 1.1);
       expect(r.plan.length).toBeGreaterThan(2);
     }
   });
 
-  it('currencies without a set fall back to scaled US figures and are flagged', () => {
-    const gb = benchmarkFor('GBP', 'suburban');
-    expect(gb.approximate).toBe(true);
-    expect(gb.thresholds.fuel).toBe(150); // 200 x 0.75
+  it('any other country uses shares of income and is flagged (GLOBAL)', () => {
+    const g = benchmarkFor('GLOBAL', 'suburban', 7750);
+    expect(g.approximate).toBe(true);
+    expect(g.thresholds.fuel).toBeCloseTo(200, -1); // the US share of a typical US family income
+    expect(benchmarkFor('GLOBAL', 'suburban', 0).thresholds.fuel).toBe(0); // no income, no amounts
+    expect(benchmarkFor('GB', 'suburban').approximate).toBe(false); // the UK has its own data now
   });
 
-  it('PKR thresholds drive the rules', () => {
-    const s = base({ currency: 'PKR', values: { income: 300000, fuel: 30000 } });
+  it('an unknown or not-yet-loaded country falls back to GLOBAL', () => {
+    expect(benchmarkFor('ZZ', 'suburban', 5000)).toEqual(benchmarkFor('GLOBAL', 'suburban', 5000));
+  });
+
+  it('a GLOBAL sample is scaled to the household income', () => {
+    expect(sampleFor('suburban', 'GLOBAL', 10000).values.income).toBe(10000);
+    expect(sampleFor('suburban', 'GLOBAL').values.income).toBe(5000);
+  });
+
+  it('Pakistani thresholds drive the rules', () => {
+    const s = base({ country: 'PK', currency: 'PKR', values: { income: 300000, fuel: 30000 } });
     expect(ids(evaluatePlan(s, computeTotals(s)))).toContain('fuel-carpool');
-    const low = base({ currency: 'PKR', values: { income: 300000, fuel: 20000 } });
+    const low = base({ country: 'PK', currency: 'PKR', values: { income: 300000, fuel: 20000 } });
     expect(ids(evaluatePlan(low, computeTotals(low)))).not.toContain('fuel-carpool');
   });
 });
@@ -442,9 +458,9 @@ describe('yearly costs and new bills', () => {
 });
 
 describe('local savings ideas', () => {
-  const pk = (values, over = {}) => base({ currency: 'PKR', values: { income: 300000, ...values }, ...over });
+  const pk = (values, over = {}) => base({ country: 'PK', currency: 'PKR', values: { income: 300000, ...values }, ...over });
 
-  it('PKR gets the electricity slab idea instead of a smart thermostat', () => {
+  it('Pakistan gets the electricity slab idea instead of a smart thermostat', () => {
     const s = pk({ electricity: 45000, waterGas: 6000 });
     const got = ids(evaluatePlan(s, computeTotals(s)));
     expect(got).toContain('electricity-slab');

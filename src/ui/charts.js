@@ -1,7 +1,7 @@
 // Savings growth: controls, plain-language summary and the line chart
 // (the shared SVG chart in svg-chart.js; no chart library loads).
 
-import { setState, RETURN_OPTIONS } from '../state.js';
+import { setState, returnOptions } from '../state.js';
 import { projectGrowth } from '../engine/calculate.js';
 import { moneyShort, moneyNice } from '../utils/format.js';
 import { $, esc, setText, setHTML, setAttr } from './dom.js';
@@ -53,14 +53,14 @@ export function renderProjection(state, result, view) {
   currency = state.currency;
   const d = projectionData(state, result);
 
-  if ($('rate').__lang !== getLanguage()) fillRates();
+  if ($('rate').__sig !== `${getLanguage()}|${state.country}`) fillRates(state.country);
   const yrs = $('years');
   if (document.activeElement !== yrs) yrs.value = d.years;
   yrs.style.setProperty('--fill', `${((d.years - 1) / 19) * 100}%`);
   setAttr(yrs, 'aria-valuetext', t('charts.yearsValueText', { years: d.years }));
   setText($('yearsOut'), t('charts.years', { count: d.years }));
   $('rate').value = String(d.rate);
-  setText($('rateHint'), RETURN_OPTIONS.find((o) => o.value === d.rate)?.hint || '');
+  setText($('rateHint'), returnOptions(state.country).find((o) => o.value === d.rate)?.hint || '');
   setAttr($('inflationSwitch'), 'aria-checked', String(d.inflationOn));
   setText($('inflationState'), d.inflationOn ? t('charts.on') : t('charts.off'));
   if (document.activeElement !== $('inflationRate')) $('inflationRate').value = d.inflation;
@@ -96,15 +96,14 @@ export function renderProjection(state, result, view) {
   draw(d);
 }
 
-/** The growth-rate options, filled again when the language changes. */
-function fillRates() {
+/** The growth-rate options for the country, filled again when the language or country changes. */
+function fillRates(country) {
   const sel = $('rate');
-  sel.__lang = getLanguage();
-  sel.innerHTML = RETURN_OPTIONS.map((o) => `<option value="${o.value}">${o.label}</option>`).join('');
+  sel.__sig = `${getLanguage()}|${country}`;
+  sel.innerHTML = returnOptions(country).map((o) => `<option value="${o.value}">${o.label}</option>`).join('');
 }
 
 export function initCharts() {
-  fillRates();
   $('years').addEventListener('input', (e) => setState((s) => { s.projection.years = Number(e.target.value); }, { reason: 'input' }));
   $('rate').addEventListener('change', (e) => setState((s) => { s.projection.rate = Number(e.target.value); }));
   $('inflationSwitch').addEventListener('click', () => setState((s) => { s.projection.inflationOn = !s.projection.inflationOn; }));

@@ -5,6 +5,7 @@
 
 import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
+import { countryData } from '../engine/countries.js';
 import { CURRENCIES, parseAmount, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast } from './dom.js';
 import { helpBtn, HELP, nextHelpId } from './help.js';
@@ -323,7 +324,7 @@ export function syncInputs() {
 export function renderInputs(state, result, view) {
   const { values, subsTotal, debtPayments, yearly, yearlyMonthly, extras, extrasMonthly } = result.totals;
   const subtotal = (fields) => fields.reduce((a, f) => a + (values[f] || 0), 0);
-  const B = benchmarkFor(state.currency, state.profile);
+  const B = benchmarkFor(state.country, state.profile, result.totals.income);
   const who = PROFILES[state.profile];
   const nice = (n) => moneyNice(n, state.currency);
 
@@ -351,7 +352,7 @@ export function renderInputs(state, result, view) {
         if (err) setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
         continue;
       }
-      const range = typicalRange(state.profile, f.key, state.currency);
+      const range = typicalRange(state.profile, f.key, state.country, result.totals.income);
       const rangeTxt = range[1] === 0 ? t('inputs.typical.nothing') : t('inputs.typical.range', { min: nice(range[0]), max: nice(range[1]) });
       setText($(`tip-${f.key}`), t('inputs.typical.tip', { help: HELP[f.key], group: who.group, range: rangeTxt, approx: B.approximate ? t('inputs.typical.approximate') : '' }));
 
@@ -413,7 +414,7 @@ function renderSubKinds(state, result, view) {
   const box = $('subSummary');
   box.hidden = !(subsTotal > 0);
   if (box.hidden) return;
-  const B = benchmarkFor(state.currency, state.profile);
+  const B = benchmarkFor(state.country, state.profile, income);
   const limit = income * B.categoryShare.subscriptions;
   const rows = Object.entries(subsByKind).sort((a, b) => b[1] - a[1]).map(([k, amt]) =>
     `<li class="flex justify-between gap-3"><span class="flex items-center gap-2">${icon(SUB_KINDS[k].icon, 'icon-sm text-slate-400')}${esc(SUB_KINDS[k].label)}</span><span class="tabular-nums">${esc(view.m(amt))}</span></li>`).join('');
@@ -449,11 +450,13 @@ function onFieldInput(e) {
     else if (key === 'kind') v = SUB_KINDS[el.value] ? el.value : '';
     else {
       const r = parseAmount(el.value);
-      const aprCapped = key === 'apr' && !r.error && r.value > 100;
-      v = key === 'apr' ? Math.min(100, r.value) : r.value;
+      // Rates far above what's normal in the country are almost always typos
+      const aprMax = Math.max(100, countryData(getState().country).defaults.cardApr);
+      const aprCapped = key === 'apr' && !r.error && r.value > aprMax;
+      v = key === 'apr' ? Math.min(aprMax, r.value) : r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
       if (r.error) showRowMsg(el, r.error, 'error');
-      else if (aprCapped) showRowMsg(el, t('inputs.debts.aprCapped'), 'note');
+      else if (aprCapped) showRowMsg(el, t('inputs.debts.aprCapped', { max: aprMax }), 'note');
       else showRowMsg(el, '');
     }
     const instant = key === 'rarely' || key === 'type' || key === 'kind';
@@ -502,7 +505,7 @@ export function initInputs() {
           ? { id: newId('y'), name: add.dataset.name || '', cost: 0 }
           : kind === 'extra'
             ? { id: newId('x'), name: add.dataset.name || '', amount: 0 }
-            : { id: newId('d'), type: kind, name: '', balance: 0, apr: kind === 'card' ? (getState().currency === 'PKR' ? 38 : 22) : 8, payment: 0 };
+            : { id: newId('d'), type: kind, name: '', balance: 0, apr: countryData(getState().country).defaults[kind === 'card' ? 'cardApr' : 'loanApr'], payment: 0 };
       setState((st) => { st[LIST[kind] || 'debts'].push(row); });
       // A suggestion already has its name, so jump straight to the amount
       const amountKey = kind === 'extra' ? 'amount' : 'cost';
@@ -541,7 +544,7 @@ export function initInputs() {
 export function loadSample() {
   const st = getState();
   const prev = JSON.parse(JSON.stringify(st));
-  const sample = sampleFor(st.profile, st.currency);
+  const sample = sampleFor(st.profile, st.country, st.values.income);
   const inc = sample.values.income;
   const roundTo = inc >= 100000 ? 10000 : 100;
   replaceState({

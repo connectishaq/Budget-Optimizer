@@ -660,7 +660,7 @@
       "apr": "Interés anual (TAE) %",
       "payment": "Cuota mensual",
       "empty": "No has añadido préstamos ni tarjetas. No pasa nada. Sáltalo si no tienes.",
-      "aprCapped": "Un interés de más del 100% es muy poco habitual, así que hemos usado el 100%. Revisa tu extracto."
+      "aprCapped": "Un interés de más del {max}% es muy poco habitual, así que hemos usado el {max}%. Revisa tu extracto."
     },
     "subs": {
       "add": "Añadir una suscripción",
@@ -699,7 +699,6 @@
       "nothing": "normalmente nada",
       "range": "normalmente entre {min} y {max} al mes",
       "tip": "{help} Para {group}, esto es {range}{approx}.",
-      "approximate": " (una referencia aproximada para esta moneda)",
       "higher": "Más de lo habitual para {group} (normalmente hasta {max})"
     },
     "toast": {
@@ -1159,7 +1158,6 @@
       "title_html": "Optimizador de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">y simulador de ahorro</span>",
       "lead": "Añade tus facturas mensuales. Descubre en qué se va tu dinero, formas sencillas de gastar menos y cuánto podrías ahorrar.",
       "start": "Empezar: unos 2 minutos",
-      "note": "Gratis. Sin registro. Funciona con 8 monedas, incluidas las rupias en lakh y crore.",
       "receipt": {
         "title": "Tu mes",
         "badge": "Ejemplo",
@@ -1465,8 +1463,7 @@
       "a6": "Una cuenta de ahorro segura ha pagado últimamente alrededor de un 4% al año. Invertir a largo plazo en una cartera amplia de acciones ha dado de media alrededor de un 8% al año en periodos largos, pero sube y baja. El crecimiento nunca está garantizado, así que prueba varias opciones y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
       "q7": "¿De cuánto debería ser mi fondo de emergencia?",
       "a7": "Una pauta habitual es de 3 a 6 meses de facturas obligatorias. Apunta a la parte alta si en tu hogar hay un solo sueldo, si tus ingresos cambian o si hay personas que dependen de ti. La herramienta muestra para cuánto tiempo tienes ahora y cuánto tardarás en llegar a cada nivel.",
-      "q8": "¿Puedo usar rupias y otras monedas?",
-      "a8": "Sí. Puedes cambiar entre USD, GBP, EUR, INR, PKR, AED, CAD y AUD. Las rupias pakistaníes e indias usan cantidades típicas de los hogares de Pakistán e India, y las cantidades en rupias se muestran en lakh y crore. Las demás monedas usan una referencia aproximada basada en cifras de EE. UU."
+      "q8": "¿Puedo usar rupias y otras monedas?"
     },
     "glossary": {
       "title": "Palabras de dinero, explicadas con sencillez",
@@ -1552,8 +1549,7 @@
       "a6": "Una cuenta de ahorro segura ha pagado últimamente alrededor de un 4% al año. Invertir a largo plazo en una cartera amplia de acciones ha dado de media alrededor de un 8% al año en periodos largos, pero sube y baja. El crecimiento nunca está garantizado, así que prueba varias opciones y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
       "q7": "¿De cuánto debería ser mi fondo de emergencia?",
       "a7": "Una pauta habitual es de 3 a 6 meses de facturas obligatorias. Apunta a la parte alta si en tu hogar hay un solo sueldo, si tus ingresos cambian o si hay personas que dependen de ti. La herramienta muestra para cuánto tiempo tienes ahora y cuánto tardarás en llegar a cada nivel.",
-      "q8": "¿Puedo usar rupias y otras monedas?",
-      "a8": "Sí. Puedes cambiar entre USD, GBP, EUR, INR, PKR, AED, CAD y AUD. Las rupias pakistaníes e indias usan cantidades típicas de los hogares de Pakistán e India, y las cantidades en rupias se muestran en lakh y crore. Las demás monedas usan una referencia aproximada basada en cifras de EE. UU."
+      "q8": "¿Puedo usar rupias y otras monedas?"
     }
   },
   "dashboard": {
@@ -1622,7 +1618,6 @@
     },
     "categories": {
       "basisIncome": "Parte de tus ingresos, comparada con lo típico para el perfil «{profile}».",
-      "basisIncomeApprox": "Parte de tus ingresos, comparada con lo típico para el perfil «{profile}» (una referencia aproximada para esta moneda).",
       "basisSpend": "Parte de tu gasto total. Añade tus ingresos para comparar con hogares típicos.",
       "typical": "Típico: {pct} de los ingresos",
       "higher": "Más de lo típico (aprox. {pct})",
@@ -1863,19 +1858,19 @@
   "charts": {
     "returns": {
       "safe": {
-        "label": "4%: Cuenta de ahorro segura",
+        "label": "{pct}%: Cuenta de ahorro segura",
         "hint": "Crece despacio, con muy poco riesgo."
       },
       "mixed": {
-        "label": "6%: Ahorro e inversión",
+        "label": "{pct}%: Ahorro e inversión",
         "hint": "Algunas subidas y bajadas por el camino."
       },
       "longTerm": {
-        "label": "8%: Inversión a largo plazo",
+        "label": "{pct}%: Inversión a largo plazo",
         "hint": "Más subidas y bajadas. Funciona mejor a más de 10 años."
       },
       "shares": {
-        "label": "10%: Sobre todo acciones",
+        "label": "{pct}%: Sobre todo acciones",
         "hint": "Grandes subidas y bajadas, y nunca está garantizado."
       }
     },
