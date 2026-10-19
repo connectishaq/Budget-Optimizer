@@ -107,7 +107,7 @@ function meterRow({ lead, value, fill, fillColor = '', fillClass = '', marker = 
     </div>
     <div class="relative mt-2 h-2 rounded-full bg-slate-100 dark:bg-slate-800">
       <div class="h-full rounded-full ${fillClass}" style="width:${Math.max(0, Math.min(100, fill))}%${fillColor ? `;background:${fillColor}` : ''}"></div>
-      ${marker == null ? '' : `<span class="absolute -top-1 h-4 w-0.5 rounded-full bg-slate-900 dark:bg-white" style="left:${Math.min(100, marker)}%" title="${esc(markerTitle)}"></span>`}
+      ${marker == null ? '' : `<span class="absolute -top-1 h-4 w-0.5 rounded-full bg-slate-900 dark:bg-white" style="inset-inline-start:${Math.min(100, marker)}%" title="${esc(markerTitle)}"></span>`}
     </div>
     ${note ? `<p class="mt-1.5 text-xs ${noteClass}">${note}</p>` : ''}`;
 }
@@ -120,7 +120,7 @@ function renderHealth(result) {
   const tone = toneFor(h.score / 100);
   animateNumber($('healthScore'), h.score, (n) => String(Math.round(n)));
   setText($('healthLabel'), h.label);
-  $('healthLabel').className = `ml-1 rounded-full px-2.5 py-0.5 text-sm font-medium ${tone.pill}`;
+  $('healthLabel').className = `ms-1 rounded-full px-2.5 py-0.5 text-sm font-medium ${tone.pill}`;
   // The one thing to do next, as a callout rather than another line of body text
   const perfect = h.parts.every((p) => p.earned >= p.max);
   setHTML($('healthTip'), `${icon(perfect ? 'check-circle' : 'lightbulb', 'icon-sm mt-0.5 shrink-0')}<span>${esc(h.tip)}</span>`);

@@ -61,7 +61,7 @@
       dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-slate-300;
   }
   .input[aria-invalid="true"] { @apply border-rose-600 ring-2 ring-rose-600/15; }
-  .select { @apply appearance-none bg-no-repeat pr-9; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-size: 18px; background-position: right 10px center; }
+  .select { @apply appearance-none bg-no-repeat pe-9; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-size: 18px; background-position: right 10px center; }
 
   .chip { @apply inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium; }
   /* Tap-to-add suggestion */
@@ -77,9 +77,10 @@
   /* Toggle switch: a <button role="switch"> containing a .switch track and a state label */
   .switch-btn { @apply inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2 rounded-lg; }
   .switch { @apply relative inline-flex h-6 w-11 shrink-0 items-center rounded-full bg-slate-300 transition-colors dark:bg-slate-600; }
-  .switch::after { content: ""; @apply absolute left-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform; }
+  .switch::after { content: ""; @apply absolute start-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform; }
   [aria-checked="true"] > .switch { @apply bg-emerald-700 dark:bg-emerald-500; }
   [aria-checked="true"] > .switch::after { transform: translateX(20px); }
+  [dir="rtl"] [aria-checked="true"] > .switch::after { transform: translateX(-20px); }
 
   /* "?" help button */
   .help-btn { @apply inline-grid h-5 w-5 shrink-0 place-items-center rounded-full border border-slate-300 text-[11px] font-semibold text-slate-600 transition hover:border-slate-900 hover:text-slate-900 dark:border-slate-600 dark:text-slate-400 dark:hover:border-white dark:hover:text-white; }
@@ -126,9 +127,9 @@
   .prose-guide strong { @apply font-semibold text-slate-900 dark:text-white; }
   .prose-guide h3 { @apply mt-12 mb-3 text-xl font-semibold tracking-tight text-slate-900 dark:text-white; }
   .prose-guide h4 { @apply mb-2 text-sm font-semibold text-slate-900 dark:text-white; }
-  .prose-guide .fix { @apply mt-4 border-l-2 border-emerald-700 pl-4 dark:border-emerald-500; }
-  .prose-guide .fix ul { @apply list-disc space-y-1.5 pl-5; }
-  .num-badge { @apply mr-1 font-semibold text-slate-400 dark:text-slate-500; }
+  .prose-guide .fix { @apply mt-4 border-s-2 border-emerald-700 ps-4 dark:border-emerald-500; }
+  .prose-guide .fix ul { @apply list-disc space-y-1.5 ps-5; }
+  .num-badge { @apply me-1 font-semibold text-slate-400 dark:text-slate-500; }
   .num-badge::after { content: "."; }
 }
 
@@ -188,17 +189,17 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
   .legal section { @apply mt-10 scroll-mt-24; }
   .legal h2 { @apply text-xl font-semibold text-slate-900 dark:text-white; }
   .legal p, .legal ul, .legal .table-wrap { @apply mt-3; }
-  .legal ul { @apply list-disc space-y-2 pl-5 marker:text-slate-400; }
+  .legal ul { @apply list-disc space-y-2 ps-5 marker:text-slate-400; }
   .legal a:not(.btn) { @apply font-medium text-emerald-800 underline decoration-emerald-800/30 underline-offset-2 hover:decoration-emerald-800 dark:text-emerald-300 dark:decoration-emerald-300/40; }
   .legal strong { @apply font-semibold text-slate-900 dark:text-white; }
   .legal code { @apply rounded bg-slate-100 px-1 py-0.5 text-[0.85em] dark:bg-slate-800; }
   .legal .callout { @apply rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6 dark:border-emerald-900 dark:bg-emerald-950/40; }
   .legal .callout h2 { @apply text-lg; }
-  .legal .callout ul { @apply list-none pl-0; }
-  .legal .callout li { @apply relative pl-6; }
-  .legal .callout li::before { content: ""; @apply absolute left-0 top-[0.6em] h-2 w-2 rounded-full bg-emerald-600; }
+  .legal .callout ul { @apply list-none ps-0; }
+  .legal .callout li { @apply relative ps-6; }
+  .legal .callout li::before { content: ""; @apply absolute start-0 top-[0.6em] h-2 w-2 rounded-full bg-emerald-600; }
   .legal .table-wrap { @apply overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800; }
-  .legal table { @apply w-full min-w-[520px] border-collapse text-left text-sm; }
+  .legal table { @apply w-full min-w-[520px] border-collapse text-start text-sm; }
   .legal th { @apply bg-slate-100 px-4 py-2.5 font-semibold text-slate-900 dark:bg-slate-800 dark:text-white; }
   .legal td { @apply border-t border-slate-200 px-4 py-2.5 align-top dark:border-slate-800; }
 
@@ -257,14 +258,14 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
   .footer-links a { @apply -mx-2 inline-flex min-h-10 items-center rounded-md px-2 text-sm text-emerald-50/80 transition hover:bg-white/5 hover:text-white; }
   .footer-cta { @apply bg-white px-5 font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-emerald-50; }
   .footer-cta .icon { @apply transition-transform; }
-  .footer-cta:hover .icon { @apply translate-x-0.5; }
+  .footer-cta:hover .icon { @apply translate-x-0.5 rtl:-translate-x-0.5; }
   .footer-ghost { @apply px-5 text-emerald-50 ring-1 ring-white/25 hover:bg-white/10 hover:ring-white/40; }
   .footer-top { @apply inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-medium text-emerald-100/80 ring-1 ring-white/15 transition hover:bg-white/10 hover:text-white; }
   .footer-top .icon { @apply transition-transform; }
   .footer-top:hover .icon { @apply -translate-y-0.5; }
   .receipt-line { @apply flex items-baseline gap-2; }
   .receipt-line > :first-child { @apply shrink-0; }
-  .receipt-line > :last-child { @apply ml-auto shrink-0 font-semibold; }
+  .receipt-line > :last-child { @apply ms-auto shrink-0 font-semibold; }
   /* dotted leader between label and value */
   .receipt-line::after { content: ""; order: 1; @apply min-w-4 flex-1 border-b border-dotted border-slate-300 dark:border-slate-600; }
   .receipt-line > :last-child { order: 2; }
@@ -272,6 +273,18 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
 .footer-receipt { transition: transform .3s ease; }
 .footer-receipt:hover { transform: rotate(0deg) translateY(-2px); }
 @media (prefers-reduced-motion: reduce) { .footer-receipt:hover { transform: none; } }
+
+/* ---------- Right-to-left (Arabic, Urdu): the same layout, mirrored ----------
+   Spacing and positions use logical utilities (ms-/pe-/start-/text-end), so they
+   mirror by themselves. These rules cover what doesn't. */
+[dir="rtl"] .select { background-position: left 10px center; }
+/* Arabic-script font (src/fonts/arabic.css, loaded only for ar/ur); other characters fall through */
+:root[dir="rtl"] { --font-sans: "Noto Naskh Arabic", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+/* Arrows that point "forward" turn round */
+[dir="rtl"] .rtl-flip { transform: scaleX(-1); }
+/* Charts, sliders and the logo keep their left-to-right reading */
+[dir="rtl"] svg:not(.icon) { direction: ltr; }
+[dir="rtl"] input[type="range"] { direction: ltr; }
 
 /* ---------- Print: one clean action-plan page ---------- */
 #printPlan { display: none; }

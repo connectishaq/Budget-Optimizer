@@ -447,7 +447,7 @@ function barTooltip(i) {
   const m = barMonths[i];
   const t = m.totals;
   const cur = barCurrency;
-  const row = (dot, label, v, strong = false) => `<p class="mt-0.5 flex items-center gap-2">${dot ? `<span class="inline-block h-2.5 w-2.5 shrink-0 rounded-sm ${dot}"></span>` : ''}<span>${esc(label)}:</span><span class="ml-auto pl-3 tabular-nums ${strong ? 'font-semibold' : ''}">${esc(v)}</span></p>`;
+  const row = (dot, label, v, strong = false) => `<p class="mt-0.5 flex items-center gap-2">${dot ? `<span class="inline-block h-2.5 w-2.5 shrink-0 rounded-sm ${dot}"></span>` : ''}<span>${esc(label)}:</span><span class="ms-auto ps-3 tabular-nums ${strong ? 'font-semibold' : ''}">${esc(v)}</span></p>`;
   const head = `<p class="mb-1 font-semibold text-slate-300">${esc(monthLabel(m.month, { long: true }))}</p>`;
   if (barKind === 'flow') {
     const left = t.leftOver;
@@ -521,12 +521,12 @@ function renderCompare(list) {
       change = `<span class="font-semibold ${r.better ? TONE_TEXT.good : TONE_TEXT.bad}"><span class="whitespace-nowrap"><span aria-hidden="true">${r.diff > 0 ? '▲' : '▼'}</span> ${esc(signed(r.diff, fmt))}</span>${p}</span>`;
     }
     const total = r.kind === 'total' || r.key === 'income';
-    const head = r.level ? 'pl-4 font-normal muted' : total ? 'font-semibold text-slate-900 dark:text-white' : 'font-medium text-slate-900 dark:text-white';
+    const head = r.level ? 'ps-4 font-normal muted' : total ? 'font-semibold text-slate-900 dark:text-white' : 'font-medium text-slate-900 dark:text-white';
     return `<tr class="${total && r.key !== 'leftOver' && r.key !== 'score' ? 'border-t border-slate-200 dark:border-slate-700' : 'border-t border-slate-100 dark:border-slate-800'}">
-      <th scope="row" class="py-2 pr-2 text-left ${head}">${esc(r.label)}</th>
-      <td class="px-2 py-2 text-right">${cell(r.a)}</td>
-      <td class="px-2 py-2 text-right">${cell(r.b)}</td>
-      <td class="py-2 pl-2 text-right">${change}</td>
+      <th scope="row" class="py-2 pe-2 text-start ${head}">${esc(r.label)}</th>
+      <td class="px-2 py-2 text-end">${cell(r.a)}</td>
+      <td class="px-2 py-2 text-end">${cell(r.b)}</td>
+      <td class="py-2 ps-2 text-end">${change}</td>
     </tr>`;
   }).join('');
   const partialNote = res.partial
@@ -537,7 +537,7 @@ function renderCompare(list) {
     : '';
   setHTML($('cmpBody'), `${partialNote}<div class="overflow-x-auto"><table class="w-full text-sm tabular-nums">
     <caption class="sr-only">${esc(tr('months.compare.caption', { a: la, b: lb }))}</caption>
-    <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-medium"><span class="sr-only">${esc(tr('months.compare.item'))}</span></th><th scope="col" class="px-2 py-2 text-right font-medium">${esc(la)}</th><th scope="col" class="px-2 py-2 text-right font-medium">${esc(lb)}</th><th scope="col" class="py-2 pl-2 text-right font-medium">${esc(tr('months.compare.change'))}</th></tr></thead>
+    <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-start font-medium"><span class="sr-only">${esc(tr('months.compare.item'))}</span></th><th scope="col" class="px-2 py-2 text-end font-medium">${esc(la)}</th><th scope="col" class="px-2 py-2 text-end font-medium">${esc(lb)}</th><th scope="col" class="py-2 ps-2 text-end font-medium">${esc(tr('months.compare.change'))}</th></tr></thead>
     <tbody>${rows}</tbody></table></div>${toggle}`);
   const spend = res.rows.find((r) => r.key === 'spend');
   setText($('sumCompare'), spend && spend.diff != null
@@ -600,12 +600,12 @@ function renderList(list) {
     ].join(' ');
     const label = esc(monthLabel(m.month));
     return `<tr class="border-t border-slate-100 dark:border-slate-800">
-      <th scope="row" class="py-2 pr-2 text-left font-semibold text-slate-900 dark:text-white"><span class="block">${label}</span>${tags.trim() ? `<span class="mt-0.5 flex flex-wrap gap-1 font-normal">${tags}</span>` : ''}</th>
-      <td class="px-2 py-2 text-right tabular-nums">${esc(money(m.totals.spend, m.currency))}</td>
-      <td class="px-2 py-2 text-right tabular-nums ${m.totals.leftOver < 0 ? TONE_TEXT.bad : ''}">${m.totals.leftOver < 0 ? '−' : ''}${esc(money(Math.abs(m.totals.leftOver), m.currency))}</td>
-      <td class="hidden px-2 py-2 text-right tabular-nums sm:table-cell">${m.totals.score ?? '—'}</td>
-      <td class="hidden px-2 py-2 text-right tabular-nums sm:table-cell">${deltaTxt}</td>
-      <td class="py-1 pl-1 text-right"><span class="inline-flex">
+      <th scope="row" class="py-2 pe-2 text-start font-semibold text-slate-900 dark:text-white"><span class="block">${label}</span>${tags.trim() ? `<span class="mt-0.5 flex flex-wrap gap-1 font-normal">${tags}</span>` : ''}</th>
+      <td class="px-2 py-2 text-end tabular-nums">${esc(money(m.totals.spend, m.currency))}</td>
+      <td class="px-2 py-2 text-end tabular-nums ${m.totals.leftOver < 0 ? TONE_TEXT.bad : ''}">${m.totals.leftOver < 0 ? '−' : ''}${esc(money(Math.abs(m.totals.leftOver), m.currency))}</td>
+      <td class="hidden px-2 py-2 text-end tabular-nums sm:table-cell">${m.totals.score ?? '—'}</td>
+      <td class="hidden px-2 py-2 text-end tabular-nums sm:table-cell">${deltaTxt}</td>
+      <td class="py-1 ps-1 text-end"><span class="inline-flex">
         <button type="button" class="btn-icon h-9 w-9" data-view-month="${m.month}" aria-label="${esc(tr('months.list.compareAria', { month: monthLabel(m.month) }))}">${icon('eye', 'icon-sm')}</button>
         <button type="button" class="btn-icon h-9 w-9" data-edit-month="${m.month}" aria-label="${esc(tr('months.list.editAria', { month: monthLabel(m.month) }))}" ${m.partial ? `disabled title="${esc(tr('months.list.partialTitle'))}"` : ''}>${icon('pencil', 'icon-sm')}</button>
         <button type="button" class="btn-icon h-9 w-9 hover:text-rose-600" data-delete-month="${m.month}" aria-label="${esc(tr('months.list.deleteAria', { month: monthLabel(m.month) }))}">${icon('trash', 'icon-sm')}</button>

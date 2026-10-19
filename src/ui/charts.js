@@ -91,7 +91,7 @@ export function renderProjection(state, result, view) {
   setAttr($('growthChart'), 'aria-label', t('charts.ariaLabel', { summary }));
 
   // Accessible year-by-year table
-  setHTML($('projectionTable'), pick(d.cur).map((c, i) => i === 0 ? '' : `<tr><th scope="row" class="px-3 py-1.5 text-left font-medium">${t('charts.year', { n: i })}</th><td class="px-3 py-1.5 text-right">${view.rawS(c)}</td><td class="px-3 py-1.5 text-right">${view.rawS(pick(d.alt)[i])}</td></tr>`).join(''));
+  setHTML($('projectionTable'), pick(d.cur).map((c, i) => i === 0 ? '' : `<tr><th scope="row" class="px-3 py-1.5 text-start font-medium">${t('charts.year', { n: i })}</th><td class="px-3 py-1.5 text-end">${view.rawS(c)}</td><td class="px-3 py-1.5 text-end">${view.rawS(pick(d.alt)[i])}</td></tr>`).join(''));
 
   draw(d);
 }

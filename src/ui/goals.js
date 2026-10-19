@@ -158,7 +158,7 @@ function renderDebt(state, result, view) {
       </div>
     </dl>
     ${extra > 0 && cmp.interestSaved != null
-      ? `<p class="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200">${icon('trending-up', 'icon-sm mr-1 align-[-3px]')}${t('goals.debt.sooner_html', { amount: view.rawS(extra), time: duration(cmp.monthsSaved), saved: view.rawS(cmp.interestSaved) })}</p>`
+      ? `<p class="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200">${icon('trending-up', 'icon-sm me-1 align-[-3px]')}${t('goals.debt.sooner_html', { amount: view.rawS(extra), time: duration(cmp.monthsSaved), saved: view.rawS(cmp.interestSaved) })}</p>`
       : ''}
     ${!cur.feasible ? `<p class="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:bg-rose-950 dark:text-rose-300">${t('goals.debt.neverAll')} ${growing.map((d) => (interestOf(d) > 0 ? t('goals.debt.payMore', { amount: view.raw(interestOf(d)), name: debtName(d) }) : t('goals.debt.addPayment', { name: debtName(d) }))).join(' ')}</p>` : ''}`);
 }

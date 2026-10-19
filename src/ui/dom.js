@@ -109,7 +109,7 @@ export function toast(message, { action, tone = 'success', timeout } = {}) {
   if (action) {
     const b = document.createElement('button');
     b.type = 'button';
-    b.className = 'ml-1 min-h-11 rounded-lg px-2 font-bold text-indigo-300 hover:text-indigo-200';
+    b.className = 'ms-1 min-h-11 rounded-lg px-2 font-bold text-indigo-300 hover:text-indigo-200';
     b.textContent = action.label;
     b.addEventListener('click', () => { action.onClick(); el.remove(); });
     el.append(b);

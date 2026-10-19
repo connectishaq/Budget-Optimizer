@@ -55,15 +55,15 @@ function createRow(item) {
         <p class="text-sm text-slate-700 dark:text-slate-300">${esc(item.title)}</p>
         <p class="mt-1.5 flex flex-wrap items-center gap-2 text-xs" data-ref="meta"></p>
       </div>
-      <div class="shrink-0 text-right">
+      <div class="shrink-0 text-end">
         <p class="whitespace-nowrap font-semibold tabular-nums" data-ref="headline"></p>
-        <button type="button" class="-mr-1 inline-flex min-h-11 items-center gap-1 px-1 text-sm link" data-ref="toggle" aria-expanded="false" aria-controls="pd-${item.id}">
+        <button type="button" class="-me-1 inline-flex min-h-11 items-center gap-1 px-1 text-sm link" data-ref="toggle" aria-expanded="false" aria-controls="pd-${item.id}">
           ${t('plan.details')} ${icon('chevron-down', 'icon-sm chev')}
         </button>
       </div>
     </div>
 
-    <div id="pd-${item.id}" hidden class="mt-3 space-y-4 rounded-xl bg-slate-50 p-4 text-sm sm:ml-14 dark:bg-slate-800/50" data-ref="panel">
+    <div id="pd-${item.id}" hidden class="mt-3 space-y-4 rounded-xl bg-slate-50 p-4 text-sm sm:ms-14 dark:bg-slate-800/50" data-ref="panel">
       <p class="muted" data-ref="why"></p>
       <p class="hidden font-medium text-rose-700 dark:text-rose-400" data-ref="flag"></p>
 
@@ -78,7 +78,7 @@ function createRow(item) {
 
       <div>
         <p class="font-medium text-slate-900 dark:text-white">${t('plan.whatToDo')}</p>
-        <ul class="mt-1 list-disc space-y-1 pl-5 text-slate-700 dark:text-slate-300" data-ref="tips"></ul>
+        <ul class="mt-1 list-disc space-y-1 ps-5 text-slate-700 dark:text-slate-300" data-ref="tips"></ul>
       </div>
 
       <div>
@@ -93,7 +93,7 @@ function createRow(item) {
         </div>
         <div class="flex items-center gap-3">
           <input id="pr-${item.id}" type="range" class="range min-w-0 flex-1" min="0" step="1" data-ref="slider" aria-describedby="ph-${item.id}">
-          <output for="pr-${item.id}" class="w-12 shrink-0 text-right font-semibold tabular-nums text-slate-900 dark:text-white" data-ref="pctOut"></output>
+          <output for="pr-${item.id}" class="w-12 shrink-0 text-end font-semibold tabular-nums text-slate-900 dark:text-white" data-ref="pctOut"></output>
         </div>
         <div class="flex flex-wrap items-center justify-between gap-2">
           <p id="ph-${item.id}" class="text-xs muted" data-ref="pctHint">${t('plan.keepSuggestion')}</p>

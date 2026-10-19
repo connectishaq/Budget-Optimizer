@@ -147,7 +147,8 @@ function initSectionNav() {
     // Keep the active chip in view on narrow screens without moving the page
     const link = byId.get(hit.target.id);
     const bar = link?.closest('ul');
-    if (bar) bar.scrollTo({ left: link.offsetLeft - 16, behavior: 'smooth' });
+    if (bar && document.dir === 'rtl') link.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+    else if (bar) bar.scrollTo({ left: link.offsetLeft - 16, behavior: 'smooth' });
   }, { rootMargin: '-35% 0px -55% 0px' });
   for (const id of byId.keys()) { const el = document.getElementById(id); if (el) io.observe(el); }
 }

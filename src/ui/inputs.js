@@ -88,10 +88,10 @@ function moneyField(f) {
       ${helpBtn(f.key, f.label, HELP[f.key], `tip-${f.key}`)}
     </div>
     <div class="relative">
-      <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
+      <span class="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
       <input id="${id}" data-field="${f.key}" type="text" inputmode="decimal" autocomplete="off" placeholder="0"
-        class="input pl-12 ${f.balance ? '' : 'pr-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}">
-      ${f.balance ? '' : `<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400">${esc(t('inputs.fields.perMonth'))}</span>`}
+        class="input ps-12 ${f.balance ? '' : 'pe-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}">
+      ${f.balance ? '' : `<span class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400">${esc(t('inputs.fields.perMonth'))}</span>`}
     </div>
     ${f.help ? `<p id="${id}-help" class="mt-1 text-xs muted">${esc(f.help)}</p>` : ''}
     <p id="${id}-msg" class="mt-1 text-xs font-medium empty:hidden" aria-live="polite"></p>

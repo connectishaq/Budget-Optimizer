@@ -3,7 +3,7 @@
 // holding the same two dropdowns. A choice is saved and the page reloads, so
 // every part of the page (including text built at start-up) uses it at once.
 
-import { t, LANGUAGES, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
+import { t, dirOf, LANGUAGES, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
 import { ALL_COUNTRIES, GLOBAL, flagOf, countryName, storeCountry, initialCountry } from './countries.js';
 
 const SCROLL_KEY = 'hbo:scroll';
@@ -25,6 +25,8 @@ export async function startI18n() {
   const lang = chooseLanguage();
   try {
     await setLanguage(lang);
+    // Arabic-script font, only for right-to-left languages
+    if (dirOf(lang) === 'rtl') await import('../fonts/arabic.css');
     if (lang !== 'en') translateDom(document);
   } finally {
     // The inline head script hides the page while a non-English page is translated
