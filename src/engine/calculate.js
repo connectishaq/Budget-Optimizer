@@ -306,6 +306,12 @@ export function fieldAfterPlan(plan, values, field) {
     .reduce((left, p) => left * (1 - p.pct), values[field] || 0);
 }
 
+/** Names of the rows, with any unnamed ones gathered under one label so counts stay right. */
+function rowNames(rows, unnamedLabel) {
+  const names = rows.map((r) => (r.name || '').trim()).filter(Boolean);
+  return names.length < rows.length ? [...names, unnamedLabel] : names;
+}
+
 /**
  * The three things to do on payday: set aside money for once-a-year costs,
  * move what's left to savings first, and keep a weekly allowance for
@@ -318,9 +324,9 @@ export function paydayPlan(totals, plan, optimized) {
   return {
     yearlyMonthly: totals.yearlyMonthly,
     yearlyTotal: totals.yearlyTotal,
-    yearlyNames: totals.yearly.filter((y) => y.cost > 0).map((y) => y.name).filter(Boolean),
+    yearlyNames: rowNames(totals.yearly.filter((y) => y.cost > 0), 'other costs'),
     extrasMonthly: totals.extrasMonthly,
-    extrasNames: totals.extras.filter((x) => x.amount > 0).map((x) => x.name).filter(Boolean),
+    extrasNames: rowNames(totals.extras.filter((x) => x.amount > 0), 'other income'),
     toSave: Math.max(0, left),
     short: Math.max(0, -left),
     funMonthly,

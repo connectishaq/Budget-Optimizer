@@ -136,8 +136,17 @@ const numInput = (list, row, key, label, helpKey) => `
       <label for="r-${row.id}-${key}" class="text-xs font-medium muted">${label}</label>${helpBtn(helpKey, label)}
     </div>
     <input id="r-${row.id}-${key}" type="text" inputmode="decimal" autocomplete="off" placeholder="0" class="input px-2.5 font-semibold"
-      data-list="${list}" data-id="${row.id}" data-key="${key}" value="${row[key] || ''}">
+      data-list="${list}" data-id="${row.id}" data-key="${key}" value="${row[key] || ''}" aria-describedby="r-${row.id}-${key}-msg">
+    <p id="r-${row.id}-${key}-msg" class="mt-1 text-xs font-medium empty:hidden" aria-live="polite"></p>
   </div>`;
+
+/** Shows a row field's problem under it: an error (red) or a note (amber). */
+function showRowMsg(el, text, tone) {
+  const msg = $(`${el.id}-msg`);
+  if (!msg) return;
+  setText(msg, text || '');
+  msg.className = `mt-1 text-xs font-medium empty:hidden ${tone === 'error' ? 'text-rose-700 dark:text-rose-400' : 'text-amber-700 dark:text-amber-400'}`;
+}
 
 function debtRow(d) {
   return `
@@ -314,7 +323,14 @@ export function renderInputs(state, result, view) {
 
     if (!g.fields) continue;
     for (const f of g.fields) {
-      if (f.balance) continue;
+      if (f.balance) {
+        // Totals like the emergency fund have no typical range, only errors
+        const err = errors.get(`f-${f.key}`);
+        const msg = $(`f-${f.key}-msg`);
+        setText(msg, err || '');
+        if (err) setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
+        continue;
+      }
       const range = typicalRange(state.profile, f.key, state.currency);
       const rangeTxt = range[1] === 0 ? 'usually nothing' : `usually ${nice(range[0])} to ${nice(range[1])} a month`;
       setText($(`tip-${f.key}`), `${HELP[f.key]} For ${who.group}, this is ${rangeTxt}${B.approximate ? ' (a rough guide for this currency)' : ''}.`);
@@ -413,9 +429,12 @@ function onFieldInput(e) {
     else if (key === 'kind') v = SUB_KINDS[el.value] ? el.value : '';
     else {
       const r = parseAmount(el.value);
+      const aprCapped = key === 'apr' && !r.error && r.value > 100;
       v = key === 'apr' ? Math.min(100, r.value) : r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
-      el.title = r.error || '';
+      if (r.error) showRowMsg(el, r.error, 'error');
+      else if (aprCapped) showRowMsg(el, 'Rates above 100% are very unusual, so we’ve used 100%. Check your statement.', 'note');
+      else showRowMsg(el, '');
     }
     const instant = key === 'rarely' || key === 'type' || key === 'kind';
     setState((s) => {

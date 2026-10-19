@@ -348,6 +348,13 @@ export function parseBackup(obj) {
   if (obj.app === BACKUP_APP && obj.format === BACKUP_FORMAT && isObj(obj.state)) {
     rawState = obj.state;
     months = normalizeHistory(obj.history).months;
+    // No month in a file can be newer than the file itself, so a wrong clock
+    // can't make an old backup win a merge against this device.
+    const exported = Date.parse(obj.exportedAt);
+    if (Number.isFinite(exported)) {
+      const cap = new Date(exported).toISOString();
+      months = months.map((m) => (Date.parse(m.savedAt) > exported ? { ...m, savedAt: cap } : m));
+    }
   } else {
     rawState = isObj(obj.data) ? obj.data : obj;
     if (!isObj(rawState.values)) return { ok: false, error: 'not-backup' };

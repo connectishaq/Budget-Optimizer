@@ -177,12 +177,108 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
+/* ---------- Standalone pages: privacy, terms, contact ---------- */
+@layer components {
+  .legal { @apply leading-relaxed text-slate-700 dark:text-slate-300; }
+  .legal h1 { @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white; }
+  .legal .lead { @apply mt-3 text-lg text-slate-600 dark:text-slate-400; }
+  .legal .meta { @apply mt-3 text-sm text-slate-600 dark:text-slate-400; }
+  .legal section { @apply mt-10 scroll-mt-24; }
+  .legal h2 { @apply text-xl font-semibold text-slate-900 dark:text-white; }
+  .legal p, .legal ul, .legal .table-wrap { @apply mt-3; }
+  .legal ul { @apply list-disc space-y-2 pl-5 marker:text-slate-400; }
+  .legal a:not(.btn) { @apply font-medium text-emerald-800 underline decoration-emerald-800/30 underline-offset-2 hover:decoration-emerald-800 dark:text-emerald-300 dark:decoration-emerald-300/40; }
+  .legal strong { @apply font-semibold text-slate-900 dark:text-white; }
+  .legal code { @apply rounded bg-slate-100 px-1 py-0.5 text-[0.85em] dark:bg-slate-800; }
+  .legal .callout { @apply rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6 dark:border-emerald-900 dark:bg-emerald-950/40; }
+  .legal .callout h2 { @apply text-lg; }
+  .legal .callout ul { @apply list-none pl-0; }
+  .legal .callout li { @apply relative pl-6; }
+  .legal .callout li::before { content: ""; @apply absolute left-0 top-[0.6em] h-2 w-2 rounded-full bg-emerald-600; }
+  .legal .table-wrap { @apply overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800; }
+  .legal table { @apply w-full min-w-[520px] border-collapse text-left text-sm; }
+  .legal th { @apply bg-slate-100 px-4 py-2.5 font-semibold text-slate-900 dark:bg-slate-800 dark:text-white; }
+  .legal td { @apply border-t border-slate-200 px-4 py-2.5 align-top dark:border-slate-800; }
+
+  .field-msg { @apply mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .faq { @apply rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900; }
+  .faq summary { @apply flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-medium text-slate-900 dark:text-white; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; @apply text-lg leading-none text-slate-400; }
+  .faq[open] summary::after { content: "–"; }
+  .faq p { @apply px-4 pb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400; }
+}
+
+/* ---------- Site footer: the deep-green "money you keep" panel, torn off like a receipt ---------- */
+.site-footer {
+  --page: #f8fafc; /* slate-50, the page behind the torn edge */
+  position: relative;
+  margin-top: 4rem;
+  background:
+    radial-gradient(60rem 28rem at 85% 0%, rgb(16 185 129 / 0.16), transparent 60%),
+    radial-gradient(40rem 24rem at 0% 100%, rgb(2 44 34 / 0.6), transparent 70%),
+    #064e3b; /* emerald-900, same as the savings panel */
+  color: #d1fae5;
+}
+.dark .site-footer {
+  --page: #020617; /* slate-950 */
+  background:
+    radial-gradient(60rem 28rem at 85% 0%, rgb(16 185 129 / 0.10), transparent 60%),
+    #022c22; /* emerald-950 */
+  box-shadow: inset 0 1px 0 rgb(16 185 129 / 0.15);
+}
+/* Torn-receipt top edge: page-coloured scallops bite into the green */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0 auto;
+  height: 12px;
+  background: radial-gradient(circle at 10px 0, var(--page) 7px, transparent 7.5px) repeat-x;
+  background-size: 20px 12px;
+}
+/* Faint ledger lines, like statement paper */
+.site-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom, transparent 0 31px, rgb(255 255 255 / 0.025) 31px 32px);
+  mask-image: linear-gradient(to bottom, black, transparent 55%);
+}
+.site-footer > * { position: relative; z-index: 1; }
+
+@layer components {
+  .site-footer :focus-visible { @apply outline-emerald-300; }
+  .footer-heading { @apply text-xs font-semibold uppercase tracking-[0.14em] text-emerald-300/90; }
+  .footer-links { @apply mt-3 space-y-1; }
+  .footer-links a { @apply -mx-2 inline-flex min-h-10 items-center rounded-md px-2 text-sm text-emerald-50/80 transition hover:bg-white/5 hover:text-white; }
+  .footer-cta { @apply bg-white px-5 font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:bg-emerald-50; }
+  .footer-cta .icon { @apply transition-transform; }
+  .footer-cta:hover .icon { @apply translate-x-0.5; }
+  .footer-ghost { @apply px-5 text-emerald-50 ring-1 ring-white/25 hover:bg-white/10 hover:ring-white/40; }
+  .footer-top { @apply inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 font-medium text-emerald-100/80 ring-1 ring-white/15 transition hover:bg-white/10 hover:text-white; }
+  .footer-top .icon { @apply transition-transform; }
+  .footer-top:hover .icon { @apply -translate-y-0.5; }
+  .receipt-line { @apply flex items-baseline gap-2; }
+  .receipt-line > :first-child { @apply shrink-0; }
+  .receipt-line > :last-child { @apply ml-auto shrink-0 font-semibold; }
+  /* dotted leader between label and value */
+  .receipt-line::after { content: ""; order: 1; @apply min-w-4 flex-1 border-b border-dotted border-slate-300 dark:border-slate-600; }
+  .receipt-line > :last-child { order: 2; }
+}
+.footer-receipt { transition: transform .3s ease; }
+.footer-receipt:hover { transform: rotate(0deg) translateY(-2px); }
+@media (prefers-reduced-motion: reduce) { .footer-receipt:hover { transform: none; } }
+
 /* ---------- Print: one clean action-plan page ---------- */
 #printPlan { display: none; }
 @media print {
   @page { margin: 14mm; }
   html, body { background: #fff !important; color: #0f172a !important; }
-  body > *:not(#printPlan) { display: none !important; }
+  /* Only the calculator page swaps itself for the plan; other pages print as they are */
+  body:has(> #printPlan) > *:not(#printPlan) { display: none !important; }
+  header, footer, #toastRegion, .no-print { display: none !important; }
   #printPlan { display: block !important; font-size: 11pt; }
   #printPlan table { width: 100%; border-collapse: collapse; }
   #printPlan th, #printPlan td { border-bottom: 1px solid #e2e8f0; padding: 5px 4px; text-align: left; }

@@ -227,6 +227,14 @@ describe('backup files', () => {
     expect(parsed.state.snapshots).toEqual([]);
   });
 
+  it('never dates a month in a backup after the backup itself', () => {
+    const file = makeBackup(budget({ income: 1 }), [entry('2026-10', { income: 1 }, {}, '2026-10-25T00:00:00Z')], new Date('2026-10-15T00:00:00Z'));
+    const parsed = parseBackup(JSON.parse(JSON.stringify(file)));
+    expect(parsed.months[0].savedAt).toBe('2026-10-15T00:00:00.000Z');
+    const here = [entry('2026-10', { income: 2 }, {}, '2026-10-19T00:00:00Z')];
+    expect(mergeHistory(here, parsed.months, 'merge').months[0].inputs.values.income).toBe(2);
+  });
+
   it('rejects files that are not backups', () => {
     expect(parseBackup(null).ok).toBe(false);
     expect(parseBackup({ hello: 'world' }).ok).toBe(false);

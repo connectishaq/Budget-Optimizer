@@ -54,9 +54,11 @@ function goalRow(g) {
     </div>
     <div class="mt-2 grid grid-cols-2 gap-2">
       <div><label for="g-${g.id}-target" class="mb-1 block text-xs font-medium muted">How much you need</label>
-        <input id="g-${g.id}-target" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="target" value="${g.target || ''}" placeholder="0"></div>
+        <input id="g-${g.id}-target" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="target" value="${g.target || ''}" placeholder="0" aria-describedby="g-${g.id}-target-msg">
+        <p id="g-${g.id}-target-msg" class="mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400" aria-live="polite"></p></div>
       <div><label for="g-${g.id}-saved" class="mb-1 block text-xs font-medium muted">Saved so far</label>
-        <input id="g-${g.id}-saved" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="saved" value="${g.saved || ''}" placeholder="0"></div>
+        <input id="g-${g.id}-saved" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="saved" value="${g.saved || ''}" placeholder="0" aria-describedby="g-${g.id}-saved-msg">
+        <p id="g-${g.id}-saved-msg" class="mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400" aria-live="polite"></p></div>
     </div>
     <div class="mt-3">
       <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-full rounded-full bg-emerald-500 transition-all" data-goal-bar style="width:0%"></div></div>
@@ -86,9 +88,12 @@ function renderGoalPlanner(state, result, view) {
     else status = `${pct(g.progress)} saved · ${view.raw(g.remaining)} to go · ready in ${duration(g.months)} (${monthsFromNow(g.months)})`;
     setText(row.querySelector('[data-goal-status]'), status);
   }
+  const open = timeline.filter((g) => g.target > 0 && g.remaining > 0);
   setText($('goalBasis'), monthly > 0
     ? `You’re putting ${view.rawS(monthly)} a month towards goals, finishing them one at a time from the top.`
-    : 'Give goals a share of your savings above to see when you’ll reach them.');
+    : !state.goals.length || open.length ? 'Give goals a share of your savings above to see when you’ll reach them.'
+      : state.goals.some((g) => !(g.target > 0)) ? 'Type how much you need for each goal to see when you’ll reach it.'
+        : 'Every goal already has enough saved, so your goals share goes to your other priorities.');
 }
 
 // ---------------- Emergency fund ----------------
@@ -129,6 +134,9 @@ function renderDebt(state, result, view) {
   const total = debts.reduce((a, d) => a + d.balance, 0);
   const cur = cmp.current;
   const acc = cmp.accelerated;
+  const interestOf = (d) => (d.balance * d.apr) / 1200;
+  const debtName = (d) => esc(d.name || (d.type === 'loan' ? 'your loan' : 'your credit card'));
+  const growing = debts.filter((d) => d.payment <= interestOf(d));
   const curTxt = cur.feasible ? monthsFromNow(cur.months) : 'Never, at today’s payments';
   setHTML($('debtBody'), `
     <p class="text-sm muted">You owe <strong class="text-slate-900 dark:text-white">${view.raw(total)}</strong> in total.</p>
@@ -147,7 +155,7 @@ function renderDebt(state, result, view) {
     ${extra > 0 && cmp.interestSaved != null
       ? `<p class="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200">${icon('trending-up', 'icon-sm mr-1 align-[-3px]')}Pay the highest-interest loan first with the extra ${view.rawS(extra)} a month, and you’re debt-free <strong>${duration(cmp.monthsSaved)} sooner</strong> and pay <strong>${view.rawS(cmp.interestSaved)} less</strong> in interest.</p>`
       : ''}
-    ${!cur.feasible ? `<p class="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:bg-rose-950 dark:text-rose-300">At least one monthly payment is smaller than the interest added each month, so that debt keeps growing. Pay at least ${view.raw(Math.max(...debts.map((d) => (d.balance * d.apr) / 1200)))} a month on it.</p>` : ''}`);
+    ${!cur.feasible ? `<p class="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:bg-rose-950 dark:text-rose-300">At least one debt will never be paid off at today’s payments. ${growing.map((d) => (interestOf(d) > 0 ? `Pay more than ${view.raw(interestOf(d))} a month on ${debtName(d)}.` : `Add a monthly payment for ${debtName(d)}.`)).join(' ')}</p>` : ''}`);
 }
 
 /** The one line shown on each collapsed "Plan ahead" row. */
@@ -177,7 +185,7 @@ function renderRowSummaries(state, result, view) {
   const goals = goalTimeline(state.goals, amounts.goals);
   const open = goals.filter((g) => g.target > 0 && g.remaining > 0);
   setText($('sumGoals'), !state.goals.length ? 'No goals yet.'
-    : !open.length ? 'All your goals are covered.'
+    : !open.length ? (state.goals.some((g) => !(g.target > 0)) ? 'Type how much you need for each goal.' : 'All your goals are covered.')
       : open[0].reachable ? `${open[0].name || 'First goal'} ready by ${monthsFromNow(open[0].months)}.` : `${open.length} goal${open.length > 1 ? 's' : ''}. Give goals a share of your savings to see dates.`);
 }
 
@@ -224,6 +232,7 @@ export function initGoals() {
       const r = parseAmount(el.value);
       v = r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
+      setText($(`${el.id}-msg`), r.error || '');
     }
     setState((s) => { const g = s.goals.find((x) => x.id === id); if (g) g[key] = v; }, { reason: 'input' });
   });

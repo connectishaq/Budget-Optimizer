@@ -390,6 +390,22 @@ describe('formatting', () => {
     expect(parseAmount('')).toEqual({ value: 0, error: null });
   });
 
+  it('parseAmount reads common money formats and rejects guesses', () => {
+    expect(parseAmount('$45.50').value).toBe(45.5);
+    expect(parseAmount(' 4 000 ').value).toBe(4000);
+    expect(parseAmount('1,50,000').value).toBe(150000);
+    expect(parseAmount('1.234,56').value).toBe(1234.56);
+    expect(parseAmount('12,5').value).toBe(12.5);
+    expect(parseAmount('Rs 2500').value).toBe(2500);
+    expect(parseAmount('€1.200,00').value).toBe(1200);
+    expect(parseAmount('1.200').value).toBe(1.2); // ambiguous, so read as a decimal point
+    expect(parseAmount('-$5').error).toBe("This can't be less than zero");
+    for (const bad of ['5k', '1e6', '12abc', '1.2.3,4', '<b>1</b>', '-']) {
+      expect(parseAmount(bad)).toEqual({ value: 0, error: 'Please type digits only, like 1500' });
+    }
+    expect(parseAmount('99999999999999').error).toBe('That number is too big');
+  });
+
   it('plain durations and percentages', () => {
     expect(duration(14)).toBe('1 year 2 months');
     expect(duration(24)).toBe('2 years');

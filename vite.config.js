@@ -2,6 +2,10 @@ import { defineConfig, loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const PAGES = ['privacy-policy', 'terms-of-use', 'contact'];
 
 /**
  * Injects site-specific values (domain, AdSense, contact email) into index.html
@@ -21,12 +25,15 @@ function siteConfig(env) {
       outDir = path.resolve(config.root, config.build.outDir);
       isBuild = config.command === 'build' && !process.env.VITEST;
     },
-    transformIndexHtml(html) {
+    transformIndexHtml(html, ctx) {
+      // "/privacy-policy/index.html" -> "/privacy-policy/"; the home page is "/"
+      const pagePath = (ctx?.path || '/').replace(/index\.html$/, '');
+      const pageUrl = `${siteUrl}${pagePath}`;
       // Social networks need an absolute image URL, so the share image needs the domain too
       const urlTags = siteUrl
         ? [
-          `<link rel="canonical" href="${siteUrl}/">`,
-          `<meta property="og:url" content="${siteUrl}/">`,
+          `<link rel="canonical" href="${pageUrl}">`,
+          `<meta property="og:url" content="${pageUrl}">`,
           `<meta property="og:image" content="${siteUrl}/og-image.png">`,
           '<meta property="og:image:width" content="1200">',
           '<meta property="og:image:height" content="630">',
@@ -37,11 +44,17 @@ function siteConfig(env) {
       const contact = contactEmail
         ? `<a href="mailto:${contactEmail}" class="font-semibold text-indigo-300 underline-offset-2 hover:underline">${contactEmail}</a>`
         : 'the contact details listed by the site owner';
+      // Shared header and footer for the standalone pages (privacy, terms, contact)
+      const partial = (name) => fs.readFileSync(path.resolve(__dirname, 'src/partials', `${name}.html`), 'utf8');
       return html
+        .replace('<!--SITE_HEADER-->', () => partial('header'))
+        .replace('<!--SITE_FOOTER-->', () => partial('footer'))
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
-        .replace('<!--CONTACT_EMAIL-->', contact);
+        .replace(/<!--CONTACT_EMAIL-->/g, contact)
+        .replace(/__CONTACT_EMAIL__/g, contactEmail)
+        .replace(/__YEAR__/g, String(new Date().getFullYear()));
     },
     closeBundle() {
       const robots = path.join(outDir, 'robots.txt');
@@ -73,6 +86,12 @@ export default defineConfig(({ mode }) => {
     test: { include: ['src/**/*.test.js'] },
     build: {
       target: 'es2020',
+      rollupOptions: {
+        input: Object.fromEntries([
+          ['main', path.resolve(__dirname, 'index.html')],
+          ...PAGES.map((p) => [p, path.resolve(__dirname, p, 'index.html')])
+        ])
+      },
       cssMinify: true,
       reportCompressedSize: true
     }

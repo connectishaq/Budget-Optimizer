@@ -110,17 +110,32 @@ export function monthsFromNow(months, from = new Date()) {
   return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
+export const MAX_AMOUNT = 1e12;
+const CURRENCY_MARK = /^(?:[$£€₹]|rs\.?|aed|usd|gbp|eur|inr|pkr|cad|aud|[ca]\$)|(?:[$£€₹]|rs\.?|aed|usd|gbp|eur|inr|pkr|cad|aud)$/gi;
+
 /**
- * Parses free-typed amounts ("1,200", "$45.50", " 300 ") into a number.
+ * Parses free-typed amounts ("1,200", "$45.50", "1,50,000", "1.234,56") into a number.
+ * Anything else ("5k", "1e6", "12abc") is an error rather than a guess.
  * Returns { value, error } where value is always a usable non-negative number.
  */
 export function parseAmount(raw) {
-  const str = String(raw ?? '').trim();
+  const str = String(raw ?? '').replace(/\s/g, '');
   if (str === '') return { value: 0, error: null };
-  const cleaned = str.replace(/[,\s]/g, '').replace(/[^\d.\-]/g, '');
-  const n = Number(cleaned);
-  if (cleaned === '' || cleaned === '-' || !Number.isFinite(n)) return { value: 0, error: 'Please type a number, like 1500' };
-  if (n < 0) return { value: 0, error: "This can't be less than zero" };
+  let s = str.replace(CURRENCY_MARK, '');
+  const negative = s.startsWith('-');
+  if (negative) s = s.slice(1).replace(CURRENCY_MARK, '');
+  let normalized = null;
+  if (/^\d+$/.test(s)) normalized = s;
+  // 1,200 · 1,50,000 · 1,200.50
+  else if (/^\d{1,3}(,\d{2,3})*(\.\d+)?$/.test(s) && !/^\d+,\d{1,2}$/.test(s)) normalized = s.replace(/,/g, '');
+  // 45.50 · .5
+  else if (/^\d*\.\d+$/.test(s)) normalized = s;
+  // European style: 1.234,56 · 1.234.567 · 12,5
+  else if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(s) || /^\d+,\d{1,2}$/.test(s)) normalized = s.replace(/\./g, '').replace(',', '.');
+  const n = normalized == null ? NaN : Number(normalized);
+  if (!Number.isFinite(n)) return { value: 0, error: 'Please type digits only, like 1500' };
+  if (negative && n > 0) return { value: 0, error: "This can't be less than zero" };
+  if (n > MAX_AMOUNT) return { value: 0, error: 'That number is too big' };
   return { value: n, error: null };
 }
 

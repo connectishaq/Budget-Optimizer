@@ -53,7 +53,9 @@ async function checkSharedHash() {
   let data;
   try { data = JSON.parse(fromB64Url(m[1])); } catch { data = null; }
   history.replaceState(null, '', location.pathname + location.search);
-  if (!data) { toast('That share link is invalid or incomplete', { tone: 'error' }); return; }
+  // A link with no budget in it would only wipe the numbers here
+  const shared = data && normalizeState(data);
+  if (!shared || !hasData(shared)) { toast('That share link is invalid or incomplete', { tone: 'error' }); return; }
   const ok = await confirmDialog({
     title: 'Open shared budget?',
     message: 'This link contains budget numbers someone shared with you. Loading it replaces the numbers you’re working on now. Your saved months are kept.',
@@ -61,7 +63,7 @@ async function checkSharedHash() {
   });
   if (!ok) return;
   const cur = getState();
-  replaceState({ ...normalizeState(data), ui: { ...cur.ui, mode: 'results', sample: false } }, 'import');
+  replaceState({ ...shared, ui: { ...cur.ui, mode: 'results', sample: false } }, 'import');
   toast('Shared budget loaded');
 }
 
