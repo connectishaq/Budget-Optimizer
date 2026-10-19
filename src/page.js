@@ -3,6 +3,7 @@
 
 import './styles.css';
 import { t } from './i18n/index.js';
+import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
 
 const THEME_KEY = 'hbo:theme';
 
@@ -24,4 +25,9 @@ function initTheme() {
   });
 }
 
-initTheme();
+/** Resolves once the page is translated and the header is wired; page scripts wait for it. */
+export const pageReady = startI18n().then(() => {
+  initTheme();
+  initLocalePicker();
+  restoreScroll();
+});

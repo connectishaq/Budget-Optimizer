@@ -2,7 +2,7 @@
 // (VITE_CONTACT_FORM_ENDPOINT, e.g. Formspree or Web3Forms). Without one it
 // falls back to opening the visitor's email app addressed to VITE_CONTACT_EMAIL.
 
-import './page.js';
+import { pageReady } from './page.js';
 import { t } from './i18n/index.js';
 
 const ENDPOINT = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT || '').trim();
@@ -181,4 +181,4 @@ function initContactForm() {
   });
 }
 
-initContactForm();
+pageReady.then(initContactForm);

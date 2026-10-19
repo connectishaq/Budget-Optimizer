@@ -18,6 +18,8 @@ import { initReset } from './ui/reset.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { initAds } from './ads.js';
 import { t } from './i18n/index.js';
+import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
+import { initialCountry } from './i18n/countries.js';
 
 let lastSavings = null;
 
@@ -71,7 +73,9 @@ function initSavedIndicator() {
   });
 }
 
-function boot() {
+async function boot() {
+  // Words first: everything below builds text with the active language
+  await startI18n();
   const restored = loadState();
   // Returning users with saved numbers go straight to their results;
   // everyone else starts the guided steps.
@@ -81,6 +85,7 @@ function boot() {
   startMonths(restored);
 
   initTheme();
+  initLocalePicker({ country: initialCountry(getState().currency) });
   initSavedIndicator();
   initInputs();
   initHelp();
@@ -116,6 +121,7 @@ function boot() {
   // JS now controls which view is shown
   document.documentElement.classList.remove('returning');
   initAds();
+  restoreScroll();
 }
 
 boot();

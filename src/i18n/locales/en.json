@@ -1957,6 +1957,12 @@
     "theme": {
       "toLight": "Switch to light mode",
       "toDark": "Switch to dark mode"
+    },
+    "locale": {
+      "language": "Language",
+      "country": "Country",
+      "otherCountry": "Other country",
+      "toggle": "Language: {language}. Country: {country}"
     }
   },
   "privacy": {

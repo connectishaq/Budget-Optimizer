@@ -49,6 +49,7 @@ function siteConfig(env) {
       return html
         .replace('<!--SITE_HEADER-->', () => partial('header'))
         .replace('<!--SITE_FOOTER-->', () => partial('footer'))
+        .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')

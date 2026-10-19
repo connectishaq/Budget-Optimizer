@@ -25,6 +25,18 @@
   <script>
     (function () {
       var d = document.documentElement, t = null;
+      // Non-English visitors: hide the page until it's translated (max 2s), and set direction early
+      var L = ['en', 'es', 'hi', 'ar', 'ur', 'fr', 'pt', 'id', 'de'], l = null;
+      try { l = localStorage.getItem('hbo:lang'); } catch (e) {}
+      if (L.indexOf(l) < 0) {
+        l = 'en';
+        var ls = navigator.languages || [navigator.language];
+        for (var i = 0; i < ls.length; i++) { var b = String(ls[i] || '').toLowerCase().split('-')[0]; if (L.indexOf(b) > -1) { l = b; break; } }
+      }
+      if (l !== 'en') {
+        d.classList.add('i18n-pending'); d.lang = l; if (l === 'ar' || l === 'ur') d.dir = 'rtl';
+        setTimeout(function () { d.classList.remove('i18n-pending'); }, 2000);
+      }
       try { t = localStorage.getItem('hbo:theme'); } catch (e) {}
       if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) d.classList.add('dark');
       var n = navigator, c = n.connection || {};
@@ -94,6 +106,7 @@
     <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
     <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
@@ -154,6 +167,7 @@
         <a href="#app" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.calculator">Calculator</a>
         <a href="#guide" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.tips">Money tips</a>
         <a href="#glossary" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.glossary">Word list</a>
+        <!--LOCALE_PICKER-->
         <button type="button" id="themeToggle" class="btn-icon" aria-pressed="false" aria-label="Switch to dark mode">
           <svg class="icon dark:hidden" aria-hidden="true"><use href="#i-moon"></use></svg>
           <svg class="icon hidden dark:block" aria-hidden="true"><use href="#i-sun"></use></svg>

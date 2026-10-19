@@ -1,0 +1,15 @@
+<div class="relative" data-locale-picker>
+          <button type="button" class="btn-icon w-auto gap-1.5 px-2.5 text-xs font-semibold lg:hidden" aria-expanded="false" aria-controls="localePanel" aria-label="Language and country" data-locale-toggle>
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg><span data-locale-code>EN</span>
+          </button>
+          <div id="localePanel" class="card absolute end-0 top-full z-50 mt-2 hidden w-64 space-y-3 p-4 shadow-lg lg:static lg:mt-0 lg:flex lg:w-auto lg:items-center lg:gap-2 lg:space-y-0 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none dark:lg:bg-transparent" data-locale-panel>
+            <div>
+              <label for="langSelect" class="label lg:sr-only" data-i18n="layout.locale.language">Language</label>
+              <select id="langSelect" class="input select mt-1.5 lg:mt-0 lg:min-h-9 lg:w-auto lg:py-1 lg:text-sm"></select>
+            </div>
+            <div>
+              <label for="countrySelect" class="label lg:sr-only" data-i18n="layout.locale.country">Country</label>
+              <select id="countrySelect" class="input select mt-1.5 lg:mt-0 lg:min-h-9 lg:w-auto lg:py-1 lg:text-sm"></select>
+            </div>
+          </div>
+        </div>
