@@ -1,1 +1,2339 @@
-{}
+{
+  "rules": {
+    "effort": {
+      "easy": "Fácil",
+      "medium": "Exige algum esforço",
+      "purchase": "Exige uma compra"
+    },
+    "rentBurden": {
+      "label": "Aluguel / financiamento",
+      "noun": "aluguel ou financiamento",
+      "title": "Reduza seu custo de moradia",
+      "why": "Aparece porque a moradia leva {pct}% da sua renda. Acima de 35%, o resto do orçamento fica apertado.",
+      "flag": "A moradia leva {pct}% da sua renda. Acima de 35% é um sinal de alerta.",
+      "evidenceOwner": "Renegociar o financiamento ou contestar o valor do IPTU costuma reduzir",
+      "evidenceRenter": "Renegociar na renovação do contrato ou dividir a casa com alguém costuma reduzir",
+      "tips": {
+        "ownerRate": "Peça a 2 ou 3 bancos uma taxa de financiamento mais barata.",
+        "ownerTax": "Conteste o IPTU se imóveis parecidos forem avaliados por menos.",
+        "ownerInsurance": "Veja se dá para reduzir ou tirar o seguro do financiamento quando você já tiver pago 20% do imóvel.",
+        "renterLease": "Peça um desconto ao proprietário se você assinar um contrato mais longo.",
+        "renterRoommate": "Na renovação, pense em dividir com alguém ou mudar para um lugar menor.",
+        "renterCompare": "Veja outros anúncios 2 meses antes da renovação para comparar."
+      }
+    },
+    "insuranceRequote": {
+      "label": "Seguros",
+      "noun": "seguro da casa e do carro",
+      "title": "Faça novas cotações de seguro todo ano",
+      "why": "Aparece porque seus seguros ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Pesquisar preços todo ano costuma reduzir",
+      "tips": {
+        "quotes": "Faça 3 cotações antes de a apólice renovar.",
+        "bundle": "Faça o seguro da casa e do carro na mesma seguradora para ganhar desconto.",
+        "excess": "Escolha uma franquia maior que você conseguiria pagar com suas economias."
+      }
+    },
+    "utilitiesEfficiency": {
+      "label": "Luz e gás",
+      "noun": "luz e gás",
+      "title": "Pequenos hábitos para economizar energia",
+      "why": "Aparece porque sua conta de luz e gás ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Baixar o aquecimento ou o ar-condicionado à noite, desligar aparelhos em stand-by e usar lâmpadas LED costuma reduzir",
+      "tips": {
+        "night": "Ajuste o aquecedor ou o ar-condicionado alguns graus à noite e quando sair de casa.",
+        "standby": "Desligue TVs e carregadores da tomada.",
+        "led": "Troque lâmpadas antigas por LED."
+      }
+    },
+    "smartThermostat": {
+      "label": "Luz e gás",
+      "noun": "luz e gás",
+      "title": "Instale um termostato inteligente",
+      "why": "Aparece porque sua conta de luz e gás ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Um termostato inteligente que ajusta tudo sozinho costuma reduzir mais",
+      "tips": {
+        "rebate": "Veja se a sua companhia de energia devolve parte do valor na compra de um.",
+        "away": "Ative a função que reduz o consumo quando todos saem de casa.",
+        "report": "Veja o relatório mensal e corrija os dias de maior desperdício."
+      }
+    },
+    "electricitySlab": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Fique abaixo da próxima faixa de preço",
+      "why": "Aparece porque sua conta de luz ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Cada unidade fica mais cara quando você passa de uma faixa, então manter o consumo logo abaixo da próxima costuma reduzir",
+      "tips": {
+        "units": "Procure o “consumo em kWh” na sua conta. O preço por unidade sobe a cada faixa, então tente ficar logo abaixo da próxima.",
+        "ac": "Use o ar-condicionado a 26 °C com o ventilador de teto ligado, e o timer ou modo econômico à noite.",
+        "peak": "Use o ferro, a máquina de lavar e a bomba d’água fora do horário de pico."
+      }
+    },
+    "utilitiesTuneup": {
+      "label": "Luz e gás",
+      "noun": "luz e gás",
+      "title": "Ajustes rápidos para economizar energia",
+      "why": "Aparece porque sua conta de luz e gás ({amount}) está perto do comum. Alguns pequenos ajustes ainda ajudam.",
+      "evidence": "Ajustes rápidos, como lavar roupa em água fria e usar um chuveiro econômico, costumam reduzir",
+      "tips": {
+        "shower": "Instale um chuveiro ou arejador que economiza água.",
+        "cold": "Lave roupa em água fria e só com a máquina cheia.",
+        "heater": "Baixe um pouco a temperatura do aquecedor de água."
+      }
+    },
+    "internetRenegotiate": {
+      "label": "Internet e telefone",
+      "noun": "internet e telefone",
+      "title": "Peça uma oferta melhor à operadora",
+      "why": "Aparece porque sua conta de internet e telefone ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Ligar para a operadora e pedir uma oferta melhor costuma reduzir",
+      "tips": {
+        "localBundle": "Troque as recargas avulsas do celular por um pacote pré-pago mensal.",
+        "localWifi": "Em casa, use ligações por Wi-Fi e WhatsApp em vez dos minutos do celular.",
+        "localPackage": "Peça um plano mais barato à operadora de internet se você usa menos da metade da velocidade.",
+        "newCustomer": "Ligue e peça a mesma oferta que os clientes novos recebem.",
+        "speedTest": "Faça um teste de velocidade. Se você usa menos da metade, escolha um plano mais barato.",
+        "prepaid": "Compare planos pré-pagos na mesma operadora."
+      }
+    },
+    "fuelCarpool": {
+      "label": "Combustível",
+      "noun": "combustível",
+      "title": "Dê caronas e junte as tarefas",
+      "why": "Aparece porque seu gasto com combustível ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Revezar a ida à escola e fazer as tarefas numa só saída costuma reduzir",
+      "tips": {
+        "schoolRuns": "Reveze a ida à escola com 2 ou 3 famílias vizinhas.",
+        "errands": "Faça todas as tarefas da semana numa só saída.",
+        "tyres": "Confira a calibragem dos pneus uma vez por mês."
+      }
+    },
+    "fuelCarlight": {
+      "label": "Combustível",
+      "noun": "combustível",
+      "title": "Use menos o carro na cidade",
+      "why": "Aparece porque seu gasto com combustível ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Andar a pé, de bicicleta ou de transporte público nos trajetos curtos costuma reduzir",
+      "tips": {
+        "walk": "Vá a pé ou de bicicleta em trajetos de menos de 2 km.",
+        "bigShops": "Use o carro só para as compras grandes da semana.",
+        "pass": "Compare o que você gasta com combustível e estacionamento com um passe mensal de transporte."
+      }
+    },
+    "fuelHybridCommute": {
+      "label": "Combustível",
+      "noun": "combustível",
+      "title": "Vá ao trabalho menos dias por semana",
+      "why": "Aparece porque seu gasto com combustível ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Trabalhar de casa um ou dois dias por semana costuma reduzir",
+      "tips": {
+        "wfh": "Peça ao seu gestor 1 ou 2 dias de home office.",
+        "share": "Divida a carona com um colega que mora perto.",
+        "smooth": "Dirija com suavidade: arrancadas leves gastam menos combustível."
+      }
+    },
+    "transitPass": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Use um passe mensal ou tag de pedágio",
+      "why": "Aparece porque seu gasto com passagens e pedágios ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Um passe mensal ou uma tag de pedágio costuma reduzir",
+      "tips": {
+        "compare": "Some as passagens do mês passado e compare com um passe mensal.",
+        "tollTag": "Use uma tag de pedágio para pagar menos.",
+        "employer": "Pergunte ao seu empregador se ele ajuda com o transporte."
+      }
+    },
+    "carRefinance": {
+      "label": "Financiamento do carro",
+      "noun": "parcela do financiamento do carro",
+      "title": "Procure um financiamento de carro mais barato",
+      "why": "Aparece porque a parcela do seu carro ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Levar o financiamento para um banco com juros menores costuma reduzir",
+      "tips": {
+        "banks": "Peça a 2 ou 3 bancos a taxa deles para financiamento de carro.",
+        "term": "Mantenha o mesmo número de parcelas restantes para não pagar por mais tempo.",
+        "fee": "Confirme que não há multa para quitar o financiamento antigo antes do prazo."
+      }
+    },
+    "groceriesPlan": {
+      "label": "Mercado",
+      "noun": "mercado",
+      "title": "Planeje as refeições e compre marcas próprias",
+      "why": "Aparece porque seu gasto com mercado ({amount}) está acima do comum para {group} ({threshold}).",
+      "evidence": "Planejar as refeições e comprar marcas próprias costuma reduzir",
+      "tips": {
+        "plan": "Planeje as refeições da semana antes de ir às compras e siga a lista.",
+        "localBulk": "Compre o básico do mês (farinha, arroz, óleo, feijão, açúcar) uma vez por mês, em quantidade, num atacarejo.",
+        "storeBrand": "Compre a marca própria do mercado para o básico, como arroz, farinha e óleo.",
+        "bigPacks": "Compre embalagens grandes do que você sempre usa.",
+        "freeze": "Cozinhe a mais e congele porções para depois."
+      }
+    },
+    "diningSwap": {
+      "label": "Comer fora",
+      "noun": "comer fora e delivery",
+      "title": "Cozinhe em casa com mais frequência",
+      "why": "Aparece porque você gasta mais comendo fora ({dining}) do que no mercado ({groceries}).",
+      "evidence": "Cozinhar em casa algumas noites a mais por semana costuma reduzir",
+      "tips": {
+        "swap": "Troque 2 noites de delivery por semana por refeições rápidas em casa.",
+        "lunch": "Leve marmita para o trabalho nos dias úteis.",
+        "special": "Deixe para comer fora em ocasiões especiais."
+      }
+    },
+    "impulse24h": {
+      "label": "Compras por impulso",
+      "noun": "compras sem planejamento",
+      "title": "Espere 24 horas antes de comprar",
+      "why": "Aparece porque suas compras por impulso ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Quem espera 24 horas antes de comprar costuma reduzir",
+      "tips": {
+        "wait": "Espere um dia antes de comprar qualquer coisa de que você não precisa.",
+        "cards": "Remova os cartões salvos dos apps de compras.",
+        "notifications": "Desative as notificações das lojas e os e-mails de promoção."
+      }
+    },
+    "schoolDiscounts": {
+      "label": "Escola e creche",
+      "noun": "escola e creche",
+      "title": "Pergunte sobre descontos na escola",
+      "why": "Aparece porque seus gastos com escola e creche ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Pedir desconto para irmãos ou para pagamento antecipado costuma economizar",
+      "tips": {
+        "siblings": "Pergunte à escola sobre desconto para irmãos.",
+        "upfront": "Pergunte se pagar o ano à vista sai mais barato.",
+        "secondHand": "Compre uniformes e livros usados."
+      }
+    },
+    "medicalGeneric": {
+      "label": "Médico e remédios",
+      "noun": "consultas médicas e remédios",
+      "title": "Peça remédios genéricos",
+      "why": "Aparece porque seus gastos com médico e remédios ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Escolher genéricos com o mesmo princípio ativo costuma reduzir",
+      "tips": {
+        "generic": "Peça ao médico ou ao farmacêutico a versão genérica. Ela tem o mesmo princípio ativo e custa menos.",
+        "monthlyPack": "Compre os remédios de uso contínuo em caixas para o mês, não em cartelas avulsas.",
+        "localCover": "Veja se o plano de saúde da empresa ou um cartão de desconto cobre as consultas.",
+        "insurance": "Confira o que seu plano de saúde ou o benefício da empresa já cobre."
+      }
+    },
+    "subsCancelUnused": {
+      "label": "Assinaturas sem uso",
+      "noun": "assinaturas que você quase não usa",
+      "title": "Cancele o que você quase não usa",
+      "why": "Aparece porque você disse que quase não usa: {names}.",
+      "unnamed": "Sem nome",
+      "evidence": "Cancelá-las economiza",
+      "tips": {
+        "cancel": "Cancele hoje. Geralmente dá para assinar de novo depois.",
+        "trials": "Procure no extrato bancário testes grátis que viraram pagos.",
+        "reminder": "Crie um lembrete 2 dias antes de qualquer novo teste grátis acabar."
+      }
+    },
+    "subsRotate": {
+      "label": "Streaming",
+      "noun": "assinaturas de streaming e jogos",
+      "title": "Mantenha um streaming por vez",
+      "why": "Aparece porque suas assinaturas de streaming e jogos ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Manter um serviço por vez e escolher planos mais baratos costuma reduzir",
+      "tips": {
+        "one": "Mantenha um serviço de streaming e troque no mês seguinte.",
+        "ads": "Escolha o plano com anúncios, ou pague por ano se sair mais barato.",
+        "family": "Divida um plano família com quem mora com você."
+      }
+    },
+    "subsToolsYearly": {
+      "label": "Ferramentas de trabalho e IA",
+      "noun": "assinaturas de ferramentas de trabalho e IA",
+      "title": "Pague por ano e corte ferramentas repetidas",
+      "why": "Aparece porque suas assinaturas de ferramentas de trabalho e IA ({amount}) estão acima do comum para {group} ({threshold}).",
+      "evidence": "Mudar para cobrança anual e cancelar ferramentas que fazem a mesma coisa costuma reduzir",
+      "tips": {
+        "yearly": "Mude para cobrança anual as ferramentas que você usa toda semana. Muitas vezes sai 15–20% mais barato.",
+        "overlap": "Se duas ferramentas fazem a mesma coisa (por exemplo, dois assistentes de IA), fique com a que você mais usa.",
+        "employer": "Peça ao seu empregador para pagar as ferramentas que você usa no trabalho."
+      }
+    },
+    "debtAvalanche": {
+      "label": "Juros do cartão de crédito",
+      "noun": "juros do cartão de crédito",
+      "titleLocal": "Quite o cartão com um empréstimo mais barato",
+      "title": "Transfira o saldo para um cartão com 0% de juros",
+      "why": "Aparece porque {name} cobra {apr}% de juros ao ano, o que é caro.",
+      "whyUnnamed": "um cartão",
+      "flag": "{name} cobra {apr}% de juros ao ano.",
+      "flagUnnamed": "Um cartão",
+      "evidenceLocal": "Quitar o cartão com um empréstimo pessoal a uma taxa bem menor costuma evitar",
+      "evidence": "Transferir o saldo para um cartão com 0% de juros por um tempo costuma evitar",
+      "orderItem": "{name} ({apr}%)",
+      "orderUnnamed": "Dívida",
+      "tips": {
+        "localLoan": "Peça ao banco um empréstimo pessoal ou um parcelamento da fatura com juros menores e use para quitar o cartão (espere uma pequena taxa).",
+        "transfer": "Pergunte ao banco sobre um cartão com 0% de juros para saldo transferido (geralmente com taxa de 3%).",
+        "order": "Pague primeiro a dívida com os juros mais altos: {order}.",
+        "minimum": "Continue pagando pelo menos o mínimo de todas as outras."
+      }
+    }
+  },
+  "subs": {
+    "kinds": {
+      "streaming": {
+        "label": "Streaming e jogos",
+        "tip": "Mantenha um ou dois por vez e troque a cada mês. Você pode voltar quando quiser."
+      },
+      "tools": {
+        "label": "Ferramentas de trabalho e IA",
+        "tip": "Mantenha se economiza seu tempo ou te faz ganhar dinheiro. Pagar por ano ou dividir um plano de equipe costuma sair mais barato."
+      },
+      "cloud": {
+        "label": "Armazenamento na nuvem e apps",
+        "tip": "Apague arquivos antigos antes de pagar por mais espaço. Um plano família pode cobrir todo mundo em casa."
+      },
+      "fitness": {
+        "label": "Academia e exercícios",
+        "tip": "Vale a pena se você vai pelo menos duas vezes por semana. Se não, pagar por visita costuma sair mais barato."
+      },
+      "learning": {
+        "label": "Estudos e cursos",
+        "tip": "Defina uma data para terminar. Muitos apps e cursos têm uma versão gratuita que cobre o básico."
+      },
+      "membership": {
+        "label": "Clubes de assinatura e delivery",
+        "tip": "Some quanto isso te fez economizar no mês passado. Se for menos que a mensalidade, cancele."
+      },
+      "other": {
+        "label": "Outros",
+        "tip": "Pergunte a si mesmo: eu assinaria de novo hoje por esse preço?"
+      }
+    }
+  },
+  "profiles": {
+    "single": {
+      "name": "Solteiro que aluga na cidade",
+      "group": "quem aluga na cidade"
+    },
+    "suburban": {
+      "name": "Família de 4 no subúrbio",
+      "group": "famílias"
+    },
+    "youngpro": {
+      "name": "Jovem profissional",
+      "group": "jovens profissionais"
+    },
+    "sample": {
+      "visaCard": "Cartão Visa",
+      "storeCreditCard": "Cartão de loja",
+      "personalLoan": "Empréstimo pessoal",
+      "rewardsCard": "Cartão com recompensas",
+      "studentLoan": "Financiamento estudantil",
+      "creditCard": "Cartão de crédito",
+      "gymMembership": "Mensalidade da academia",
+      "icloudStorage": "Armazenamento iCloud",
+      "streamingBundle": "Pacote de streaming",
+      "cloudStorage": "Armazenamento na nuvem",
+      "languageApp": "App de idiomas",
+      "fitnessApp": "App de exercícios",
+      "googleOneStorage": "Armazenamento Google One",
+      "festivals": "Festas (Eid, Diwali, Natal…)",
+      "festivalsDiwali": "Festas (Diwali, Eid, Natal…)",
+      "schoolBooks": "Livros, uniformes e matrícula escolar",
+      "carService": "Revisão e conserto do carro",
+      "travelHome": "Viagens e visitas à família",
+      "overtime": "Horas extras",
+      "festivalBonus": "Bônus de festas (Eid, Diwali, Natal…)",
+      "performanceBonus": "Bônus anual por desempenho",
+      "sideJobs": "Trabalhos extras ou bicos"
+    }
+  },
+  "calc": {
+    "categories": {
+      "housing": "Moradia",
+      "utilities": "Contas da casa",
+      "transport": "Transporte",
+      "family": "Comida, família e lazer",
+      "care": "Saúde, ajuda e doações",
+      "yearly": "Gastos anuais",
+      "debt": "Parcelas de empréstimos",
+      "subscriptions": "Assinaturas"
+    },
+    "presets": {
+      "emergency": "Reserva de emergência primeiro",
+      "debt": "Dívidas primeiro",
+      "even": "Dividir igualmente",
+      "goals": "Metas primeiro"
+    },
+    "otherCosts": "outros gastos",
+    "otherIncome": "outras rendas",
+    "health": {
+      "labels": {
+        "excellent": "Excelente",
+        "good": "Boa",
+        "okay": "Razoável",
+        "needsAttention": "Precisa de atenção"
+      },
+      "parts": {
+        "savings": "Economia mensal",
+        "housing": "Custo de moradia",
+        "debt": "Dívidas",
+        "emergency": "Reserva de emergência",
+        "wants": "Gastos não essenciais"
+      },
+      "savings": {
+        "negative": "Suas contas custam mais do que você ganha, então não sobra nada para guardar. A meta é guardar 20% ({target}) por mês.",
+        "low": "Sobram {pct} da sua renda depois das contas. Tente chegar a 20% ({target} por mês).",
+        "good": "Sobram {pct} da sua renda depois das contas. Isso supera a meta de 20%."
+      },
+      "housing": {
+        "comfortable": "A moradia leva {pct} da sua renda. Abaixo de 30% é confortável.",
+        "high": "A moradia leva {pct} da sua renda. Tente manter abaixo de 30% ({target}).",
+        "free": "Você tem casa própria ou mora sem pagar aluguel, então a moradia não é uma preocupação.",
+        "unknown": "O campo de aluguel ou financiamento está vazio. Diga se você tem casa própria ou mora sem pagar aluguel para ganhar estes pontos.",
+        "missing": "Você disse que paga pela moradia. Adicione seu aluguel ou financiamento para ganhar estes pontos."
+      },
+      "debt": {
+        "payments": "As parcelas de empréstimos levam {pct} da sua renda. Abaixo de 10% é saudável.",
+        "none": "Você não tem parcelas de empréstimos. Ótimo.",
+        "highApr": "Um cartão cobra mais de 15% de juros ao ano, o que te custa mais caro."
+      },
+      "emergency": {
+        "noBills": "Adicione suas contas para podermos verificar isto.",
+        "none": "Você não tem dinheiro guardado para emergências. Tente juntar {target} (3 meses de contas essenciais).",
+        "under3": "Sua reserva de emergência cobre {months} meses de contas essenciais. Primeiro, tente chegar a 3 meses ({target}).",
+        "under6": "Sua reserva de emergência cobre {months} meses de contas essenciais. Próxima meta: 6 meses ({target}).",
+        "done": "Você tem 6 meses ou mais de contas essenciais guardados. Excelente."
+      },
+      "wants": {
+        "share": "Comer fora, compras e assinaturas levam {pct} da sua renda.",
+        "good": "Abaixo de 30% é uma boa meta.",
+        "high": "Tente baixar para menos de 30% ({target})."
+      },
+      "tip": {
+        "savings": {
+          "one": "Maior ganho: guardar uma parte maior da sua renda todo mês pode render até {count} ponto.",
+          "many": "Maior ganho: guardar uma parte maior da sua renda todo mês pode render até {count} pontos.",
+          "other": "Maior ganho: guardar uma parte maior da sua renda todo mês pode render até {count} pontos."
+        },
+        "housingPaid": {
+          "one": "Maior ganho: reduzir seu custo de moradia pode render até {count} ponto.",
+          "many": "Maior ganho: reduzir seu custo de moradia pode render até {count} pontos.",
+          "other": "Maior ganho: reduzir seu custo de moradia pode render até {count} pontos."
+        },
+        "housingQuestion": {
+          "one": "Maior ganho: responder à pergunta sobre moradia pode render até {count} ponto.",
+          "many": "Maior ganho: responder à pergunta sobre moradia pode render até {count} pontos.",
+          "other": "Maior ganho: responder à pergunta sobre moradia pode render até {count} pontos."
+        },
+        "debtHighApr": {
+          "one": "Maior ganho: quitar os cartões com juros altos pode render até {count} ponto.",
+          "many": "Maior ganho: quitar os cartões com juros altos pode render até {count} pontos.",
+          "other": "Maior ganho: quitar os cartões com juros altos pode render até {count} pontos."
+        },
+        "debtLoans": {
+          "one": "Maior ganho: reduzir as parcelas dos seus empréstimos pode render até {count} ponto.",
+          "many": "Maior ganho: reduzir as parcelas dos seus empréstimos pode render até {count} pontos.",
+          "other": "Maior ganho: reduzir as parcelas dos seus empréstimos pode render até {count} pontos."
+        },
+        "emergency": {
+          "one": "Maior ganho: montar sua reserva de emergência pode render até {count} ponto.",
+          "many": "Maior ganho: montar sua reserva de emergência pode render até {count} pontos.",
+          "other": "Maior ganho: montar sua reserva de emergência pode render até {count} pontos."
+        },
+        "wants": {
+          "one": "Maior ganho: gastar um pouco menos com o que não é essencial pode render até {count} ponto.",
+          "many": "Maior ganho: gastar um pouco menos com o que não é essencial pode render até {count} pontos.",
+          "other": "Maior ganho: gastar um pouco menos com o que não é essencial pode render até {count} pontos."
+        },
+        "perfect": "Tudo está em ótima forma. Continue assim!"
+      }
+    }
+  },
+  "format": {
+    "currencies": {
+      "USD": "USD — Dólar americano",
+      "GBP": "GBP — Libra esterlina",
+      "EUR": "EUR — Euro",
+      "INR": "INR — Rupia indiana",
+      "PKR": "PKR — Rupia paquistanesa",
+      "AED": "AED — Dirham dos Emirados",
+      "CAD": "CAD — Dólar canadense",
+      "AUD": "AUD — Dólar australiano"
+    },
+    "lakh": "{amount} lakh",
+    "crore": "{amount} crore",
+    "lakhShort": "{amount} L",
+    "croreShort": "{amount} Cr",
+    "duration": {
+      "now": "imediatamente",
+      "months": {
+        "one": "{count} mês",
+        "many": "{count} meses",
+        "other": "{count} meses"
+      },
+      "years": {
+        "one": "{count} ano",
+        "many": "{count} anos",
+        "other": "{count} anos"
+      },
+      "yearsMonths": "{years} e {months}"
+    },
+    "parse": {
+      "digits": "Digite apenas números, como 1500",
+      "negative": "Não pode ser menor que zero",
+      "tooBig": "Esse número é grande demais"
+    },
+    "pctWords": {
+      "all": "tudo (100%)",
+      "threeQuarters": "cerca de três quartos (75%)",
+      "half": "cerca de metade (50%)",
+      "third": "cerca de um terço (33%)",
+      "quarter": "cerca de um quarto (25%)",
+      "fifth": "cerca de um quinto (20%)",
+      "tenth": "cerca de um décimo (10%)",
+      "about": "cerca de {pct}%"
+    }
+  },
+  "inputs": {
+    "groups": {
+      "income": {
+        "title": "Renda"
+      },
+      "extras": {
+        "title": "Renda extra ao longo do ano",
+        "blurb": "Bônus, horas extras, bicos… Informe o total do ano inteiro e nós dividimos por 12 meses. Pule se não tiver."
+      },
+      "housing": {
+        "title": "Moradia",
+        "blurb": "Aluguel ou financiamento, e seguro residencial."
+      },
+      "utilities": {
+        "title": "Contas da casa",
+        "blurb": "Luz, água, gás, internet e telefone."
+      },
+      "transport": {
+        "title": "Transporte",
+        "blurb": "Combustível, passagens, seguro e financiamento do carro."
+      },
+      "family": {
+        "title": "Comida, família e lazer",
+        "blurb": "Escola, mercado, comer fora e compras."
+      },
+      "care": {
+        "title": "Saúde, ajuda e doações",
+        "blurb": "Remédios, ajuda doméstica, dinheiro para a família e caridade. Pule o que não se aplica."
+      },
+      "yearly": {
+        "title": "Gastos anuais",
+        "blurb": "Gastos grandes que não vêm todo mês. Informe o total do ano inteiro e calculamos quanto separar por mês."
+      },
+      "debt": {
+        "title": "Empréstimos e cartões de crédito",
+        "blurb": "Opcional. Pule se não tiver nenhum."
+      },
+      "subs": {
+        "title": "Assinaturas",
+        "blurb": "Opcional. Streaming, IA e ferramentas de trabalho, academia, apps e clubes."
+      },
+      "savings": {
+        "title": "Reserva de emergência",
+        "blurb": "Opcional. Dinheiro que você já guardou."
+      }
+    },
+    "fields": {
+      "income": {
+        "label": "Salário líquido mensal",
+        "help": "Depois dos impostos. O valor que cai na sua conta."
+      },
+      "rent": {
+        "label": "Aluguel ou financiamento"
+      },
+      "homeIns": {
+        "label": "Seguro residencial ou fiança"
+      },
+      "electricity": {
+        "label": "Luz"
+      },
+      "waterGas": {
+        "label": "Água e gás"
+      },
+      "internet": {
+        "label": "Internet e telefone"
+      },
+      "fuel": {
+        "label": "Combustível"
+      },
+      "transit": {
+        "label": "Ônibus, metrô, táxi/app e pedágios"
+      },
+      "carIns": {
+        "label": "Seguro do carro"
+      },
+      "carLoan": {
+        "label": "Parcela do financiamento do carro"
+      },
+      "school": {
+        "label": "Mensalidade escolar ou creche"
+      },
+      "groceries": {
+        "label": "Mercado"
+      },
+      "dining": {
+        "label": "Comer fora e delivery"
+      },
+      "misc": {
+        "label": "Compras por impulso e extras"
+      },
+      "medical": {
+        "label": "Consultas médicas e remédios"
+      },
+      "homeHelp": {
+        "label": "Ajuda doméstica (diarista, cozinheira, motorista)"
+      },
+      "familySupport": {
+        "label": "Dinheiro que você envia à família"
+      },
+      "giving": {
+        "label": "Caridade e doações religiosas"
+      },
+      "other": {
+        "label": "Qualquer outra coisa que você paga todo mês"
+      },
+      "emergencyFund": {
+        "label": "Dinheiro guardado para emergências",
+        "help": "O valor total, não mensal."
+      },
+      "perMonth": "por mês"
+    },
+    "presets": {
+      "extra": {
+        "festivalBonus": "Bônus de festas (Eid, Diwali, Natal…)",
+        "performanceBonus": "Bônus anual por desempenho",
+        "appreciationBonus": "Bônus de reconhecimento",
+        "overtime": "Horas extras",
+        "sideWork": "Trabalhos extras ou bicos",
+        "thirteenthMonth": "13º salário",
+        "taxRefund": "Restituição do imposto de renda"
+      },
+      "yearly": {
+        "festivals": "Festas (Eid, Diwali, Natal…)",
+        "weddings": "Casamentos e presentes",
+        "schoolBooks": "Livros, uniformes e matrícula escolar",
+        "carService": "Revisão e conserto do carro",
+        "insurance": "Seguro anual",
+        "travel": "Viagens e visitas à família",
+        "homeRepairs": "Reparos na casa"
+      }
+    },
+    "housing": {
+      "question": "Você tem casa própria ou mora sem pagar aluguel?",
+      "helpLabel": "Casa própria ou sem aluguel",
+      "yes": "Sim",
+      "no": "Não, eu pago pela moradia",
+      "freeYes": "Entendido. Não vamos contar a moradia como gasto.",
+      "freeNo": "Adicione seu aluguel ou financiamento acima para que os resultados fiquem corretos."
+    },
+    "chips": {
+      "tapToAdd": "Toque para adicionar",
+      "addOwn": "Adicionar o seu",
+      "empty": "Nada adicionado ainda. Toque em uma sugestão acima ou adicione o seu."
+    },
+    "rows": {
+      "remove": "Remover {name}",
+      "whatIsIt": "O que é?",
+      "thisDebt": "esta dívida",
+      "thisSubscription": "esta assinatura",
+      "thisCost": "este gasto",
+      "thisIncome": "esta renda"
+    },
+    "debts": {
+      "addCard": "Adicionar cartão de crédito",
+      "addLoan": "Adicionar empréstimo",
+      "name": "Nome",
+      "type": "Tipo",
+      "typeCard": "Cartão de crédito",
+      "typeLoan": "Empréstimo",
+      "placeholderCard": "ex.: Cartão do banco",
+      "placeholderLoan": "ex.: Empréstimo pessoal",
+      "balance": "Valor devido",
+      "apr": "Taxa de juros anual (% a.a.)",
+      "payment": "Parcela mensal",
+      "empty": "Nenhum empréstimo ou cartão adicionado. Tudo bem. Pule esta parte se não tiver nenhum.",
+      "aprCapped": "Taxas acima de {max}% são muito incomuns, então usamos {max}%. Confira sua fatura."
+    },
+    "subs": {
+      "add": "Adicionar assinatura",
+      "service": "Serviço",
+      "placeholder": "ex.: Netflix ou Claude",
+      "cost": "Custo por mês",
+      "type": "Tipo",
+      "rarely": "Quase não uso",
+      "empty": "Nenhuma assinatura ainda. Adicione streaming, apps ou academia e marque as que você quase não usa.",
+      "byType": "Por tipo",
+      "total": "Total",
+      "summaryOver": "Isso é {pct}% da sua renda. Uma boa referência é ficar abaixo de {guide}% ({limit}). Comece pelas que você quase não usa.",
+      "summaryWithin": "Isso é {pct}% da sua renda, dentro da referência de menos de {guide}%."
+    },
+    "yearly": {
+      "placeholder": "ex.: Presentes de aniversário",
+      "cost": "Custo do ano inteiro",
+      "perMonth": "Isso dá {amount} para separar por mês."
+    },
+    "extras": {
+      "placeholder": "ex.: Bônus de fim de ano",
+      "amount": "Valor do ano inteiro",
+      "perMonth": "Isso soma cerca de {amount} por mês à sua renda."
+    },
+    "subtitle": {
+      "startHere": "Comece aqui",
+      "optional": "Opcional",
+      "saved": "{amount} guardados",
+      "added": {
+        "one": "{amount} · {count} adicionado",
+        "many": "{amount} · {count} adicionados",
+        "other": "{amount} · {count} adicionados"
+      }
+    },
+    "typical": {
+      "nothing": "geralmente nada",
+      "range": "geralmente de {min} a {max} por mês",
+      "tip": "{help} Para {group}, isso é {range}{approx}.",
+      "approximate": " (uma referência aproximada para esta moeda)",
+      "higher": "Acima do comum para {group} (geralmente até {max})"
+    },
+    "toast": {
+      "removed": "{name} removido",
+      "undo": "Desfazer",
+      "sampleLoaded": "Orçamento de exemplo carregado: {profile}",
+      "fallback": {
+        "debts": "Empréstimo",
+        "subscriptions": "Assinatura",
+        "yearly": "Gasto",
+        "extras": "Renda extra"
+      }
+    },
+    "sample": {
+      "goalHoliday": "Férias em família",
+      "goalLaptop": "Notebook novo"
+    }
+  },
+  "wizard": {
+    "stepOf": "Etapa {step} de {total}",
+    "billsProgress": "Contas: {name} ({n} de {total})",
+    "next": "Próximo",
+    "seeResults": "Ver meus resultados",
+    "showAllInputs": "Mostrar todos os campos",
+    "hideInputs": "Ocultar campos",
+    "steps": {
+      "1": {
+        "title": "Qual é a sua renda mensal?",
+        "sub": "Seu salário líquido, depois dos impostos, mais bônus ou horas extras ao longo do ano. Você pode mudar quando quiser."
+      },
+      "2": {
+        "title": "Para onde vai o seu dinheiro?",
+        "sub": "Digite quanto você costuma gastar em um mês. Deixe o campo vazio se não se aplicar."
+      },
+      "3": {
+        "title": "Tem empréstimos ou assinaturas?",
+        "sub": "Esta etapa é opcional. Pule se não tiver nenhum."
+      }
+    },
+    "billPages": {
+      "housing": {
+        "name": "Moradia"
+      },
+      "utilities": {
+        "name": "Contas da casa"
+      },
+      "transport": {
+        "name": "Transporte"
+      },
+      "family": {
+        "name": "Comida, família e lazer"
+      },
+      "care": {
+        "name": "Saúde, ajuda e doações"
+      },
+      "yearly": {
+        "name": "Gastos anuais",
+        "title": "Algum gasto grande uma vez por ano?",
+        "sub": "Festas, livros escolares, conserto do carro… Divididos ao longo do ano, eles param de te pegar de surpresa. Pule se não tiver."
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "O que significa “{label}”?",
+    "sheetTitle": "Ajuda",
+    "text": {
+      "profile": "Escolha o lar mais parecido com o seu. Comparamos suas contas com as de casas parecidas, para que as dicas combinem com a sua vida.",
+      "currency": "Muda o símbolo da moeda e os valores “típicos” com que comparamos suas contas.",
+      "period": "Mostra todos os valores por mês ou por ano. Seus números continuam os mesmos; só muda a exibição.",
+      "income": "O dinheiro que cai na sua conta todo mês, depois dos impostos. Use o salário líquido, não o bruto.",
+      "rent": "Quanto você paga por mês de aluguel, ou a parcela do financiamento se estiver comprando o imóvel.",
+      "homeIns": "Seguro que paga se a sua casa ou seus pertences forem danificados ou roubados. Deixe vazio se não tiver.",
+      "electricity": "Sua conta de luz média por mês. Se muda conforme a estação, use uma média aproximada.",
+      "waterGas": "Suas contas mensais de água e gás somadas.",
+      "internet": "Internet de casa mais a conta do celular, somadas.",
+      "fuel": "Gasolina, etanol ou diesel para todos os seus veículos em um mês.",
+      "transit": "Passagens de ônibus e trem, corridas de app e pedágios em um mês.",
+      "carIns": "Seguro do carro por mês. Se você paga uma vez por ano, divida o valor anual por 12.",
+      "carLoan": "A parcela mensal do financiamento ou do leasing do carro.",
+      "school": "Mensalidade escolar, cursos, creche ou babá por mês.",
+      "groceries": "Comida e itens de casa que você compra em mercados e feiras.",
+      "dining": "Restaurantes, cafés, comida para viagem e delivery.",
+      "misc": "Compras que você não planejou: roupas, eletrônicos, presentes, pedidos online e mimos.",
+      "medical": "Consultas, exames e remédios em um mês comum. Se varia muito, use uma média aproximada.",
+      "homeHelp": "Salário de diarista, empregada, cozinheira, motorista, vigia ou babá que ajuda em casa.",
+      "familySupport": "Dinheiro que você envia regularmente para os pais ou outros familiares.",
+      "giving": "Doações para caridade e contribuições religiosas, como zakat, dízimo ou ofertas na sua mesquita, igreja ou templo, como valor mensal.",
+      "other": "Qualquer gasto mensal fixo que não se encaixa nos campos acima, como ração do pet, um consórcio ou aulas particulares.",
+      "extraAmount": "O total que você espera receber no ano inteiro, depois dos impostos. Dividimos por 12 e somamos à sua renda mensal. Para horas extras que variam, use um total anual aproximado.",
+      "yearlyCost": "O total do ano inteiro. Dividimos por 12 para mostrar quanto separar por mês.",
+      "emergencyFund": "Dinheiro que você já guardou para imprevistos, como perder o emprego ou um conserto grande. É um valor total, não mensal.",
+      "debtName": "Um nome para reconhecer este cartão ou empréstimo, como “Cartão do banco”.",
+      "debtType": "Cartões de crédito costumam cobrar juros bem mais altos que empréstimos.",
+      "debtBalance": "Quanto você ainda deve neste cartão ou empréstimo hoje.",
+      "debtApr": "A taxa de juros anual: o valor extra que o credor cobra por ano pelo empréstimo, em porcentagem. Você encontra na fatura ou no contrato. Quanto menor, melhor.",
+      "debtPayment": "Quanto você paga por mês neste cartão ou empréstimo.",
+      "subName": "O serviço, como Netflix ou uma academia.",
+      "subCost": "Quanto custa por mês. Se você paga por ano, divida por 12.",
+      "subKind": "Que tipo de assinatura é esta. Adivinhamos pelo nome; mude se erramos. Ferramentas de trabalho contam como conta obrigatória; o resto, como não essencial.",
+      "subRarely": "Marque se você usou menos de duas vezes no mês passado. Vamos sugerir cancelar.",
+      "housingFree": "Algumas pessoas têm casa própria quitada ou moram com a família sem pagar. Se for o seu caso, não vamos contar a moradia contra você.",
+      "summary": "Um resumo de uma linha do seu dinheiro, com base nos números que você informou.",
+      "spendNow": "Todas as contas mensais que você informou, somadas.",
+      "spendCould": "Suas contas depois das mudanças que você adicionou ao seu plano.",
+      "saveMonth": "O dinheiro liberado todo mês pelas mudanças do seu plano. Juros evitados em dívidas não entram aqui.",
+      "saveYear": "Sua economia mensal × 12.",
+      "top3": "As três maiores economias que encontramos, com a mais fácil no topo. Um bom lugar para começar.",
+      "health": "Uma nota de 0 a 100 que avalia cinco coisas: economia, moradia, dívidas, reserva de emergência e gastos não essenciais. Quanto maior, melhor.",
+      "split": "Compara seus gastos com uma referência comum: cerca de metade em contas obrigatórias, um terço em gastos não essenciais e um quinto guardado.",
+      "categories": "Cada barra mostra quanto da sua renda vai para aquela área. A linha fina mostra o típico para lares como o seu.",
+      "payday": "Uma lista curta para o dia em que o salário cai: separe dinheiro para os gastos anuais, guarde primeiro e mantenha um limite semanal de gastos. Marque cada passo todo mês.",
+      "allowance": "Seu orçamento para comer fora e fazer compras depois das ideias do seu plano, dividido por semanas. Gastar um valor fixo por semana é mais fácil de cumprir do que um total mensal.",
+      "plan": "Ideias para gastar menos, com base nas suas contas. Adicione ao seu plano as que você vai mesmo fazer; só essas contam.",
+      "cut": "Mova o controle até a parte que você realmente acha que consegue cortar. Na dúvida? Fique com a nossa sugestão.",
+      "addToPlan": "Só as mudanças que você adicionar contam para sua economia, gráficos e datas das metas.",
+      "interestAvoided": "Juros são o dinheiro extra que o credor te cobra. Evitá-los não coloca dinheiro no seu bolso hoje, mas sua dívida é quitada mais cedo.",
+      "years": "Por quanto tempo você continua guardando. Mais anos dão mais tempo para o seu dinheiro crescer.",
+      "rate": "Quanto suas economias rendem por ano, em média. Aplicações seguras rendem devagar; investimentos podem render mais, mas sobem e descem.",
+      "inflation": "Os preços sobem com o tempo, então o mesmo dinheiro compra menos no futuro. Isto mostra os valores futuros em dinheiro de hoje.",
+      "allocation": "Este é o dinheiro que sobra por mês depois das contas e do seu plano. Escolha como dividi-lo entre sua reserva de emergência, suas dívidas e suas metas.",
+      "goals": "Coisas para as quais você está guardando. Calculamos quando você vai alcançar cada uma usando a parte das economias que você dá às metas.",
+      "emergency": "Dinheiro guardado para imprevistos, como perder o emprego ou consertar o carro. Tente juntar de 3 a 6 meses de contas essenciais.",
+      "debtFree": "Quando seus empréstimos estariam totalmente quitados: hoje, e se você usar a parte das economias destinada às dívidas.",
+      "history": "Salve um retrato do mês todo mês para ver se seus gastos estão caindo com o tempo."
+    }
+  },
+  "months": {
+    "toast": {
+      "sampleNotSaved": "Orçamentos de exemplo não são salvos. Use seus próprios números primeiro.",
+      "addNumbersFirst": "Adicione alguns números primeiro",
+      "saveFailed": "Seu navegador não nos deixou salvar. Baixe um backup para guardar seus números.",
+      "saved": "{month} salvo",
+      "partialNoEdit": "Só os totais foram guardados em {month}, então não dá para abrir para edição.",
+      "editing": "Editando {month}. As mudanças são salvas nesse mês.",
+      "loaded": "{month} carregado",
+      "backTo": "{done} salvo. De volta a {month}.",
+      "numbersBack": "Os números de {month} voltaram",
+      "deleted": "{month} apagado",
+      "undo": "Desfazer",
+      "savedAndRemoved": "{month} salvo. {drop} foi removido."
+    },
+    "welcome": {
+      "titleCompared": "Que bom te ver de novo. Em comparação com {month}:",
+      "titleWent": "Que bom te ver de novo. Veja como foi {month} em comparação com {prev}:",
+      "same": {
+        "spend": "Seus gastos ficaram iguais.",
+        "leftOver": "Sobrou o mesmo valor.",
+        "score": "Sua nota de saúde ficou igual."
+      },
+      "spentLess": "Você gastou {amount} a menos.",
+      "spentMore": "Você gastou {amount} a mais.",
+      "leftOverMore": "Sobraram {amount} a mais.",
+      "leftOverLess": "Sobraram {amount} a menos.",
+      "scoreUp": {
+        "one": "Sua nota de saúde subiu {count} ponto.",
+        "many": "Sua nota de saúde subiu {count} pontos.",
+        "other": "Sua nota de saúde subiu {count} pontos."
+      },
+      "scoreDown": {
+        "one": "Sua nota de saúde caiu {count} ponto.",
+        "many": "Sua nota de saúde caiu {count} pontos.",
+        "other": "Sua nota de saúde caiu {count} pontos."
+      }
+    },
+    "deleteDialog": {
+      "title": "Apagar {month}?",
+      "message": "Isso remove deste dispositivo os números salvos desse mês. Seus outros meses continuam como estão.",
+      "confirm": "Apagar mês"
+    },
+    "banners": {
+      "editing": "Você está editando {month}. As mudanças são salvas em {monthOnly}.",
+      "copiedLast": "Copiamos os números do mês passado. Atualize o que tiver mudado.",
+      "copiedFrom": "Copiamos seus números de {month}. Atualize o que tiver mudado.",
+      "cap": {
+        "one": "Você tem {count} meses salvos, o máximo que este navegador guarda. Salvar {month} remove seu mês mais antigo, {drop}. Baixe um backup antes para guardar uma cópia.",
+        "many": "Você tem {count} meses salvos, o máximo que este navegador guarda. Salvar {month} remove seu mês mais antigo, {drop}. Baixe um backup antes para guardar uma cópia.",
+        "other": "Você tem {count} meses salvos, o máximo que este navegador guarda. Salvar {month} remove seu mês mais antigo, {drop}. Baixe um backup antes para guardar uma cópia."
+      },
+      "capConfirm": "Salvar e remover {month}"
+    },
+    "status": {
+      "sample": "Orçamentos de exemplo não são salvos no seu histórico.",
+      "editing": "Editando {month}. As mudanças são salvas automaticamente.",
+      "saved": "{month} está salvo (última atualização às {time}). Ele se atualiza sozinho quando você muda seus números.",
+      "savedOn": "{month} está salvo (última atualização às {time}, {date}). Ele se atualiza sozinho quando você muda seus números.",
+      "autoSave": "{month} é salvo automaticamente quando você muda seus números."
+    },
+    "leftOver": "Sobram {amount}",
+    "monthCount": {
+      "one": "{count} mês",
+      "many": "{count} meses",
+      "other": "{count} meses"
+    },
+    "otherCurrency": {
+      "one": "{count} mês salvo em outra moeda ficou de fora.",
+      "many": "{count} meses salvos em outra moeda ficaram de fora.",
+      "other": "{count} meses salvos em outra moeda ficaram de fora."
+    },
+    "same": "Igual",
+    "stats": {
+      "best": "Melhor mês",
+      "bestEmpty": "Aparece quando houver dois meses salvos",
+      "streak": "Sequência de economia",
+      "streakOn": "Meses seguidos com sobra, ou com mais sobra que o mês anterior",
+      "streakOff": "Começa com um mês em que sobra dinheiro",
+      "saved": "Meses salvos",
+      "since": "Desde {month}",
+      "sinceCurrencies": {
+        "one": "Desde {month} · {count} moeda",
+        "many": "Desde {month} · {count} moedas",
+        "other": "Desde {month} · {count} moedas"
+      }
+    },
+    "trend": {
+      "names": {
+        "spend": "Gastos totais",
+        "leftOver": "Dinheiro que sobra",
+        "score": "Nota de saúde"
+      },
+      "scoreNeedsIncome": "A nota de saúde precisa da sua renda. Ela aparece quando dois meses salvos tiverem renda informada.",
+      "needTwoSameCurrency": "Seu gráfico aparece quando houver dois meses salvos na mesma moeda.",
+      "needTwo": "Seu gráfico aparece quando houver dois meses salvos.",
+      "note": {
+        "one": "{name}, {count} mês.",
+        "many": "{name}, {count} meses.",
+        "other": "{name}, {count} meses."
+      },
+      "aria": "{name} por mês: {items}.",
+      "ariaItem": "{month} {value}",
+      "tipChange": "{amount} em relação ao mês anterior"
+    },
+    "bars": {
+      "income": "Renda",
+      "spending": "Gastos",
+      "total": "Total",
+      "leftOverAbove": "Acima de cada mês: dinheiro que sobra",
+      "totalsOnly": {
+        "one": "{count} mês guardou só os totais, então não está dividido por categoria.",
+        "many": "{count} meses guardaram só os totais, então não estão divididos por categoria.",
+        "other": "{count} meses guardaram só os totais, então não estão divididos por categoria."
+      },
+      "ariaFlow": "Renda e gastos por mês: {items}.",
+      "ariaFlowItem": "{month} renda {income}, gastos {spend}",
+      "ariaCategories": "Gastos por categoria em cada mês: {items}.",
+      "ariaCategoriesItem": "{month} {amount}",
+      "fit": {
+        "one": "Mostrando os últimos {shown} de {count} meses. Use uma tela mais larga ou vire o celular de lado para ver mais.",
+        "many": "Mostrando os últimos {shown} de {count} meses. Use uma tela mais larga ou vire o celular de lado para ver mais.",
+        "other": "Mostrando os últimos {shown} de {count} meses. Use uma tela mais larga ou vire o celular de lado para ver mais."
+      },
+      "empty": "Nada para mostrar ainda.",
+      "shortBy": "Faltam {amount}"
+    },
+    "alerts": {
+      "steadySummary": "Nada fora do comum. Suas contas estão estáveis.",
+      "needTwoSummary": "Aparece quando houver dois meses salvos com todos os detalhes.",
+      "steady": "Nenhuma conta subiu ou caiu de forma constante, nem mudou 15% ou mais recentemente.",
+      "needTwo": "Salve dois meses com todos os seus números para ver o que está mudando."
+    },
+    "compare": {
+      "totalsOnlySuffix": " · só totais",
+      "pickDifferent": "Escolha dois meses diferentes para compará-los.",
+      "pickTwo": "Escolha dois meses para ver o que mudou.",
+      "needTwo": "Aparece quando houver dois meses salvos.",
+      "differentCurrencies": "Esses meses usam moedas diferentes ({a} e {b}), então não dá para compará-los.",
+      "differentCurrenciesSummary": "{b} e {a} usam moedas diferentes.",
+      "partialNote": "Só os totais foram guardados em {month}, então não dá para comparar as contas uma a uma.",
+      "showAll": "Mostrar contas que não mudaram",
+      "caption": "{a} em comparação com {b}",
+      "item": "Item",
+      "change": "Variação",
+      "summarySame": "{b} x {a}: mesmos gastos.",
+      "summaryLess": "{b} x {a}: gastou {amount} a menos.",
+      "summaryMore": "{b} x {a}: gastou {amount} a mais.",
+      "summaryPlain": "{b} x {a}"
+    },
+    "goals": {
+      "tracked": {
+        "one": "{count} meta acompanhada nos seus meses salvos.",
+        "many": "{count} metas acompanhadas nos seus meses salvos.",
+        "other": "{count} metas acompanhadas nos seus meses salvos."
+      },
+      "savedIn": "Salva em {month}. A variação aparece no próximo mês.",
+      "up": "Subiu {amount} desde {month}.",
+      "down": "Caiu {amount} desde {month}.",
+      "noChange": "Sem mudança desde {month}.",
+      "defaultName": "Meta",
+      "progress": "{saved} de {target} ({pct})"
+    },
+    "list": {
+      "summary": {
+        "one": "{count} mês salvo, de no máximo {max}. Veja, edite ou apague qualquer um deles.",
+        "many": "{count} meses salvos, de no máximo {max}. Veja, edite ou apague qualquer um deles.",
+        "other": "{count} meses salvos, de no máximo {max}. Veja, edite ou apague qualquer um deles."
+      },
+      "thisMonth": "Este mês",
+      "editing": "Editando",
+      "totalsOnly": "Só totais",
+      "compareAria": "Comparar {month} com o mês anterior",
+      "editAria": "Editar {month}",
+      "deleteAria": "Apagar {month}",
+      "partialTitle": "Só os totais foram guardados neste mês"
+    },
+    "backupStatus": {
+      "today": "Último backup: hoje.",
+      "yesterday": "Último backup: ontem.",
+      "daysAgo": {
+        "one": "Último backup: há {count} dia.",
+        "many": "Último backup: há {count} dias.",
+        "other": "Último backup: há {count} dias."
+      },
+      "none": "Nenhum backup ainda. Baixe um para guardar uma cópia do seu histórico.",
+      "empty": "Baixe ou abra um arquivo de backup."
+    },
+    "saveMonth": "Salvar {month}",
+    "saveThisMonth": "Salvar este mês"
+  },
+  "backup": {
+    "share": {
+      "copied": "Link copiado",
+      "copyManual": "Pressione Ctrl+C (ou toque e segure) para copiar o link selecionado",
+      "invalid": "Esse link compartilhado é inválido ou está incompleto",
+      "dialog": {
+        "title": "Abrir orçamento compartilhado?",
+        "message": "Este link contém números de orçamento que alguém compartilhou com você. Ao carregá-lo, os números em que você está trabalhando agora serão substituídos. Seus meses salvos são mantidos.",
+        "confirm": "Carregar orçamento compartilhado"
+      },
+      "loaded": "Orçamento compartilhado carregado"
+    },
+    "downloaded": "Backup baixado",
+    "savedMonths": {
+      "one": "{count} mês salvo",
+      "many": "{count} meses salvos",
+      "other": "{count} meses salvos"
+    },
+    "olderMonths": {
+      "one": "{count} mês mais antigo",
+      "many": "{count} meses mais antigos",
+      "other": "{count} meses mais antigos"
+    },
+    "monthsNone": "nenhum mês salvo",
+    "monthsSingle": "1 mês salvo ({month})",
+    "monthsRange": "{months} ({from} – {to})",
+    "tooLarge": "Esse arquivo é grande demais para ser um backup de orçamento",
+    "notBackup": "Esse arquivo não é um backup de orçamento",
+    "openDialog": {
+      "title": "Abrir este backup?",
+      "message": "“{file}” tem {backupMonths}, além dos seus números e configurações. Este dispositivo tem {hereMonths}. Mesclar adiciona os meses do backup aos daqui (quando os dois têm o mesmo mês, fica o que foi salvo mais recentemente). Substituir troca tudo o que está aqui pelo backup.",
+      "overflow": {
+        "one": "Só os {count} meses mais recentes são mantidos, então mesclar removeria {dropped}.",
+        "many": "Só os {count} meses mais recentes são mantidos, então mesclar removeria {dropped}.",
+        "other": "Só os {count} meses mais recentes são mantidos, então mesclar removeria {dropped}."
+      },
+      "merge": "Mesclar",
+      "replace": "Substituir"
+    },
+    "imported": {
+      "opened": "Backup aberto: {months} neste dispositivo",
+      "openedDropped": "Backup aberto: {months} neste dispositivo; ficaram de fora: {dropped}",
+      "merged": "Backup mesclado: {months} neste dispositivo",
+      "mergedDropped": "Backup mesclado: {months} neste dispositivo; ficaram de fora: {dropped}"
+    },
+    "print": {
+      "title": "Meu plano de economia",
+      "spendNow": "Quanto você gasta hoje",
+      "perMonth": "{amount} por mês",
+      "couldSave": "Dinheiro que você poderia economizar por mês",
+      "couldSpend": "Quanto você poderia gastar",
+      "perYear": "Isso dá por ano",
+      "healthScore": "Nota de saúde do orçamento",
+      "changes": "Mudanças no meu plano ({count})",
+      "cols": {
+        "change": "Mudança",
+        "effort": "Esforço",
+        "cost": "Custo para começar",
+        "monthly": "Economia por mês",
+        "yearly": "Economia por ano"
+      },
+      "interestNote": "(juros evitados, não contam como economia mensal)",
+      "nothing": "Nada",
+      "emptyPlan": "Nada adicionado ao plano ainda.",
+      "goals": "Metas",
+      "defaultGoal": "Meta",
+      "disclaimer": "Estas são estimativas para ajudar no seu planejamento, não aconselhamento financeiro. Calculado de forma privada no seu navegador."
+    }
+  },
+  "historyEngine": {
+    "fields": {
+      "rent": "Aluguel ou financiamento",
+      "homeIns": "Seguro residencial",
+      "electricity": "Luz",
+      "waterGas": "Água e gás",
+      "internet": "Internet e telefone",
+      "fuel": "Combustível",
+      "transit": "Passagens e pedágios",
+      "carIns": "Seguro do carro",
+      "carLoan": "Financiamento do carro",
+      "school": "Mensalidade escolar",
+      "groceries": "Mercado",
+      "dining": "Comer fora",
+      "misc": "Compras por impulso",
+      "medical": "Gastos com saúde",
+      "homeHelp": "Ajuda doméstica",
+      "familySupport": "Dinheiro enviado à família",
+      "giving": "Doações",
+      "other": "Outras contas",
+      "subscriptions": "Assinaturas"
+    },
+    "compare": {
+      "pay": "Salário líquido",
+      "extras": "Renda extra (média mensal)",
+      "income": "Renda total",
+      "spend": "Gastos totais",
+      "leftOver": "Dinheiro que sobra",
+      "score": "Nota de saúde financeira"
+    },
+    "alerts": {
+      "risingSingular": {
+        "one": "{label} subiu {count} mês seguido.",
+        "many": "{label} subiu {count} meses seguidos.",
+        "other": "{label} subiu {count} meses seguidos."
+      },
+      "risingPlural": {
+        "one": "{label} subiram {count} mês seguido.",
+        "many": "{label} subiram {count} meses seguidos.",
+        "other": "{label} subiram {count} meses seguidos."
+      },
+      "fallingSingular": {
+        "one": "{label} caiu {count} mês seguido.",
+        "many": "{label} caiu {count} meses seguidos.",
+        "other": "{label} caiu {count} meses seguidos."
+      },
+      "fallingPlural": {
+        "one": "{label} caíram {count} mês seguido.",
+        "many": "{label} caíram {count} meses seguidos.",
+        "other": "{label} caíram {count} meses seguidos."
+      },
+      "upSinceSingular": "{label} subiu {pct}% desde {month}.",
+      "upSincePlural": "{label} subiram {pct}% desde {month}.",
+      "downSinceSingular": "{label} caiu {pct}% desde {month}.",
+      "downSincePlural": "{label} caíram {pct}% desde {month}."
+    }
+  },
+  "page": {
+    "skipLink": "Pular para a calculadora",
+    "header": {
+      "navLabel": "Principal",
+      "brand": "Otimizador de Orçamento",
+      "nav": {
+        "calculator": "Calculadora",
+        "tips": "Dicas de dinheiro",
+        "glossary": "Glossário"
+      }
+    },
+    "hero": {
+      "privacy": "100% privado. Seus dados financeiros são processados no seu aparelho e nunca saem dele.",
+      "title_html": "Otimizador de Orçamento Doméstico <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Simulador de Economia</span>",
+      "lead": "Adicione suas contas do mês. Veja para onde vai o seu dinheiro, jeitos simples de gastar menos e quanto você poderia economizar.",
+      "start": "Começar: cerca de 2 minutos",
+      "note": "Grátis. Sem cadastro. Funciona com 8 moedas, incluindo rupias em lakh e crore.",
+      "receipt": {
+        "title": "Seu mês",
+        "badge": "Exemplo",
+        "income": "Renda",
+        "bills": "Contas",
+        "leftOver": "Sobra",
+        "plan": "+ Seu plano",
+        "toSave": "Para guardar"
+      }
+    },
+    "common": {
+      "seeExample": "Ver um exemplo",
+      "backToMonth": "Voltar para este mês",
+      "downloadBackup": "Baixar backup",
+      "addIncome": "Adicionar minha renda",
+      "chartKey": "Legenda do gráfico"
+    },
+    "how": {
+      "title": "Como esta ferramenta funciona",
+      "step1": {
+        "title": "Informe suas contas",
+        "body": "O que você gasta num mês normal."
+      },
+      "step2": {
+        "title": "Comparamos com lares típicos",
+        "body": "Cada conta, comparada com casas como a sua."
+      },
+      "step3": {
+        "title": "Sugerimos mudanças",
+        "body": "Com a conta por trás de cada economia."
+      },
+      "step4": {
+        "title": "Veja quanto você poderia economizar",
+        "body": "Por mês, por ano e ao longo do tempo."
+      }
+    },
+    "adLabel": "Publicidade",
+    "wizard": {
+      "stepsLabel": "Etapas",
+      "steps": {
+        "income_html": "<span class=\"dot\">1</span>Sua renda",
+        "bills_html": "<span class=\"dot\">2</span>Suas contas",
+        "loans_html": "<span class=\"dot\">3</span>Empréstimos &amp; assinaturas",
+        "results_html": "<span class=\"dot\">4</span>Seus resultados"
+      },
+      "startOver": "Começar de novo",
+      "skip": "Pular para os resultados",
+      "progressLabel": "Seu progresso",
+      "note_html": "Com a sua renda, calculamos sua nota de saúde e o que sobra. Você pode adicioná-la depois. Toque em <strong>Próximo</strong> de novo para continuar sem ela.",
+      "back": "Voltar",
+      "justLooking_html": "Só dando uma olhada? <button type=\"button\" data-action=\"sample\" class=\"min-h-11 link\">Veja um orçamento de exemplo</button>"
+    },
+    "results": {
+      "title": "Seus resultados",
+      "editNumbers": "Editar meus números",
+      "sectionsLabel": "Seções dos resultados",
+      "nav": {
+        "summary": "Resumo",
+        "ideas": "Ideias",
+        "payday": "Pagamento",
+        "health": "Saúde",
+        "spending": "Gastos",
+        "growth": "Crescimento",
+        "planAhead": "Planejar",
+        "history": "Histórico"
+      },
+      "label": "Seus resultados"
+    },
+    "inputs": {
+      "title": "Todos os seus números",
+      "who": "Para quem é este orçamento?",
+      "householdType": "Tipo de lar",
+      "profiles": {
+        "single": "Solteiro que aluga na cidade",
+        "suburban": "Família de 4 no subúrbio",
+        "youngpro": "Jovem profissional"
+      },
+      "currency": "Moeda",
+      "periodLegend": "Mostrar valores por mês ou por ano",
+      "monthly": "Mensal",
+      "yearly": "Anual",
+      "example": "Exemplo",
+      "startOverLabel": "Começar de novo"
+    },
+    "banners": {
+      "sample_html": "Este é um <strong class=\"font-semibold\">orçamento de exemplo</strong> para o perfil <span id=\"sampleProfile\">Família de 4 no subúrbio</span>.",
+      "useOwn": "Usar meus próprios números",
+      "sampleTip_html": "Dica: o <button type=\"button\" id=\"sampleFull\" class=\"link\">exemplo da Família de 4 no subúrbio</button> mostra todos os tipos de renda e conta que você pode adicionar.",
+      "welcomeClose": "Fechar a mensagem de boas-vindas",
+      "startBlank": "Começar do zero",
+      "backupDue": "Já se passaram mais de 30 dias desde o seu último backup. Seu histórico está só neste navegador.",
+      "notNow": "Agora não",
+      "addIncome": "Adicione sua renda para ver sua nota de saúde e o que sobra."
+    },
+    "empty": {
+      "title": "Nada para mostrar ainda",
+      "body": "Adicione sua renda e algumas contas, e seus resultados aparecem aqui na hora.",
+      "enter": "Informar meus números"
+    },
+    "summary": {
+      "label": "Resumo",
+      "saveMonth": "Dinheiro que você poderia economizar por mês",
+      "perYear_html": "<span id=\"sumAnnual\">0</span> por ano",
+      "spendNow": "Quanto você gasta hoje",
+      "couldSpend": "Quanto você poderia gastar",
+      "interest_html": "Você também deixaria de pagar <strong id=\"interestAmount\" class=\"font-semibold text-white\"></strong> de juros de dívidas. Não entra na conta acima; ajuda a quitar sua dívida mais cedo.",
+      "receiptTitle_html": "Seu <span data-period-word=\"\">mês</span>, somado",
+      "bonuses": "+ Bônus (divididos ao longo do ano)",
+      "billsEntered": "Contas que você informou",
+      "planSavings": "+ Economia do seu plano",
+      "leftWithPlan": "Sobra com o seu plano"
+    },
+    "plan": {
+      "title": "Jeitos de gastar menos",
+      "intro": "Ative as ideias que você vai mesmo tentar. Só elas contam nos seus resultados.",
+      "top3": "As 3 primeiras coisas a fazer",
+      "more": "Mais ideias",
+      "order": "Ordem",
+      "sort": {
+        "savings": "Maior economia",
+        "easy": "Mais fáceis primeiro"
+      },
+      "empty": "Suas contas já parecem boas. Nenhuma está acima do típico para este tipo de lar."
+    },
+    "payday": {
+      "title": "Seu plano para o dia do pagamento",
+      "intro": "Faça isto no dia em que o salário cair. Leva cerca de 10 minutos.",
+      "dayLabel": "Meu salário cai no",
+      "empty_html": "Adicione sua renda para receber seu plano do dia do pagamento. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Adicionar minha renda</button>",
+      "reminder": "Me lembrar todo dia de pagamento"
+    },
+    "health": {
+      "title": "Saúde do orçamento",
+      "empty_html": "Adicione sua renda para ver sua nota de saúde. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Adicionar minha renda</button>",
+      "outOf": "de 100",
+      "breakdown": "Detalhes da nota"
+    },
+    "spending": {
+      "title": "Para onde vai o seu dinheiro",
+      "empty_html": "Adicione sua renda para ver como seu dinheiro está dividido. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Adicionar minha renda</button>",
+      "splitTitle": "Como sua renda está dividida",
+      "guideline": "Uma referência comum: 50% para contas obrigatórias, 30% para gastos não essenciais e 20% guardados.",
+      "byCategory": "Por categoria",
+      "legendYou": "Você",
+      "legendTypical": "Típico"
+    },
+    "growth": {
+      "title": "Como suas economias podem crescer",
+      "intro": "Isto supõe que você guarde o dinheiro que sobra todo mês e que ele renda na taxa que você escolher.",
+      "alt": "Se você também guardar o dinheiro extra:",
+      "cur": "Se continuar como está:",
+      "extra_html": "Dinheiro extra que você teria <span id=\"fvYears\"></span>",
+      "years": "Quantos anos?",
+      "rate": "Quanto suas economias rendem por ano",
+      "inflation": "Mostrar em dinheiro de hoje (os preços sobem com o tempo)",
+      "pricesRise": "Os preços sobem",
+      "perYear": "% ao ano",
+      "yearByYear": "Ver os números ano a ano",
+      "tableCaption": "Economia por ano",
+      "colYear": "Ano",
+      "colAsYouAre": "Como está",
+      "colSavingExtra": "Guardando o extra",
+      "disclaimer": "Um exemplo, não uma promessa nem recomendação de investimento. Supõe o mesmo rendimento todo ano e ignora impostos e taxas."
+    },
+    "goals": {
+      "title": "Planejar",
+      "intro": "Decida para onde vai o dinheiro que você economizar.",
+      "allocTitle": "Para onde suas economias devem ir?",
+      "quickOptions": "Opções rápidas",
+      "efTitle": "Reserva de emergência",
+      "debtTitle": "Quando vou ficar livre das dívidas?",
+      "goalsTitle": "Coisas para as quais você está guardando",
+      "goalEmpty": "Nenhuma meta ainda. Adicione uma, como uma viagem ou a entrada de uma casa.",
+      "addGoal": "Adicionar meta"
+    },
+    "share": {
+      "title": "Imprimir ou compartilhar",
+      "summary": "Imprima seu plano ou crie um link para ele.",
+      "printTitle": "Imprimir",
+      "printBody": "Um plano de uma página com seus números e as mudanças que você escolheu.",
+      "printButton": "Imprimir ou salvar em PDF",
+      "linkTitle": "Compartilhar um link",
+      "linkBody": "Só se você quiser. O link leva seus números dentro dele, então qualquer pessoa com o link pode vê-los. Nada é enviado para servidores.",
+      "makeLink": "Criar link para compartilhar",
+      "urlLabel": "Seu link para compartilhar",
+      "copy": "Copiar"
+    },
+    "months": {
+      "title": "Mês a mês",
+      "localNote": "Seu histórico fica salvo só neste navegador, neste dispositivo. Use o Backup para guardar uma cópia ou levá-lo para outro dispositivo.",
+      "safariNote": "No iPhone e no iPad, o Safari pode apagar dados de sites depois de alguns dias sem visitas, e seu histórico junto. Baixe um backup todo mês para guardar uma cópia segura.",
+      "closeNote": "Fechar esta mensagem",
+      "empty": "Nada salvo ainda. Este mês é salvo automaticamente enquanto você informa seus números. Volte no mês que vem para ver o que mudou.",
+      "overTime": "Ao longo do tempo",
+      "trendLegend": "O que o gráfico mostra",
+      "trend": {
+        "spend": "Gastos",
+        "leftOver": "Sobra",
+        "score": "Nota"
+      },
+      "eachMonth": "Cada mês",
+      "barsLegend": "O que as barras mostram",
+      "bars": {
+        "flow": "Renda x gastos",
+        "cats": "Por categoria"
+      },
+      "changing": "O que está mudando",
+      "compare": "Comparar dois meses",
+      "firstMonth": "Primeiro mês",
+      "secondMonth": "Segundo mês",
+      "goalsOverTime": "Metas ao longo do tempo",
+      "savedMonths": "Meses salvos",
+      "savedMonthsCaption": "Meses salvos",
+      "col": {
+        "month": "Mês",
+        "spent": "Gasto",
+        "leftOver": "Sobra",
+        "score": "Nota",
+        "change": "x mês anterior",
+        "actions": "Ações"
+      },
+      "backupTitle": "Backup",
+      "backupBody": "Um arquivo com todos os meses salvos e suas configurações. Guarde em um lugar seguro, ou abra em outro dispositivo para continuar por lá.",
+      "openBackup": "Abrir um backup"
+    },
+    "guide": {
+      "toc": {
+        "title": "Índice",
+        "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Consumo fantasma &amp; contas da casa",
+        "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Assinaturas que se acumulam",
+        "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Mercado &amp; comer fora",
+        "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transporte &amp; seguros",
+        "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Compras por impulso &amp; juros",
+        "wealth": "Transforme vazamentos em patrimônio",
+        "faq": "Perguntas frequentes",
+        "try": "Experimente a calculadora"
+      },
+      "eyebrow": "Dicas de dinheiro · leitura de 5 minutos",
+      "title": "5 vazamentos escondidos no orçamento da casa (e como fechá-los hoje)",
+      "intro1_html": "A maioria das famílias não tem tanto um problema de gastos, mas sim um <strong>problema de vazamentos</strong>. Os gastos grandes e visíveis, como aluguel, financiamento ou parcela do carro, são vigiados o tempo todo. Enquanto isso, dezenas de pequenas cobranças recorrentes drenam centenas por mês sem que ninguém perceba. Como esses vazamentos são automáticos, espalhados e pequenos um a um, eles escapam até de quem controla bem o orçamento.",
+      "intro2": "A boa notícia? Vazamentos costumam ser o dinheiro mais fácil de recuperar. Diferente de cortar coisas de que você gosta, fechar um vazamento geralmente significa pagar menos pelo mesmo estilo de vida. Aqui estão os cinco vazamentos escondidos mais comuns no orçamento da casa e os passos práticos que você pode dar hoje para acabar com cada um.",
+      "howToPlug": "Como fechar",
+      "leak1": {
+        "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma e contas da casa ineficientes",
+        "body_html": "Toda TV, videogame, cafeteira e carregador de celular que fica na tomada consome um pouquinho de energia o dia todo. Esse \"consumo fantasma\", também chamado de consumo em stand-by, pode representar <strong>5–10% da conta de luz de uma casa típica</strong>. Some a isso um termostato que aquece ou resfria a casa vazia e lâmpadas incandescentes ainda escondidas nos abajures, e sua conta carrega muito peso morto.",
+        "fix1_html": "<strong>Use filtros de linha inteligentes</strong> na TV e no escritório de casa, para que os aparelhos parados desliguem por completo.",
+        "fix2_html": "<strong>Ajuste o termostato 7–10°F (4–6°C)</strong> durante oito horas por dia enquanto você dorme ou está fora. Um termostato inteligente faz isso sozinho e muitas vezes se paga em até dois anos.",
+        "fix3_html": "<strong>Troque as lâmpadas restantes por LED</strong>, que gastam até 75% menos energia e duram muitas vezes mais.",
+        "fix4": "Lave a roupa em água fria e ajuste o aquecedor de água para 120°F (49°C)."
+      },
+      "leak2": {
+        "title_html": "<span class=\"num-badge\">2</span>Assinaturas que se acumulam",
+        "body_html": "Streaming, armazenamento na nuvem, apps, kits de refeição, apps de exercício e \"testes grátis\" que viraram planos pagos sem aviso somam rápido. Muitas famílias pagam <strong>$50–$150 por mês em assinaturas</strong> que quase não usam. Como cada uma parece barata sozinha, o total quase nunca é analisado.",
+        "fix1_html": "Pegue os extratos do banco e do cartão dos últimos três meses e anote <strong>todas as cobranças recorrentes</strong>. Marque as que você usou menos de duas vezes no mês passado.",
+        "fix2_html": "<strong>Reveze os serviços de streaming</strong> em vez de acumulá-los: assine um, assista ao que quiser, cancele e passe para o próximo.",
+        "fix3": "Ligue para as operadoras de internet e telefone e peça ao setor de retenção os preços promocionais atuais, ou baixe para uma velocidade cuja diferença você nem vai notar.",
+        "fix4": "Crie um lembrete na agenda dois dias antes de qualquer teste grátis acabar."
+      },
+      "leak3": {
+        "title_html": "<span class=\"num-badge\">3</span>Desperdício no mercado e o preço de comer fora",
+        "body_html": "Estudos estimam com frequência que as famílias jogam fora <strong>cerca de 30% da comida que compram</strong>. Alimentos já cortados, embalagens individuais e idas ao mercado sem planejamento no meio da semana custam mais pela conveniência. E tem o comer fora: quando uma família gasta mais com restaurantes e delivery do que com mercado, geralmente paga de três a cinco vezes mais por refeição por uma comida que poderia fazer em casa.",
+        "fix1_html": "<strong>Planeje as refeições com o que já está na geladeira</strong> antes de fazer a lista de compras.",
+        "fix2": "Escolha marcas próprias para o básico. Muitas vezes são feitas nas mesmas fábricas das marcas conhecidas e custam 20–30% menos.",
+        "fix3": "Faça compras uma vez por semana, com lista, e reserve uma \"noite das sobras\" para esvaziar a geladeira.",
+        "fix4": "Troque duas noites de delivery por semana por receitas caseiras de 20 minutos, e prepare as marmitas do trabalho no domingo."
+      },
+      "leak4": {
+        "title_html": "<span class=\"num-badge\">4</span>Transporte e seguros no piloto automático",
+        "body_html": "O combustível é um dos gastos que mais variam no orçamento da casa, e os hábitos fazem a diferença. Trajetos curtos e espalhados gastam muito mais combustível por quilômetro, porque o motor frio é menos eficiente. Pneus murchos, ir trabalhar sozinho de carro e pedágios a preço cheio somam. O seguro é o irmão silencioso desse vazamento. O valor costuma subir a cada renovação e as seguradoras raramente premiam a fidelidade, então famílias que nunca pesquisam preços muitas vezes pagam <strong>10–15% a mais</strong> do que um cliente novo pagaria.",
+        "fix1_html": "<strong>Junte as tarefas</strong> numa só saída uma ou duas vezes por semana, e organize uma <strong>carona</strong> para a escola ou o trabalho.",
+        "fix2": "Mantenha os pneus bem calibrados, o que pode melhorar o consumo de combustível em até 3%.",
+        "fix3": "Compare passes mensais de transporte e descontos de tag de pedágio com o que você paga por viagem.",
+        "fix4_html": "<strong>Faça novas cotações dos seguros da casa e do carro todo ano</strong>, junte as apólices numa só seguradora e aumente a franquia até um valor que sua reserva de emergência consiga cobrir."
+      },
+      "leak5": {
+        "title_html": "<span class=\"num-badge\">5</span>Compras por impulso e dívidas com juros altos",
+        "body_html": "O cafezinho de todo dia, o pedido online de madrugada, a compra \"porque estava em promoção\": as compras por impulso são o vazamento mais difícil de ver, porque nunca chegam como uma conta só. A compra com um clique e os cartões salvos tiram aquela pausa rápida que normalmente evitaria uma compra não planejada. Quando essas compras ficam num cartão de crédito que cobra 20–30% de juros ao ano, o vazamento cresce: um saldo de $3,000 a 24% custa cerca de <strong>$60 por mês só de juros</strong>.",
+        "fix1_html": "<strong>Adote a regra das 24 horas:</strong> espere um dia inteiro antes de qualquer compra que não seja essencial. A maior parte das vontades passa.",
+        "fix2": "Remova os cartões salvos dos sites de compras e desative as notificações das lojas.",
+        "fix3_html": "<strong>Pague primeiro a dívida com os juros mais altos</strong>: pague o mínimo de todas e coloque todo valor extra na dívida com a maior taxa de juros.",
+        "fix4": "Considere um cartão com transferência de saldo a 0%. Uma taxa típica de 3% costuma ser recuperada em poucos meses de juros evitados."
+      },
+      "wealth": {
+        "title": "Transforme vazamentos fechados em patrimônio de verdade",
+        "p1_html": "Fechar vazamentos só faz diferença se o dinheiro for para um lugar útil. O passo mais poderoso é <strong>automatizar a economia na hora</strong>. Na mesma semana em que você cortar uma conta, programe uma transferência automática desse valor exato para uma aplicação que renda bem, sua reserva de emergência ou um fundo de índice de baixo custo. Se o dinheiro nunca cair na sua conta-corrente, ele não tem como vazar de volta.",
+        "p2_html": "Números pequenos viram números grandes com o tempo. Direcionar $250 por mês para um investimento que renda em média 8% ao ano chega a cerca de <strong>$46,000 em dez anos</strong> e mais de <strong>$147,000 em vinte</strong>. Use a calculadora acima para testar seus próprios números, adicione só as ideias que combinam com a sua vida e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
+        "p3": "Comece com um vazamento esta semana. Confira suas assinaturas hoje à noite, ajuste a programação do termostato amanhã e planeje as refeições da próxima semana no domingo. Cada ajuste leva minutos, e a economia se repete todo mês."
+      }
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "q1": "Meus dados financeiros estão seguros nesta calculadora?",
+      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e nada do que você digita é enviado a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
+      "q2": "Como as estimativas de economia são calculadas?",
+      "a2": "Cada ideia pega a conta a que se refere e aplica uma economia típica e cautelosa, por exemplo 12% para hábitos de economia de energia ou 15% para caronas. Abra \"Como chegamos a isso?\" em qualquer ideia para ver a conta exata. Se duas ideias cortam a mesma conta, a segunda só conta sobre o que sobrou, então a economia nunca é contada duas vezes.",
+      "q3": "O que faz o botão \"Adicionar ao meu plano\"?",
+      "a3": "Só as ideias que você adiciona ao seu plano contam para quanto você poderia gastar, o dinheiro que poderia economizar, o gráfico de crescimento, as datas das suas metas e a data em que fica livre das dívidas. Desative uma ideia se ela não combinar com a sua vida e todos os números se atualizam na hora.",
+      "q4": "O que é a regra de orçamento 50/30/20?",
+      "a4": "É uma referência simples: gaste cerca de metade do seu salário líquido com contas obrigatórias, como moradia, luz, mercado e parcelas de empréstimos, cerca de um terço com gastos não essenciais, como comer fora e assinaturas, e guarde cerca de um quinto.",
+      "q5": "Como a nota de saúde do orçamento é calculada?",
+      "a5": "A nota de 0 a 100 soma cinco partes: quanto você guarda por mês (30 pontos), custo de moradia (20), dívidas (15), reserva de emergência (20) e gastos não essenciais (15). Cada parte tem uma frase explicando seu resultado e qual deve ser o objetivo.",
+      "q6": "Qual taxa de rendimento devo escolher para minhas economias?",
+      "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
+      "q7": "De quanto deve ser minha reserva de emergência?",
+      "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
+      "q8": "Posso usar rupias e outras moedas?",
+      "a8": "Sim. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, CAD e AUD. As rupias paquistanesa e indiana usam valores típicos de famílias no Paquistão e na Índia, e os valores em rupias aparecem em lakh e crore. As outras moedas usam uma referência aproximada baseada em números dos EUA."
+    },
+    "glossary": {
+      "title": "Termos de dinheiro, explicados de forma simples",
+      "netIncome": {
+        "term": "Renda líquida (salário líquido)",
+        "definition": "O dinheiro que você realmente recebe depois dos impostos e outros descontos. Use este número como sua renda."
+      },
+      "emergencyFund": {
+        "term": "Reserva de emergência",
+        "definition": "Dinheiro guardado só para imprevistos, como perder o emprego ou um conserto grande. Uma meta comum é de 3 a 6 meses de contas obrigatórias."
+      },
+      "apr": {
+        "term": "Taxa de juros anual",
+        "definition": "O custo anual de pegar dinheiro emprestado, em porcentagem. A 30% ao ano, dever 100,000 durante um ano inteiro soma cerca de 30,000 de juros."
+      },
+      "compound": {
+        "term": "Juros compostos",
+        "definition": "Quando suas economias rendem dinheiro, e depois esse dinheiro também rende. Ao longo de muitos anos, as economias crescem cada vez mais rápido."
+      },
+      "inflation": {
+        "term": "Inflação",
+        "definition": "Os preços sobem aos poucos com o tempo, então o mesmo dinheiro compra um pouco menos a cada ano. Cerca de 3% ao ano é comum."
+      },
+      "needsWants": {
+        "term": "Necessidades e desejos",
+        "definition": "Necessidades são contas obrigatórias, como aluguel, luz e mercado. Desejos são gastos não essenciais, como comer fora, compras e assinaturas."
+      },
+      "balanceTransfer": {
+        "term": "Transferência de saldo",
+        "definition": "Passar o que você deve em um cartão de crédito para outro cartão com juros menores (muitas vezes 0%) por um tempo, geralmente pagando uma taxa única."
+      },
+      "lakhCrore": {
+        "term": "Lakh e crore",
+        "definition": "Formas de contar valores grandes no Paquistão e na Índia. 1 lakh = 100,000. 1 crore = 100 lakh = 10,000,000."
+      }
+    },
+    "mobileBar": {
+      "seeIdeas": "Ver ideias"
+    },
+    "dialog": {
+      "gotIt": "Entendi",
+      "cancel": "Cancelar"
+    }
+  },
+  "seo": {
+    "title": "Otimizador de Orçamento Doméstico e Simulador de Economia | Calculadora grátis e privada",
+    "description": "Ferramenta de orçamento doméstico grátis e simples: informe suas contas passo a passo, veja para onde vai seu dinheiro, receba ideias fáceis para gastar menos e acompanhe suas economias crescerem. 100% privada, funciona no seu navegador.",
+    "ogTitle": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+    "ogDescription": "Informe suas contas, receba ideias simples para gastar menos e veja quanto você poderia economizar. Privado, grátis e na hora.",
+    "twitterTitle": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+    "twitterDescription": "Descubra para onde vai seu dinheiro e quanto você poderia economizar. Uma ferramenta 100% privada, que funciona no navegador.",
+    "ogImageAlt": "Otimizador de Orçamento Doméstico: um mês de exemplo mostrando renda, contas e dinheiro para guardar",
+    "app": {
+      "name": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+      "description": "Uma ferramenta de orçamento doméstico privada, que funciona no navegador, guia você pelas suas contas, sugere jeitos simples de gastar menos, dá uma nota à saúde do seu orçamento, planeja metas e a quitação de dívidas e mostra como suas economias podem crescer.",
+      "featureList": [
+        "Configuração guiada passo a passo",
+        "Ideias de economia em linguagem simples",
+        "Nota de saúde do orçamento",
+        "Como seu dinheiro está dividido (50/30/20)",
+        "Projeção de crescimento das economias em dinheiro de hoje",
+        "Planejador de metas",
+        "Lista para o dia do pagamento com lembrete na agenda",
+        "Limite de gastos semanal",
+        "Gastos anuais divididos em valores mensais",
+        "Verificação da reserva de emergência",
+        "Data para ficar livre das dívidas",
+        "Oito moedas, com exibição em lakh e crore"
+      ]
+    },
+    "faq": {
+      "q1": "Meus dados financeiros estão seguros nesta calculadora?",
+      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e nada do que você digita é enviado a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
+      "q2": "Como as estimativas de economia são calculadas?",
+      "a2": "Cada ideia pega a conta a que se refere e aplica uma economia típica e cautelosa, por exemplo 12% para hábitos de economia de energia ou 15% para caronas. Abra \"Como chegamos a isso?\" em qualquer ideia para ver a conta exata. Se duas ideias cortam a mesma conta, a segunda só conta sobre o que sobrou, então a economia nunca é contada duas vezes.",
+      "q3": "O que faz o botão \"Adicionar ao meu plano\"?",
+      "a3": "Só as ideias que você adiciona ao seu plano contam para quanto você poderia gastar, o dinheiro que poderia economizar, o gráfico de crescimento, as datas das suas metas e a data em que fica livre das dívidas. Desative uma ideia se ela não combinar com a sua vida e todos os números se atualizam na hora.",
+      "q4": "O que é a regra de orçamento 50/30/20?",
+      "a4": "É uma referência simples: gaste cerca de metade do seu salário líquido com contas obrigatórias, como moradia, luz, mercado e parcelas de empréstimos, cerca de um terço com gastos não essenciais, como comer fora e assinaturas, e guarde cerca de um quinto.",
+      "q5": "Como a nota de saúde do orçamento é calculada?",
+      "a5": "A nota de 0 a 100 soma cinco partes: quanto você guarda por mês (30 pontos), custo de moradia (20), dívidas (15), reserva de emergência (20) e gastos não essenciais (15). Cada parte tem uma frase explicando seu resultado e qual deve ser o objetivo.",
+      "q6": "Qual taxa de rendimento devo escolher para minhas economias?",
+      "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
+      "q7": "De quanto deve ser minha reserva de emergência?",
+      "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
+      "q8": "Posso usar rupias e outras moedas?",
+      "a8": "Sim. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, CAD e AUD. As rupias paquistanesa e indiana usam valores típicos de famílias no Paquistão e na Índia, e os valores em rupias aparecem em lakh e crore. As outras moedas usam uma referência aproximada baseada em números dos EUA."
+    }
+  },
+  "dashboard": {
+    "summary": {
+      "tips": {
+        "one": "{count} dica",
+        "many": "{count} dicas",
+        "other": "{count} dicas"
+      },
+      "easyTips": {
+        "one": "{count} dica fácil",
+        "many": "{count} dicas fáceis",
+        "other": "{count} dicas fáceis"
+      },
+      "save": {
+        "month": "Seguindo {tips}, você poderia economizar {amount} a mais todo mês.",
+        "year": "Seguindo {tips}, você poderia economizar {amount} a mais todo ano."
+      },
+      "noTips": "Ative algumas ideias abaixo para ver quanto você poderia economizar.",
+      "spendOnly": {
+        "month": "Você gasta {spend} por mês com as contas que informou.",
+        "year": "Você gasta {spend} por ano com as contas que informou."
+      },
+      "overspend": {
+        "month": "Você ganha {income}, mas gasta {spend} por mês, ou seja, {gap} a mais do que ganha.",
+        "year": "Você ganha {income}, mas gasta {spend} por ano, ou seja, {gap} a mais do que ganha."
+      },
+      "earnSpend": {
+        "month": "Você ganha {income} e gasta {spend} por mês.",
+        "year": "Você ganha {income} e gasta {spend} por ano."
+      }
+    },
+    "optimizedSub": {
+      "less": {
+        "month": "{pct} a menos que hoje, por mês",
+        "year": "{pct} a menos que hoje, por ano"
+      },
+      "plain": {
+        "month": "por mês",
+        "year": "por ano"
+      }
+    },
+    "receipt": {
+      "takeHome": "Salário líquido",
+      "income": "Renda",
+      "notAdded": "não informado",
+      "shortBy": "Faltam",
+      "leftOver": "Sobra",
+      "noteLeft": "Dinheiro que você pode colocar na poupança, na reserva de emergência ou no pagamento de dívidas.",
+      "noteShort": "Suas contas ainda são maiores que sua renda. Ative mais ideias ou olhe para suas maiores contas.",
+      "noteNoIncome": "Adicione sua renda para ver o que sobra."
+    },
+    "over": {
+      "fixed_html": "<strong class=\"font-semibold\">Você gasta mais do que ganha</strong>: {gap}{per} a mais. As ideias do seu plano resolveriam isso e deixariam uma sobra de {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">Você gasta mais do que ganha</strong>: {gap}{per} a mais. As ideias do seu plano reduzem a diferença para {left}{per}. Ative mais ideias ou olhe para moradia e empréstimos."
+    },
+    "split": {
+      "needs": "Contas obrigatórias",
+      "wants": "Não essenciais",
+      "savings": "Sobra para guardar",
+      "within": "{icon} Dentro da referência de {target}%",
+      "short": "Faltam {amount}{per} para a referência de {target}%",
+      "over": "{amount}{per} acima da referência de {target}%",
+      "ofIncome_html": "<span class=\"font-semibold text-slate-900 dark:text-white\">{pct}</span><span class=\"muted\"> da renda</span>",
+      "guideline": "Referência: {target}%"
+    },
+    "categories": {
+      "basisIncome": "Parte da sua renda, comparada com o perfil típico: {profile}.",
+      "basisIncomeApprox": "Parte da sua renda, comparada com o perfil típico: {profile} (uma referência aproximada para esta moeda).",
+      "basisSpend": "Parte do seu gasto total. Adicione sua renda para comparar com famílias típicas.",
+      "typical": "Típico: {pct} da renda",
+      "higher": "Acima do típico (cerca de {pct})",
+      "nothingFor": "Nada informado para: {list}."
+    },
+    "mobile": {
+      "saveYear": "Você poderia economizar por ano",
+      "saveMonth": "Você poderia economizar por mês"
+    }
+  },
+  "common": {
+    "per": {
+      "month": "/mês",
+      "year": "/ano"
+    },
+    "perShort": {
+      "month": "/mês",
+      "year": "/ano"
+    },
+    "periodWord": {
+      "month": "mês",
+      "year": "ano"
+    },
+    "confirm": "Confirmar",
+    "undo": "Desfazer"
+  },
+  "plan": {
+    "explain": {
+      "interest": "O saldo do seu cartão com juros altos te custa cerca de {base} por mês em juros. {evidence} {words} desses juros. {pct}% de {base} = {monthly} por mês que você deixaria de pagar. Isso não é dinheiro no bolso: significa que uma parte maior de cada pagamento vai para a dívida em si, então você sai das dívidas mais cedo.",
+      "interestChosen": "O saldo do seu cartão com juros altos te custa cerca de {base} por mês em juros. {evidence} {words} desses juros. Você escolheu {pct}%. {pct}% de {base} = {monthly} por mês que você deixaria de pagar. Isso não é dinheiro no bolso: significa que uma parte maior de cada pagamento vai para a dívida em si, então você sai das dívidas mais cedo.",
+      "start": "Você nos disse que gasta {amount} por mês com {noun}.",
+      "stacked": "Depois das outras mudanças nesta conta no seu plano, sobram {amount}.",
+      "evidence": "{evidence} {words}.",
+      "evidenceOfThis": "{evidence} {words} desse gasto.",
+      "chosen": "Você escolheu {pct}%.",
+      "sum": "{pct}% de {base} = {monthly}."
+    },
+    "details": "Detalhes",
+    "youSpend": "Você gasta",
+    "youCouldSpend": "Você poderia gastar",
+    "youSave": "Você economiza",
+    "whatToDo": "O que fazer",
+    "howDidWeGetThis": "Como chegamos a isso?",
+    "howMuchCut": "Quanto você acha que consegue cortar?",
+    "keepSuggestion": "Na dúvida? Fique com a nossa sugestão.",
+    "useSuggestion": "Usar nossa sugestão",
+    "ourSuggestion": "Nossa sugestão é {pct}%.",
+    "addToPlan": "Adicionar ao meu plano: {label}",
+    "added": "Adicionado ✓",
+    "notAdded": "Não adicionado",
+    "costsOnce": "Custa {amount} uma vez",
+    "noCost": "Sem custo para começar",
+    "effort": {
+      "easy": "Fácil",
+      "medium": "Exige algum esforço",
+      "purchase": "Exige uma compra"
+    },
+    "avoid": "Evite",
+    "interestNow": "Juros que você paga hoje",
+    "interestAfter": "Juros depois da mudança",
+    "interestAvoid": "Juros que você deixaria de pagar",
+    "perMonthParen": "({amount}/mês)",
+    "perYearParen": "({amount}/ano)",
+    "interestNote": "Isso não conta como economia mensal. A vantagem é quitar sua dívida mais cedo.",
+    "costPayback": "Custa {amount} uma vez e se paga em {time}.",
+    "longTime": "muito tempo",
+    "noCostRightAway": "Sem custo para começar · Começa a economizar: na hora",
+    "sliderValue": "{pct}%, economiza {amount} {per}",
+    "showFewer": "Mostrar menos ideias",
+    "showMore": {
+      "one": "Mostrar mais {count} ideia",
+      "many": "Mostrar mais {count} ideias",
+      "other": "Mostrar mais {count} ideias"
+    },
+    "count": "{done} de {total} adicionadas ao seu plano"
+  },
+  "goals": {
+    "bucket": {
+      "emergency": "Reserva de emergência",
+      "debt": "Quitar dívidas",
+      "goals": "Suas metas"
+    },
+    "why": {
+      "emergency": "sua reserva de emergência já cobre 6 meses",
+      "debt": "você não tem empréstimos",
+      "goals": "você ainda não tem metas"
+    },
+    "alloc": {
+      "valueText": "{pct}%, {amount} por mês",
+      "perMonth": "{amount}/mês",
+      "noteShort": "Suas contas custam {amount} por mês a mais do que você ganha, então ainda não há nada para dividir. Adicione mais ideias ao seu plano para fechar essa diferença.",
+      "noteNoMoney": "Primeiro, adicione sua renda e algumas ideias ao seu plano. Depois você escolhe para onde vai o dinheiro.",
+      "noteUnassigned": "Você ainda não tem para o que guardar. Adicione uma meta, um empréstimo ou um objetivo de reserva de emergência.",
+      "noteInactive": "Como {reasons}, essa parte vai para as suas outras prioridades.",
+      "and": "{a} e {b}",
+      "noteAfterBills": "Depois das contas, sobram {amount} por mês para guardar. Os três valores acima somam isso.",
+      "noteAfterPlan": "Depois das contas e do seu plano, sobram {amount} por mês para guardar. Os três valores acima somam isso."
+    },
+    "row": {
+      "name": "Para o que você está guardando?",
+      "namePlaceholder": "ex.: Férias",
+      "remove": "Remover meta {name}",
+      "target": "Quanto você precisa",
+      "saved": "Guardado até agora"
+    },
+    "status": {
+      "needTarget": "Digite quanto você precisa.",
+      "done": "Pronto! Você já tem o suficiente para isso.",
+      "unreachable": "{pct} guardado. Dê às metas uma parte das suas economias acima para ver uma data.",
+      "progress": "{pct} guardado · faltam {remaining} · pronto em {time} ({date})"
+    },
+    "basis": {
+      "putting": "Você está colocando {amount} por mês nas metas, completando uma de cada vez, de cima para baixo.",
+      "giveShare": "Dê às metas uma parte das suas economias acima para ver quando vai alcançá-las.",
+      "typeEach": "Digite quanto você precisa para cada meta para ver quando vai alcançá-la.",
+      "allSaved": "Todas as metas já têm o suficiente guardado, então a parte das metas vai para as suas outras prioridades."
+    },
+    "emergency": {
+      "needBills": "Adicione suas contas obrigatórias (moradia, contas da casa, mercado, transporte) para calcularmos quanto deixar guardado.",
+      "done": "Pronto",
+      "toGoAbout": "Faltam {amount} · cerca de {time}",
+      "toGo": "Faltam {amount}",
+      "cover_html": "Suas economias de <strong class=\"text-slate-900 dark:text-white\">{fund}</strong> cobririam <strong class=\"text-slate-900 dark:text-white\">{months} meses</strong> de contas obrigatórias ({essentials} por mês).",
+      "none": "Você ainda não tem reserva de emergência. Suas contas obrigatórias somam {amount} por mês.",
+      "first3": "Primeira meta, 3 meses: {amount}",
+      "safe6": "Nível seguro, 6 meses: {amount}",
+      "using": "Usando {amount} por mês das suas economias.",
+      "giveShare": "Dê à reserva de emergência uma parte das suas economias acima para ver quanto tempo isso leva."
+    },
+    "debt": {
+      "none_html": "Nenhum empréstimo ou cartão de crédito adicionado. Se tiver algum, adicione na etapa 3 (<button type=\"button\" class=\"font-semibold text-indigo-700 underline dark:text-indigo-300\" data-edit-step=\"3\">adicionar empréstimos</button>) para ver quando você vai ficar livre das dívidas.",
+      "yourLoan": "seu empréstimo",
+      "yourCard": "seu cartão de crédito",
+      "never": "Nunca, com os pagamentos de hoje",
+      "owe_html": "Você deve <strong class=\"text-slate-900 dark:text-white\">{total}</strong> no total.",
+      "keepPaying": "Se continuar pagando como hoje",
+      "durationInterest": "{time} · {interest} de juros",
+      "paymentSmaller": "Seu pagamento é menor que os juros",
+      "ifAddAmount": "Se você somar {amount}/mês",
+      "ifAddShare": "Se você somar a parte das dívidas",
+      "giveShare": "Dê às dívidas uma parte das suas economias acima",
+      "sooner_html": "Pague primeiro a dívida com os juros mais altos usando os {amount} extras por mês, e você fica livre das dívidas <strong>{time} antes</strong> e paga <strong>{saved} a menos</strong> de juros.",
+      "neverAll": "Pelo menos uma dívida nunca será quitada com os pagamentos de hoje.",
+      "payMore": "Pague mais de {amount} por mês em {name}.",
+      "addPayment": "Adicione um pagamento mensal para {name}."
+    },
+    "summary": {
+      "alloc": "{preset}: {emergency} emergência · {debt} dívidas · {goals} metas por mês",
+      "ownSplit": "Sua própria divisão",
+      "allocShort": "Suas contas custam mais do que você ganha, então ainda não sobra nada para dividir.",
+      "allocNoIncome": "Primeiro adicione sua renda e algumas ideias, depois escolha para onde vai o dinheiro.",
+      "emergencyNoBills": "Adicione suas contas para verificar isto.",
+      "emergencyFull": "{months} meses de contas guardados. Totalmente coberto.",
+      "emergencyStart": "{months} meses de contas guardados. Bom começo.",
+      "emergencyIn": "{months} meses guardados. 3 meses em cerca de {time}.",
+      "emergencyNeedsShare": "{months} meses guardados. Para chegar a 3 meses, é preciso uma parte das suas economias.",
+      "debtNone": "Nenhum empréstimo ou cartão adicionado.",
+      "debtNever": "Nunca, com os pagamentos de hoje. Abra para ver o motivo.",
+      "debtFreeSooner": "Livre das dívidas em {date}, {time} antes.",
+      "debtFreeBy": "Livre das dívidas em {date}.",
+      "debtFreeNow": "Livre das dívidas em {date} com os pagamentos de hoje.",
+      "goalsNone": "Nenhuma meta ainda.",
+      "goalsTypeEach": "Digite quanto você precisa para cada meta.",
+      "goalsCovered": "Todas as suas metas estão cobertas.",
+      "goalReady": "{name} pronto em {date}.",
+      "firstGoal": "Primeira meta",
+      "goalsNeedShare": {
+        "one": "{count} meta. Dê às metas uma parte das suas economias para ver as datas.",
+        "many": "{count} metas. Dê às metas uma parte das suas economias para ver as datas.",
+        "other": "{count} metas. Dê às metas uma parte das suas economias para ver as datas."
+      }
+    },
+    "removed": "Meta \"{name}\" removida",
+    "untitled": "Sem nome"
+  },
+  "payday": {
+    "list": {
+      "fallback": "seus gastos anuais",
+      "two": "{a} e {b}",
+      "more": {
+        "one": "{a}, {b} e mais {count}",
+        "many": "{a}, {b} e mais {count}",
+        "other": "{a}, {b} e mais {count}"
+      }
+    },
+    "steps": {
+      "yearly": {
+        "title": "Separe {amount} para os gastos anuais",
+        "text": "Deixe numa conta separada, para que o dinheiro esteja pronto para {names} ({total} por ano)."
+      },
+      "yearlyAdd": {
+        "title": "Algum gasto grande que vem uma vez por ano?",
+        "text": "Festas, livros escolares ou consertos do carro podem estragar um mês. Adicione esses gastos e mostramos quanto separar por mês.",
+        "action": "Adicionar gastos anuais"
+      },
+      "save": {
+        "title": "Transfira {amount} para a poupança primeiro",
+        "text": "Faça isso no dia em que o salário cair, antes de gastar qualquer coisa, para não usar o dinheiro sem querer. Uma transferência automática deixa tudo mais fácil.",
+        "action": "Escolher para onde vai"
+      },
+      "short": {
+        "titleShort": "Seus gastos são {amount} maiores que sua renda",
+        "titleNothing": "Ainda não sobra nada para guardar",
+        "text": "Ative mais ideias para gastar menos, assim sobra algo para guardar no dia do pagamento.",
+        "action": "Ver ideias para gastar menos"
+      },
+      "allowance": {
+        "title": "Gaste até {amount} por semana com comer fora e compras",
+        "text": "Isso dá {amount} por mês, já com as ideias do seu plano. Passe esse valor para um cartão separado ou saque em dinheiro toda semana. Quando acabar, espere a próxima semana."
+      },
+      "bonus": {
+        "title": "Quando entrar um bônus, guarde primeiro",
+        "textMany": "{names} somam cerca de {amount} por mês em média, mas não vêm todo mês. Coloque cada pagamento direto na poupança ou nos gastos anuais, para que as contas do dia a dia nunca dependam dele.",
+        "textOne": "{name} soma cerca de {amount} por mês em média, mas não vem todo mês. Coloque cada pagamento direto na poupança ou nos gastos anuais, para que as contas do dia a dia nunca dependam dele.",
+        "fallbackName": "Sua renda extra"
+      }
+    },
+    "stepNumber": "Passo {n}:",
+    "weeklyLimit": "Limite de gastos semanal",
+    "progress": {
+      "all": "Tudo feito em {month}. Muito bem!",
+      "some": "{done} de {total} feitos em {month}"
+    },
+    "reminderDownloaded": "Lembrete baixado. Abra o arquivo para adicioná-lo à sua agenda.",
+    "dayOfMonth": "Dia {day}{suffix} do mês",
+    "ordinal": {
+      "st": "º",
+      "nd": "º",
+      "rd": "º",
+      "th": "º"
+    },
+    "lastDay": "Último dia do mês"
+  },
+  "ics": {
+    "title": "Dia do pagamento: siga seu plano",
+    "note": "Os valores são do dia em que você salvou este lembrete. Abra a ferramenta de orçamento para ver os mais recentes."
+  },
+  "charts": {
+    "returns": {
+      "safe": {
+        "label": "{pct}%: Aplicação segura",
+        "hint": "Cresce devagar, com pouquíssimo risco."
+      },
+      "mixed": {
+        "label": "{pct}%: Poupança e investimentos",
+        "hint": "Alguns altos e baixos pelo caminho."
+      },
+      "longTerm": {
+        "label": "{pct}%: Investimento de longo prazo",
+        "hint": "Mais altos e baixos. Funciona melhor em 10 anos ou mais."
+      },
+      "shares": {
+        "label": "{pct}%: Principalmente ações",
+        "hint": "Grandes altos e baixos, e nunca garantido."
+      }
+    },
+    "tip": {
+      "today": "Hoje",
+      "after": {
+        "one": "Depois de {count} ano",
+        "many": "Depois de {count} anos",
+        "other": "Depois de {count} anos"
+      },
+      "alt_html": "Guardando a diferença: <strong class=\"tabular-nums\">{amount}</strong>",
+      "cur_html": "Como está hoje: <strong class=\"tabular-nums\">{amount}</strong>",
+      "more": "Você teria {amount} a mais"
+    },
+    "yearsValueText": "{years} anos",
+    "years": {
+      "one": "{count} ano",
+      "many": "{count} anos",
+      "other": "{count} anos"
+    },
+    "afterYears": {
+      "one": "depois de {count} ano",
+      "many": "depois de {count} anos",
+      "other": "depois de {count} anos"
+    },
+    "on": "Ligado",
+    "off": "Desligado",
+    "mode": {
+      "real": "Em dinheiro de hoje (supondo que os preços subam {pct}% ao ano).",
+      "nominal": "Em dinheiro do futuro (sem descontar a alta dos preços)."
+    },
+    "summary": {
+      "empty": "Adicione ideias ao seu plano (e sua renda) para ver como suas economias podem crescer.",
+      "main": "Se você guardar {monthly} todo mês por {years} e o dinheiro render {rate}% ao ano, poderá ter cerca de {nominal}. Como os preços sobem, isso valeria o que cerca de {real} vale hoje.",
+      "asYouAre": "Se continuar como está, você teria cerca de {amount}."
+    },
+    "ariaLabel": "Gráfico de linhas. {summary}",
+    "year": "Ano {n}",
+    "now": "Agora"
+  },
+  "reset": {
+    "cleared": "Números apagados. Suas metas e meses salvos foram mantidos.",
+    "deleteAll": {
+      "title": "Apagar tudo?",
+      "message": "Isso remove todos os seus números, metas e todos os meses salvos deste dispositivo. Não dá para desfazer. Baixe um backup antes, se quiser usá-los depois.",
+      "confirm": "Apagar tudo",
+      "backupFirst": "Baixar backup antes"
+    },
+    "deleted": "Tudo foi apagado deste dispositivo",
+    "startOver": {
+      "title": "Começar de novo?",
+      "message": "Apagar meus números limpa sua renda, contas, empréstimos, assinaturas, gastos anuais e escolhas do plano, e volta para a etapa 1. Suas metas, configurações e meses salvos são mantidos. Apagar tudo também remove suas metas e todos os meses salvos.",
+      "clear": "Apagar meus números"
+    }
+  },
+  "app": {
+    "announceSavings": "Dinheiro que você poderia economizar por mês: {amount}.",
+    "theme": {
+      "toLight": "Mudar para o modo claro",
+      "toDark": "Mudar para o modo escuro"
+    },
+    "saved": "Salvo neste dispositivo",
+    "notSaved": "Não salvo (armazenamento bloqueado)"
+  },
+  "layout": {
+    "header": {
+      "skipToContent": "Pular para o conteúdo",
+      "nav": {
+        "calculator": "Calculadora",
+        "moneyTips": "Dicas de dinheiro",
+        "contact": "Contato"
+      },
+      "navLabel": "Principal"
+    },
+    "brand": "Otimizador de Orçamento",
+    "footer": {
+      "title": "Rodapé do site",
+      "privacyBadge": "Seus números nunca saem deste dispositivo",
+      "headline": "Encontre o dinheiro escondido no seu mês.",
+      "intro": "Adicione suas contas, ative algumas ideias fáceis e veja quanto você poderia economizar este mês, este ano e ao longo do tempo. Leva cerca de dois minutos.",
+      "cta": "Abrir a calculadora",
+      "ctaTips": "Ler as dicas de dinheiro",
+      "receipt": {
+        "subtitle": "O que você paga · o que você recebe",
+        "signUp": "Cadastro necessário",
+        "signUpValue": "Nenhum",
+        "dataSent": "Dados enviados para nós",
+        "dataSentValue": "0 bytes",
+        "currencies": "Moedas",
+        "ideas": "Ideias para economizar",
+        "price": "Preço",
+        "priceValue": "GRÁTIS",
+        "label": "O que você recebe"
+      },
+      "tagline": "Uma calculadora de orçamento doméstico e simulador de economia grátis e privado, para famílias de qualquer lugar.",
+      "reportProblem": "Informar um problema",
+      "calculator": {
+        "heading": "Calculadora",
+        "start": "Comece seu orçamento",
+        "faq": "Como funciona (perguntas frequentes)",
+        "glossary": "Termos de dinheiro explicados"
+      },
+      "tips": {
+        "heading": "Dicas de dinheiro",
+        "utilities": "Reduza as contas da casa",
+        "subscriptions": "Controle as assinaturas",
+        "food": "Gaste menos com comida",
+        "impulse": "Vença as compras por impulso"
+      },
+      "legal": {
+        "heading": "Ajuda e informações legais",
+        "contact": "Fale conosco",
+        "privacy": "Política de Privacidade",
+        "terms": "Termos de Uso",
+        "label": "Empresa"
+      },
+      "disclaimer": {
+        "title": "Aviso financeiro",
+        "education_html": "<strong class=\"font-semibold text-emerald-50\">Apenas para fins educativos.</strong> Esta calculadora e este guia não oferecem aconselhamento financeiro, de investimentos, tributário ou jurídico, e nada aqui é uma recomendação para comprar, vender ou manter qualquer título ou produto financeiro.",
+        "estimates_html": "<strong class=\"font-semibold text-emerald-50\">Estimativas, não garantias.</strong> As porcentagens de economia são estimativas gerais baseadas em referências comuns de orçamentos domésticos. Seus resultados dependem de onde você mora, dos seus fornecedores, das taxas e dos seus hábitos.",
+        "investment_html": "<strong class=\"font-semibold text-emerald-50\">Risco de investimento.</strong> As projeções são hipotéticas, supõem um rendimento constante capitalizado mensalmente e não incluem impostos nem taxas. Investimentos podem perder valor, e rentabilidade passada não garante rentabilidade futura.",
+        "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consulte um profissional.</strong> Antes de tomar decisões financeiras importantes, fale com um consultor financeiro, contador ou especialista em impostos qualificado e habilitado."
+      },
+      "copyright": "Otimizador de Orçamento Doméstico e Simulador de Economia. Feito para famílias, não para bancos.",
+      "backToTop": "Voltar ao topo"
+    },
+    "theme": {
+      "toLight": "Mudar para o modo claro",
+      "toDark": "Mudar para o modo escuro"
+    }
+  },
+  "privacy": {
+    "breadcrumb": {
+      "home": "Início",
+      "current": "Política de Privacidade",
+      "label": "Trilha de navegação"
+    },
+    "toc": {
+      "heading": "Nesta página",
+      "summary": "Resumo",
+      "who": "Quem somos",
+      "budgetData": "Os números do seu orçamento",
+      "device": "Guardado no seu dispositivo",
+      "sharing": "Links de compartilhamento e backups",
+      "contactData": "Quando você entra em contato",
+      "ads": "Anúncios e cookies",
+      "logs": "Hospedagem e registros de segurança",
+      "rights": "Seus direitos",
+      "children": "Crianças",
+      "transfers": "Transferências internacionais",
+      "links": "Links para outros sites",
+      "changes": "Mudanças nesta política",
+      "contact": "Contato"
+    },
+    "title": "Política de Privacidade",
+    "lead": "O Otimizador de Orçamento Doméstico foi feito para que o seu dinheiro continue sendo assunto só seu. Os números do seu orçamento são calculados no seu próprio navegador e nunca são enviados para nós.",
+    "sections": {
+      "summary": {
+        "title": "Resumo",
+        "item1_html": "<strong>Nunca vemos o seu orçamento.</strong> Renda, contas, dívidas, metas e meses salvos ficam no seu navegador, no seu dispositivo.",
+        "item2_html": "<strong>Sem conta, sem cadastro.</strong> Não pedimos seu nome, e-mail ou dados bancários para usar a calculadora.",
+        "item3_html": "<strong>Você está no controle.</strong> Apague tudo quando quiser com <em>Começar de novo</em> → <em>Apagar tudo</em>, ou limpando os dados do site no seu navegador.",
+        "item4_html": "<strong>Os anúncios mantêm a ferramenta gratuita.</strong> O Google pode usar cookies para mostrar anúncios. Você pode desativar os anúncios personalizados.",
+        "item5_html": "<strong>Se você nos escrever,</strong> usamos seu nome, e-mail e mensagem só para responder."
+      },
+      "who": {
+        "title": "Quem somos",
+        "p1_html": "Esta política abrange o site e a calculadora Otimizador de Orçamento Doméstico &amp; Simulador de Economia (“o site”, “nós”). Somos responsáveis pelas informações pessoais descritas aqui. Você pode falar conosco a qualquer momento pelo nosso <a href=\"/contact/?topic=privacy\">formulário de contato</a>."
+      },
+      "budgetData": {
+        "title": "Os números do seu orçamento nunca são enviados para nós",
+        "p1": "Tudo o que você digita na calculadora, incluindo seu salário líquido, contas, empréstimos, assinaturas, gastos anuais, metas e as ideias que adiciona ao seu plano, é calculado por um código que roda no seu navegador. Nada disso é enviado para os nossos servidores nem para os de ninguém. Não temos nenhuma cópia, então não podemos ver, vender nem perder esses dados num vazamento.",
+        "p2": "A calculadora também nunca pede login do banco, número de conta ou número de cartão. Por favor, não envie esses dados para nós."
+      },
+      "device": {
+        "title": "O que fica guardado no seu dispositivo",
+        "table": {
+          "what": "O quê",
+          "why": "Para quê",
+          "howLong": "Por quanto tempo",
+          "budgetWhy": "Lembra seus números, escolhas do plano, metas e configurações entre uma visita e outra.",
+          "untilDeleted": "Até você apagar",
+          "historyWhy": "Guarda os meses que você salva para poder compará-los. Até 60 meses.",
+          "themeWhy": "Lembra qual tema de cores você escolheu.",
+          "budget_html": "Seu orçamento (<code>hbo:v3</code>)",
+          "history_html": "Histórico mês a mês (<code>hbo:history</code>)",
+          "theme_html": "Tema claro ou escuro (<code>hbo:theme</code>)"
+        },
+        "p1_html": "Para que seus números continuem lá quando você voltar, o site os salva no <em>armazenamento local</em> do seu navegador. É uma pequena área de armazenamento que pertence ao seu navegador neste dispositivo. Não é um cookie e não é enviada pela internet.",
+        "p2_html": "<strong>Para apagar:</strong> abra a calculadora, escolha <em>Editar meus números</em> → <em>Começar de novo</em> e depois <em>Apagar meus números</em> (mantém seus meses salvos) ou <em>Apagar tudo</em>. Você também pode limpar os dados deste site nas configurações do navegador. Qualquer pessoa que use seu dispositivo e navegador pode ver o que está guardado, então use uma janela anônima em computadores compartilhados."
+      },
+      "sharing": {
+        "title": "Links de compartilhamento, backups, impressão e lembretes",
+        "p1": "Esses recursos só funcionam quando você os escolhe, e nenhum deles envia seu orçamento para nós:",
+        "item1_html": "<strong>Links de compartilhamento.</strong> Quando você toca em <em>Criar link para compartilhar</em>, seus números são colocados dentro do próprio link, depois do sinal “#”. Os navegadores não enviam essa parte do link ao site, então nunca a recebemos. Qualquer pessoa a quem você der o link pode ver os números nele, então compartilhe só com pessoas de confiança.",
+        "item2_html": "<strong>Backups.</strong> <em>Baixar backup</em> salva um arquivo no seu dispositivo. Abrir um backup lê o arquivo no seu navegador.",
+        "item3_html": "<strong>Impressão e lembretes na agenda.</strong> O plano para impressão e o arquivo de lembrete do dia do pagamento são criados no seu dispositivo."
+      },
+      "contactData": {
+        "title": "Quando você entra em contato",
+        "p2": "O formulário chega à nossa caixa de entrada por meio de um serviço de formulários de terceiros, que processa a mensagem em nosso nome e não tem permissão para usá-la para mais nada. Guardamos as mensagens por até 12 meses depois do fim da conversa e depois as apagamos, a menos que precisemos delas por mais tempo para lidar com uma reclamação legal. Nunca incluímos você em listas de e-mail e nunca vendemos nem alugamos seus dados.",
+        "p3": "Não inclua dados financeiros pessoais, como números de conta ou senhas, na mensagem. Não precisamos deles para te ajudar.",
+        "p1_html": "Se você usar nosso <a href=\"/contact/\">formulário de contato</a> ou nos enviar um e-mail, recebemos seu nome, seu endereço de e-mail, o assunto escolhido, sua mensagem e a página em que você estava. Usamos isso só para ler e responder sua mensagem, corrigir problemas que você relatar e melhorar o site. Nossa base legal é nosso legítimo interesse em responder a você, ou as providências que você nos pede."
+      },
+      "ads": {
+        "title": "Publicidade e cookies",
+        "p1": "O site é gratuito porque mostra anúncios. Os anúncios são exibidos pelo Google AdSense. Não passamos ao Google, nem a nenhum anunciante, os números que você informa na calculadora.",
+        "item1": "Fornecedores terceiros, incluindo o Google, usam cookies para exibir anúncios com base nas suas visitas anteriores a este e a outros sites.",
+        "item2": "O uso de cookies de publicidade pelo Google permite que ele e seus parceiros exibam anúncios para você com base nas suas visitas a este e a outros sites na internet.",
+        "p2": "Se você estiver no Espaço Econômico Europeu, no Reino Unido ou na Suíça, seu consentimento será pedido antes de usarmos anúncios personalizados ou os cookies deles, e você pode mudar sua escolha a qualquer momento. Se recusar, ainda poderá ver anúncios não personalizados, que se baseiam no contexto e não no seu histórico de navegação. Bloquear anúncios ou cookies de terceiros no navegador também impede anúncios personalizados, e a calculadora continua funcionando de qualquer forma.",
+        "p3": "O próprio site não define nenhum cookie, e não usamos ferramentas de análise ou rastreamento.",
+        "item3_html": "Você pode desativar a publicidade personalizada nas <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a>. Também pode desativar os anúncios personalizados de alguns fornecedores terceiros em <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> ou, na Europa, em <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
+        "item4_html": "Saiba mais sobre <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">como o Google usa informações de sites ou apps que usam os serviços dele</a>."
+      },
+      "logs": {
+        "title": "Hospedagem e registros de segurança",
+        "p1": "Como todo site, este é entregue por um provedor de hospedagem. Quando seu navegador pede uma página, o provedor pode registrar por pouco tempo detalhes técnicos como seu endereço IP, tipo de navegador, a página pedida e o horário. Esses registros são usados só para entregar o site, mantê-lo seguro e corrigir falhas, e são apagados no prazo normal do provedor. Eles nunca contêm os números do seu orçamento."
+      },
+      "rights": {
+        "title": "Seus direitos de privacidade",
+        "p1": "Como seu orçamento nunca sai do seu dispositivo, você já tem todos os dados dele e pode apagá-los quando quiser. Para qualquer outra informação que tenhamos sobre você, como mensagens que nos enviou, você pode nos pedir para:",
+        "item1": "dizer o que temos e te dar uma cópia;",
+        "item2": "corrigir se estiver errado;",
+        "item3": "apagar;",
+        "item4": "parar ou limitar a forma como usamos, ou se opor ao uso.",
+        "p2": "Esses direitos vêm de leis como o Regulamento Geral sobre a Proteção de Dados da UE e do Reino Unido (RGPD/GDPR), a Lei de Privacidade do Consumidor da Califórnia (CCPA/CPRA) e a Lei de Proteção de Dados Pessoais Digitais da Índia de 2023 (Digital Personal Data Protection Act), além de leis parecidas em outros lugares. Não vendemos nem compartilhamos informações pessoais em troca de dinheiro, e não as usamos para tomar decisões automatizadas sobre você.",
+        "p3_html": "Para fazer um pedido, ou para registrar uma reclamação nos termos da Lei DPDP da Índia, use o <a href=\"/contact/?topic=privacy\">formulário de contato</a> e escolha <em>Privacidade ou pedido sobre dados</em>. Responderemos em até 30 dias. Você pode retirar qualquer consentimento que tenha dado, como para anúncios personalizados, a qualquer momento. Você também tem o direito de reclamar à autoridade de proteção de dados do seu país, como o ICO no Reino Unido."
+      },
+      "children": {
+        "title": "Crianças",
+        "p1": "O site é voltado para adultos que cuidam do orçamento da casa. Ele não se destina a crianças menores de 13 anos (menores de 16 no EEE e no Reino Unido, e menores de 18 na Índia), e não coletamos intencionalmente informações pessoais delas. Se você acha que uma criança nos enviou informações pessoais, entre em contato e nós as apagaremos."
+      },
+      "transfers": {
+        "title": "Transferências internacionais",
+        "p1": "As mensagens que você nos envia e os dados usados pelo Google para anúncios podem ser processados em outros países além do seu, incluindo os Estados Unidos. Quando a lei exige, essas transferências são protegidas por garantias como as cláusulas contratuais padrão da Comissão Europeia."
+      },
+      "links": {
+        "title": "Links para outros sites",
+        "p1": "Nossas dicas de dinheiro e anúncios podem ter links para outros sites. Não os controlamos e não somos responsáveis pelas práticas de privacidade deles, então leia as políticas deles antes de passar qualquer informação."
+      },
+      "changes": {
+        "title": "Mudanças nesta política",
+        "p1": "Podemos atualizar esta política quando o site ou a lei mudarem. A data no topo mostra a versão mais recente. Se uma mudança afetar a forma como tratamos informações que você já nos deu, vamos deixar isso claro no site antes de ela entrar em vigor."
+      },
+      "contact": {
+        "title": "Contato",
+        "p1_html": "Dúvidas sobre esta política ou seus dados? <a href=\"/contact/?topic=privacy\">Envie uma mensagem</a> e escolha <em>Privacidade ou pedido sobre dados</em>. Você também pode ler nossos <a href=\"/terms-of-use/\">Termos de Uso</a>."
+      }
+    },
+    "updated_html": "Última atualização: <time datetime=\"2026-10-19\">19 de outubro de 2026</time>",
+    "seo": {
+      "title": "Política de Privacidade | Otimizador de Orçamento Doméstico",
+      "description": "Seu orçamento fica no seu navegador: sem contas, nada guardado nos nossos servidores. O que guardamos no seu dispositivo, como os anúncios do Google usam cookies e quais são seus direitos.",
+      "ogTitle": "Política de Privacidade | Otimizador de Orçamento Doméstico",
+      "ogDescription": "Os números do seu orçamento nunca saem do seu navegador. O que guardamos, como os anúncios usam cookies e quais são seus direitos.",
+      "ldName": "Política de Privacidade",
+      "ldDescription": "Como o Otimizador de Orçamento Doméstico trata seus dados: os números do orçamento ficam no seu navegador, o que fica guardado no seu dispositivo, cookies de publicidade e seus direitos de privacidade."
+    }
+  },
+  "terms": {
+    "breadcrumb": {
+      "home": "Início",
+      "current": "Termos de Uso",
+      "label": "Trilha de navegação"
+    },
+    "toc": {
+      "heading": "Nesta página",
+      "summary": "Resumo",
+      "agreement": "Aceitação destes termos",
+      "service": "O que é a ferramenta",
+      "notAdvice": "Não é aconselhamento financeiro",
+      "accuracy": "Estimativas e precisão",
+      "yourData": "Seus dados e backups",
+      "use": "Uso adequado",
+      "ip": "Nosso conteúdo",
+      "thirdParty": "Anúncios e outros sites",
+      "warranty": "Sem garantias",
+      "liability": "Limites de responsabilidade",
+      "law": "Lei aplicável",
+      "changes": "Mudanças",
+      "contact": "Contato"
+    },
+    "title": "Termos de Uso",
+    "lead": "Estes termos explicam o que você pode esperar do Otimizador de Orçamento Doméstico e o que pedimos de você. Nós os deixamos curtos e em linguagem simples.",
+    "sections": {
+      "summary": {
+        "title": "Resumo",
+        "item1_html": "<strong>É grátis</strong> para o orçamento pessoal da sua casa. Não precisa criar conta.",
+        "item2_html": "<strong>É uma estimativa, não um aconselhamento.</strong> Confirme decisões importantes com um profissional qualificado.",
+        "item3_html": "<strong>Seus números são seus.</strong> Eles ficam no seu navegador, então guarde um backup se forem importantes para você.",
+        "item4_html": "<strong>Use de forma justa.</strong> Não copie, ataque nem faça raspagem de dados do site."
+      },
+      "agreement": {
+        "title": "1. Aceitação destes termos",
+        "p1_html": "Ao usar o site e a calculadora Otimizador de Orçamento Doméstico &amp; Simulador de Economia (“o site”, “nós”), você concorda com estes termos e com a nossa <a href=\"/privacy-policy/\">Política de Privacidade</a>. Se não concordar, não use o site."
+      },
+      "service": {
+        "title": "2. O que é a ferramenta",
+        "p1": "O site é uma calculadora de orçamento e um guia de dinheiro gratuitos, para uso pessoal e doméstico. Ele ajuda você a ver para onde vai seu dinheiro, testar ideias para gastar menos e estimar como suas economias, metas e dívidas podem mudar com o tempo. Funciona no seu navegador e não precisa de conta.",
+        "p2": "Podemos adicionar, mudar ou remover recursos, ou pausar o site para manutenção, a qualquer momento. Como é um serviço gratuito, não podemos prometer que ele estará sempre disponível ou livre de erros."
+      },
+      "notAdvice": {
+        "title": "3. Não é aconselhamento financeiro",
+        "p2": "Antes de tomar decisões importantes sobre dinheiro, como fazer ou quitar dívidas, investir ou mudar de seguro, fale com um consultor financeiro, contador ou especialista em impostos qualificado e habilitado. Se você está com dificuldades por causa de dívidas, existem serviços gratuitos e confidenciais de orientação sobre dívidas em muitos países.",
+        "p1_html": "Tudo no site, incluindo resultados, ideias de economia, notas de saúde, projeções de crescimento, datas para ficar livre das dívidas e artigos, é <strong>informação geral, apenas para fins educativos</strong>. Não é aconselhamento financeiro, de investimentos, tributário, jurídico ou sobre dívidas, e não leva em conta todas as suas circunstâncias. Nada no site é uma recomendação para comprar, vender ou manter qualquer produto financeiro."
+      },
+      "accuracy": {
+        "title": "4. Estimativas e precisão",
+        "p1": "Os resultados só são tão bons quanto os números que você informa e as suposições por trás deles. Em especial:",
+        "item1": "as porcentagens de economia são estimativas típicas, e quanto você realmente consegue economizar depende dos seus fornecedores, de onde você mora, dos preços e dos seus hábitos;",
+        "item2": "as projeções de crescimento supõem um rendimento constante capitalizado mensalmente e ignoram impostos e taxas, enquanto investimentos reais sobem e descem e podem perder valor;",
+        "item3": "os valores “típicos” de lares são referências aproximadas e, para algumas moedas, se baseiam em números dos EUA;",
+        "item4": "o site não converte entre moedas nem usa taxas de juros ou de câmbio em tempo real.",
+        "p2_html": "Nos esforçamos para manter as contas corretas, mas não garantimos que todo resultado, número ou dica esteja completo, correto ou atualizado. Confira por conta própria qualquer coisa importante. Se encontrar um erro, <a href=\"/contact/?topic=calculation\">nos avise</a> e vamos verificar."
+      },
+      "yourData": {
+        "title": "5. Seus dados e backups",
+        "p1_html": "Seu orçamento fica guardado só no seu navegador, no seu dispositivo. Não temos uma cópia, então não conseguimos recuperá-lo se ele for perdido. Limpar os dados do navegador, usar uma janela anônima ou trocar de dispositivo ou navegador pode apagá-lo. Use <em>Baixar backup</em> para guardar uma cópia. Você é responsável pelos links de compartilhamento e arquivos de backup que cria e por quem os recebe."
+      },
+      "use": {
+        "title": "6. Uso adequado",
+        "p1": "Você pode usar o site para o seu orçamento pessoal ou doméstico e pode compartilhar links para ele. Você concorda em não:",
+        "item1": "copiar, republicar, vender ou incorporar o site ou seu conteúdo como se fossem seus, nem remover nossos avisos;",
+        "item2": "fazer raspagem de dados do site em massa, nem sobrecarregar, atacar, sondar ou interferir no site ou na sua segurança;",
+        "item3": "enviar qualquer coisa prejudicial, como malware, nem usar o site ou o formulário de contato para spam, abuso ou qualquer coisa ilegal;",
+        "item4": "usar o site para dar aconselhamento pago a outras pessoas de um jeito que sugira que nós o endossamos.",
+        "p2": "Podemos bloquear o acesso de quem descumprir estas regras."
+      },
+      "ip": {
+        "title": "7. Nosso conteúdo",
+        "p1_html": "O design, os textos, os cálculos, os gráficos e o código do site pertencem a nós ou aos nossos licenciadores e são protegidos por direitos autorais e outras leis. Você pode imprimir ou salvar seus próprios resultados e o plano que criar, para uso pessoal. Citações curtas com um link de volta para o site são bem-vindas. Para qualquer outra coisa, <a href=\"/contact/?topic=business\">pergunte antes</a>."
+      },
+      "thirdParty": {
+        "title": "8. Anúncios e outros sites",
+        "p1": "O site mostra anúncios, a maioria exibida pelo Google, e pode ter links para outros sites. Anúncios e links não são recomendações. Não controlamos outros sites nem os produtos anunciados, e não somos responsáveis pelo conteúdo, ofertas ou práticas de privacidade deles. Qualquer negócio que você fizer com um anunciante é entre você e ele."
+      },
+      "warranty": {
+        "title": "9. Sem garantias",
+        "p1": "O site é oferecido gratuitamente, “no estado em que se encontra” e “conforme disponível”. Na máxima extensão permitida por lei, não fazemos promessas nem damos garantias de nenhum tipo, expressas ou implícitas, incluindo de que o site será preciso, confiável, ininterrupto, seguro ou adequado a uma finalidade específica."
+      },
+      "liability": {
+        "title": "10. Limites de responsabilidade",
+        "p1": "Na máxima extensão permitida por lei, não somos responsáveis por nenhuma perda ou dano decorrente do uso ou da impossibilidade de uso do site, ou de confiar nos seus resultados ou conteúdo. Isso inclui perdas financeiras, economias ou lucros perdidos, perda de dados e perdas indiretas ou consequentes. Você usa os resultados por sua conta e risco e é responsável pelas suas próprias decisões financeiras.",
+        "p2": "Nada nestes termos limita responsabilidades que não podem ser limitadas por lei, como em caso de fraude, nem retira direitos que você tem como consumidor pelas leis do país onde mora."
+      },
+      "law": {
+        "title": "11. Lei aplicável",
+        "p1": "Estes termos são regidos pelas leis do país onde o responsável pelo site está estabelecido, e os tribunais desse país resolverão qualquer disputa. Se você mora em outro lugar, mantém a proteção de quaisquer leis de defesa do consumidor obrigatórias onde mora e pode entrar com uma ação nos tribunais locais. Se alguma parte destes termos não puder ser aplicada, o restante continua valendo."
+      },
+      "changes": {
+        "title": "12. Mudanças nestes termos",
+        "p1": "Podemos atualizar estes termos de tempos em tempos. A data no topo mostra a versão mais recente. Se você continuar usando o site depois de uma mudança, aceita os termos atualizados."
+      },
+      "contact": {
+        "title": "13. Contato",
+        "p1_html": "Dúvidas sobre estes termos? <a href=\"/contact/\">Envie uma mensagem</a>. Veja também nossa <a href=\"/privacy-policy/\">Política de Privacidade</a>."
+      }
+    },
+    "updated_html": "Última atualização: <time datetime=\"2026-10-19\">19 de outubro de 2026</time>",
+    "seo": {
+      "title": "Termos de Uso | Otimizador de Orçamento Doméstico",
+      "description": "As regras para usar nossa calculadora gratuita de orçamento doméstico. Os resultados são estimativas para planejamento, não aconselhamento financeiro. Inclui precisão, uso adequado e responsabilidade.",
+      "ogTitle": "Termos de Uso | Otimizador de Orçamento Doméstico",
+      "ogDescription": "Uso gratuito, apenas estimativas, não é aconselhamento financeiro. Os termos em linguagem simples da nossa calculadora de orçamento.",
+      "ldName": "Termos de Uso",
+      "ldDescription": "Os termos para usar a calculadora gratuita Otimizador de Orçamento Doméstico: apenas estimativas, não é aconselhamento financeiro, uso aceitável e limites de responsabilidade."
+    }
+  },
+  "contact": {
+    "breadcrumb": {
+      "home": "Início",
+      "current": "Fale conosco",
+      "label": "Trilha de navegação"
+    },
+    "title": "Fale conosco",
+    "lead": "Encontrou algo que não está funcionando, viu um número que parece errado ou tem uma ideia que deixaria a calculadora mais útil? Lemos todas as mensagens.",
+    "form": {
+      "title": "Envie uma mensagem",
+      "replyTime": "Costumamos responder em até 2 dias úteis.",
+      "name": "Seu nome",
+      "email": "E-mail",
+      "emailHelp": "Usado só para te responder.",
+      "topic": "Sobre o que é?",
+      "topicPlaceholder": "Escolha um assunto",
+      "message": "Sua mensagem",
+      "messageHelp": "Se for um problema, conte o que você fez, o que esperava e o que aconteceu, além do seu navegador e dispositivo.",
+      "honeypot": "Deixe este campo vazio",
+      "send": "Enviar mensagem",
+      "privacyNote_html": "Usamos seus dados só para responder, nunca incluímos você em listas de e-mail e apagamos as mensagens em até 12 meses. Não inclua dados bancários nem senhas. Veja nossa <a href=\"/privacy-policy/#contact-data\" class=\"link\">Política de Privacidade</a>.",
+      "sending": "Enviando…"
+    },
+    "topics": {
+      "bug": "Algo não está funcionando",
+      "calculation": "Dúvida sobre um cálculo ou número",
+      "idea": "Ideia, recurso ou pedido de moeda",
+      "question": "Dúvida geral",
+      "privacy": "Privacidade ou pedido sobre dados",
+      "business": "Publicidade ou parceria",
+      "press": "Imprensa ou mídia",
+      "other": "Outro assunto"
+    },
+    "faq": {
+      "title": "Antes de escrever",
+      "seeBudget": {
+        "q": "Vocês conseguem ver os números do meu orçamento?",
+        "a": "Não. A calculadora funciona no seu navegador e nunca nos envia seus números. Isso também significa que não podemos olhar seu orçamento para ajudar, então descreva o problema na sua mensagem."
+      },
+      "restore": {
+        "q": "Meus números sumiram. Vocês conseguem recuperá-los?",
+        "a_html": "Não temos uma cópia, então não conseguimos. Eles ficam salvos no navegador que você usou, então confira se está no mesmo dispositivo e navegador, fora de uma janela anônima. Use <em>Baixar backup</em> na aba Histórico para guardar uma cópia no futuro."
+      },
+      "delete": {
+        "q": "Como apago meus dados?",
+        "a_html": "Na calculadora, escolha <em>Editar meus números</em> → <em>Começar de novo</em> → <em>Apagar tudo</em>, ou limpe os dados deste site nas configurações do seu navegador."
+      },
+      "advice": {
+        "q": "Vocês podem me dar aconselhamento financeiro pessoal?",
+        "a": "Desculpe, não podemos. A ferramenta serve só para educação geral. Para orientação sobre a sua situação, fale com um consultor financeiro qualificado ou um serviço gratuito de orientação sobre dívidas."
+      },
+      "ads": {
+        "q": "Por que o site mostra anúncios?",
+        "a_html": "Os anúncios mantêm a calculadora gratuita. Você pode desativar os anúncios personalizados a qualquer momento. Veja <a href=\"/privacy-policy/#ads\" class=\"link\">anúncios e cookies</a>."
+      }
+    },
+    "seo": {
+      "title": "Fale conosco | Otimizador de Orçamento Doméstico",
+      "description": "Dúvidas, relatos de erros ou ideias para a calculadora de orçamento grátis? Envie uma mensagem; costumamos responder em até 2 dias úteis. Não podemos dar aconselhamento financeiro.",
+      "ogTitle": "Fale conosco | Otimizador de Orçamento Doméstico",
+      "ogDescription": "Encontrou um erro, tem uma ideia ou uma dúvida sobre um cálculo? Envie uma mensagem.",
+      "ldName": "Fale conosco",
+      "ldDescription": "Envie dúvidas, relatos de erros e ideias sobre a calculadora Otimizador de Orçamento Doméstico."
+    },
+    "emailAlt": "Prefere e-mail? Escreva para {email}.",
+    "errors": {
+      "nameMissing": "Diga seu nome.",
+      "nameTooLong": "Use menos de {max} caracteres no nome.",
+      "emailMissing": "Adicione seu e-mail para podermos responder.",
+      "emailInvalid": "Esse e-mail não parece certo. Confira se há erros de digitação, como em nome@exemplo.com.",
+      "topicMissing": "Escolha o assunto da sua mensagem.",
+      "messageTooShort": "Escreva um pouco mais (pelo menos {min} caracteres) para podermos ajudar.",
+      "messageTooLong": "Use menos de {max} caracteres na mensagem."
+    },
+    "status": {
+      "sentTitle": "Obrigado, sua mensagem está a caminho.",
+      "sentTextBrief": "Costumamos responder em até 2 dias úteis.",
+      "sentText": "Costumamos responder em até 2 dias úteis. Se não receber resposta, confira sua pasta de spam.",
+      "offlineTitle": "Você está sem internet.",
+      "offlineText": "Conecte-se à internet e toque em Enviar de novo. Sua mensagem continua no formulário.",
+      "mailtoTitle": "Seu aplicativo de e-mail deve abrir agora.",
+      "mailtoText": "Toque em enviar por lá para falar com a gente. Se nada abriu, escreva para {email}.",
+      "failedTitle": "Sua mensagem não foi enviada.",
+      "notConfigured": "O formulário de contato ainda não está configurado. Tente novamente mais tarde.",
+      "failedText": "Confira sua conexão e tente novamente. Sua mensagem continua no formulário.",
+      "failedTextWithEmail": "Confira sua conexão e tente novamente, ou envie um e-mail para {email}. Sua mensagem continua no formulário."
+    },
+    "mail": {
+      "subject": "Otimizador de Orçamento: {topic}",
+      "body": "{message}\n\n—\n{name}\nAssunto: {topic}"
+    }
+  }
+}
