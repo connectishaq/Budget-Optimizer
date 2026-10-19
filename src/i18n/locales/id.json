@@ -1,1 +1,2260 @@
-{}
+{
+  "rules": {
+    "effort": {
+      "easy": "Mudah",
+      "medium": "Perlu sedikit usaha",
+      "purchase": "Perlu membeli sesuatu"
+    },
+    "rentBurden": {
+      "label": "Sewa / KPR",
+      "noun": "sewa atau cicilan KPR",
+      "title": "Turunkan biaya tempat tinggal",
+      "why": "Muncul karena biaya tempat tinggal memakan {pct}% penghasilan Anda. Di atas 35% membuat sisa anggaran jadi sempit.",
+      "flag": "Biaya tempat tinggal memakan {pct}% penghasilan Anda. Di atas 35% adalah tanda bahaya.",
+      "evidenceOwner": "Pindah ke KPR yang lebih murah (refinancing) atau mengajukan keberatan pajak bumi dan bangunan biasanya memangkas",
+      "evidenceRenter": "Menawar ulang saat perpanjangan sewa atau berbagi tempat dengan teman biasanya memangkas",
+      "tips": {
+        "ownerRate": "Minta penawaran bunga KPR yang lebih murah dari 2–3 bank.",
+        "ownerTax": "Ajukan keberatan PBB jika rumah serupa dinilai lebih rendah.",
+        "ownerInsurance": "Hentikan asuransi KPR setelah Anda memiliki 20% nilai rumah.",
+        "renterLease": "Minta potongan harga ke pemilik jika Anda menyewa lebih lama.",
+        "renterRoommate": "Pertimbangkan berbagi tempat dengan teman atau pindah ke tempat lebih kecil saat perpanjangan.",
+        "renterCompare": "Lihat iklan sewa lain 2 bulan sebelum perpanjangan untuk membandingkan."
+      }
+    },
+    "insuranceRequote": {
+      "label": "Asuransi",
+      "noun": "asuransi rumah dan mobil",
+      "title": "Cari penawaran asuransi baru setiap tahun",
+      "why": "Muncul karena biaya asuransi Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Membandingkan penawaran setiap tahun biasanya memangkas",
+      "tips": {
+        "quotes": "Minta 3 penawaran sebelum polis Anda diperpanjang.",
+        "bundle": "Gabungkan asuransi rumah dan mobil di satu perusahaan untuk mendapat diskon.",
+        "excess": "Pilih risiko sendiri (deductible) lebih tinggi yang masih bisa Anda bayar dari tabungan."
+      }
+    },
+    "utilitiesEfficiency": {
+      "label": "Listrik & gas",
+      "noun": "listrik dan gas",
+      "title": "Kebiasaan kecil untuk hemat energi",
+      "why": "Muncul karena biaya listrik dan gas Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Mengecilkan pemanas atau pendingin di malam hari, mematikan perangkat yang standby, dan memakai lampu LED biasanya memangkas",
+      "tips": {
+        "night": "Naikkan suhu AC (atau kecilkan pemanas) beberapa derajat di malam hari dan saat Anda keluar rumah.",
+        "standby": "Cabut TV dan charger dari stopkontak.",
+        "led": "Ganti lampu lama dengan LED."
+      }
+    },
+    "smartThermostat": {
+      "label": "Listrik & gas",
+      "noun": "listrik dan gas",
+      "title": "Pasang termostat pintar",
+      "why": "Muncul karena biaya listrik dan gas Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Termostat pintar yang otomatis menyesuaikan suhu biasanya memangkas tambahan",
+      "tips": {
+        "rebate": "Cek apakah perusahaan listrik Anda memberi potongan atau uang kembali untuk alat ini.",
+        "away": "Nyalakan pengaturan yang menurunkan pemakaian saat semua orang pergi.",
+        "report": "Lihat laporan bulanannya dan perbaiki hari-hari yang paling boros."
+      }
+    },
+    "electricitySlab": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Tetap di bawah golongan tarif berikutnya",
+      "why": "Muncul karena tagihan listrik Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Harga per unit naik setelah melewati satu golongan tarif, jadi menjaga pemakaian tepat di bawah golongan berikutnya biasanya memangkas",
+      "tips": {
+        "units": "Cari “pemakaian (kWh)” di tagihan Anda. Harga per unit naik di setiap golongan, jadi usahakan tetap sedikit di bawah golongan berikutnya.",
+        "ac": "Setel AC di 26°C dengan kipas angin menyala, dan pakai timer atau mode eco di malam hari.",
+        "peak": "Pakai setrika, mesin cuci, dan pompa air di luar jam sibuk."
+      }
+    },
+    "utilitiesTuneup": {
+      "label": "Listrik & gas",
+      "noun": "listrik dan gas",
+      "title": "Penyesuaian energi singkat",
+      "why": "Muncul karena biaya listrik dan gas Anda ({amount}) mendekati angka umum. Beberapa perbaikan kecil tetap membantu.",
+      "evidence": "Perbaikan cepat seperti mencuci pakaian dengan air dingin dan memakai kepala shower hemat air biasanya memangkas",
+      "tips": {
+        "shower": "Pasang kepala shower hemat air.",
+        "cold": "Cuci pakaian dengan air dingin dan hanya saat mesin penuh.",
+        "heater": "Kecilkan sedikit suhu pemanas air."
+      }
+    },
+    "internetRenegotiate": {
+      "label": "Internet & telepon",
+      "noun": "internet dan telepon",
+      "title": "Minta penawaran lebih baik ke penyedia layanan",
+      "why": "Muncul karena tagihan internet dan telepon Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Menelepon penyedia layanan dan meminta penawaran lebih baik biasanya memangkas",
+      "tips": {
+        "localBundle": "Ganti ke paket prabayar bulanan, bukan isi pulsa sedikit-sedikit.",
+        "localWifi": "Di rumah, pakai panggilan Wi-Fi dan WhatsApp, bukan menit telepon seluler.",
+        "localPackage": "Minta paket internet yang lebih murah jika Anda memakai kurang dari separuh kecepatannya.",
+        "newCustomer": "Telepon dan minta penawaran yang biasa diberikan ke pelanggan baru.",
+        "speedTest": "Lakukan tes kecepatan. Jika Anda memakai kurang dari separuh, pilih paket yang lebih murah.",
+        "prepaid": "Bandingkan paket prabayar di jaringan yang sama."
+      }
+    },
+    "fuelCarpool": {
+      "label": "Bensin",
+      "noun": "bensin",
+      "title": "Berbagi kendaraan dan gabungkan urusan",
+      "why": "Muncul karena biaya bensin Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Antar-jemput sekolah bergantian dan menyelesaikan urusan dalam satu perjalanan biasanya memangkas",
+      "tips": {
+        "schoolRuns": "Bergantian antar-jemput sekolah dengan 2 atau 3 keluarga di dekat rumah.",
+        "errands": "Selesaikan semua urusan dalam satu perjalanan setiap minggu.",
+        "tyres": "Cek tekanan ban sebulan sekali."
+      }
+    },
+    "fuelCarlight": {
+      "label": "Bensin",
+      "noun": "bensin",
+      "title": "Kurangi pakai mobil di dalam kota",
+      "why": "Muncul karena biaya bensin Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Berjalan kaki, bersepeda, atau naik transportasi umum untuk jarak dekat biasanya memangkas",
+      "tips": {
+        "walk": "Jalan kaki atau bersepeda untuk jarak di bawah 2 km.",
+        "bigShops": "Pakai mobil hanya untuk belanja besar mingguan.",
+        "pass": "Bandingkan biaya bensin dan parkir Anda dengan kartu langganan transportasi bulanan."
+      }
+    },
+    "fuelHybridCommute": {
+      "label": "Bensin",
+      "noun": "bensin",
+      "title": "Kurangi hari pergi ke kantor",
+      "why": "Muncul karena biaya bensin Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Bekerja dari rumah satu atau dua hari seminggu biasanya memangkas",
+      "tips": {
+        "wfh": "Minta 1–2 hari kerja dari rumah ke atasan Anda.",
+        "share": "Berangkat bersama rekan kerja yang tinggal di dekat Anda.",
+        "smooth": "Mengemudi dengan halus: menginjak gas pelan-pelan lebih hemat bensin."
+      }
+    },
+    "transitPass": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Pakai kartu langganan bulanan atau kartu tol",
+      "why": "Muncul karena biaya ongkos dan tol Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Kartu langganan bulanan atau kartu tol biasanya memangkas",
+      "tips": {
+        "compare": "Jumlahkan ongkos bulan lalu dan bandingkan dengan harga langganan bulanan.",
+        "tollTag": "Pakai kartu tol elektronik untuk tarif tol yang lebih murah.",
+        "employer": "Tanyakan ke kantor apakah mereka membantu biaya transportasi."
+      }
+    },
+    "carRefinance": {
+      "label": "Cicilan mobil",
+      "noun": "cicilan mobil",
+      "title": "Cari kredit mobil yang lebih murah",
+      "why": "Muncul karena cicilan mobil Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Memindahkan kredit ke pemberi pinjaman dengan bunga lebih rendah biasanya memangkas",
+      "tips": {
+        "banks": "Tanyakan bunga kredit mobil ke 2–3 bank.",
+        "term": "Pertahankan sisa jumlah bulan yang sama agar Anda tidak membayar lebih lama.",
+        "fee": "Pastikan tidak ada denda untuk melunasi kredit lama lebih awal."
+      }
+    },
+    "groceriesPlan": {
+      "label": "Belanja dapur",
+      "noun": "belanja dapur",
+      "title": "Rencanakan menu dan beli merek toko",
+      "why": "Muncul karena belanja dapur Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Merencanakan menu dan membeli merek toko biasanya memangkas",
+      "tips": {
+        "plan": "Rencanakan menu seminggu sebelum belanja, dan patuhi daftar belanjanya.",
+        "localBulk": "Beli kebutuhan pokok bulanan (tepung, beras, minyak, kacang-kacangan, gula) sekaligus sebulan sekali di pasar grosir.",
+        "storeBrand": "Beli merek toko sendiri untuk kebutuhan dasar seperti beras, tepung, dan minyak.",
+        "bigPacks": "Beli kemasan besar untuk barang yang selalu Anda pakai.",
+        "freeze": "Masak lebih banyak dan bekukan sebagian untuk nanti."
+      }
+    },
+    "diningSwap": {
+      "label": "Makan di luar",
+      "noun": "makan di luar dan pesan antar",
+      "title": "Lebih sering masak di rumah",
+      "why": "Muncul karena pengeluaran makan di luar Anda ({dining}) lebih besar dari belanja dapur ({groceries}).",
+      "evidence": "Memasak di rumah beberapa malam lagi setiap minggu biasanya memangkas",
+      "tips": {
+        "swap": "Ganti 2 malam pesan antar setiap minggu dengan masakan rumah yang cepat.",
+        "lunch": "Bawa bekal makan siang ke kantor di hari kerja.",
+        "special": "Simpan makan di luar untuk acara khusus."
+      }
+    },
+    "impulse24h": {
+      "label": "Belanja impulsif",
+      "noun": "belanja tak terencana",
+      "title": "Tunggu 24 jam sebelum membeli",
+      "why": "Muncul karena belanja impulsif Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Orang yang menunggu 24 jam sebelum membeli biasanya memangkas",
+      "tips": {
+        "wait": "Tunggu sehari sebelum membeli barang yang tidak Anda butuhkan.",
+        "cards": "Hapus data kartu yang tersimpan di aplikasi belanja.",
+        "notifications": "Matikan notifikasi toko dan email promo."
+      }
+    },
+    "schoolDiscounts": {
+      "label": "Biaya sekolah & penitipan anak",
+      "noun": "biaya sekolah dan penitipan anak",
+      "title": "Tanyakan potongan biaya sekolah",
+      "why": "Muncul karena biaya sekolah dan penitipan anak Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Meminta potongan untuk saudara kandung atau bayar di muka biasanya menghemat",
+      "tips": {
+        "siblings": "Tanyakan ke sekolah tentang potongan untuk kakak-adik.",
+        "upfront": "Tanyakan apakah membayar setahun di muka lebih murah.",
+        "secondHand": "Beli seragam dan buku bekas."
+      }
+    },
+    "medicalGeneric": {
+      "label": "Dokter & obat",
+      "noun": "biaya dokter dan obat",
+      "title": "Minta obat generik",
+      "why": "Muncul karena biaya dokter dan obat Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Memilih obat generik dengan zat aktif yang sama biasanya memangkas",
+      "tips": {
+        "generic": "Minta versi generik ke dokter atau apoteker. Zat aktifnya sama dan harganya lebih murah.",
+        "monthlyPack": "Beli obat rutin bulanan dalam kemasan sebulan, bukan per strip.",
+        "localCover": "Cek apakah asuransi kesehatan dari kantor atau kartu rumah sakit menanggung biaya dokter.",
+        "insurance": "Cek apa saja yang sudah ditanggung asuransi kesehatan atau program dari kantor Anda."
+      }
+    },
+    "subsCancelUnused": {
+      "label": "Langganan tak terpakai",
+      "noun": "langganan yang jarang Anda pakai",
+      "title": "Batalkan yang jarang dipakai",
+      "why": "Muncul karena Anda bilang jarang memakai: {names}.",
+      "unnamed": "Tanpa nama",
+      "evidence": "Membatalkannya menghemat",
+      "tips": {
+        "cancel": "Batalkan hari ini. Biasanya Anda bisa berlangganan lagi nanti.",
+        "trials": "Periksa mutasi rekening untuk uji coba gratis yang sudah berubah jadi berbayar.",
+        "reminder": "Pasang pengingat 2 hari sebelum uji coba gratis baru berakhir."
+      }
+    },
+    "subsRotate": {
+      "label": "Streaming",
+      "noun": "langganan streaming dan game",
+      "title": "Pakai satu layanan streaming dalam satu waktu",
+      "why": "Muncul karena langganan streaming dan game Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Memakai satu layanan dalam satu waktu dan memilih paket lebih murah biasanya memangkas",
+      "tips": {
+        "one": "Pakai satu layanan streaming, lalu ganti bulan depan.",
+        "ads": "Pilih paket dengan iklan, atau bayar tahunan jika lebih murah.",
+        "family": "Pakai paket keluarga bersama orang serumah."
+      }
+    },
+    "subsToolsYearly": {
+      "label": "Aplikasi kerja & AI",
+      "noun": "langganan aplikasi kerja dan AI",
+      "title": "Bayar tahunan dan hentikan aplikasi yang tumpang tindih",
+      "why": "Muncul karena langganan aplikasi kerja dan AI Anda ({amount}) lebih tinggi dari yang umum untuk {group} ({threshold}).",
+      "evidence": "Beralih ke tagihan tahunan dan membatalkan aplikasi yang fungsinya sama biasanya memangkas",
+      "tips": {
+        "yearly": "Ubah aplikasi yang Anda pakai setiap minggu ke tagihan tahunan. Sering kali 15–20% lebih murah.",
+        "overlap": "Jika dua aplikasi fungsinya sama (misalnya dua asisten AI), pertahankan yang paling sering Anda pakai.",
+        "employer": "Minta kantor membayar aplikasi yang Anda pakai untuk bekerja."
+      }
+    },
+    "debtAvalanche": {
+      "label": "Bunga kartu kredit",
+      "noun": "bunga kartu kredit",
+      "titleLocal": "Lunasi kartu dengan pinjaman yang lebih murah",
+      "title": "Pindahkan saldo ke kartu berbunga 0%",
+      "why": "Muncul karena {name} mengenakan bunga {apr}% per tahun, dan itu mahal.",
+      "whyUnnamed": "sebuah kartu",
+      "flag": "{name} mengenakan bunga {apr}% per tahun.",
+      "flagUnnamed": "Sebuah kartu",
+      "evidenceLocal": "Melunasi kartu dengan pinjaman pribadi berbunga jauh lebih rendah biasanya menghindari",
+      "evidence": "Memindahkan saldo ke kartu berbunga 0% untuk sementara biasanya menghindari",
+      "orderItem": "{name} ({apr}%)",
+      "orderUnnamed": "Utang",
+      "tips": {
+        "localLoan": "Minta pinjaman pribadi atau program cicilan kartu berbunga lebih rendah ke bank Anda, lalu pakai untuk melunasi kartu (biasanya ada biaya kecil).",
+        "transfer": "Tanyakan ke bank tentang kartu dengan bunga 0% untuk pindah saldo (biasanya ada biaya 3%).",
+        "order": "Lunasi dulu pinjaman dengan bunga tertinggi: {order}.",
+        "minimum": "Tetap bayar minimal tagihan untuk semua utang lainnya."
+      }
+    }
+  },
+  "subs": {
+    "kinds": {
+      "streaming": {
+        "label": "Streaming & game",
+        "tip": "Pakai satu atau dua sekaligus dan ganti tiap bulan. Anda bisa berlangganan lagi kapan saja."
+      },
+      "tools": {
+        "label": "Aplikasi kerja & AI",
+        "tip": "Pertahankan jika menghemat waktu atau menghasilkan uang. Bayar tahunan atau paket tim bersama sering kali lebih murah."
+      },
+      "cloud": {
+        "label": "Penyimpanan cloud & aplikasi",
+        "tip": "Bersihkan file lama sebelum membayar ruang tambahan. Satu paket keluarga bisa dipakai semua orang di rumah."
+      },
+      "fitness": {
+        "label": "Gym & kebugaran",
+        "tip": "Layak jika Anda datang minimal dua kali seminggu. Jika tidak, bayar per kunjungan biasanya lebih murah."
+      },
+      "learning": {
+        "label": "Belajar & kursus",
+        "tip": "Tentukan tanggal selesai. Banyak aplikasi dan kursus punya versi gratis yang mencakup dasar-dasarnya."
+      },
+      "membership": {
+        "label": "Keanggotaan & pengiriman",
+        "tip": "Jumlahkan berapa yang Anda hemat bulan lalu. Jika lebih kecil dari biayanya, batalkan."
+      },
+      "other": {
+        "label": "Lainnya",
+        "tip": "Tanyakan pada diri sendiri: apakah saya mau berlangganan lagi hari ini dengan harga ini?"
+      }
+    }
+  },
+  "profiles": {
+    "single": {
+      "name": "Lajang Penyewa di Kota",
+      "group": "penyewa di kota"
+    },
+    "suburban": {
+      "name": "Keluarga Pinggiran Kota (4 Orang)",
+      "group": "keluarga"
+    },
+    "youngpro": {
+      "name": "Profesional Muda",
+      "group": "profesional muda"
+    },
+    "sample": {
+      "visaCard": "Kartu Visa",
+      "storeCreditCard": "Kartu kredit toko",
+      "personalLoan": "Pinjaman pribadi",
+      "rewardsCard": "Kartu dengan poin hadiah",
+      "studentLoan": "Pinjaman pendidikan",
+      "creditCard": "Kartu kredit",
+      "gymMembership": "Keanggotaan gym",
+      "icloudStorage": "Penyimpanan iCloud",
+      "streamingBundle": "Paket streaming",
+      "cloudStorage": "Penyimpanan cloud",
+      "languageApp": "Aplikasi belajar bahasa",
+      "fitnessApp": "Aplikasi kebugaran",
+      "googleOneStorage": "Penyimpanan Google One",
+      "festivals": "Hari raya (Lebaran, Diwali, Natal…)",
+      "festivalsDiwali": "Hari raya (Diwali, Lebaran, Natal…)",
+      "schoolBooks": "Buku sekolah, seragam, dan uang pangkal",
+      "carService": "Servis dan perbaikan mobil",
+      "travelHome": "Perjalanan dan mudik",
+      "overtime": "Lembur",
+      "festivalBonus": "THR / bonus hari raya (Lebaran, Diwali, Natal…)",
+      "performanceBonus": "Bonus kinerja tahunan",
+      "sideJobs": "Kerja tambahan atau sampingan"
+    }
+  },
+  "calc": {
+    "categories": {
+      "housing": "Tempat tinggal",
+      "utilities": "Tagihan & utilitas",
+      "transport": "Transportasi",
+      "family": "Makan, keluarga & hiburan",
+      "care": "Kesehatan, bantuan & sedekah",
+      "yearly": "Biaya tahunan",
+      "debt": "Cicilan utang",
+      "subscriptions": "Langganan"
+    },
+    "presets": {
+      "emergency": "Dana darurat dulu",
+      "debt": "Utang dulu",
+      "even": "Bagi rata",
+      "goals": "Target dulu"
+    },
+    "otherCosts": "biaya lainnya",
+    "otherIncome": "penghasilan lainnya",
+    "health": {
+      "labels": {
+        "excellent": "Sangat baik",
+        "good": "Baik",
+        "okay": "Cukup",
+        "needsAttention": "Perlu perhatian"
+      },
+      "parts": {
+        "savings": "Menabung tiap bulan",
+        "housing": "Biaya tempat tinggal",
+        "debt": "Utang",
+        "emergency": "Dana darurat",
+        "wants": "Keinginan"
+      },
+      "savings": {
+        "negative": "Tagihan Anda lebih besar dari penghasilan, jadi tidak ada yang tersisa untuk ditabung. Targetnya menyisihkan 20% ({target}) tiap bulan.",
+        "low": "Anda menyisakan {pct} dari penghasilan setelah tagihan. Targetkan 20% ({target} per bulan).",
+        "good": "Anda menyisakan {pct} dari penghasilan setelah tagihan. Itu melampaui target 20%."
+      },
+      "housing": {
+        "comfortable": "Biaya tempat tinggal memakan {pct} dari penghasilan Anda. Di bawah 30% itu nyaman.",
+        "high": "Biaya tempat tinggal memakan {pct} dari penghasilan Anda. Usahakan di bawah 30% ({target}).",
+        "free": "Anda punya rumah sendiri atau tinggal tanpa biaya sewa, jadi tempat tinggal bukan masalah.",
+        "unknown": "Sewa atau cicilan KPR Anda masih kosong. Beri tahu kami jika Anda punya rumah sendiri atau tinggal tanpa sewa untuk mendapat poin ini.",
+        "missing": "Anda bilang membayar biaya tempat tinggal. Isi sewa atau cicilan KPR Anda untuk mendapat poin ini."
+      },
+      "debt": {
+        "payments": "Cicilan utang memakan {pct} dari penghasilan Anda. Di bawah 10% itu sehat.",
+        "none": "Anda tidak punya cicilan utang. Bagus sekali.",
+        "highApr": "Ada kartu yang mengenakan bunga lebih dari 15% per tahun, dan itu menambah biaya Anda."
+      },
+      "emergency": {
+        "noBills": "Isi tagihan Anda agar kami bisa memeriksa ini.",
+        "none": "Anda belum punya tabungan untuk keadaan darurat. Targetkan {target} (3 bulan tagihan pokok).",
+        "under3": "Dana darurat Anda cukup untuk {months} bulan tagihan pokok. Targetkan 3 bulan ({target}) dulu.",
+        "under6": "Dana darurat Anda cukup untuk {months} bulan tagihan pokok. Target berikutnya: 6 bulan ({target}).",
+        "done": "Anda sudah menabung 6 bulan tagihan pokok atau lebih. Sangat baik."
+      },
+      "wants": {
+        "share": "Makan di luar, belanja, dan langganan memakan {pct} dari penghasilan Anda.",
+        "good": "Di bawah 30% adalah target yang baik.",
+        "high": "Usahakan di bawah 30% ({target})."
+      },
+      "tip": {
+        "savings": {
+          "other": "Dorongan terbesar: menabung lebih banyak dari penghasilan tiap bulan bisa menambah hingga {count} poin."
+        },
+        "housingPaid": {
+          "other": "Dorongan terbesar: menurunkan biaya tempat tinggal bisa menambah hingga {count} poin."
+        },
+        "housingQuestion": {
+          "other": "Dorongan terbesar: menjawab pertanyaan tentang tempat tinggal bisa menambah hingga {count} poin."
+        },
+        "debtHighApr": {
+          "other": "Dorongan terbesar: melunasi kartu berbunga tinggi bisa menambah hingga {count} poin."
+        },
+        "debtLoans": {
+          "other": "Dorongan terbesar: menurunkan cicilan utang bisa menambah hingga {count} poin."
+        },
+        "emergency": {
+          "other": "Dorongan terbesar: membangun dana darurat bisa menambah hingga {count} poin."
+        },
+        "wants": {
+          "other": "Dorongan terbesar: sedikit mengurangi belanja keinginan bisa menambah hingga {count} poin."
+        },
+        "perfect": "Semua bagian dalam kondisi sangat baik. Pertahankan!"
+      }
+    }
+  },
+  "format": {
+    "currencies": {
+      "USD": "USD — Dolar AS",
+      "GBP": "GBP — Pound Sterling Inggris",
+      "EUR": "EUR — Euro",
+      "INR": "INR — Rupee India",
+      "PKR": "PKR — Rupee Pakistan",
+      "AED": "AED — Dirham UEA",
+      "CAD": "CAD — Dolar Kanada",
+      "AUD": "AUD — Dolar Australia"
+    },
+    "lakh": "{amount} lakh",
+    "crore": "{amount} crore",
+    "lakhShort": "{amount} L",
+    "croreShort": "{amount} Cr",
+    "duration": {
+      "now": "sekarang juga",
+      "months": {
+        "other": "{count} bulan"
+      },
+      "years": {
+        "other": "{count} tahun"
+      },
+      "yearsMonths": "{years} {months}"
+    },
+    "parse": {
+      "digits": "Ketik angka saja, misalnya 1500",
+      "negative": "Nilai ini tidak boleh kurang dari nol",
+      "tooBig": "Angkanya terlalu besar"
+    },
+    "pctWords": {
+      "all": "seluruhnya (100%)",
+      "threeQuarters": "sekitar tiga perempat (75%)",
+      "half": "sekitar separuh (50%)",
+      "third": "sekitar sepertiga (33%)",
+      "quarter": "sekitar seperempat (25%)",
+      "fifth": "sekitar seperlima (20%)",
+      "tenth": "sekitar sepersepuluh (10%)",
+      "about": "sekitar {pct}%"
+    }
+  },
+  "inputs": {
+    "groups": {
+      "income": {
+        "title": "Penghasilan"
+      },
+      "extras": {
+        "title": "Penghasilan tambahan selama setahun",
+        "blurb": "Bonus, lembur, kerja sampingan… Isi total setahun dan kami akan membaginya ke 12 bulan. Lewati jika tidak ada."
+      },
+      "housing": {
+        "title": "Tempat tinggal",
+        "blurb": "Sewa atau cicilan KPR, dan asuransi rumah."
+      },
+      "utilities": {
+        "title": "Tagihan & utilitas",
+        "blurb": "Listrik, air, gas, internet, dan telepon."
+      },
+      "transport": {
+        "title": "Transportasi",
+        "blurb": "Bensin, ongkos, asuransi mobil, dan cicilan mobil."
+      },
+      "family": {
+        "title": "Makan, keluarga & hiburan",
+        "blurb": "Sekolah, belanja dapur, makan di luar, dan belanja."
+      },
+      "care": {
+        "title": "Kesehatan, bantuan & sedekah",
+        "blurb": "Obat, asisten rumah tangga, kiriman untuk keluarga, dan sedekah. Lewati yang tidak berlaku."
+      },
+      "yearly": {
+        "title": "Biaya tahunan",
+        "blurb": "Biaya besar yang tidak datang tiap bulan. Isi total setahun dan kami akan menghitung berapa yang perlu disisihkan tiap bulan."
+      },
+      "debt": {
+        "title": "Pinjaman dan kartu kredit",
+        "blurb": "Opsional. Lewati jika tidak ada."
+      },
+      "subs": {
+        "title": "Langganan",
+        "blurb": "Opsional. Streaming, aplikasi AI dan kerja, gym, aplikasi, dan keanggotaan."
+      },
+      "savings": {
+        "title": "Dana darurat",
+        "blurb": "Opsional. Uang yang sudah disisihkan."
+      }
+    },
+    "fields": {
+      "income": {
+        "label": "Gaji bersih bulanan",
+        "help": "Setelah pajak. Jumlah yang masuk ke rekening Anda."
+      },
+      "rent": {
+        "label": "Sewa atau cicilan KPR"
+      },
+      "homeIns": {
+        "label": "Asuransi rumah atau penyewa"
+      },
+      "electricity": {
+        "label": "Listrik"
+      },
+      "waterGas": {
+        "label": "Air dan gas"
+      },
+      "internet": {
+        "label": "Internet dan telepon"
+      },
+      "fuel": {
+        "label": "Bensin"
+      },
+      "transit": {
+        "label": "Ongkos bus, kereta, taksi, dan tol"
+      },
+      "carIns": {
+        "label": "Asuransi mobil"
+      },
+      "carLoan": {
+        "label": "Cicilan mobil"
+      },
+      "school": {
+        "label": "Biaya sekolah atau penitipan anak"
+      },
+      "groceries": {
+        "label": "Belanja dapur"
+      },
+      "dining": {
+        "label": "Makan di luar dan pesan antar"
+      },
+      "misc": {
+        "label": "Belanja impulsif dan lain-lain"
+      },
+      "medical": {
+        "label": "Biaya dokter dan obat"
+      },
+      "homeHelp": {
+        "label": "Asisten rumah tangga (ART, juru masak, sopir)"
+      },
+      "familySupport": {
+        "label": "Uang yang Anda kirim ke keluarga"
+      },
+      "giving": {
+        "label": "Sedekah, zakat, dan persembahan"
+      },
+      "other": {
+        "label": "Pengeluaran bulanan lainnya"
+      },
+      "emergencyFund": {
+        "label": "Uang yang ditabung untuk keadaan darurat",
+        "help": "Jumlah total, bukan per bulan."
+      },
+      "perMonth": "per bulan"
+    },
+    "presets": {
+      "extra": {
+        "festivalBonus": "THR / bonus hari raya (Lebaran, Diwali, Natal…)",
+        "performanceBonus": "Bonus kinerja tahunan",
+        "appreciationBonus": "Bonus apresiasi",
+        "overtime": "Lembur",
+        "sideWork": "Kerja tambahan atau sampingan",
+        "thirteenthMonth": "Gaji ke-13",
+        "taxRefund": "Pengembalian pajak"
+      },
+      "yearly": {
+        "festivals": "Hari raya (Lebaran, Diwali, Natal…)",
+        "weddings": "Pernikahan dan hadiah",
+        "schoolBooks": "Buku sekolah, seragam, dan uang pangkal",
+        "carService": "Servis dan perbaikan mobil",
+        "insurance": "Asuransi tahunan",
+        "travel": "Perjalanan dan mudik",
+        "homeRepairs": "Perbaikan rumah"
+      }
+    },
+    "housing": {
+      "question": "Apakah Anda punya rumah sendiri atau tinggal tanpa biaya sewa?",
+      "helpLabel": "Punya rumah sendiri atau tinggal tanpa sewa",
+      "yes": "Ya",
+      "no": "Tidak, saya membayar tempat tinggal",
+      "freeYes": "Baik. Kami tidak akan menghitung tempat tinggal sebagai biaya.",
+      "freeNo": "Isi sewa atau cicilan KPR Anda di atas agar hasilnya akurat."
+    },
+    "chips": {
+      "tapToAdd": "Ketuk untuk menambah",
+      "addOwn": "Tambah sendiri",
+      "empty": "Belum ada yang ditambahkan. Ketuk saran di atas, atau tambah sendiri."
+    },
+    "rows": {
+      "remove": "Hapus {name}",
+      "whatIsIt": "Apa ini?",
+      "thisDebt": "utang ini",
+      "thisSubscription": "langganan ini",
+      "thisCost": "biaya ini",
+      "thisIncome": "penghasilan ini"
+    },
+    "debts": {
+      "addCard": "Tambah kartu kredit",
+      "addLoan": "Tambah pinjaman",
+      "name": "Nama",
+      "type": "Jenis",
+      "typeCard": "Kartu kredit",
+      "typeLoan": "Pinjaman",
+      "placeholderCard": "mis. Kartu kredit bank",
+      "placeholderLoan": "mis. Pinjaman pribadi",
+      "balance": "Sisa utang",
+      "apr": "Bunga per tahun (APR) %",
+      "payment": "Cicilan bulanan",
+      "empty": "Belum ada pinjaman atau kartu. Tidak apa-apa. Lewati jika Anda tidak punya.",
+      "aprCapped": "Bunga di atas {max}% sangat jarang, jadi kami memakai {max}%. Periksa lembar tagihan Anda."
+    },
+    "subs": {
+      "add": "Tambah langganan",
+      "service": "Layanan",
+      "placeholder": "mis. Netflix atau Claude",
+      "cost": "Biaya per bulan",
+      "type": "Jenis",
+      "rarely": "Saya jarang memakainya",
+      "empty": "Belum ada langganan. Tambahkan streaming, aplikasi, atau gym, lalu centang yang jarang Anda pakai.",
+      "byType": "Per jenis",
+      "total": "Total",
+      "summaryOver": "Itu {pct}% dari penghasilan Anda. Panduan yang baik adalah di bawah {guide}% ({limit}). Mulailah dari yang jarang Anda pakai.",
+      "summaryWithin": "Itu {pct}% dari penghasilan Anda, masih dalam panduan di bawah {guide}%."
+    },
+    "yearly": {
+      "placeholder": "mis. Kado ulang tahun",
+      "cost": "Biaya untuk setahun",
+      "perMonth": "Artinya {amount} perlu disisihkan tiap bulan."
+    },
+    "extras": {
+      "placeholder": "mis. THR Lebaran",
+      "amount": "Jumlah untuk setahun",
+      "perMonth": "Itu menambah sekitar {amount} per bulan ke penghasilan Anda."
+    },
+    "subtitle": {
+      "startHere": "Mulai di sini",
+      "optional": "Opsional",
+      "saved": "{amount} tersimpan",
+      "added": {
+        "other": "{amount} · {count} ditambahkan"
+      }
+    },
+    "typical": {
+      "nothing": "biasanya tidak ada",
+      "range": "biasanya {min} sampai {max} per bulan",
+      "tip": "{help} Untuk {group}, angka ini {range}{approx}.",
+      "higher": "Lebih tinggi dari biasanya untuk {group} (umumnya hingga {max})"
+    },
+    "toast": {
+      "removed": "{name} dihapus",
+      "undo": "Urungkan",
+      "sampleLoaded": "Contoh anggaran dimuat untuk profil {profile}",
+      "fallback": {
+        "debts": "Pinjaman",
+        "subscriptions": "Langganan",
+        "yearly": "Biaya",
+        "extras": "Penghasilan tambahan"
+      }
+    },
+    "sample": {
+      "goalHoliday": "Liburan keluarga",
+      "goalLaptop": "Laptop baru"
+    }
+  },
+  "wizard": {
+    "stepOf": "Langkah {step} dari {total}",
+    "billsProgress": "Tagihan: {name} ({n} dari {total})",
+    "next": "Lanjut",
+    "seeResults": "Lihat hasil saya",
+    "showAllInputs": "Tampilkan semua isian",
+    "hideInputs": "Sembunyikan isian",
+    "steps": {
+      "1": {
+        "title": "Berapa penghasilan bulanan Anda?",
+        "sub": "Gaji bersih setelah pajak, ditambah bonus atau lembur selama setahun. Anda bisa mengubahnya kapan saja."
+      },
+      "2": {
+        "title": "Ke mana uang Anda pergi?",
+        "sub": "Ketik pengeluaran Anda dalam sebulan biasa. Biarkan kosong jika tidak berlaku."
+      },
+      "3": {
+        "title": "Ada pinjaman atau langganan?",
+        "sub": "Langkah ini opsional. Lewati jika tidak ada."
+      }
+    },
+    "billPages": {
+      "housing": {
+        "name": "Tempat tinggal"
+      },
+      "utilities": {
+        "name": "Tagihan & utilitas"
+      },
+      "transport": {
+        "name": "Transportasi"
+      },
+      "family": {
+        "name": "Makan, keluarga & hiburan"
+      },
+      "care": {
+        "name": "Kesehatan, bantuan & sedekah"
+      },
+      "yearly": {
+        "name": "Biaya tahunan",
+        "title": "Ada biaya besar setahun sekali?",
+        "sub": "Hari raya, buku sekolah, perbaikan mobil… Jika dibagi sepanjang tahun, biaya ini tidak lagi bikin kaget. Lewati jika tidak ada."
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "Apa arti “{label}”?",
+    "sheetTitle": "Bantuan",
+    "text": {
+      "profile": "Pilih rumah tangga yang paling mirip dengan Anda. Kami membandingkan tagihan Anda dengan rumah tangga serupa, jadi tipsnya sesuai dengan hidup Anda.",
+      "currency": "Mengubah simbol mata uang dan angka “umum” yang kami bandingkan dengan tagihan Anda.",
+      "period": "Tampilkan semua angka per bulan atau per tahun. Angka Anda tetap sama; hanya tampilannya yang berubah.",
+      "income": "Uang yang masuk ke rekening Anda tiap bulan setelah pajak. Pakai gaji bersih, bukan gaji kotor sebelum pajak.",
+      "rent": "Yang Anda bayar tiap bulan untuk menyewa rumah, atau cicilan KPR jika Anda sedang membelinya.",
+      "homeIns": "Asuransi yang membayar jika rumah atau barang Anda rusak atau dicuri. Biarkan kosong jika tidak punya.",
+      "electricity": "Rata-rata tagihan listrik bulanan Anda. Jika berubah-ubah menurut musim, pakai perkiraan rata-rata.",
+      "waterGas": "Tagihan air dan gas bulanan Anda, dijumlahkan.",
+      "internet": "Internet rumah ditambah tagihan ponsel, dijumlahkan.",
+      "fuel": "Bensin atau solar untuk semua kendaraan Anda dalam sebulan.",
+      "transit": "Ongkos bus, kereta, ojek atau taksi online, dan tol dalam sebulan.",
+      "carIns": "Asuransi mobil per bulan. Jika Anda bayar setahun sekali, bagi biaya tahunannya dengan 12.",
+      "carLoan": "Cicilan kredit atau sewa mobil bulanan Anda.",
+      "school": "Biaya sekolah, les, penitipan anak, atau pengasuh per bulan.",
+      "groceries": "Makanan dan kebutuhan rumah tangga yang Anda beli di toko dan pasar.",
+      "dining": "Restoran, kafe, bungkus, dan pesan antar makanan.",
+      "misc": "Belanja yang tidak direncanakan: pakaian, gadget, hadiah, belanja online, dan jajan.",
+      "medical": "Biaya dokter, pemeriksaan, dan obat dalam sebulan biasa. Jika sering berubah, pakai perkiraan rata-rata.",
+      "homeHelp": "Gaji ART, juru masak, sopir, satpam, atau pengasuh yang membantu di rumah.",
+      "familySupport": "Uang yang rutin Anda kirim ke orang tua atau anggota keluarga lain.",
+      "giving": "Sumbangan amal dan pemberian keagamaan, seperti zakat, perpuluhan, atau persembahan di masjid, gereja, atau pura Anda, dalam jumlah bulanan.",
+      "other": "Biaya bulanan rutin lain yang tidak masuk kotak di atas, seperti makanan hewan peliharaan, arisan, atau les.",
+      "extraAmount": "Total yang Anda perkirakan untuk setahun, setelah pajak. Kami membaginya dengan 12 dan menambahkannya ke penghasilan bulanan Anda. Untuk lembur yang berubah-ubah, pakai perkiraan total setahun.",
+      "yearlyCost": "Total untuk setahun. Kami membaginya dengan 12 untuk menunjukkan berapa yang perlu disisihkan tiap bulan.",
+      "emergencyFund": "Uang yang sudah Anda sisihkan untuk kejadian tak terduga, seperti kehilangan pekerjaan atau perbaikan besar. Ini jumlah total, bukan per bulan.",
+      "debtName": "Nama untuk mengenali kartu atau pinjaman ini, seperti “Kartu bank”.",
+      "debtType": "Kartu kredit biasanya mengenakan bunga jauh lebih tinggi daripada pinjaman.",
+      "debtBalance": "Berapa sisa utang Anda pada kartu atau pinjaman ini hari ini.",
+      "debtApr": "Bunga per tahun (APR): biaya tambahan yang dikenakan pemberi pinjaman setiap tahun, dalam persen. Anda bisa menemukannya di lembar tagihan. Makin rendah makin baik.",
+      "debtPayment": "Berapa yang Anda bayar untuk kartu atau pinjaman ini tiap bulan.",
+      "subName": "Layanannya, seperti Netflix atau gym.",
+      "subCost": "Biayanya tiap bulan. Jika Anda bayar tahunan, bagi dengan 12.",
+      "subKind": "Jenis langganan ini. Kami menebaknya dari nama; ubah jika tebakan kami salah. Aplikasi kerja dihitung sebagai tagihan wajib, sisanya sebagai keinginan.",
+      "subRarely": "Centang jika Anda memakainya kurang dari dua kali bulan lalu. Kami akan menyarankan untuk membatalkannya.",
+      "housingFree": "Sebagian orang sudah punya rumah lunas atau tinggal bersama keluarga tanpa biaya. Jika itu Anda, tempat tinggal tidak akan mengurangi nilai Anda.",
+      "summary": "Ringkasan keuangan Anda dalam satu baris, berdasarkan angka yang Anda isi.",
+      "spendNow": "Semua tagihan bulanan yang Anda isi, dijumlahkan.",
+      "spendCould": "Tagihan Anda setelah perubahan yang Anda masukkan ke rencana.",
+      "saveMonth": "Uang yang bisa dihemat tiap bulan dari perubahan dalam rencana Anda. Bunga utang yang terhindar tidak dihitung di sini.",
+      "saveYear": "Penghematan bulanan Anda × 12.",
+      "top3": "Tiga penghematan terbesar yang kami temukan, dengan yang paling mudah di atas. Tempat yang baik untuk memulai.",
+      "health": "Skor 0 sampai 100 yang memeriksa lima hal: menabung, tempat tinggal, utang, dana darurat, dan keinginan. Makin tinggi makin baik.",
+      "split": "Membandingkan pengeluaran Anda dengan panduan umum: sekitar separuh untuk tagihan wajib, sepertiga untuk keinginan, dan seperlima ditabung.",
+      "categories": "Setiap batang menunjukkan berapa bagian penghasilan Anda yang masuk ke bidang tersebut. Garis tipis menunjukkan angka umum untuk rumah tangga seperti Anda.",
+      "payday": "Daftar periksa singkat untuk hari gajian: sisihkan uang untuk biaya tahunan, menabung dulu, dan tetapkan batas belanja mingguan. Centang setiap langkah tiap bulan.",
+      "allowance": "Anggaran makan di luar dan belanja Anda setelah ide dalam rencana, dibagi per minggu. Belanja dengan jumlah tetap tiap minggu lebih mudah dipatuhi daripada total bulanan.",
+      "plan": "Ide untuk berhemat, berdasarkan tagihan Anda. Masukkan ke rencana hanya yang benar-benar akan Anda lakukan; hanya itu yang dihitung.",
+      "cut": "Geser slider ke porsi yang benar-benar menurut Anda bisa dipangkas. Ragu? Pakai saran kami.",
+      "addToPlan": "Hanya perubahan yang Anda masukkan yang dihitung dalam penghematan, grafik, dan tanggal target.",
+      "interestAvoided": "Bunga adalah uang tambahan yang dikenakan pemberi pinjaman. Menghindarinya tidak menambah uang tunai hari ini, tetapi utang Anda lebih cepat lunas.",
+      "years": "Berapa lama Anda terus menabung. Makin lama, makin banyak waktu bagi uang Anda untuk bertumbuh.",
+      "rate": "Rata-rata pertumbuhan tabungan Anda per tahun. Rekening yang aman tumbuh pelan; investasi bisa tumbuh lebih cepat tetapi naik turun.",
+      "inflation": "Harga naik seiring waktu, jadi uang yang sama bisa membeli lebih sedikit di masa depan. Ini menunjukkan angka masa depan dalam nilai uang hari ini.",
+      "allocation": "Ini uang yang tersisa tiap bulan setelah tagihan dan rencana Anda. Pilih cara membaginya untuk dana darurat, utang, dan target Anda.",
+      "goals": "Hal-hal yang sedang Anda tabung. Kami menghitung kapan Anda mencapai masing-masing dengan porsi tabungan yang Anda berikan untuk target.",
+      "emergency": "Uang yang disisihkan untuk kejadian tak terduga seperti kehilangan pekerjaan atau perbaikan mobil. Targetkan 3 sampai 6 bulan tagihan pokok.",
+      "debtFree": "Kapan pinjaman Anda lunas: sekarang, dan jika Anda memakai porsi tabungan untuk utang guna melunasinya.",
+      "history": "Simpan catatan tiap bulan untuk melihat apakah pengeluaran Anda turun dari waktu ke waktu."
+    }
+  },
+  "months": {
+    "toast": {
+      "sampleNotSaved": "Contoh anggaran tidak disimpan. Pakai angka Anda sendiri dulu.",
+      "addNumbersFirst": "Isi beberapa angka dulu",
+      "saveFailed": "Browser Anda tidak mengizinkan kami menyimpan. Unduh cadangan untuk menyimpan angka Anda.",
+      "saved": "{month} disimpan",
+      "partialNoEdit": "Hanya total yang disimpan untuk {month}, jadi bulan ini tidak bisa dibuka untuk diedit.",
+      "editing": "Mengedit {month}. Perubahan disimpan ke bulan tersebut.",
+      "loaded": "{month} dimuat",
+      "backTo": "{done} disimpan. Kembali ke {month}.",
+      "numbersBack": "Angka {month} sudah kembali",
+      "deleted": "{month} dihapus",
+      "undo": "Urungkan",
+      "savedAndRemoved": "{month} disimpan. {drop} dihapus."
+    },
+    "welcome": {
+      "titleCompared": "Selamat datang kembali. Dibandingkan dengan {month}:",
+      "titleWent": "Selamat datang kembali. Begini hasil {month} dibandingkan dengan {prev}:",
+      "same": {
+        "spend": "Pengeluaran Anda tetap sama.",
+        "leftOver": "Sisa uang Anda tetap sama.",
+        "score": "Skor kesehatan Anda tetap sama."
+      },
+      "spentLess": "Pengeluaran Anda {amount} lebih sedikit.",
+      "spentMore": "Pengeluaran Anda {amount} lebih banyak.",
+      "leftOverMore": "Sisa uang Anda {amount} lebih banyak.",
+      "leftOverLess": "Sisa uang Anda {amount} lebih sedikit.",
+      "scoreUp": {
+        "other": "Skor kesehatan Anda naik {count} poin."
+      },
+      "scoreDown": {
+        "other": "Skor kesehatan Anda turun {count} poin."
+      }
+    },
+    "deleteDialog": {
+      "title": "Hapus {month}?",
+      "message": "Ini menghapus angka yang disimpan untuk bulan tersebut dari perangkat ini. Bulan-bulan lain tetap seperti semula.",
+      "confirm": "Hapus bulan"
+    },
+    "banners": {
+      "editing": "Anda sedang mengedit {month}. Perubahan disimpan ke {monthOnly}.",
+      "copiedLast": "Kami sudah menyalin angka bulan lalu. Perbarui yang berubah.",
+      "copiedFrom": "Kami sudah menyalin angka Anda dari {month}. Perbarui yang berubah.",
+      "cap": {
+        "other": "Anda punya {count} bulan tersimpan, jumlah maksimal yang disimpan browser ini. Menyimpan {month} akan menghapus bulan terlama Anda, {drop}. Unduh cadangan dulu untuk menyimpan salinannya."
+      },
+      "capConfirm": "Simpan dan hapus {month}"
+    },
+    "status": {
+      "sample": "Contoh anggaran tidak disimpan ke riwayat Anda.",
+      "editing": "Mengedit {month}. Perubahan tersimpan otomatis.",
+      "saved": "{month} tersimpan (terakhir diperbarui {time}). Otomatis diperbarui saat Anda mengubah angka.",
+      "savedOn": "{month} tersimpan (terakhir diperbarui {time}, {date}). Otomatis diperbarui saat Anda mengubah angka.",
+      "autoSave": "{month} tersimpan otomatis saat Anda mengubah angka."
+    },
+    "leftOver": "Sisa {amount}",
+    "monthCount": {
+      "other": "{count} bulan"
+    },
+    "otherCurrency": {
+      "other": "{count} bulan yang disimpan dalam mata uang lain tidak diikutkan."
+    },
+    "same": "Sama",
+    "stats": {
+      "best": "Bulan terbaik",
+      "bestEmpty": "Muncul setelah dua bulan disimpan",
+      "streak": "Rentetan menabung",
+      "streakOn": "Berturut-turut ada sisa uang, atau lebih banyak dari bulan sebelumnya",
+      "streakOff": "Dimulai dari bulan yang ada sisa uangnya",
+      "saved": "Bulan tersimpan",
+      "since": "Sejak {month}",
+      "sinceCurrencies": {
+        "other": "Sejak {month} · {count} mata uang"
+      }
+    },
+    "trend": {
+      "names": {
+        "spend": "Total pengeluaran",
+        "leftOver": "Sisa uang",
+        "score": "Skor kesehatan"
+      },
+      "scoreNeedsIncome": "Skor kesehatan membutuhkan penghasilan Anda. Skor muncul setelah dua bulan tersimpan berisi penghasilan.",
+      "needTwoSameCurrency": "Grafik Anda muncul setelah dua bulan disimpan dalam mata uang yang sama.",
+      "needTwo": "Grafik Anda muncul setelah dua bulan disimpan.",
+      "note": {
+        "other": "{name}, {count} bulan."
+      },
+      "aria": "{name} per bulan: {items}.",
+      "ariaItem": "{month} {value}",
+      "tipChange": "{amount} dibanding bulan sebelumnya"
+    },
+    "bars": {
+      "income": "Penghasilan",
+      "spending": "Pengeluaran",
+      "total": "Total",
+      "leftOverAbove": "Di atas tiap bulan: sisa uang",
+      "totalsOnly": {
+        "other": "{count} bulan hanya menyimpan total, jadi tidak dirinci per kategori."
+      },
+      "ariaFlow": "Penghasilan dan pengeluaran per bulan: {items}.",
+      "ariaFlowItem": "{month} penghasilan {income}, pengeluaran {spend}",
+      "ariaCategories": "Pengeluaran per kategori untuk tiap bulan: {items}.",
+      "ariaCategoriesItem": "{month} {amount}",
+      "fit": {
+        "other": "Menampilkan {shown} bulan terbaru dari {count} bulan. Pakai layar yang lebih lebar, atau miringkan ponsel Anda, untuk melihat lebih banyak."
+      },
+      "empty": "Belum ada yang bisa ditampilkan.",
+      "shortBy": "Kurang {amount}"
+    },
+    "alerts": {
+      "steadySummary": "Tidak ada yang aneh. Tagihan Anda stabil.",
+      "needTwoSummary": "Muncul setelah dua bulan dengan rincian lengkap disimpan.",
+      "steady": "Belakangan tidak ada tagihan yang terus naik atau turun, atau berubah 15% atau lebih.",
+      "needTwo": "Simpan dua bulan dengan angka lengkap untuk melihat apa yang berubah."
+    },
+    "compare": {
+      "totalsOnlySuffix": " · hanya total",
+      "pickDifferent": "Pilih dua bulan yang berbeda untuk membandingkannya.",
+      "pickTwo": "Pilih dua bulan untuk melihat apa yang berubah.",
+      "needTwo": "Muncul setelah dua bulan disimpan.",
+      "differentCurrencies": "Bulan-bulan ini memakai mata uang berbeda ({a} dan {b}), jadi tidak bisa dibandingkan.",
+      "differentCurrenciesSummary": "{b} dan {a} memakai mata uang berbeda.",
+      "partialNote": "Hanya total yang disimpan untuk {month}, jadi tagihan tidak bisa dibandingkan satu per satu.",
+      "showAll": "Tampilkan tagihan yang tidak berubah",
+      "caption": "{a} dibandingkan dengan {b}",
+      "item": "Pos",
+      "change": "Perubahan",
+      "summarySame": "{b} vs {a}: pengeluaran sama.",
+      "summaryLess": "{b} vs {a}: pengeluaran {amount} lebih sedikit.",
+      "summaryMore": "{b} vs {a}: pengeluaran {amount} lebih banyak.",
+      "summaryPlain": "{b} vs {a}"
+    },
+    "goals": {
+      "tracked": {
+        "other": "{count} target dipantau di bulan-bulan tersimpan Anda."
+      },
+      "savedIn": "Disimpan di {month}. Perubahan terlihat bulan depan.",
+      "up": "Naik {amount} sejak {month}.",
+      "down": "Turun {amount} sejak {month}.",
+      "noChange": "Tidak berubah sejak {month}.",
+      "defaultName": "Target",
+      "progress": "{saved} dari {target} ({pct})"
+    },
+    "list": {
+      "summary": {
+        "other": "{count} bulan tersimpan, maksimal {max}. Lihat, edit, atau hapus kapan saja."
+      },
+      "thisMonth": "Bulan ini",
+      "editing": "Sedang diedit",
+      "totalsOnly": "Hanya total",
+      "compareAria": "Bandingkan {month} dengan bulan sebelumnya",
+      "editAria": "Edit {month}",
+      "deleteAria": "Hapus {month}",
+      "partialTitle": "Hanya total yang disimpan untuk bulan ini"
+    },
+    "backupStatus": {
+      "today": "Cadangan terakhir: hari ini.",
+      "yesterday": "Cadangan terakhir: kemarin.",
+      "daysAgo": {
+        "other": "Cadangan terakhir: {count} hari lalu."
+      },
+      "none": "Belum ada cadangan. Unduh satu untuk menyimpan salinan riwayat Anda.",
+      "empty": "Unduh atau buka file cadangan."
+    },
+    "saveMonth": "Simpan {month}",
+    "saveThisMonth": "Simpan bulan ini"
+  },
+  "backup": {
+    "share": {
+      "copied": "Tautan disalin",
+      "copyManual": "Tekan Ctrl+C (atau tekan lama) untuk menyalin tautan yang dipilih",
+      "invalid": "Tautan berbagi itu tidak valid atau tidak lengkap",
+      "dialog": {
+        "title": "Buka anggaran yang dibagikan?",
+        "message": "Tautan ini berisi angka anggaran yang dibagikan seseorang kepada Anda. Membukanya akan mengganti angka yang sedang Anda kerjakan. Bulan-bulan tersimpan Anda tetap ada.",
+        "confirm": "Muat anggaran yang dibagikan"
+      },
+      "loaded": "Anggaran yang dibagikan sudah dimuat"
+    },
+    "downloaded": "Cadangan diunduh",
+    "savedMonths": {
+      "other": "{count} bulan tersimpan"
+    },
+    "olderMonths": {
+      "other": "{count} bulan lama"
+    },
+    "monthsNone": "tidak ada bulan tersimpan",
+    "monthsSingle": "1 bulan tersimpan ({month})",
+    "monthsRange": "{months} ({from} – {to})",
+    "tooLarge": "File itu terlalu besar untuk sebuah cadangan anggaran",
+    "notBackup": "File itu bukan cadangan anggaran",
+    "openDialog": {
+      "title": "Buka cadangan ini?",
+      "message": "“{file}” berisi {backupMonths}, ditambah angka dan pengaturan Anda. Perangkat ini berisi {hereMonths}. Gabungkan akan menambahkan bulan-bulan dari cadangan ke sini (jika bulannya sama, yang terakhir disimpan yang dipakai). Ganti akan menukar semua yang ada di sini dengan isi cadangan.",
+      "overflow": {
+        "other": "Hanya {count} bulan terbaru yang disimpan, jadi menggabungkan akan menghapus {dropped}."
+      },
+      "merge": "Gabungkan",
+      "replace": "Ganti"
+    },
+    "imported": {
+      "opened": "Cadangan dibuka: {months} di perangkat ini",
+      "openedDropped": "Cadangan dibuka: {months} di perangkat ini, {dropped} tidak diikutkan",
+      "merged": "Cadangan digabungkan: {months} di perangkat ini",
+      "mergedDropped": "Cadangan digabungkan: {months} di perangkat ini, {dropped} tidak diikutkan"
+    },
+    "print": {
+      "title": "Rencana hemat saya",
+      "spendNow": "Pengeluaran Anda sekarang",
+      "perMonth": "{amount} per bulan",
+      "couldSave": "Uang yang bisa Anda hemat tiap bulan",
+      "couldSpend": "Pengeluaran yang bisa Anda capai",
+      "perYear": "Sebanyak ini per tahun",
+      "healthScore": "Skor kesehatan anggaran",
+      "changes": "Perubahan dalam rencana saya ({count})",
+      "cols": {
+        "change": "Perubahan",
+        "effort": "Usaha",
+        "cost": "Biaya awal",
+        "monthly": "Hemat per bulan",
+        "yearly": "Hemat per tahun"
+      },
+      "interestNote": "(bunga yang terhindar, tidak dihitung sebagai penghematan bulanan)",
+      "nothing": "Tidak ada",
+      "emptyPlan": "Belum ada yang dimasukkan ke rencana.",
+      "goals": "Target",
+      "defaultGoal": "Target",
+      "disclaimer": "Ini perkiraan untuk membantu Anda merencanakan, bukan nasihat keuangan. Dihitung secara pribadi di browser Anda."
+    }
+  },
+  "historyEngine": {
+    "fields": {
+      "rent": "Sewa atau cicilan KPR",
+      "homeIns": "Asuransi rumah",
+      "electricity": "Listrik",
+      "waterGas": "Air dan gas",
+      "internet": "Internet dan telepon",
+      "fuel": "Bensin",
+      "transit": "Ongkos dan tol",
+      "carIns": "Asuransi mobil",
+      "carLoan": "Cicilan mobil",
+      "school": "Biaya sekolah",
+      "groceries": "Belanja dapur",
+      "dining": "Makan di luar",
+      "misc": "Belanja impulsif",
+      "medical": "Biaya kesehatan",
+      "homeHelp": "Asisten rumah tangga",
+      "familySupport": "Kiriman untuk keluarga",
+      "giving": "Sedekah",
+      "other": "Tagihan lain",
+      "subscriptions": "Langganan"
+    },
+    "compare": {
+      "pay": "Gaji bersih",
+      "extras": "Penghasilan tambahan (rata-rata bulanan)",
+      "income": "Total penghasilan",
+      "spend": "Total pengeluaran",
+      "leftOver": "Sisa uang",
+      "score": "Skor kesehatan"
+    },
+    "alerts": {
+      "risingSingular": {
+        "other": "{label} naik {count} bulan berturut-turut."
+      },
+      "risingPlural": {
+        "other": "{label} naik {count} bulan berturut-turut."
+      },
+      "fallingSingular": {
+        "other": "{label} turun {count} bulan berturut-turut."
+      },
+      "fallingPlural": {
+        "other": "{label} turun {count} bulan berturut-turut."
+      },
+      "upSinceSingular": "{label} naik {pct}% sejak {month}.",
+      "upSincePlural": "{label} naik {pct}% sejak {month}.",
+      "downSinceSingular": "{label} turun {pct}% sejak {month}.",
+      "downSincePlural": "{label} turun {pct}% sejak {month}."
+    }
+  },
+  "page": {
+    "skipLink": "Langsung ke kalkulator",
+    "header": {
+      "navLabel": "Utama",
+      "brand": "Budget Optimizer",
+      "nav": {
+        "calculator": "Kalkulator",
+        "tips": "Tips keuangan",
+        "glossary": "Daftar istilah"
+      }
+    },
+    "hero": {
+      "privacy": "100% Pribadi. Data keuangan Anda diproses di perangkat Anda sendiri dan tidak pernah keluar dari perangkat.",
+      "title_html": "Pengoptimal Anggaran Rumah Tangga <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Simulator Tabungan</span>",
+      "lead": "Isi tagihan bulanan Anda. Lihat ke mana uang Anda pergi, cara mudah untuk berhemat, dan berapa yang bisa Anda tabung.",
+      "start": "Mulai: sekitar 2 menit",
+      "receipt": {
+        "title": "Bulan Anda",
+        "badge": "Contoh",
+        "income": "Penghasilan",
+        "bills": "Tagihan",
+        "leftOver": "Sisa",
+        "plan": "+ Rencana Anda",
+        "toSave": "Untuk ditabung"
+      }
+    },
+    "common": {
+      "seeExample": "Lihat contoh",
+      "backToMonth": "Kembali ke bulan ini",
+      "downloadBackup": "Unduh cadangan",
+      "addIncome": "Isi penghasilan saya",
+      "chartKey": "Keterangan grafik"
+    },
+    "how": {
+      "title": "Cara kerja alat ini",
+      "step1": {
+        "title": "Isi tagihan Anda",
+        "body": "Pengeluaran Anda dalam sebulan biasa."
+      },
+      "step2": {
+        "title": "Kami bandingkan dengan rumah tangga umum",
+        "body": "Setiap tagihan, dibandingkan dengan rumah tangga seperti Anda."
+      },
+      "step3": {
+        "title": "Kami sarankan perubahan",
+        "body": "Dengan hitungan di balik setiap penghematan."
+      },
+      "step4": {
+        "title": "Lihat berapa yang bisa Anda hemat",
+        "body": "Per bulan, per tahun, dan dari waktu ke waktu."
+      }
+    },
+    "adLabel": "Iklan",
+    "wizard": {
+      "stepsLabel": "Langkah",
+      "steps": {
+        "income_html": "<span class=\"dot\">1</span>Penghasilan Anda",
+        "bills_html": "<span class=\"dot\">2</span>Tagihan Anda",
+        "loans_html": "<span class=\"dot\">3</span>Pinjaman &amp; langganan",
+        "results_html": "<span class=\"dot\">4</span>Hasil Anda"
+      },
+      "startOver": "Mulai dari awal",
+      "skip": "Langsung ke hasil",
+      "progressLabel": "Kemajuan Anda",
+      "note_html": "Dengan penghasilan Anda, kami bisa menghitung skor kesehatan dan sisa uang Anda. Anda bisa mengisinya nanti. Tekan <strong>Lanjut</strong> sekali lagi untuk meneruskan tanpa penghasilan.",
+      "back": "Kembali",
+      "justLooking_html": "Hanya melihat-lihat? <button type=\"button\" data-action=\"sample\" class=\"min-h-11 link\">Lihat contoh anggaran</button>"
+    },
+    "results": {
+      "title": "Hasil Anda",
+      "editNumbers": "Ubah angka saya",
+      "sectionsLabel": "Bagian hasil",
+      "nav": {
+        "summary": "Ringkasan",
+        "ideas": "Ide",
+        "payday": "Gajian",
+        "health": "Kesehatan",
+        "spending": "Pengeluaran",
+        "growth": "Pertumbuhan",
+        "planAhead": "Rencana ke depan",
+        "history": "Riwayat"
+      },
+      "label": "Hasil Anda"
+    },
+    "inputs": {
+      "title": "Semua angka Anda",
+      "who": "Untuk siapa anggaran ini?",
+      "householdType": "Jenis rumah tangga",
+      "profiles": {
+        "single": "Lajang Penyewa di Kota",
+        "suburban": "Keluarga Pinggiran Kota (4 Orang)",
+        "youngpro": "Profesional Muda"
+      },
+      "currency": "Mata uang",
+      "periodLegend": "Tampilkan angka per bulan atau per tahun",
+      "monthly": "Bulanan",
+      "yearly": "Tahunan",
+      "example": "Contoh",
+      "startOverLabel": "Mulai dari awal"
+    },
+    "banners": {
+      "sample_html": "Ini adalah <strong class=\"font-semibold\">contoh anggaran</strong> untuk profil <span id=\"sampleProfile\">Keluarga Pinggiran Kota (4 Orang)</span>.",
+      "useOwn": "Pakai angka saya sendiri",
+      "sampleTip_html": "Tips: <button type=\"button\" id=\"sampleFull\" class=\"link\">contoh Keluarga Pinggiran Kota (4 Orang)</button> menunjukkan semua jenis penghasilan dan tagihan yang bisa Anda tambahkan.",
+      "welcomeClose": "Tutup catatan sambutan",
+      "startBlank": "Mulai dari kosong saja",
+      "backupDue": "Sudah lebih dari 30 hari sejak cadangan terakhir Anda. Riwayat Anda hanya ada di browser ini.",
+      "notNow": "Nanti saja",
+      "addIncome": "Isi penghasilan Anda untuk melihat skor kesehatan dan sisa uang Anda."
+    },
+    "empty": {
+      "title": "Belum ada yang bisa ditampilkan",
+      "body": "Isi penghasilan dan beberapa tagihan, dan hasil Anda langsung muncul di sini.",
+      "enter": "Isi angka saya"
+    },
+    "summary": {
+      "label": "Ringkasan",
+      "saveMonth": "Uang yang bisa Anda hemat tiap bulan",
+      "perYear_html": "<span id=\"sumAnnual\">0</span> per tahun",
+      "spendNow": "Pengeluaran Anda sekarang",
+      "couldSpend": "Pengeluaran yang bisa Anda capai",
+      "interest_html": "Anda juga akan terhindar dari <strong id=\"interestAmount\" class=\"font-semibold text-white\"></strong> bunga utang. Tidak dihitung di atas; ini membuat utang Anda lebih cepat lunas.",
+      "receiptTitle_html": "Rincian <span data-period-word=\"\">bulan</span> Anda",
+      "bonuses": "+ Bonus (dibagi sepanjang tahun)",
+      "billsEntered": "Tagihan yang Anda isi",
+      "planSavings": "+ Penghematan dari rencana Anda",
+      "leftWithPlan": "Sisa dengan rencana Anda"
+    },
+    "plan": {
+      "title": "Cara untuk berhemat",
+      "intro": "Nyalakan ide yang benar-benar akan Anda coba. Hanya itu yang dihitung dalam hasil Anda.",
+      "top3": "3 hal utama untuk dilakukan dulu",
+      "more": "Ide lainnya",
+      "order": "Urutan",
+      "sort": {
+        "savings": "Hemat terbesar",
+        "easy": "Termudah dulu"
+      },
+      "empty": "Tagihan Anda sudah terlihat baik. Tidak ada yang lebih tinggi dari yang umum untuk jenis rumah tangga ini."
+    },
+    "payday": {
+      "title": "Rencana gajian Anda",
+      "intro": "Lakukan ini di hari gaji Anda masuk. Hanya butuh sekitar 10 menit.",
+      "dayLabel": "Gaji saya masuk pada",
+      "empty_html": "Isi penghasilan Anda untuk mendapat rencana gajian. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Isi penghasilan saya</button>",
+      "reminder": "Ingatkan saya setiap gajian"
+    },
+    "health": {
+      "title": "Kesehatan anggaran",
+      "empty_html": "Isi penghasilan Anda untuk melihat skor kesehatan. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Isi penghasilan saya</button>",
+      "outOf": "dari 100",
+      "breakdown": "Rincian skor"
+    },
+    "spending": {
+      "title": "Ke mana uang Anda pergi",
+      "empty_html": "Isi penghasilan Anda untuk melihat pembagian uang Anda. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Isi penghasilan saya</button>",
+      "splitTitle": "Pembagian penghasilan Anda",
+      "guideline": "Panduan umum: 50% untuk tagihan wajib, 30% untuk keinginan, 20% ditabung.",
+      "byCategory": "Per kategori",
+      "legendYou": "Anda",
+      "legendTypical": "Umum"
+    },
+    "growth": {
+      "title": "Seberapa besar tabungan Anda bisa bertumbuh",
+      "intro": "Ini dengan anggapan Anda memasukkan sisa uang ke tabungan setiap bulan dan uang itu tumbuh sesuai persentase yang Anda pilih.",
+      "alt": "Jika Anda juga menabung uang tambahan:",
+      "cur": "Jika Anda terus seperti sekarang:",
+      "extra_html": "Uang tambahan yang akan Anda miliki <span id=\"fvYears\"></span>",
+      "years": "Berapa tahun?",
+      "rate": "Seberapa cepat tabungan Anda tumbuh tiap tahun",
+      "inflation": "Tampilkan dalam nilai uang hari ini (harga naik seiring waktu)",
+      "pricesRise": "Harga naik sebesar",
+      "perYear": "% per tahun",
+      "yearByYear": "Lihat angka per tahun",
+      "tableCaption": "Tabungan per tahun",
+      "colYear": "Tahun",
+      "colAsYouAre": "Seperti sekarang",
+      "colSavingExtra": "Menabung tambahan",
+      "disclaimer": "Ini contoh, bukan janji atau saran investasi. Diasumsikan pertumbuhannya sama setiap tahun, tanpa menghitung pajak dan biaya."
+    },
+    "goals": {
+      "title": "Rencana ke depan",
+      "intro": "Tentukan ke mana uang yang Anda hemat akan dipakai.",
+      "allocTitle": "Ke mana tabungan Anda sebaiknya dialokasikan?",
+      "quickOptions": "Pilihan cepat",
+      "efTitle": "Dana darurat",
+      "debtTitle": "Kapan saya bebas utang?",
+      "goalsTitle": "Hal-hal yang sedang Anda tabung",
+      "goalEmpty": "Belum ada target. Tambahkan satu, misalnya liburan atau uang muka rumah.",
+      "addGoal": "Tambah target"
+    },
+    "share": {
+      "title": "Cetak atau bagikan",
+      "summary": "Cetak rencana Anda, atau buat tautannya.",
+      "printTitle": "Cetak",
+      "printBody": "Rencana satu halaman berisi angka Anda dan perubahan yang Anda pilih.",
+      "printButton": "Cetak atau simpan sebagai PDF",
+      "linkTitle": "Bagikan tautan",
+      "linkBody": "Hanya jika Anda mau. Tautan ini berisi angka Anda, jadi siapa pun yang memilikinya bisa melihatnya. Tidak ada yang diunggah.",
+      "makeLink": "Buat tautan berbagi",
+      "urlLabel": "Tautan berbagi Anda",
+      "copy": "Salin"
+    },
+    "months": {
+      "title": "Bulan demi bulan",
+      "localNote": "Riwayat Anda hanya disimpan di browser ini, di perangkat ini. Pakai Cadangan untuk menyimpan salinan atau memindahkannya ke perangkat lain.",
+      "safariNote": "Di iPhone dan iPad, Safari bisa menghapus data situs setelah beberapa hari tidak dikunjungi, termasuk riwayat Anda. Unduh cadangan setiap bulan agar salinannya aman.",
+      "closeNote": "Tutup catatan ini",
+      "empty": "Belum ada yang disimpan. Bulan ini tersimpan otomatis saat Anda mengisi angka. Kembali bulan depan untuk melihat apa yang berubah.",
+      "overTime": "Dari waktu ke waktu",
+      "trendLegend": "Yang ditunjukkan grafik",
+      "trend": {
+        "spend": "Pengeluaran",
+        "leftOver": "Sisa",
+        "score": "Skor"
+      },
+      "eachMonth": "Setiap bulan",
+      "barsLegend": "Yang ditunjukkan batang",
+      "bars": {
+        "flow": "Penghasilan vs pengeluaran",
+        "cats": "Per kategori"
+      },
+      "changing": "Apa yang berubah",
+      "compare": "Bandingkan dua bulan",
+      "firstMonth": "Bulan pertama",
+      "secondMonth": "Bulan kedua",
+      "goalsOverTime": "Target dari waktu ke waktu",
+      "savedMonths": "Bulan tersimpan",
+      "savedMonthsCaption": "Bulan tersimpan",
+      "col": {
+        "month": "Bulan",
+        "spent": "Pengeluaran",
+        "leftOver": "Sisa",
+        "score": "Skor",
+        "change": "vs bulan sebelumnya",
+        "actions": "Tindakan"
+      },
+      "backupTitle": "Cadangan",
+      "backupBody": "Satu file berisi semua bulan tersimpan dan pengaturan Anda. Simpan di tempat aman, atau buka di perangkat lain untuk melanjutkan di sana.",
+      "openBackup": "Buka cadangan"
+    },
+    "guide": {
+      "toc": {
+        "title": "Daftar isi",
+        "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Listrik siluman &amp; utilitas",
+        "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Langganan yang terus bertambah",
+        "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Belanja dapur &amp; makan di luar",
+        "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transportasi &amp; asuransi",
+        "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Belanja impulsif &amp; bunga",
+        "wealth": "Ubah kebocoran jadi kekayaan",
+        "faq": "Tanya jawab",
+        "try": "Coba kalkulatornya"
+      },
+      "eyebrow": "Tips keuangan · Bacaan 5 menit",
+      "title": "5 Kebocoran Pengeluaran Rumah Tangga yang Tersembunyi (dan Cara Menambalnya Hari Ini)",
+      "intro1_html": "Sebagian besar rumah tangga sebenarnya tidak punya masalah boros, melainkan <strong>masalah kebocoran</strong>. Biaya besar yang terlihat, seperti sewa, cicilan KPR, atau cicilan mobil, selalu diperhatikan. Sementara itu, puluhan tagihan kecil yang berulang diam-diam menguras ratusan ribu setiap bulan tanpa disadari. Karena kebocoran ini otomatis, tersebar, dan masing-masing kecil, orang yang paling cermat mengatur anggaran pun bisa terlewat.",
+      "intro2": "Kabar baiknya? Kebocoran biasanya uang yang paling mudah dikembalikan. Berbeda dengan mengurangi hal yang Anda sukai, menambal kebocoran biasanya berarti membayar lebih sedikit untuk gaya hidup yang persis sama. Berikut lima kebocoran pengeluaran rumah tangga tersembunyi yang paling umum, dan langkah praktis yang bisa Anda ambil hari ini untuk menghentikan masing-masing.",
+      "howToPlug": "Cara menambalnya",
+      "leak1": {
+        "title_html": "<span class=\"num-badge\">1</span>Listrik Siluman dan Utilitas yang Boros",
+        "body_html": "Setiap televisi, konsol game, mesin kopi, dan charger ponsel yang tetap tercolok menyedot sedikit listrik sepanjang waktu. \"Beban siluman\" ini, disebut juga listrik vampir, bisa mencapai <strong>5–10% tagihan listrik rumah pada umumnya</strong>. Tambahkan termostat yang memanaskan atau mendinginkan rumah kosong, serta bohlam pijar yang masih terpasang di lampu, dan tagihan utilitas Anda menanggung banyak beban sia-sia.",
+        "fix1_html": "<strong>Pakai stopkontak pintar</strong> untuk area hiburan dan ruang kerja di rumah agar perangkat yang tidak dipakai benar-benar mati.",
+        "fix2_html": "<strong>Ubah suhu termostat 7–10°F (4–6°C)</strong> selama delapan jam sehari saat Anda tidur atau pergi. Termostat pintar melakukannya otomatis dan sering kali balik modal dalam dua tahun.",
+        "fix3_html": "<strong>Ganti sisa bohlam dengan LED</strong>, yang memakai energi hingga 75% lebih sedikit dan tahan berkali-kali lipat lebih lama.",
+        "fix4": "Cuci pakaian dengan air dingin dan setel pemanas air di 120°F (49°C)."
+      },
+      "leak2": {
+        "title_html": "<span class=\"num-badge\">2</span>Langganan yang Terus Bertambah",
+        "body_html": "Layanan streaming, penyimpanan cloud, keanggotaan aplikasi, paket bahan masak, aplikasi kebugaran, dan \"uji coba gratis\" yang diam-diam berubah jadi berbayar cepat sekali menumpuk. Banyak keluarga menanggung <strong>$50–$150 per bulan untuk langganan</strong> yang jarang mereka pakai. Karena masing-masing terasa murah, totalnya hampir tidak pernah diperiksa.",
+        "fix1_html": "Ambil mutasi rekening dan tagihan kartu tiga bulan terakhir, lalu catat <strong>setiap tagihan berulang</strong>. Tandai yang Anda pakai kurang dari dua kali bulan lalu.",
+        "fix2_html": "<strong>Gilir layanan streaming</strong> alih-alih menumpuknya: berlangganan satu, tonton yang Anda mau, batalkan, lalu pindah ke berikutnya.",
+        "fix3": "Telepon penyedia internet dan telepon Anda, lalu minta harga promo terbaru ke tim retensi pelanggan, atau turunkan ke tingkat kecepatan yang tidak akan terasa bedanya.",
+        "fix4": "Pasang pengingat di kalender dua hari sebelum uji coba gratis berakhir."
+      },
+      "leak3": {
+        "title_html": "<span class=\"num-badge\">3</span>Makanan Terbuang dan Mahalnya Makan di Luar",
+        "body_html": "Berbagai penelitian secara konsisten memperkirakan rumah tangga membuang <strong>sekitar 30% makanan yang mereka beli</strong>. Sayur yang sudah dipotong, kemasan sekali makan, dan belanja dadakan di tengah minggu semuanya mengandung biaya kepraktisan. Lalu ada makan di luar: jika rumah tangga menghabiskan lebih banyak untuk restoran dan pesan antar daripada belanja dapur, biasanya mereka membayar tiga sampai lima kali lipat per porsi untuk makanan yang bisa dimasak di rumah.",
+        "fix1_html": "<strong>Rencanakan menu dari bahan yang sudah ada di kulkas</strong> sebelum menulis daftar belanja.",
+        "fix2": "Pilih merek toko untuk kebutuhan pokok. Sering kali dibuat di pabrik yang sama dengan merek terkenal dan harganya 20–30% lebih murah.",
+        "fix3": "Belanja seminggu sekali dengan daftar, dan jadwalkan satu \"malam sisa makanan\" untuk mengosongkan kulkas.",
+        "fix4": "Ganti dua malam pesan antar per minggu dengan resep rumahan 20 menit, dan siapkan bekal makan siang kerja di hari Minggu."
+      },
+      "leak4": {
+        "title_html": "<span class=\"num-badge\">4</span>Transportasi dan Asuransi yang Dibiarkan Berjalan Sendiri",
+        "body_html": "Bensin adalah salah satu biaya yang paling berubah-ubah dalam anggaran rumah tangga, dan kebiasaan yang menentukannya. Perjalanan pendek yang terpencar menghabiskan jauh lebih banyak bensin per kilometer karena mesin paling boros saat masih dingin. Ban kurang angin, berangkat kerja sendirian, dan tarif tol penuh semuanya menumpuk. Asuransi adalah kembaran yang lebih senyap dari kebocoran ini. Premi cenderung naik di setiap perpanjangan, dan perusahaan asuransi jarang menghargai kesetiaan, jadi rumah tangga yang tidak pernah membandingkan sering membayar <strong>10–15% lebih mahal</strong> daripada pelanggan baru.",
+        "fix1_html": "<strong>Gabungkan urusan</strong> dalam satu putaran sekali atau dua kali seminggu, dan atur <strong>berbagi kendaraan</strong> untuk antar-jemput sekolah atau berangkat kerja.",
+        "fix2": "Jaga tekanan ban sesuai anjuran, yang bisa menghemat bensin hingga 3%.",
+        "fix3": "Bandingkan kartu langganan transportasi bulanan dan diskon kartu tol elektronik dengan yang Anda bayar per perjalanan.",
+        "fix4_html": "<strong>Minta penawaran ulang asuransi rumah dan mobil setiap tahun</strong>, gabungkan polis di satu perusahaan, dan naikkan risiko sendiri (deductible) ke tingkat yang bisa ditanggung dana darurat Anda."
+      },
+      "leak5": {
+        "title_html": "<span class=\"num-badge\">5</span>Belanja Impulsif dan Utang Berbunga Tinggi",
+        "body_html": "Kopi harian, pesanan online tengah malam, pembelian \"lagi diskon\": belanja impulsif adalah kebocoran yang paling sulit dilihat karena tidak pernah datang sebagai satu tagihan. Checkout sekali klik dan data kartu yang tersimpan menghilangkan jeda singkat yang biasanya menghentikan pembelian tak terencana. Jika belanja itu ditaruh di kartu kredit dengan bunga 20–30% per tahun (APR), kebocorannya membesar: saldo $3.000 dengan bunga 24% memakan sekitar <strong>$60 per bulan hanya untuk bunga</strong>.",
+        "fix1_html": "<strong>Terapkan Aturan 24 Jam:</strong> tunggu satu hari penuh sebelum membeli barang yang tidak penting. Sebagian besar keinginan akan hilang.",
+        "fix2": "Hapus data kartu yang tersimpan di situs belanja dan matikan notifikasi dari toko.",
+        "fix3_html": "<strong>Lunasi dulu pinjaman dengan bunga tertinggi</strong>: bayar minimal untuk semua utang, dan masukkan setiap uang lebih ke utang dengan bunga paling tinggi.",
+        "fix4": "Pertimbangkan kartu pindah saldo berbunga 0%. Biaya umumnya 3% sering kali tertutup dalam beberapa bulan dari bunga yang terhindar."
+      },
+      "wealth": {
+        "title": "Ubah Kebocoran yang Tertambal Menjadi Kekayaan Nyata",
+        "p1_html": "Menambal kebocoran hanya berarti jika uangnya dipakai untuk hal yang berguna. Langkah paling ampuh adalah <strong>langsung mengotomatiskan tabungan</strong>. Di minggu yang sama saat Anda memangkas tagihan, atur transfer otomatis sebesar jumlah itu ke rekening tabungan berbunga tinggi, dana darurat, atau reksa dana indeks berbiaya rendah. Jika uangnya tidak pernah mampir ke rekening harian Anda, uang itu tidak bisa bocor lagi.",
+        "p2_html": "Angka kecil menjadi besar seiring waktu. Mengalihkan $250 per bulan ke investasi dengan rata-rata 8% per tahun tumbuh menjadi sekitar <strong>$46.000 dalam sepuluh tahun</strong> dan lebih dari <strong>$147.000 dalam dua puluh tahun</strong>. Pakai kalkulator di atas untuk mencoba angka Anda sendiri, masukkan hanya ide yang cocok dengan hidup Anda, dan nyalakan “Tampilkan dalam nilai uang hari ini” untuk memperhitungkan kenaikan harga.",
+        "p3": "Mulailah dengan satu kebocoran minggu ini. Periksa langganan Anda malam ini, ubah jadwal termostat besok, dan rencanakan menu minggu depan di hari Minggu. Setiap perbaikan hanya butuh beberapa menit, dan penghematannya berulang setiap bulan."
+      }
+    },
+    "faq": {
+      "title": "Pertanyaan yang Sering Diajukan",
+      "q1": "Apakah data keuangan saya aman di kalkulator ini?",
+      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan tidak ada yang Anda ketik dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
+      "q2": "Bagaimana perkiraan penghematan dihitung?",
+      "a2": "Setiap ide mengambil tagihan yang dibahasnya dan menerapkan penghematan yang hati-hati dan umum, misalnya 12% untuk kebiasaan hemat energi atau 15% untuk berbagi kendaraan. Buka \"Dari mana angka ini?\" pada ide mana pun untuk melihat hitungan persisnya. Jika dua ide memangkas tagihan yang sama, ide kedua hanya menghitung sisanya, jadi penghematan tidak pernah dihitung dua kali.",
+      "q3": "Apa fungsi tombol \"Masukkan ke rencana saya\"?",
+      "a3": "Hanya ide yang Anda masukkan ke rencana yang dihitung dalam pengeluaran yang bisa Anda capai, uang yang bisa Anda hemat, grafik pertumbuhan, tanggal target, dan tanggal bebas utang. Matikan ide yang tidak cocok dengan hidup Anda dan semua angka langsung diperbarui.",
+      "q4": "Apa itu aturan anggaran 50/30/20?",
+      "a4": "Ini panduan sederhana: pakai sekitar separuh gaji bersih untuk tagihan wajib seperti tempat tinggal, listrik, belanja dapur, dan cicilan, sekitar sepertiga untuk keinginan seperti makan di luar dan langganan, dan tabung sekitar seperlima.",
+      "q5": "Bagaimana skor kesehatan anggaran dihitung?",
+      "a5": "Skor 0 sampai 100 menjumlahkan lima bagian: berapa yang Anda tabung tiap bulan (30 poin), biaya tempat tinggal (20), utang (15), dana darurat (20), dan pengeluaran untuk keinginan (15). Setiap bagian punya kalimat yang menjelaskan hasil Anda dan apa yang perlu ditargetkan.",
+      "q6": "Persentase pertumbuhan mana yang sebaiknya saya pilih untuk tabungan?",
+      "a6": "Rekening tabungan yang aman belakangan ini memberi sekitar 4% per tahun. Investasi jangka panjang di campuran saham yang luas rata-rata sekitar 8% per tahun dalam jangka panjang, tetapi naik turun. Pertumbuhan tidak pernah dijamin, jadi coba beberapa pilihan dan nyalakan \"Tampilkan dalam nilai uang hari ini\" untuk memperhitungkan kenaikan harga.",
+      "q7": "Seberapa besar dana darurat saya sebaiknya?",
+      "a7": "Panduan umumnya 3 sampai 6 bulan tagihan wajib. Targetkan angka yang lebih tinggi jika rumah tangga Anda hanya punya satu penghasilan, penghasilan yang berubah-ubah, atau ada orang yang bergantung pada Anda. Alat ini menunjukkan berapa lama dana Anda cukup sekarang dan berapa lama untuk mencapai setiap tingkat.",
+      "q8": "Bisakah saya memakai rupee dan mata uang lain?"
+    },
+    "glossary": {
+      "title": "Istilah keuangan, dijelaskan dengan sederhana",
+      "netIncome": {
+        "term": "Penghasilan bersih (gaji bersih)",
+        "definition": "Uang yang benar-benar Anda terima setelah pajak dan potongan lain. Pakai angka ini sebagai penghasilan Anda."
+      },
+      "emergencyFund": {
+        "term": "Dana darurat",
+        "definition": "Tabungan yang disisihkan khusus untuk kejadian tak terduga, seperti kehilangan pekerjaan atau perbaikan besar. Target umumnya 3 sampai 6 bulan tagihan wajib."
+      },
+      "apr": {
+        "term": "Suku bunga (APR)",
+        "definition": "Biaya meminjam per tahun, dalam persen. Dengan APR 30%, utang 100.000 selama setahun penuh menambah sekitar 30.000 bunga."
+      },
+      "compound": {
+        "term": "Pertumbuhan majemuk",
+        "definition": "Saat tabungan Anda menghasilkan uang, lalu uang itu juga menghasilkan uang. Selama bertahun-tahun, tabungan tumbuh makin cepat."
+      },
+      "inflation": {
+        "term": "Inflasi",
+        "definition": "Harga perlahan naik seiring waktu, jadi uang yang sama bisa membeli sedikit lebih sedikit setiap tahun. Sekitar 3% per tahun adalah hal yang umum."
+      },
+      "needsWants": {
+        "term": "Kebutuhan dan keinginan",
+        "definition": "Kebutuhan adalah tagihan wajib seperti sewa, listrik, dan belanja dapur. Keinginan adalah hal yang menyenangkan seperti makan di luar, belanja, dan langganan."
+      },
+      "balanceTransfer": {
+        "term": "Pindah saldo (balance transfer)",
+        "definition": "Memindahkan utang dari satu kartu kredit ke kartu lain dengan bunga lebih rendah (sering 0%) untuk sementara, biasanya dengan biaya sekali bayar."
+      },
+      "lakhCrore": {
+        "term": "Lakh dan crore",
+        "definition": "Cara menyebut angka besar di Pakistan dan India. 1 lakh = 100.000. 1 crore = 100 lakh = 10.000.000."
+      }
+    },
+    "mobileBar": {
+      "seeIdeas": "Lihat ide"
+    },
+    "dialog": {
+      "gotIt": "Mengerti",
+      "cancel": "Batal"
+    }
+  },
+  "seo": {
+    "title": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan | Kalkulator Gratis dan Pribadi",
+    "description": "Alat anggaran rumah tangga yang gratis dan sederhana: isi tagihan langkah demi langkah, lihat ke mana uang Anda pergi, dapatkan ide mudah untuk berhemat, dan lihat tabungan Anda bertumbuh. 100% pribadi, berjalan di browser Anda.",
+    "ogTitle": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+    "ogDescription": "Isi tagihan Anda, dapatkan ide sederhana untuk berhemat, dan lihat berapa yang bisa Anda tabung. Pribadi, gratis, dan instan.",
+    "twitterTitle": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+    "twitterDescription": "Ketahui ke mana uang Anda pergi dan berapa yang bisa Anda tabung. Alat 100% pribadi yang berjalan di browser.",
+    "ogImageAlt": "Pengoptimal Anggaran Rumah Tangga: contoh satu bulan berisi penghasilan, tagihan, dan uang untuk ditabung",
+    "app": {
+      "name": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+      "description": "Alat anggaran rumah tangga yang pribadi dan berjalan di browser, yang memandu Anda mengisi tagihan, menyarankan cara mudah untuk berhemat, memberi skor kesehatan anggaran, merencanakan target dan pelunasan utang, serta menunjukkan bagaimana tabungan bisa bertumbuh.",
+      "featureList": [
+        "Pengisian terpandu langkah demi langkah",
+        "Ide hemat dengan bahasa sederhana",
+        "Skor kesehatan anggaran",
+        "Pembagian uang Anda (50/30/20)",
+        "Proyeksi pertumbuhan tabungan dalam nilai uang hari ini",
+        "Perencana target",
+        "Daftar periksa gajian dengan pengingat kalender",
+        "Batas belanja mingguan",
+        "Biaya tahunan dibagi menjadi angka bulanan",
+        "Pemeriksaan dana darurat",
+        "Tanggal bebas utang",
+        "Delapan mata uang dengan tampilan lakh dan crore"
+      ]
+    },
+    "faq": {
+      "q1": "Apakah data keuangan saya aman di kalkulator ini?",
+      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan tidak ada yang Anda ketik dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
+      "q2": "Bagaimana perkiraan penghematan dihitung?",
+      "a2": "Setiap ide mengambil tagihan yang dibahasnya dan menerapkan penghematan yang hati-hati dan umum, misalnya 12% untuk kebiasaan hemat energi atau 15% untuk berbagi kendaraan. Buka \"Dari mana angka ini?\" pada ide mana pun untuk melihat hitungan persisnya. Jika dua ide memangkas tagihan yang sama, ide kedua hanya menghitung sisanya, jadi penghematan tidak pernah dihitung dua kali.",
+      "q3": "Apa fungsi tombol \"Masukkan ke rencana saya\"?",
+      "a3": "Hanya ide yang Anda masukkan ke rencana yang dihitung dalam pengeluaran yang bisa Anda capai, uang yang bisa Anda hemat, grafik pertumbuhan, tanggal target, dan tanggal bebas utang. Matikan ide yang tidak cocok dengan hidup Anda dan semua angka langsung diperbarui.",
+      "q4": "Apa itu aturan anggaran 50/30/20?",
+      "a4": "Ini panduan sederhana: pakai sekitar separuh gaji bersih untuk tagihan wajib seperti tempat tinggal, listrik, belanja dapur, dan cicilan, sekitar sepertiga untuk keinginan seperti makan di luar dan langganan, dan tabung sekitar seperlima.",
+      "q5": "Bagaimana skor kesehatan anggaran dihitung?",
+      "a5": "Skor 0 sampai 100 menjumlahkan lima bagian: berapa yang Anda tabung tiap bulan (30 poin), biaya tempat tinggal (20), utang (15), dana darurat (20), dan pengeluaran untuk keinginan (15). Setiap bagian punya kalimat yang menjelaskan hasil Anda dan apa yang perlu ditargetkan.",
+      "q6": "Persentase pertumbuhan mana yang sebaiknya saya pilih untuk tabungan?",
+      "a6": "Rekening tabungan yang aman belakangan ini memberi sekitar 4% per tahun. Investasi jangka panjang di campuran saham yang luas rata-rata sekitar 8% per tahun dalam jangka panjang, tetapi naik turun. Pertumbuhan tidak pernah dijamin, jadi coba beberapa pilihan dan nyalakan \"Tampilkan dalam nilai uang hari ini\" untuk memperhitungkan kenaikan harga.",
+      "q7": "Seberapa besar dana darurat saya sebaiknya?",
+      "a7": "Panduan umumnya 3 sampai 6 bulan tagihan wajib. Targetkan angka yang lebih tinggi jika rumah tangga Anda hanya punya satu penghasilan, penghasilan yang berubah-ubah, atau ada orang yang bergantung pada Anda. Alat ini menunjukkan berapa lama dana Anda cukup sekarang dan berapa lama untuk mencapai setiap tingkat.",
+      "q8": "Bisakah saya memakai rupee dan mata uang lain?"
+    }
+  },
+  "dashboard": {
+    "summary": {
+      "tips": {
+        "other": "{count} tips"
+      },
+      "easyTips": {
+        "other": "{count} tips mudah"
+      },
+      "save": {
+        "month": "Dengan mengikuti {tips}, Anda bisa menghemat tambahan {amount} setiap bulan.",
+        "year": "Dengan mengikuti {tips}, Anda bisa menghemat tambahan {amount} setiap tahun."
+      },
+      "noTips": "Nyalakan beberapa ide di bawah untuk melihat berapa yang bisa Anda hemat.",
+      "spendOnly": {
+        "month": "Anda mengeluarkan {spend} per bulan untuk tagihan yang Anda isi.",
+        "year": "Anda mengeluarkan {spend} per tahun untuk tagihan yang Anda isi."
+      },
+      "overspend": {
+        "month": "Penghasilan Anda {income} tetapi pengeluaran Anda {spend} per bulan, {gap} lebih besar dari penghasilan.",
+        "year": "Penghasilan Anda {income} tetapi pengeluaran Anda {spend} per tahun, {gap} lebih besar dari penghasilan."
+      },
+      "earnSpend": {
+        "month": "Penghasilan Anda {income} dan pengeluaran Anda {spend} per bulan.",
+        "year": "Penghasilan Anda {income} dan pengeluaran Anda {spend} per tahun."
+      }
+    },
+    "optimizedSub": {
+      "less": {
+        "month": "{pct} lebih sedikit dari sekarang, per bulan",
+        "year": "{pct} lebih sedikit dari sekarang, per tahun"
+      },
+      "plain": {
+        "month": "per bulan",
+        "year": "per tahun"
+      }
+    },
+    "receipt": {
+      "takeHome": "Gaji bersih",
+      "income": "Penghasilan",
+      "notAdded": "belum diisi",
+      "shortBy": "Kurang",
+      "leftOver": "Sisa",
+      "noteLeft": "Uang yang bisa Anda masukkan ke tabungan, dana darurat, atau untuk melunasi utang.",
+      "noteShort": "Tagihan Anda masih lebih besar dari penghasilan. Nyalakan lebih banyak ide, atau lihat tagihan terbesar Anda.",
+      "noteNoIncome": "Isi penghasilan Anda untuk melihat sisanya."
+    },
+    "over": {
+      "fixed_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Ide-ide dalam rencana Anda akan mengatasinya dan menyisakan {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Ide-ide dalam rencana Anda memperkecil selisihnya menjadi {left}{per}. Nyalakan lebih banyak ide, atau lihat biaya tempat tinggal dan pinjaman."
+    },
+    "split": {
+      "needs": "Tagihan wajib",
+      "wants": "Keinginan",
+      "savings": "Sisa untuk ditabung",
+      "within": "{icon} Sesuai panduan {target}%",
+      "short": "{amount}{per} kurang dari panduan {target}%",
+      "over": "{amount}{per} melebihi panduan {target}%",
+      "ofIncome_html": "<span class=\"font-semibold text-slate-900 dark:text-white\">{pct}</span><span class=\"muted\"> dari penghasilan</span>",
+      "guideline": "Panduan: {target}%"
+    },
+    "categories": {
+      "basisIncome": "Porsi dari penghasilan Anda, dibandingkan dengan {profile} pada umumnya.",
+      "basisSpend": "Porsi dari total pengeluaran Anda. Isi penghasilan Anda untuk membandingkan dengan rumah tangga pada umumnya.",
+      "typical": "Umumnya: {pct} dari penghasilan",
+      "higher": "Lebih tinggi dari umumnya (sekitar {pct})",
+      "nothingFor": "Belum diisi: {list}."
+    },
+    "mobile": {
+      "saveYear": "Anda bisa menghemat tiap tahun",
+      "saveMonth": "Anda bisa menghemat tiap bulan"
+    }
+  },
+  "common": {
+    "per": {
+      "month": "/bulan",
+      "year": "/tahun"
+    },
+    "perShort": {
+      "month": "/bln",
+      "year": "/thn"
+    },
+    "periodWord": {
+      "month": "bulan",
+      "year": "tahun"
+    },
+    "confirm": "Konfirmasi",
+    "undo": "Urungkan"
+  },
+  "plan": {
+    "explain": {
+      "interest": "Saldo kartu berbunga tinggi Anda memakan sekitar {base} per bulan untuk bunga. {evidence} {words} dari bunga tersebut. {pct}% dari {base} = {monthly} per bulan yang bisa Anda hindari. Ini bukan uang tunai di kantong: artinya lebih banyak dari setiap pembayaran masuk ke pokok utang, jadi Anda lebih cepat bebas utang.",
+      "interestChosen": "Saldo kartu berbunga tinggi Anda memakan sekitar {base} per bulan untuk bunga. {evidence} {words} dari bunga tersebut. Anda memilih {pct}%. {pct}% dari {base} = {monthly} per bulan yang bisa Anda hindari. Ini bukan uang tunai di kantong: artinya lebih banyak dari setiap pembayaran masuk ke pokok utang, jadi Anda lebih cepat bebas utang.",
+      "start": "Anda bilang mengeluarkan {amount} per bulan untuk {noun}.",
+      "stacked": "Setelah perubahan lain pada tagihan ini dalam rencana Anda, tersisa {amount}.",
+      "evidence": "{evidence} {words}.",
+      "evidenceOfThis": "{evidence} {words} dari pengeluaran ini.",
+      "chosen": "Anda memilih {pct}% sebagai gantinya.",
+      "sum": "{pct}% dari {base} = {monthly}."
+    },
+    "details": "Rincian",
+    "youSpend": "Pengeluaran Anda",
+    "youCouldSpend": "Bisa menjadi",
+    "youSave": "Anda hemat",
+    "whatToDo": "Yang perlu dilakukan",
+    "howDidWeGetThis": "Dari mana angka ini?",
+    "howMuchCut": "Menurut Anda, berapa yang bisa dipangkas?",
+    "keepSuggestion": "Ragu? Pakai saran kami.",
+    "useSuggestion": "Pakai saran kami",
+    "ourSuggestion": "Saran kami {pct}%.",
+    "addToPlan": "Masukkan ke rencana saya: {label}",
+    "added": "Dimasukkan ✓",
+    "notAdded": "Belum dimasukkan",
+    "costsOnce": "Biaya sekali {amount}",
+    "noCost": "Tanpa biaya awal",
+    "effort": {
+      "easy": "Mudah",
+      "medium": "Perlu sedikit usaha",
+      "purchase": "Perlu membeli sesuatu"
+    },
+    "avoid": "Terhindar",
+    "interestNow": "Bunga yang Anda bayar sekarang",
+    "interestAfter": "Bunga setelah perubahan",
+    "interestAvoid": "Bunga yang terhindar",
+    "perMonthParen": "({amount}/bulan)",
+    "perYearParen": "({amount}/tahun)",
+    "interestNote": "Ini tidak dihitung sebagai penghematan bulanan. Manfaatnya adalah utang Anda lebih cepat lunas.",
+    "costPayback": "Biaya sekali {amount}, balik modal dalam {time}.",
+    "longTime": "waktu yang lama",
+    "noCostRightAway": "Tanpa biaya awal · Mulai hemat: Langsung",
+    "sliderValue": "{pct}%, hemat {amount} {per}",
+    "showFewer": "Tampilkan lebih sedikit ide",
+    "showMore": {
+      "other": "Tampilkan {count} ide lagi"
+    },
+    "count": "{done} dari {total} dimasukkan ke rencana Anda"
+  },
+  "goals": {
+    "bucket": {
+      "emergency": "Dana darurat",
+      "debt": "Melunasi utang",
+      "goals": "Target Anda"
+    },
+    "why": {
+      "emergency": "dana darurat Anda sudah mencapai 6 bulan",
+      "debt": "Anda tidak punya pinjaman",
+      "goals": "Anda belum punya target"
+    },
+    "alloc": {
+      "valueText": "{pct}%, {amount} per bulan",
+      "perMonth": "{amount}/bulan",
+      "noteShort": "Tagihan Anda {amount} per bulan lebih besar dari penghasilan, jadi belum ada yang bisa dibagi. Masukkan lebih banyak ide ke rencana untuk menutup selisihnya.",
+      "noteNoMoney": "Isi penghasilan Anda dan masukkan beberapa ide ke rencana dulu. Setelah itu Anda bisa memilih ke mana uangnya pergi.",
+      "noteUnassigned": "Belum ada yang perlu ditabung. Tambahkan target, pinjaman, atau target dana darurat.",
+      "noteInactive": "Karena {reasons}, porsi itu dialihkan ke prioritas Anda yang lain.",
+      "and": "{a} dan {b}",
+      "noteAfterBills": "Setelah tagihan, Anda punya sisa {amount} per bulan untuk ditabung. Ketiga angka di atas jika dijumlahkan sama dengan itu.",
+      "noteAfterPlan": "Setelah tagihan dan rencana Anda, Anda punya sisa {amount} per bulan untuk ditabung. Ketiga angka di atas jika dijumlahkan sama dengan itu."
+    },
+    "row": {
+      "name": "Anda menabung untuk apa?",
+      "namePlaceholder": "mis. Liburan",
+      "remove": "Hapus target {name}",
+      "target": "Jumlah yang dibutuhkan",
+      "saved": "Sudah terkumpul"
+    },
+    "status": {
+      "needTarget": "Ketik jumlah yang Anda butuhkan.",
+      "done": "Selesai! Uang Anda sudah cukup untuk ini.",
+      "unreachable": "{pct} terkumpul. Beri target porsi dari tabungan Anda di atas untuk melihat tanggalnya.",
+      "progress": "{pct} terkumpul · kurang {remaining} · tercapai dalam {time} ({date})"
+    },
+    "basis": {
+      "putting": "Anda menyisihkan {amount} per bulan untuk target, diselesaikan satu per satu dari atas.",
+      "giveShare": "Beri target porsi dari tabungan Anda di atas untuk melihat kapan tercapai.",
+      "typeEach": "Ketik jumlah yang dibutuhkan untuk tiap target untuk melihat kapan tercapai.",
+      "allSaved": "Semua target sudah terkumpul cukup, jadi porsi untuk target dialihkan ke prioritas Anda yang lain."
+    },
+    "emergency": {
+      "needBills": "Isi tagihan wajib Anda (tempat tinggal, tagihan, belanja dapur, transportasi) agar kami bisa menghitung berapa yang perlu disisihkan.",
+      "done": "Selesai",
+      "toGoAbout": "Kurang {amount} · sekitar {time}",
+      "toGo": "Kurang {amount}",
+      "cover_html": "Tabungan Anda sebesar <strong class=\"text-slate-900 dark:text-white\">{fund}</strong> cukup untuk <strong class=\"text-slate-900 dark:text-white\">{months} bulan</strong> tagihan wajib ({essentials} per bulan).",
+      "none": "Anda belum punya dana darurat. Tagihan wajib Anda {amount} per bulan.",
+      "first3": "Target pertama, 3 bulan: {amount}",
+      "safe6": "Tingkat aman, 6 bulan: {amount}",
+      "using": "Memakai {amount} per bulan dari tabungan Anda.",
+      "giveShare": "Beri dana darurat porsi dari tabungan Anda di atas untuk melihat berapa lama waktunya."
+    },
+    "debt": {
+      "none_html": "Belum ada pinjaman atau kartu kredit. Jika ada, tambahkan di langkah 3 (<button type=\"button\" class=\"font-semibold text-indigo-700 underline dark:text-indigo-300\" data-edit-step=\"3\">tambah pinjaman</button>) untuk melihat kapan Anda bebas utang.",
+      "yourLoan": "pinjaman Anda",
+      "yourCard": "kartu kredit Anda",
+      "never": "Tidak akan lunas dengan cicilan saat ini",
+      "owe_html": "Total utang Anda <strong class=\"text-slate-900 dark:text-white\">{total}</strong>.",
+      "keepPaying": "Jika Anda terus membayar seperti sekarang",
+      "durationInterest": "{time} · bunga {interest}",
+      "paymentSmaller": "Cicilan Anda lebih kecil dari bunganya",
+      "ifAddAmount": "Jika Anda menambah {amount}/bulan",
+      "ifAddShare": "Jika Anda menambah porsi untuk utang",
+      "giveShare": "Beri utang porsi dari tabungan Anda di atas",
+      "sooner_html": "Lunasi dulu pinjaman dengan bunga tertinggi memakai tambahan {amount} per bulan, dan Anda bebas utang <strong>{time} lebih cepat</strong> serta membayar bunga <strong>{saved} lebih sedikit</strong>.",
+      "neverAll": "Setidaknya satu utang tidak akan pernah lunas dengan cicilan saat ini.",
+      "payMore": "Bayar lebih dari {amount} per bulan untuk {name}.",
+      "addPayment": "Isi cicilan bulanan untuk {name}."
+    },
+    "summary": {
+      "alloc": "{preset}: {emergency} darurat · {debt} utang · {goals} target per bulan",
+      "ownSplit": "Pembagian Anda sendiri",
+      "allocShort": "Tagihan Anda lebih besar dari penghasilan, jadi belum ada yang bisa dibagi.",
+      "allocNoIncome": "Isi penghasilan dan beberapa ide dulu, lalu pilih ke mana uangnya pergi.",
+      "emergencyNoBills": "Isi tagihan Anda untuk memeriksa ini.",
+      "emergencyFull": "{months} bulan tagihan sudah ditabung. Sepenuhnya aman.",
+      "emergencyStart": "{months} bulan tagihan sudah ditabung. Awal yang baik.",
+      "emergencyIn": "{months} bulan sudah ditabung. 3 bulan tercapai dalam sekitar {time}.",
+      "emergencyNeedsShare": "{months} bulan sudah ditabung. Untuk mencapai 3 bulan, perlu porsi dari tabungan Anda.",
+      "debtNone": "Belum ada pinjaman atau kartu.",
+      "debtNever": "Tidak akan lunas dengan cicilan saat ini. Buka untuk melihat alasannya.",
+      "debtFreeSooner": "Bebas utang pada {date}, {time} lebih cepat.",
+      "debtFreeBy": "Bebas utang pada {date}.",
+      "debtFreeNow": "Bebas utang pada {date} dengan cicilan saat ini.",
+      "goalsNone": "Belum ada target.",
+      "goalsTypeEach": "Ketik jumlah yang dibutuhkan untuk tiap target.",
+      "goalsCovered": "Semua target Anda sudah tercukupi.",
+      "goalReady": "{name} tercapai pada {date}.",
+      "firstGoal": "Target pertama",
+      "goalsNeedShare": {
+        "other": "{count} target. Beri target porsi dari tabungan Anda untuk melihat tanggalnya."
+      }
+    },
+    "removed": "Target \"{name}\" dihapus",
+    "untitled": "Tanpa judul"
+  },
+  "payday": {
+    "list": {
+      "fallback": "biaya tahunan Anda",
+      "two": "{a} dan {b}",
+      "more": {
+        "other": "{a}, {b}, dan {count} lainnya"
+      }
+    },
+    "steps": {
+      "yearly": {
+        "title": "Sisihkan {amount} untuk biaya tahunan",
+        "text": "Simpan di rekening terpisah, agar uangnya siap untuk {names} ({total} per tahun)."
+      },
+      "yearlyAdd": {
+        "title": "Ada biaya besar yang datang setahun sekali?",
+        "text": "Hari raya, buku sekolah, atau perbaikan mobil bisa mengacaukan satu bulan. Tambahkan, dan kami tunjukkan berapa yang perlu disisihkan tiap bulan.",
+        "action": "Tambah biaya tahunan"
+      },
+      "save": {
+        "title": "Pindahkan {amount} ke tabungan lebih dulu",
+        "text": "Lakukan di hari gaji masuk, sebelum belanja apa pun, agar tidak terpakai tanpa sengaja. Transfer otomatis membuatnya tanpa repot.",
+        "action": "Pilih tujuannya"
+      },
+      "short": {
+        "titleShort": "Biaya Anda {amount} lebih besar dari penghasilan",
+        "titleNothing": "Belum ada sisa untuk ditabung",
+        "text": "Nyalakan lebih banyak ide untuk berhemat, agar ada yang bisa ditabung saat gajian.",
+        "action": "Lihat ide untuk berhemat"
+      },
+      "allowance": {
+        "title": "Belanja maksimal {amount} per minggu untuk makan di luar dan belanja",
+        "text": "Itu {amount} per bulan, setelah ide dalam rencana Anda. Pindahkan ke kartu terpisah atau ambil tunai tiap minggu. Jika sudah habis, tunggu minggu depan."
+      },
+      "bonus": {
+        "title": "Saat bonus masuk, tabung dulu",
+        "textMany": "{names} menambah rata-rata sekitar {amount} per bulan, tetapi tidak datang setiap bulan. Masukkan setiap pembayaran langsung ke tabungan atau untuk biaya tahunan, agar tagihan sehari-hari tidak pernah bergantung padanya.",
+        "textOne": "{name} menambah rata-rata sekitar {amount} per bulan, tetapi tidak datang setiap bulan. Masukkan setiap pembayaran langsung ke tabungan atau untuk biaya tahunan, agar tagihan sehari-hari tidak pernah bergantung padanya.",
+        "fallbackName": "Penghasilan tambahan Anda"
+      }
+    },
+    "stepNumber": "Langkah {n}:",
+    "weeklyLimit": "Batas belanja mingguan",
+    "progress": {
+      "all": "Semua selesai untuk {month}. Kerja bagus!",
+      "some": "{done} dari {total} selesai untuk {month}"
+    },
+    "reminderDownloaded": "Pengingat diunduh. Buka file-nya untuk menambahkannya ke kalender Anda.",
+    "dayOfMonth": "Tanggal {day}{suffix}",
+    "ordinal": {
+      "st": "",
+      "nd": "",
+      "rd": "",
+      "th": ""
+    },
+    "lastDay": "Hari terakhir bulan ini"
+  },
+  "ics": {
+    "title": "Gajian: ikuti rencana keuangan Anda",
+    "note": "Angka diambil dari hari Anda menyimpan pengingat ini. Buka alat anggaran untuk melihat angka terbaru."
+  },
+  "charts": {
+    "returns": {
+      "safe": {
+        "label": "{pct}%: Rekening tabungan aman",
+        "hint": "Tumbuh pelan, dengan risiko sangat kecil."
+      },
+      "mixed": {
+        "label": "{pct}%: Tabungan dan investasi",
+        "hint": "Ada naik turun di sepanjang jalan."
+      },
+      "longTerm": {
+        "label": "{pct}%: Investasi jangka panjang",
+        "hint": "Lebih banyak naik turun. Paling cocok untuk 10 tahun ke atas."
+      },
+      "shares": {
+        "label": "{pct}%: Sebagian besar saham",
+        "hint": "Naik turun besar, dan tidak pernah dijamin."
+      }
+    },
+    "tip": {
+      "today": "Hari ini",
+      "after": {
+        "other": "Setelah {count} tahun"
+      },
+      "alt_html": "Menabung tambahan: <strong class=\"tabular-nums\">{amount}</strong>",
+      "cur_html": "Seperti sekarang: <strong class=\"tabular-nums\">{amount}</strong>",
+      "more": "Anda akan punya {amount} lebih banyak"
+    },
+    "yearsValueText": "{years} tahun",
+    "years": {
+      "other": "{count} tahun"
+    },
+    "afterYears": {
+      "other": "setelah {count} tahun"
+    },
+    "on": "Nyala",
+    "off": "Mati",
+    "mode": {
+      "real": "Ditampilkan dalam nilai uang hari ini (dengan anggapan harga naik {pct}% per tahun).",
+      "nominal": "Ditampilkan dalam nilai uang masa depan (tidak disesuaikan dengan kenaikan harga)."
+    },
+    "summary": {
+      "empty": "Masukkan ide ke rencana Anda (dan isi penghasilan) untuk melihat bagaimana tabungan Anda bisa bertumbuh.",
+      "main": "Jika Anda menabung {monthly} setiap bulan selama {years} dan tumbuh {rate}% per tahun, Anda bisa punya sekitar {nominal}. Karena harga naik, nilainya setara dengan sekitar {real} hari ini.",
+      "asYouAre": "Jika Anda terus seperti sekarang, Anda akan punya sekitar {amount}."
+    },
+    "ariaLabel": "Grafik garis. {summary}",
+    "year": "Tahun ke-{n}",
+    "now": "Sekarang"
+  },
+  "reset": {
+    "cleared": "Angka dikosongkan. Target dan bulan tersimpan Anda tetap ada.",
+    "deleteAll": {
+      "title": "Hapus semuanya?",
+      "message": "Ini menghapus semua angka, target, dan setiap bulan tersimpan dari perangkat ini. Tidak bisa dibatalkan. Unduh cadangan dulu jika mungkin Anda membutuhkannya nanti.",
+      "confirm": "Hapus semuanya",
+      "backupFirst": "Unduh cadangan dulu"
+    },
+    "deleted": "Semuanya sudah dihapus dari perangkat ini",
+    "startOver": {
+      "title": "Mulai dari awal?",
+      "message": "Kosongkan angka saya akan mengosongkan penghasilan, tagihan, pinjaman, langganan, biaya tahunan, dan pilihan rencana Anda, lalu membawa Anda kembali ke langkah 1. Target, pengaturan, dan bulan tersimpan Anda tetap ada. Hapus semuanya juga menghapus target dan setiap bulan tersimpan.",
+      "clear": "Kosongkan angka saya"
+    }
+  },
+  "app": {
+    "announceSavings": "Uang yang bisa Anda hemat tiap bulan: {amount}.",
+    "theme": {
+      "toLight": "Beralih ke mode terang",
+      "toDark": "Beralih ke mode gelap"
+    },
+    "saved": "Tersimpan di perangkat ini",
+    "notSaved": "Tidak tersimpan (penyimpanan diblokir)"
+  },
+  "layout": {
+    "header": {
+      "skipToContent": "Langsung ke konten",
+      "nav": {
+        "calculator": "Kalkulator",
+        "moneyTips": "Tips keuangan",
+        "contact": "Kontak"
+      },
+      "navLabel": "Utama"
+    },
+    "brand": "Budget Optimizer",
+    "footer": {
+      "title": "Footer situs",
+      "privacyBadge": "Angka Anda tidak pernah keluar dari perangkat ini",
+      "headline": "Temukan uang yang tersembunyi di bulan Anda.",
+      "intro": "Isi tagihan Anda, nyalakan beberapa ide mudah, dan lihat berapa yang bisa Anda hemat bulan ini, tahun ini, dan seterusnya. Hanya butuh sekitar dua menit.",
+      "cta": "Mulai kalkulator",
+      "ctaTips": "Baca tips keuangan",
+      "receipt": {
+        "subtitle": "Yang Anda bayar · yang Anda dapat",
+        "signUp": "Perlu daftar",
+        "signUpValue": "Tidak",
+        "dataSent": "Data yang dikirim ke kami",
+        "dataSentValue": "0 byte",
+        "currencies": "Mata uang",
+        "ideas": "Ide untuk berhemat",
+        "price": "Harga",
+        "priceValue": "GRATIS",
+        "label": "Yang Anda dapat"
+      },
+      "tagline": "Kalkulator anggaran rumah tangga dan simulator tabungan yang gratis dan pribadi untuk keluarga di mana saja.",
+      "reportProblem": "Laporkan masalah",
+      "calculator": {
+        "heading": "Kalkulator",
+        "start": "Mulai anggaran Anda",
+        "faq": "Cara kerjanya (Tanya jawab)",
+        "glossary": "Istilah keuangan dijelaskan"
+      },
+      "tips": {
+        "heading": "Tips keuangan",
+        "utilities": "Pangkas tagihan utilitas",
+        "subscriptions": "Hentikan langganan yang terus bertambah",
+        "food": "Hemat biaya makan",
+        "impulse": "Atasi belanja impulsif"
+      },
+      "legal": {
+        "heading": "Bantuan & hukum",
+        "contact": "Hubungi kami",
+        "privacy": "Kebijakan Privasi",
+        "terms": "Ketentuan Penggunaan",
+        "label": "Perusahaan"
+      },
+      "disclaimer": {
+        "title": "Penafian keuangan",
+        "education_html": "<strong class=\"font-semibold text-emerald-50\">Hanya untuk tujuan edukasi.</strong> Kalkulator dan panduan ini tidak memberikan nasihat keuangan, investasi, pajak, atau hukum, dan tidak ada isi di sini yang merupakan rekomendasi untuk membeli, menjual, atau menyimpan efek atau produk keuangan apa pun.",
+        "estimates_html": "<strong class=\"font-semibold text-emerald-50\">Perkiraan, bukan jaminan.</strong> Persentase penghematan adalah perkiraan umum berdasarkan tolok ukur rumah tangga yang lazim. Hasil Anda bergantung pada lokasi, penyedia layanan, tarif, dan kebiasaan Anda.",
+        "investment_html": "<strong class=\"font-semibold text-emerald-50\">Risiko investasi.</strong> Proyeksi bersifat hipotetis, mengasumsikan imbal hasil tetap yang dimajemukkan setiap bulan, dan tidak memperhitungkan pajak serta biaya. Nilai investasi bisa turun, dan kinerja masa lalu tidak menjamin hasil di masa depan.",
+        "professional_html": "<strong class=\"font-semibold text-emerald-50\">Konsultasikan dengan profesional.</strong> Sebelum mengambil keputusan keuangan penting, bicarakan dengan perencana keuangan, akuntan, atau konsultan pajak yang berkualifikasi dan berizin."
+      },
+      "copyright": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan. Dibuat untuk rumah tangga, bukan untuk bank.",
+      "backToTop": "Kembali ke atas"
+    },
+    "theme": {
+      "toLight": "Beralih ke mode terang",
+      "toDark": "Beralih ke mode gelap"
+    }
+  },
+  "privacy": {
+    "breadcrumb": {
+      "home": "Beranda",
+      "current": "Kebijakan Privasi",
+      "label": "Navigasi jejak"
+    },
+    "toc": {
+      "heading": "Di halaman ini",
+      "summary": "Versi singkat",
+      "who": "Siapa kami",
+      "budgetData": "Angka anggaran Anda",
+      "device": "Disimpan di perangkat Anda",
+      "sharing": "Tautan berbagi dan cadangan",
+      "contactData": "Saat Anda menghubungi kami",
+      "ads": "Iklan dan cookie",
+      "logs": "Log hosting dan keamanan",
+      "rights": "Hak Anda",
+      "children": "Anak-anak",
+      "transfers": "Transfer internasional",
+      "links": "Tautan ke situs web lain",
+      "changes": "Perubahan kebijakan ini",
+      "contact": "Kontak"
+    },
+    "title": "Kebijakan Privasi",
+    "lead": "Household Budget Optimizer dibuat agar urusan uang Anda tetap menjadi urusan Anda. Angka anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami.",
+    "sections": {
+      "summary": {
+        "title": "Versi singkat",
+        "item1_html": "<strong>Kami tidak pernah melihat anggaran Anda.</strong> Penghasilan, tagihan, utang, target, dan bulan tersimpan tetap berada di browser pada perangkat Anda.",
+        "item2_html": "<strong>Tanpa akun, tanpa daftar.</strong> Kami tidak meminta nama, email, atau data bank Anda untuk memakai kalkulator.",
+        "item3_html": "<strong>Anda yang memegang kendali.</strong> Hapus semuanya kapan saja lewat <em>Mulai dari awal</em> → <em>Hapus semuanya</em>, atau dengan menghapus data situs di browser Anda.",
+        "item4_html": "<strong>Iklan membuat alat ini tetap gratis.</strong> Google dapat menggunakan cookie untuk menampilkan iklan. Anda bisa mematikan iklan yang dipersonalisasi.",
+        "item5_html": "<strong>Jika Anda menulis kepada kami,</strong> kami memakai nama, email, dan pesan Anda hanya untuk membalas."
+      },
+      "who": {
+        "title": "Siapa kami",
+        "p1_html": "Kebijakan ini berlaku untuk situs web dan kalkulator Household Budget Optimizer &amp; Savings Simulator (“situs”, “kami”). Kami bertanggung jawab atas informasi pribadi yang dijelaskan di sini. Anda bisa menghubungi kami kapan saja melalui <a href=\"/contact/?topic=privacy\">formulir kontak</a> kami."
+      },
+      "budgetData": {
+        "title": "Angka anggaran Anda tidak pernah dikirim ke kami",
+        "p1": "Semua yang Anda ketik ke kalkulator, termasuk gaji bersih, tagihan, pinjaman, langganan, biaya tahunan, target, dan ide yang Anda masukkan ke rencana, dihitung oleh kode yang berjalan di browser Anda. Tidak ada yang diunggah ke server kami atau server siapa pun. Kami tidak punya salinannya, jadi kami tidak bisa melihatnya, menjualnya, atau kehilangannya dalam kebocoran data.",
+        "p2": "Kalkulator ini juga tidak pernah meminta data login bank, nomor rekening, atau nomor kartu. Mohon jangan mengirimkannya kepada kami juga."
+      },
+      "device": {
+        "title": "Apa yang disimpan di perangkat Anda",
+        "table": {
+          "what": "Apa",
+          "why": "Untuk apa",
+          "howLong": "Berapa lama",
+          "budgetWhy": "Mengingat angka, pilihan rencana, target, dan pengaturan Anda di antara kunjungan.",
+          "untilDeleted": "Sampai Anda menghapusnya",
+          "historyWhy": "Menyimpan bulan-bulan yang Anda simpan agar bisa dibandingkan. Hingga 60 bulan.",
+          "themeWhy": "Mengingat tema warna yang Anda pilih.",
+          "budget_html": "Anggaran Anda (<code>hbo:v3</code>)",
+          "history_html": "Riwayat bulan demi bulan (<code>hbo:history</code>)",
+          "theme_html": "Tema terang atau gelap (<code>hbo:theme</code>)"
+        },
+        "p1_html": "Agar angka Anda masih ada saat Anda kembali, situs menyimpannya di <em>penyimpanan lokal (local storage)</em> browser Anda. Ini adalah ruang penyimpanan kecil milik browser Anda di perangkat ini. Ini bukan cookie dan tidak dikirim melalui internet.",
+        "p2_html": "<strong>Untuk menghapusnya:</strong> buka kalkulator, pilih <em>Ubah angka saya</em> → <em>Mulai dari awal</em>, lalu <em>Kosongkan angka saya</em> (bulan tersimpan tetap ada) atau <em>Hapus semuanya</em>. Anda juga bisa menghapus data situs ini di pengaturan browser. Siapa pun yang memakai perangkat dan browser Anda bisa melihat apa yang tersimpan, jadi pakai jendela pribadi (penyamaran) di komputer bersama."
+      },
+      "sharing": {
+        "title": "Tautan berbagi, cadangan, pencetakan, dan pengingat",
+        "p1": "Fitur-fitur ini hanya berjalan jika Anda memilihnya, dan tidak ada yang mengunggah anggaran Anda ke kami:",
+        "item1_html": "<strong>Tautan berbagi.</strong> Saat Anda menekan <em>Buat tautan berbagi</em>, angka Anda dikemas di dalam tautan itu sendiri, setelah tanda “#”. Browser tidak mengirim bagian tautan tersebut ke situs web, jadi kami tidak pernah menerimanya. Siapa pun yang Anda beri tautan bisa melihat angka di dalamnya, jadi bagikan hanya kepada orang yang Anda percaya.",
+        "item2_html": "<strong>Cadangan.</strong> <em>Unduh cadangan</em> menyimpan file ke perangkat Anda. Membuka cadangan berarti membacanya di browser Anda.",
+        "item3_html": "<strong>Pencetakan dan pengingat kalender.</strong> Rencana yang bisa dicetak dan file pengingat gajian dibuat di perangkat Anda."
+      },
+      "contactData": {
+        "title": "Saat Anda menghubungi kami",
+        "p2": "Formulir dikirim ke kotak masuk kami oleh layanan formulir pihak ketiga, yang memproses pesan atas nama kami dan tidak diizinkan memakainya untuk hal lain. Kami menyimpan pesan hingga 12 bulan setelah percakapan berakhir, lalu menghapusnya, kecuali kami membutuhkannya lebih lama untuk menangani klaim hukum. Kami tidak pernah memasukkan Anda ke milis dan tidak pernah menjual atau menyewakan data Anda.",
+        "p3": "Mohon jangan menyertakan data keuangan pribadi, seperti nomor rekening atau kata sandi, dalam pesan. Kami tidak membutuhkannya untuk membantu Anda.",
+        "p1_html": "Jika Anda memakai <a href=\"/contact/\">formulir kontak</a> kami atau mengirim email kepada kami, kami menerima nama, alamat email, topik yang Anda pilih, pesan Anda, dan halaman tempat Anda berada. Kami memakainya hanya untuk membaca dan menjawab pesan Anda, memperbaiki masalah yang Anda laporkan, dan menyempurnakan situs. Dasar hukum kami adalah kepentingan sah kami untuk membalas Anda, atau langkah yang Anda minta kami lakukan."
+      },
+      "ads": {
+        "title": "Iklan dan cookie",
+        "p1": "Situs ini gratis karena menampilkan iklan. Iklan disajikan oleh Google AdSense. Kami tidak memberikan angka yang Anda isi di kalkulator kepada Google atau pengiklan mana pun.",
+        "item1": "Vendor pihak ketiga, termasuk Google, menggunakan cookie untuk menayangkan iklan berdasarkan kunjungan Anda sebelumnya ke situs web ini dan situs web lain.",
+        "item2": "Penggunaan cookie iklan oleh Google memungkinkan Google dan mitranya menayangkan iklan kepada Anda berdasarkan kunjungan Anda ke situs ini dan situs lain di internet.",
+        "p2": "Jika Anda berada di Wilayah Ekonomi Eropa, Inggris, atau Swiss, Anda akan dimintai persetujuan sebelum iklan yang dipersonalisasi atau cookie-nya digunakan, dan Anda bisa mengubah pilihan kapan saja. Jika Anda menolak, Anda mungkin tetap melihat iklan yang tidak dipersonalisasi, yang didasarkan pada konteks, bukan riwayat penjelajahan Anda. Pemblokir iklan atau pemblokiran cookie pihak ketiga di browser juga menghentikan iklan yang dipersonalisasi, dan kalkulator tetap berfungsi dalam kedua kasus.",
+        "p3": "Situs ini sendiri tidak memasang cookie, dan kami tidak memakai alat analitik atau pelacakan.",
+        "item3_html": "Anda bisa menolak iklan yang dipersonalisasi di <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a>. Anda juga bisa menolak iklan yang dipersonalisasi dari sebagian vendor pihak ketiga di <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> atau, di Eropa, <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
+        "item4_html": "Pelajari lebih lanjut tentang <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">cara Google menggunakan informasi dari situs atau aplikasi yang memakai layanannya</a>."
+      },
+      "logs": {
+        "title": "Log hosting dan keamanan",
+        "p1": "Seperti semua situs web, situs ini disajikan oleh penyedia hosting. Saat browser Anda meminta sebuah halaman, penyedia hosting dapat mencatat sebentar detail teknis seperti alamat IP, jenis browser, halaman yang diminta, dan waktunya. Log ini hanya dipakai untuk menyajikan situs, menjaga keamanannya, dan memperbaiki kesalahan, lalu dihapus sesuai jadwal normal penyedia hosting. Log ini tidak pernah berisi angka anggaran Anda."
+      },
+      "rights": {
+        "title": "Hak privasi Anda",
+        "p1": "Karena anggaran Anda tidak pernah keluar dari perangkat Anda, Anda sudah memegang semuanya, dan Anda bisa menghapusnya sendiri kapan saja. Untuk data lain yang kami simpan tentang Anda, seperti pesan yang Anda kirim kepada kami, Anda bisa meminta kami untuk:",
+        "item1": "memberi tahu apa yang kami simpan dan memberikan salinannya;",
+        "item2": "memperbaikinya jika salah;",
+        "item3": "menghapusnya;",
+        "item4": "menghentikan atau membatasi penggunaannya, atau mengajukan keberatan.",
+        "p2": "Hak-hak ini berasal dari undang-undang seperti GDPR Uni Eropa dan Inggris, California Consumer Privacy Act (CCPA/CPRA), dan Digital Personal Data Protection Act 2023 India, serta undang-undang serupa di tempat lain. Kami tidak menjual atau membagikan informasi pribadi demi uang, dan kami tidak memakainya untuk membuat keputusan otomatis tentang Anda.",
+        "p3_html": "Untuk mengajukan permintaan, atau menyampaikan keluhan berdasarkan DPDP Act India, gunakan <a href=\"/contact/?topic=privacy\">formulir kontak</a> dan pilih <em>Permintaan privasi atau data</em>. Kami akan membalas dalam 30 hari. Anda bisa menarik kembali persetujuan yang pernah Anda berikan, misalnya untuk iklan yang dipersonalisasi, kapan saja. Anda juga berhak mengadu ke otoritas perlindungan data setempat, seperti ICO di Inggris."
+      },
+      "children": {
+        "title": "Anak-anak",
+        "p1": "Situs ini ditujukan untuk orang dewasa yang mengelola anggaran rumah tangga. Situs ini tidak ditujukan untuk anak di bawah 13 tahun (di bawah 16 tahun di Wilayah Ekonomi Eropa dan Inggris, dan di bawah 18 tahun di India), dan kami tidak dengan sengaja mengumpulkan informasi pribadi dari mereka. Jika Anda merasa seorang anak telah mengirimkan informasi pribadi kepada kami, silakan hubungi kami dan kami akan menghapusnya."
+      },
+      "transfers": {
+        "title": "Transfer internasional",
+        "p1": "Pesan yang Anda kirim kepada kami, dan data yang dipakai Google untuk iklan, dapat diproses di negara selain negara Anda, termasuk Amerika Serikat. Jika diwajibkan oleh hukum, transfer ini dilindungi dengan pengamanan seperti klausul kontrak standar Komisi Eropa."
+      },
+      "links": {
+        "title": "Tautan ke situs web lain",
+        "p1": "Tips keuangan dan iklan kami dapat menautkan ke situs web lain. Kami tidak mengendalikan situs tersebut dan tidak bertanggung jawab atas praktik privasinya, jadi bacalah kebijakan mereka sebelum memberikan informasi apa pun."
+      },
+      "changes": {
+        "title": "Perubahan kebijakan ini",
+        "p1": "Kami dapat memperbarui kebijakan ini saat situs atau hukum berubah. Tanggal di bagian atas menunjukkan versi terbaru. Jika perubahan memengaruhi cara kami menangani informasi yang sudah Anda berikan, kami akan memberitahukannya dengan jelas di situs sebelum berlaku."
+      },
+      "contact": {
+        "title": "Kontak",
+        "p1_html": "Ada pertanyaan tentang kebijakan ini atau data Anda? <a href=\"/contact/?topic=privacy\">Kirim pesan kepada kami</a> dan pilih <em>Permintaan privasi atau data</em>. Anda juga bisa membaca <a href=\"/terms-of-use/\">Ketentuan Penggunaan</a> kami."
+      }
+    },
+    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
+    "seo": {
+      "title": "Kebijakan Privasi | Household Budget Optimizer",
+      "description": "Anggaran Anda tetap di browser Anda: tanpa akun, tidak ada yang disimpan di server kami. Apa yang kami simpan di perangkat Anda, bagaimana iklan Google memakai cookie, dan hak-hak Anda.",
+      "ogTitle": "Kebijakan Privasi | Household Budget Optimizer",
+      "ogDescription": "Angka anggaran Anda tidak pernah keluar dari browser Anda. Apa yang kami simpan, bagaimana iklan memakai cookie, dan hak-hak Anda.",
+      "ldName": "Kebijakan Privasi",
+      "ldDescription": "Cara Household Budget Optimizer menangani data Anda: angka anggaran tetap di browser Anda, apa yang disimpan di perangkat Anda, cookie iklan, dan hak privasi Anda."
+    }
+  },
+  "terms": {
+    "breadcrumb": {
+      "home": "Beranda",
+      "current": "Ketentuan Penggunaan",
+      "label": "Navigasi jejak"
+    },
+    "toc": {
+      "heading": "Di halaman ini",
+      "summary": "Versi singkat",
+      "agreement": "Menyetujui ketentuan ini",
+      "service": "Apa alat ini",
+      "notAdvice": "Bukan nasihat keuangan",
+      "accuracy": "Perkiraan dan akurasi",
+      "yourData": "Data dan cadangan Anda",
+      "use": "Penggunaan yang wajar",
+      "ip": "Konten kami",
+      "thirdParty": "Iklan dan situs web lain",
+      "warranty": "Tanpa jaminan",
+      "liability": "Batas tanggung jawab",
+      "law": "Hukum yang berlaku",
+      "changes": "Perubahan",
+      "contact": "Kontak"
+    },
+    "title": "Ketentuan Penggunaan",
+    "lead": "Ketentuan ini menjelaskan apa yang bisa Anda harapkan dari Household Budget Optimizer dan apa yang kami minta dari Anda. Kami membuatnya singkat dan dengan bahasa yang sederhana.",
+    "sections": {
+      "summary": {
+        "title": "Versi singkat",
+        "item1_html": "<strong>Gratis</strong> untuk mengatur anggaran rumah tangga pribadi. Tidak perlu akun.",
+        "item2_html": "<strong>Ini perkiraan, bukan nasihat.</strong> Periksa keputusan penting dengan profesional yang berkualifikasi.",
+        "item3_html": "<strong>Angka Anda milik Anda.</strong> Angka itu tetap di browser Anda, jadi simpan cadangan jika penting bagi Anda.",
+        "item4_html": "<strong>Mohon gunakan dengan wajar.</strong> Jangan menyalin situs, menyerangnya, atau mengambil isinya secara otomatis (scraping)."
+      },
+      "agreement": {
+        "title": "1. Menyetujui ketentuan ini",
+        "p1_html": "Dengan menggunakan situs web dan kalkulator Household Budget Optimizer &amp; Savings Simulator (“situs”, “kami”), Anda menyetujui ketentuan ini dan <a href=\"/privacy-policy/\">Kebijakan Privasi</a> kami. Jika Anda tidak setuju, mohon jangan gunakan situs ini."
+      },
+      "service": {
+        "title": "2. Apa alat ini",
+        "p1": "Situs ini adalah kalkulator anggaran dan panduan keuangan gratis untuk penggunaan pribadi dan rumah tangga. Situs ini membantu Anda melihat ke mana uang Anda pergi, mencoba ide untuk berhemat, dan memperkirakan bagaimana tabungan, target, dan utang bisa berubah dari waktu ke waktu. Situs ini berjalan di browser Anda dan tidak memerlukan akun.",
+        "p2": "Kami dapat menambah, mengubah, atau menghapus fitur, atau menghentikan sementara situs untuk pemeliharaan, kapan saja. Karena ini layanan gratis, kami tidak bisa menjanjikan bahwa situs akan selalu tersedia atau bebas dari kesalahan."
+      },
+      "notAdvice": {
+        "title": "3. Bukan nasihat keuangan",
+        "p2": "Sebelum mengambil keputusan keuangan penting, seperti mengambil atau melunasi utang, berinvestasi, atau mengganti asuransi, bicarakan dengan perencana keuangan, akuntan, atau konsultan pajak yang berkualifikasi dan berizin. Jika Anda kesulitan dengan utang, layanan konsultasi utang yang gratis dan rahasia tersedia di banyak negara.",
+        "p1_html": "Semua yang ada di situs, termasuk hasil, ide penghematan, skor kesehatan, proyeksi pertumbuhan, tanggal bebas utang, dan artikel, adalah <strong>informasi umum hanya untuk edukasi</strong>. Ini bukan nasihat keuangan, investasi, pajak, hukum, atau utang, dan tidak memperhitungkan keadaan Anda secara lengkap. Tidak ada isi situs yang merupakan rekomendasi untuk membeli, menjual, atau menyimpan produk keuangan apa pun."
+      },
+      "accuracy": {
+        "title": "4. Perkiraan dan akurasi",
+        "p1": "Hasil hanya sebaik angka yang Anda isi dan asumsi di baliknya. Secara khusus:",
+        "item1": "persentase penghematan adalah perkiraan umum, dan berapa yang benar-benar bisa Anda hemat bergantung pada penyedia layanan, lokasi, harga, dan kebiasaan Anda;",
+        "item2": "proyeksi pertumbuhan mengasumsikan imbal hasil tetap yang dimajemukkan setiap bulan dan tidak memperhitungkan pajak serta biaya, sedangkan investasi sungguhan naik turun dan nilainya bisa turun;",
+        "item3": "angka rumah tangga yang “umum” adalah panduan kasar, dan untuk beberapa mata uang didasarkan pada angka Amerika Serikat;",
+        "item4": "situs ini tidak mengonversi antarmata uang atau memakai suku bunga maupun kurs terkini.",
+        "p2_html": "Kami berusaha keras agar hitungannya benar, tetapi kami tidak menjamin setiap hasil, angka, atau tips lengkap, akurat, atau terbaru. Mohon periksa sendiri hal-hal yang penting. Jika Anda menemukan kesalahan, <a href=\"/contact/?topic=calculation\">beri tahu kami</a> dan kami akan memeriksanya."
+      },
+      "yourData": {
+        "title": "5. Data dan cadangan Anda",
+        "p1_html": "Anggaran Anda hanya disimpan di browser pada perangkat Anda. Kami tidak punya salinannya, jadi kami tidak bisa memulihkannya jika hilang. Menghapus data browser, memakai jendela pribadi, atau berganti perangkat atau browser bisa menghapusnya. Pakai <em>Unduh cadangan</em> untuk menyimpan salinan. Anda bertanggung jawab atas tautan berbagi dan file cadangan yang Anda buat serta kepada siapa Anda memberikannya."
+      },
+      "use": {
+        "title": "6. Penggunaan yang wajar",
+        "p1": "Anda boleh memakai situs ini untuk mengatur anggaran pribadi atau rumah tangga Anda sendiri, dan Anda boleh membagikan tautan ke situs ini. Anda setuju untuk tidak:",
+        "item1": "menyalin, menerbitkan ulang, menjual, atau membingkai (frame) situs atau kontennya sebagai milik Anda, atau menghapus pemberitahuan kami;",
+        "item2": "mengambil isi situs secara massal (scraping), atau membebani, menyerang, menguji celah, atau mengganggu situs maupun keamanannya;",
+        "item3": "mengunggah atau mengirim sesuatu yang berbahaya, seperti malware, atau memakai situs atau formulir kontak untuk spam, penyalahgunaan, atau hal yang melanggar hukum;",
+        "item4": "memakai situs untuk memberi nasihat berbayar kepada orang lain dengan cara yang menyiratkan bahwa kami mendukungnya.",
+        "p2": "Kami dapat memblokir akses siapa pun yang melanggar aturan ini."
+      },
+      "ip": {
+        "title": "7. Konten kami",
+        "p1_html": "Desain, teks, perhitungan, grafis, dan kode situs ini milik kami atau pemberi lisensi kami dan dilindungi oleh hak cipta serta hukum lainnya. Anda boleh mencetak atau menyimpan hasil dan rencana yang Anda buat untuk penggunaan pribadi. Kutipan singkat dengan tautan kembali ke situs dipersilakan. Untuk hal lainnya, mohon <a href=\"/contact/?topic=business\">tanyakan kepada kami dulu</a>."
+      },
+      "thirdParty": {
+        "title": "8. Iklan dan situs web lain",
+        "p1": "Situs ini menampilkan iklan, sebagian besar disajikan oleh Google, dan dapat menautkan ke situs web lain. Iklan dan tautan bukan bentuk dukungan. Kami tidak mengendalikan situs web lain atau produk yang diiklankan, dan kami tidak bertanggung jawab atas konten, penawaran, atau praktik privasinya. Setiap kesepakatan yang Anda buat dengan pengiklan adalah urusan antara Anda dan mereka."
+      },
+      "warranty": {
+        "title": "9. Tanpa jaminan",
+        "p1": "Situs ini disediakan secara gratis, “sebagaimana adanya” dan “sebagaimana tersedia”. Sejauh diizinkan oleh hukum, kami tidak memberikan janji atau jaminan apa pun, baik tersurat maupun tersirat, termasuk bahwa situs akan akurat, andal, tidak terputus, aman, atau sesuai untuk tujuan tertentu."
+      },
+      "liability": {
+        "title": "10. Batas tanggung jawab",
+        "p1": "Sejauh diizinkan oleh hukum, kami tidak bertanggung jawab atas kerugian atau kerusakan apa pun yang timbul dari penggunaan Anda atas situs, atau ketidakmampuan Anda memakainya, atau dari mengandalkan hasil atau kontennya. Ini termasuk kerugian finansial, hilangnya tabungan atau keuntungan, hilangnya data, serta kerugian tidak langsung atau konsekuensial. Anda memakai hasilnya atas risiko sendiri dan bertanggung jawab atas keputusan keuangan Anda sendiri.",
+        "p2": "Tidak ada isi ketentuan ini yang membatasi tanggung jawab yang tidak dapat dibatasi oleh hukum, seperti untuk penipuan, atau menghapus hak yang Anda miliki sebagai konsumen berdasarkan hukum negara tempat Anda tinggal."
+      },
+      "law": {
+        "title": "11. Hukum yang berlaku",
+        "p1": "Ketentuan ini diatur oleh hukum negara tempat pengelola situs berkedudukan, dan pengadilannya akan menangani setiap sengketa. Jika Anda tinggal di tempat lain, Anda tetap mendapat perlindungan dari hukum konsumen yang wajib berlaku di tempat tinggal Anda dan dapat mengajukan gugatan di pengadilan setempat. Jika ada bagian dari ketentuan ini yang tidak dapat diberlakukan, bagian lainnya tetap berlaku."
+      },
+      "changes": {
+        "title": "12. Perubahan ketentuan ini",
+        "p1": "Kami dapat memperbarui ketentuan ini dari waktu ke waktu. Tanggal di bagian atas menunjukkan versi terbaru. Jika Anda terus memakai situs setelah ada perubahan, Anda menerima ketentuan yang telah diperbarui."
+      },
+      "contact": {
+        "title": "13. Kontak",
+        "p1_html": "Ada pertanyaan tentang ketentuan ini? <a href=\"/contact/\">Kirim pesan kepada kami</a>. Lihat juga <a href=\"/privacy-policy/\">Kebijakan Privasi</a> kami."
+      }
+    },
+    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
+    "seo": {
+      "title": "Ketentuan Penggunaan | Household Budget Optimizer",
+      "description": "Aturan penggunaan kalkulator anggaran rumah tangga gratis kami. Hasilnya adalah perkiraan untuk perencanaan, bukan nasihat keuangan. Mencakup akurasi, penggunaan yang wajar, dan tanggung jawab.",
+      "ogTitle": "Ketentuan Penggunaan | Household Budget Optimizer",
+      "ogDescription": "Gratis dipakai, hanya perkiraan, bukan nasihat keuangan. Ketentuan dengan bahasa sederhana untuk kalkulator anggaran kami.",
+      "ldName": "Ketentuan Penggunaan",
+      "ldDescription": "Ketentuan penggunaan kalkulator gratis Household Budget Optimizer: hanya perkiraan, bukan nasihat keuangan, penggunaan yang dapat diterima, dan batas tanggung jawab."
+    }
+  },
+  "contact": {
+    "breadcrumb": {
+      "home": "Beranda",
+      "current": "Hubungi Kami",
+      "label": "Navigasi jejak"
+    },
+    "title": "Hubungi kami",
+    "lead": "Menemukan sesuatu yang tidak berfungsi, melihat angka yang tampak salah, atau punya ide agar kalkulator lebih berguna? Kami membaca setiap pesan.",
+    "form": {
+      "title": "Kirim pesan kepada kami",
+      "replyTime": "Kami biasanya membalas dalam 2 hari kerja.",
+      "name": "Nama Anda",
+      "email": "Alamat email",
+      "emailHelp": "Hanya dipakai untuk membalas Anda.",
+      "topic": "Tentang apa?",
+      "topicPlaceholder": "Pilih topik",
+      "message": "Pesan Anda",
+      "messageHelp": "Untuk masalah, ceritakan apa yang Anda lakukan, apa yang Anda harapkan, dan apa yang terjadi, beserta browser dan perangkat Anda.",
+      "honeypot": "Biarkan kosong",
+      "send": "Kirim pesan",
+      "privacyNote_html": "Kami memakai data Anda hanya untuk membalas, tidak pernah memasukkan Anda ke milis, dan menghapus pesan dalam 12 bulan. Mohon jangan sertakan data bank atau kata sandi. Lihat <a href=\"/privacy-policy/#contact-data\" class=\"link\">Kebijakan Privasi</a> kami.",
+      "sending": "Mengirim…"
+    },
+    "topics": {
+      "bug": "Ada yang tidak berfungsi",
+      "calculation": "Pertanyaan tentang perhitungan atau angka",
+      "idea": "Ide, fitur, atau permintaan mata uang",
+      "question": "Pertanyaan umum",
+      "privacy": "Permintaan privasi atau data",
+      "business": "Iklan atau kemitraan",
+      "press": "Pers atau media",
+      "other": "Lainnya"
+    },
+    "faq": {
+      "title": "Sebelum Anda menulis",
+      "seeBudget": {
+        "q": "Apakah Anda bisa melihat angka anggaran saya?",
+        "a": "Tidak. Kalkulator berjalan di browser Anda dan tidak pernah mengirim angka Anda kepada kami. Itu juga berarti kami tidak bisa melihat anggaran Anda untuk membantu, jadi mohon jelaskan masalahnya di pesan Anda."
+      },
+      "restore": {
+        "q": "Angka saya hilang. Bisakah Anda memulihkannya?",
+        "a_html": "Kami tidak punya salinannya, jadi tidak bisa. Angka itu disimpan di browser yang Anda pakai, jadi pastikan Anda memakai perangkat dan browser yang sama, bukan di jendela pribadi. Pakai <em>Unduh cadangan</em> di tab Riwayat untuk menyimpan salinan ke depannya."
+      },
+      "delete": {
+        "q": "Bagaimana cara menghapus data saya?",
+        "a_html": "Di kalkulator, pilih <em>Ubah angka saya</em> → <em>Mulai dari awal</em> → <em>Hapus semuanya</em>, atau hapus data situs ini di pengaturan browser Anda."
+      },
+      "advice": {
+        "q": "Bisakah Anda memberi saya nasihat keuangan pribadi?",
+        "a": "Maaf, kami tidak bisa. Alat ini hanya untuk edukasi umum. Untuk nasihat tentang situasi Anda, bicarakan dengan perencana keuangan yang berkualifikasi atau layanan konsultasi utang gratis."
+      },
+      "ads": {
+        "q": "Mengapa situs ini menampilkan iklan?",
+        "a_html": "Iklan membuat kalkulator tetap gratis. Anda bisa mematikan iklan yang dipersonalisasi kapan saja. Lihat <a href=\"/privacy-policy/#ads\" class=\"link\">iklan dan cookie</a>."
+      }
+    },
+    "seo": {
+      "title": "Hubungi Kami | Household Budget Optimizer",
+      "description": "Ada pertanyaan, laporan bug, atau ide untuk kalkulator anggaran gratis ini? Kirim pesan dan kami biasanya membalas dalam 2 hari kerja. Kami tidak bisa memberi nasihat keuangan.",
+      "ogTitle": "Hubungi Kami | Household Budget Optimizer",
+      "ogDescription": "Menemukan bug, punya ide, atau pertanyaan tentang perhitungan? Kirim pesan kepada kami.",
+      "ldName": "Hubungi Kami",
+      "ldDescription": "Kirim pertanyaan, laporan bug, dan ide tentang kalkulator Household Budget Optimizer."
+    },
+    "emailAlt": "Lebih suka email? Tulis ke {email}.",
+    "errors": {
+      "nameMissing": "Mohon isi nama Anda.",
+      "nameTooLong": "Mohon tulis nama kurang dari {max} karakter.",
+      "emailMissing": "Mohon isi email Anda agar kami bisa membalas.",
+      "emailInvalid": "Email itu sepertinya tidak benar. Periksa salah ketik, misalnya nama@contoh.com.",
+      "topicMissing": "Mohon pilih topik pesan Anda.",
+      "messageTooShort": "Mohon tulis sedikit lebih banyak (minimal {min} karakter) agar kami bisa membantu.",
+      "messageTooLong": "Mohon tulis pesan kurang dari {max} karakter."
+    },
+    "status": {
+      "sentTitle": "Terima kasih, pesan Anda sedang dikirim.",
+      "sentTextBrief": "Kami biasanya membalas dalam 2 hari kerja.",
+      "sentText": "Kami biasanya membalas dalam 2 hari kerja. Periksa folder spam jika Anda belum menerima balasan.",
+      "offlineTitle": "Anda sedang offline.",
+      "offlineText": "Sambungkan ke internet dan tekan Kirim lagi. Pesan Anda masih ada di formulir.",
+      "mailtoTitle": "Aplikasi email Anda seharusnya terbuka sekarang.",
+      "mailtoText": "Tekan kirim di sana untuk menghubungi kami. Jika tidak ada yang terbuka, tulis ke {email}.",
+      "failedTitle": "Pesan Anda tidak terkirim.",
+      "notConfigured": "Formulir kontak belum siap. Silakan coba lagi nanti.",
+      "failedText": "Periksa koneksi Anda dan coba lagi. Pesan Anda masih ada di formulir.",
+      "failedTextWithEmail": "Periksa koneksi Anda dan coba lagi, atau kirim email ke {email}. Pesan Anda masih ada di formulir."
+    },
+    "mail": {
+      "subject": "Budget Optimizer: {topic}",
+      "body": "{message}\n\n—\n{name}\nTopik: {topic}"
+    }
+  }
+}

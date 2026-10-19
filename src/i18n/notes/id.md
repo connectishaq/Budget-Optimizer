@@ -1,0 +1,100 @@
+# Indonesian (id) translation notes
+
+Translated from the English snapshot `en-snapshot-p1.json` (1,507 messages). Keys added to or changed in
+`en.json` after that snapshot are not covered yet (see "Not yet translated" at the end).
+
+## Tone and form of address
+- Uses **"Anda"** (polite) throughout, with short, everyday sentences. Many Indonesian fintech apps use
+  the more casual "kamu". Switching would mean replacing "Anda" in every message. "Anda" fits families
+  and the legal pages better.
+- Imperatives are kept friendly ("Isi…", "Pakai…", "Coba…"). "Mohon" is used for requests in forms and
+  legal text.
+
+## Terminology (used consistently)
+| English | Indonesian | Note |
+|---|---|---|
+| take-home pay | gaji bersih | |
+| bills | tagihan | |
+| must-pay bills / nice-to-haves | tagihan wajib / keinginan | "needs/wants" = kebutuhan/keinginan |
+| emergency fund | dana darurat | |
+| goal | target | "tujuan" is an alternative |
+| plan / add to my plan | rencana / masukkan ke rencana saya | |
+| health score | skor kesehatan (anggaran) | |
+| left over | sisa / sisa uang | |
+| groceries | belanja dapur | "belanja bulanan" or "kebutuhan dapur" are alternatives |
+| eating out and takeaways | makan di luar dan pesan antar | |
+| rent or mortgage | sewa atau cicilan KPR | KPR = Kredit Pemilikan Rumah, the usual local term |
+| car loan | cicilan / kredit mobil | |
+| fuel | bensin | "BBM" is the more formal alternative |
+| household help (maid, cook, driver) | asisten rumah tangga (ART, juru masak, sopir) | |
+| charity and religious giving | sedekah, zakat, dan persembahan | Includes the Christian "persembahan" so it isn't only Muslim wording |
+| festival bonus | THR / bonus hari raya | THR (Tunjangan Hari Raya) is the standard Indonesian festival bonus |
+| Eid | Lebaran | |
+| trips home | mudik | |
+| school admission | uang pangkal | |
+| committee payment (help.text.other) | arisan | Closest local equivalent of a rotating savings committee |
+| backup | cadangan | |
+| share link | tautan berbagi | |
+| Undo | Urungkan | |
+| deductible / excess (insurance) | risiko sendiri (deductible) | Local insurers use "risiko sendiri" or "OR (own risk)" |
+| balance transfer | pindah saldo (balance transfer) | Rare in Indonesia; English term kept in brackets |
+| toll tag | kartu tol elektronik | Indonesia uses e-toll cards rather than tags |
+| price slab (electricity) | golongan tarif | Indonesian PLN tariffs work by connection class (golongan), not usage slabs. The wording is understandable but not an exact local fit |
+| APR | bunga per tahun (APR) | |
+
+## Things to check
+- **Brand names:** the header brand "Budget Optimizer" and the brand in `privacy`/`terms`/`contact`
+  SEO titles ("Household Budget Optimizer") are left in English as product names. The descriptive
+  title on the home page (`page.hero.title_html`, `seo.*`, `layout.footer.copyright`) is translated as
+  "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan". Decide which one you want to use and make
+  it consistent.
+- **Plurals:** Indonesian only has "other", so every plural has one form. Sentences like
+  "{count} tips" read fine for 1 or more.
+- **payday.dayOfMonth / ordinal:** written as "Tanggal {day}{suffix}" with every ordinal suffix as an
+  empty string ("Tanggal 5", "Tanggal 21").
+- **charts.year:** "Tahun ke-{n}" (the "Year 3" axis label).
+- **Dollar amounts in the money-tips article (page.guide.*)** are kept as dollars with Indonesian
+  thousand separators ($3.000, $46.000, $147.000). Only the separator changed, not the number. The
+  Fahrenheit figures and their Celsius equivalents are unchanged.
+- **rules.*.evidence** are sentence starts that end with a verb ("…biasanya memangkas") so that the
+  percentage words ({words}, e.g. "sekitar 10%") follow naturally in `plan.explain.*`.
+- **rules.utilitiesEfficiency.tips.night:** changed to "Naikkan suhu AC (atau kecilkan pemanas)…",
+  because Indonesian homes cool rather than heat.
+- **inputs.typical.tip** joins "{help} Untuk {group}, angka ini {range}{approx}." Check that it reads
+  well with live data.
+- **dashboard.categories.basisIncome:** "dibandingkan dengan {profile} pada umumnya". {profile} is the
+  profile name (e.g. "Profesional Muda"), which reads fine.
+- **inputs.toast.sampleLoaded:** "Contoh anggaran dimuat untuk profil {profile}". "profil" was added so
+  that the profile name can follow.
+- **Profile names:** "Lajang Penyewa di Kota" (Single City Renter) and "Keluarga Pinggiran Kota
+  (4 Orang)" (Suburban Family of 4) are a little awkward. Alternatives: "Lajang, Ngekos/Sewa di Kota" and
+  "Keluarga 4 Orang di Pinggir Kota".
+
+## Possibly long for small buttons
+- `wizard.showAllInputs` "Tampilkan semua isian", `page.wizard.skip` "Langsung ke hasil"
+- `plan.addToPlan` "Masukkan ke rencana saya: {label}" (aria/visually short label?)
+- `plan.notAdded` "Belum dimasukkan", `plan.added` "Dimasukkan ✓"
+- `reset.deleteAll.backupFirst` "Unduh cadangan dulu"
+- `months.banners.capConfirm` "Simpan dan hapus {month}"
+- `page.results.nav.planAhead` "Rencana ke depan"
+- `layout.footer.receipt.dataSent` "Data yang dikirim ke kami"
+Indonesian usually runs about 15–30% longer than English. The money-tips article and the legal pages are
+noticeably longer but are running text.
+
+## Legal text (privacy.*, terms.*, layout.footer.disclaimer.*)
+- Translated faithfully and plainly. **These need a professional legal review before launch.**
+- Foreign law names are kept in English with their usual abbreviations (GDPR, CCPA/CPRA, DPDP Act
+  2023). The English source does not mention Indonesia's own data protection law (UU No. 27 Tahun 2022
+  tentang Pelindungan Data Pribadi, "UU PDP"), so it was **not added**. For an Indonesian launch, the
+  legal reviewer should decide whether to name it in `privacy.sections.rights.p2` and `p3_html`.
+- "European Economic Area" is "Wilayah Ekonomi Eropa", "UK" is "Inggris", and "standard contractual
+  clauses" is "klausul kontrak standar".
+- "as is" / "as available" are "sebagaimana adanya" / "sebagaimana tersedia".
+- "plain English" (terms.lead and seo) became "bahasa yang sederhana".
+- "Breadcrumb" (aria label) is "Navigasi jejak".
+
+## Not yet translated (changed in en.json after the snapshot)
+New keys: `format.currencies.SAR/BRL/MXN/IDR/NGN`, `layout.locale.*`.
+Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approximate`,
+`dashboard.categories.basisIncomeApprox`, `page.hero.note` (13 currencies), `page.faq.a8`,
+`seo.faq.a8`, `seo.app.featureList[11]`, `charts.returns.*.label` (now "{pct}%: …").
