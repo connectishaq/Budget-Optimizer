@@ -43,7 +43,7 @@ function lookup(obj, key) {
 
 const PLURAL_CATEGORIES = new Set(['zero', 'one', 'two', 'few', 'many', 'other']);
 // A plural message has only plural categories as keys, and always "other"
-const isPlural = (v) => v && typeof v === 'object' && typeof v.other === 'string'
+const isPlural = (v) => !!v && typeof v === 'object' && typeof v.other === 'string'
   && Object.keys(v).every((k) => PLURAL_CATEGORIES.has(k));
 
 function pluralRules(l) {

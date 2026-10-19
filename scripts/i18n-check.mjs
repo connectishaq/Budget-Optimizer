@@ -19,7 +19,7 @@ const strict = process.argv.includes('--strict');
 
 const read = (f) => fs.readFileSync(f, 'utf8');
 const PLURAL_CATEGORIES = new Set(['zero', 'one', 'two', 'few', 'many', 'other']);
-const isPlural = (v) => v && typeof v === 'object' && typeof v.other === 'string'
+const isPlural = (v) => !!v && typeof v === 'object' && typeof v.other === 'string'
   && Object.keys(v).every((k) => PLURAL_CATEGORIES.has(k));
 
 /** { "a.b.c": "text" | {one, other} } */
