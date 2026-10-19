@@ -5,11 +5,17 @@
 // add a block to BENCHMARKS with the same shape — nothing else changes.
 // Currencies without their own set fall back to the US set scaled by a rough
 // cost-of-living factor, and are flagged `approximate: true` in the UI.
+//
+// Profile names and the example budgets' row names are shown in the active
+// language (the "profiles" messages); the data below keeps the English text.
+
+import { t } from '../i18n/index.js';
+import { guessSubKind } from './subscriptions.js';
 
 export const PROFILES = {
-  single: { name: 'Single City Renter', group: 'city renters' },
-  suburban: { name: 'Suburban Family of 4', group: 'families' },
-  youngpro: { name: 'Young Professional', group: 'young professionals' }
+  single: { get name() { return t('profiles.single.name'); }, get group() { return t('profiles.single.group'); } },
+  suburban: { get name() { return t('profiles.suburban.name'); }, get group() { return t('profiles.suburban.group'); } },
+  youngpro: { get name() { return t('profiles.youngpro.name'); }, get group() { return t('profiles.youngpro.group'); } }
 };
 export const PROFILE_KEYS = Object.keys(PROFILES);
 
@@ -307,6 +313,42 @@ export function typicalRange(profile, field, currency) {
   return benchmarkFor(currency, profile).ranges[field] || null;
 }
 
+// Example row names that are words rather than brand names, by their English text
+const SAMPLE_NAME_KEYS = {
+  'Visa card': 'visaCard',
+  'Store credit card': 'storeCreditCard',
+  'Personal loan': 'personalLoan',
+  'Rewards card': 'rewardsCard',
+  'Student loan': 'studentLoan',
+  'Credit card': 'creditCard',
+  'Gym membership': 'gymMembership',
+  'iCloud storage': 'icloudStorage',
+  'Streaming bundle': 'streamingBundle',
+  'Cloud storage': 'cloudStorage',
+  'Language app': 'languageApp',
+  'Fitness app': 'fitnessApp',
+  'Google One storage': 'googleOneStorage',
+  'Festivals (Eid, Diwali, Christmas…)': 'festivals',
+  'Festivals (Diwali, Eid, Christmas…)': 'festivalsDiwali',
+  'School books, uniforms and admission': 'schoolBooks',
+  'Car service and repairs': 'carService',
+  'Travel and trips home': 'travelHome',
+  'Overtime': 'overtime',
+  'Festival bonus (Eid, Diwali, Christmas…)': 'festivalBonus',
+  'Yearly performance bonus': 'performanceBonus',
+  'Extra work or side jobs': 'sideJobs'
+};
+const sampleName = (name) => (SAMPLE_NAME_KEYS[name] ? t(`profiles.sample.${SAMPLE_NAME_KEYS[name]}`) : name);
+
+/** A sample subscription with its name translated. If the translated name would
+ *  be guessed as a different type, the English name's type is kept. */
+function sampleSub(x) {
+  const name = sampleName(x.name);
+  if (name === x.name || x.kind) return { ...x, name };
+  const kind = guessSubKind(x.name);
+  return guessSubKind(name) === kind ? { ...x, name } : { ...x, name, kind };
+}
+
 let seq = 0;
 const rid = (p) => `${p}${Date.now().toString(36)}${(seq++).toString(36)}`;
 
@@ -316,10 +358,10 @@ export function sampleFor(profile, currency) {
   const s = set.samples[profile] || set.samples.suburban;
   return {
     values: { ...s.values },
-    debts: s.debts.map((d) => ({ id: rid('d'), ...d })),
-    subscriptions: s.subscriptions.map((x) => ({ id: rid('s'), ...x })),
-    yearly: s.yearly.map((x) => ({ id: rid('y'), ...x })),
-    extras: (s.extras || []).map((x) => ({ id: rid('x'), ...x }))
+    debts: s.debts.map((d) => ({ id: rid('d'), ...d, name: sampleName(d.name) })),
+    subscriptions: s.subscriptions.map((x) => ({ id: rid('s'), ...sampleSub(x) })),
+    yearly: s.yearly.map((x) => ({ id: rid('y'), ...x, name: sampleName(x.name) })),
+    extras: (s.extras || []).map((x) => ({ id: rid('x'), ...x, name: sampleName(x.name) }))
   };
 }
 

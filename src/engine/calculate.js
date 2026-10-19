@@ -4,6 +4,7 @@
 import { RULES, highAprCards } from './rules.js';
 import { PROFILES, benchmarkFor } from './profiles.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
+import { t } from '../i18n/index.js';
 
 export const EXPENSE_FIELDS = [
   'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
@@ -13,14 +14,14 @@ export const EXPENSE_FIELDS = [
 export const VALUE_FIELDS = ['income', ...EXPENSE_FIELDS, 'emergencyFund'];
 
 export const CATEGORY_DEFS = [
-  { key: 'housing', label: 'Housing', fields: ['rent', 'homeIns'] },
-  { key: 'utilities', label: 'Bills & utilities', fields: ['electricity', 'waterGas', 'internet'] },
-  { key: 'transport', label: 'Getting around', fields: ['fuel', 'transit', 'carIns', 'carLoan'] },
-  { key: 'family', label: 'Food, family & fun', fields: ['school', 'groceries', 'dining', 'misc'] },
-  { key: 'care', label: 'Health, help & giving', fields: ['medical', 'homeHelp', 'familySupport', 'giving', 'other'] },
-  { key: 'yearly', label: 'Once-a-year costs', derived: 'yearlyMonthly' },
-  { key: 'debt', label: 'Loan payments', derived: 'debtPayments' },
-  { key: 'subscriptions', label: 'Subscriptions', derived: 'subsTotal' }
+  { key: 'housing', get label() { return t('calc.categories.housing'); }, fields: ['rent', 'homeIns'] },
+  { key: 'utilities', get label() { return t('calc.categories.utilities'); }, fields: ['electricity', 'waterGas', 'internet'] },
+  { key: 'transport', get label() { return t('calc.categories.transport'); }, fields: ['fuel', 'transit', 'carIns', 'carLoan'] },
+  { key: 'family', get label() { return t('calc.categories.family'); }, fields: ['school', 'groceries', 'dining', 'misc'] },
+  { key: 'care', get label() { return t('calc.categories.care'); }, fields: ['medical', 'homeHelp', 'familySupport', 'giving', 'other'] },
+  { key: 'yearly', get label() { return t('calc.categories.yearly'); }, derived: 'yearlyMonthly' },
+  { key: 'debt', get label() { return t('calc.categories.debt'); }, derived: 'debtPayments' },
+  { key: 'subscriptions', get label() { return t('calc.categories.subscriptions'); }, derived: 'subsTotal' }
 ];
 
 // 50/30/20 classification. Minimum loan payments and the monthly set-aside
@@ -184,61 +185,63 @@ export function healthScore({ income, spend, rent, debtPayments, emergencyFund, 
 
   const housingEarned = { paid: 20 * clamp((0.5 - housingShare) / 0.2, 0, 1), free: 20, unknown: 10, missing: 0 }[housing];
   const housingText = {
-    paid: housingShare <= 0.3
-      ? `Housing takes ${pc(housingShare)} of your income. Under 30% is comfortable.`
-      : `Housing takes ${pc(housingShare)} of your income. Try to keep it under 30% (${fmt(income * 0.3)}).`,
-    free: 'You own your home or live rent-free, so housing isn’t a worry.',
-    unknown: 'Your rent or mortgage is empty. Tell us if you own your home or live rent-free to get these points.',
-    missing: 'You said you pay for housing. Add your rent or mortgage to get these points.'
-  }[housing];
+    paid: () => (housingShare <= 0.3
+      ? t('calc.health.housing.comfortable', { pct: pc(housingShare) })
+      : t('calc.health.housing.high', { pct: pc(housingShare), target: fmt(income * 0.3) })),
+    free: () => t('calc.health.housing.free'),
+    unknown: () => t('calc.health.housing.unknown'),
+    missing: () => t('calc.health.housing.missing')
+  }[housing]();
 
   let emergencyText;
-  if (months == null) emergencyText = 'Add your bills so we can check this.';
-  else if (emergencyFund <= 0) emergencyText = `You have no savings set aside for emergencies. Aim for ${fmt(needs * 3)} (3 months of essential bills).`;
-  else if (months < 3) emergencyText = `Your emergency savings cover ${months.toFixed(1)} months of essential bills. Aim for 3 months (${fmt(needs * 3)}) first.`;
-  else if (months < 6) emergencyText = `Your emergency savings cover ${months.toFixed(1)} months of essential bills. Next goal: 6 months (${fmt(needs * 6)}).`;
-  else emergencyText = 'You have 6 months or more of essential bills saved. Excellent.';
+  if (months == null) emergencyText = t('calc.health.emergency.noBills');
+  else if (emergencyFund <= 0) emergencyText = t('calc.health.emergency.none', { target: fmt(needs * 3) });
+  else if (months < 3) emergencyText = t('calc.health.emergency.under3', { months: months.toFixed(1), target: fmt(needs * 3) });
+  else if (months < 6) emergencyText = t('calc.health.emergency.under6', { months: months.toFixed(1), target: fmt(needs * 6) });
+  else emergencyText = t('calc.health.emergency.done');
 
   const parts = [
     {
-      key: 'savings', label: 'Saving each month', max: 30,
+      key: 'savings', label: t('calc.health.parts.savings'), max: 30,
       earned: 30 * clamp(saveRate / 0.2, 0, 1),
       text: saveRate < 0
-        ? `Your bills cost more than you earn, so nothing is left to save. The goal is to keep 20% (${fmt(income * 0.2)}) each month.`
+        ? t('calc.health.savings.negative', { target: fmt(income * 0.2) })
         : saveRate < 0.2
-          ? `You keep ${pc(saveRate)} of your income after bills. Aim for 20% (${fmt(income * 0.2)} a month).`
-          : `You keep ${pc(saveRate)} of your income after bills. That beats the 20% goal.`
+          ? t('calc.health.savings.low', { pct: pc(saveRate), target: fmt(income * 0.2) })
+          : t('calc.health.savings.good', { pct: pc(saveRate) })
     },
-    { key: 'housing', label: 'Housing cost', max: 20, earned: housingEarned, text: housingText },
+    { key: 'housing', label: t('calc.health.parts.housing'), max: 20, earned: housingEarned, text: housingText },
     {
-      key: 'debt', label: 'Debt', max: 15,
+      key: 'debt', label: t('calc.health.parts.debt'), max: 15,
       earned: Math.min(hasHighApr ? 10 : 15, 15 * clamp((0.36 - dti) / 0.26, 0, 1)),
       text: (debtPayments > 0
-        ? `Loan payments take ${pc(dti)} of your income. Under 10% is healthy.`
-        : 'You have no loan payments. Great.') + (hasHighApr ? ' A card charges over 15% interest a year, which costs you extra.' : '')
+        ? t('calc.health.debt.payments', { pct: pc(dti) })
+        : t('calc.health.debt.none')) + (hasHighApr ? ` ${t('calc.health.debt.highApr')}` : '')
     },
-    { key: 'emergency', label: 'Emergency fund', max: 20, earned: needs > 0 ? 20 * clamp(emergencyFund / needs / 6, 0, 1) : 20, text: emergencyText },
+    { key: 'emergency', label: t('calc.health.parts.emergency'), max: 20, earned: needs > 0 ? 20 * clamp(emergencyFund / needs / 6, 0, 1) : 20, text: emergencyText },
     {
-      key: 'wants', label: 'Nice-to-haves', max: 15,
+      key: 'wants', label: t('calc.health.parts.wants'), max: 15,
       earned: 15 * clamp((0.45 - wantsShare) / 0.15, 0, 1),
-      text: `Eating out, shopping and subscriptions take ${pc(wantsShare)} of your income. ` +
-        (wantsShare <= 0.3 ? 'Under 30% is a good target.' : `Try to bring them under 30% (${fmt(income * 0.3)}).`)
+      text: `${t('calc.health.wants.share', { pct: pc(wantsShare) })} ` +
+        (wantsShare <= 0.3 ? t('calc.health.wants.good') : t('calc.health.wants.high', { target: fmt(income * 0.3) }))
     }
   ];
   const score = Math.round(sum(parts.map((p) => p.earned)));
   const worst = [...parts].sort((a, b) => b.max - b.earned - (a.max - a.earned))[0];
   const gain = Math.round(worst.max - worst.earned);
+  // Message keys for "Biggest boost: … could add up to N points."
   const TIPS = {
-    savings: 'Saving more of your income each month',
-    housing: housing === 'paid' ? 'Lowering your housing cost' : 'Answering the housing question',
-    debt: hasHighApr ? 'Paying off high-interest cards' : 'Lowering your loan payments',
-    emergency: 'Building your emergency fund',
-    wants: 'Spending a little less on nice-to-haves'
+    savings: 'savings',
+    housing: housing === 'paid' ? 'housingPaid' : 'housingQuestion',
+    debt: hasHighApr ? 'debtHighApr' : 'debtLoans',
+    emergency: 'emergency',
+    wants: 'wants'
   };
-  const label = score >= 80 ? 'Excellent' : score >= 60 ? 'Good' : score >= 40 ? 'Okay' : 'Needs attention';
+  const level = score >= 80 ? 'excellent' : score >= 60 ? 'good' : score >= 40 ? 'okay' : 'needsAttention';
+  const label = t(`calc.health.labels.${level}`);
   return {
     score, label, parts,
-    tip: gain > 0 ? `Biggest boost: ${TIPS[worst.key].toLowerCase()} could add up to ${gain} points.` : 'Every part is in great shape. Keep it up!'
+    tip: gain > 0 ? t(`calc.health.tip.${TIPS[worst.key]}`, { count: gain }) : t('calc.health.tip.perfect')
   };
 }
 
@@ -260,10 +263,10 @@ export function fiftyThirtyTwenty({ income, needs, wants, spend }) {
 // ---------------- Where should the savings go? ----------------
 export const BUCKETS = ['emergency', 'debt', 'goals'];
 export const ALLOCATION_PRESETS = {
-  emergency: { label: 'Emergency fund first', emergency: 60, debt: 20, goals: 20 },
-  debt: { label: 'Debt first', emergency: 20, debt: 60, goals: 20 },
-  even: { label: 'Split evenly', emergency: 34, debt: 33, goals: 33 },
-  goals: { label: 'Goals first', emergency: 20, debt: 20, goals: 60 }
+  emergency: { get label() { return t('calc.presets.emergency'); }, emergency: 60, debt: 20, goals: 20 },
+  debt: { get label() { return t('calc.presets.debt'); }, emergency: 20, debt: 60, goals: 20 },
+  even: { get label() { return t('calc.presets.even'); }, emergency: 34, debt: 33, goals: 33 },
+  goals: { get label() { return t('calc.presets.goals'); }, emergency: 20, debt: 20, goals: 60 }
 };
 
 /**
@@ -324,9 +327,9 @@ export function paydayPlan(totals, plan, optimized) {
   return {
     yearlyMonthly: totals.yearlyMonthly,
     yearlyTotal: totals.yearlyTotal,
-    yearlyNames: rowNames(totals.yearly.filter((y) => y.cost > 0), 'other costs'),
+    yearlyNames: rowNames(totals.yearly.filter((y) => y.cost > 0), t('calc.otherCosts')),
     extrasMonthly: totals.extrasMonthly,
-    extrasNames: rowNames(totals.extras.filter((x) => x.amount > 0), 'other income'),
+    extrasNames: rowNames(totals.extras.filter((x) => x.amount > 0), t('calc.otherIncome')),
     toSave: Math.max(0, left),
     short: Math.max(0, -left),
     funMonthly,

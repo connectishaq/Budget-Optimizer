@@ -142,18 +142,18 @@
 
 
 
-  <a href="#app" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-lg focus:bg-slate-900 focus:px-4 focus:py-3 focus:text-white">Skip to the calculator</a>
+  <a href="#app" class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-lg focus:bg-slate-900 focus:px-4 focus:py-3 focus:text-white" data-i18n="page.skipLink">Skip to the calculator</a>
 
   <!-- ===================== HEADER ===================== -->
   <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-    <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6" aria-label="Main">
+    <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6" aria-label="Main" data-i18n-attr="aria-label:page.header.navLabel">
       <a href="#top" class="flex min-h-11 items-center gap-2 font-semibold text-slate-900 dark:text-white">
-        <img src="/favicon.svg" alt="" width="24" height="24" class="h-6 w-6">Budget Optimizer
+        <img src="/favicon.svg" alt="" width="24" height="24" class="h-6 w-6"><span data-i18n="page.header.brand">Budget Optimizer</span>
       </a>
       <div class="flex items-center gap-1 text-sm">
-        <a href="#app" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white">Calculator</a>
-        <a href="#guide" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white">Money tips</a>
-        <a href="#glossary" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white">Word list</a>
+        <a href="#app" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.calculator">Calculator</a>
+        <a href="#guide" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.tips">Money tips</a>
+        <a href="#glossary" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.glossary">Word list</a>
         <button type="button" id="themeToggle" class="btn-icon" aria-pressed="false" aria-label="Switch to dark mode">
           <svg class="icon dark:hidden" aria-hidden="true"><use href="#i-moon"></use></svg>
           <svg class="icon hidden dark:block" aria-hidden="true"><use href="#i-sun"></use></svg>
@@ -167,45 +167,45 @@
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pt-14 lg:grid-cols-[1fr_22rem] lg:gap-16">
       <div>
         <p class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-lock"></use></svg>100% Private. Your financial data is processed locally and never leaves your device.
+          <svg class="icon icon-sm" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n="page.hero.privacy">100% Private. Your financial data is processed locally and never leaves your device.</span>
         </p>
-        <h1 class="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white">Household Budget Optimizer <span class="text-emerald-700 dark:text-emerald-400">&amp; Savings Simulator</span></h1>
-        <p class="mt-4 max-w-xl text-lg text-slate-700 dark:text-slate-300">Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.</p>
+        <h1 class="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white" data-i18n-html="page.hero.title_html">Household Budget Optimizer <span class="text-emerald-700 dark:text-emerald-400">&amp; Savings Simulator</span></h1>
+        <p class="mt-4 max-w-xl text-lg text-slate-700 dark:text-slate-300" data-i18n="page.hero.lead">Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.</p>
         <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a href="#app" class="btn btn-primary px-5">Start: about 2 minutes</a>
-          <button type="button" class="btn btn-secondary" data-action="sample">See an example</button>
+          <a href="#app" class="btn btn-primary px-5" data-i18n="page.hero.start">Start: about 2 minutes</a>
+          <button type="button" class="btn btn-secondary" data-action="sample" data-i18n="page.common.seeExample">See an example</button>
         </div>
-        <p class="mt-4 text-sm muted">Free. No sign-up. Works in 8 currencies, including rupees in lakh and crore.</p>
+        <p class="mt-4 text-sm muted" data-i18n="page.hero.note">Free. No sign-up. Works in 8 currencies, including rupees in lakh and crore.</p>
       </div>
 
       <!-- Example receipt: shows what the results look like -->
       <div class="hidden lg:block" aria-hidden="true">
         <div class="receipt rotate-1 px-6 pb-7 pt-6 font-mono text-sm text-slate-800 dark:text-slate-200">
           <div class="flex items-center justify-between font-sans">
-            <span class="text-sm font-semibold text-slate-900 dark:text-white">Your month</span>
-            <span class="rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">Example</span>
+            <span class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.hero.receipt.title">Your month</span>
+            <span class="rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400" data-i18n="page.hero.receipt.badge">Example</span>
           </div>
           <div class="mt-4 space-y-1.5">
-            <div class="flex justify-between"><span>Income</span><span>$7,200</span></div>
-            <div class="flex justify-between"><span>Bills</span><span>−$6,517</span></div>
+            <div class="flex justify-between"><span data-i18n="page.hero.receipt.income">Income</span><span>$7,200</span></div>
+            <div class="flex justify-between"><span data-i18n="page.hero.receipt.bills">Bills</span><span>−$6,517</span></div>
           </div>
           <div class="rule my-3"></div>
-          <div class="flex justify-between"><span>Left over</span><span>$683</span></div>
-          <div class="flex justify-between text-emerald-700 dark:text-emerald-400"><span>+ Your plan</span><span>$531</span></div>
+          <div class="flex justify-between"><span data-i18n="page.hero.receipt.leftOver">Left over</span><span>$683</span></div>
+          <div class="flex justify-between text-emerald-700 dark:text-emerald-400"><span data-i18n="page.hero.receipt.plan">+ Your plan</span><span>$531</span></div>
           <div class="rule-double my-3"></div>
-          <div class="flex justify-between text-base font-semibold text-slate-900 dark:text-white"><span>To save</span><span>$1,214</span></div>
+          <div class="flex justify-between text-base font-semibold text-slate-900 dark:text-white"><span data-i18n="page.hero.receipt.toSave">To save</span><span>$1,214</span></div>
         </div>
       </div>
     </div>
 
     <section id="how" aria-labelledby="howTitle" class="border-t border-slate-200 dark:border-slate-800">
       <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-        <h2 id="howTitle" class="text-sm font-semibold text-slate-900 dark:text-white">How this tool works</h2>
+        <h2 id="howTitle" class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.how.title">How this tool works</h2>
         <ol class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">1</span><span><span class="block font-medium text-slate-900 dark:text-white">Enter your bills</span><span class="text-sm muted">What you spend in a normal month.</span></span></li>
-          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">2</span><span><span class="block font-medium text-slate-900 dark:text-white">We compare with typical households</span><span class="text-sm muted">Each bill, against homes like yours.</span></span></li>
-          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">3</span><span><span class="block font-medium text-slate-900 dark:text-white">We suggest changes</span><span class="text-sm muted">With the sum behind each saving.</span></span></li>
-          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-700 text-sm font-semibold text-white dark:bg-emerald-500 dark:text-slate-950">4</span><span><span class="block font-medium text-slate-900 dark:text-white">See how much you could save</span><span class="text-sm muted">Monthly, yearly and over time.</span></span></li>
+          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">1</span><span><span class="block font-medium text-slate-900 dark:text-white" data-i18n="page.how.step1.title">Enter your bills</span><span class="text-sm muted" data-i18n="page.how.step1.body">What you spend in a normal month.</span></span></li>
+          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">2</span><span><span class="block font-medium text-slate-900 dark:text-white" data-i18n="page.how.step2.title">We compare with typical households</span><span class="text-sm muted" data-i18n="page.how.step2.body">Each bill, against homes like yours.</span></span></li>
+          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-slate-900 text-sm font-semibold text-white dark:bg-white dark:text-slate-900">3</span><span><span class="block font-medium text-slate-900 dark:text-white" data-i18n="page.how.step3.title">We suggest changes</span><span class="text-sm muted" data-i18n="page.how.step3.body">With the sum behind each saving.</span></span></li>
+          <li class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-700 text-sm font-semibold text-white dark:bg-emerald-500 dark:text-slate-950">4</span><span><span class="block font-medium text-slate-900 dark:text-white" data-i18n="page.how.step4.title">See how much you could save</span><span class="text-sm muted" data-i18n="page.how.step4.body">Monthly, yearly and over time.</span></span></li>
         </ol>
       </div>
     </section>
@@ -214,7 +214,7 @@
   <!-- ===== ADSENSE: TOP BANNER START ===== -->
   <!-- Filled automatically when VITE_ADSENSE_CLIENT (and optionally VITE_ADSENSE_SLOT_TOP) is set in .env.
        min-height reserves the space so the ad never shifts the layout. -->
-  <aside class="mx-auto max-w-6xl px-4 pt-6 sm:px-6" aria-label="Advertisement">
+  <aside class="mx-auto max-w-6xl px-4 pt-6 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
     <div class="ad-slot min-h-[100px]" data-ad="top"></div>
   </aside>
   <!-- ===== ADSENSE: TOP BANNER END ===== -->
@@ -224,36 +224,36 @@
 
     <!-- ========== GUIDED STEPS (new users) ========== -->
     <section id="wizard" aria-labelledby="wizTitle" class="grid gap-8 md:grid-cols-[13rem_minmax(0,36rem)]">
-      <ol id="wizSteps" class="hidden md:block" aria-label="Steps">
-        <li class="wstep" data-step="1"><span class="dot">1</span>Your income</li>
-        <li class="wstep" data-step="2"><span class="dot">2</span>Your bills</li>
-        <li class="wstep" data-step="3"><span class="dot">3</span>Loans &amp; subscriptions</li>
-        <li class="wstep" data-step="4"><span class="dot">4</span>Your results</li>
+      <ol id="wizSteps" class="hidden md:block" aria-label="Steps" data-i18n-attr="aria-label:page.wizard.stepsLabel">
+        <li class="wstep" data-step="1" data-i18n-html="page.wizard.steps.income_html"><span class="dot">1</span>Your income</li>
+        <li class="wstep" data-step="2" data-i18n-html="page.wizard.steps.bills_html"><span class="dot">2</span>Your bills</li>
+        <li class="wstep" data-step="3" data-i18n-html="page.wizard.steps.loans_html"><span class="dot">3</span>Loans &amp; subscriptions</li>
+        <li class="wstep" data-step="4" data-i18n-html="page.wizard.steps.results_html"><span class="dot">4</span>Your results</li>
       </ol>
       <div>
         <div class="panel">
           <div class="flex items-center justify-between gap-2 text-sm">
             <p id="wizStepLabel" class="font-medium text-slate-900 dark:text-white">Step 1 of 4</p>
             <div class="flex items-center gap-2">
-              <span id="wizStartWrap" class="flex items-center gap-2"><button type="button" id="wizStartOver" class="min-h-11 px-1 link">Start over</button><span class="text-slate-300 dark:text-slate-600" aria-hidden="true">·</span></span>
-              <button type="button" id="wizSkip" class="min-h-11 px-1 link">Skip to results</button>
+              <span id="wizStartWrap" class="flex items-center gap-2"><button type="button" id="wizStartOver" class="min-h-11 px-1 link" data-i18n="page.wizard.startOver">Start over</button><span class="text-slate-300 dark:text-slate-600" aria-hidden="true">·</span></span>
+              <button type="button" id="wizSkip" class="min-h-11 px-1 link" data-i18n="page.wizard.skip">Skip to results</button>
             </div>
           </div>
-          <p id="wizEditing" hidden class="mt-2 flex flex-wrap items-center gap-x-3 rounded-lg bg-amber-50 px-3 py-1 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200"><span data-editing-text></span><button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month>Back to this month</button></p>
-          <div id="wizProgress" role="progressbar" aria-label="Your progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+          <p id="wizEditing" hidden class="mt-2 flex flex-wrap items-center gap-x-3 rounded-lg bg-amber-50 px-3 py-1 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200"><span data-editing-text></span><button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month data-i18n="page.common.backToMonth">Back to this month</button></p>
+          <div id="wizProgress" role="progressbar" aria-label="Your progress" data-i18n-attr="aria-label:page.wizard.progressLabel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
             <div id="wizBar" class="h-full rounded-full bg-emerald-700 transition-all duration-300 dark:bg-emerald-500" style="width:25%"></div>
           </div>
           <p id="wizSubStep" class="mt-3 text-sm muted empty:hidden"></p>
           <h2 id="wizTitle" tabindex="-1" class="mt-4 text-2xl font-semibold tracking-tight text-slate-900 focus:outline-none sm:text-3xl dark:text-white">What’s your monthly income?</h2>
           <p id="wizSub" class="mt-1 muted"></p>
           <div id="wizBody" class="mt-6 space-y-6"></div>
-          <p id="wizNote" hidden class="mt-5 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">Your income lets us work out your health score and what’s left over. You can add it later. Press <strong>Next</strong> again to carry on without it.</p>
+          <p id="wizNote" hidden class="mt-5 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200" data-i18n-html="page.wizard.note_html">Your income lets us work out your health score and what’s left over. You can add it later. Press <strong>Next</strong> again to carry on without it.</p>
           <div class="mt-8 flex items-center gap-3 border-t border-slate-100 pt-5 dark:border-slate-800">
-            <button type="button" id="wizBack" class="btn btn-secondary">Back</button>
+            <button type="button" id="wizBack" class="btn btn-secondary" data-i18n="page.wizard.back">Back</button>
             <button type="button" id="wizNext" class="btn btn-primary ml-auto min-w-32">Next</button>
           </div>
         </div>
-        <p class="mt-4 text-sm muted">Just looking? <button type="button" data-action="sample" class="min-h-11 link">See an example budget</button></p>
+        <p class="mt-4 text-sm muted" data-i18n-html="page.wizard.justLooking_html">Just looking? <button type="button" data-action="sample" class="min-h-11 link">See an example budget</button></p>
       </div>
     </section>
 
@@ -261,25 +261,25 @@
     <div id="resultsView" hidden>
       <div class="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-white">Your results</h2>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-white" data-i18n="page.results.title">Your results</h2>
           <p id="savedIndicator" class="mt-1 inline-flex items-center gap-1.5 rounded px-1 text-xs muted" role="status"><svg class="icon h-3.5 w-3.5 text-emerald-700 dark:text-emerald-400" aria-hidden="true"><use href="#i-check-circle"></use></svg><span id="savedText">Saved on this device</span></p>
         </div>
         <div class="flex flex-wrap gap-2">
-          <button type="button" id="btnEdit" class="btn btn-primary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pencil"></use></svg>Edit my numbers</button>
+          <button type="button" id="btnEdit" class="btn btn-primary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pencil"></use></svg><span data-i18n="page.results.editNumbers">Edit my numbers</span></button>
           <button type="button" id="btnShowAll" class="btn btn-secondary" aria-pressed="false" aria-controls="inputs"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sliders"></use></svg><span id="btnShowAllText">Show all inputs</span></button>
         </div>
       </div>
 
-      <nav id="sectionNav" aria-label="Results sections" class="sticky top-14 z-30 -mx-4 mt-5 border-b border-slate-200 bg-slate-50/95 px-4 backdrop-blur sm:mx-0 sm:px-0 dark:border-slate-800 dark:bg-slate-950/95">
+      <nav id="sectionNav" aria-label="Results sections" data-i18n-attr="aria-label:page.results.sectionsLabel" class="sticky top-14 z-30 -mx-4 mt-5 border-b border-slate-200 bg-slate-50/95 px-4 backdrop-blur sm:mx-0 sm:px-0 dark:border-slate-800 dark:bg-slate-950/95">
         <ul class="flex gap-1 overflow-x-auto py-2 [scrollbar-width:none]">
-          <li><a href="#summary" class="secnav">Summary</a></li>
-          <li><a href="#plan" class="secnav">Ideas</a></li>
-          <li><a href="#payday" class="secnav">Payday</a></li>
-          <li><a href="#health" class="secnav">Health</a></li>
-          <li><a href="#spending" class="secnav">Spending</a></li>
-          <li><a href="#projection" class="secnav">Growth</a></li>
-          <li><a href="#goals" class="secnav">Plan ahead</a></li>
-          <li><a href="#months" class="secnav">History</a></li>
+          <li><a href="#summary" class="secnav" data-i18n="page.results.nav.summary">Summary</a></li>
+          <li><a href="#plan" class="secnav" data-i18n="page.results.nav.ideas">Ideas</a></li>
+          <li><a href="#payday" class="secnav" data-i18n="page.results.nav.payday">Payday</a></li>
+          <li><a href="#health" class="secnav" data-i18n="page.results.nav.health">Health</a></li>
+          <li><a href="#spending" class="secnav" data-i18n="page.results.nav.spending">Spending</a></li>
+          <li><a href="#projection" class="secnav" data-i18n="page.results.nav.growth">Growth</a></li>
+          <li><a href="#goals" class="secnav" data-i18n="page.results.nav.planAhead">Plan ahead</a></li>
+          <li><a href="#months" class="secnav" data-i18n="page.results.nav.history">History</a></li>
         </ul>
       </nav>
 
@@ -287,35 +287,35 @@
 
         <!-- ================= ALL INPUTS (advanced) ================= -->
         <section id="inputs" hidden aria-labelledby="inputsTitle" class="min-w-0 lg:sticky lg:top-32 lg:-m-1 lg:max-h-[calc(100vh-9rem)] lg:w-[22rem] lg:shrink-0 lg:overflow-y-auto lg:p-1">
-          <h2 id="inputsTitle" class="sr-only">All your numbers</h2>
+          <h2 id="inputsTitle" class="sr-only" data-i18n="page.inputs.title">All your numbers</h2>
           <div id="settingsSlot">
             <div id="settingsCard" class="card mb-3 p-4">
-              <p class="wiz-only mb-3 text-sm font-medium text-slate-900 dark:text-white">Who is this budget for?</p>
+              <p class="wiz-only mb-3 text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.inputs.who">Who is this budget for?</p>
               <div class="grid grid-cols-1 gap-3">
                 <div>
-                  <div class="mb-1.5 flex items-center gap-2"><label for="profile" class="label">Household type</label><span data-help="profile" data-help-label="Household type"></span></div>
+                  <div class="mb-1.5 flex items-center gap-2"><label for="profile" class="label" data-i18n="page.inputs.householdType">Household type</label><span data-help="profile" data-help-label="Household type"></span></div>
                   <select id="profile" class="input select">
-                    <option value="single">Single City Renter</option>
-                    <option value="suburban">Suburban Family of 4</option>
-                    <option value="youngpro">Young Professional</option>
+                    <option value="single" data-i18n="page.inputs.profiles.single">Single City Renter</option>
+                    <option value="suburban" data-i18n="page.inputs.profiles.suburban">Suburban Family of 4</option>
+                    <option value="youngpro" data-i18n="page.inputs.profiles.youngpro">Young Professional</option>
                   </select>
                 </div>
                 <div>
-                  <div class="mb-1.5 flex items-center gap-2"><label for="currency" class="label">Currency</label><span data-help="currency" data-help-label="Currency"></span></div>
+                  <div class="mb-1.5 flex items-center gap-2"><label for="currency" class="label" data-i18n="page.inputs.currency">Currency</label><span data-help="currency" data-help-label="Currency"></span></div>
                   <select id="currency" class="input select"></select>
                 </div>
               </div>
               <div class="wiz-hide mt-4 flex flex-wrap items-center justify-between gap-3">
                 <fieldset class="flex items-center gap-2">
-                  <legend class="sr-only">Show amounts per month or per year</legend>
+                  <legend class="sr-only" data-i18n="page.inputs.periodLegend">Show amounts per month or per year</legend>
                   <div class="seg">
-                    <label><input type="radio" name="period" value="monthly" checked><span>Monthly</span></label>
-                    <label><input type="radio" name="period" value="annual"><span>Yearly</span></label>
+                    <label><input type="radio" name="period" value="monthly" checked><span data-i18n="page.inputs.monthly">Monthly</span></label>
+                    <label><input type="radio" name="period" value="annual"><span data-i18n="page.inputs.yearly">Yearly</span></label>
                   </div>
                 </fieldset>
                 <div class="flex gap-1">
-                  <button type="button" class="btn btn-ghost px-3" data-action="sample">Example</button>
-                  <button type="button" id="btnReset" class="btn-icon hover:text-rose-700" aria-label="Start over"><svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg></button>
+                  <button type="button" class="btn btn-ghost px-3" data-action="sample" data-i18n="page.inputs.example">Example</button>
+                  <button type="button" id="btnReset" class="btn-icon hover:text-rose-700" aria-label="Start over" data-i18n-attr="aria-label:page.inputs.startOverLabel"><svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg></button>
                 </div>
               </div>
             </div>
@@ -326,16 +326,16 @@
         </section>
 
         <!-- ================= RESULTS ================= -->
-        <section id="results" aria-label="Your results" class="min-w-0 flex-1">
+        <section id="results" aria-label="Your results" data-i18n-attr="aria-label:page.results.label" class="min-w-0 flex-1">
           <div class="space-y-3 empty:hidden">
             <div id="sampleBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
-              <p>This is an <strong class="font-semibold">example budget</strong> for a <span id="sampleProfile">Suburban Family of 4</span>.</p>
-              <button type="button" id="clearSample" class="min-h-11 link">Use my own numbers</button>
-              <p id="sampleTip" hidden class="w-full pb-1 text-xs muted">Tip: the <button type="button" id="sampleFull" class="link">Suburban Family of 4 example</button> shows every kind of income and bill you can add.</p>
+              <p data-i18n-html="page.banners.sample_html">This is an <strong class="font-semibold">example budget</strong> for a <span id="sampleProfile">Suburban Family of 4</span>.</p>
+              <button type="button" id="clearSample" class="min-h-11 link" data-i18n="page.banners.useOwn">Use my own numbers</button>
+              <p id="sampleTip" hidden class="w-full pb-1 text-xs muted" data-i18n-html="page.banners.sampleTip_html">Tip: the <button type="button" id="sampleFull" class="link">Suburban Family of 4 example</button> shows every kind of income and bill you can add.</p>
             </div>
             <div id="editingBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
               <p data-editing-text></p>
-              <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month>Back to this month</button>
+              <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-back-to-month data-i18n="page.common.backToMonth">Back to this month</button>
             </div>
             <div id="welcomeBanner" hidden class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900 py-3">
               <div class="flex items-start justify-between gap-3">
@@ -343,87 +343,87 @@
                   <p id="welcomeTitle" class="font-semibold text-slate-900 dark:text-white">Welcome back</p>
                   <ul id="welcomeList" class="mt-1.5 space-y-1"></ul>
                 </div>
-                <button type="button" id="welcomeClose" class="btn-icon -mr-2 -mt-1.5 h-9 w-9 shrink-0" aria-label="Close the welcome note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+                <button type="button" id="welcomeClose" class="btn-icon -mr-2 -mt-1.5 h-9 w-9 shrink-0" aria-label="Close the welcome note" data-i18n-attr="aria-label:page.banners.welcomeClose"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
               </div>
             </div>
             <div id="copiedBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
               <p id="copiedText">We’ve copied last month’s numbers. Update anything that changed.</p>
-              <button type="button" id="startBlank" class="min-h-11 link">Start from blank instead</button>
+              <button type="button" id="startBlank" class="min-h-11 link" data-i18n="page.banners.startBlank">Start from blank instead</button>
             </div>
             <div id="capBanner" hidden role="alert" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
               <p id="capText"></p>
               <div class="flex flex-wrap gap-x-4">
-                <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-backup>Download backup</button>
+                <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-backup data-i18n="page.common.downloadBackup">Download backup</button>
                 <button type="button" id="capConfirm" class="min-h-11 font-medium underline underline-offset-2"></button>
               </div>
             </div>
             <div id="backupBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
-              <p>It’s been over 30 days since your last backup. Your history is only in this browser.</p>
+              <p data-i18n="page.banners.backupDue">It’s been over 30 days since your last backup. Your history is only in this browser.</p>
               <div class="flex flex-wrap gap-x-4">
-                <button type="button" class="min-h-11 link" data-backup>Download backup</button>
-                <button type="button" id="backupLater" class="min-h-11 font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">Not now</button>
+                <button type="button" class="min-h-11 link" data-backup data-i18n="page.common.downloadBackup">Download backup</button>
+                <button type="button" id="backupLater" class="min-h-11 font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" data-i18n="page.banners.notNow">Not now</button>
               </div>
             </div>
             <div id="overBanner" hidden role="alert" class="flex gap-3 rounded-xl bg-rose-50 px-4 py-3 text-sm text-rose-900 dark:bg-rose-950/60 dark:text-rose-200">
               <svg class="icon mt-0.5 shrink-0" aria-hidden="true"><use href="#i-alert"></use></svg><p id="overText"></p>
             </div>
             <div id="incomeBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
-              <p>Add your income to see your health score and what’s left over.</p>
-              <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-edit-step="1">Add my income</button>
+              <p data-i18n="page.banners.addIncome">Add your income to see your health score and what’s left over.</p>
+              <button type="button" class="min-h-11 font-medium underline underline-offset-2" data-edit-step="1" data-i18n="page.common.addIncome">Add my income</button>
             </div>
           </div>
 
           <!-- Empty state -->
           <div id="emptyState" hidden class="panel mt-3">
-            <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Nothing to show yet</h2>
-            <p class="mt-2 max-w-md muted">Add your income and a few bills, and your results appear here straight away.</p>
+            <h2 class="text-xl font-semibold text-slate-900 dark:text-white" data-i18n="page.empty.title">Nothing to show yet</h2>
+            <p class="mt-2 max-w-md muted" data-i18n="page.empty.body">Add your income and a few bills, and your results appear here straight away.</p>
             <div class="mt-6 flex flex-wrap gap-3">
-              <button type="button" class="btn btn-primary" data-edit-step="1">Enter my numbers</button>
-              <button type="button" class="btn btn-secondary" data-action="sample">See an example</button>
+              <button type="button" class="btn btn-primary" data-edit-step="1" data-i18n="page.empty.enter">Enter my numbers</button>
+              <button type="button" class="btn btn-secondary" data-action="sample" data-i18n="page.common.seeExample">See an example</button>
             </div>
           </div>
 
           <div id="dashboard" class="mt-3 space-y-6">
 
             <!-- ===== Summary: green savings panel + receipt ===== -->
-            <section id="summary" aria-label="Summary" class="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start">
+            <section id="summary" aria-label="Summary" data-i18n-attr="aria-label:page.summary.label" class="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start">
               <div class="on-dark rounded-2xl bg-emerald-900 p-6 text-white sm:p-8 dark:bg-emerald-950 dark:ring-1 dark:ring-emerald-900">
-                <p class="flex items-center gap-1.5 text-sm font-medium text-emerald-100">Money you could save each month <span data-help="saveMonth" data-help-label="Money you could save each month"></span></p>
+                <p class="flex items-center gap-1.5 text-sm font-medium text-emerald-100"><span data-i18n="page.summary.saveMonth">Money you could save each month</span> <span data-help="saveMonth" data-help-label="Money you could save each month"></span></p>
                 <p id="sumMonthly" class="mt-1 whitespace-nowrap text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">0</p>
-                <p class="mt-1 text-sm text-emerald-100"><span id="sumAnnual">0</span> a year</p>
+                <p class="mt-1 text-sm text-emerald-100" data-i18n-html="page.summary.perYear_html"><span id="sumAnnual">0</span> a year</p>
                 <p id="plainSummary" class="mt-5 max-w-xl text-lg leading-relaxed text-white/95" aria-live="polite"></p>
 
                 <div class="mt-6 space-y-3 text-sm">
                   <div>
-                    <div class="flex justify-between gap-3"><span class="text-emerald-100">What you spend now</span><span id="sumCurrent" class="whitespace-nowrap font-semibold tabular-nums">0</span></div>
+                    <div class="flex justify-between gap-3"><span class="text-emerald-100" data-i18n="page.summary.spendNow">What you spend now</span><span id="sumCurrent" class="whitespace-nowrap font-semibold tabular-nums">0</span></div>
                     <div class="mt-1.5 h-2 rounded-full bg-white/15"><div class="h-full w-full rounded-full bg-white/70"></div></div>
                   </div>
                   <div>
-                    <div class="flex justify-between gap-3"><span class="text-emerald-100">What you could spend</span><span id="sumOptimized" class="whitespace-nowrap font-semibold tabular-nums">0</span></div>
+                    <div class="flex justify-between gap-3"><span class="text-emerald-100" data-i18n="page.summary.couldSpend">What you could spend</span><span id="sumOptimized" class="whitespace-nowrap font-semibold tabular-nums">0</span></div>
                     <div class="mt-1.5 h-2 rounded-full bg-white/15"><div id="optBar" class="h-full rounded-full bg-emerald-300 transition-all duration-500" style="width:100%"></div></div>
                     <p id="sumOptimizedSub" class="mt-1 text-xs text-emerald-100"></p>
                   </div>
                 </div>
                 <p id="interestNote" hidden class="mt-5 flex flex-wrap items-center gap-1.5 border-t border-white/15 pt-4 text-sm text-emerald-50">
-                  <span>You’d also avoid <strong id="interestAmount" class="font-semibold text-white"></strong> of debt interest. Not counted above; it clears your debt sooner.</span>
+                  <span data-i18n-html="page.summary.interest_html">You’d also avoid <strong id="interestAmount" class="font-semibold text-white"></strong> of debt interest. Not counted above; it clears your debt sooner.</span>
                   <span data-help="interestAvoided" data-help-label="Debt interest you’d avoid"></span>
                 </p>
               </div>
 
               <div class="receipt px-5 pb-6 pt-5 text-sm" aria-labelledby="rcTitle">
                 <div class="flex items-center justify-between">
-                  <h3 id="rcTitle" class="font-semibold text-slate-900 dark:text-white">Your <span data-period-word>month</span>, added up</h3>
+                  <h3 id="rcTitle" class="font-semibold text-slate-900 dark:text-white" data-i18n-html="page.summary.receiptTitle_html">Your <span data-period-word>month</span>, added up</h3>
                   <svg class="icon text-slate-400" aria-hidden="true"><use href="#i-receipt"></use></svg>
                 </div>
                 <dl class="mt-4 space-y-2 font-mono text-[13px] text-slate-700 dark:text-slate-300">
                   <div class="flex justify-between gap-3"><dt id="rcIncomeLabel">Income</dt><dd id="rcIncome" class="tabular-nums">–</dd></div>
-                  <div id="rcExtrasRow" hidden class="flex justify-between gap-3"><dt>+ Bonuses (spread over the year)</dt><dd id="rcExtras" class="tabular-nums">–</dd></div>
-                  <div class="flex justify-between gap-3"><dt>Bills you entered</dt><dd id="rcBills" class="tabular-nums">–</dd></div>
+                  <div id="rcExtrasRow" hidden class="flex justify-between gap-3"><dt data-i18n="page.summary.bonuses">+ Bonuses (spread over the year)</dt><dd id="rcExtras" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3"><dt data-i18n="page.summary.billsEntered">Bills you entered</dt><dd id="rcBills" class="tabular-nums">–</dd></div>
                   <div class="rule !my-3"></div>
                   <div class="flex justify-between gap-3"><dt id="rcLeftLabel">Left over</dt><dd id="rcLeft" class="tabular-nums">–</dd></div>
-                  <div class="flex justify-between gap-3 text-emerald-700 dark:text-emerald-400"><dt>+ Savings from your plan</dt><dd id="rcPlan" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3 text-emerald-700 dark:text-emerald-400"><dt data-i18n="page.summary.planSavings">+ Savings from your plan</dt><dd id="rcPlan" class="tabular-nums">–</dd></div>
                   <div class="rule-double !my-3"></div>
-                  <div class="flex justify-between gap-3 text-[15px] font-semibold text-slate-900 dark:text-white"><dt>Left with your plan</dt><dd id="rcTotal" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3 text-[15px] font-semibold text-slate-900 dark:text-white"><dt data-i18n="page.summary.leftWithPlan">Left with your plan</dt><dd id="rcTotal" class="tabular-nums">–</dd></div>
                 </dl>
                 <p id="rcNote" class="mt-4 text-xs muted"></p>
               </div>
@@ -432,21 +432,21 @@
             <!-- ===== Ideas ===== -->
             <section id="plan" aria-labelledby="planTitle" class="panel">
               <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h3 id="planTitle" class="h-section">Ways to spend less</h3>
+                <h3 id="planTitle" class="h-section" data-i18n="page.plan.title">Ways to spend less</h3>
                 <p id="planCount" class="text-sm muted"></p>
               </div>
-              <p class="mt-1 text-sm muted">Switch on the ideas you’ll really try. Only those count in your results.</p>
+              <p class="mt-1 text-sm muted" data-i18n="page.plan.intro">Switch on the ideas you’ll really try. Only those count in your results.</p>
 
-              <h4 class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white"><svg class="icon icon-sm text-emerald-700 dark:text-emerald-400" aria-hidden="true"><use href="#i-sparkles"></use></svg>Top 3 things to do first</h4>
+              <h4 class="mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900 dark:text-white"><svg class="icon icon-sm text-emerald-700 dark:text-emerald-400" aria-hidden="true"><use href="#i-sparkles"></use></svg><span data-i18n="page.plan.top3">Top 3 things to do first</span></h4>
               <div id="planTop" class="mt-2 divide-y divide-slate-100 dark:divide-slate-800"></div>
 
               <div id="planMoreWrap" hidden class="mt-6 border-t border-slate-200 pt-6 dark:border-slate-800">
                 <div class="flex flex-wrap items-center justify-between gap-2">
-                  <h4 class="text-sm font-semibold text-slate-900 dark:text-white">More ideas</h4>
-                  <label class="flex items-center gap-2 text-sm"><span class="muted">Order</span>
+                  <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.plan.more">More ideas</h4>
+                  <label class="flex items-center gap-2 text-sm"><span class="muted" data-i18n="page.plan.order">Order</span>
                     <select id="planSort" class="input select min-h-9 w-auto py-1 text-sm">
-                      <option value="savings">Biggest savings</option>
-                      <option value="easy">Easiest first</option>
+                      <option value="savings" data-i18n="page.plan.sort.savings">Biggest savings</option>
+                      <option value="easy" data-i18n="page.plan.sort.easy">Easiest first</option>
                     </select>
                   </label>
                 </div>
@@ -454,27 +454,27 @@
                 <button type="button" id="planShowMore" hidden class="mt-3 min-h-11 text-sm link" aria-controls="planList"></button>
               </div>
 
-              <p id="planEmpty" hidden class="mt-4 text-sm muted">Your bills already look good. None are higher than typical for this household type.</p>
+              <p id="planEmpty" hidden class="mt-4 text-sm muted" data-i18n="page.plan.empty">Your bills already look good. None are higher than typical for this household type.</p>
             </section>
 
             <!-- ===== Payday plan ===== -->
             <section id="payday" aria-labelledby="paydayTitle" class="panel">
               <div class="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
                 <div class="min-w-0">
-                  <h3 id="paydayTitle" class="h-section flex items-center gap-2">Your payday plan <span data-help="payday" data-help-label="Your payday plan"></span></h3>
-                  <p class="mt-1 text-sm muted">Do these the day your pay arrives. It takes about 10 minutes.</p>
+                  <h3 id="paydayTitle" class="h-section flex items-center gap-2"><span data-i18n="page.payday.title">Your payday plan</span> <span data-help="payday" data-help-label="Your payday plan"></span></h3>
+                  <p class="mt-1 text-sm muted" data-i18n="page.payday.intro">Do these the day your pay arrives. It takes about 10 minutes.</p>
                 </div>
                 <div class="w-full sm:w-56">
-                  <label for="paydayDay" class="mb-1.5 block text-xs font-medium muted">My pay arrives on the</label>
+                  <label for="paydayDay" class="mb-1.5 block text-xs font-medium muted" data-i18n="page.payday.dayLabel">My pay arrives on the</label>
                   <select id="paydayDay" class="input select"></select>
                 </div>
               </div>
-              <p id="paydayEmpty" hidden class="mt-4 muted">Add your income to get your payday plan. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
+              <p id="paydayEmpty" hidden class="mt-4 muted" data-i18n-html="page.payday.empty_html">Add your income to get your payday plan. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
               <div id="paydayBody">
                 <ol id="paydaySteps" class="mt-5 space-y-3"></ol>
                 <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4 dark:border-slate-800">
                   <p id="paydayProgress" class="text-sm muted" aria-live="polite"></p>
-                  <button type="button" id="btnReminder" class="btn btn-secondary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"></use></svg>Remind me every payday</button>
+                  <button type="button" id="btnReminder" class="btn btn-secondary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="page.payday.reminder">Remind me every payday</span></button>
                 </div>
               </div>
             </section>
@@ -482,34 +482,34 @@
             <!-- ===== Health + Spending ===== -->
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:items-start">
               <section id="health" aria-labelledby="healthTitle" class="panel">
-                <h3 id="healthTitle" class="h-section flex items-center gap-2">Budget health <span data-help="health" data-help-label="Budget health"></span></h3>
-                <p id="healthEmpty" hidden class="mt-2 muted">Add your income to see your health score. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
+                <h3 id="healthTitle" class="h-section flex items-center gap-2"><span data-i18n="page.health.title">Budget health</span> <span data-help="health" data-help-label="Budget health"></span></h3>
+                <p id="healthEmpty" hidden class="mt-2 muted" data-i18n-html="page.health.empty_html">Add your income to see your health score. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
                 <div id="healthBody">
                   <p class="mt-3 flex flex-wrap items-baseline gap-x-2">
                     <span id="healthScore" class="text-5xl font-semibold tracking-tight tabular-nums text-slate-900 dark:text-white">0</span>
-                    <span class="muted">out of 100</span>
+                    <span class="muted" data-i18n="page.health.outOf">out of 100</span>
                     <span id="healthLabel" class="ml-1 rounded-full px-2.5 py-0.5 text-sm font-medium"></span>
                   </p>
                   <p id="healthTip" class="mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3 text-sm"></p>
-                  <h4 class="mt-6 text-xs font-semibold uppercase tracking-wide muted">Score breakdown</h4>
+                  <h4 class="mt-6 text-xs font-semibold uppercase tracking-wide muted" data-i18n="page.health.breakdown">Score breakdown</h4>
                   <ul id="healthParts" class="mt-3 divide-y divide-slate-100 dark:divide-slate-800"></ul>
                 </div>
               </section>
 
               <section id="spending" aria-labelledby="whereTitle" class="panel">
-                <h3 id="whereTitle" class="h-section">Where your money goes</h3>
-                <p id="splitEmpty" hidden class="mt-2 muted">Add your income to see how your money is split. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
+                <h3 id="whereTitle" class="h-section" data-i18n="page.spending.title">Where your money goes</h3>
+                <p id="splitEmpty" hidden class="mt-2 muted" data-i18n-html="page.spending.empty_html">Add your income to see how your money is split. <button type="button" class="min-h-11 link" data-edit-step="1">Add my income</button></p>
                 <div id="splitBody">
-                  <h4 id="splitTitle" class="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide muted">How your income is split <span data-help="split" data-help-label="How your money is split"></span></h4>
-                  <p class="mt-1 text-sm muted">A common guideline: 50% on must-pay bills, 30% on nice-to-haves, 20% saved.</p>
+                  <h4 id="splitTitle" class="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide muted"><span data-i18n="page.spending.splitTitle">How your income is split</span> <span data-help="split" data-help-label="How your money is split"></span></h4>
+                  <p class="mt-1 text-sm muted" data-i18n="page.spending.guideline">A common guideline: 50% on must-pay bills, 30% on nice-to-haves, 20% saved.</p>
                   <ul id="splitRows" class="mt-4 space-y-5"></ul>
                 </div>
                 <div class="mt-7 border-t border-slate-100 pt-6 dark:border-slate-800">
                   <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
-                    <h4 class="text-xs font-semibold uppercase tracking-wide muted">By category</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wide muted" data-i18n="page.spending.byCategory">By category</h4>
                     <p id="categoryLegend" class="flex items-center gap-3 text-xs muted" aria-hidden="true">
-                      <span class="flex items-center gap-1.5"><span class="inline-block h-2 w-4 rounded-full bg-slate-500 dark:bg-slate-400"></span>You</span>
-                      <span class="flex items-center gap-1.5"><span class="inline-block h-3 w-0.5 bg-slate-900 dark:bg-white"></span>Typical</span>
+                      <span class="flex items-center gap-1.5"><span class="inline-block h-2 w-4 rounded-full bg-slate-500 dark:bg-slate-400"></span><span data-i18n="page.spending.legendYou">You</span></span>
+                      <span class="flex items-center gap-1.5"><span class="inline-block h-3 w-0.5 bg-slate-900 dark:bg-white"></span><span data-i18n="page.spending.legendTypical">Typical</span></span>
                     </p>
                   </div>
                   <p id="categoryBasis" class="mt-1 text-sm muted"></p>
@@ -523,11 +523,11 @@
             <section id="projection" aria-labelledby="projTitle" class="panel">
               <div class="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
                 <div class="min-w-0">
-                  <h3 id="projTitle" class="h-section">How your savings could grow</h3>
-                  <p class="mt-1 text-sm muted">This assumes you put your leftover money into savings every month and it grows at the rate you pick.</p>
-                  <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Chart key">
-                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-emerald-700 dark:border-emerald-400"></span><span class="muted">If you also save the extra money:</span> <strong id="fvAlt" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
-                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-dashed border-slate-500"></span><span class="muted">If you keep going as you are:</span> <strong id="fvCur" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
+                  <h3 id="projTitle" class="h-section" data-i18n="page.growth.title">How your savings could grow</h3>
+                  <p class="mt-1 text-sm muted" data-i18n="page.growth.intro">This assumes you put your leftover money into savings every month and it grows at the rate you pick.</p>
+                  <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Chart key" data-i18n-attr="aria-label:page.common.chartKey">
+                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-emerald-700 dark:border-emerald-400"></span><span class="muted" data-i18n="page.growth.alt">If you also save the extra money:</span> <strong id="fvAlt" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
+                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-dashed border-slate-500"></span><span class="muted" data-i18n="page.growth.cur">If you keep going as you are:</span> <strong id="fvCur" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
                   </ul>
                   <div id="chartBox" class="relative mt-4 h-64 touch-pan-y select-none sm:h-72">
                     <svg id="growthChart" class="block h-full w-full" role="img" aria-label="Savings growth chart"></svg>
@@ -538,89 +538,89 @@
 
                 <div class="space-y-5 rounded-xl bg-slate-50 p-5 dark:bg-slate-800/50">
                   <div>
-                    <p class="text-sm muted">Extra money you’d have <span id="fvYears"></span></p>
+                    <p class="text-sm muted" data-i18n-html="page.growth.extra_html">Extra money you’d have <span id="fvYears"></span></p>
                     <p id="fvDiff" class="mt-0.5 text-3xl font-semibold tracking-tight tabular-nums text-emerald-700 dark:text-emerald-400">0</p>
                   </div>
                   <div>
                     <div class="flex items-center justify-between gap-2">
-                      <label for="years" class="label">How many years?</label>
+                      <label for="years" class="label" data-i18n="page.growth.years">How many years?</label>
                       <output id="yearsOut" for="years" class="text-sm font-semibold tabular-nums text-slate-900 dark:text-white">10 years</output>
                     </div>
                     <input id="years" type="range" min="1" max="20" step="1" value="10" class="range">
                   </div>
                   <div>
-                    <div class="mb-1.5 flex items-center gap-2"><label for="rate" class="label">How fast your savings grow each year</label><span data-help="rate" data-help-label="How fast your savings grow"></span></div>
+                    <div class="mb-1.5 flex items-center gap-2"><label for="rate" class="label" data-i18n="page.growth.rate">How fast your savings grow each year</label><span data-help="rate" data-help-label="How fast your savings grow"></span></div>
                     <select id="rate" class="input select text-sm" aria-describedby="rateHint"></select>
                     <p id="rateHint" class="mt-1 text-xs muted"></p>
                   </div>
                   <div class="flex items-start gap-3">
                     <button type="button" role="switch" id="inflationSwitch" class="switch-btn tap -mt-2.5" aria-checked="false" aria-labelledby="inflLabel"><span class="switch" aria-hidden="true"></span><span id="inflationState" class="sr-only">Off</span></button>
-                    <span id="inflLabel" class="text-sm text-slate-800 dark:text-slate-200">Show in today’s money (prices rise over time) <span data-help="inflation" data-help-label="Today’s money"></span></span>
+                    <span id="inflLabel" class="text-sm text-slate-800 dark:text-slate-200"><span data-i18n="page.growth.inflation">Show in today’s money (prices rise over time)</span> <span data-help="inflation" data-help-label="Today’s money"></span></span>
                   </div>
-                  <label class="flex items-center gap-2 text-sm"><span class="muted">Prices rise by</span>
-                    <input id="inflationRate" type="number" inputmode="decimal" min="0" max="20" step="0.1" class="input min-h-9 w-16 px-2 text-center" value="3"><span class="muted">% a year</span></label>
+                  <label class="flex items-center gap-2 text-sm"><span class="muted" data-i18n="page.growth.pricesRise">Prices rise by</span>
+                    <input id="inflationRate" type="number" inputmode="decimal" min="0" max="20" step="0.1" class="input min-h-9 w-16 px-2 text-center" value="3"><span class="muted" data-i18n="page.growth.perYear">% a year</span></label>
                 </div>
               </div>
               <p id="projectionSummary" class="mt-5 border-t border-slate-100 pt-5 text-slate-800 dark:border-slate-800 dark:text-slate-200"></p>
               <details class="row">
-                <summary><span class="flex-1 text-sm font-medium text-slate-900 dark:text-white">See the numbers year by year</span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                <summary><span class="flex-1 text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.growth.yearByYear">See the numbers year by year</span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                 <div class="mb-2 max-h-72 overflow-auto rounded-lg border border-slate-200 dark:border-slate-800">
                   <table class="w-full text-sm tabular-nums">
-                    <caption class="sr-only">Savings by year</caption>
-                    <thead class="sticky top-0 bg-slate-50 text-xs dark:bg-slate-900"><tr><th scope="col" class="px-3 py-2 text-left font-medium">Year</th><th scope="col" class="px-3 py-2 text-right font-medium">As you are</th><th scope="col" class="px-3 py-2 text-right font-medium">Saving the extra</th></tr></thead>
+                    <caption class="sr-only" data-i18n="page.growth.tableCaption">Savings by year</caption>
+                    <thead class="sticky top-0 bg-slate-50 text-xs dark:bg-slate-900"><tr><th scope="col" class="px-3 py-2 text-left font-medium" data-i18n="page.growth.colYear">Year</th><th scope="col" class="px-3 py-2 text-right font-medium" data-i18n="page.growth.colAsYouAre">As you are</th><th scope="col" class="px-3 py-2 text-right font-medium" data-i18n="page.growth.colSavingExtra">Saving the extra</th></tr></thead>
                     <tbody id="projectionTable" class="divide-y divide-slate-100 dark:divide-slate-800"></tbody>
                   </table>
                 </div>
               </details>
-              <p class="mt-2 text-xs muted">An example, not a promise or investment advice. It assumes the same growth every year and ignores tax and fees.</p>
+              <p class="mt-2 text-xs muted" data-i18n="page.growth.disclaimer">An example, not a promise or investment advice. It assumes the same growth every year and ignores tax and fees.</p>
             </section>
 
             <!-- ===== Plan ahead ===== -->
             <section id="goals" aria-labelledby="goalsTitle" class="panel">
-              <h3 id="goalsTitle" class="h-section">Plan ahead</h3>
-              <p class="mt-1 text-sm muted">Decide where the money you save should go.</p>
+              <h3 id="goalsTitle" class="h-section" data-i18n="page.goals.title">Plan ahead</h3>
+              <p class="mt-1 text-sm muted" data-i18n="page.goals.intro">Decide where the money you save should go.</p>
               <div class="mt-4 divide-y divide-slate-100 border-t border-slate-100 dark:divide-slate-800 dark:border-slate-800">
                 <details class="row">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-pie"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="allocTitle">Where should your savings go?</span><span id="sumAlloc" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-pie"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="allocTitle" data-i18n="page.goals.allocTitle">Where should your savings go?</span><span id="sumAlloc" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="pb-5 sm:pl-8">
-                    <div id="allocPresets" class="flex flex-wrap gap-2" role="group" aria-label="Quick options"></div>
+                    <div id="allocPresets" class="flex flex-wrap gap-2" role="group" aria-label="Quick options" data-i18n-attr="aria-label:page.goals.quickOptions"></div>
                     <div id="allocSliders" class="mt-4 space-y-1"></div>
                     <p id="allocNote" class="mt-2 text-sm muted"></p>
                   </div>
                 </details>
                 <details class="row">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-shield"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="efTitle">Emergency fund</span><span id="sumEmergency" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-shield"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="efTitle" data-i18n="page.goals.efTitle">Emergency fund</span><span id="sumEmergency" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div id="emergencyBody" class="pb-5 sm:pl-8"></div>
                 </details>
                 <details class="row">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-card"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="debtTitle">When will I be debt-free?</span><span id="sumDebt" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-card"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="debtTitle" data-i18n="page.goals.debtTitle">When will I be debt-free?</span><span id="sumDebt" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div id="debtBody" class="pb-5 sm:pl-8"></div>
                 </details>
                 <details class="row">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-target"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="goalPlannerTitle">Things you’re saving for</span><span id="sumGoals" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-target"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="goalPlannerTitle" data-i18n="page.goals.goalsTitle">Things you’re saving for</span><span id="sumGoals" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="pb-5 sm:pl-8">
                     <p id="goalBasis" class="text-sm muted"></p>
                     <ul id="goalList" class="mt-3 space-y-3"></ul>
-                    <p id="goalEmpty" class="mt-3 text-sm muted">No goals yet. Add one, like a holiday or a deposit for a home.</p>
-                    <button type="button" id="addGoal" class="btn btn-ghost mt-2 px-2"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-plus"></use></svg>Add a goal</button>
+                    <p id="goalEmpty" class="mt-3 text-sm muted" data-i18n="page.goals.goalEmpty">No goals yet. Add one, like a holiday or a deposit for a home.</p>
+                    <button type="button" id="addGoal" class="btn btn-ghost mt-2 px-2"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-plus"></use></svg><span data-i18n="page.goals.addGoal">Add a goal</span></button>
                   </div>
                 </details>
                 <details class="row" id="history">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-printer"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="historyTitle">Print or share</span><span id="sumShare" class="block text-sm muted">Print your plan, or make a link to it.</span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-printer"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" id="historyTitle" data-i18n="page.share.title">Print or share</span><span id="sumShare" class="block text-sm muted" data-i18n="page.share.summary">Print your plan, or make a link to it.</span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="space-y-8 pb-6 sm:pl-8">
                     <div>
-                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Print</h4>
-                      <p class="mt-1 text-sm muted">A one-page plan with your numbers and the changes you chose.</p>
-                      <button type="button" id="btnPrint" class="btn btn-secondary mt-3">Print or save as PDF</button>
+                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.share.printTitle">Print</h4>
+                      <p class="mt-1 text-sm muted" data-i18n="page.share.printBody">A one-page plan with your numbers and the changes you chose.</p>
+                      <button type="button" id="btnPrint" class="btn btn-secondary mt-3" data-i18n="page.share.printButton">Print or save as PDF</button>
                     </div>
                     <div>
-                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Share a link</h4>
-                      <p class="mt-1 text-sm muted">Only if you choose. The link has your numbers inside it, so anyone with it can see them. Nothing is uploaded.</p>
-                      <button type="button" id="btnShare" class="btn btn-secondary mt-3">Make a share link</button>
+                      <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.share.linkTitle">Share a link</h4>
+                      <p class="mt-1 text-sm muted" data-i18n="page.share.linkBody">Only if you choose. The link has your numbers inside it, so anyone with it can see them. Nothing is uploaded.</p>
+                      <button type="button" id="btnShare" class="btn btn-secondary mt-3" data-i18n="page.share.makeLink">Make a share link</button>
                       <div id="shareBox" hidden class="mt-3 flex gap-2">
-                        <label class="sr-only" for="shareUrl">Your share link</label>
+                        <label class="sr-only" for="shareUrl" data-i18n="page.share.urlLabel">Your share link</label>
                         <input id="shareUrl" type="text" readonly class="input text-xs">
-                        <button type="button" id="btnCopyShare" class="btn btn-primary shrink-0">Copy</button>
+                        <button type="button" id="btnCopyShare" class="btn btn-primary shrink-0" data-i18n="page.share.copy">Copy</button>
                       </div>
                     </div>
                   </div>
@@ -632,31 +632,31 @@
             <section id="months" aria-labelledby="monthsTitle" class="panel">
               <div class="flex flex-wrap items-start justify-between gap-3">
                 <div class="min-w-0">
-                  <h3 id="monthsTitle" class="h-section">Month by month</h3>
+                  <h3 id="monthsTitle" class="h-section" data-i18n="page.months.title">Month by month</h3>
                   <p id="monthsStatus" class="mt-1 text-sm muted" aria-live="polite"></p>
                 </div>
                 <button type="button" id="btnSnapshot" class="btn btn-secondary">Save this month</button>
               </div>
-              <p class="mt-3 flex items-start gap-2 text-sm muted"><svg class="icon icon-sm mt-0.5 text-slate-400" aria-hidden="true"><use href="#i-lock"></use></svg><span>Your history is saved only in this browser on this device. Use Backup to keep a copy or move it to another device.</span></p>
+              <p class="mt-3 flex items-start gap-2 text-sm muted"><svg class="icon icon-sm mt-0.5 text-slate-400" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n="page.months.localNote">Your history is saved only in this browser on this device. Use Backup to keep a copy or move it to another device.</span></p>
               <div id="safariNote" hidden class="mt-3 flex items-start gap-3 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200 py-3">
                 <svg class="icon icon-sm mt-0.5 shrink-0" aria-hidden="true"><use href="#i-info"></use></svg>
-                <p class="min-w-0 flex-1">On iPhone and iPad, Safari may clear website data after some days without visits, and your history with it. Download a backup each month to keep a safe copy.</p>
-                <button type="button" id="safariClose" class="btn-icon -my-2 -mr-2 h-9 w-9 shrink-0" aria-label="Close this note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+                <p class="min-w-0 flex-1" data-i18n="page.months.safariNote">On iPhone and iPad, Safari may clear website data after some days without visits, and your history with it. Download a backup each month to keep a safe copy.</p>
+                <button type="button" id="safariClose" class="btn-icon -my-2 -mr-2 h-9 w-9 shrink-0" aria-label="Close this note" data-i18n-attr="aria-label:page.months.closeNote"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
               </div>
 
-              <p id="monthsEmpty" class="mt-5 text-sm muted">Nothing saved yet. This month saves by itself as you enter your numbers. Come back next month to see what changed.</p>
+              <p id="monthsEmpty" class="mt-5 text-sm muted" data-i18n="page.months.empty">Nothing saved yet. This month saves by itself as you enter your numbers. Come back next month to see what changed.</p>
 
               <div id="monthsBody" hidden>
                 <dl id="monthsStats" class="mt-5 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3"></dl>
                 <div id="trendWrap" class="mt-6">
                   <div class="flex flex-wrap items-center justify-between gap-3">
-                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Over time</h4>
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.months.overTime">Over time</h4>
                     <fieldset>
-                      <legend class="sr-only">What the chart shows</legend>
+                      <legend class="sr-only" data-i18n="page.months.trendLegend">What the chart shows</legend>
                       <div class="seg" id="trendPick">
-                        <label><input type="radio" name="trendKind" value="spend" checked><span>Spending</span></label>
-                        <label><input type="radio" name="trendKind" value="leftOver"><span>Left over</span></label>
-                        <label><input type="radio" name="trendKind" value="score"><span>Score</span></label>
+                        <label><input type="radio" name="trendKind" value="spend" checked><span data-i18n="page.months.trend.spend">Spending</span></label>
+                        <label><input type="radio" name="trendKind" value="leftOver"><span data-i18n="page.months.trend.leftOver">Left over</span></label>
+                        <label><input type="radio" name="trendKind" value="score"><span data-i18n="page.months.trend.score">Score</span></label>
                       </div>
                     </fieldset>
                   </div>
@@ -669,16 +669,16 @@
                 <p id="trendOne" hidden class="mt-6 text-sm muted">Your chart appears once two months are saved.</p>
                 <div id="barsWrap" class="mt-8">
                   <div class="flex flex-wrap items-center justify-between gap-3">
-                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white">Each month</h4>
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.months.eachMonth">Each month</h4>
                     <fieldset>
-                      <legend class="sr-only">What the bars show</legend>
+                      <legend class="sr-only" data-i18n="page.months.barsLegend">What the bars show</legend>
                       <div class="seg">
-                        <label><input type="radio" name="barKind" value="flow" checked><span>Income vs spending</span></label>
-                        <label><input type="radio" name="barKind" value="cats"><span>By category</span></label>
+                        <label><input type="radio" name="barKind" value="flow" checked><span data-i18n="page.months.bars.flow">Income vs spending</span></label>
+                        <label><input type="radio" name="barKind" value="cats"><span data-i18n="page.months.bars.cats">By category</span></label>
                       </div>
                     </fieldset>
                   </div>
-                  <ul id="barLegend" class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs muted" aria-label="Chart key"></ul>
+                  <ul id="barLegend" class="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs muted" aria-label="Chart key" data-i18n-attr="aria-label:page.common.chartKey"></ul>
                   <div id="barBox" class="relative mt-3 h-60 touch-pan-y select-none">
                     <svg id="barChart" class="block h-full w-full" role="img" aria-label="Bar chart of your saved months"></svg>
                     <div id="barTip" hidden class="pointer-events-none absolute top-2 z-10 w-max max-w-[16rem] rounded-xl bg-slate-900 px-3 py-2.5 text-xs text-slate-50 shadow-lg ring-1 ring-white/10" aria-hidden="true"></div>
@@ -689,40 +689,40 @@
 
               <div class="mt-6 divide-y divide-slate-100 border-t border-slate-100 dark:divide-slate-800 dark:border-slate-800">
                 <details class="row" id="alertsRow" data-needs-months>
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-trending-up"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">What’s changing</span><span id="sumAlerts" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-trending-up"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.months.changing">What’s changing</span><span id="sumAlerts" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <ul id="alertList" class="space-y-2 pb-5 sm:pl-8"></ul>
                 </details>
                 <details class="row" id="compareRow" data-needs-months>
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-scale"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Compare two months</span><span id="sumCompare" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-scale"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.months.compare">Compare two months</span><span id="sumCompare" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="pb-5 sm:pl-8">
                     <div class="grid grid-cols-2 gap-3">
-                      <div><label for="cmpA" class="label">First month</label><select id="cmpA" class="input select mt-1.5"></select></div>
-                      <div><label for="cmpB" class="label">Second month</label><select id="cmpB" class="input select mt-1.5"></select></div>
+                      <div><label for="cmpA" class="label" data-i18n="page.months.firstMonth">First month</label><select id="cmpA" class="input select mt-1.5"></select></div>
+                      <div><label for="cmpB" class="label" data-i18n="page.months.secondMonth">Second month</label><select id="cmpB" class="input select mt-1.5"></select></div>
                     </div>
                     <div id="cmpBody" class="mt-4"></div>
                   </div>
                 </details>
                 <details class="row" id="goalsTimeRow" data-needs-months>
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-target"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Goals over time</span><span id="sumGoalsTime" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-target"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.months.goalsOverTime">Goals over time</span><span id="sumGoalsTime" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <ul id="goalsTime" class="space-y-4 pb-5 sm:pl-8"></ul>
                 </details>
                 <details class="row" id="monthsListRow" data-needs-months>
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Saved months</span><span id="sumMonthsList" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-calendar"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.months.savedMonths">Saved months</span><span id="sumMonthsList" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="overflow-x-auto pb-5 sm:pl-8">
                     <table class="w-full text-sm">
-                      <caption class="sr-only">Saved months</caption>
-                      <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-medium">Month</th><th scope="col" class="px-2 py-2 text-right font-medium">Spent</th><th scope="col" class="px-2 py-2 text-right font-medium">Left over</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell">Score</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell">vs month before</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                      <caption class="sr-only" data-i18n="page.months.savedMonthsCaption">Saved months</caption>
+                      <thead class="text-xs muted"><tr><th scope="col" class="py-2 text-left font-medium" data-i18n="page.months.col.month">Month</th><th scope="col" class="px-2 py-2 text-right font-medium" data-i18n="page.months.col.spent">Spent</th><th scope="col" class="px-2 py-2 text-right font-medium" data-i18n="page.months.col.leftOver">Left over</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell" data-i18n="page.months.col.score">Score</th><th scope="col" class="hidden px-2 py-2 text-right font-medium sm:table-cell" data-i18n="page.months.col.change">vs month before</th><th scope="col"><span class="sr-only" data-i18n="page.months.col.actions">Actions</span></th></tr></thead>
                       <tbody id="snapshotRows"></tbody>
                     </table>
                   </div>
                 </details>
                 <details class="row" id="backupRow">
-                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-download"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white">Backup</span><span id="sumBackup" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+                  <summary><svg class="icon text-slate-400" aria-hidden="true"><use href="#i-download"></use></svg><span class="min-w-0 flex-1"><span class="block text-sm font-medium text-slate-900 dark:text-white" data-i18n="page.months.backupTitle">Backup</span><span id="sumBackup" class="block text-sm muted"></span></span><svg class="icon icon-sm chev text-slate-500" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
                   <div class="pb-5 sm:pl-8">
-                    <p class="text-sm muted">One file with every saved month and your settings. Keep it somewhere safe, or open it on another device to carry on there.</p>
+                    <p class="text-sm muted" data-i18n="page.months.backupBody">One file with every saved month and your settings. Keep it somewhere safe, or open it on another device to carry on there.</p>
                     <div class="mt-3 flex flex-wrap gap-2">
-                      <button type="button" id="btnExport" class="btn btn-secondary" data-backup><svg class="icon icon-sm" aria-hidden="true"><use href="#i-download"></use></svg>Download backup</button>
-                      <label class="btn btn-secondary cursor-pointer focus-within:outline-2 focus-within:outline-emerald-700"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-upload"></use></svg>Open a backup<input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
+                      <button type="button" id="btnExport" class="btn btn-secondary" data-backup><svg class="icon icon-sm" aria-hidden="true"><use href="#i-download"></use></svg><span data-i18n="page.common.downloadBackup">Download backup</span></button>
+                      <label class="btn btn-secondary cursor-pointer focus-within:outline-2 focus-within:outline-emerald-700"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-upload"></use></svg><span data-i18n="page.months.openBackup">Open a backup</span><input type="file" id="importFile" accept="application/json,.json" class="sr-only"></label>
                     </div>
                   </div>
                 </details>
@@ -734,7 +734,7 @@
         <!-- ===== ADSENSE: SIDEBAR START ===== -->
         <!-- Desktop only (1280px and wider), beside the results. Never shown on phones, so an ad
              never sits between the inputs and the results. Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_SIDEBAR. -->
-        <aside class="rail-ad hidden xl:sticky xl:top-32 xl:block xl:w-[300px] xl:shrink-0" aria-label="Advertisement">
+        <aside class="rail-ad hidden xl:sticky xl:top-32 xl:block xl:w-[300px] xl:shrink-0" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
           <div class="ad-slot min-h-[600px]" data-ad="sidebar"></div>
         </aside>
         <!-- ===== ADSENSE: SIDEBAR END ===== -->
@@ -747,148 +747,148 @@
     <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-12">
       <aside class="lg:col-span-3">
         <nav class="lg:sticky lg:top-20" aria-labelledby="tocTitle">
-          <p id="tocTitle" class="text-sm font-semibold text-slate-900 dark:text-white">Table of contents</p>
+          <p id="tocTitle" class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.guide.toc.title">Table of contents</p>
           <ol class="mt-3 space-y-0.5 text-sm">
-            <li><a href="#leak-1" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"><span class="tabular-nums text-slate-400">1</span>Phantom power &amp; utilities</a></li>
-            <li><a href="#leak-2" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"><span class="tabular-nums text-slate-400">2</span>Subscription creep</a></li>
-            <li><a href="#leak-3" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"><span class="tabular-nums text-slate-400">3</span>Groceries &amp; dining out</a></li>
-            <li><a href="#leak-4" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"><span class="tabular-nums text-slate-400">4</span>Transport &amp; insurance</a></li>
-            <li><a href="#leak-5" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"><span class="tabular-nums text-slate-400">5</span>Impulse spending &amp; interest</a></li>
-            <li><a href="#leak-wealth" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">Turn leaks into wealth</a></li>
-            <li><a href="#faq" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">FAQ</a></li>
+            <li><a href="#leak-1" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n-html="page.guide.toc.leak1_html"><span class="tabular-nums text-slate-400">1</span>Phantom power &amp; utilities</a></li>
+            <li><a href="#leak-2" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n-html="page.guide.toc.leak2_html"><span class="tabular-nums text-slate-400">2</span>Subscription creep</a></li>
+            <li><a href="#leak-3" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n-html="page.guide.toc.leak3_html"><span class="tabular-nums text-slate-400">3</span>Groceries &amp; dining out</a></li>
+            <li><a href="#leak-4" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n-html="page.guide.toc.leak4_html"><span class="tabular-nums text-slate-400">4</span>Transport &amp; insurance</a></li>
+            <li><a href="#leak-5" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n-html="page.guide.toc.leak5_html"><span class="tabular-nums text-slate-400">5</span>Impulse spending &amp; interest</a></li>
+            <li><a href="#leak-wealth" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n="page.guide.toc.wealth">Turn leaks into wealth</a></li>
+            <li><a href="#faq" class="flex min-h-11 items-center gap-2 rounded-lg px-2 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white" data-i18n="page.guide.toc.faq">FAQ</a></li>
           </ol>
-          <a href="#app" class="btn btn-secondary mt-4 w-full">Try the calculator</a>
+          <a href="#app" class="btn btn-secondary mt-4 w-full" data-i18n="page.guide.toc.try">Try the calculator</a>
         </nav>
       </aside>
 
       <article class="prose-guide max-w-3xl lg:col-span-9">
         <header class="mb-8">
-          <p class="eyebrow mb-2">Money tips · 5 minute read</p>
-          <h2 id="guideTitle" class="text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl dark:text-white">5 Hidden Household Expense Leaks (And How to Plug Them Today)</h2>
+          <p class="eyebrow mb-2" data-i18n="page.guide.eyebrow">Money tips · 5 minute read</p>
+          <h2 id="guideTitle" class="text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl dark:text-white" data-i18n="page.guide.title">5 Hidden Household Expense Leaks (And How to Plug Them Today)</h2>
         </header>
 
-        <p class="text-lg">Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.</p>
-        <p>The good news? Leaks are usually the easiest money to recover. Unlike cutting back on things you love, plugging a leak typically means paying less for exactly the same lifestyle. Here are the five most common hidden household expense leaks, and the practical steps you can take today to stop each one.</p>
+        <p class="text-lg" data-i18n-html="page.guide.intro1_html">Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.</p>
+        <p data-i18n="page.guide.intro2">The good news? Leaks are usually the easiest money to recover. Unlike cutting back on things you love, plugging a leak typically means paying less for exactly the same lifestyle. Here are the five most common hidden household expense leaks, and the practical steps you can take today to stop each one.</p>
 
         <section id="leak-1" aria-labelledby="leak-1-title">
-          <h3 id="leak-1-title"><span class="num-badge">1</span>Phantom Power and Inefficient Utilities</h3>
-          <p>Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This "phantom load", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.</p>
+          <h3 id="leak-1-title" data-i18n-html="page.guide.leak1.title_html"><span class="num-badge">1</span>Phantom Power and Inefficient Utilities</h3>
+          <p data-i18n-html="page.guide.leak1.body_html">Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This "phantom load", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.</p>
           <div class="fix">
-            <h4>How to plug it</h4>
+            <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li><strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.</li>
-              <li><strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.</li>
-              <li><strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.</li>
-              <li>Wash laundry in cold water and set your water heater to 120°F (49°C).</li>
+              <li data-i18n-html="page.guide.leak1.fix1_html"><strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.</li>
+              <li data-i18n-html="page.guide.leak1.fix2_html"><strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.</li>
+              <li data-i18n-html="page.guide.leak1.fix3_html"><strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.</li>
+              <li data-i18n="page.guide.leak1.fix4">Wash laundry in cold water and set your water heater to 120°F (49°C).</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-2" aria-labelledby="leak-2-title">
-          <h3 id="leak-2-title"><span class="num-badge">2</span>Subscription Creep</h3>
-          <p>Streaming services, cloud storage, app memberships, meal kits, fitness apps and "free trials" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.</p>
+          <h3 id="leak-2-title" data-i18n-html="page.guide.leak2.title_html"><span class="num-badge">2</span>Subscription Creep</h3>
+          <p data-i18n-html="page.guide.leak2.body_html">Streaming services, cloud storage, app memberships, meal kits, fitness apps and "free trials" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.</p>
           <div class="fix">
-            <h4>How to plug it</h4>
+            <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li>Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.</li>
-              <li><strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.</li>
-              <li>Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.</li>
-              <li>Set a calendar reminder two days before any free trial ends.</li>
+              <li data-i18n-html="page.guide.leak2.fix1_html">Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.</li>
+              <li data-i18n-html="page.guide.leak2.fix2_html"><strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.</li>
+              <li data-i18n="page.guide.leak2.fix3">Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.</li>
+              <li data-i18n="page.guide.leak2.fix4">Set a calendar reminder two days before any free trial ends.</li>
             </ul>
           </div>
         </section>
 
         <!-- ===== ADSENSE: IN-ARTICLE START ===== -->
         <!-- In-article (fluid) unit. Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_INARTICLE. -->
-        <aside class="my-10" aria-label="Advertisement">
+        <aside class="my-10" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
           <div class="ad-slot min-h-[200px]" data-ad="inarticle"></div>
         </aside>
         <!-- ===== ADSENSE: IN-ARTICLE END ===== -->
 
         <section id="leak-3" aria-labelledby="leak-3-title">
-          <h3 id="leak-3-title"><span class="num-badge">3</span>Grocery Waste and the Dining-Out Premium</h3>
-          <p>Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
+          <h3 id="leak-3-title" data-i18n-html="page.guide.leak3.title_html"><span class="num-badge">3</span>Grocery Waste and the Dining-Out Premium</h3>
+          <p data-i18n-html="page.guide.leak3.body_html">Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
           <div class="fix">
-            <h4>How to plug it</h4>
+            <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li><strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.</li>
-              <li>Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.</li>
-              <li>Shop once a week with a list, and schedule one "leftovers night" to clear the fridge.</li>
-              <li>Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday.</li>
+              <li data-i18n-html="page.guide.leak3.fix1_html"><strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.</li>
+              <li data-i18n="page.guide.leak3.fix2">Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.</li>
+              <li data-i18n="page.guide.leak3.fix3">Shop once a week with a list, and schedule one "leftovers night" to clear the fridge.</li>
+              <li data-i18n="page.guide.leak3.fix4">Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-4" aria-labelledby="leak-4-title">
-          <h3 id="leak-4-title"><span class="num-badge">4</span>Transport and Insurance on Autopilot</h3>
-          <p>Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.</p>
+          <h3 id="leak-4-title" data-i18n-html="page.guide.leak4.title_html"><span class="num-badge">4</span>Transport and Insurance on Autopilot</h3>
+          <p data-i18n-html="page.guide.leak4.body_html">Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.</p>
           <div class="fix">
-            <h4>How to plug it</h4>
+            <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li><strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.</li>
-              <li>Keep tires properly inflated, which can improve fuel economy by up to 3%.</li>
-              <li>Compare monthly transit passes and toll transponder discounts against what you pay per trip.</li>
-              <li><strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover.</li>
+              <li data-i18n-html="page.guide.leak4.fix1_html"><strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.</li>
+              <li data-i18n="page.guide.leak4.fix2">Keep tires properly inflated, which can improve fuel economy by up to 3%.</li>
+              <li data-i18n="page.guide.leak4.fix3">Compare monthly transit passes and toll transponder discounts against what you pay per trip.</li>
+              <li data-i18n-html="page.guide.leak4.fix4_html"><strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-5" aria-labelledby="leak-5-title">
-          <h3 id="leak-5-title"><span class="num-badge">5</span>Impulse Spending and High-Interest Debt</h3>
-          <p>The daily coffee, the late-night online order, the "it was on sale" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.</p>
+          <h3 id="leak-5-title" data-i18n-html="page.guide.leak5.title_html"><span class="num-badge">5</span>Impulse Spending and High-Interest Debt</h3>
+          <p data-i18n-html="page.guide.leak5.body_html">The daily coffee, the late-night online order, the "it was on sale" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.</p>
           <div class="fix">
-            <h4>How to plug it</h4>
+            <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li><strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.</li>
-              <li>Remove saved card details from shopping sites and turn off retailer notifications.</li>
-              <li><strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.</li>
-              <li>Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest.</li>
+              <li data-i18n-html="page.guide.leak5.fix1_html"><strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.</li>
+              <li data-i18n="page.guide.leak5.fix2">Remove saved card details from shopping sites and turn off retailer notifications.</li>
+              <li data-i18n-html="page.guide.leak5.fix3_html"><strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.</li>
+              <li data-i18n="page.guide.leak5.fix4">Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-wealth" aria-labelledby="leak-wealth-title" class="mt-12">
-          <h3 id="leak-wealth-title" class="!mt-0">Turn Plugged Leaks Into Real Wealth</h3>
-          <p>Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.</p>
-          <p>Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.</p>
-          <p class="!mb-0">Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month.</p>
+          <h3 id="leak-wealth-title" class="!mt-0" data-i18n="page.guide.wealth.title">Turn Plugged Leaks Into Real Wealth</h3>
+          <p data-i18n-html="page.guide.wealth.p1_html">Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.</p>
+          <p data-i18n-html="page.guide.wealth.p2_html">Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.</p>
+          <p class="!mb-0" data-i18n="page.guide.wealth.p3">Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month.</p>
         </section>
 
         <!-- FAQ (mirrors the FAQPage JSON-LD in <head>) -->
         <section id="faq" class="mt-14" aria-labelledby="faqTitle">
-          <h3 id="faqTitle" class="!mt-0">Frequently Asked Questions</h3>
+          <h3 id="faqTitle" class="!mt-0" data-i18n="page.faq.title">Frequently Asked Questions</h3>
           <div class="border-t border-slate-200 dark:border-slate-800">
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Is my financial data safe in this calculator?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q1">Is my financial data safe in this calculator?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a1">Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How are the savings estimates worked out?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open "How did we get this?" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q2">How are the savings estimates worked out?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a2">Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open "How did we get this?" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">What does the "Add to my plan" switch do?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">Only ideas you add to your plan count towards what you could spend, the money you could save, the growth chart, your goal dates and your debt-free date. Switch an idea off if it doesn't fit your life and every figure updates instantly.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q3">What does the "Add to my plan" switch do?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a3">Only ideas you add to your plan count towards what you could spend, the money you could save, the growth chart, your goal dates and your debt-free date. Switch an idea off if it doesn't fit your life and every figure updates instantly.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">What is the 50/30/20 budget rule?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">It's a simple guideline: spend about half of your take-home pay on must-pay bills such as housing, power, groceries and loan payments, about a third on nice-to-haves such as eating out and subscriptions, and save about a fifth.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q4">What is the 50/30/20 budget rule?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a4">It's a simple guideline: spend about half of your take-home pay on must-pay bills such as housing, power, groceries and loan payments, about a third on nice-to-haves such as eating out and subscriptions, and save about a fifth.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How is the budget health score calculated?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">The score from 0 to 100 adds up five parts: how much you save each month (30 points), housing cost (20), debt (15), emergency savings (20) and spending on nice-to-haves (15). Each part has a sentence explaining your result and what to aim for.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q5">How is the budget health score calculated?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a5">The score from 0 to 100 adds up five parts: how much you save each month (30 points), housing cost (20), debt (15), emergency savings (20) and spending on nice-to-haves (15). Each part has a sentence explaining your result and what to aim for.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Which growth rate should I pick for my savings?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">A safe savings account has recently paid around 4% a year. Long-term investing in a broad mix of shares has averaged around 8% a year over long periods, but it goes up and down. Growth is never guaranteed, so try a few options and switch on "Show in today's money" to allow for rising prices.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q6">Which growth rate should I pick for my savings?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a6">A safe savings account has recently paid around 4% a year. Long-term investing in a broad mix of shares has averaged around 8% a year over long periods, but it goes up and down. Growth is never guaranteed, so try a few options and switch on "Show in today's money" to allow for rising prices.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">How big should my emergency fund be?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q7">How big should my emergency fund be?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a7">A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
-              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">Can I use rupees and other currencies?<svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4">Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures.</p>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q8">Can I use rupees and other currencies?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
+              <p class="pb-4" data-i18n="page.faq.a8">Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures.</p>
             </details>
           </div>
         </section>
@@ -899,23 +899,23 @@
   <!-- ===================== WORD LIST ===================== -->
   <section id="glossary" class="border-t border-slate-200 dark:border-slate-800" aria-labelledby="glossaryTitle">
     <div class="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-      <h2 id="glossaryTitle" class="h-section">Money words, explained simply</h2>
+      <h2 id="glossaryTitle" class="h-section" data-i18n="page.glossary.title">Money words, explained simply</h2>
       <dl class="mt-6 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Net income (take-home pay)</dt><dd class="text-sm muted">The money you actually receive after tax and other deductions. Use this number as your income.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Emergency fund</dt><dd class="text-sm muted">Savings kept aside only for surprises, like losing your job or a big repair. A common goal is 3 to 6 months of must-pay bills.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Interest rate (APR)</dt><dd class="text-sm muted">The yearly cost of borrowing, shown as a percentage. At 30% APR, owing 100,000 for a whole year adds about 30,000 in interest.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Compound growth</dt><dd class="text-sm muted">When your savings earn money, and then that money earns money too. Over many years, savings grow faster and faster.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Inflation</dt><dd class="text-sm muted">Prices slowly rise over time, so the same money buys a little less each year. Around 3% a year is common.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Needs and wants</dt><dd class="text-sm muted">Needs are must-pay bills like rent, power and groceries. Wants are nice-to-haves like eating out, shopping and subscriptions.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Balance transfer</dt><dd class="text-sm muted">Moving what you owe on one credit card to another card with lower (often 0%) interest for a while, usually for a one-off fee.</dd></div>
-        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white">Lakh and crore</dt><dd class="text-sm muted">Ways of counting big amounts in Pakistan and India. 1 lakh = 100,000. 1 crore = 100 lakh = 10,000,000.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.netIncome.term">Net income (take-home pay)</dt><dd class="text-sm muted" data-i18n="page.glossary.netIncome.definition">The money you actually receive after tax and other deductions. Use this number as your income.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.emergencyFund.term">Emergency fund</dt><dd class="text-sm muted" data-i18n="page.glossary.emergencyFund.definition">Savings kept aside only for surprises, like losing your job or a big repair. A common goal is 3 to 6 months of must-pay bills.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.apr.term">Interest rate (APR)</dt><dd class="text-sm muted" data-i18n="page.glossary.apr.definition">The yearly cost of borrowing, shown as a percentage. At 30% APR, owing 100,000 for a whole year adds about 30,000 in interest.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.compound.term">Compound growth</dt><dd class="text-sm muted" data-i18n="page.glossary.compound.definition">When your savings earn money, and then that money earns money too. Over many years, savings grow faster and faster.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.inflation.term">Inflation</dt><dd class="text-sm muted" data-i18n="page.glossary.inflation.definition">Prices slowly rise over time, so the same money buys a little less each year. Around 3% a year is common.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.needsWants.term">Needs and wants</dt><dd class="text-sm muted" data-i18n="page.glossary.needsWants.definition">Needs are must-pay bills like rent, power and groceries. Wants are nice-to-haves like eating out, shopping and subscriptions.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.balanceTransfer.term">Balance transfer</dt><dd class="text-sm muted" data-i18n="page.glossary.balanceTransfer.definition">Moving what you owe on one credit card to another card with lower (often 0%) interest for a while, usually for a one-off fee.</dd></div>
+        <div class="grid gap-1 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"><dt class="font-medium text-slate-900 dark:text-white" data-i18n="page.glossary.lakhCrore.term">Lakh and crore</dt><dd class="text-sm muted" data-i18n="page.glossary.lakhCrore.definition">Ways of counting big amounts in Pakistan and India. 1 lakh = 100,000. 1 crore = 100 lakh = 10,000,000.</dd></div>
       </dl>
     </div>
   </section>
 
   <!-- ===== ADSENSE: BOTTOM BANNER START ===== -->
   <!-- Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_BOTTOM. min-height prevents layout shift. -->
-  <aside class="mx-auto max-w-6xl px-4 pb-10 sm:px-6" aria-label="Advertisement">
+  <aside class="mx-auto max-w-6xl px-4 pb-10 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
     <div class="ad-slot min-h-[100px]" data-ad="bottom"></div>
   </aside>
   <!-- ===== ADSENSE: BOTTOM BANNER END ===== -->
@@ -929,7 +929,7 @@
         <span id="mbLabel" class="block text-xs muted">You could save each month</span>
         <span class="block truncate font-semibold tabular-nums"><span id="mbAmount" class="text-lg text-emerald-700 dark:text-emerald-400">0</span><span id="mbPer" class="text-xs font-normal muted">/month</span></span>
       </p>
-      <a href="#plan" class="btn btn-primary shrink-0">See ideas</a>
+      <a href="#plan" class="btn btn-primary shrink-0" data-i18n="page.mobileBar.seeIdeas">See ideas</a>
     </div>
   </div>
 
@@ -943,7 +943,7 @@
       <div class="mx-auto mb-4 h-1.5 w-10 rounded-full bg-slate-300 dark:bg-slate-600" aria-hidden="true"></div>
       <h2 id="helpSheetTitle" class="text-lg font-bold text-slate-900 dark:text-white"></h2>
       <p id="helpSheetBody" class="mt-2 text-base leading-relaxed"></p>
-      <button type="button" id="helpSheetClose" class="btn btn-primary mt-5 w-full">Got it</button>
+      <button type="button" id="helpSheetClose" class="btn btn-primary mt-5 w-full" data-i18n="page.dialog.gotIt">Got it</button>
     </div>
   </dialog>
 
@@ -952,7 +952,7 @@
       <h2 id="confirmTitle" class="text-lg font-bold text-slate-900 dark:text-white"></h2>
       <p id="confirmMessage" class="mt-2 text-sm muted"></p>
       <div class="mt-6 flex flex-wrap justify-end gap-2">
-        <button id="confirmCancel" value="cancel" class="btn btn-secondary">Cancel</button>
+        <button id="confirmCancel" value="cancel" class="btn btn-secondary" data-i18n="page.dialog.cancel">Cancel</button>
         <button id="confirmAlt" value="alt" hidden class="btn btn-secondary"></button>
         <button id="confirmOk" value="ok" class="btn btn-primary">Confirm</button>
       </div>

@@ -9,6 +9,7 @@ import { CATEGORY_DEFS, computeBudget } from './calculate.js';
 import { PROFILES } from './profiles.js';
 import { CURRENCIES } from '../utils/format.js';
 import { normalizeState } from '../state.js';
+import { t } from '../i18n/index.js';
 
 export const HISTORY_VERSION = 1;
 export const MAX_MONTHS = 60;
@@ -165,13 +166,12 @@ export function oldestToDrop(months, month) {
 }
 
 // ---------------- Comparing ----------------
-const FIELD_LABEL = {
-  rent: 'Rent or mortgage', homeIns: 'Home insurance', electricity: 'Electricity', waterGas: 'Water and gas',
-  internet: 'Internet and phone', fuel: 'Fuel', transit: 'Fares and tolls', carIns: 'Car insurance',
-  carLoan: 'Car loan', school: 'School fees', groceries: 'Groceries', dining: 'Eating out',
-  misc: 'Impulse shopping', medical: 'Medical costs', homeHelp: 'Household help',
-  familySupport: 'Money sent to family', giving: 'Giving', other: 'Other bills'
-};
+// Field -> message key (translated where the label is read)
+const FIELD_LABEL = Object.fromEntries([
+  'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns',
+  'carLoan', 'school', 'groceries', 'dining', 'misc', 'medical', 'homeHelp',
+  'familySupport', 'giving', 'other'
+].map((k) => [k, `historyEngine.fields.${k}`]));
 // For "X has / X have" in alerts
 const PLURAL = new Set(['waterGas', 'internet', 'transit', 'school', 'groceries', 'medical', 'other', 'subscriptions']);
 
@@ -196,9 +196,9 @@ export function compareMonths(a, b) {
   const add = (key, label, kind, va, vb, higherIsBetter, level = 0) =>
     rows.push({ key, label, kind, level, a: va, b: vb, ...change(va, vb, higherIsBetter) });
 
-  add('pay', 'Take-home pay', 'income', a.totals.pay, b.totals.pay, true, 1);
-  add('extras', 'Extra income (monthly average)', 'income', a.totals.extras, b.totals.extras, true, 1);
-  add('income', 'Total income', 'income', a.totals.income, b.totals.income, true);
+  add('pay', t('historyEngine.compare.pay'), 'income', a.totals.pay, b.totals.pay, true, 1);
+  add('extras', t('historyEngine.compare.extras'), 'income', a.totals.extras, b.totals.extras, true, 1);
+  add('income', t('historyEngine.compare.income'), 'income', a.totals.income, b.totals.income, true);
   for (const c of CATEGORY_DEFS) {
     const ca = a.totals.categories?.[c.key] ?? null;
     const cb = b.totals.categories?.[c.key] ?? null;
@@ -208,12 +208,12 @@ export function compareMonths(a, b) {
     for (const f of c.fields) {
       const fa = a.inputs.values[f] || 0;
       const fb = b.inputs.values[f] || 0;
-      if (fa > 0 || fb > 0) add(f, FIELD_LABEL[f], 'field', fa, fb, false, 1);
+      if (fa > 0 || fb > 0) add(f, t(FIELD_LABEL[f]), 'field', fa, fb, false, 1);
     }
   }
-  add('spend', 'Total spending', 'total', a.totals.spend, b.totals.spend, false);
-  add('leftOver', 'Money left over', 'total', a.totals.leftOver, b.totals.leftOver, true);
-  add('score', 'Health score', 'total', a.totals.score, b.totals.score, true);
+  add('spend', t('historyEngine.compare.spend'), 'total', a.totals.spend, b.totals.spend, false);
+  add('leftOver', t('historyEngine.compare.leftOver'), 'total', a.totals.leftOver, b.totals.leftOver, true);
+  add('score', t('historyEngine.compare.score'), 'total', a.totals.score, b.totals.score, true);
   // Rows a partial month can't fill would only show dashes
   return { sameCurrency, partial, rows: rows.filter((r) => r.a != null || r.b != null) };
 }
@@ -271,7 +271,7 @@ export function trendAlerts(months, max = 3) {
   const out = [];
   for (const key of [...Object.keys(FIELD_LABEL), 'subscriptions']) {
     const v = series(key);
-    const label = key === 'subscriptions' ? 'Subscriptions' : FIELD_LABEL[key];
+    const label = t(key === 'subscriptions' ? 'historyEngine.fields.subscriptions' : FIELD_LABEL[key]);
     const plural = PLURAL.has(key);
     const n = v.length;
     // Rises (or falls) every month up to the latest
@@ -285,7 +285,7 @@ export function trendAlerts(months, max = 3) {
       out.push({
         key, tone: rising ? 'bad' : 'good',
         size: Math.abs((v[n - 1] - v[n - 1 - run]) / (v[n - 1 - run] || 1)),
-        text: `${label} ${plural ? 'have' : 'has'} gone ${rising ? 'up' : 'down'} ${run} months in a row.`
+        text: t(`historyEngine.alerts.${rising ? 'rising' : 'falling'}${plural ? 'Plural' : 'Singular'}`, { label, count: run })
       });
       continue;
     }
@@ -297,7 +297,7 @@ export function trendAlerts(months, max = 3) {
       if (Math.abs(pct) >= 0.15 && Math.abs(v[n - 1] - ref) >= floor) {
         out.push({
           key, tone: pct > 0 ? 'bad' : 'good', size: Math.abs(pct),
-          text: `${label} ${plural ? 'are' : 'is'} ${pct > 0 ? 'up' : 'down'} ${Math.round(Math.abs(pct) * 100)}% since ${monthLabel(list[refIndex].month, { monthOnly: true })}.`
+          text: t(`historyEngine.alerts.${pct > 0 ? 'upSince' : 'downSince'}${plural ? 'Plural' : 'Singular'}`, { label, pct: Math.round(Math.abs(pct) * 100), month: monthLabel(list[refIndex].month, { monthOnly: true }) })
         });
       }
     }

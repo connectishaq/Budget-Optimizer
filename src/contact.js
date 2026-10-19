@@ -3,6 +3,7 @@
 // falls back to opening the visitor's email app addressed to VITE_CONTACT_EMAIL.
 
 import './page.js';
+import { t } from './i18n/index.js';
 
 const ENDPOINT = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT || '').trim();
 const ACCESS_KEY = (import.meta.env.VITE_CONTACT_FORM_KEY || '').trim();
@@ -10,15 +11,16 @@ const EMAIL = (import.meta.env.VITE_CONTACT_EMAIL || '').trim();
 
 const LIMITS = { name: 100, message: 3000 };
 const MIN_MESSAGE = 20;
+// Topic value -> message key of its label (shown and sent as t(TOPICS[value]))
 const TOPICS = {
-  bug: 'Something isn’t working',
-  calculation: 'Question about a calculation or figure',
-  idea: 'Idea, feature or currency request',
-  question: 'General question',
-  privacy: 'Privacy or data request',
-  business: 'Advertising or partnership',
-  press: 'Press or media',
-  other: 'Something else'
+  bug: 'contact.topics.bug',
+  calculation: 'contact.topics.calculation',
+  idea: 'contact.topics.idea',
+  question: 'contact.topics.question',
+  privacy: 'contact.topics.privacy',
+  business: 'contact.topics.business',
+  press: 'contact.topics.press',
+  other: 'contact.topics.other'
 };
 
 const $ = (id) => document.getElementById(id);
@@ -34,11 +36,11 @@ function setError(field, message) {
 /** The problem with one field, or '' when it's fine. */
 function fieldError(form, field) {
   const v = form.elements[field].value.trim();
-  if (field === 'name') return !v ? 'Please tell us your name.' : v.length > LIMITS.name ? `Please keep your name under ${LIMITS.name} characters.` : '';
-  if (field === 'email') return !v ? 'Please add your email so we can reply.' : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? 'That email doesn’t look right. Check for typos, like name@example.com.' : '';
-  if (field === 'topic') return TOPICS[v] ? '' : 'Please choose what your message is about.';
-  return v.length < MIN_MESSAGE ? `Please write a little more (at least ${MIN_MESSAGE} characters) so we can help.`
-    : v.length > LIMITS.message ? `Please keep your message under ${LIMITS.message} characters.` : '';
+  if (field === 'name') return !v ? t('contact.errors.nameMissing') : v.length > LIMITS.name ? t('contact.errors.nameTooLong', { max: LIMITS.name }) : '';
+  if (field === 'email') return !v ? t('contact.errors.emailMissing') : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? t('contact.errors.emailInvalid') : '';
+  if (field === 'topic') return TOPICS[v] ? '' : t('contact.errors.topicMissing');
+  return v.length < MIN_MESSAGE ? t('contact.errors.messageTooShort', { min: MIN_MESSAGE })
+    : v.length > LIMITS.message ? t('contact.errors.messageTooLong', { max: LIMITS.message }) : '';
 }
 
 /** Checks every field, shows messages next to them and returns the first bad one. */
@@ -68,15 +70,15 @@ async function send(form) {
   const data = {
     name: form.elements.name.value.trim(),
     email: form.elements.email.value.trim(),
-    topic: TOPICS[form.elements.topic.value],
+    topic: t(TOPICS[form.elements.topic.value]),
     message: form.elements.message.value.trim(),
     page: document.referrer && new URL(document.referrer).origin === location.origin ? document.referrer : location.href
   };
-  const subject = `Budget Optimizer: ${data.topic}`;
+  const subject = t('contact.mail.subject', { topic: data.topic });
 
   if (!ENDPOINT) {
     if (!EMAIL) throw new Error('not-configured');
-    const body = `${data.message}\n\n—\n${data.name}\nTopic: ${data.topic}`;
+    const body = t('contact.mail.body', { message: data.message, name: data.name, topic: data.topic });
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     return 'mailto';
   }
@@ -108,12 +110,13 @@ function initContactForm() {
 
   if (EMAIL) {
     const alt = $('c-email-alt');
-    alt.append('Prefer email? Write to ');
+    const [before, after = ''] = t('contact.emailAlt').split('{email}');
+    alt.append(before);
     const a = document.createElement('a');
     a.href = `mailto:${EMAIL}`;
     a.className = 'link';
     a.textContent = EMAIL;
-    alt.append(a, '.');
+    alt.append(a, after);
     alt.hidden = false;
   }
   const counter = $('c-message-count');
@@ -147,33 +150,33 @@ function initContactForm() {
     // Bots fill the hidden field; pretend it worked and send nothing
     if (form.elements.website.value) {
       form.reset(); updateCount();
-      showStatus('success', 'Thanks, your message is on its way.', 'We usually reply within 2 working days.');
+      showStatus('success', t('contact.status.sentTitle'), t('contact.status.sentTextBrief'));
       return;
     }
 
     if (ENDPOINT && navigator.onLine === false) {
-      showStatus('error', 'You’re offline.', 'Connect to the internet and press Send again. Your message is still in the form.');
+      showStatus('error', t('contact.status.offlineTitle'), t('contact.status.offlineText'));
       return;
     }
 
     button.disabled = true;
-    button.textContent = 'Sending…';
+    button.textContent = t('contact.form.sending');
     try {
       const how = await send(form);
       if (how === 'mailto') {
-        showStatus('success', 'Your email app should open now.', `Press send there to reach us. If nothing opened, write to ${EMAIL}.`);
+        showStatus('success', t('contact.status.mailtoTitle'), t('contact.status.mailtoText', { email: EMAIL }));
       } else {
         form.reset(); updateCount();
-        showStatus('success', 'Thanks, your message is on its way.', 'We usually reply within 2 working days. Check your spam folder if you don’t hear back.');
+        showStatus('success', t('contact.status.sentTitle'), t('contact.status.sentText'));
       }
     } catch (err) {
-      showStatus('error', 'Your message wasn’t sent.',
+      showStatus('error', t('contact.status.failedTitle'),
         err.message === 'not-configured'
-          ? 'The contact form isn’t set up yet. Please try again later.'
-          : `Please check your connection and try again${EMAIL ? `, or email us at ${EMAIL}` : ''}. Your message is still in the form.`);
+          ? t('contact.status.notConfigured')
+          : EMAIL ? t('contact.status.failedTextWithEmail', { email: EMAIL }) : t('contact.status.failedText'));
     } finally {
       button.disabled = false;
-      button.textContent = 'Send message';
+      button.textContent = t('contact.form.send');
     }
   });
 }

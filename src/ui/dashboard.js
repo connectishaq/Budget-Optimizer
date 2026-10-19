@@ -6,6 +6,7 @@ import { hasData } from '../state.js';
 import { PROFILES, benchmarkFor } from '../engine/profiles.js';
 import { pct } from '../utils/format.js';
 import { $, esc, icon, setText, setHTML, setAttr, setMoney, animateNumber } from './dom.js';
+import { t } from '../i18n/index.js';
 
 // Validated categorical palette (needs / wants / savings); legend text carries identity too
 const SPLIT_COLORS = { needs: '#475569', wants: '#d97706', savings: '#047857' };
@@ -24,14 +25,14 @@ export function plainSummary(result, view) {
   const committed = result.plan.filter((p) => p.committed && p.kind === 'cash' && p.monthly > 0);
   const n = committed.length;
   const allEasy = n > 0 && committed.every((p) => p.effort === 'Easy');
-  const tips = `${n} ${allEasy ? 'easy ' : ''}tip${n === 1 ? '' : 's'}`;
-  const every = view.f === 12 ? 'every year' : 'every month';
+  const tips = t(allEasy ? 'dashboard.summary.easyTips' : 'dashboard.summary.tips', { count: n });
+  const per = view.f === 12 ? 'year' : 'month';
   const save = n
-    ? `By following ${tips}, you could save an extra ${view.s(result.savings)} ${every}.`
-    : 'Switch on a few ideas below to see how much you could save.';
-  if (!(income > 0)) return `You spend ${view.m(spend)} a ${view.periodWord} on the bills you entered. ${save}`;
-  if (spend > income) return `You earn ${view.m(income)} but spend ${view.m(spend)} a ${view.periodWord}, which is ${view.m(spend - income)} more than you earn. ${save}`;
-  return `You earn ${view.m(income)} and spend ${view.m(spend)} a ${view.periodWord}. ${save}`;
+    ? t(`dashboard.summary.save.${per}`, { tips, amount: view.s(result.savings) })
+    : t('dashboard.summary.noTips');
+  if (!(income > 0)) return `${t(`dashboard.summary.spendOnly.${per}`, { spend: view.m(spend) })} ${save}`;
+  if (spend > income) return `${t(`dashboard.summary.overspend.${per}`, { income: view.m(income), spend: view.m(spend), gap: view.m(spend - income) })} ${save}`;
+  return `${t(`dashboard.summary.earnSpend.${per}`, { income: view.m(income), spend: view.m(spend) })} ${save}`;
 }
 
 function renderSummary(result, view) {
@@ -43,7 +44,8 @@ function renderSummary(result, view) {
   setAttr($('sumOptimized'), 'title', view.full(optimized * view.f));
   setAttr($('sumMonthly'), 'title', view.full(savings));
   setMoney($('sumAnnual'), view.rawS(savings * 12), view.full(savings * 12));
-  setText($('sumOptimizedSub'), totals.spend > 0 && savings > 0 ? `${pct(savings / totals.spend, 1)} less than now, per ${view.periodWord}` : `per ${view.periodWord}`);
+  const per = view.f === 12 ? 'year' : 'month';
+  setText($('sumOptimizedSub'), totals.spend > 0 && savings > 0 ? t(`dashboard.optimizedSub.less.${per}`, { pct: pct(savings / totals.spend, 1) }) : t(`dashboard.optimizedSub.plain.${per}`));
   $('optBar').style.width = `${totals.spend > 0 ? Math.max(2, (optimized / totals.spend) * 100) : 100}%`;
   renderReceipt(result, view);
   $('interestNote').hidden = !(result.interestAvoided > 0);
@@ -59,21 +61,21 @@ function renderReceipt(result, view) {
   const left = income - spend;
   // With bonuses, show take-home pay and the bonuses' monthly share separately
   const split = extrasMonthly > 0;
-  setText($('rcIncomeLabel'), split ? 'Take-home pay' : 'Income');
+  setText($('rcIncomeLabel'), split ? t('dashboard.receipt.takeHome') : t('dashboard.receipt.income'));
   const first = split ? pay : income;
-  put('rcIncome', first > 0 ? view.m(first) : split ? view.m(0) : 'not added', first > 0 ? view.full(first * view.f) : '');
+  put('rcIncome', first > 0 ? view.m(first) : split ? view.m(0) : t('dashboard.receipt.notAdded'), first > 0 ? view.full(first * view.f) : '');
   $('rcExtrasRow').hidden = !split;
   if (split) put('rcExtras', `+${view.m(extrasMonthly)}`, `+${view.full(extrasMonthly * view.f)}`);
   put('rcBills', `−${view.m(spend)}`, `−${view.full(spend * view.f)}`);
-  setText($('rcLeftLabel'), left < 0 && income > 0 ? 'Short by' : 'Left over');
+  setText($('rcLeftLabel'), left < 0 && income > 0 ? t('dashboard.receipt.shortBy') : t('dashboard.receipt.leftOver'));
   put('rcLeft', income > 0 ? view.m(Math.abs(left)) : '–', income > 0 ? view.full(Math.abs(left) * view.f) : '');
   $('rcLeft').className = `tabular-nums ${left < 0 && income > 0 ? 'font-semibold text-rose-700 dark:text-rose-400' : ''}`;
   put('rcPlan', `+${view.s(result.savings)}`, `+${view.full(result.savings * view.f)}`);
   const total = left + result.savings;
   put('rcTotal', income > 0 ? `${total < 0 ? '−' : ''}${view.s(Math.abs(total))}` : '–', income > 0 ? view.full(total * view.f) : '');
   setText($('rcNote'), income > 0
-    ? (total >= 0 ? 'Money you could put into savings, an emergency fund or paying off debt.' : 'Your bills are still higher than your income. Switch on more ideas, or look at your biggest bills.')
-    : 'Add your income to see what’s left over.');
+    ? (total >= 0 ? t('dashboard.receipt.noteLeft') : t('dashboard.receipt.noteShort'))
+    : t('dashboard.receipt.noteNoIncome'));
 }
 
 function renderBanners(state, result, view) {
@@ -83,10 +85,9 @@ function renderBanners(state, result, view) {
   if (over) {
     const gap = spend - income;
     const after = income - result.optimized;
-    setHTML($('overText'), `<strong class="font-semibold">You spend more than you earn</strong>, by ${esc(view.m(gap))}${view.per}. ${
-      after >= 0
-        ? `The ideas in your plan would fix this and leave ${esc(view.s(after))}${view.per}.`
-        : `The ideas in your plan bring the gap down to ${esc(view.s(-after))}${view.per}. Switch on more ideas, or look at housing and loans.`}`);
+    setHTML($('overText'), after >= 0
+      ? t('dashboard.over.fixed_html', { gap: esc(view.m(gap)), left: esc(view.s(after)), per: view.per })
+      : t('dashboard.over.stillShort_html', { gap: esc(view.m(gap)), left: esc(view.s(-after)), per: view.per }));
   }
   $('incomeBanner').hidden = !(hasData(state) && !(income > 0));
   $('sampleBanner').hidden = !state.ui.sample;
@@ -143,23 +144,23 @@ function renderSplit(result, view) {
   $('splitBody').hidden = !s;
   if (!s) return;
   const ROWS = [
-    { key: 'needs', label: 'Must-pay bills', target: 50 },
-    { key: 'wants', label: 'Nice-to-haves', target: 30 },
-    { key: 'savings', label: 'Left to save', target: 20 }
+    { key: 'needs', label: t('dashboard.split.needs'), target: 50 },
+    { key: 'wants', label: t('dashboard.split.wants'), target: 30 },
+    { key: 'savings', label: t('dashboard.split.savings'), target: 20 }
   ];
   setHTML($('splitRows'), ROWS.map(({ key, label, target }) => {
     const gap = s.diffs[key]; // > 0 means over the guideline (or, for savings, short of it)
     const off = gap > 0;
     const note = !off
-      ? `${icon('check', 'icon-sm -mt-0.5 inline')} Within the ${target}% guideline`
+      ? t('dashboard.split.within', { icon: icon('check', 'icon-sm -mt-0.5 inline'), target })
       : key === 'savings'
-        ? `${esc(view.s(gap))}${view.per} short of the ${target}% guideline`
-        : `${esc(view.s(gap))}${view.per} over the ${target}% guideline`;
+        ? t('dashboard.split.short', { amount: esc(view.s(gap)), per: view.per, target })
+        : t('dashboard.split.over', { amount: esc(view.s(gap)), per: view.per, target });
     return `<li>${meterRow({
       lead: `<span class="h-2.5 w-2.5 shrink-0 rounded-sm" style="background:${SPLIT_COLORS[key]}"></span>${label}`,
-      value: `<span class="font-semibold text-slate-900 dark:text-white">${pct(s.share[key])}</span><span class="muted"> of income</span>`,
+      value: t('dashboard.split.ofIncome_html', { pct: pct(s.share[key]) }),
       fill: s.share[key] * 100, fillColor: SPLIT_COLORS[key],
-      marker: target, markerTitle: `Guideline: ${target}%`,
+      marker: target, markerTitle: t('dashboard.split.guideline', { target }),
       note, noteClass: off ? 'text-amber-700 dark:text-amber-400' : 'text-emerald-700 dark:text-emerald-400'
     })}</li>`;
   }).join(''));
@@ -171,8 +172,8 @@ function renderCategories(state, result, view) {
   const B = benchmarkFor(state.currency, state.profile);
   $('categoryLegend').hidden = !(income > 0);
   setText($('categoryBasis'), income > 0
-    ? `Share of your income, compared with a typical ${PROFILES[state.profile].name}${B.approximate ? ' (a rough guide for this currency)' : ''}.`
-    : 'Share of your total spending. Add your income to compare with typical households.');
+    ? t(B.approximate ? 'dashboard.categories.basisIncomeApprox' : 'dashboard.categories.basisIncome', { profile: PROFILES[state.profile].name })
+    : t('dashboard.categories.basisSpend'));
   // Biggest first; empty categories go in one line at the end instead of a row each
   const used = categories.filter((c) => c.amount > 0).sort((a, b) => b.amount - a.amount);
   const unused = categories.filter((c) => !(c.amount > 0));
@@ -184,12 +185,12 @@ function renderCategories(state, result, view) {
       lead: `${icon(CATEGORY_ICON[c.key], 'icon-sm shrink-0 text-slate-400')}<span class="truncate">${esc(c.label)}</span>`,
       value: `<span class="font-semibold text-slate-900 dark:text-white">${view.tag(view.m(c.amount), c.amount * view.f)}</span> <span class="muted">· ${pct(share)}</span>`,
       fill: (share / maxShare) * 100, fillClass: over ? 'bg-amber-500' : 'bg-slate-500 dark:bg-slate-400',
-      marker: income > 0 ? (c.benchmark / maxShare) * 100 : null, markerTitle: `Typical: ${pct(c.benchmark)} of income`,
-      note: over ? `Higher than typical (about ${pct(c.benchmark)})` : '', noteClass: 'text-amber-700 dark:text-amber-400'
+      marker: income > 0 ? (c.benchmark / maxShare) * 100 : null, markerTitle: t('dashboard.categories.typical', { pct: pct(c.benchmark) }),
+      note: over ? t('dashboard.categories.higher', { pct: pct(c.benchmark) }) : '', noteClass: 'text-amber-700 dark:text-amber-400'
     })}</li>`;
   }).join(''));
   $('categoryEmpty').hidden = !unused.length;
-  setText($('categoryEmpty'), unused.length ? `Nothing entered for: ${unused.map((c) => c.label).join(', ')}.` : '');
+  setText($('categoryEmpty'), unused.length ? t('dashboard.categories.nothingFor', { list: unused.map((c) => c.label).join(', ') }) : '');
 }
 
 function renderMobileBar(state, result, view) {
@@ -200,7 +201,7 @@ function renderMobileBar(state, result, view) {
   bar.querySelectorAll('a').forEach((a) => (a.tabIndex = show ? 0 : -1));
   setMoney($('mbAmount'), view.s(result.savings), view.full(result.savings * view.f));
   setText($('mbPer'), view.per);
-  setText($('mbLabel'), view.f === 12 ? 'You could save each year' : 'You could save each month');
+  setText($('mbLabel'), view.f === 12 ? t('dashboard.mobile.saveYear') : t('dashboard.mobile.saveMonth'));
 }
 
 export function renderDashboard(state, result, view) {

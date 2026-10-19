@@ -7,9 +7,11 @@ import { goalTimeline, emergencyFundStatus, debtFreeComparison, ALLOCATION_PRESE
 import { parseAmount, duration, monthsFromNow, pct } from '../utils/format.js';
 import { newId } from '../engine/profiles.js';
 import { $, icon, esc, setText, setHTML, setAttr, toast } from './dom.js';
+import { t, getLanguage } from '../i18n/index.js';
 
-const BUCKET_LABEL = { emergency: 'Emergency fund', debt: 'Paying off debt', goals: 'Your goals' };
-const BUCKET_WHY = { emergency: 'your emergency fund is already at 6 months', debt: 'you have no loans', goals: 'you have no goals yet' };
+// Translated where they're read (keys: goals.bucket.* and goals.why.*)
+const BUCKET_LABEL = (k) => t(`goals.bucket.${k}`);
+const BUCKET_WHY = (k) => t(`goals.why.${k}`);
 
 // ---------------- Savings split ----------------
 function renderAllocation(state, result, view) {
@@ -17,6 +19,7 @@ function renderAllocation(state, result, view) {
   const { shares, amounts, inactive, unassigned, monthly } = result.allocation;
   document.querySelectorAll('[data-preset]').forEach((b) => {
     const on = a.preset === b.dataset.preset;
+    setText(b, ALLOCATION_PRESETS[b.dataset.preset]?.label ?? b.textContent);
     setAttr(b, 'aria-pressed', String(on));
     b.className = `btn px-3 ${on ? 'btn-primary' : 'btn-secondary'}`;
   });
@@ -24,16 +27,17 @@ function renderAllocation(state, result, view) {
     const slider = $(`alloc-${k}`);
     if (document.activeElement !== slider) slider.value = a[k];
     slider.style.setProperty('--fill', `${a[k]}%`);
-    setAttr(slider, 'aria-valuetext', `${a[k]}%, ${view.rawS(amounts[k])} a month`);
+    setText(document.querySelector(`label[for="alloc-${k}"]`), BUCKET_LABEL(k));
+    setAttr(slider, 'aria-valuetext', t('goals.alloc.valueText', { pct: a[k], amount: view.rawS(amounts[k]) }));
     setText($(`alloc-${k}-pct`), `${a[k]}%`);
-    setText($(`alloc-${k}-amt`), monthly > 0 ? `${view.rawS(amounts[k])}/month` : '—');
+    setText($(`alloc-${k}-amt`), monthly > 0 ? t('goals.alloc.perMonth', { amount: view.rawS(amounts[k]) }) : '—');
   }
   let note;
-  if (result.payday?.short > 0) note = `Your bills cost ${view.rawS(result.payday.short)} a month more than you earn, so there’s nothing to share out yet. Add more ideas to your plan to close the gap.`;
-  else if (!(monthly > 0)) note = 'Add your income and some ideas to your plan first. Then you can choose where the money goes.';
-  else if (unassigned) note = 'You have nothing to save towards yet. Add a goal, a loan or an emergency fund target.';
-  else if (inactive.length) note = `Because ${inactive.map((k) => BUCKET_WHY[k]).join(' and ')}, that share goes to your other priorities.`;
-  else note = `After your bills${result.savings > 0 ? ' and your plan' : ''}, you have ${view.rawS(monthly)} a month left to save. The three amounts above add up to that.`;
+  if (result.payday?.short > 0) note = t('goals.alloc.noteShort', { amount: view.rawS(result.payday.short) });
+  else if (!(monthly > 0)) note = t('goals.alloc.noteNoMoney');
+  else if (unassigned) note = t('goals.alloc.noteUnassigned');
+  else if (inactive.length) note = t('goals.alloc.noteInactive', { reasons: inactive.map(BUCKET_WHY).reduce((x, y) => t('goals.alloc.and', { a: x, b: y })) });
+  else note = t(result.savings > 0 ? 'goals.alloc.noteAfterPlan' : 'goals.alloc.noteAfterBills', { amount: view.rawS(monthly) });
   setText($('allocNote'), note);
   // Hide amount when a bucket is inactive to avoid confusion
   for (const k of BUCKETS) $(`alloc-${k}-amt`).classList.toggle('line-through', inactive.includes(k) && shares[k] === 0);
@@ -47,16 +51,16 @@ function goalRow(g) {
   <li class="rounded-xl border border-slate-200 p-3 dark:border-slate-800" data-goal="${g.id}">
     <div class="flex items-end gap-2">
       <div class="min-w-0 flex-1">
-        <label for="g-${g.id}-name" class="mb-1 block text-xs font-medium muted">What are you saving for?</label>
-        <input id="g-${g.id}-name" type="text" class="input" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="e.g. Holiday">
+        <label for="g-${g.id}-name" class="mb-1 block text-xs font-medium muted">${t('goals.row.name')}</label>
+        <input id="g-${g.id}-name" type="text" class="input" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="${t('goals.row.namePlaceholder')}">
       </div>
-      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove-goal="${g.id}" aria-label="Remove goal ${esc(g.name)}">${icon('trash')}</button>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove-goal="${g.id}" aria-label="${t('goals.row.remove', { name: esc(g.name) })}">${icon('trash')}</button>
     </div>
     <div class="mt-2 grid grid-cols-2 gap-2">
-      <div><label for="g-${g.id}-target" class="mb-1 block text-xs font-medium muted">How much you need</label>
+      <div><label for="g-${g.id}-target" class="mb-1 block text-xs font-medium muted">${t('goals.row.target')}</label>
         <input id="g-${g.id}-target" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="target" value="${g.target || ''}" placeholder="0" aria-describedby="g-${g.id}-target-msg">
         <p id="g-${g.id}-target-msg" class="mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400" aria-live="polite"></p></div>
-      <div><label for="g-${g.id}-saved" class="mb-1 block text-xs font-medium muted">Saved so far</label>
+      <div><label for="g-${g.id}-saved" class="mb-1 block text-xs font-medium muted">${t('goals.row.saved')}</label>
         <input id="g-${g.id}-saved" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="saved" value="${g.saved || ''}" placeholder="0" aria-describedby="g-${g.id}-saved-msg">
         <p id="g-${g.id}-saved-msg" class="mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400" aria-live="polite"></p></div>
     </div>
@@ -69,7 +73,8 @@ function goalRow(g) {
 
 function renderGoalPlanner(state, result, view) {
   const list = $('goalList');
-  const sig = goalSig(state.goals);
+  // The language is part of the signature so the rows' labels follow it
+  const sig = `${getLanguage()}:${goalSig(state.goals)}`;
   if (list.__sig !== sig) {
     list.__sig = sig;
     list.innerHTML = state.goals.map(goalRow).join('');
@@ -82,18 +87,18 @@ function renderGoalPlanner(state, result, view) {
     if (!row) continue;
     row.querySelector('[data-goal-bar]').style.width = `${Math.round(g.progress * 100)}%`;
     let status;
-    if (!(g.target > 0)) status = 'Type how much you need.';
-    else if (g.remaining === 0) status = 'Done! You have enough for this.';
-    else if (!g.reachable) status = `${pct(g.progress)} saved. Give goals a share of your savings above to see a date.`;
-    else status = `${pct(g.progress)} saved · ${view.raw(g.remaining)} to go · ready in ${duration(g.months)} (${monthsFromNow(g.months)})`;
+    if (!(g.target > 0)) status = t('goals.status.needTarget');
+    else if (g.remaining === 0) status = t('goals.status.done');
+    else if (!g.reachable) status = t('goals.status.unreachable', { pct: pct(g.progress) });
+    else status = t('goals.status.progress', { pct: pct(g.progress), remaining: view.raw(g.remaining), time: duration(g.months), date: monthsFromNow(g.months) });
     setText(row.querySelector('[data-goal-status]'), status);
   }
   const open = timeline.filter((g) => g.target > 0 && g.remaining > 0);
   setText($('goalBasis'), monthly > 0
-    ? `You’re putting ${view.rawS(monthly)} a month towards goals, finishing them one at a time from the top.`
-    : !state.goals.length || open.length ? 'Give goals a share of your savings above to see when you’ll reach them.'
-      : state.goals.some((g) => !(g.target > 0)) ? 'Type how much you need for each goal to see when you’ll reach it.'
-        : 'Every goal already has enough saved, so your goals share goes to your other priorities.');
+    ? t('goals.basis.putting', { amount: view.rawS(monthly) })
+    : !state.goals.length || open.length ? t('goals.basis.giveShare')
+      : state.goals.some((g) => !(g.target > 0)) ? t('goals.basis.typeEach')
+        : t('goals.basis.allSaved'));
 }
 
 // ---------------- Emergency fund ----------------
@@ -101,32 +106,32 @@ function renderEmergency(state, result, view) {
   const monthly = result.allocation.amounts.emergency;
   const e = emergencyFundStatus(result.totals.needs, result.totals.values.emergencyFund, monthly);
   if (!(e.essentials > 0)) {
-    setHTML($('emergencyBody'), '<p class="text-sm muted">Add your must-pay bills (housing, bills, groceries, transport) so we can work out how much to keep aside.</p>');
+    setHTML($('emergencyBody'), `<p class="text-sm muted">${t('goals.emergency.needBills')}</p>`);
     return;
   }
   const bar = (target, label) => {
     const ratio = Math.min(1, e.fund / target);
     const gap = Math.max(0, target - e.fund);
-    const time = gap === 0 ? 'Done' : monthly > 0 ? `${view.raw(gap)} to go · about ${duration(gap / monthly)}` : `${view.raw(gap)} to go`;
+    const time = gap === 0 ? t('goals.emergency.done') : monthly > 0 ? t('goals.emergency.toGoAbout', { amount: view.raw(gap), time: duration(gap / monthly) }) : t('goals.emergency.toGo', { amount: view.raw(gap) });
     return `<div>
-      <div class="flex flex-wrap justify-between gap-x-3 text-sm"><span class="font-semibold text-slate-800 dark:text-slate-200">${label}: ${view.raw(target)}</span><span class="tabular-nums ${gap === 0 ? 'font-semibold text-emerald-700 dark:text-emerald-400' : 'muted'}">${time}</span></div>
+      <div class="flex flex-wrap justify-between gap-x-3 text-sm"><span class="font-semibold text-slate-800 dark:text-slate-200">${label}</span><span class="tabular-nums ${gap === 0 ? 'font-semibold text-emerald-700 dark:text-emerald-400' : 'muted'}">${time}</span></div>
       <div class="mt-1.5 h-2.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-full rounded-full ${gap === 0 ? 'bg-emerald-500' : 'bg-amber-500'}" style="width:${ratio * 100}%"></div></div>
     </div>`;
   };
   const cover = e.fund > 0
-    ? `Your savings of <strong class="text-slate-900 dark:text-white">${view.raw(e.fund)}</strong> would cover <strong class="text-slate-900 dark:text-white">${e.coverage.toFixed(1)} months</strong> of must-pay bills (${view.raw(e.essentials)} a month).`
-    : `You have no emergency savings yet. Your must-pay bills are ${view.raw(e.essentials)} a month.`;
+    ? t('goals.emergency.cover_html', { fund: view.raw(e.fund), months: e.coverage.toFixed(1), essentials: view.raw(e.essentials) })
+    : t('goals.emergency.none', { amount: view.raw(e.essentials) });
   setHTML($('emergencyBody'), `
     <p class="text-sm muted">${cover}</p>
-    <div class="mt-4 space-y-4">${bar(e.target3, 'First goal, 3 months')}${bar(e.target6, 'Safe level, 6 months')}</div>
-    <p class="mt-3 text-xs muted">${monthly > 0 ? `Using ${view.rawS(monthly)} a month from your savings.` : 'Give the emergency fund a share of your savings above to see how long this takes.'}</p>`);
+    <div class="mt-4 space-y-4">${bar(e.target3, t('goals.emergency.first3', { amount: view.raw(e.target3) }))}${bar(e.target6, t('goals.emergency.safe6', { amount: view.raw(e.target6) }))}</div>
+    <p class="mt-3 text-xs muted">${monthly > 0 ? t('goals.emergency.using', { amount: view.rawS(monthly) }) : t('goals.emergency.giveShare')}</p>`);
 }
 
 // ---------------- Debt-free date ----------------
 function renderDebt(state, result, view) {
   const debts = result.totals.debts.filter((d) => d.balance > 0);
   if (!debts.length) {
-    setHTML($('debtBody'), '<p class="text-sm muted">No loans or credit cards added. If you have any, add them in step 3 (<button type="button" class="font-semibold text-indigo-700 underline dark:text-indigo-300" data-edit-step="3">add loans</button>) to see when you’ll be debt-free.</p>');
+    setHTML($('debtBody'), `<p class="text-sm muted">${t('goals.debt.none_html')}</p>`);
     return;
   }
   const extra = result.allocation.amounts.debt;
@@ -135,27 +140,27 @@ function renderDebt(state, result, view) {
   const cur = cmp.current;
   const acc = cmp.accelerated;
   const interestOf = (d) => (d.balance * d.apr) / 1200;
-  const debtName = (d) => esc(d.name || (d.type === 'loan' ? 'your loan' : 'your credit card'));
+  const debtName = (d) => esc(d.name || (d.type === 'loan' ? t('goals.debt.yourLoan') : t('goals.debt.yourCard')));
   const growing = debts.filter((d) => d.payment <= interestOf(d));
-  const curTxt = cur.feasible ? monthsFromNow(cur.months) : 'Never, at today’s payments';
+  const curTxt = cur.feasible ? monthsFromNow(cur.months) : t('goals.debt.never');
   setHTML($('debtBody'), `
-    <p class="text-sm muted">You owe <strong class="text-slate-900 dark:text-white">${view.raw(total)}</strong> in total.</p>
+    <p class="text-sm muted">${t('goals.debt.owe_html', { total: view.raw(total) })}</p>
     <dl class="mt-4 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2">
       <div class="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/60">
-        <dt class="text-xs muted">If you keep paying as now</dt>
+        <dt class="text-xs muted">${t('goals.debt.keepPaying')}</dt>
         <dd class="font-extrabold text-slate-900 dark:text-white">${curTxt}</dd>
-        <dd class="text-xs muted">${cur.feasible ? `${duration(cur.months)} · ${view.raw(cur.interest)} in interest` : 'Your payment is smaller than the interest'}</dd>
+        <dd class="text-xs muted">${cur.feasible ? t('goals.debt.durationInterest', { time: duration(cur.months), interest: view.raw(cur.interest) }) : t('goals.debt.paymentSmaller')}</dd>
       </div>
       <div class="rounded-xl bg-emerald-50 p-3 dark:bg-emerald-950/60">
-        <dt class="text-xs text-emerald-800 dark:text-emerald-300">If you add ${extra > 0 ? `${view.rawS(extra)}/month` : 'your debt share'}</dt>
+        <dt class="text-xs text-emerald-800 dark:text-emerald-300">${extra > 0 ? t('goals.debt.ifAddAmount', { amount: view.rawS(extra) }) : t('goals.debt.ifAddShare')}</dt>
         <dd class="font-extrabold text-emerald-800 dark:text-emerald-300">${extra > 0 && acc.feasible ? monthsFromNow(acc.months) : '—'}</dd>
-        <dd class="text-xs text-emerald-800/90 dark:text-emerald-300/90">${extra > 0 && acc.feasible ? `${duration(acc.months)} · ${view.raw(acc.interest)} in interest` : 'Give debt a share of your savings above'}</dd>
+        <dd class="text-xs text-emerald-800/90 dark:text-emerald-300/90">${extra > 0 && acc.feasible ? t('goals.debt.durationInterest', { time: duration(acc.months), interest: view.raw(acc.interest) }) : t('goals.debt.giveShare')}</dd>
       </div>
     </dl>
     ${extra > 0 && cmp.interestSaved != null
-      ? `<p class="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200">${icon('trending-up', 'icon-sm mr-1 align-[-3px]')}Pay the highest-interest loan first with the extra ${view.rawS(extra)} a month, and you’re debt-free <strong>${duration(cmp.monthsSaved)} sooner</strong> and pay <strong>${view.rawS(cmp.interestSaved)} less</strong> in interest.</p>`
+      ? `<p class="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200">${icon('trending-up', 'icon-sm mr-1 align-[-3px]')}${t('goals.debt.sooner_html', { amount: view.rawS(extra), time: duration(cmp.monthsSaved), saved: view.rawS(cmp.interestSaved) })}</p>`
       : ''}
-    ${!cur.feasible ? `<p class="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:bg-rose-950 dark:text-rose-300">At least one debt will never be paid off at today’s payments. ${growing.map((d) => (interestOf(d) > 0 ? `Pay more than ${view.raw(interestOf(d))} a month on ${debtName(d)}.` : `Add a monthly payment for ${debtName(d)}.`)).join(' ')}</p>` : ''}`);
+    ${!cur.feasible ? `<p class="mt-3 rounded-xl bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:bg-rose-950 dark:text-rose-300">${t('goals.debt.neverAll')} ${growing.map((d) => (interestOf(d) > 0 ? t('goals.debt.payMore', { amount: view.raw(interestOf(d)), name: debtName(d) }) : t('goals.debt.addPayment', { name: debtName(d) }))).join(' ')}</p>` : ''}`);
 }
 
 /** The one line shown on each collapsed "Plan ahead" row. */
@@ -163,30 +168,33 @@ function renderRowSummaries(state, result, view) {
   const { amounts } = result.allocation;
   const preset = ALLOCATION_PRESETS[state.allocation.preset];
   setText($('sumAlloc'), result.allocation.monthly > 0
-    ? `${preset ? preset.label : 'Your own split'}: ${view.rawS(amounts.emergency)} emergency · ${view.rawS(amounts.debt)} debt · ${view.rawS(amounts.goals)} goals a month`
-    : result.payday?.short > 0 ? 'Your bills cost more than you earn, so nothing is left to share out yet.'
-      : 'Add your income and some ideas first, then choose where the money goes.');
+    ? t('goals.summary.alloc', { preset: preset ? preset.label : t('goals.summary.ownSplit'), emergency: view.rawS(amounts.emergency), debt: view.rawS(amounts.debt), goals: view.rawS(amounts.goals) })
+    : result.payday?.short > 0 ? t('goals.summary.allocShort')
+      : t('goals.summary.allocNoIncome'));
 
   const e = emergencyFundStatus(result.totals.needs, result.totals.values.emergencyFund, amounts.emergency);
-  setText($('sumEmergency'), !(e.essentials > 0) ? 'Add your bills to check this.'
-    : e.gap3 === 0 ? `${e.coverage.toFixed(1)} months of bills saved. ${e.gap6 === 0 ? 'Fully covered.' : 'Good start.'}`
-      : `${e.coverage.toFixed(1)} months saved. 3 months ${e.monthsTo3 != null ? `in about ${duration(e.monthsTo3)}` : 'needs a share of your savings'}.`);
+  setText($('sumEmergency'), !(e.essentials > 0) ? t('goals.summary.emergencyNoBills')
+    : e.gap3 === 0 ? t(e.gap6 === 0 ? 'goals.summary.emergencyFull' : 'goals.summary.emergencyStart', { months: e.coverage.toFixed(1) })
+      : e.monthsTo3 != null ? t('goals.summary.emergencyIn', { months: e.coverage.toFixed(1), time: duration(e.monthsTo3) })
+        : t('goals.summary.emergencyNeedsShare', { months: e.coverage.toFixed(1) }));
 
   const debts = result.totals.debts.filter((d) => d.balance > 0);
-  if (!debts.length) setText($('sumDebt'), 'No loans or cards added.');
+  if (!debts.length) setText($('sumDebt'), t('goals.summary.debtNone'));
   else {
     const cmp = debtFreeComparison(debts, amounts.debt);
-    setText($('sumDebt'), !cmp.current.feasible && !(amounts.debt > 0) ? 'Never at today’s payments. Open to see why.'
+    setText($('sumDebt'), !cmp.current.feasible && !(amounts.debt > 0) ? t('goals.summary.debtNever')
       : amounts.debt > 0 && cmp.accelerated.feasible
-        ? `Debt-free by ${monthsFromNow(cmp.accelerated.months)}${cmp.monthsSaved ? `, ${duration(cmp.monthsSaved)} sooner` : ''}.`
-        : `Debt-free by ${monthsFromNow(cmp.current.months)} at today’s payments.`);
+        ? (cmp.monthsSaved
+          ? t('goals.summary.debtFreeSooner', { date: monthsFromNow(cmp.accelerated.months), time: duration(cmp.monthsSaved) })
+          : t('goals.summary.debtFreeBy', { date: monthsFromNow(cmp.accelerated.months) }))
+        : t('goals.summary.debtFreeNow', { date: monthsFromNow(cmp.current.months) }));
   }
 
   const goals = goalTimeline(state.goals, amounts.goals);
   const open = goals.filter((g) => g.target > 0 && g.remaining > 0);
-  setText($('sumGoals'), !state.goals.length ? 'No goals yet.'
-    : !open.length ? (state.goals.some((g) => !(g.target > 0)) ? 'Type how much you need for each goal.' : 'All your goals are covered.')
-      : open[0].reachable ? `${open[0].name || 'First goal'} ready by ${monthsFromNow(open[0].months)}.` : `${open.length} goal${open.length > 1 ? 's' : ''}. Give goals a share of your savings to see dates.`);
+  setText($('sumGoals'), !state.goals.length ? t('goals.summary.goalsNone')
+    : !open.length ? (state.goals.some((g) => !(g.target > 0)) ? t('goals.summary.goalsTypeEach') : t('goals.summary.goalsCovered'))
+      : open[0].reachable ? t('goals.summary.goalReady', { name: open[0].name || t('goals.summary.firstGoal'), date: monthsFromNow(open[0].months) }) : t('goals.summary.goalsNeedShare', { count: open.length }));
 }
 
 export function renderGoals(state, result, view) {
@@ -203,7 +211,7 @@ export function initGoals() {
   setHTML($('allocSliders'), BUCKETS.map((k) => `
     <div>
       <div class="flex items-baseline justify-between gap-2 text-sm">
-        <label for="alloc-${k}" class="font-semibold text-slate-800 dark:text-slate-200">${BUCKET_LABEL[k]}</label>
+        <label for="alloc-${k}" class="font-semibold text-slate-800 dark:text-slate-200">${BUCKET_LABEL(k)}</label>
         <span class="tabular-nums"><span class="font-bold text-slate-900 dark:text-white" id="alloc-${k}-pct"></span> <span class="text-xs muted" id="alloc-${k}-amt"></span></span>
       </div>
       <input id="alloc-${k}" type="range" min="0" max="100" step="1" class="range" data-bucket="${k}">
@@ -243,7 +251,7 @@ export function initGoals() {
     const idx = st.goals.findIndex((g) => g.id === rm.dataset.removeGoal);
     const removed = st.goals[idx];
     setState((s) => { s.goals.splice(idx, 1); });
-    toast(`Goal "${removed.name || 'Untitled'}" removed`, { action: { label: 'Undo', onClick: () => setState((s) => { s.goals.splice(idx, 0, removed); }) } });
+    toast(t('goals.removed', { name: removed.name || t('goals.untitled') }), { action: { label: t('common.undo'), onClick: () => setState((s) => { s.goals.splice(idx, 0, removed); }) } });
   });
   $('addGoal').addEventListener('click', () => {
     const g = { id: newId('g'), name: '', target: 0, saved: 0 };

@@ -17,6 +17,7 @@ import { startMonths, initMonths, renderMonths, noteBudgetChange, loadThisMonth 
 import { initReset } from './ui/reset.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { initAds } from './ads.js';
+import { t } from './i18n/index.js';
 
 let lastSavings = null;
 
@@ -36,7 +37,7 @@ function render() {
   renderMonths(state, result, view);
 
   if (lastSavings !== null && Math.round(result.savings) !== Math.round(lastSavings)) {
-    announce(`Money you could save each month: ${view.rawS(result.savings)}.`);
+    announce(t('app.announceSavings', { amount: view.rawS(result.savings) }));
   }
   lastSavings = result.savings;
 }
@@ -49,7 +50,7 @@ function initTheme() {
   const apply = (dark) => {
     document.documentElement.classList.toggle('dark', dark);
     btn.setAttribute('aria-pressed', String(dark));
-    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('aria-label', dark ? t('app.theme.toLight') : t('app.theme.toDark'));
     meta?.setAttribute('content', dark ? '#020617' : '#0f172a');
   };
   apply(document.documentElement.classList.contains('dark'));
@@ -63,7 +64,7 @@ function initTheme() {
 function initSavedIndicator() {
   const el = $('savedIndicator');
   onSaved((ok) => {
-    setText($('savedText'), ok ? 'Saved on this device' : 'Not saved (storage blocked)');
+    setText($('savedText'), ok ? t('app.saved') : t('app.notSaved'));
     el.classList.remove('flash');
     void el.offsetWidth;
     el.classList.add('flash');

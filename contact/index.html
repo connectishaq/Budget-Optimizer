@@ -56,68 +56,68 @@
 <!--SITE_HEADER-->
 
   <main id="main" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-    <nav aria-label="Breadcrumb" class="text-sm muted"><a href="/" class="hover:text-slate-900 dark:hover:text-white">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">Contact Us</span></nav>
+    <nav aria-label="Breadcrumb" data-i18n-attr="aria-label:contact.breadcrumb.label" class="text-sm muted"><a href="/" data-i18n="contact.breadcrumb.home" class="hover:text-slate-900 dark:hover:text-white">Home</a> <span aria-hidden="true">/</span> <span aria-current="page" data-i18n="contact.breadcrumb.current">Contact Us</span></nav>
 
     <div class="mt-4 max-w-2xl">
-      <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">Contact us</h1>
-      <p class="mt-3 text-lg leading-relaxed muted">Found something that isn’t working, spotted a figure that looks wrong, or have an idea that would make the calculator more useful? We read every message.</p>
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white" data-i18n="contact.title">Contact us</h1>
+      <p class="mt-3 text-lg leading-relaxed muted" data-i18n="contact.lead">Found something that isn’t working, spotted a figure that looks wrong, or have an idea that would make the calculator more useful? We read every message.</p>
     </div>
 
     <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-start">
       <section class="panel" aria-labelledby="formTitle">
-        <h2 id="formTitle" class="text-xl font-semibold text-slate-900 dark:text-white">Send us a message</h2>
-        <p class="mt-1 flex items-center gap-2 text-sm muted"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"></use></svg>We usually reply within 2 working days.</p>
+        <h2 id="formTitle" class="text-xl font-semibold text-slate-900 dark:text-white" data-i18n="contact.form.title">Send us a message</h2>
+        <p class="mt-1 flex items-center gap-2 text-sm muted"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="contact.form.replyTime">We usually reply within 2 working days.</span></p>
 
         <form id="contactForm" class="mt-6 grid gap-5" novalidate>
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
-              <label for="c-name" class="label">Your name</label>
+              <label for="c-name" class="label" data-i18n="contact.form.name">Your name</label>
               <input id="c-name" name="name" type="text" class="input mt-1.5" autocomplete="name" maxlength="120" required aria-describedby="c-name-msg">
               <p id="c-name-msg" class="field-msg" aria-live="polite"></p>
             </div>
             <div>
-              <label for="c-email" class="label">Email address</label>
+              <label for="c-email" class="label" data-i18n="contact.form.email">Email address</label>
               <input id="c-email" name="email" type="email" class="input mt-1.5" autocomplete="email" inputmode="email" maxlength="200" required aria-describedby="c-email-msg c-email-help">
-              <p id="c-email-help" class="mt-1 text-xs muted">Only used to reply to you.</p>
+              <p id="c-email-help" class="mt-1 text-xs muted" data-i18n="contact.form.emailHelp">Only used to reply to you.</p>
               <p id="c-email-msg" class="field-msg" aria-live="polite"></p>
             </div>
           </div>
 
           <div>
-            <label for="c-topic" class="label">What’s it about?</label>
+            <label for="c-topic" class="label" data-i18n="contact.form.topic">What’s it about?</label>
             <select id="c-topic" name="topic" class="input select mt-1.5" required aria-describedby="c-topic-msg">
-              <option value="">Choose a topic</option>
-              <option value="bug">Something isn’t working</option>
-              <option value="calculation">Question about a calculation or figure</option>
-              <option value="idea">Idea, feature or currency request</option>
-              <option value="question">General question</option>
-              <option value="privacy">Privacy or data request</option>
-              <option value="business">Advertising or partnership</option>
-              <option value="press">Press or media</option>
-              <option value="other">Something else</option>
+              <option value="" data-i18n="contact.form.topicPlaceholder">Choose a topic</option>
+              <option value="bug" data-i18n="contact.topics.bug">Something isn’t working</option>
+              <option value="calculation" data-i18n="contact.topics.calculation">Question about a calculation or figure</option>
+              <option value="idea" data-i18n="contact.topics.idea">Idea, feature or currency request</option>
+              <option value="question" data-i18n="contact.topics.question">General question</option>
+              <option value="privacy" data-i18n="contact.topics.privacy">Privacy or data request</option>
+              <option value="business" data-i18n="contact.topics.business">Advertising or partnership</option>
+              <option value="press" data-i18n="contact.topics.press">Press or media</option>
+              <option value="other" data-i18n="contact.topics.other">Something else</option>
             </select>
             <p id="c-topic-msg" class="field-msg" aria-live="polite"></p>
           </div>
 
           <div>
             <div class="flex items-end justify-between gap-3">
-              <label for="c-message" class="label">Your message</label>
+              <label for="c-message" class="label" data-i18n="contact.form.message">Your message</label>
               <span id="c-message-count" class="text-xs tabular-nums muted" aria-hidden="true"></span>
             </div>
             <textarea id="c-message" name="message" rows="7" class="input mt-1.5 min-h-40 py-3" required aria-describedby="c-message-msg c-message-help"></textarea>
-            <p id="c-message-help" class="mt-1 text-xs muted">For a problem, tell us what you did, what you expected and what happened, plus your browser and device.</p>
+            <p id="c-message-help" class="mt-1 text-xs muted" data-i18n="contact.form.messageHelp">For a problem, tell us what you did, what you expected and what happened, plus your browser and device.</p>
             <p id="c-message-msg" class="field-msg" aria-live="polite"></p>
           </div>
 
           <!-- Spam trap: hidden from people, filled in by bots -->
           <div class="hp" aria-hidden="true">
-            <label for="c-website">Leave this empty</label>
+            <label for="c-website" data-i18n="contact.form.honeypot">Leave this empty</label>
             <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
 
           <div class="flex flex-col gap-4 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
-            <p class="flex gap-2 text-xs leading-relaxed muted sm:max-w-sm"><svg class="icon icon-sm mt-px shrink-0" aria-hidden="true"><use href="#i-lock"></use></svg><span>We use your details only to reply, never add you to a mailing list and delete messages within 12 months. Please don’t include bank details or passwords. See our <a href="/privacy-policy/#contact-data" class="link">Privacy Policy</a>.</span></p>
-            <button id="c-submit" type="submit" class="btn btn-primary shrink-0 px-6">Send message</button>
+            <p class="flex gap-2 text-xs leading-relaxed muted sm:max-w-sm"><svg class="icon icon-sm mt-px shrink-0" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n-html="contact.form.privacyNote_html">We use your details only to reply, never add you to a mailing list and delete messages within 12 months. Please don’t include bank details or passwords. See our <a href="/privacy-policy/#contact-data" class="link">Privacy Policy</a>.</span></p>
+            <button id="c-submit" type="submit" class="btn btn-primary shrink-0 px-6" data-i18n="contact.form.send">Send message</button>
           </div>
           <div id="c-status" role="status" tabindex="-1" hidden></div>
         </form>
@@ -125,26 +125,26 @@
       </section>
 
       <aside class="space-y-4" aria-labelledby="faqTitle">
-        <h2 id="faqTitle" class="text-lg font-semibold text-slate-900 dark:text-white">Before you write</h2>
+        <h2 id="faqTitle" class="text-lg font-semibold text-slate-900 dark:text-white" data-i18n="contact.faq.title">Before you write</h2>
         <details class="faq">
-          <summary>Can you see my budget numbers?</summary>
-          <p>No. The calculator runs in your browser and never sends your numbers to us. That also means we can’t look at your budget to help, so please describe the problem in your message instead.</p>
+          <summary data-i18n="contact.faq.seeBudget.q">Can you see my budget numbers?</summary>
+          <p data-i18n="contact.faq.seeBudget.a">No. The calculator runs in your browser and never sends your numbers to us. That also means we can’t look at your budget to help, so please describe the problem in your message instead.</p>
         </details>
         <details class="faq">
-          <summary>My numbers disappeared. Can you restore them?</summary>
-          <p>We don’t have a copy, so we can’t. They’re saved in the browser you used, so check you’re on the same device and browser, outside a private window. Use <em>Download backup</em> on the History tab to keep a copy in future.</p>
+          <summary data-i18n="contact.faq.restore.q">My numbers disappeared. Can you restore them?</summary>
+          <p data-i18n-html="contact.faq.restore.a_html">We don’t have a copy, so we can’t. They’re saved in the browser you used, so check you’re on the same device and browser, outside a private window. Use <em>Download backup</em> on the History tab to keep a copy in future.</p>
         </details>
         <details class="faq">
-          <summary>How do I delete my data?</summary>
-          <p>In the calculator choose <em>Edit my numbers</em> → <em>Start over</em> → <em>Delete everything</em>, or clear this site’s data in your browser settings.</p>
+          <summary data-i18n="contact.faq.delete.q">How do I delete my data?</summary>
+          <p data-i18n-html="contact.faq.delete.a_html">In the calculator choose <em>Edit my numbers</em> → <em>Start over</em> → <em>Delete everything</em>, or clear this site’s data in your browser settings.</p>
         </details>
         <details class="faq">
-          <summary>Can you give me personal financial advice?</summary>
-          <p>Sorry, we can’t. The tool is for general education only. For advice about your situation, speak to a qualified financial adviser or a free debt advice service.</p>
+          <summary data-i18n="contact.faq.advice.q">Can you give me personal financial advice?</summary>
+          <p data-i18n="contact.faq.advice.a">Sorry, we can’t. The tool is for general education only. For advice about your situation, speak to a qualified financial adviser or a free debt advice service.</p>
         </details>
         <details class="faq">
-          <summary>Why does the site show ads?</summary>
-          <p>Ads keep the calculator free. You can turn off personalised ads at any time. See <a href="/privacy-policy/#ads" class="link">ads and cookies</a>.</p>
+          <summary data-i18n="contact.faq.ads.q">Why does the site show ads?</summary>
+          <p data-i18n-html="contact.faq.ads.a_html">Ads keep the calculator free. You can turn off personalised ads at any time. See <a href="/privacy-policy/#ads" class="link">ads and cookies</a>.</p>
         </details>
       </aside>
     </div>

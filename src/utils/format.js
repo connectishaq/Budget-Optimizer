@@ -1,15 +1,18 @@
 // Currency and number formatting. Formatters are cached because Intl
 // constructors are comparatively expensive and we format on every render.
+// Words (currency names, durations, errors) come from the "format" messages.
+
+import { t } from '../i18n/index.js';
 
 export const CURRENCIES = {
-  USD: { label: 'USD — US Dollar', locale: 'en-US' },
-  GBP: { label: 'GBP — British Pound', locale: 'en-GB' },
-  EUR: { label: 'EUR — Euro', locale: 'en-IE' },
-  INR: { label: 'INR — Indian Rupee', locale: 'en-IN' },
-  PKR: { label: 'PKR — Pakistani Rupee', locale: 'en-PK' },
-  AED: { label: 'AED — UAE Dirham', locale: 'en-AE' },
-  CAD: { label: 'CAD — Canadian Dollar', locale: 'en-CA' },
-  AUD: { label: 'AUD — Australian Dollar', locale: 'en-AU' }
+  USD: { get label() { return t('format.currencies.USD'); }, locale: 'en-US' },
+  GBP: { get label() { return t('format.currencies.GBP'); }, locale: 'en-GB' },
+  EUR: { get label() { return t('format.currencies.EUR'); }, locale: 'en-IE' },
+  INR: { get label() { return t('format.currencies.INR'); }, locale: 'en-IN' },
+  PKR: { get label() { return t('format.currencies.PKR'); }, locale: 'en-PK' },
+  AED: { get label() { return t('format.currencies.AED'); }, locale: 'en-AE' },
+  CAD: { get label() { return t('format.currencies.CAD'); }, locale: 'en-CA' },
+  AUD: { get label() { return t('format.currencies.AUD'); }, locale: 'en-AU' }
 };
 
 /** Currencies whose readers count large amounts in lakh (100,000) and crore (10,000,000). */
@@ -70,8 +73,8 @@ export function moneyNice(n, currency = 'USD', { friendly = false } = {}) {
     const sym = currencySymbol(currency);
     const sign = v < 0 ? '-' : '';
     const abs = Math.abs(v);
-    const [value, unit] = abs >= 1e7 ? [abs / 1e7, 'crore'] : [abs / 1e5, 'lakh'];
-    return `${sign}${sym}${symbolGap(sym)}${trim(value)} ${unit}`;
+    const [value, unit] = abs >= 1e7 ? [abs / 1e7, 'format.crore'] : [abs / 1e5, 'format.lakh'];
+    return t(unit, { amount: `${sign}${sym}${symbolGap(sym)}${trim(value)}` });
   }
   return money(v, currency);
 }
@@ -82,8 +85,8 @@ export function moneyShort(n, currency = 'USD') {
   if (usesLakh(currency)) {
     const sym = currencySymbol(currency);
     const gap = symbolGap(sym);
-    if (Math.abs(v) >= 1e7) return `${sym}${gap}${trim(v / 1e7, 1)} Cr`;
-    if (Math.abs(v) >= 1e5) return `${sym}${gap}${trim(v / 1e5, 1)} L`;
+    if (Math.abs(v) >= 1e7) return t('format.croreShort', { amount: `${sym}${gap}${trim(v / 1e7, 1)}` });
+    if (Math.abs(v) >= 1e5) return t('format.lakhShort', { amount: `${sym}${gap}${trim(v / 1e5, 1)}` });
     return money(v, currency);
   }
   return Math.abs(v) < 10000 ? money(v, currency) : formatter(currency, 0, true).format(v);
@@ -95,12 +98,13 @@ export const pct = (ratio, digits = 0) => `${(safe(ratio) * 100).toFixed(digits)
 export function duration(months) {
   if (months == null || !Number.isFinite(months)) return '—';
   const m = Math.max(0, Math.ceil(months));
-  if (m === 0) return 'right away';
+  if (m === 0) return t('format.duration.now');
   const y = Math.floor(m / 12);
   const r = m % 12;
-  const part = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
-  if (!y) return part(r, 'month');
-  return r ? `${part(y, 'year')} ${part(r, 'month')}` : part(y, 'year');
+  const monthsTxt = (n) => t('format.duration.months', { count: n });
+  const yearsTxt = (n) => t('format.duration.years', { count: n });
+  if (!y) return monthsTxt(r);
+  return r ? t('format.duration.yearsMonths', { years: yearsTxt(y), months: monthsTxt(r) }) : yearsTxt(y);
 }
 
 /** Calendar label for "n months from now", e.g. "Mar 2028". */
@@ -133,15 +137,15 @@ export function parseAmount(raw) {
   // European style: 1.234,56 · 1.234.567 · 12,5
   else if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(s) || /^\d+,\d{1,2}$/.test(s)) normalized = s.replace(/\./g, '').replace(',', '.');
   const n = normalized == null ? NaN : Number(normalized);
-  if (!Number.isFinite(n)) return { value: 0, error: 'Please type digits only, like 1500' };
-  if (negative && n > 0) return { value: 0, error: "This can't be less than zero" };
-  if (n > MAX_AMOUNT) return { value: 0, error: 'That number is too big' };
+  if (!Number.isFinite(n)) return { value: 0, error: t('format.parse.digits') };
+  if (negative && n > 0) return { value: 0, error: t('format.parse.negative') };
+  if (n > MAX_AMOUNT) return { value: 0, error: t('format.parse.tooBig') };
   return { value: n, error: null };
 }
 
 /** "about a quarter (25%)" style wording for plain-language explanations. */
 export function pctWords(ratio) {
   const p = Math.round(safe(ratio) * 100);
-  const named = { 100: 'all of it (100%)', 75: 'about three quarters (75%)', 50: 'about half (50%)', 33: 'about a third (33%)', 25: 'about a quarter (25%)', 20: 'about a fifth (20%)', 10: 'about a tenth (10%)' };
-  return named[p] || `about ${p}%`;
+  const named = { 100: 'all', 75: 'threeQuarters', 50: 'half', 33: 'third', 25: 'quarter', 20: 'fifth', 10: 'tenth' };
+  return named[p] ? t(`format.pctWords.${named[p]}`) : t('format.pctWords.about', { pct: p });
 }

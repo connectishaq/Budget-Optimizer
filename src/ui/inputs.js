@@ -7,57 +7,76 @@ import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
 import { CURRENCIES, parseAmount, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast } from './dom.js';
-import { helpBtn, HELP } from './help.js';
+import { helpBtn, HELP, nextHelpId } from './help.js';
+import { t } from '../i18n/index.js';
 import { SUB_KINDS, subKind } from '../engine/subscriptions.js';
 
+/** A field whose label (and optional help line) is translated when read. */
+function field(key, icon, extra = {}) {
+  const f = { key, icon, ...extra, get label() { return t(`inputs.fields.${key}.label`); } };
+  if (extra.help) Object.defineProperty(f, 'help', { get: () => t(`inputs.fields.${key}.help`), enumerable: true });
+  return f;
+}
+
+/** A group whose title (and optional blurb) is translated when read. */
+function group(id, icon, extra = {}) {
+  const g = { id, icon, ...extra, get title() { return t(`inputs.groups.${id}.title`); } };
+  if (extra.blurb) Object.defineProperty(g, 'blurb', { get: () => t(`inputs.groups.${id}.blurb`), enumerable: true });
+  return g;
+}
+
 export const GROUPS = [
-  { id: 'income', title: 'Income', icon: 'wallet', fields: [
-    { key: 'income', label: 'Monthly take-home pay', icon: 'wallet', help: 'After tax. The amount that reaches your bank account.' }
-  ] },
-  { id: 'extras', title: 'Extra income during the year', icon: 'gift', list: 'extras', blurb: 'Bonuses, overtime, side work… Enter the total for the whole year and we’ll spread it over 12 months. Skip if none.' },
-  { id: 'housing', title: 'Housing', icon: 'home', blurb: 'Rent or mortgage, and home insurance.', fields: [
-    { key: 'rent', label: 'Rent or mortgage', icon: 'key' },
-    { key: 'homeIns', label: "Home or renter's insurance", icon: 'umbrella' }
-  ] },
-  { id: 'utilities', title: 'Bills & utilities', icon: 'bolt', blurb: 'Power, water, gas, internet and phone.', fields: [
-    { key: 'electricity', label: 'Electricity', icon: 'bolt' },
-    { key: 'waterGas', label: 'Water and gas', icon: 'flame' },
-    { key: 'internet', label: 'Internet and phone', icon: 'wifi' }
-  ] },
-  { id: 'transport', title: 'Getting around', icon: 'car', blurb: 'Fuel, fares, car insurance and car loan.', fields: [
-    { key: 'fuel', label: 'Fuel', icon: 'fuel' },
-    { key: 'transit', label: 'Bus, train, taxi fares and tolls', icon: 'train' },
-    { key: 'carIns', label: 'Car insurance', icon: 'umbrella' },
-    { key: 'carLoan', label: 'Car loan payment', icon: 'car' }
-  ] },
-  { id: 'family', title: 'Food, family & fun', icon: 'users', blurb: 'School, groceries, eating out and shopping.', fields: [
-    { key: 'school', label: 'School fees or childcare', icon: 'school' },
-    { key: 'groceries', label: 'Groceries', icon: 'cart' },
-    { key: 'dining', label: 'Eating out and takeaways', icon: 'utensils' },
-    { key: 'misc', label: 'Impulse shopping and extras', icon: 'bag' }
-  ] },
-  { id: 'care', title: 'Health, help & giving', icon: 'heart-pulse', blurb: 'Medicine, household help, money for family and charity. Skip what doesn’t apply.', fields: [
-    { key: 'medical', label: 'Doctor visits and medicine', icon: 'heart-pulse' },
-    { key: 'homeHelp', label: 'Household help (maid, cook, driver)', icon: 'users' },
-    { key: 'familySupport', label: 'Money you send to family', icon: 'wallet' },
-    { key: 'giving', label: 'Charity and religious giving', icon: 'gift' },
-    { key: 'other', label: 'Anything else you pay each month', icon: 'list-check' }
-  ] },
-  { id: 'yearly', title: 'Once-a-year costs', icon: 'calendar', list: 'yearly', blurb: 'Big costs that don’t come every month. Enter the total for the whole year and we’ll work out what to put aside each month.' },
-  { id: 'debt', title: 'Loans and credit cards', icon: 'card', list: 'debts', blurb: 'Optional. Skip if you have none.' },
-  { id: 'subs', title: 'Subscriptions', icon: 'repeat', list: 'subscriptions', blurb: 'Optional. Streaming, AI and work tools, gym, apps and memberships.' },
-  { id: 'savings', title: 'Emergency savings', icon: 'shield', blurb: 'Optional. Money already set aside.', fields: [
-    { key: 'emergencyFund', label: 'Money saved for emergencies', icon: 'shield', help: 'A total amount, not monthly.', balance: true }
-  ] }
+  group('income', 'wallet', { fields: [
+    field('income', 'wallet', { help: true })
+  ] }),
+  group('extras', 'gift', { list: 'extras', blurb: true }),
+  group('housing', 'home', { blurb: true, fields: [
+    field('rent', 'key'),
+    field('homeIns', 'umbrella')
+  ] }),
+  group('utilities', 'bolt', { blurb: true, fields: [
+    field('electricity', 'bolt'),
+    field('waterGas', 'flame'),
+    field('internet', 'wifi')
+  ] }),
+  group('transport', 'car', { blurb: true, fields: [
+    field('fuel', 'fuel'),
+    field('transit', 'train'),
+    field('carIns', 'umbrella'),
+    field('carLoan', 'car')
+  ] }),
+  group('family', 'users', { blurb: true, fields: [
+    field('school', 'school'),
+    field('groceries', 'cart'),
+    field('dining', 'utensils'),
+    field('misc', 'bag')
+  ] }),
+  group('care', 'heart-pulse', { blurb: true, fields: [
+    field('medical', 'heart-pulse'),
+    field('homeHelp', 'users'),
+    field('familySupport', 'wallet'),
+    field('giving', 'gift'),
+    field('other', 'list-check')
+  ] }),
+  group('yearly', 'calendar', { list: 'yearly', blurb: true }),
+  group('debt', 'card', { list: 'debts', blurb: true }),
+  group('subs', 'repeat', { list: 'subscriptions', blurb: true }),
+  group('savings', 'shield', { blurb: true, fields: [
+    field('emergencyFund', 'shield', { help: true, balance: true })
+  ] })
 ];
 
 const errors = new Map(); // input id -> message
 
-/** One-tap suggestions for money that doesn't come every month. */
-export const EXTRA_PRESETS = ['Festival bonus (Eid, Diwali, Christmas…)', 'Yearly performance bonus', 'Appreciation bonus', 'Overtime', 'Extra work or side jobs', '13th-month salary', 'Tax refund'];
+/** One-tap suggestions for money that doesn't come every month (inputs.presets.extra.<key>). */
+export const EXTRA_PRESET_KEYS = ['festivalBonus', 'performanceBonus', 'appreciationBonus', 'overtime', 'sideWork', 'thirteenthMonth', 'taxRefund'];
+/** The suggestion names in the active language. */
+export const extraPresets = () => EXTRA_PRESET_KEYS.map((k) => t(`inputs.presets.extra.${k}`));
 
-/** One-tap suggestions for the once-a-year list. */
-export const YEARLY_PRESETS = ['Festivals (Eid, Diwali, Christmas…)', 'Weddings and gifts', 'School books, uniforms and admission', 'Car service and repairs', 'Yearly insurance', 'Travel and trips home', 'Home repairs'];
+/** One-tap suggestions for the once-a-year list (inputs.presets.yearly.<key>). */
+export const YEARLY_PRESET_KEYS = ['festivals', 'weddings', 'schoolBooks', 'carService', 'insurance', 'travel', 'homeRepairs'];
+/** The suggestion names in the active language. */
+export const yearlyPresets = () => YEARLY_PRESET_KEYS.map((k) => t(`inputs.presets.yearly.${k}`));
 
 // ---------------- Markup builders ----------------
 function moneyField(f) {
@@ -72,19 +91,20 @@ function moneyField(f) {
       <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
       <input id="${id}" data-field="${f.key}" type="text" inputmode="decimal" autocomplete="off" placeholder="0"
         class="input pl-12 ${f.balance ? '' : 'pr-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}">
-      ${f.balance ? '' : '<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400">a month</span>'}
+      ${f.balance ? '' : `<span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400">${esc(t('inputs.fields.perMonth'))}</span>`}
     </div>
     ${f.help ? `<p id="${id}-help" class="mt-1 text-xs muted">${esc(f.help)}</p>` : ''}
     <p id="${id}-msg" class="mt-1 text-xs font-medium empty:hidden" aria-live="polite"></p>
   </div>`;
 }
 
-const housingQuestion = `
+const housingHelpId = nextHelpId(); // reserved at load so the id stays stable
+const housingQuestion = () => `
   <div id="housingAsk" hidden class="mt-4 rounded-lg bg-slate-50 p-4 dark:bg-slate-900">
-    <p class="flex items-center gap-2 text-sm font-medium text-slate-900 dark:text-white" id="housingAskQ">Do you own your home or live rent-free? ${helpBtn('housingFree', 'Own your home or live rent-free')}</p>
+    <p class="flex items-center gap-2 text-sm font-medium text-slate-900 dark:text-white" id="housingAskQ">${esc(t('inputs.housing.question'))} ${helpBtn('housingFree', t('inputs.housing.helpLabel'), undefined, housingHelpId)}</p>
     <div class="mt-3 flex gap-2" role="group" aria-labelledby="housingAskQ">
-      <button type="button" class="btn btn-secondary flex-1" data-housing="yes" aria-pressed="false">Yes</button>
-      <button type="button" class="btn btn-secondary flex-1" data-housing="no" aria-pressed="false">No, I pay for housing</button>
+      <button type="button" class="btn btn-secondary flex-1" data-housing="yes" aria-pressed="false">${esc(t('inputs.housing.yes'))}</button>
+      <button type="button" class="btn btn-secondary flex-1" data-housing="no" aria-pressed="false">${esc(t('inputs.housing.no'))}</button>
     </div>
     <p id="housingAskMsg" class="mt-3 text-sm empty:hidden"></p>
   </div>`;
@@ -94,25 +114,25 @@ function groupCard(g, index, collapsed) {
   if (g.list === 'debts') {
     body = `<div id="debtRows" class="space-y-3"></div>
        <div class="mt-3 flex flex-wrap gap-2">
-         <button type="button" class="btn btn-ghost" data-add="card">${icon('plus', 'icon-sm')}Add a credit card</button>
-         <button type="button" class="btn btn-ghost" data-add="loan">${icon('plus', 'icon-sm')}Add a loan</button>
+         <button type="button" class="btn btn-ghost" data-add="card">${icon('plus', 'icon-sm')}${esc(t('inputs.debts.addCard'))}</button>
+         <button type="button" class="btn btn-ghost" data-add="loan">${icon('plus', 'icon-sm')}${esc(t('inputs.debts.addLoan'))}</button>
        </div>`;
   } else if (g.list === 'yearly') {
-    body = `<p class="mb-2 text-xs font-medium muted" id="yearlyChipsLabel">Tap to add</p>
+    body = `<p class="mb-2 text-xs font-medium muted" id="yearlyChipsLabel">${esc(t('inputs.chips.tapToAdd'))}</p>
        <div id="yearlyChips" class="mb-4 flex flex-wrap gap-2" role="group" aria-labelledby="yearlyChipsLabel"></div>
        <div id="yearlyRows" class="space-y-3"></div>
-       <button type="button" class="btn btn-ghost mt-3" data-add="yearly">${icon('plus', 'icon-sm')}Add your own</button>`;
+       <button type="button" class="btn btn-ghost mt-3" data-add="yearly">${icon('plus', 'icon-sm')}${esc(t('inputs.chips.addOwn'))}</button>`;
   } else if (g.list === 'extras') {
-    body = `<p class="mb-2 text-xs font-medium muted" id="extraChipsLabel">Tap to add</p>
+    body = `<p class="mb-2 text-xs font-medium muted" id="extraChipsLabel">${esc(t('inputs.chips.tapToAdd'))}</p>
        <div id="extraChips" class="mb-4 flex flex-wrap gap-2" role="group" aria-labelledby="extraChipsLabel"></div>
        <div id="extraRows" class="space-y-3"></div>
-       <button type="button" class="btn btn-ghost mt-3" data-add="extra">${icon('plus', 'icon-sm')}Add your own</button>`;
+       <button type="button" class="btn btn-ghost mt-3" data-add="extra">${icon('plus', 'icon-sm')}${esc(t('inputs.chips.addOwn'))}</button>`;
   } else if (g.list === 'subscriptions') {
     body = `<div id="subRows" class="space-y-3"></div>
-         <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}Add a subscription</button>
+         <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}${esc(t('inputs.subs.add'))}</button>
          <div id="subSummary" hidden class="mt-4 rounded-lg bg-slate-50 p-4 text-sm dark:bg-slate-950"></div>`;
   } else {
-    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}</div>${g.id === 'housing' ? housingQuestion : ''}`;
+    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}</div>${g.id === 'housing' ? housingQuestion() : ''}`;
   }
 
   return `
@@ -133,7 +153,7 @@ function groupCard(g, index, collapsed) {
 const numInput = (list, row, key, label, helpKey) => `
   <div class="min-w-0">
     <div class="mb-1 flex items-center gap-1.5">
-      <label for="r-${row.id}-${key}" class="text-xs font-medium muted">${label}</label>${helpBtn(helpKey, label)}
+      <label for="r-${row.id}-${key}" class="text-xs font-medium muted">${esc(label)}</label>${helpBtn(helpKey, label)}
     </div>
     <input id="r-${row.id}-${key}" type="text" inputmode="decimal" autocomplete="off" placeholder="0" class="input px-2.5 font-semibold"
       data-list="${list}" data-id="${row.id}" data-key="${key}" value="${row[key] || ''}" aria-describedby="r-${row.id}-${key}-msg">
@@ -153,22 +173,22 @@ function debtRow(d) {
   <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${d.id}">
     <div class="flex items-end gap-2">
       <div class="min-w-0 flex-1">
-        <label for="r-${d.id}-name" class="mb-1 block text-xs font-medium muted">Name</label>
-        <input id="r-${d.id}-name" type="text" class="input" maxlength="60" data-list="debts" data-id="${d.id}" data-key="name" value="${esc(d.name)}" placeholder="${d.type === 'card' ? 'e.g. Bank credit card' : 'e.g. Personal loan'}">
+        <label for="r-${d.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.debts.name'))}</label>
+        <input id="r-${d.id}-name" type="text" class="input" maxlength="60" data-list="debts" data-id="${d.id}" data-key="name" value="${esc(d.name)}" placeholder="${esc(d.type === 'card' ? t('inputs.debts.placeholderCard') : t('inputs.debts.placeholderLoan'))}">
       </div>
       <div class="w-32 shrink-0">
-        <label for="r-${d.id}-type" class="mb-1 block text-xs font-medium muted">Type</label>
+        <label for="r-${d.id}-type" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.debts.type'))}</label>
         <select id="r-${d.id}-type" class="input select" data-list="debts" data-id="${d.id}" data-key="type">
-          <option value="card" ${d.type === 'card' ? 'selected' : ''}>Credit card</option>
-          <option value="loan" ${d.type === 'loan' ? 'selected' : ''}>Loan</option>
+          <option value="card" ${d.type === 'card' ? 'selected' : ''}>${esc(t('inputs.debts.typeCard'))}</option>
+          <option value="loan" ${d.type === 'loan' ? 'selected' : ''}>${esc(t('inputs.debts.typeLoan'))}</option>
         </select>
       </div>
-      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="debts" data-id="${d.id}" aria-label="Remove ${esc(d.name || 'this debt')}">${icon('trash')}</button>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="debts" data-id="${d.id}" aria-label="${esc(t('inputs.rows.remove', { name: d.name || t('inputs.rows.thisDebt') }))}">${icon('trash')}</button>
     </div>
     <div class="mt-3 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
-      ${numInput('debts', d, 'balance', 'Amount owed', 'debtBalance')}
-      ${numInput('debts', d, 'apr', 'Yearly interest rate (APR) %', 'debtApr')}
-      ${numInput('debts', d, 'payment', 'Monthly payment', 'debtPayment')}
+      ${numInput('debts', d, 'balance', t('inputs.debts.balance'), 'debtBalance')}
+      ${numInput('debts', d, 'apr', t('inputs.debts.apr'), 'debtApr')}
+      ${numInput('debts', d, 'payment', t('inputs.debts.payment'), 'debtPayment')}
     </div>
   </div>`;
 }
@@ -179,14 +199,14 @@ function subRow(s) {
   <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${s.id}">
     <div class="grid grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
       <div class="min-w-0">
-        <label for="r-${s.id}-name" class="mb-1 block text-xs font-medium muted">Service</label>
-        <input id="r-${s.id}-name" type="text" class="input" maxlength="60" data-list="subscriptions" data-id="${s.id}" data-key="name" value="${esc(s.name)}" placeholder="e.g. Netflix or Claude">
+        <label for="r-${s.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.subs.service'))}</label>
+        <input id="r-${s.id}-name" type="text" class="input" maxlength="60" data-list="subscriptions" data-id="${s.id}" data-key="name" value="${esc(s.name)}" placeholder="${esc(t('inputs.subs.placeholder'))}">
       </div>
-      ${numInput('subscriptions', s, 'cost', 'Cost per month', 'subCost')}
+      ${numInput('subscriptions', s, 'cost', t('inputs.subs.cost'), 'subCost')}
     </div>
     <div class="mt-3">
       <div class="mb-1 flex items-center gap-1.5">
-        <label for="r-${s.id}-kind" class="text-xs font-medium muted">Type</label>${helpBtn('subKind', 'Type')}
+        <label for="r-${s.id}-kind" class="text-xs font-medium muted">${esc(t('inputs.subs.type'))}</label>${helpBtn('subKind', t('inputs.subs.type'))}
       </div>
       <select id="r-${s.id}-kind" class="input select" data-list="subscriptions" data-id="${s.id}" data-key="kind">
         ${Object.entries(SUB_KINDS).map(([k, v]) => `<option value="${k}" ${k === kind ? 'selected' : ''}>${esc(v.label)}</option>`).join('')}
@@ -196,10 +216,10 @@ function subRow(s) {
     <div class="mt-2 flex items-center justify-between gap-2">
       <label class="flex min-h-11 cursor-pointer items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300">
         <input type="checkbox" class="h-5 w-5 rounded accent-emerald-700" data-list="subscriptions" data-id="${s.id}" data-key="rarely" ${s.rarely ? 'checked' : ''}>
-        I rarely use this
+        ${esc(t('inputs.subs.rarely'))}
       </label>
-      <span class="flex items-center gap-1">${helpBtn('subRarely', 'I rarely use this')}
-        <button type="button" class="btn-icon hover:text-rose-600" data-remove="subscriptions" data-id="${s.id}" aria-label="Remove ${esc(s.name || 'this subscription')}">${icon('trash')}</button></span>
+      <span class="flex items-center gap-1">${helpBtn('subRarely', t('inputs.subs.rarely'))}
+        <button type="button" class="btn-icon hover:text-rose-600" data-remove="subscriptions" data-id="${s.id}" aria-label="${esc(t('inputs.rows.remove', { name: s.name || t('inputs.rows.thisSubscription') }))}">${icon('trash')}</button></span>
     </div>
   </div>`;
 }
@@ -210,12 +230,12 @@ function yearlyRow(y) {
     <div class="flex items-end gap-2">
       <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
         <div class="min-w-0">
-          <label for="r-${y.id}-name" class="mb-1 block text-xs font-medium muted">What is it?</label>
-          <input id="r-${y.id}-name" type="text" class="input" maxlength="60" data-list="yearly" data-id="${y.id}" data-key="name" value="${esc(y.name)}" placeholder="e.g. Birthday gifts">
+          <label for="r-${y.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
+          <input id="r-${y.id}-name" type="text" class="input" maxlength="60" data-list="yearly" data-id="${y.id}" data-key="name" value="${esc(y.name)}" placeholder="${esc(t('inputs.yearly.placeholder'))}">
         </div>
-        ${numInput('yearly', y, 'cost', 'Cost for the whole year', 'yearlyCost')}
+        ${numInput('yearly', y, 'cost', t('inputs.yearly.cost'), 'yearlyCost')}
       </div>
-      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="yearly" data-id="${y.id}" aria-label="Remove ${esc(y.name || 'this cost')}">${icon('trash')}</button>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="yearly" data-id="${y.id}" aria-label="${esc(t('inputs.rows.remove', { name: y.name || t('inputs.rows.thisCost') }))}">${icon('trash')}</button>
     </div>
     <p class="mt-2 text-xs muted empty:hidden" data-yearly-month="${y.id}"></p>
   </div>`;
@@ -227,12 +247,12 @@ function extraRow(x) {
     <div class="flex items-end gap-2">
       <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
         <div class="min-w-0">
-          <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">What is it?</label>
-          <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="extras" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="e.g. Eid bonus">
+          <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
+          <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="extras" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="${esc(t('inputs.extras.placeholder'))}">
         </div>
-        ${numInput('extras', x, 'amount', 'Amount for the whole year', 'extraAmount')}
+        ${numInput('extras', x, 'amount', t('inputs.extras.amount'), 'extraAmount')}
       </div>
-      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="extras" data-id="${x.id}" aria-label="Remove ${esc(x.name || 'this income')}">${icon('trash')}</button>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="extras" data-id="${x.id}" aria-label="${esc(t('inputs.rows.remove', { name: x.name || t('inputs.rows.thisIncome') }))}">${icon('trash')}</button>
     </div>
     <p class="mt-2 text-xs muted empty:hidden" data-extra-month="${x.id}"></p>
   </div>`;
@@ -260,26 +280,26 @@ function renderRows(force = false) {
   const dSig = listSignature(s.debts);
   if (force || debtBox.__sig !== dSig) {
     debtBox.__sig = dSig;
-    debtBox.innerHTML = s.debts.length ? s.debts.map(debtRow).join('') : '<p class="text-sm muted">No loans or cards added. That’s fine. Skip this if you don’t have any.</p>';
+    debtBox.innerHTML = s.debts.length ? s.debts.map(debtRow).join('') : `<p class="text-sm muted">${esc(t('inputs.debts.empty'))}</p>`;
   }
   const yearlyBox = $('yearlyRows');
   const ySig = listSignature(s.yearly);
   if (force || yearlyBox.__sig !== ySig) {
     yearlyBox.__sig = ySig;
-    yearlyBox.innerHTML = s.yearly.length ? s.yearly.map(yearlyRow).join('') : '<p class="text-sm muted">Nothing added yet. Tap a suggestion above, or add your own.</p>';
+    yearlyBox.innerHTML = s.yearly.length ? s.yearly.map(yearlyRow).join('') : `<p class="text-sm muted">${esc(t('inputs.chips.empty'))}</p>`;
   }
-  renderChips('yearlyChips', 'yearlyChipsLabel', YEARLY_PRESETS, s.yearly, 'yearly', force);
+  renderChips('yearlyChips', 'yearlyChipsLabel', yearlyPresets(), s.yearly, 'yearly', force);
   const extraBox = $('extraRows');
   const xSig = listSignature(s.extras);
   if (force || extraBox.__sig !== xSig) {
     extraBox.__sig = xSig;
-    extraBox.innerHTML = s.extras.length ? s.extras.map(extraRow).join('') : '<p class="text-sm muted">Nothing added yet. Tap a suggestion above, or add your own.</p>';
+    extraBox.innerHTML = s.extras.length ? s.extras.map(extraRow).join('') : `<p class="text-sm muted">${esc(t('inputs.chips.empty'))}</p>`;
   }
-  renderChips('extraChips', 'extraChipsLabel', EXTRA_PRESETS, s.extras, 'extra', force);
+  renderChips('extraChips', 'extraChipsLabel', extraPresets(), s.extras, 'extra', force);
   const sSig = listSignature(s.subscriptions);
   if (force || subBox.__sig !== sSig) {
     subBox.__sig = sSig;
-    subBox.innerHTML = s.subscriptions.length ? s.subscriptions.map(subRow).join('') : '<p class="text-sm muted">No subscriptions yet. Add streaming, apps or a gym, and tick the ones you rarely use.</p>';
+    subBox.innerHTML = s.subscriptions.length ? s.subscriptions.map(subRow).join('') : `<p class="text-sm muted">${esc(t('inputs.subs.empty'))}</p>`;
   }
 }
 
@@ -312,12 +332,12 @@ export function renderInputs(state, result, view) {
   for (const g of GROUPS) {
     const el = document.querySelector(`[data-sub="${g.id}"]`);
     let txt;
-    if (g.id === 'income') txt = values.income ? `${view.m(values.income)}${view.per}` : 'Start here';
-    else if (g.id === 'savings') txt = values.emergencyFund ? `${view.raw(values.emergencyFund)} saved` : 'Optional';
-    else if (g.list === 'debts') txt = state.debts.length ? `${view.m(debtPayments)}${view.per} · ${state.debts.length} added` : 'Optional';
-    else if (g.list === 'extras') txt = state.extras.length ? `+${view.m(extrasMonthly)}${view.per} · ${state.extras.length} added` : 'Optional';
-    else if (g.list === 'yearly') txt = state.yearly.length ? `${view.m(yearlyMonthly)}${view.per} · ${state.yearly.length} added` : 'Optional';
-    else if (g.list === 'subscriptions') txt = state.subscriptions.length ? `${view.m(subsTotal)}${view.per} · ${state.subscriptions.length} added` : 'Optional';
+    if (g.id === 'income') txt = values.income ? `${view.m(values.income)}${view.per}` : t('inputs.subtitle.startHere');
+    else if (g.id === 'savings') txt = values.emergencyFund ? t('inputs.subtitle.saved', { amount: view.raw(values.emergencyFund) }) : t('inputs.subtitle.optional');
+    else if (g.list === 'debts') txt = state.debts.length ? t('inputs.subtitle.added', { amount: `${view.m(debtPayments)}${view.per}`, count: state.debts.length }) : t('inputs.subtitle.optional');
+    else if (g.list === 'extras') txt = state.extras.length ? t('inputs.subtitle.added', { amount: `+${view.m(extrasMonthly)}${view.per}`, count: state.extras.length }) : t('inputs.subtitle.optional');
+    else if (g.list === 'yearly') txt = state.yearly.length ? t('inputs.subtitle.added', { amount: `${view.m(yearlyMonthly)}${view.per}`, count: state.yearly.length }) : t('inputs.subtitle.optional');
+    else if (g.list === 'subscriptions') txt = state.subscriptions.length ? t('inputs.subtitle.added', { amount: `${view.m(subsTotal)}${view.per}`, count: state.subscriptions.length }) : t('inputs.subtitle.optional');
     else txt = `${view.m(subtotal(g.fields.map((f) => f.key)))}${view.per}`;
     setText(el, txt);
 
@@ -332,8 +352,8 @@ export function renderInputs(state, result, view) {
         continue;
       }
       const range = typicalRange(state.profile, f.key, state.currency);
-      const rangeTxt = range[1] === 0 ? 'usually nothing' : `usually ${nice(range[0])} to ${nice(range[1])} a month`;
-      setText($(`tip-${f.key}`), `${HELP[f.key]} For ${who.group}, this is ${rangeTxt}${B.approximate ? ' (a rough guide for this currency)' : ''}.`);
+      const rangeTxt = range[1] === 0 ? t('inputs.typical.nothing') : t('inputs.typical.range', { min: nice(range[0]), max: nice(range[1]) });
+      setText($(`tip-${f.key}`), t('inputs.typical.tip', { help: HELP[f.key], group: who.group, range: rangeTxt, approx: B.approximate ? t('inputs.typical.approximate') : '' }));
 
       // Inline status: validation error wins, otherwise "higher than typical"
       const input = $(`f-${f.key}`);
@@ -343,7 +363,7 @@ export function renderInputs(state, result, view) {
         setText(msg, err);
         setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
       } else if (f.key !== 'income' && range[1] > 0 && values[f.key] > range[1]) {
-        setText(msg, `Higher than typical for ${who.group} (usually up to ${nice(range[1])})`);
+        setText(msg, t('inputs.typical.higher', { group: who.group, max: nice(range[1]) }));
         setAttr(msg, 'class', 'mt-1 text-xs font-medium text-amber-700 dark:text-amber-400');
       } else {
         setText(msg, '');
@@ -362,20 +382,20 @@ export function renderInputs(state, result, view) {
     });
     const msg = $('housingAskMsg');
     if (state.housingFree === true) {
-      setText(msg, 'Got it. We won’t count housing as a cost.');
+      setText(msg, t('inputs.housing.freeYes'));
       setAttr(msg, 'class', 'mt-3 text-sm text-emerald-800 dark:text-emerald-300');
     } else if (state.housingFree === false) {
-      setText(msg, 'Please add your rent or mortgage above so your results are accurate.');
+      setText(msg, t('inputs.housing.freeNo'));
       setAttr(msg, 'class', 'mt-3 text-sm font-medium text-amber-800 dark:text-amber-300');
     } else setText(msg, '');
   }
   renderRows();
   renderSubKinds(state, result, view);
   for (const y of yearly) {
-    setText(document.querySelector(`[data-yearly-month="${y.id}"]`), y.cost > 0 ? `That’s ${view.raw(y.cost / 12)} to put aside each month.` : '');
+    setText(document.querySelector(`[data-yearly-month="${y.id}"]`), y.cost > 0 ? t('inputs.yearly.perMonth', { amount: view.raw(y.cost / 12) }) : '');
   }
   for (const x of extras) {
-    setText(document.querySelector(`[data-extra-month="${x.id}"]`), x.amount > 0 ? `That adds about ${view.raw(x.amount / 12)} a month to your income.` : '');
+    setText(document.querySelector(`[data-extra-month="${x.id}"]`), x.amount > 0 ? t('inputs.extras.perMonth', { amount: view.raw(x.amount / 12) }) : '');
   }
 }
 
@@ -401,11 +421,11 @@ function renderSubKinds(state, result, view) {
   const guide = income > 0
     ? `<p class="mt-3 border-t border-slate-200 pt-3 text-xs dark:border-slate-800 ${over ? 'text-amber-800 dark:text-amber-300' : 'text-emerald-800 dark:text-emerald-300'}">
         ${over
-          ? `That’s ${Math.round((subsTotal / income) * 1000) / 10}% of your income. A good guide is under ${Math.round(B.categoryShare.subscriptions * 100)}% (${esc(view.m(limit))}${view.per}). Start with the ones you rarely use.`
-          : `That’s ${Math.round((subsTotal / income) * 1000) / 10}% of your income, within the guide of under ${Math.round(B.categoryShare.subscriptions * 100)}%.`}</p>`
+          ? esc(t('inputs.subs.summaryOver', { pct: Math.round((subsTotal / income) * 1000) / 10, guide: Math.round(B.categoryShare.subscriptions * 100), limit: `${view.m(limit)}${view.per}` }))
+          : esc(t('inputs.subs.summaryWithin', { pct: Math.round((subsTotal / income) * 1000) / 10, guide: Math.round(B.categoryShare.subscriptions * 100) }))}</p>`
     : '';
-  box.innerHTML = `<p class="mb-2 font-medium text-slate-900 dark:text-white">By type</p><ul class="space-y-1.5">${rows}</ul>
-    <p class="mt-2 flex justify-between gap-3 font-semibold text-slate-900 dark:text-white"><span>Total</span><span class="tabular-nums">${esc(view.m(subsTotal))}${view.per}</span></p>${guide}`;
+  box.innerHTML = `<p class="mb-2 font-medium text-slate-900 dark:text-white">${esc(t('inputs.subs.byType'))}</p><ul class="space-y-1.5">${rows}</ul>
+    <p class="mt-2 flex justify-between gap-3 font-semibold text-slate-900 dark:text-white"><span>${esc(t('inputs.subs.total'))}</span><span class="tabular-nums">${esc(view.m(subsTotal))}${view.per}</span></p>${guide}`;
 }
 
 // ---------------- Events ----------------
@@ -433,7 +453,7 @@ function onFieldInput(e) {
       v = key === 'apr' ? Math.min(100, r.value) : r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
       if (r.error) showRowMsg(el, r.error, 'error');
-      else if (aprCapped) showRowMsg(el, 'Rates above 100% are very unusual, so we’ve used 100%. Check your statement.', 'note');
+      else if (aprCapped) showRowMsg(el, t('inputs.debts.aprCapped'), 'note');
       else showRowMsg(el, '');
     }
     const instant = key === 'rarely' || key === 'type' || key === 'kind';
@@ -496,8 +516,8 @@ export function initInputs() {
       const idx = st[list].findIndex((x) => x.id === id);
       const removed = st[list][idx];
       setState((x) => { x[list] = x[list].filter((r) => r.id !== id); });
-      toast(`${removed?.name || { debts: 'Loan', subscriptions: 'Subscription', yearly: 'Cost', extras: 'Extra income' }[list]} removed`, {
-        action: { label: 'Undo', onClick: () => setState((x) => { x[list].splice(idx, 0, removed); }) }
+      toast(t('inputs.toast.removed', { name: removed?.name || t(`inputs.toast.fallback.${list}`) }), {
+        action: { label: t('inputs.toast.undo'), onClick: () => setState((x) => { x[list].splice(idx, 0, removed); }) }
       });
     }
   });
@@ -534,12 +554,12 @@ export function loadSample() {
     housingFree: null,
     plan: { committed: {}, pct: {}, sort: st.plan.sort },
     goals: st.goals.length ? st.goals : [
-      { id: newId('g'), name: 'Family holiday', target: Math.round((inc * 0.4) / roundTo) * roundTo, saved: 0 },
-      { id: newId('g'), name: 'New laptop', target: Math.round((inc * 0.2) / roundTo) * roundTo, saved: 0 }
+      { id: newId('g'), name: t('inputs.sample.goalHoliday'), target: Math.round((inc * 0.4) / roundTo) * roundTo, saved: 0 },
+      { id: newId('g'), name: t('inputs.sample.goalLaptop'), target: Math.round((inc * 0.2) / roundTo) * roundTo, saved: 0 }
     ],
     ui: { ...st.ui, sample: true, mode: 'results' }
   }, 'sample');
-  toast(`Example budget loaded for a ${PROFILES[st.profile].name}`, {
-    action: { label: 'Undo', onClick: () => replaceState(prev) }
+  toast(t('inputs.toast.sampleLoaded', { profile: PROFILES[st.profile].name }), {
+    action: { label: t('inputs.toast.undo'), onClick: () => replaceState(prev) }
   });
 }

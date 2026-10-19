@@ -1,6 +1,7 @@
 // Small DOM helpers shared by the UI modules.
 
 import { money, money2, moneyShort, moneyNice, currencySymbol } from '../utils/format.js';
+import { t } from '../i18n/index.js';
 
 export const $ = (id) => document.getElementById(id);
 
@@ -73,9 +74,9 @@ export function makeView(state) {
   const nice = (n, friendly) => moneyNice(n, cur, { friendly });
   return {
     cur, f,
-    per: f === 12 ? '/year' : '/month',
-    perShort: f === 12 ? '/yr' : '/mo',
-    periodWord: f === 12 ? 'year' : 'month',
+    per: f === 12 ? t('common.per.year') : t('common.per.month'),
+    perShort: f === 12 ? t('common.perShort.year') : t('common.perShort.month'),
+    periodWord: f === 12 ? t('common.periodWord.year') : t('common.periodWord.month'),
     m: (n) => nice(n * f, false),
     s: (n) => nice(n * f, true),
     raw: (n) => nice(n, false),
@@ -136,7 +137,7 @@ export function announce(message, delay = 900) {
  * Promise-based wrapper around the native <dialog> element. Resolves to
  * 'ok', 'alt' (the optional middle button) or null when cancelled.
  */
-export function choiceDialog({ title, message, confirmLabel = 'Confirm', danger = false, altLabel = '', altDanger = false }) {
+export function choiceDialog({ title, message, confirmLabel = t('common.confirm'), danger = false, altLabel = '', altDanger = false }) {
   const dlg = $('confirmDialog');
   $('confirmTitle').textContent = title;
   $('confirmMessage').textContent = message;

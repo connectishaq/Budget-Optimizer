@@ -25,14 +25,19 @@
 // ctx = { v, profile, P, B, currency, income, debts, subs, fmt }
 //   v: monthly inputs · P: PROFILES[profile] (name, group) · B: benchmarks for
 //   this currency + profile · fmt: currency formatter for sentences.
+//
+// Text is looked up in the "rules" messages when read (getters and functions),
+// so it follows the active language.
+
+import { t } from '../i18n/index.js';
 
 const HIGH_APR = 15;
 
 export const highAprCards = (debts) =>
   debts.filter((d) => d.type === 'card' && d.apr > HIGH_APR && d.balance > 0);
 
-const typical = (c, amount, threshold, what) =>
-  `Shown because your ${what} (${c.fmt(amount)}) is higher than what's typical for ${c.P.group} (${c.fmt(threshold)}).`;
+const typical = (c, amount, threshold, key) =>
+  t(key, { amount: c.fmt(amount), group: c.P.group, threshold: c.fmt(threshold) });
 
 const utilities = (c) => c.v.electricity + c.v.waterGas;
 // Subscriptions still in use, of one type
@@ -47,295 +52,322 @@ export const RULES = [
   // ---------------- Housing ----------------
   {
     id: 'rent-burden', category: 'Housing', icon: 'key', kind: 'cash',
-    label: 'Rent / mortgage', noun: 'rent or mortgage',
+    get label() { return t('rules.rentBurden.label'); },
+    get noun() { return t('rules.rentBurden.noun'); },
     pools: ['rent'],
     when: (c) => c.income > 0 && c.v.rent > 0.35 * c.income,
     pct: (c) => (c.profile === 'suburban' ? 0.05 : 0.15),
     effort: 'Medium', upfront: null,
-    title: 'Lower your housing cost',
-    why: (c) => `Shown because housing takes ${Math.round((c.v.rent / c.income) * 100)}% of your income. Above 35% makes the rest of your budget tight.`,
-    flag: (c) => `Housing takes ${Math.round((c.v.rent / c.income) * 100)}% of your income. Over 35% is a warning sign.`,
+    get title() { return t('rules.rentBurden.title'); },
+    why: (c) => t('rules.rentBurden.why', { pct: Math.round((c.v.rent / c.income) * 100) }),
+    flag: (c) => t('rules.rentBurden.flag', { pct: Math.round((c.v.rent / c.income) * 100) }),
     evidence: (c) => (c.profile === 'suburban'
-      ? 'Refinancing or appealing your property tax usually trims'
-      : 'Renegotiating at renewal or sharing with a roommate usually cuts'),
+      ? t('rules.rentBurden.evidenceOwner')
+      : t('rules.rentBurden.evidenceRenter')),
     tips: (c) => (c.profile === 'suburban'
-      ? ['Ask 2–3 banks for a cheaper mortgage rate.', 'Appeal your property tax if similar homes are valued lower.', 'Drop mortgage insurance once you own 20% of the home.']
-      : ['Ask your landlord for a discount if you sign a longer lease.', 'Think about a roommate or a smaller place at renewal.', 'Look at other listings 2 months before renewal to compare.'])
+      ? [t('rules.rentBurden.tips.ownerRate'), t('rules.rentBurden.tips.ownerTax'), t('rules.rentBurden.tips.ownerInsurance')]
+      : [t('rules.rentBurden.tips.renterLease'), t('rules.rentBurden.tips.renterRoommate'), t('rules.rentBurden.tips.renterCompare')])
   },
   {
     id: 'insurance-requote', category: 'Insurance', icon: 'umbrella', kind: 'cash',
-    label: 'Insurance', noun: 'home and car insurance',
+    get label() { return t('rules.insuranceRequote.label'); },
+    get noun() { return t('rules.insuranceRequote.noun'); },
     pools: ['homeIns', 'carIns'],
     when: (c) => c.v.homeIns + c.v.carIns > c.B.thresholds.insurance,
     pct: 0.12, effort: 'Easy', upfront: null,
-    title: 'Get new insurance quotes every year',
-    why: (c) => typical(c, c.v.homeIns + c.v.carIns, c.B.thresholds.insurance, 'insurance'),
-    evidence: 'Shopping around every year usually cuts',
-    tips: () => ['Get 3 quotes before your policy renews.', 'Put home and car with one insurer for a discount.', 'Choose a higher excess you could pay from savings.']
+    get title() { return t('rules.insuranceRequote.title'); },
+    why: (c) => typical(c, c.v.homeIns + c.v.carIns, c.B.thresholds.insurance, 'rules.insuranceRequote.why'),
+    get evidence() { return t('rules.insuranceRequote.evidence'); },
+    tips: () => [t('rules.insuranceRequote.tips.quotes'), t('rules.insuranceRequote.tips.bundle'), t('rules.insuranceRequote.tips.excess')]
   },
 
   // ---------------- Utilities ----------------
   {
     id: 'utilities-efficiency', category: 'Utilities', icon: 'bolt', kind: 'cash',
-    label: 'Electricity & gas', noun: 'electricity and gas',
+    get label() { return t('rules.utilitiesEfficiency.label'); },
+    get noun() { return t('rules.utilitiesEfficiency.noun'); },
     pools: ['electricity', 'waterGas'],
     when: (c) => utilities(c) > c.B.thresholds.utilities,
     pct: 0.12, effort: 'Easy', upfront: 'ledKit',
-    title: 'Small energy-saving habits',
-    why: (c) => typical(c, utilities(c), c.B.thresholds.utilities, 'electricity and gas'),
-    evidence: 'Turning heating or cooling down at night, switching off standby devices and using LED bulbs usually cuts',
-    tips: () => ['Turn heating or AC down a few degrees at night and when you’re out.', 'Switch TVs and chargers off at the wall.', 'Change old bulbs to LED.']
+    get title() { return t('rules.utilitiesEfficiency.title'); },
+    why: (c) => typical(c, utilities(c), c.B.thresholds.utilities, 'rules.utilitiesEfficiency.why'),
+    get evidence() { return t('rules.utilitiesEfficiency.evidence'); },
+    tips: () => [t('rules.utilitiesEfficiency.tips.night'), t('rules.utilitiesEfficiency.tips.standby'), t('rules.utilitiesEfficiency.tips.led')]
   },
   {
     id: 'smart-thermostat', category: 'Utilities', icon: 'thermometer', kind: 'cash',
-    label: 'Electricity & gas', noun: 'electricity and gas',
+    get label() { return t('rules.smartThermostat.label'); },
+    get noun() { return t('rules.smartThermostat.noun'); },
     pools: ['electricity', 'waterGas'],
     when: (c) => !isLocal(c) && c.profile !== 'single' && utilities(c) > c.B.thresholds.utilities,
     pct: 0.08, effort: 'Requires purchase', upfront: 'smartThermostat',
-    title: 'Install a smart thermostat',
-    why: (c) => typical(c, utilities(c), c.B.thresholds.utilities, 'electricity and gas'),
-    evidence: 'A smart thermostat that turns things down for you usually trims a further',
-    tips: () => ['Check if your power company gives money back for one.', 'Turn on the setting that lowers it when everyone leaves.', 'Look at its monthly report and fix the most wasteful days.']
+    get title() { return t('rules.smartThermostat.title'); },
+    why: (c) => typical(c, utilities(c), c.B.thresholds.utilities, 'rules.smartThermostat.why'),
+    get evidence() { return t('rules.smartThermostat.evidence'); },
+    tips: () => [t('rules.smartThermostat.tips.rebate'), t('rules.smartThermostat.tips.away'), t('rules.smartThermostat.tips.report')]
   },
   {
     id: 'electricity-slab', category: 'Utilities', icon: 'bolt', kind: 'cash',
-    label: 'Electricity', noun: 'electricity',
+    get label() { return t('rules.electricitySlab.label'); },
+    get noun() { return t('rules.electricitySlab.noun'); },
     pools: ['electricity'],
     when: (c) => isLocal(c) && c.v.electricity > c.B.ranges.electricity[1],
     pct: 0.15, effort: 'Easy', upfront: null,
-    title: 'Stay under the next price slab',
-    why: (c) => typical(c, c.v.electricity, c.B.ranges.electricity[1], 'electricity bill'),
-    evidence: 'Each unit costs more once you pass a slab, so keeping usage just under the next one usually cuts',
+    get title() { return t('rules.electricitySlab.title'); },
+    why: (c) => typical(c, c.v.electricity, c.B.ranges.electricity[1], 'rules.electricitySlab.why'),
+    get evidence() { return t('rules.electricitySlab.evidence'); },
     tips: () => [
-      'Find “units used” on your bill. Prices per unit jump at each slab, so aim to stay just under the next one.',
-      'Run the AC at 26°C with a ceiling fan on, and use timer or eco mode at night.',
-      'Run the iron, washing machine and water pump outside peak hours.'
+      t('rules.electricitySlab.tips.units'),
+      t('rules.electricitySlab.tips.ac'),
+      t('rules.electricitySlab.tips.peak')
     ]
   },
   {
     id: 'utilities-tuneup', category: 'Utilities', icon: 'lightbulb', kind: 'cash',
-    label: 'Electricity & gas', noun: 'electricity and gas',
+    get label() { return t('rules.utilitiesTuneup.label'); },
+    get noun() { return t('rules.utilitiesTuneup.noun'); },
     pools: ['electricity', 'waterGas'],
     when: (c) => utilities(c) > c.B.thresholds.utilities * 0.55 && utilities(c) <= c.B.thresholds.utilities,
     pct: 0.06, effort: 'Easy', upfront: 'tuneup',
-    title: 'Quick energy tune-up',
-    why: (c) => `Shown because your electricity and gas (${c.fmt(utilities(c))}) is close to typical. A few small fixes still help.`,
-    evidence: 'Quick fixes like washing clothes in cold water and a water-saving shower head usually cut',
-    tips: () => ['Fit a water-saving shower head.', 'Wash clothes in cold water and only run full loads.', 'Turn the water heater down a little.']
+    get title() { return t('rules.utilitiesTuneup.title'); },
+    why: (c) => t('rules.utilitiesTuneup.why', { amount: c.fmt(utilities(c)) }),
+    get evidence() { return t('rules.utilitiesTuneup.evidence'); },
+    tips: () => [t('rules.utilitiesTuneup.tips.shower'), t('rules.utilitiesTuneup.tips.cold'), t('rules.utilitiesTuneup.tips.heater')]
   },
   {
     id: 'internet-renegotiate', category: 'Utilities', icon: 'wifi', kind: 'cash',
-    label: 'Internet & phone', noun: 'internet and phone',
+    get label() { return t('rules.internetRenegotiate.label'); },
+    get noun() { return t('rules.internetRenegotiate.noun'); },
     pools: ['internet'],
     when: (c) => c.v.internet > c.B.thresholds.internet,
     pct: 0.20, effort: 'Easy', upfront: null,
-    title: 'Ask your provider for a better deal',
-    why: (c) => typical(c, c.v.internet, c.B.thresholds.internet, 'internet and phone bill'),
-    evidence: 'Calling your provider and asking for a better deal usually cuts',
+    get title() { return t('rules.internetRenegotiate.title'); },
+    why: (c) => typical(c, c.v.internet, c.B.thresholds.internet, 'rules.internetRenegotiate.why'),
+    get evidence() { return t('rules.internetRenegotiate.evidence'); },
     tips: (c) => (isLocal(c)
-      ? ['Switch your mobile to a monthly prepaid bundle instead of loading balance as you go.', 'Use Wi-Fi calling and WhatsApp at home instead of mobile minutes.', 'Ask your internet provider for a cheaper package if you use less than half your speed.']
-      : ['Call and ask for the deal new customers get.', 'Do a speed test. If you use less than half, pick a cheaper plan.', 'Compare prepaid phone plans on the same network.'])
+      ? [t('rules.internetRenegotiate.tips.localBundle'), t('rules.internetRenegotiate.tips.localWifi'), t('rules.internetRenegotiate.tips.localPackage')]
+      : [t('rules.internetRenegotiate.tips.newCustomer'), t('rules.internetRenegotiate.tips.speedTest'), t('rules.internetRenegotiate.tips.prepaid')])
   },
 
   // ---------------- Transport ----------------
   {
     id: 'fuel-carpool', category: 'Transport', icon: 'car', kind: 'cash',
-    label: 'Fuel', noun: 'fuel',
+    get label() { return t('rules.fuelCarpool.label'); },
+    get noun() { return t('rules.fuelCarpool.noun'); },
     pools: ['fuel'],
     when: (c) => c.profile === 'suburban' && c.v.fuel > c.B.thresholds.fuel,
     pct: 0.15, effort: 'Easy', upfront: null,
-    title: 'Carpool and combine errands',
-    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'fuel bill'),
-    evidence: 'Sharing school runs and doing errands in one trip usually cuts',
-    tips: () => ['Share school runs with 2 or 3 nearby families.', 'Do all your errands in one trip each week.', 'Check tyre pressure once a month.']
+    get title() { return t('rules.fuelCarpool.title'); },
+    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'rules.fuelCarpool.why'),
+    get evidence() { return t('rules.fuelCarpool.evidence'); },
+    tips: () => [t('rules.fuelCarpool.tips.schoolRuns'), t('rules.fuelCarpool.tips.errands'), t('rules.fuelCarpool.tips.tyres')]
   },
   {
     id: 'fuel-carlight', category: 'Transport', icon: 'bike', kind: 'cash',
-    label: 'Fuel', noun: 'fuel',
+    get label() { return t('rules.fuelCarlight.label'); },
+    get noun() { return t('rules.fuelCarlight.noun'); },
     pools: ['fuel'],
     when: (c) => c.profile === 'single' && c.v.fuel > c.B.thresholds.fuel,
     pct: 0.20, effort: 'Medium', upfront: null,
-    title: 'Use the car less in the city',
-    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'fuel bill'),
-    evidence: 'Walking, cycling or taking public transport for short trips usually cuts',
-    tips: () => ['Walk or cycle for trips under 2 km.', 'Use the car only for big weekly shops.', 'Compare your fuel and parking costs with a monthly transport pass.']
+    get title() { return t('rules.fuelCarlight.title'); },
+    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'rules.fuelCarlight.why'),
+    get evidence() { return t('rules.fuelCarlight.evidence'); },
+    tips: () => [t('rules.fuelCarlight.tips.walk'), t('rules.fuelCarlight.tips.bigShops'), t('rules.fuelCarlight.tips.pass')]
   },
   {
     id: 'fuel-hybrid-commute', category: 'Transport', icon: 'laptop', kind: 'cash',
-    label: 'Fuel', noun: 'fuel',
+    get label() { return t('rules.fuelHybridCommute.label'); },
+    get noun() { return t('rules.fuelHybridCommute.noun'); },
     pools: ['fuel'],
     when: (c) => c.profile === 'youngpro' && c.v.fuel > c.B.thresholds.fuel,
     pct: 0.15, effort: 'Medium', upfront: null,
-    title: 'Commute fewer days a week',
-    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'fuel bill'),
-    evidence: 'Working from home one or two days a week usually cuts',
-    tips: () => ['Ask your manager for 1–2 work-from-home days.', 'Share rides with a colleague who lives nearby.', 'Drive smoothly: gentle starts use less fuel.']
+    get title() { return t('rules.fuelHybridCommute.title'); },
+    why: (c) => typical(c, c.v.fuel, c.B.thresholds.fuel, 'rules.fuelHybridCommute.why'),
+    get evidence() { return t('rules.fuelHybridCommute.evidence'); },
+    tips: () => [t('rules.fuelHybridCommute.tips.wfh'), t('rules.fuelHybridCommute.tips.share'), t('rules.fuelHybridCommute.tips.smooth')]
   },
   {
     id: 'transit-pass', category: 'Transport', icon: 'ticket', kind: 'cash',
-    label: 'Fares & tolls', noun: 'fares and tolls',
+    get label() { return t('rules.transitPass.label'); },
+    get noun() { return t('rules.transitPass.noun'); },
     pools: ['transit'],
     when: (c) => c.v.transit > c.B.thresholds.transit,
     pct: 0.10, effort: 'Easy', upfront: null,
-    title: 'Get a monthly pass or toll tag',
-    why: (c) => typical(c, c.v.transit, c.B.thresholds.transit, 'fares and tolls'),
-    evidence: 'A monthly pass or toll tag usually cuts',
-    tips: () => ['Add up last month’s fares and compare with a monthly pass.', 'Get a toll tag for cheaper tolls.', 'Ask your employer if they help pay for travel.']
+    get title() { return t('rules.transitPass.title'); },
+    why: (c) => typical(c, c.v.transit, c.B.thresholds.transit, 'rules.transitPass.why'),
+    get evidence() { return t('rules.transitPass.evidence'); },
+    tips: () => [t('rules.transitPass.tips.compare'), t('rules.transitPass.tips.tollTag'), t('rules.transitPass.tips.employer')]
   },
   {
     id: 'car-refinance', category: 'Transport', icon: 'percent', kind: 'cash',
-    label: 'Car loan', noun: 'car loan payment',
+    get label() { return t('rules.carRefinance.label'); },
+    get noun() { return t('rules.carRefinance.noun'); },
     pools: ['carLoan'],
     when: (c) => c.v.carLoan > c.B.thresholds.carLoan,
     pct: 0.10, effort: 'Medium', upfront: null,
-    title: 'Look for a cheaper car loan',
-    why: (c) => typical(c, c.v.carLoan, c.B.thresholds.carLoan, 'car loan payment'),
-    evidence: 'Moving the loan to a lender with a lower interest rate usually cuts',
-    tips: () => ['Ask 2–3 banks for their car loan rate.', 'Keep the same number of months left so you don’t pay for longer.', 'Check there’s no fee for paying the old loan off early.']
+    get title() { return t('rules.carRefinance.title'); },
+    why: (c) => typical(c, c.v.carLoan, c.B.thresholds.carLoan, 'rules.carRefinance.why'),
+    get evidence() { return t('rules.carRefinance.evidence'); },
+    tips: () => [t('rules.carRefinance.tips.banks'), t('rules.carRefinance.tips.term'), t('rules.carRefinance.tips.fee')]
   },
 
   // ---------------- Family & Lifestyle ----------------
   {
     id: 'groceries-plan', category: 'Groceries', icon: 'cart', kind: 'cash',
-    label: 'Groceries', noun: 'groceries',
+    get label() { return t('rules.groceriesPlan.label'); },
+    get noun() { return t('rules.groceriesPlan.noun'); },
     pools: ['groceries'],
     when: (c) => c.v.groceries > c.B.ranges.groceries[1],
     pct: 0.12, effort: 'Easy', upfront: null,
-    title: 'Plan meals and buy store brands',
-    why: (c) => typical(c, c.v.groceries, c.B.ranges.groceries[1], 'grocery bill'),
-    evidence: 'Planning meals and buying store brands usually cuts',
+    get title() { return t('rules.groceriesPlan.title'); },
+    why: (c) => typical(c, c.v.groceries, c.B.ranges.groceries[1], 'rules.groceriesPlan.why'),
+    get evidence() { return t('rules.groceriesPlan.evidence'); },
     tips: (c) => [
-      'Plan the week’s meals before you shop, and stick to the list.',
+      t('rules.groceriesPlan.tips.plan'),
       isLocal(c)
-        ? 'Buy monthly staples (flour, rice, oil, lentils, sugar) once a month in bulk from a wholesale market.'
-        : 'Buy the shop’s own brand for basics like rice, flour and oil.',
-      c.profile === 'suburban' ? 'Buy big packs of things you always use.' : 'Cook extra and freeze portions for later.'
+        ? t('rules.groceriesPlan.tips.localBulk')
+        : t('rules.groceriesPlan.tips.storeBrand'),
+      c.profile === 'suburban' ? t('rules.groceriesPlan.tips.bigPacks') : t('rules.groceriesPlan.tips.freeze')
     ]
   },
   {
     id: 'dining-swap', category: 'Eating out', icon: 'utensils', kind: 'cash',
-    label: 'Eating out', noun: 'eating out and takeaways',
+    get label() { return t('rules.diningSwap.label'); },
+    get noun() { return t('rules.diningSwap.noun'); },
     pools: ['dining'],
     when: (c) => c.v.dining > c.B.thresholds.diningFloor && c.v.dining > c.v.groceries,
     pct: 0.40, effort: 'Medium', upfront: null,
-    title: 'Cook at home more often',
-    why: (c) => `Shown because you spend more eating out (${c.fmt(c.v.dining)}) than on groceries (${c.fmt(c.v.groceries)}).`,
-    evidence: 'Cooking at home a few more nights a week usually cuts',
-    tips: () => ['Swap 2 takeaway nights a week for quick home meals.', 'Take lunch to work on weekdays.', 'Keep eating out for special occasions.']
+    get title() { return t('rules.diningSwap.title'); },
+    why: (c) => t('rules.diningSwap.why', { dining: c.fmt(c.v.dining), groceries: c.fmt(c.v.groceries) }),
+    get evidence() { return t('rules.diningSwap.evidence'); },
+    tips: () => [t('rules.diningSwap.tips.swap'), t('rules.diningSwap.tips.lunch'), t('rules.diningSwap.tips.special')]
   },
   {
     id: 'impulse-24h', category: 'Shopping', icon: 'hourglass', kind: 'cash',
-    label: 'Impulse shopping', noun: 'random purchases',
+    get label() { return t('rules.impulse24h.label'); },
+    get noun() { return t('rules.impulse24h.noun'); },
     pools: ['misc'],
     when: (c) => c.v.misc > c.B.ranges.misc[1],
     pct: 0.25, effort: 'Easy', upfront: null,
-    title: 'Wait 24 hours before you buy',
-    why: (c) => typical(c, c.v.misc, c.B.ranges.misc[1], 'impulse shopping'),
-    evidence: 'People who wait 24 hours before buying usually cut',
-    tips: () => ['Wait a day before buying anything you don’t need.', 'Remove saved card details from shopping apps.', 'Turn off shop notifications and sale emails.']
+    get title() { return t('rules.impulse24h.title'); },
+    why: (c) => typical(c, c.v.misc, c.B.ranges.misc[1], 'rules.impulse24h.why'),
+    get evidence() { return t('rules.impulse24h.evidence'); },
+    tips: () => [t('rules.impulse24h.tips.wait'), t('rules.impulse24h.tips.cards'), t('rules.impulse24h.tips.notifications')]
   },
   {
     id: 'school-discounts', category: 'Family', icon: 'school', kind: 'cash',
-    label: 'School fees & childcare', noun: 'school fees and childcare',
+    get label() { return t('rules.schoolDiscounts.label'); },
+    get noun() { return t('rules.schoolDiscounts.noun'); },
     pools: ['school'],
     when: (c) => c.v.school > c.B.thresholds.school,
     pct: 0.08, effort: 'Easy', upfront: null,
-    title: 'Ask about school discounts',
-    why: (c) => typical(c, c.v.school, c.B.thresholds.school, 'school and childcare costs'),
-    evidence: 'Asking for sibling or pay-early discounts usually saves',
-    tips: () => ['Ask the school about discounts for brothers and sisters.', 'Ask if paying for the year up front costs less.', 'Buy uniforms and books second-hand.']
+    get title() { return t('rules.schoolDiscounts.title'); },
+    why: (c) => typical(c, c.v.school, c.B.thresholds.school, 'rules.schoolDiscounts.why'),
+    get evidence() { return t('rules.schoolDiscounts.evidence'); },
+    tips: () => [t('rules.schoolDiscounts.tips.siblings'), t('rules.schoolDiscounts.tips.upfront'), t('rules.schoolDiscounts.tips.secondHand')]
   },
   {
     id: 'medical-generic', category: 'Health', icon: 'heart-pulse', kind: 'cash',
-    label: 'Doctor & medicine', noun: 'doctor visits and medicine',
+    get label() { return t('rules.medicalGeneric.label'); },
+    get noun() { return t('rules.medicalGeneric.noun'); },
     pools: ['medical'],
     when: (c) => c.v.medical > c.B.ranges.medical[1],
     pct: 0.20, effort: 'Easy', upfront: null,
-    title: 'Ask for generic medicines',
-    why: (c) => typical(c, c.v.medical, c.B.ranges.medical[1], 'doctor and medicine costs'),
-    evidence: 'Choosing generic medicines with the same active ingredient usually cuts',
+    get title() { return t('rules.medicalGeneric.title'); },
+    why: (c) => typical(c, c.v.medical, c.B.ranges.medical[1], 'rules.medicalGeneric.why'),
+    get evidence() { return t('rules.medicalGeneric.evidence'); },
     tips: (c) => [
-      'Ask your doctor or pharmacist for the generic version. It has the same active ingredient and costs less.',
-      'Buy medicines you take every month in a monthly pack, not strip by strip.',
-      isLocal(c) ? 'Check if your employer’s health cover or a hospital card pays for doctor visits.' : 'Check what your health insurance or employer plan already pays for.'
+      t('rules.medicalGeneric.tips.generic'),
+      t('rules.medicalGeneric.tips.monthlyPack'),
+      isLocal(c) ? t('rules.medicalGeneric.tips.localCover') : t('rules.medicalGeneric.tips.insurance')
     ]
   },
 
   // ---------------- Subscriptions ----------------
   {
     id: 'subs-cancel-unused', category: 'Subscriptions', icon: 'repeat', kind: 'cash',
-    label: 'Unused subscriptions', noun: 'subscriptions you rarely use',
+    get label() { return t('rules.subsCancelUnused.label'); },
+    get noun() { return t('rules.subsCancelUnused.noun'); },
     pools: ['subsRarely'],
     when: (c) => c.subs.some((s) => s.rarely && s.cost > 0),
     pct: 1, maxPct: 1, effort: 'Easy', upfront: null,
-    title: 'Cancel what you rarely use',
+    get title() { return t('rules.subsCancelUnused.title'); },
     why: (c) => {
-      const names = c.subs.filter((s) => s.rarely && s.cost > 0).map((s) => s.name || 'Unnamed');
-      return `Shown because you said you rarely use: ${names.join(', ')}.`;
+      const names = c.subs.filter((s) => s.rarely && s.cost > 0).map((s) => s.name || t('rules.subsCancelUnused.unnamed'));
+      return t('rules.subsCancelUnused.why', { names: names.join(', ') });
     },
-    evidence: 'Cancelling them saves',
-    tips: () => ['Cancel them today. You can usually sign up again later.', 'Look at your bank statement for free trials that became paid.', 'Set a reminder 2 days before any new free trial ends.']
+    get evidence() { return t('rules.subsCancelUnused.evidence'); },
+    tips: () => [t('rules.subsCancelUnused.tips.cancel'), t('rules.subsCancelUnused.tips.trials'), t('rules.subsCancelUnused.tips.reminder')]
   },
   {
     id: 'subs-rotate', category: 'Subscriptions', icon: 'tv', kind: 'cash',
-    label: 'Streaming', noun: 'streaming and games subscriptions',
+    get label() { return t('rules.subsRotate.label'); },
+    get noun() { return t('rules.subsRotate.noun'); },
     pools: ['subsStreaming'],
     when: (c) => activeSubs(c, 'streaming') > c.B.thresholds.subsActive,
     pct: 0.30, effort: 'Easy', upfront: null,
-    title: 'Keep one streaming service at a time',
-    why: (c) => typical(c, activeSubs(c, 'streaming'), c.B.thresholds.subsActive, 'streaming and games subscriptions'),
-    evidence: 'Keeping one service at a time and choosing cheaper plans usually cuts',
-    tips: () => ['Keep one streaming service, then switch next month.', 'Choose the plan with ads, or pay yearly if it’s cheaper.', 'Share a family plan with people in your home.']
+    get title() { return t('rules.subsRotate.title'); },
+    why: (c) => typical(c, activeSubs(c, 'streaming'), c.B.thresholds.subsActive, 'rules.subsRotate.why'),
+    get evidence() { return t('rules.subsRotate.evidence'); },
+    tips: () => [t('rules.subsRotate.tips.one'), t('rules.subsRotate.tips.ads'), t('rules.subsRotate.tips.family')]
   },
   {
     id: 'subs-tools-yearly', category: 'Subscriptions', icon: 'laptop', kind: 'cash',
-    label: 'Work & AI tools', noun: 'work and AI tool subscriptions',
+    get label() { return t('rules.subsToolsYearly.label'); },
+    get noun() { return t('rules.subsToolsYearly.noun'); },
     pools: ['subsTools'],
     when: (c) => activeSubs(c, 'tools') > c.B.thresholds.subsActive,
     pct: 0.15, effort: 'Easy', upfront: null,
-    title: 'Pay yearly and drop overlapping tools',
-    why: (c) => typical(c, activeSubs(c, 'tools'), c.B.thresholds.subsActive, 'work and AI tool subscriptions'),
-    evidence: 'Switching to yearly billing and cancelling tools that do the same job usually cuts',
+    get title() { return t('rules.subsToolsYearly.title'); },
+    why: (c) => typical(c, activeSubs(c, 'tools'), c.B.thresholds.subsActive, 'rules.subsToolsYearly.why'),
+    get evidence() { return t('rules.subsToolsYearly.evidence'); },
     tips: () => [
-      'Switch the tools you use every week to yearly billing. It’s often 15–20% cheaper.',
-      'If two tools do the same job (for example two AI assistants), keep the one you use most.',
-      'Ask your employer to pay for tools you use for work.'
+      t('rules.subsToolsYearly.tips.yearly'),
+      t('rules.subsToolsYearly.tips.overlap'),
+      t('rules.subsToolsYearly.tips.employer')
     ]
   },
 
   // ---------------- Debt ----------------
   {
     id: 'debt-avalanche', category: 'Debt', icon: 'card', kind: 'interest',
-    label: 'Credit card interest', noun: 'credit card interest',
+    get label() { return t('rules.debtAvalanche.label'); },
+    get noun() { return t('rules.debtAvalanche.noun'); },
     pools: ['cardInterest'],
     when: (c) => highAprCards(c.debts).length > 0,
     pct: 0.75, maxPct: 1, effort: 'Medium',
     // A 0% balance-transfer card typically charges a one-off 3% fee
     upfront: (c) => highAprCards(c.debts).reduce((a, d) => a + d.balance, 0) * 0.03,
-    title: (c) => (isLocal(c) ? 'Pay off the card with a cheaper loan' : 'Move the balance to a 0% card'),
+    title: (c) => (isLocal(c) ? t('rules.debtAvalanche.titleLocal') : t('rules.debtAvalanche.title')),
     why: (c) => {
       const top = [...highAprCards(c.debts)].sort((a, b) => b.apr - a.apr)[0];
-      return `Shown because ${top.name || 'a card'} charges ${top.apr}% interest a year, which is expensive.`;
+      return t('rules.debtAvalanche.why', { name: top.name || t('rules.debtAvalanche.whyUnnamed'), apr: top.apr });
     },
     flag: (c) => {
       const top = [...highAprCards(c.debts)].sort((a, b) => b.apr - a.apr)[0];
-      return `${top.name || 'A card'} charges ${top.apr}% a year in interest.`;
+      return t('rules.debtAvalanche.flag', { name: top.name || t('rules.debtAvalanche.flagUnnamed'), apr: top.apr });
     },
     evidence: (c) => (isLocal(c)
-      ? 'Paying the card off with a personal loan at a much lower rate usually avoids'
-      : 'Moving the balance to a card with 0% interest for a while usually avoids'),
+      ? t('rules.debtAvalanche.evidenceLocal')
+      : t('rules.debtAvalanche.evidence')),
     tips: (c) => {
-      const order = [...c.debts].filter((d) => d.balance > 0).sort((a, b) => b.apr - a.apr).map((d) => `${d.name || 'Debt'} (${d.apr}%)`);
+      const order = [...c.debts].filter((d) => d.balance > 0).sort((a, b) => b.apr - a.apr)
+        .map((d) => t('rules.debtAvalanche.orderItem', { name: d.name || t('rules.debtAvalanche.orderUnnamed'), apr: d.apr }));
       return [
         isLocal(c)
-          ? 'Ask your bank for a personal loan or a card instalment plan at a lower rate, and use it to clear the card (expect a small fee).'
-          : 'Ask your bank about a card with 0% interest on moved balances (usually a 3% fee).',
-        `Pay the highest-interest loan first: ${order.join(' → ')}.`,
-        'Keep paying at least the minimum on everything else.'
+          ? t('rules.debtAvalanche.tips.localLoan')
+          : t('rules.debtAvalanche.tips.transfer'),
+        t('rules.debtAvalanche.tips.order', { order: order.join(' → ') }),
+        t('rules.debtAvalanche.tips.minimum')
       ];
     }
   }
 ];
 
 export const EFFORT_ORDER = { Easy: 0, Medium: 1, 'Requires purchase': 2 };
-export const EFFORT_LABEL = { Easy: 'Easy', Medium: 'Takes some effort', 'Requires purchase': 'Needs a purchase' };
+// Keys are the stored `effort` values; the displayed words follow the active language.
+export const EFFORT_LABEL = {
+  get Easy() { return t('rules.effort.easy'); },
+  get Medium() { return t('rules.effort.medium'); },
+  get 'Requires purchase'() { return t('rules.effort.purchase'); }
+};

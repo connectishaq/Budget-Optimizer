@@ -6,20 +6,23 @@
 import { getState, setState } from '../state.js';
 import { GROUPS } from './inputs.js';
 import { $, setText, setAttr } from './dom.js';
+import { t } from '../i18n/index.js';
 
+// Names, titles and subtitles live in wizard.billPages.<group> (title/sub only where set).
 const BILL_PAGES = [
-  { group: 'housing', name: 'Housing' },
-  { group: 'utilities', name: 'Bills & utilities' },
-  { group: 'transport', name: 'Getting around' },
-  { group: 'family', name: 'Food, family & fun' },
-  { group: 'care', name: 'Health, help & giving' },
-  { group: 'yearly', name: 'Once-a-year costs', title: 'Any big costs once a year?', sub: 'Festivals, school books, car repairs… Spread over the year, they stop catching you out. Skip if none.' }
+  { group: 'housing' },
+  { group: 'utilities' },
+  { group: 'transport' },
+  { group: 'family' },
+  { group: 'care' },
+  { group: 'yearly', custom: true }
 ];
 
+// Titles and subtitles live in wizard.steps.<n>.
 const STEPS = {
-  1: { title: 'What’s your monthly income?', sub: 'Your take-home pay after tax, plus any bonuses or overtime during the year. You can change it any time.', groups: ['income', 'extras'], settings: true },
-  2: { title: 'Where does your money go?', sub: 'Type what you usually spend in a month. Leave a box empty if it doesn’t apply.' },
-  3: { title: 'Any loans or subscriptions?', sub: 'This step is optional. Skip it if you have none.', groups: ['debt', 'subs', 'savings'] }
+  1: { groups: ['income', 'extras'], settings: true },
+  2: {},
+  3: { groups: ['debt', 'subs', 'savings'] }
 };
 
 let placed = ''; // signature of the current layout, so DOM moves happen only on change
@@ -75,16 +78,16 @@ export function renderFlow(state) {
 
   if (wizard) {
     placeWizard(step, sub);
-    const st = STEPS[step];
-    setText($('wizStepLabel'), `Step ${step} of 4`);
-    setText($('wizSubStep'), step === 2 ? `Bills: ${BILL_PAGES[sub].name} (${sub + 1} of ${BILL_PAGES.length})` : '');
+    setText($('wizStepLabel'), t('wizard.stepOf', { step, total: 4 }));
+    setText($('wizSubStep'), step === 2 ? t('wizard.billsProgress', { name: t(`wizard.billPages.${BILL_PAGES[sub].group}.name`), n: sub + 1, total: BILL_PAGES.length }) : '');
     const page = step === 2 ? BILL_PAGES[sub] : {};
-    setText($('wizTitle'), page.title || st.title);
-    setText($('wizSub'), page.sub || st.sub);
+    const base = page.custom ? `wizard.billPages.${page.group}` : `wizard.steps.${step}`;
+    setText($('wizTitle'), t(`${base}.title`));
+    setText($('wizSub'), t(`${base}.sub`));
     const p = progress(step, sub);
     $('wizBar').style.width = `${p * 100}%`;
     setAttr($('wizProgress'), 'aria-valuenow', String(Math.round(p * 100)));
-    setAttr($('wizProgress'), 'aria-valuetext', `Step ${step} of 4`);
+    setAttr($('wizProgress'), 'aria-valuetext', t('wizard.stepOf', { step, total: 4 }));
     document.querySelectorAll('#wizSteps [data-step]').forEach((li) => {
       const n = Number(li.dataset.step);
       li.dataset.state = n < step ? 'done' : n === step ? 'current' : 'todo';
@@ -92,7 +95,7 @@ export function renderFlow(state) {
       li.querySelector('.dot').textContent = n < step ? '✓' : String(n);
     });
     $('wizBack').hidden = step === 1;
-    setText($('wizNext'), step === 3 ? 'See my results' : 'Next');
+    setText($('wizNext'), step === 3 ? t('wizard.seeResults') : t('wizard.next'));
     $('wizNote').hidden = true;
     if (!first) {
       $('wizard').scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -102,7 +105,7 @@ export function renderFlow(state) {
     restoreGroups();
     $('inputs').hidden = !showAll;
     setAttr($('btnShowAll'), 'aria-pressed', String(showAll));
-    setText($('btnShowAllText'), showAll ? 'Hide inputs' : 'Show all inputs');
+    setText($('btnShowAllText'), showAll ? t('wizard.hideInputs') : t('wizard.showAllInputs'));
     $('resultsLayout').dataset.inputs = showAll ? 'on' : 'off';
     if (!first && !showAll) $('resultsView').scrollIntoView({ block: 'start', behavior: 'smooth' });
   }

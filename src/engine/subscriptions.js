@@ -1,35 +1,38 @@
 // Subscription types: a label, a one-line guideline, and whether the type
 // counts as a must-pay bill. The type is guessed from the name until the
 // user picks one, so "Netflix" lands in streaming and "Claude" in tools.
+// Labels and tips are read from the "subs" messages in the active language.
+
+import { t } from '../i18n/index.js';
 
 export const SUB_KINDS = {
   streaming: {
-    label: 'Streaming & games', icon: 'tv', need: false,
-    tip: 'Keep one or two at a time and switch each month. You can rejoin any time.'
+    get label() { return t('subs.kinds.streaming.label'); }, icon: 'tv', need: false,
+    get tip() { return t('subs.kinds.streaming.tip'); }
   },
   tools: {
-    label: 'Work & AI tools', icon: 'laptop', need: true,
-    tip: 'Keep it if it saves you time or earns you money. Paying yearly or sharing a team plan is often cheaper.'
+    get label() { return t('subs.kinds.tools.label'); }, icon: 'laptop', need: true,
+    get tip() { return t('subs.kinds.tools.tip'); }
   },
   cloud: {
-    label: 'Cloud storage & apps', icon: 'save', need: false,
-    tip: 'Clear out old files before paying for more space. One family plan can cover everyone at home.'
+    get label() { return t('subs.kinds.cloud.label'); }, icon: 'save', need: false,
+    get tip() { return t('subs.kinds.cloud.tip'); }
   },
   fitness: {
-    label: 'Gym & fitness', icon: 'heart-pulse', need: false,
-    tip: 'Worth it if you go at least twice a week. If not, a pay-per-visit pass is usually cheaper.'
+    get label() { return t('subs.kinds.fitness.label'); }, icon: 'heart-pulse', need: false,
+    get tip() { return t('subs.kinds.fitness.tip'); }
   },
   learning: {
-    label: 'Learning & courses', icon: 'school', need: false,
-    tip: 'Set a finish date. Many apps and courses have a free version that covers the basics.'
+    get label() { return t('subs.kinds.learning.label'); }, icon: 'school', need: false,
+    get tip() { return t('subs.kinds.learning.tip'); }
   },
   membership: {
-    label: 'Memberships & delivery', icon: 'cart', need: false,
-    tip: 'Add up what it saved you last month. If that’s less than the fee, cancel it.'
+    get label() { return t('subs.kinds.membership.label'); }, icon: 'cart', need: false,
+    get tip() { return t('subs.kinds.membership.tip'); }
   },
   other: {
-    label: 'Other', icon: 'repeat', need: false,
-    tip: 'Ask yourself: would I sign up again today at this price?'
+    get label() { return t('subs.kinds.other.label'); }, icon: 'repeat', need: false,
+    get tip() { return t('subs.kinds.other.tip'); }
   }
 };
 export const SUB_KIND_KEYS = Object.keys(SUB_KINDS);

@@ -8,35 +8,35 @@
   </svg>
 
   <footer class="site-footer" aria-labelledby="siteFooterTitle">
-    <h2 id="siteFooterTitle" class="sr-only">Site footer</h2>
+    <h2 id="siteFooterTitle" class="sr-only" data-i18n="layout.footer.title">Site footer</h2>
     <div class="mx-auto max-w-6xl px-4 pb-8 pt-16 sm:px-6 sm:pt-20">
 
       <!-- Call to action + the site's promises, printed as a till receipt -->
       <div class="grid items-center gap-10 lg:grid-cols-[1fr_380px] lg:gap-16">
         <div>
           <p class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-emerald-100 ring-1 ring-white/15">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#f-lock"></use></svg>Your numbers never leave this device
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#f-lock"></use></svg><span data-i18n="layout.footer.privacyBadge">Your numbers never leave this device</span>
           </p>
-          <p class="mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">Find the money hiding in your month.</p>
-          <p class="mt-3 max-w-lg text-base leading-relaxed text-emerald-100/85">Add your bills, switch on a few easy ideas and see what you could save this month, this year and over time. It takes about two minutes.</p>
+          <p class="mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl" data-i18n="layout.footer.headline">Find the money hiding in your month.</p>
+          <p class="mt-3 max-w-lg text-base leading-relaxed text-emerald-100/85" data-i18n="layout.footer.intro">Add your bills, switch on a few easy ideas and see what you could save this month, this year and over time. It takes about two minutes.</p>
           <div class="mt-7 flex flex-wrap gap-3">
-            <a href="/#app" class="btn footer-cta">Start the calculator<svg class="icon icon-sm" aria-hidden="true"><use href="#f-arrow-right"></use></svg></a>
-            <a href="/#guide" class="btn footer-ghost">Read the money tips</a>
+            <a href="/#app" class="btn footer-cta"><span data-i18n="layout.footer.cta">Start the calculator</span><svg class="icon icon-sm" aria-hidden="true"><use href="#f-arrow-right"></use></svg></a>
+            <a href="/#guide" class="btn footer-ghost" data-i18n="layout.footer.ctaTips">Read the money tips</a>
           </div>
         </div>
 
-        <div class="receipt footer-receipt -rotate-1 px-6 pb-7 pt-6 font-mono text-sm text-slate-800 dark:text-slate-200" aria-label="What you get">
-          <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">Budget Optimizer</p>
-          <p class="mt-1 text-center text-xs text-slate-500 dark:text-slate-400">What you pay · what you get</p>
+        <div class="receipt footer-receipt -rotate-1 px-6 pb-7 pt-6 font-mono text-sm text-slate-800 dark:text-slate-200" aria-label="What you get" data-i18n-attr="aria-label:layout.footer.receipt.label">
+          <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400" data-i18n="layout.brand">Budget Optimizer</p>
+          <p class="mt-1 text-center text-xs text-slate-500 dark:text-slate-400" data-i18n="layout.footer.receipt.subtitle">What you pay · what you get</p>
           <div class="rule my-4"></div>
           <dl class="space-y-2">
-            <div class="receipt-line"><dt>Sign-up needed</dt><dd>None</dd></div>
-            <div class="receipt-line"><dt>Data sent to us</dt><dd>0 bytes</dd></div>
-            <div class="receipt-line"><dt>Currencies</dt><dd>8</dd></div>
-            <div class="receipt-line"><dt>Ideas to save</dt><dd>21</dd></div>
+            <div class="receipt-line"><dt data-i18n="layout.footer.receipt.signUp">Sign-up needed</dt><dd data-i18n="layout.footer.receipt.signUpValue">None</dd></div>
+            <div class="receipt-line"><dt data-i18n="layout.footer.receipt.dataSent">Data sent to us</dt><dd data-i18n="layout.footer.receipt.dataSentValue">0 bytes</dd></div>
+            <div class="receipt-line"><dt data-i18n="layout.footer.receipt.currencies">Currencies</dt><dd>8</dd></div>
+            <div class="receipt-line"><dt data-i18n="layout.footer.receipt.ideas">Ideas to save</dt><dd>21</dd></div>
           </dl>
           <div class="rule-double my-4"></div>
-          <div class="receipt-line text-base font-bold"><span>Price</span><span class="text-emerald-700 dark:text-emerald-400">FREE</span></div>
+          <div class="receipt-line text-base font-bold"><span data-i18n="layout.footer.receipt.price">Price</span><span class="text-emerald-700 dark:text-emerald-400" data-i18n="layout.footer.receipt.priceValue">FREE</span></div>
           <p class="mt-4 text-center text-[11px] tracking-wider text-slate-400">$ · £ · € · ₹ · Rs · AED · C$ · A$</p>
         </div>
       </div>
@@ -45,58 +45,58 @@
       <div class="mt-16 grid gap-10 border-t border-white/10 pt-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <a href="/" class="inline-flex min-h-11 items-center gap-2.5 text-lg font-semibold text-white">
-            <img src="/favicon.svg" alt="" width="28" height="28" class="h-7 w-7 rounded-md ring-1 ring-white/20">Budget Optimizer
+            <img src="/favicon.svg" alt="" width="28" height="28" class="h-7 w-7 rounded-md ring-1 ring-white/20"><span data-i18n="layout.brand">Budget Optimizer</span>
           </a>
-          <p class="mt-2 max-w-xs text-sm leading-relaxed text-emerald-100/75">A free, private household budget calculator and savings simulator for families everywhere.</p>
+          <p class="mt-2 max-w-xs text-sm leading-relaxed text-emerald-100/75" data-i18n="layout.footer.tagline">A free, private household budget calculator and savings simulator for families everywhere.</p>
           <a href="/contact/?topic=bug" class="mt-5 inline-flex min-h-11 items-center gap-2 rounded-lg text-sm font-medium text-emerald-200 hover:text-white">
-            <svg class="icon icon-sm" aria-hidden="true"><use href="#f-bug"></use></svg>Report a problem
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#f-bug"></use></svg><span data-i18n="layout.footer.reportProblem">Report a problem</span>
           </a>
         </div>
 
-        <nav aria-label="Calculator">
-          <p class="footer-heading">Calculator</p>
+        <nav aria-label="Calculator" data-i18n-attr="aria-label:layout.footer.calculator.heading">
+          <p class="footer-heading" data-i18n="layout.footer.calculator.heading">Calculator</p>
           <ul class="footer-links">
-            <li><a href="/#app">Start your budget</a></li>
-            <li><a href="/#faq">How it works (FAQ)</a></li>
-            <li><a href="/#glossary">Money words explained</a></li>
+            <li><a href="/#app" data-i18n="layout.footer.calculator.start">Start your budget</a></li>
+            <li><a href="/#faq" data-i18n="layout.footer.calculator.faq">How it works (FAQ)</a></li>
+            <li><a href="/#glossary" data-i18n="layout.footer.calculator.glossary">Money words explained</a></li>
           </ul>
         </nav>
 
-        <nav aria-label="Money tips">
-          <p class="footer-heading">Money tips</p>
+        <nav aria-label="Money tips" data-i18n-attr="aria-label:layout.footer.tips.heading">
+          <p class="footer-heading" data-i18n="layout.footer.tips.heading">Money tips</p>
           <ul class="footer-links">
-            <li><a href="/#leak-1">Cut utility bills</a></li>
-            <li><a href="/#leak-2">Stop subscription creep</a></li>
-            <li><a href="/#leak-3">Spend less on food</a></li>
-            <li><a href="/#leak-5">Beat impulse spending</a></li>
+            <li><a href="/#leak-1" data-i18n="layout.footer.tips.utilities">Cut utility bills</a></li>
+            <li><a href="/#leak-2" data-i18n="layout.footer.tips.subscriptions">Stop subscription creep</a></li>
+            <li><a href="/#leak-3" data-i18n="layout.footer.tips.food">Spend less on food</a></li>
+            <li><a href="/#leak-5" data-i18n="layout.footer.tips.impulse">Beat impulse spending</a></li>
           </ul>
         </nav>
 
-        <nav aria-label="Company">
-          <p class="footer-heading">Help &amp; legal</p>
+        <nav aria-label="Company" data-i18n-attr="aria-label:layout.footer.legal.label">
+          <p class="footer-heading" data-i18n="layout.footer.legal.heading">Help &amp; legal</p>
           <ul class="footer-links">
-            <li><a href="/contact/">Contact us</a></li>
-            <li><a href="/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="/terms-of-use/">Terms of Use</a></li>
+            <li><a href="/contact/" data-i18n="layout.footer.legal.contact">Contact us</a></li>
+            <li><a href="/privacy-policy/" data-i18n="layout.footer.legal.privacy">Privacy Policy</a></li>
+            <li><a href="/terms-of-use/" data-i18n="layout.footer.legal.terms">Terms of Use</a></li>
           </ul>
         </nav>
       </div>
 
       <!-- Small print -->
       <section id="disclaimer" class="mt-12 rounded-2xl bg-black/15 p-5 text-xs leading-relaxed text-emerald-100/70 ring-1 ring-white/10 sm:p-6" aria-labelledby="disclaimerTitle">
-        <h2 id="disclaimerTitle" class="text-sm font-semibold text-white">Financial disclaimer</h2>
+        <h2 id="disclaimerTitle" class="text-sm font-semibold text-white" data-i18n="layout.footer.disclaimer.title">Financial disclaimer</h2>
         <div class="mt-3 grid gap-3 md:grid-cols-2 md:gap-x-10">
-          <p><strong class="font-semibold text-emerald-50">Educational purposes only.</strong> This calculator and guide do not provide financial, investment, tax or legal advice, and nothing here is a recommendation to buy, sell or hold any security or financial product.</p>
-          <p><strong class="font-semibold text-emerald-50">Estimates, not guarantees.</strong> Savings percentages are generalized estimates based on common household benchmarks. Your results depend on your location, providers, rates and habits.</p>
-          <p><strong class="font-semibold text-emerald-50">Investment risk.</strong> Projections are hypothetical, assume a constant return compounded monthly, and exclude taxes and fees. Investments can lose value, and past performance does not guarantee future results.</p>
-          <p><strong class="font-semibold text-emerald-50">Consult a professional.</strong> Before making significant financial decisions, speak with a qualified, licensed financial adviser, accountant or tax professional.</p>
+          <p data-i18n-html="layout.footer.disclaimer.education_html"><strong class="font-semibold text-emerald-50">Educational purposes only.</strong> This calculator and guide do not provide financial, investment, tax or legal advice, and nothing here is a recommendation to buy, sell or hold any security or financial product.</p>
+          <p data-i18n-html="layout.footer.disclaimer.estimates_html"><strong class="font-semibold text-emerald-50">Estimates, not guarantees.</strong> Savings percentages are generalized estimates based on common household benchmarks. Your results depend on your location, providers, rates and habits.</p>
+          <p data-i18n-html="layout.footer.disclaimer.investment_html"><strong class="font-semibold text-emerald-50">Investment risk.</strong> Projections are hypothetical, assume a constant return compounded monthly, and exclude taxes and fees. Investments can lose value, and past performance does not guarantee future results.</p>
+          <p data-i18n-html="layout.footer.disclaimer.professional_html"><strong class="font-semibold text-emerald-50">Consult a professional.</strong> Before making significant financial decisions, speak with a qualified, licensed financial adviser, accountant or tax professional.</p>
         </div>
       </section>
 
       <!-- Bottom bar -->
       <div class="mt-8 flex flex-col-reverse items-start justify-between gap-4 text-xs text-emerald-100/60 sm:flex-row sm:items-center">
-        <p>&copy; __YEAR__ Household Budget Optimizer &amp; Savings Simulator. Made for households, not banks.</p>
-        <a href="#" class="footer-top">Back to top<svg class="icon icon-sm" aria-hidden="true"><use href="#f-arrow-up"></use></svg></a>
+        <p>&copy; __YEAR__ <span data-i18n="layout.footer.copyright">Household Budget Optimizer &amp; Savings Simulator. Made for households, not banks.</span></p>
+        <a href="#" class="footer-top"><span data-i18n="layout.footer.backToTop">Back to top</span><svg class="icon icon-sm" aria-hidden="true"><use href="#f-arrow-up"></use></svg></a>
       </div>
     </div>
   </footer>

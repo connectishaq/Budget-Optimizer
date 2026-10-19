@@ -1,0 +1,2291 @@
+{
+  "rules": {
+    "effort": {
+      "easy": "Easy",
+      "medium": "Takes some effort",
+      "purchase": "Needs a purchase"
+    },
+    "rentBurden": {
+      "label": "Rent / mortgage",
+      "noun": "rent or mortgage",
+      "title": "Lower your housing cost",
+      "why": "Shown because housing takes {pct}% of your income. Above 35% makes the rest of your budget tight.",
+      "flag": "Housing takes {pct}% of your income. Over 35% is a warning sign.",
+      "evidenceOwner": "Refinancing or appealing your property tax usually trims",
+      "evidenceRenter": "Renegotiating at renewal or sharing with a roommate usually cuts",
+      "tips": {
+        "ownerRate": "Ask 2–3 banks for a cheaper mortgage rate.",
+        "ownerTax": "Appeal your property tax if similar homes are valued lower.",
+        "ownerInsurance": "Drop mortgage insurance once you own 20% of the home.",
+        "renterLease": "Ask your landlord for a discount if you sign a longer lease.",
+        "renterRoommate": "Think about a roommate or a smaller place at renewal.",
+        "renterCompare": "Look at other listings 2 months before renewal to compare."
+      }
+    },
+    "insuranceRequote": {
+      "label": "Insurance",
+      "noun": "home and car insurance",
+      "title": "Get new insurance quotes every year",
+      "why": "Shown because your insurance ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Shopping around every year usually cuts",
+      "tips": {
+        "quotes": "Get 3 quotes before your policy renews.",
+        "bundle": "Put home and car with one insurer for a discount.",
+        "excess": "Choose a higher excess you could pay from savings."
+      }
+    },
+    "utilitiesEfficiency": {
+      "label": "Electricity & gas",
+      "noun": "electricity and gas",
+      "title": "Small energy-saving habits",
+      "why": "Shown because your electricity and gas ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Turning heating or cooling down at night, switching off standby devices and using LED bulbs usually cuts",
+      "tips": {
+        "night": "Turn heating or AC down a few degrees at night and when you’re out.",
+        "standby": "Switch TVs and chargers off at the wall.",
+        "led": "Change old bulbs to LED."
+      }
+    },
+    "smartThermostat": {
+      "label": "Electricity & gas",
+      "noun": "electricity and gas",
+      "title": "Install a smart thermostat",
+      "why": "Shown because your electricity and gas ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "A smart thermostat that turns things down for you usually trims a further",
+      "tips": {
+        "rebate": "Check if your power company gives money back for one.",
+        "away": "Turn on the setting that lowers it when everyone leaves.",
+        "report": "Look at its monthly report and fix the most wasteful days."
+      }
+    },
+    "electricitySlab": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Stay under the next price slab",
+      "why": "Shown because your electricity bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Each unit costs more once you pass a slab, so keeping usage just under the next one usually cuts",
+      "tips": {
+        "units": "Find “units used” on your bill. Prices per unit jump at each slab, so aim to stay just under the next one.",
+        "ac": "Run the AC at 26°C with a ceiling fan on, and use timer or eco mode at night.",
+        "peak": "Run the iron, washing machine and water pump outside peak hours."
+      }
+    },
+    "utilitiesTuneup": {
+      "label": "Electricity & gas",
+      "noun": "electricity and gas",
+      "title": "Quick energy tune-up",
+      "why": "Shown because your electricity and gas ({amount}) is close to typical. A few small fixes still help.",
+      "evidence": "Quick fixes like washing clothes in cold water and a water-saving shower head usually cut",
+      "tips": {
+        "shower": "Fit a water-saving shower head.",
+        "cold": "Wash clothes in cold water and only run full loads.",
+        "heater": "Turn the water heater down a little."
+      }
+    },
+    "internetRenegotiate": {
+      "label": "Internet & phone",
+      "noun": "internet and phone",
+      "title": "Ask your provider for a better deal",
+      "why": "Shown because your internet and phone bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Calling your provider and asking for a better deal usually cuts",
+      "tips": {
+        "localBundle": "Switch your mobile to a monthly prepaid bundle instead of loading balance as you go.",
+        "localWifi": "Use Wi-Fi calling and WhatsApp at home instead of mobile minutes.",
+        "localPackage": "Ask your internet provider for a cheaper package if you use less than half your speed.",
+        "newCustomer": "Call and ask for the deal new customers get.",
+        "speedTest": "Do a speed test. If you use less than half, pick a cheaper plan.",
+        "prepaid": "Compare prepaid phone plans on the same network."
+      }
+    },
+    "fuelCarpool": {
+      "label": "Fuel",
+      "noun": "fuel",
+      "title": "Carpool and combine errands",
+      "why": "Shown because your fuel bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Sharing school runs and doing errands in one trip usually cuts",
+      "tips": {
+        "schoolRuns": "Share school runs with 2 or 3 nearby families.",
+        "errands": "Do all your errands in one trip each week.",
+        "tyres": "Check tyre pressure once a month."
+      }
+    },
+    "fuelCarlight": {
+      "label": "Fuel",
+      "noun": "fuel",
+      "title": "Use the car less in the city",
+      "why": "Shown because your fuel bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Walking, cycling or taking public transport for short trips usually cuts",
+      "tips": {
+        "walk": "Walk or cycle for trips under 2 km.",
+        "bigShops": "Use the car only for big weekly shops.",
+        "pass": "Compare your fuel and parking costs with a monthly transport pass."
+      }
+    },
+    "fuelHybridCommute": {
+      "label": "Fuel",
+      "noun": "fuel",
+      "title": "Commute fewer days a week",
+      "why": "Shown because your fuel bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Working from home one or two days a week usually cuts",
+      "tips": {
+        "wfh": "Ask your manager for 1–2 work-from-home days.",
+        "share": "Share rides with a colleague who lives nearby.",
+        "smooth": "Drive smoothly: gentle starts use less fuel."
+      }
+    },
+    "transitPass": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Get a monthly pass or toll tag",
+      "why": "Shown because your fares and tolls ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "A monthly pass or toll tag usually cuts",
+      "tips": {
+        "compare": "Add up last month’s fares and compare with a monthly pass.",
+        "tollTag": "Get a toll tag for cheaper tolls.",
+        "employer": "Ask your employer if they help pay for travel."
+      }
+    },
+    "carRefinance": {
+      "label": "Car loan",
+      "noun": "car loan payment",
+      "title": "Look for a cheaper car loan",
+      "why": "Shown because your car loan payment ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Moving the loan to a lender with a lower interest rate usually cuts",
+      "tips": {
+        "banks": "Ask 2–3 banks for their car loan rate.",
+        "term": "Keep the same number of months left so you don’t pay for longer.",
+        "fee": "Check there’s no fee for paying the old loan off early."
+      }
+    },
+    "groceriesPlan": {
+      "label": "Groceries",
+      "noun": "groceries",
+      "title": "Plan meals and buy store brands",
+      "why": "Shown because your grocery bill ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Planning meals and buying store brands usually cuts",
+      "tips": {
+        "plan": "Plan the week’s meals before you shop, and stick to the list.",
+        "localBulk": "Buy monthly staples (flour, rice, oil, lentils, sugar) once a month in bulk from a wholesale market.",
+        "storeBrand": "Buy the shop’s own brand for basics like rice, flour and oil.",
+        "bigPacks": "Buy big packs of things you always use.",
+        "freeze": "Cook extra and freeze portions for later."
+      }
+    },
+    "diningSwap": {
+      "label": "Eating out",
+      "noun": "eating out and takeaways",
+      "title": "Cook at home more often",
+      "why": "Shown because you spend more eating out ({dining}) than on groceries ({groceries}).",
+      "evidence": "Cooking at home a few more nights a week usually cuts",
+      "tips": {
+        "swap": "Swap 2 takeaway nights a week for quick home meals.",
+        "lunch": "Take lunch to work on weekdays.",
+        "special": "Keep eating out for special occasions."
+      }
+    },
+    "impulse24h": {
+      "label": "Impulse shopping",
+      "noun": "random purchases",
+      "title": "Wait 24 hours before you buy",
+      "why": "Shown because your impulse shopping ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "People who wait 24 hours before buying usually cut",
+      "tips": {
+        "wait": "Wait a day before buying anything you don’t need.",
+        "cards": "Remove saved card details from shopping apps.",
+        "notifications": "Turn off shop notifications and sale emails."
+      }
+    },
+    "schoolDiscounts": {
+      "label": "School fees & childcare",
+      "noun": "school fees and childcare",
+      "title": "Ask about school discounts",
+      "why": "Shown because your school and childcare costs ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Asking for sibling or pay-early discounts usually saves",
+      "tips": {
+        "siblings": "Ask the school about discounts for brothers and sisters.",
+        "upfront": "Ask if paying for the year up front costs less.",
+        "secondHand": "Buy uniforms and books second-hand."
+      }
+    },
+    "medicalGeneric": {
+      "label": "Doctor & medicine",
+      "noun": "doctor visits and medicine",
+      "title": "Ask for generic medicines",
+      "why": "Shown because your doctor and medicine costs ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Choosing generic medicines with the same active ingredient usually cuts",
+      "tips": {
+        "generic": "Ask your doctor or pharmacist for the generic version. It has the same active ingredient and costs less.",
+        "monthlyPack": "Buy medicines you take every month in a monthly pack, not strip by strip.",
+        "localCover": "Check if your employer’s health cover or a hospital card pays for doctor visits.",
+        "insurance": "Check what your health insurance or employer plan already pays for."
+      }
+    },
+    "subsCancelUnused": {
+      "label": "Unused subscriptions",
+      "noun": "subscriptions you rarely use",
+      "title": "Cancel what you rarely use",
+      "why": "Shown because you said you rarely use: {names}.",
+      "unnamed": "Unnamed",
+      "evidence": "Cancelling them saves",
+      "tips": {
+        "cancel": "Cancel them today. You can usually sign up again later.",
+        "trials": "Look at your bank statement for free trials that became paid.",
+        "reminder": "Set a reminder 2 days before any new free trial ends."
+      }
+    },
+    "subsRotate": {
+      "label": "Streaming",
+      "noun": "streaming and games subscriptions",
+      "title": "Keep one streaming service at a time",
+      "why": "Shown because your streaming and games subscriptions ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Keeping one service at a time and choosing cheaper plans usually cuts",
+      "tips": {
+        "one": "Keep one streaming service, then switch next month.",
+        "ads": "Choose the plan with ads, or pay yearly if it’s cheaper.",
+        "family": "Share a family plan with people in your home."
+      }
+    },
+    "subsToolsYearly": {
+      "label": "Work & AI tools",
+      "noun": "work and AI tool subscriptions",
+      "title": "Pay yearly and drop overlapping tools",
+      "why": "Shown because your work and AI tool subscriptions ({amount}) is higher than what's typical for {group} ({threshold}).",
+      "evidence": "Switching to yearly billing and cancelling tools that do the same job usually cuts",
+      "tips": {
+        "yearly": "Switch the tools you use every week to yearly billing. It’s often 15–20% cheaper.",
+        "overlap": "If two tools do the same job (for example two AI assistants), keep the one you use most.",
+        "employer": "Ask your employer to pay for tools you use for work."
+      }
+    },
+    "debtAvalanche": {
+      "label": "Credit card interest",
+      "noun": "credit card interest",
+      "titleLocal": "Pay off the card with a cheaper loan",
+      "title": "Move the balance to a 0% card",
+      "why": "Shown because {name} charges {apr}% interest a year, which is expensive.",
+      "whyUnnamed": "a card",
+      "flag": "{name} charges {apr}% a year in interest.",
+      "flagUnnamed": "A card",
+      "evidenceLocal": "Paying the card off with a personal loan at a much lower rate usually avoids",
+      "evidence": "Moving the balance to a card with 0% interest for a while usually avoids",
+      "orderItem": "{name} ({apr}%)",
+      "orderUnnamed": "Debt",
+      "tips": {
+        "localLoan": "Ask your bank for a personal loan or a card instalment plan at a lower rate, and use it to clear the card (expect a small fee).",
+        "transfer": "Ask your bank about a card with 0% interest on moved balances (usually a 3% fee).",
+        "order": "Pay the highest-interest loan first: {order}.",
+        "minimum": "Keep paying at least the minimum on everything else."
+      }
+    }
+  },
+  "subs": {
+    "kinds": {
+      "streaming": {
+        "label": "Streaming & games",
+        "tip": "Keep one or two at a time and switch each month. You can rejoin any time."
+      },
+      "tools": {
+        "label": "Work & AI tools",
+        "tip": "Keep it if it saves you time or earns you money. Paying yearly or sharing a team plan is often cheaper."
+      },
+      "cloud": {
+        "label": "Cloud storage & apps",
+        "tip": "Clear out old files before paying for more space. One family plan can cover everyone at home."
+      },
+      "fitness": {
+        "label": "Gym & fitness",
+        "tip": "Worth it if you go at least twice a week. If not, a pay-per-visit pass is usually cheaper."
+      },
+      "learning": {
+        "label": "Learning & courses",
+        "tip": "Set a finish date. Many apps and courses have a free version that covers the basics."
+      },
+      "membership": {
+        "label": "Memberships & delivery",
+        "tip": "Add up what it saved you last month. If that’s less than the fee, cancel it."
+      },
+      "other": {
+        "label": "Other",
+        "tip": "Ask yourself: would I sign up again today at this price?"
+      }
+    }
+  },
+  "profiles": {
+    "single": {
+      "name": "Single City Renter",
+      "group": "city renters"
+    },
+    "suburban": {
+      "name": "Suburban Family of 4",
+      "group": "families"
+    },
+    "youngpro": {
+      "name": "Young Professional",
+      "group": "young professionals"
+    },
+    "sample": {
+      "visaCard": "Visa card",
+      "storeCreditCard": "Store credit card",
+      "personalLoan": "Personal loan",
+      "rewardsCard": "Rewards card",
+      "studentLoan": "Student loan",
+      "creditCard": "Credit card",
+      "gymMembership": "Gym membership",
+      "icloudStorage": "iCloud storage",
+      "streamingBundle": "Streaming bundle",
+      "cloudStorage": "Cloud storage",
+      "languageApp": "Language app",
+      "fitnessApp": "Fitness app",
+      "googleOneStorage": "Google One storage",
+      "festivals": "Festivals (Eid, Diwali, Christmas…)",
+      "festivalsDiwali": "Festivals (Diwali, Eid, Christmas…)",
+      "schoolBooks": "School books, uniforms and admission",
+      "carService": "Car service and repairs",
+      "travelHome": "Travel and trips home",
+      "overtime": "Overtime",
+      "festivalBonus": "Festival bonus (Eid, Diwali, Christmas…)",
+      "performanceBonus": "Yearly performance bonus",
+      "sideJobs": "Extra work or side jobs"
+    }
+  },
+  "calc": {
+    "categories": {
+      "housing": "Housing",
+      "utilities": "Bills & utilities",
+      "transport": "Getting around",
+      "family": "Food, family & fun",
+      "care": "Health, help & giving",
+      "yearly": "Once-a-year costs",
+      "debt": "Loan payments",
+      "subscriptions": "Subscriptions"
+    },
+    "presets": {
+      "emergency": "Emergency fund first",
+      "debt": "Debt first",
+      "even": "Split evenly",
+      "goals": "Goals first"
+    },
+    "otherCosts": "other costs",
+    "otherIncome": "other income",
+    "health": {
+      "labels": {
+        "excellent": "Excellent",
+        "good": "Good",
+        "okay": "Okay",
+        "needsAttention": "Needs attention"
+      },
+      "parts": {
+        "savings": "Saving each month",
+        "housing": "Housing cost",
+        "debt": "Debt",
+        "emergency": "Emergency fund",
+        "wants": "Nice-to-haves"
+      },
+      "savings": {
+        "negative": "Your bills cost more than you earn, so nothing is left to save. The goal is to keep 20% ({target}) each month.",
+        "low": "You keep {pct} of your income after bills. Aim for 20% ({target} a month).",
+        "good": "You keep {pct} of your income after bills. That beats the 20% goal."
+      },
+      "housing": {
+        "comfortable": "Housing takes {pct} of your income. Under 30% is comfortable.",
+        "high": "Housing takes {pct} of your income. Try to keep it under 30% ({target}).",
+        "free": "You own your home or live rent-free, so housing isn’t a worry.",
+        "unknown": "Your rent or mortgage is empty. Tell us if you own your home or live rent-free to get these points.",
+        "missing": "You said you pay for housing. Add your rent or mortgage to get these points."
+      },
+      "debt": {
+        "payments": "Loan payments take {pct} of your income. Under 10% is healthy.",
+        "none": "You have no loan payments. Great.",
+        "highApr": "A card charges over 15% interest a year, which costs you extra."
+      },
+      "emergency": {
+        "noBills": "Add your bills so we can check this.",
+        "none": "You have no savings set aside for emergencies. Aim for {target} (3 months of essential bills).",
+        "under3": "Your emergency savings cover {months} months of essential bills. Aim for 3 months ({target}) first.",
+        "under6": "Your emergency savings cover {months} months of essential bills. Next goal: 6 months ({target}).",
+        "done": "You have 6 months or more of essential bills saved. Excellent."
+      },
+      "wants": {
+        "share": "Eating out, shopping and subscriptions take {pct} of your income.",
+        "good": "Under 30% is a good target.",
+        "high": "Try to bring them under 30% ({target})."
+      },
+      "tip": {
+        "savings": {
+          "other": "Biggest boost: saving more of your income each month could add up to {count} points."
+        },
+        "housingPaid": {
+          "other": "Biggest boost: lowering your housing cost could add up to {count} points."
+        },
+        "housingQuestion": {
+          "other": "Biggest boost: answering the housing question could add up to {count} points."
+        },
+        "debtHighApr": {
+          "other": "Biggest boost: paying off high-interest cards could add up to {count} points."
+        },
+        "debtLoans": {
+          "other": "Biggest boost: lowering your loan payments could add up to {count} points."
+        },
+        "emergency": {
+          "other": "Biggest boost: building your emergency fund could add up to {count} points."
+        },
+        "wants": {
+          "other": "Biggest boost: spending a little less on nice-to-haves could add up to {count} points."
+        },
+        "perfect": "Every part is in great shape. Keep it up!"
+      }
+    }
+  },
+  "format": {
+    "currencies": {
+      "USD": "USD — US Dollar",
+      "GBP": "GBP — British Pound",
+      "EUR": "EUR — Euro",
+      "INR": "INR — Indian Rupee",
+      "PKR": "PKR — Pakistani Rupee",
+      "AED": "AED — UAE Dirham",
+      "CAD": "CAD — Canadian Dollar",
+      "AUD": "AUD — Australian Dollar"
+    },
+    "lakh": "{amount} lakh",
+    "crore": "{amount} crore",
+    "lakhShort": "{amount} L",
+    "croreShort": "{amount} Cr",
+    "duration": {
+      "now": "right away",
+      "months": {
+        "one": "{count} month",
+        "other": "{count} months"
+      },
+      "years": {
+        "one": "{count} year",
+        "other": "{count} years"
+      },
+      "yearsMonths": "{years} {months}"
+    },
+    "parse": {
+      "digits": "Please type digits only, like 1500",
+      "negative": "This can't be less than zero",
+      "tooBig": "That number is too big"
+    },
+    "pctWords": {
+      "all": "all of it (100%)",
+      "threeQuarters": "about three quarters (75%)",
+      "half": "about half (50%)",
+      "third": "about a third (33%)",
+      "quarter": "about a quarter (25%)",
+      "fifth": "about a fifth (20%)",
+      "tenth": "about a tenth (10%)",
+      "about": "about {pct}%"
+    }
+  },
+  "inputs": {
+    "groups": {
+      "income": {
+        "title": "Income"
+      },
+      "extras": {
+        "title": "Extra income during the year",
+        "blurb": "Bonuses, overtime, side work… Enter the total for the whole year and we’ll spread it over 12 months. Skip if none."
+      },
+      "housing": {
+        "title": "Housing",
+        "blurb": "Rent or mortgage, and home insurance."
+      },
+      "utilities": {
+        "title": "Bills & utilities",
+        "blurb": "Power, water, gas, internet and phone."
+      },
+      "transport": {
+        "title": "Getting around",
+        "blurb": "Fuel, fares, car insurance and car loan."
+      },
+      "family": {
+        "title": "Food, family & fun",
+        "blurb": "School, groceries, eating out and shopping."
+      },
+      "care": {
+        "title": "Health, help & giving",
+        "blurb": "Medicine, household help, money for family and charity. Skip what doesn’t apply."
+      },
+      "yearly": {
+        "title": "Once-a-year costs",
+        "blurb": "Big costs that don’t come every month. Enter the total for the whole year and we’ll work out what to put aside each month."
+      },
+      "debt": {
+        "title": "Loans and credit cards",
+        "blurb": "Optional. Skip if you have none."
+      },
+      "subs": {
+        "title": "Subscriptions",
+        "blurb": "Optional. Streaming, AI and work tools, gym, apps and memberships."
+      },
+      "savings": {
+        "title": "Emergency savings",
+        "blurb": "Optional. Money already set aside."
+      }
+    },
+    "fields": {
+      "income": {
+        "label": "Monthly take-home pay",
+        "help": "After tax. The amount that reaches your bank account."
+      },
+      "rent": {
+        "label": "Rent or mortgage"
+      },
+      "homeIns": {
+        "label": "Home or renter's insurance"
+      },
+      "electricity": {
+        "label": "Electricity"
+      },
+      "waterGas": {
+        "label": "Water and gas"
+      },
+      "internet": {
+        "label": "Internet and phone"
+      },
+      "fuel": {
+        "label": "Fuel"
+      },
+      "transit": {
+        "label": "Bus, train, taxi fares and tolls"
+      },
+      "carIns": {
+        "label": "Car insurance"
+      },
+      "carLoan": {
+        "label": "Car loan payment"
+      },
+      "school": {
+        "label": "School fees or childcare"
+      },
+      "groceries": {
+        "label": "Groceries"
+      },
+      "dining": {
+        "label": "Eating out and takeaways"
+      },
+      "misc": {
+        "label": "Impulse shopping and extras"
+      },
+      "medical": {
+        "label": "Doctor visits and medicine"
+      },
+      "homeHelp": {
+        "label": "Household help (maid, cook, driver)"
+      },
+      "familySupport": {
+        "label": "Money you send to family"
+      },
+      "giving": {
+        "label": "Charity and religious giving"
+      },
+      "other": {
+        "label": "Anything else you pay each month"
+      },
+      "emergencyFund": {
+        "label": "Money saved for emergencies",
+        "help": "A total amount, not monthly."
+      },
+      "perMonth": "a month"
+    },
+    "presets": {
+      "extra": {
+        "festivalBonus": "Festival bonus (Eid, Diwali, Christmas…)",
+        "performanceBonus": "Yearly performance bonus",
+        "appreciationBonus": "Appreciation bonus",
+        "overtime": "Overtime",
+        "sideWork": "Extra work or side jobs",
+        "thirteenthMonth": "13th-month salary",
+        "taxRefund": "Tax refund"
+      },
+      "yearly": {
+        "festivals": "Festivals (Eid, Diwali, Christmas…)",
+        "weddings": "Weddings and gifts",
+        "schoolBooks": "School books, uniforms and admission",
+        "carService": "Car service and repairs",
+        "insurance": "Yearly insurance",
+        "travel": "Travel and trips home",
+        "homeRepairs": "Home repairs"
+      }
+    },
+    "housing": {
+      "question": "Do you own your home or live rent-free?",
+      "helpLabel": "Own your home or live rent-free",
+      "yes": "Yes",
+      "no": "No, I pay for housing",
+      "freeYes": "Got it. We won’t count housing as a cost.",
+      "freeNo": "Please add your rent or mortgage above so your results are accurate."
+    },
+    "chips": {
+      "tapToAdd": "Tap to add",
+      "addOwn": "Add your own",
+      "empty": "Nothing added yet. Tap a suggestion above, or add your own."
+    },
+    "rows": {
+      "remove": "Remove {name}",
+      "whatIsIt": "What is it?",
+      "thisDebt": "this debt",
+      "thisSubscription": "this subscription",
+      "thisCost": "this cost",
+      "thisIncome": "this income"
+    },
+    "debts": {
+      "addCard": "Add a credit card",
+      "addLoan": "Add a loan",
+      "name": "Name",
+      "type": "Type",
+      "typeCard": "Credit card",
+      "typeLoan": "Loan",
+      "placeholderCard": "e.g. Bank credit card",
+      "placeholderLoan": "e.g. Personal loan",
+      "balance": "Amount owed",
+      "apr": "Yearly interest rate (APR) %",
+      "payment": "Monthly payment",
+      "empty": "No loans or cards added. That’s fine. Skip this if you don’t have any.",
+      "aprCapped": "Rates above 100% are very unusual, so we’ve used 100%. Check your statement."
+    },
+    "subs": {
+      "add": "Add a subscription",
+      "service": "Service",
+      "placeholder": "e.g. Netflix or Claude",
+      "cost": "Cost per month",
+      "type": "Type",
+      "rarely": "I rarely use this",
+      "empty": "No subscriptions yet. Add streaming, apps or a gym, and tick the ones you rarely use.",
+      "byType": "By type",
+      "total": "Total",
+      "summaryOver": "That’s {pct}% of your income. A good guide is under {guide}% ({limit}). Start with the ones you rarely use.",
+      "summaryWithin": "That’s {pct}% of your income, within the guide of under {guide}%."
+    },
+    "yearly": {
+      "placeholder": "e.g. Birthday gifts",
+      "cost": "Cost for the whole year",
+      "perMonth": "That’s {amount} to put aside each month."
+    },
+    "extras": {
+      "placeholder": "e.g. Eid bonus",
+      "amount": "Amount for the whole year",
+      "perMonth": "That adds about {amount} a month to your income."
+    },
+    "subtitle": {
+      "startHere": "Start here",
+      "optional": "Optional",
+      "saved": "{amount} saved",
+      "added": {
+        "one": "{amount} · {count} added",
+        "other": "{amount} · {count} added"
+      }
+    },
+    "typical": {
+      "nothing": "usually nothing",
+      "range": "usually {min} to {max} a month",
+      "tip": "{help} For {group}, this is {range}{approx}.",
+      "approximate": " (a rough guide for this currency)",
+      "higher": "Higher than typical for {group} (usually up to {max})"
+    },
+    "toast": {
+      "removed": "{name} removed",
+      "undo": "Undo",
+      "sampleLoaded": "Example budget loaded for a {profile}",
+      "fallback": {
+        "debts": "Loan",
+        "subscriptions": "Subscription",
+        "yearly": "Cost",
+        "extras": "Extra income"
+      }
+    },
+    "sample": {
+      "goalHoliday": "Family holiday",
+      "goalLaptop": "New laptop"
+    }
+  },
+  "wizard": {
+    "stepOf": "Step {step} of {total}",
+    "billsProgress": "Bills: {name} ({n} of {total})",
+    "next": "Next",
+    "seeResults": "See my results",
+    "showAllInputs": "Show all inputs",
+    "hideInputs": "Hide inputs",
+    "steps": {
+      "1": {
+        "title": "What’s your monthly income?",
+        "sub": "Your take-home pay after tax, plus any bonuses or overtime during the year. You can change it any time."
+      },
+      "2": {
+        "title": "Where does your money go?",
+        "sub": "Type what you usually spend in a month. Leave a box empty if it doesn’t apply."
+      },
+      "3": {
+        "title": "Any loans or subscriptions?",
+        "sub": "This step is optional. Skip it if you have none."
+      }
+    },
+    "billPages": {
+      "housing": {
+        "name": "Housing"
+      },
+      "utilities": {
+        "name": "Bills & utilities"
+      },
+      "transport": {
+        "name": "Getting around"
+      },
+      "family": {
+        "name": "Food, family & fun"
+      },
+      "care": {
+        "name": "Health, help & giving"
+      },
+      "yearly": {
+        "name": "Once-a-year costs",
+        "title": "Any big costs once a year?",
+        "sub": "Festivals, school books, car repairs… Spread over the year, they stop catching you out. Skip if none."
+      }
+    }
+  },
+  "help": {
+    "ariaLabel": "What does “{label}” mean?",
+    "sheetTitle": "Help",
+    "text": {
+      "profile": "Pick the household most like yours. We compare your bills with similar homes, so the tips fit your life.",
+      "currency": "Changes the money symbol and the “typical” amounts we compare your bills with.",
+      "period": "Show every amount per month or per year. Your numbers stay the same; only the display changes.",
+      "income": "The money that reaches your bank account each month after tax. Use your take-home pay, not your salary before tax.",
+      "rent": "What you pay each month to rent your home, or your mortgage payment if you’re buying it.",
+      "homeIns": "Insurance that pays out if your home or belongings are damaged or stolen. Leave empty if you don’t have it.",
+      "electricity": "Your average monthly electricity bill. If it changes with the seasons, use a rough average.",
+      "waterGas": "Your monthly water and gas bills added together.",
+      "internet": "Home internet plus mobile phone bills, added together.",
+      "fuel": "Petrol or diesel for all your vehicles in a month.",
+      "transit": "Bus, train, ride-hailing fares and road tolls in a month.",
+      "carIns": "Car insurance per month. If you pay once a year, divide the yearly cost by 12.",
+      "carLoan": "Your monthly car loan or lease payment.",
+      "school": "School fees, tuition, day care or babysitting per month.",
+      "groceries": "Food and household items you buy at shops and markets.",
+      "dining": "Restaurants, cafés, takeaways and food delivery.",
+      "misc": "Shopping you didn’t plan: clothes, gadgets, gifts, online orders and treats.",
+      "medical": "Doctor visits, tests and medicine in a typical month. If it changes a lot, use a rough average.",
+      "homeHelp": "Wages for a maid, cook, driver, guard or babysitter who helps at home.",
+      "familySupport": "Money you regularly send to parents or other family members.",
+      "giving": "Donations to charity and religious giving, such as zakat, tithes or offerings at your mosque, church or temple, as a monthly amount.",
+      "other": "Any regular monthly cost that doesn’t fit the boxes above, like pet food, a committee payment or tuition classes.",
+      "extraAmount": "The total you expect for the whole year, after tax. We divide it by 12 and add it to your monthly income. For overtime that changes, use a rough yearly total.",
+      "yearlyCost": "The total for the whole year. We divide it by 12 to show what to put aside each month.",
+      "emergencyFund": "Money you’ve already put aside for surprises, like losing your job or a big repair. This is a total, not a monthly amount.",
+      "debtName": "A name to recognise this card or loan, like “Bank card”.",
+      "debtType": "Credit cards usually charge much more interest than loans.",
+      "debtBalance": "How much you still owe on this card or loan today.",
+      "debtApr": "The yearly interest rate (APR): the extra the lender charges each year for borrowing, as a percentage. You’ll find it on your statement. Lower is better.",
+      "debtPayment": "How much you pay towards this card or loan each month.",
+      "subName": "The service, like Netflix or a gym.",
+      "subCost": "What it costs each month. If you pay yearly, divide by 12.",
+      "subKind": "What kind of subscription this is. We guess it from the name; change it if we got it wrong. Work tools count as a must-pay bill, the rest as nice-to-haves.",
+      "subRarely": "Tick this if you used it fewer than twice last month. We’ll suggest cancelling it.",
+      "housingFree": "Some people own their home outright or live with family for free. If that’s you, we won’t count housing against you.",
+      "summary": "A one-line overview of your money, based on the numbers you entered.",
+      "spendNow": "All the monthly bills you entered, added up.",
+      "spendCould": "Your bills after the changes you added to your plan.",
+      "saveMonth": "The money freed up each month by the changes in your plan. Interest you avoid on debt isn’t counted here.",
+      "saveYear": "Your monthly savings × 12.",
+      "top3": "The three biggest savings we found, with the easiest one at the top. A good place to start.",
+      "health": "A score from 0 to 100 that checks five things: saving, housing, debt, emergency fund and nice-to-haves. Higher is better.",
+      "split": "Compares your spending with a common guideline: about half on must-pay bills, a third on nice-to-haves and a fifth saved.",
+      "categories": "Each bar shows how much of your income goes to that area. The thin line shows what’s typical for households like yours.",
+      "payday": "A short checklist for the day your pay arrives: put money aside for yearly costs, save first, and keep a weekly limit for spending. Tick each step off every month.",
+      "allowance": "Your eating out and shopping budget after the ideas in your plan, split into weeks. Spending a fixed amount each week is easier to stick to than a monthly total.",
+      "plan": "Ideas to spend less, based on your bills. Add the ones you’ll really do to your plan; only those count.",
+      "cut": "Move the slider to the share you really think you can cut. Not sure? Keep our suggestion.",
+      "addToPlan": "Only changes you add count towards your savings, charts and goal dates.",
+      "interestAvoided": "Interest is the extra money a lender charges you. Avoiding it doesn’t put cash in your pocket today, but your debt gets paid off sooner.",
+      "years": "How long you keep saving. More years give your money more time to grow.",
+      "rate": "How much your savings grow each year on average. Safe accounts grow slowly; investing can grow faster but goes up and down.",
+      "inflation": "Prices rise over time, so the same money buys less in future. This shows future amounts in today’s money.",
+      "allocation": "This is the money left each month after your bills and your plan. Choose how to share it between your emergency fund, your debt and your goals.",
+      "goals": "Things you’re saving for. We work out when you’ll reach each one using the share of savings you give to goals.",
+      "emergency": "Money kept aside for surprises like losing your job or a car repair. Aim for 3 to 6 months of essential bills.",
+      "debtFree": "When your loans would be fully paid off: now, and if you put your debt share of savings towards them.",
+      "history": "Save a snapshot each month to see whether your spending is going down over time."
+    }
+  },
+  "months": {
+    "toast": {
+      "sampleNotSaved": "Example budgets aren’t saved. Use your own numbers first.",
+      "addNumbersFirst": "Add some numbers first",
+      "saveFailed": "Your browser didn’t let us save. Download a backup to keep your numbers.",
+      "saved": "{month} saved",
+      "partialNoEdit": "Only the totals were kept for {month}, so it can’t be opened for editing.",
+      "editing": "Editing {month}. Changes save to that month.",
+      "loaded": "{month} loaded",
+      "backTo": "{done} saved. Back to {month}.",
+      "numbersBack": "{month}’s numbers are back",
+      "deleted": "{month} deleted",
+      "undo": "Undo",
+      "savedAndRemoved": "{month} saved. {drop} was removed."
+    },
+    "welcome": {
+      "titleCompared": "Welcome back. Compared with {month}:",
+      "titleWent": "Welcome back. Here’s how {month} went compared with {prev}:",
+      "same": {
+        "spend": "Your spending stayed the same.",
+        "leftOver": "You kept the same amount left over.",
+        "score": "Your health score stayed the same."
+      },
+      "spentLess": "You spent {amount} less.",
+      "spentMore": "You spent {amount} more.",
+      "leftOverMore": "You had {amount} more left over.",
+      "leftOverLess": "You had {amount} less left over.",
+      "scoreUp": {
+        "one": "Your health score went up {count} point.",
+        "other": "Your health score went up {count} points."
+      },
+      "scoreDown": {
+        "one": "Your health score went down {count} point.",
+        "other": "Your health score went down {count} points."
+      }
+    },
+    "deleteDialog": {
+      "title": "Delete {month}?",
+      "message": "This removes the saved numbers for that month from this device. Your other months stay as they are.",
+      "confirm": "Delete month"
+    },
+    "banners": {
+      "editing": "You’re editing {month}. Changes save to {monthOnly}.",
+      "copiedLast": "We’ve copied last month’s numbers. Update anything that changed.",
+      "copiedFrom": "We’ve copied your numbers from {month}. Update anything that changed.",
+      "cap": {
+        "other": "You have {count} saved months, the most this browser keeps. Saving {month} removes your oldest month, {drop}. Download a backup first to keep a copy."
+      },
+      "capConfirm": "Save and remove {month}"
+    },
+    "status": {
+      "sample": "Example budgets aren’t saved to your history.",
+      "editing": "Editing {month}. Changes save by themselves.",
+      "saved": "{month} is saved (last update {time}). It updates by itself as you change your numbers.",
+      "savedOn": "{month} is saved (last update {time}, {date}). It updates by itself as you change your numbers.",
+      "autoSave": "{month} saves by itself as you change your numbers."
+    },
+    "leftOver": "{amount} left over",
+    "monthCount": {
+      "one": "{count} month",
+      "other": "{count} months"
+    },
+    "otherCurrency": {
+      "one": "{count} month saved in another currency is left out.",
+      "other": "{count} months saved in another currency are left out."
+    },
+    "same": "Same",
+    "stats": {
+      "best": "Best month",
+      "bestEmpty": "Shows once two months are saved",
+      "streak": "Savings streak",
+      "streakOn": "In a row with money left over, or more than the month before",
+      "streakOff": "Starts with a month that has money left over",
+      "saved": "Months saved",
+      "since": "Since {month}",
+      "sinceCurrencies": {
+        "other": "Since {month} · {count} currencies"
+      }
+    },
+    "trend": {
+      "names": {
+        "spend": "Total spending",
+        "leftOver": "Money left over",
+        "score": "Health score"
+      },
+      "scoreNeedsIncome": "The health score needs your income. It shows once two saved months have one.",
+      "needTwoSameCurrency": "Your chart appears once two months are saved in the same currency.",
+      "needTwo": "Your chart appears once two months are saved.",
+      "note": {
+        "one": "{name}, {count} month.",
+        "other": "{name}, {count} months."
+      },
+      "aria": "{name} by month: {items}.",
+      "ariaItem": "{month} {value}",
+      "tipChange": "{amount} on the month before"
+    },
+    "bars": {
+      "income": "Income",
+      "spending": "Spending",
+      "total": "Total",
+      "leftOverAbove": "Above each month: money left over",
+      "totalsOnly": {
+        "one": "{count} month kept only totals, so it isn’t split by category.",
+        "other": "{count} months kept only totals, so they aren’t split by category."
+      },
+      "ariaFlow": "Income and spending by month: {items}.",
+      "ariaFlowItem": "{month} income {income}, spending {spend}",
+      "ariaCategories": "Spending by category for each month: {items}.",
+      "ariaCategoriesItem": "{month} {amount}",
+      "fit": {
+        "other": "Showing the latest {shown} of {count} months. Use a wider screen, or turn your phone sideways, to see more."
+      },
+      "empty": "Nothing to show yet.",
+      "shortBy": "Short by {amount}"
+    },
+    "alerts": {
+      "steadySummary": "Nothing unusual. Your bills are steady.",
+      "needTwoSummary": "Shows once two months with full details are saved.",
+      "steady": "No bill has gone steadily up or down, or changed by 15% or more lately.",
+      "needTwo": "Save two months with your full numbers to see what’s changing."
+    },
+    "compare": {
+      "totalsOnlySuffix": " · totals only",
+      "pickDifferent": "Pick two different months to compare them.",
+      "pickTwo": "Pick two months to see what changed.",
+      "needTwo": "Shows once two months are saved.",
+      "differentCurrencies": "These months use different currencies ({a} and {b}), so they can’t be compared.",
+      "differentCurrenciesSummary": "{b} and {a} use different currencies.",
+      "partialNote": "Only the totals were kept for {month}, so bills can’t be compared one by one.",
+      "showAll": "Show bills that didn’t change",
+      "caption": "{a} compared with {b}",
+      "item": "Item",
+      "change": "Change",
+      "summarySame": "{b} vs {a}: same spending.",
+      "summaryLess": "{b} vs {a}: spent {amount} less.",
+      "summaryMore": "{b} vs {a}: spent {amount} more.",
+      "summaryPlain": "{b} vs {a}"
+    },
+    "goals": {
+      "tracked": {
+        "one": "{count} goal tracked across your saved months.",
+        "other": "{count} goals tracked across your saved months."
+      },
+      "savedIn": "Saved in {month}. Change shows next month.",
+      "up": "Up {amount} since {month}.",
+      "down": "Down {amount} since {month}.",
+      "noChange": "No change since {month}.",
+      "defaultName": "Goal",
+      "progress": "{saved} of {target} ({pct})"
+    },
+    "list": {
+      "summary": {
+        "one": "{count} month saved, up to {max}. View, edit or delete any of them.",
+        "other": "{count} months saved, up to {max}. View, edit or delete any of them."
+      },
+      "thisMonth": "This month",
+      "editing": "Editing",
+      "totalsOnly": "Totals only",
+      "compareAria": "Compare {month} with the month before",
+      "editAria": "Edit {month}",
+      "deleteAria": "Delete {month}",
+      "partialTitle": "Only totals were kept for this month"
+    },
+    "backupStatus": {
+      "today": "Last backup: today.",
+      "yesterday": "Last backup: yesterday.",
+      "daysAgo": {
+        "one": "Last backup: {count} day ago.",
+        "other": "Last backup: {count} days ago."
+      },
+      "none": "No backup yet. Download one to keep a copy of your history.",
+      "empty": "Download or open a backup file."
+    },
+    "saveMonth": "Save {month}",
+    "saveThisMonth": "Save this month"
+  },
+  "backup": {
+    "share": {
+      "copied": "Link copied",
+      "copyManual": "Press Ctrl+C (or long-press) to copy the selected link",
+      "invalid": "That share link is invalid or incomplete",
+      "dialog": {
+        "title": "Open shared budget?",
+        "message": "This link contains budget numbers someone shared with you. Loading it replaces the numbers you’re working on now. Your saved months are kept.",
+        "confirm": "Load shared budget"
+      },
+      "loaded": "Shared budget loaded"
+    },
+    "downloaded": "Backup downloaded",
+    "savedMonths": {
+      "one": "{count} saved month",
+      "other": "{count} saved months"
+    },
+    "olderMonths": {
+      "one": "{count} older month",
+      "other": "{count} older months"
+    },
+    "monthsNone": "no saved months",
+    "monthsSingle": "1 saved month ({month})",
+    "monthsRange": "{months} ({from} – {to})",
+    "tooLarge": "That file is too large to be a budget backup",
+    "notBackup": "That file isn't a budget backup",
+    "openDialog": {
+      "title": "Open this backup?",
+      "message": "“{file}” has {backupMonths}, plus your numbers and settings. This device has {hereMonths}. Merge adds the backup’s months to these (where both have the same month, the one saved most recently is kept). Replace swaps everything here for the backup.",
+      "overflow": {
+        "other": "Only the newest {count} months are kept, so merging would remove {dropped}."
+      },
+      "merge": "Merge",
+      "replace": "Replace"
+    },
+    "imported": {
+      "opened": "Backup opened: {months} on this device",
+      "openedDropped": "Backup opened: {months} on this device, {dropped} left out",
+      "merged": "Backup merged: {months} on this device",
+      "mergedDropped": "Backup merged: {months} on this device, {dropped} left out"
+    },
+    "print": {
+      "title": "My savings plan",
+      "spendNow": "What you spend now",
+      "perMonth": "{amount} a month",
+      "couldSave": "Money you could save each month",
+      "couldSpend": "What you could spend",
+      "perYear": "That’s this much a year",
+      "healthScore": "Budget health score",
+      "changes": "Changes in my plan ({count})",
+      "cols": {
+        "change": "Change",
+        "effort": "Effort",
+        "cost": "Cost to start",
+        "monthly": "Saves a month",
+        "yearly": "Saves a year"
+      },
+      "interestNote": "(interest avoided, not counted as monthly savings)",
+      "nothing": "Nothing",
+      "emptyPlan": "Nothing added to the plan yet.",
+      "goals": "Goals",
+      "defaultGoal": "Goal",
+      "disclaimer": "These are estimates to help you plan, not financial advice. Worked out privately in your browser."
+    }
+  },
+  "historyEngine": {
+    "fields": {
+      "rent": "Rent or mortgage",
+      "homeIns": "Home insurance",
+      "electricity": "Electricity",
+      "waterGas": "Water and gas",
+      "internet": "Internet and phone",
+      "fuel": "Fuel",
+      "transit": "Fares and tolls",
+      "carIns": "Car insurance",
+      "carLoan": "Car loan",
+      "school": "School fees",
+      "groceries": "Groceries",
+      "dining": "Eating out",
+      "misc": "Impulse shopping",
+      "medical": "Medical costs",
+      "homeHelp": "Household help",
+      "familySupport": "Money sent to family",
+      "giving": "Giving",
+      "other": "Other bills",
+      "subscriptions": "Subscriptions"
+    },
+    "compare": {
+      "pay": "Take-home pay",
+      "extras": "Extra income (monthly average)",
+      "income": "Total income",
+      "spend": "Total spending",
+      "leftOver": "Money left over",
+      "score": "Health score"
+    },
+    "alerts": {
+      "risingSingular": {
+        "one": "{label} has gone up {count} month in a row.",
+        "other": "{label} has gone up {count} months in a row."
+      },
+      "risingPlural": {
+        "one": "{label} have gone up {count} month in a row.",
+        "other": "{label} have gone up {count} months in a row."
+      },
+      "fallingSingular": {
+        "one": "{label} has gone down {count} month in a row.",
+        "other": "{label} has gone down {count} months in a row."
+      },
+      "fallingPlural": {
+        "one": "{label} have gone down {count} month in a row.",
+        "other": "{label} have gone down {count} months in a row."
+      },
+      "upSinceSingular": "{label} is up {pct}% since {month}.",
+      "upSincePlural": "{label} are up {pct}% since {month}.",
+      "downSinceSingular": "{label} is down {pct}% since {month}.",
+      "downSincePlural": "{label} are down {pct}% since {month}."
+    }
+  },
+  "page": {
+    "skipLink": "Skip to the calculator",
+    "header": {
+      "navLabel": "Main",
+      "brand": "Budget Optimizer",
+      "nav": {
+        "calculator": "Calculator",
+        "tips": "Money tips",
+        "glossary": "Word list"
+      }
+    },
+    "hero": {
+      "privacy": "100% Private. Your financial data is processed locally and never leaves your device.",
+      "title_html": "Household Budget Optimizer <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Savings Simulator</span>",
+      "lead": "Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.",
+      "start": "Start: about 2 minutes",
+      "note": "Free. No sign-up. Works in 8 currencies, including rupees in lakh and crore.",
+      "receipt": {
+        "title": "Your month",
+        "badge": "Example",
+        "income": "Income",
+        "bills": "Bills",
+        "leftOver": "Left over",
+        "plan": "+ Your plan",
+        "toSave": "To save"
+      }
+    },
+    "common": {
+      "seeExample": "See an example",
+      "backToMonth": "Back to this month",
+      "downloadBackup": "Download backup",
+      "addIncome": "Add my income",
+      "chartKey": "Chart key"
+    },
+    "how": {
+      "title": "How this tool works",
+      "step1": {
+        "title": "Enter your bills",
+        "body": "What you spend in a normal month."
+      },
+      "step2": {
+        "title": "We compare with typical households",
+        "body": "Each bill, against homes like yours."
+      },
+      "step3": {
+        "title": "We suggest changes",
+        "body": "With the sum behind each saving."
+      },
+      "step4": {
+        "title": "See how much you could save",
+        "body": "Monthly, yearly and over time."
+      }
+    },
+    "adLabel": "Advertisement",
+    "wizard": {
+      "stepsLabel": "Steps",
+      "steps": {
+        "income_html": "<span class=\"dot\">1</span>Your income",
+        "bills_html": "<span class=\"dot\">2</span>Your bills",
+        "loans_html": "<span class=\"dot\">3</span>Loans &amp; subscriptions",
+        "results_html": "<span class=\"dot\">4</span>Your results"
+      },
+      "startOver": "Start over",
+      "skip": "Skip to results",
+      "progressLabel": "Your progress",
+      "note_html": "Your income lets us work out your health score and what’s left over. You can add it later. Press <strong>Next</strong> again to carry on without it.",
+      "back": "Back",
+      "justLooking_html": "Just looking? <button type=\"button\" data-action=\"sample\" class=\"min-h-11 link\">See an example budget</button>"
+    },
+    "results": {
+      "title": "Your results",
+      "editNumbers": "Edit my numbers",
+      "sectionsLabel": "Results sections",
+      "nav": {
+        "summary": "Summary",
+        "ideas": "Ideas",
+        "payday": "Payday",
+        "health": "Health",
+        "spending": "Spending",
+        "growth": "Growth",
+        "planAhead": "Plan ahead",
+        "history": "History"
+      },
+      "label": "Your results"
+    },
+    "inputs": {
+      "title": "All your numbers",
+      "who": "Who is this budget for?",
+      "householdType": "Household type",
+      "profiles": {
+        "single": "Single City Renter",
+        "suburban": "Suburban Family of 4",
+        "youngpro": "Young Professional"
+      },
+      "currency": "Currency",
+      "periodLegend": "Show amounts per month or per year",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "example": "Example",
+      "startOverLabel": "Start over"
+    },
+    "banners": {
+      "sample_html": "This is an <strong class=\"font-semibold\">example budget</strong> for a <span id=\"sampleProfile\">Suburban Family of 4</span>.",
+      "useOwn": "Use my own numbers",
+      "sampleTip_html": "Tip: the <button type=\"button\" id=\"sampleFull\" class=\"link\">Suburban Family of 4 example</button> shows every kind of income and bill you can add.",
+      "welcomeClose": "Close the welcome note",
+      "startBlank": "Start from blank instead",
+      "backupDue": "It’s been over 30 days since your last backup. Your history is only in this browser.",
+      "notNow": "Not now",
+      "addIncome": "Add your income to see your health score and what’s left over."
+    },
+    "empty": {
+      "title": "Nothing to show yet",
+      "body": "Add your income and a few bills, and your results appear here straight away.",
+      "enter": "Enter my numbers"
+    },
+    "summary": {
+      "label": "Summary",
+      "saveMonth": "Money you could save each month",
+      "perYear_html": "<span id=\"sumAnnual\">0</span> a year",
+      "spendNow": "What you spend now",
+      "couldSpend": "What you could spend",
+      "interest_html": "You’d also avoid <strong id=\"interestAmount\" class=\"font-semibold text-white\"></strong> of debt interest. Not counted above; it clears your debt sooner.",
+      "receiptTitle_html": "Your <span data-period-word=\"\">month</span>, added up",
+      "bonuses": "+ Bonuses (spread over the year)",
+      "billsEntered": "Bills you entered",
+      "planSavings": "+ Savings from your plan",
+      "leftWithPlan": "Left with your plan"
+    },
+    "plan": {
+      "title": "Ways to spend less",
+      "intro": "Switch on the ideas you’ll really try. Only those count in your results.",
+      "top3": "Top 3 things to do first",
+      "more": "More ideas",
+      "order": "Order",
+      "sort": {
+        "savings": "Biggest savings",
+        "easy": "Easiest first"
+      },
+      "empty": "Your bills already look good. None are higher than typical for this household type."
+    },
+    "payday": {
+      "title": "Your payday plan",
+      "intro": "Do these the day your pay arrives. It takes about 10 minutes.",
+      "dayLabel": "My pay arrives on the",
+      "empty_html": "Add your income to get your payday plan. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Add my income</button>",
+      "reminder": "Remind me every payday"
+    },
+    "health": {
+      "title": "Budget health",
+      "empty_html": "Add your income to see your health score. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Add my income</button>",
+      "outOf": "out of 100",
+      "breakdown": "Score breakdown"
+    },
+    "spending": {
+      "title": "Where your money goes",
+      "empty_html": "Add your income to see how your money is split. <button type=\"button\" class=\"min-h-11 link\" data-edit-step=\"1\">Add my income</button>",
+      "splitTitle": "How your income is split",
+      "guideline": "A common guideline: 50% on must-pay bills, 30% on nice-to-haves, 20% saved.",
+      "byCategory": "By category",
+      "legendYou": "You",
+      "legendTypical": "Typical"
+    },
+    "growth": {
+      "title": "How your savings could grow",
+      "intro": "This assumes you put your leftover money into savings every month and it grows at the rate you pick.",
+      "alt": "If you also save the extra money:",
+      "cur": "If you keep going as you are:",
+      "extra_html": "Extra money you’d have <span id=\"fvYears\"></span>",
+      "years": "How many years?",
+      "rate": "How fast your savings grow each year",
+      "inflation": "Show in today’s money (prices rise over time)",
+      "pricesRise": "Prices rise by",
+      "perYear": "% a year",
+      "yearByYear": "See the numbers year by year",
+      "tableCaption": "Savings by year",
+      "colYear": "Year",
+      "colAsYouAre": "As you are",
+      "colSavingExtra": "Saving the extra",
+      "disclaimer": "An example, not a promise or investment advice. It assumes the same growth every year and ignores tax and fees."
+    },
+    "goals": {
+      "title": "Plan ahead",
+      "intro": "Decide where the money you save should go.",
+      "allocTitle": "Where should your savings go?",
+      "quickOptions": "Quick options",
+      "efTitle": "Emergency fund",
+      "debtTitle": "When will I be debt-free?",
+      "goalsTitle": "Things you’re saving for",
+      "goalEmpty": "No goals yet. Add one, like a holiday or a deposit for a home.",
+      "addGoal": "Add a goal"
+    },
+    "share": {
+      "title": "Print or share",
+      "summary": "Print your plan, or make a link to it.",
+      "printTitle": "Print",
+      "printBody": "A one-page plan with your numbers and the changes you chose.",
+      "printButton": "Print or save as PDF",
+      "linkTitle": "Share a link",
+      "linkBody": "Only if you choose. The link has your numbers inside it, so anyone with it can see them. Nothing is uploaded.",
+      "makeLink": "Make a share link",
+      "urlLabel": "Your share link",
+      "copy": "Copy"
+    },
+    "months": {
+      "title": "Month by month",
+      "localNote": "Your history is saved only in this browser on this device. Use Backup to keep a copy or move it to another device.",
+      "safariNote": "On iPhone and iPad, Safari may clear website data after some days without visits, and your history with it. Download a backup each month to keep a safe copy.",
+      "closeNote": "Close this note",
+      "empty": "Nothing saved yet. This month saves by itself as you enter your numbers. Come back next month to see what changed.",
+      "overTime": "Over time",
+      "trendLegend": "What the chart shows",
+      "trend": {
+        "spend": "Spending",
+        "leftOver": "Left over",
+        "score": "Score"
+      },
+      "eachMonth": "Each month",
+      "barsLegend": "What the bars show",
+      "bars": {
+        "flow": "Income vs spending",
+        "cats": "By category"
+      },
+      "changing": "What’s changing",
+      "compare": "Compare two months",
+      "firstMonth": "First month",
+      "secondMonth": "Second month",
+      "goalsOverTime": "Goals over time",
+      "savedMonths": "Saved months",
+      "savedMonthsCaption": "Saved months",
+      "col": {
+        "month": "Month",
+        "spent": "Spent",
+        "leftOver": "Left over",
+        "score": "Score",
+        "change": "vs month before",
+        "actions": "Actions"
+      },
+      "backupTitle": "Backup",
+      "backupBody": "One file with every saved month and your settings. Keep it somewhere safe, or open it on another device to carry on there.",
+      "openBackup": "Open a backup"
+    },
+    "guide": {
+      "toc": {
+        "title": "Table of contents",
+        "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Phantom power &amp; utilities",
+        "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Subscription creep",
+        "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Groceries &amp; dining out",
+        "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transport &amp; insurance",
+        "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse spending &amp; interest",
+        "wealth": "Turn leaks into wealth",
+        "faq": "FAQ",
+        "try": "Try the calculator"
+      },
+      "eyebrow": "Money tips · 5 minute read",
+      "title": "5 Hidden Household Expense Leaks (And How to Plug Them Today)",
+      "intro1_html": "Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.",
+      "intro2": "The good news? Leaks are usually the easiest money to recover. Unlike cutting back on things you love, plugging a leak typically means paying less for exactly the same lifestyle. Here are the five most common hidden household expense leaks, and the practical steps you can take today to stop each one.",
+      "howToPlug": "How to plug it",
+      "leak1": {
+        "title_html": "<span class=\"num-badge\">1</span>Phantom Power and Inefficient Utilities",
+        "body_html": "Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This \"phantom load\", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.",
+        "fix1_html": "<strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.",
+        "fix2_html": "<strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.",
+        "fix3_html": "<strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.",
+        "fix4": "Wash laundry in cold water and set your water heater to 120°F (49°C)."
+      },
+      "leak2": {
+        "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
+        "body_html": "Streaming services, cloud storage, app memberships, meal kits, fitness apps and \"free trials\" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.",
+        "fix1_html": "Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.",
+        "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
+        "fix3": "Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.",
+        "fix4": "Set a calendar reminder two days before any free trial ends."
+      },
+      "leak3": {
+        "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Dining-Out Premium",
+        "body_html": "Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.",
+        "fix1_html": "<strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.",
+        "fix2": "Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.",
+        "fix3": "Shop once a week with a list, and schedule one \"leftovers night\" to clear the fridge.",
+        "fix4": "Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday."
+      },
+      "leak4": {
+        "title_html": "<span class=\"num-badge\">4</span>Transport and Insurance on Autopilot",
+        "body_html": "Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.",
+        "fix1_html": "<strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.",
+        "fix2": "Keep tires properly inflated, which can improve fuel economy by up to 3%.",
+        "fix3": "Compare monthly transit passes and toll transponder discounts against what you pay per trip.",
+        "fix4_html": "<strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover."
+      },
+      "leak5": {
+        "title_html": "<span class=\"num-badge\">5</span>Impulse Spending and High-Interest Debt",
+        "body_html": "The daily coffee, the late-night online order, the \"it was on sale\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.",
+        "fix1_html": "<strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
+        "fix2": "Remove saved card details from shopping sites and turn off retailer notifications.",
+        "fix3_html": "<strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.",
+        "fix4": "Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest."
+      },
+      "wealth": {
+        "title": "Turn Plugged Leaks Into Real Wealth",
+        "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.",
+        "p2_html": "Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+        "p3": "Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is my financial data safe in this calculator?",
+      "a1": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
+      "q2": "How are the savings estimates worked out?",
+      "a2": "Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open \"How did we get this?\" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.",
+      "q3": "What does the \"Add to my plan\" switch do?",
+      "a3": "Only ideas you add to your plan count towards what you could spend, the money you could save, the growth chart, your goal dates and your debt-free date. Switch an idea off if it doesn't fit your life and every figure updates instantly.",
+      "q4": "What is the 50/30/20 budget rule?",
+      "a4": "It's a simple guideline: spend about half of your take-home pay on must-pay bills such as housing, power, groceries and loan payments, about a third on nice-to-haves such as eating out and subscriptions, and save about a fifth.",
+      "q5": "How is the budget health score calculated?",
+      "a5": "The score from 0 to 100 adds up five parts: how much you save each month (30 points), housing cost (20), debt (15), emergency savings (20) and spending on nice-to-haves (15). Each part has a sentence explaining your result and what to aim for.",
+      "q6": "Which growth rate should I pick for my savings?",
+      "a6": "A safe savings account has recently paid around 4% a year. Long-term investing in a broad mix of shares has averaged around 8% a year over long periods, but it goes up and down. Growth is never guaranteed, so try a few options and switch on \"Show in today's money\" to allow for rising prices.",
+      "q7": "How big should my emergency fund be?",
+      "a7": "A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.",
+      "q8": "Can I use rupees and other currencies?",
+      "a8": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures."
+    },
+    "glossary": {
+      "title": "Money words, explained simply",
+      "netIncome": {
+        "term": "Net income (take-home pay)",
+        "definition": "The money you actually receive after tax and other deductions. Use this number as your income."
+      },
+      "emergencyFund": {
+        "term": "Emergency fund",
+        "definition": "Savings kept aside only for surprises, like losing your job or a big repair. A common goal is 3 to 6 months of must-pay bills."
+      },
+      "apr": {
+        "term": "Interest rate (APR)",
+        "definition": "The yearly cost of borrowing, shown as a percentage. At 30% APR, owing 100,000 for a whole year adds about 30,000 in interest."
+      },
+      "compound": {
+        "term": "Compound growth",
+        "definition": "When your savings earn money, and then that money earns money too. Over many years, savings grow faster and faster."
+      },
+      "inflation": {
+        "term": "Inflation",
+        "definition": "Prices slowly rise over time, so the same money buys a little less each year. Around 3% a year is common."
+      },
+      "needsWants": {
+        "term": "Needs and wants",
+        "definition": "Needs are must-pay bills like rent, power and groceries. Wants are nice-to-haves like eating out, shopping and subscriptions."
+      },
+      "balanceTransfer": {
+        "term": "Balance transfer",
+        "definition": "Moving what you owe on one credit card to another card with lower (often 0%) interest for a while, usually for a one-off fee."
+      },
+      "lakhCrore": {
+        "term": "Lakh and crore",
+        "definition": "Ways of counting big amounts in Pakistan and India. 1 lakh = 100,000. 1 crore = 100 lakh = 10,000,000."
+      }
+    },
+    "mobileBar": {
+      "seeIdeas": "See ideas"
+    },
+    "dialog": {
+      "gotIt": "Got it",
+      "cancel": "Cancel"
+    }
+  },
+  "seo": {
+    "title": "Household Budget Optimizer & Savings Simulator | Free, Private Calculator",
+    "description": "Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.",
+    "ogTitle": "Household Budget Optimizer & Savings Simulator",
+    "ogDescription": "Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.",
+    "twitterTitle": "Household Budget Optimizer & Savings Simulator",
+    "twitterDescription": "Find out where your money goes and how much you could save. A 100% private, in-browser tool.",
+    "ogImageAlt": "Household Budget Optimizer: an example month showing income, bills and money to save",
+    "app": {
+      "name": "Household Budget Optimizer & Savings Simulator",
+      "description": "A private, in-browser household budget tool that guides you through your bills, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow.",
+      "featureList": [
+        "Step-by-step guided setup",
+        "Plain-language savings ideas",
+        "Budget health score",
+        "How your money is split (50/30/20)",
+        "Savings growth projection in today's money",
+        "Goal planner",
+        "Payday checklist with calendar reminder",
+        "Weekly spending limit",
+        "Once-a-year costs spread into monthly amounts",
+        "Emergency fund check",
+        "Debt-free date",
+        "Eight currencies with lakh and crore display"
+      ]
+    },
+    "faq": {
+      "q1": "Is my financial data safe in this calculator?",
+      "a1": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
+      "q2": "How are the savings estimates worked out?",
+      "a2": "Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open \"How did we get this?\" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.",
+      "q3": "What does the \"Add to my plan\" switch do?",
+      "a3": "Only ideas you add to your plan count towards what you could spend, the money you could save, the growth chart, your goal dates and your debt-free date. Switch an idea off if it doesn't fit your life and every figure updates instantly.",
+      "q4": "What is the 50/30/20 budget rule?",
+      "a4": "It's a simple guideline: spend about half of your take-home pay on must-pay bills such as housing, power, groceries and loan payments, about a third on nice-to-haves such as eating out and subscriptions, and save about a fifth.",
+      "q5": "How is the budget health score calculated?",
+      "a5": "The score from 0 to 100 adds up five parts: how much you save each month (30 points), housing cost (20), debt (15), emergency savings (20) and spending on nice-to-haves (15). Each part has a sentence explaining your result and what to aim for.",
+      "q6": "Which growth rate should I pick for my savings?",
+      "a6": "A safe savings account has recently paid around 4% a year. Long-term investing in a broad mix of shares has averaged around 8% a year over long periods, but it goes up and down. Growth is never guaranteed, so try a few options and switch on \"Show in today's money\" to allow for rising prices.",
+      "q7": "How big should my emergency fund be?",
+      "a7": "A common guideline is 3 to 6 months of must-pay bills. Aim for the higher end if your household has one income, pay that changes, or people who depend on you. The tool shows how long you have now and how long it takes to reach each level.",
+      "q8": "Can I use rupees and other currencies?",
+      "a8": "Yes. You can switch between USD, GBP, EUR, INR, PKR, AED, CAD and AUD. Pakistani and Indian rupees use typical amounts for households in Pakistan and India, and rupee amounts are shown in lakh and crore. Other currencies use a rough guide based on US figures."
+    }
+  },
+  "dashboard": {
+    "summary": {
+      "tips": {
+        "one": "{count} tip",
+        "other": "{count} tips"
+      },
+      "easyTips": {
+        "one": "{count} easy tip",
+        "other": "{count} easy tips"
+      },
+      "save": {
+        "month": "By following {tips}, you could save an extra {amount} every month.",
+        "year": "By following {tips}, you could save an extra {amount} every year."
+      },
+      "noTips": "Switch on a few ideas below to see how much you could save.",
+      "spendOnly": {
+        "month": "You spend {spend} a month on the bills you entered.",
+        "year": "You spend {spend} a year on the bills you entered."
+      },
+      "overspend": {
+        "month": "You earn {income} but spend {spend} a month, which is {gap} more than you earn.",
+        "year": "You earn {income} but spend {spend} a year, which is {gap} more than you earn."
+      },
+      "earnSpend": {
+        "month": "You earn {income} and spend {spend} a month.",
+        "year": "You earn {income} and spend {spend} a year."
+      }
+    },
+    "optimizedSub": {
+      "less": {
+        "month": "{pct} less than now, per month",
+        "year": "{pct} less than now, per year"
+      },
+      "plain": {
+        "month": "per month",
+        "year": "per year"
+      }
+    },
+    "receipt": {
+      "takeHome": "Take-home pay",
+      "income": "Income",
+      "notAdded": "not added",
+      "shortBy": "Short by",
+      "leftOver": "Left over",
+      "noteLeft": "Money you could put into savings, an emergency fund or paying off debt.",
+      "noteShort": "Your bills are still higher than your income. Switch on more ideas, or look at your biggest bills.",
+      "noteNoIncome": "Add your income to see what’s left over."
+    },
+    "over": {
+      "fixed_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan would fix this and leave {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan bring the gap down to {left}{per}. Switch on more ideas, or look at housing and loans."
+    },
+    "split": {
+      "needs": "Must-pay bills",
+      "wants": "Nice-to-haves",
+      "savings": "Left to save",
+      "within": "{icon} Within the {target}% guideline",
+      "short": "{amount}{per} short of the {target}% guideline",
+      "over": "{amount}{per} over the {target}% guideline",
+      "ofIncome_html": "<span class=\"font-semibold text-slate-900 dark:text-white\">{pct}</span><span class=\"muted\"> of income</span>",
+      "guideline": "Guideline: {target}%"
+    },
+    "categories": {
+      "basisIncome": "Share of your income, compared with a typical {profile}.",
+      "basisIncomeApprox": "Share of your income, compared with a typical {profile} (a rough guide for this currency).",
+      "basisSpend": "Share of your total spending. Add your income to compare with typical households.",
+      "typical": "Typical: {pct} of income",
+      "higher": "Higher than typical (about {pct})",
+      "nothingFor": "Nothing entered for: {list}."
+    },
+    "mobile": {
+      "saveYear": "You could save each year",
+      "saveMonth": "You could save each month"
+    }
+  },
+  "common": {
+    "per": {
+      "month": "/month",
+      "year": "/year"
+    },
+    "perShort": {
+      "month": "/mo",
+      "year": "/yr"
+    },
+    "periodWord": {
+      "month": "month",
+      "year": "year"
+    },
+    "confirm": "Confirm",
+    "undo": "Undo"
+  },
+  "plan": {
+    "explain": {
+      "interest": "Your high-interest card balance costs you about {base} a month in interest. {evidence} {words} of that interest. {pct}% of {base} = {monthly} a month you’d avoid. This isn’t cash in your pocket: it means more of each payment goes to the debt itself, so you’re debt-free sooner.",
+      "interestChosen": "Your high-interest card balance costs you about {base} a month in interest. {evidence} {words} of that interest. You chose {pct}%. {pct}% of {base} = {monthly} a month you’d avoid. This isn’t cash in your pocket: it means more of each payment goes to the debt itself, so you’re debt-free sooner.",
+      "start": "You told us you spend {amount} a month on {noun}.",
+      "stacked": "After the other changes to this bill in your plan, {amount} is left.",
+      "evidence": "{evidence} {words}.",
+      "evidenceOfThis": "{evidence} {words} of this spending.",
+      "chosen": "You chose {pct}% instead.",
+      "sum": "{pct}% of {base} = {monthly}."
+    },
+    "details": "Details",
+    "youSpend": "You spend",
+    "youCouldSpend": "You could spend",
+    "youSave": "You save",
+    "whatToDo": "What to do",
+    "howDidWeGetThis": "How did we get this?",
+    "howMuchCut": "How much do you think you can cut?",
+    "keepSuggestion": "Not sure? Keep our suggestion.",
+    "useSuggestion": "Use our suggestion",
+    "ourSuggestion": "Our suggestion is {pct}%.",
+    "addToPlan": "Add to my plan: {label}",
+    "added": "Added ✓",
+    "notAdded": "Not added",
+    "costsOnce": "Costs {amount} once",
+    "noCost": "No cost to start",
+    "effort": {
+      "easy": "Easy",
+      "medium": "Takes some effort",
+      "purchase": "Needs a purchase"
+    },
+    "avoid": "Avoid",
+    "interestNow": "Interest you pay now",
+    "interestAfter": "Interest after the change",
+    "interestAvoid": "Interest you’d avoid",
+    "perMonthParen": "({amount}/month)",
+    "perYearParen": "({amount}/year)",
+    "interestNote": "This doesn’t count as monthly savings. The benefit is paying your debt off sooner.",
+    "costPayback": "Costs {amount} once, pays for itself in {time}.",
+    "longTime": "a long time",
+    "noCostRightAway": "No cost to start · Starts saving: Right away",
+    "sliderValue": "{pct}%, saves {amount} {per}",
+    "showFewer": "Show fewer ideas",
+    "showMore": {
+      "one": "Show {count} more idea",
+      "other": "Show {count} more ideas"
+    },
+    "count": "{done} of {total} added to your plan"
+  },
+  "goals": {
+    "bucket": {
+      "emergency": "Emergency fund",
+      "debt": "Paying off debt",
+      "goals": "Your goals"
+    },
+    "why": {
+      "emergency": "your emergency fund is already at 6 months",
+      "debt": "you have no loans",
+      "goals": "you have no goals yet"
+    },
+    "alloc": {
+      "valueText": "{pct}%, {amount} a month",
+      "perMonth": "{amount}/month",
+      "noteShort": "Your bills cost {amount} a month more than you earn, so there’s nothing to share out yet. Add more ideas to your plan to close the gap.",
+      "noteNoMoney": "Add your income and some ideas to your plan first. Then you can choose where the money goes.",
+      "noteUnassigned": "You have nothing to save towards yet. Add a goal, a loan or an emergency fund target.",
+      "noteInactive": "Because {reasons}, that share goes to your other priorities.",
+      "and": "{a} and {b}",
+      "noteAfterBills": "After your bills, you have {amount} a month left to save. The three amounts above add up to that.",
+      "noteAfterPlan": "After your bills and your plan, you have {amount} a month left to save. The three amounts above add up to that."
+    },
+    "row": {
+      "name": "What are you saving for?",
+      "namePlaceholder": "e.g. Holiday",
+      "remove": "Remove goal {name}",
+      "target": "How much you need",
+      "saved": "Saved so far"
+    },
+    "status": {
+      "needTarget": "Type how much you need.",
+      "done": "Done! You have enough for this.",
+      "unreachable": "{pct} saved. Give goals a share of your savings above to see a date.",
+      "progress": "{pct} saved · {remaining} to go · ready in {time} ({date})"
+    },
+    "basis": {
+      "putting": "You’re putting {amount} a month towards goals, finishing them one at a time from the top.",
+      "giveShare": "Give goals a share of your savings above to see when you’ll reach them.",
+      "typeEach": "Type how much you need for each goal to see when you’ll reach it.",
+      "allSaved": "Every goal already has enough saved, so your goals share goes to your other priorities."
+    },
+    "emergency": {
+      "needBills": "Add your must-pay bills (housing, bills, groceries, transport) so we can work out how much to keep aside.",
+      "done": "Done",
+      "toGoAbout": "{amount} to go · about {time}",
+      "toGo": "{amount} to go",
+      "cover_html": "Your savings of <strong class=\"text-slate-900 dark:text-white\">{fund}</strong> would cover <strong class=\"text-slate-900 dark:text-white\">{months} months</strong> of must-pay bills ({essentials} a month).",
+      "none": "You have no emergency savings yet. Your must-pay bills are {amount} a month.",
+      "first3": "First goal, 3 months: {amount}",
+      "safe6": "Safe level, 6 months: {amount}",
+      "using": "Using {amount} a month from your savings.",
+      "giveShare": "Give the emergency fund a share of your savings above to see how long this takes."
+    },
+    "debt": {
+      "none_html": "No loans or credit cards added. If you have any, add them in step 3 (<button type=\"button\" class=\"font-semibold text-indigo-700 underline dark:text-indigo-300\" data-edit-step=\"3\">add loans</button>) to see when you’ll be debt-free.",
+      "yourLoan": "your loan",
+      "yourCard": "your credit card",
+      "never": "Never, at today’s payments",
+      "owe_html": "You owe <strong class=\"text-slate-900 dark:text-white\">{total}</strong> in total.",
+      "keepPaying": "If you keep paying as now",
+      "durationInterest": "{time} · {interest} in interest",
+      "paymentSmaller": "Your payment is smaller than the interest",
+      "ifAddAmount": "If you add {amount}/month",
+      "ifAddShare": "If you add your debt share",
+      "giveShare": "Give debt a share of your savings above",
+      "sooner_html": "Pay the highest-interest loan first with the extra {amount} a month, and you’re debt-free <strong>{time} sooner</strong> and pay <strong>{saved} less</strong> in interest.",
+      "neverAll": "At least one debt will never be paid off at today’s payments.",
+      "payMore": "Pay more than {amount} a month on {name}.",
+      "addPayment": "Add a monthly payment for {name}."
+    },
+    "summary": {
+      "alloc": "{preset}: {emergency} emergency · {debt} debt · {goals} goals a month",
+      "ownSplit": "Your own split",
+      "allocShort": "Your bills cost more than you earn, so nothing is left to share out yet.",
+      "allocNoIncome": "Add your income and some ideas first, then choose where the money goes.",
+      "emergencyNoBills": "Add your bills to check this.",
+      "emergencyFull": "{months} months of bills saved. Fully covered.",
+      "emergencyStart": "{months} months of bills saved. Good start.",
+      "emergencyIn": "{months} months saved. 3 months in about {time}.",
+      "emergencyNeedsShare": "{months} months saved. 3 months needs a share of your savings.",
+      "debtNone": "No loans or cards added.",
+      "debtNever": "Never at today’s payments. Open to see why.",
+      "debtFreeSooner": "Debt-free by {date}, {time} sooner.",
+      "debtFreeBy": "Debt-free by {date}.",
+      "debtFreeNow": "Debt-free by {date} at today’s payments.",
+      "goalsNone": "No goals yet.",
+      "goalsTypeEach": "Type how much you need for each goal.",
+      "goalsCovered": "All your goals are covered.",
+      "goalReady": "{name} ready by {date}.",
+      "firstGoal": "First goal",
+      "goalsNeedShare": {
+        "one": "{count} goal. Give goals a share of your savings to see dates.",
+        "other": "{count} goals. Give goals a share of your savings to see dates."
+      }
+    },
+    "removed": "Goal \"{name}\" removed",
+    "untitled": "Untitled"
+  },
+  "payday": {
+    "list": {
+      "fallback": "your yearly costs",
+      "two": "{a} and {b}",
+      "more": {
+        "one": "{a}, {b} and {count} more",
+        "other": "{a}, {b} and {count} more"
+      }
+    },
+    "steps": {
+      "yearly": {
+        "title": "Put {amount} aside for once-a-year costs",
+        "text": "Keep it in a separate account, so the money is ready for {names} ({total} a year)."
+      },
+      "yearlyAdd": {
+        "title": "Any big costs that come once a year?",
+        "text": "Festivals, school books or car repairs can wreck a month. Add them and we’ll show what to put aside each month.",
+        "action": "Add yearly costs"
+      },
+      "save": {
+        "title": "Move {amount} to savings first",
+        "text": "Do it the day your pay arrives, before any spending, so it can’t get used by accident. An automatic transfer makes it effortless.",
+        "action": "Choose where it goes"
+      },
+      "short": {
+        "titleShort": "Your costs are {amount} more than your income",
+        "titleNothing": "Nothing is left over to save yet",
+        "text": "Switch on more ideas to spend less, so there’s something to save on payday.",
+        "action": "See ideas to spend less"
+      },
+      "allowance": {
+        "title": "Spend up to {amount} a week on eating out and shopping",
+        "text": "That’s {amount} a month, after the ideas in your plan. Move it to a separate card or take it as cash each week. When it’s gone, wait for next week."
+      },
+      "bonus": {
+        "title": "When a bonus comes in, save it first",
+        "textMany": "{names} add about {amount} a month on average, but it doesn’t come every month. Put each payment straight into savings or towards your yearly costs, so everyday bills never depend on it.",
+        "textOne": "{name} adds about {amount} a month on average, but it doesn’t come every month. Put each payment straight into savings or towards your yearly costs, so everyday bills never depend on it.",
+        "fallbackName": "Your extra income"
+      }
+    },
+    "stepNumber": "Step {n}:",
+    "weeklyLimit": "Weekly spending limit",
+    "progress": {
+      "all": "All done for {month}. Nice work!",
+      "some": "{done} of {total} done for {month}"
+    },
+    "reminderDownloaded": "Reminder downloaded. Open it to add it to your calendar.",
+    "dayOfMonth": "{day}{suffix} of the month",
+    "ordinal": {
+      "st": "st",
+      "nd": "nd",
+      "rd": "rd",
+      "th": "th"
+    },
+    "lastDay": "Last day of the month"
+  },
+  "ics": {
+    "title": "Payday: follow your money plan",
+    "note": "Amounts are from the day you saved this reminder. Open the budget tool to see the latest."
+  },
+  "charts": {
+    "returns": {
+      "safe": {
+        "label": "4%: Safe savings account",
+        "hint": "Grows slowly, with very little risk."
+      },
+      "mixed": {
+        "label": "6%: Savings and investing",
+        "hint": "Some ups and downs along the way."
+      },
+      "longTerm": {
+        "label": "8%: Long-term investing",
+        "hint": "More ups and downs. Works best over 10+ years."
+      },
+      "shares": {
+        "label": "10%: Mostly shares",
+        "hint": "Big ups and downs, and never guaranteed."
+      }
+    },
+    "tip": {
+      "today": "Today",
+      "after": {
+        "one": "After {count} year",
+        "other": "After {count} years"
+      },
+      "alt_html": "Saving the extra: <strong class=\"tabular-nums\">{amount}</strong>",
+      "cur_html": "As you are: <strong class=\"tabular-nums\">{amount}</strong>",
+      "more": "You’d have {amount} more"
+    },
+    "yearsValueText": "{years} years",
+    "years": {
+      "one": "{count} year",
+      "other": "{count} years"
+    },
+    "afterYears": {
+      "one": "after {count} year",
+      "other": "after {count} years"
+    },
+    "on": "On",
+    "off": "Off",
+    "mode": {
+      "real": "Shown in today’s money (assuming prices rise {pct}% a year).",
+      "nominal": "Shown in future money (not adjusted for rising prices)."
+    },
+    "summary": {
+      "empty": "Add ideas to your plan (and your income) to see how your savings could grow.",
+      "main": "If you put {monthly} into savings every month for {years} and it grows {rate}% a year, you could have about {nominal}. Because prices rise, that would feel like about {real} does today.",
+      "asYouAre": "If you keep going as you are, you’d have about {amount}."
+    },
+    "ariaLabel": "Line chart. {summary}",
+    "year": "Year {n}",
+    "now": "Now"
+  },
+  "reset": {
+    "cleared": "Numbers cleared. Your goals and saved months are kept.",
+    "deleteAll": {
+      "title": "Delete everything?",
+      "message": "This removes all your numbers, goals and every saved month from this device. It can’t be undone. Download a backup first if you might want them later.",
+      "confirm": "Delete everything",
+      "backupFirst": "Download backup first"
+    },
+    "deleted": "Everything was deleted from this device",
+    "startOver": {
+      "title": "Start over?",
+      "message": "Clear my numbers empties your income, bills, loans, subscriptions, yearly costs and plan choices, and takes you back to step 1. Your goals, settings and saved months are kept. Delete everything also removes your goals and every saved month.",
+      "clear": "Clear my numbers"
+    }
+  },
+  "app": {
+    "announceSavings": "Money you could save each month: {amount}.",
+    "theme": {
+      "toLight": "Switch to light mode",
+      "toDark": "Switch to dark mode"
+    },
+    "saved": "Saved on this device",
+    "notSaved": "Not saved (storage blocked)"
+  },
+  "layout": {
+    "header": {
+      "skipToContent": "Skip to content",
+      "nav": {
+        "calculator": "Calculator",
+        "moneyTips": "Money tips",
+        "contact": "Contact"
+      },
+      "navLabel": "Main"
+    },
+    "brand": "Budget Optimizer",
+    "footer": {
+      "title": "Site footer",
+      "privacyBadge": "Your numbers never leave this device",
+      "headline": "Find the money hiding in your month.",
+      "intro": "Add your bills, switch on a few easy ideas and see what you could save this month, this year and over time. It takes about two minutes.",
+      "cta": "Start the calculator",
+      "ctaTips": "Read the money tips",
+      "receipt": {
+        "subtitle": "What you pay · what you get",
+        "signUp": "Sign-up needed",
+        "signUpValue": "None",
+        "dataSent": "Data sent to us",
+        "dataSentValue": "0 bytes",
+        "currencies": "Currencies",
+        "ideas": "Ideas to save",
+        "price": "Price",
+        "priceValue": "FREE",
+        "label": "What you get"
+      },
+      "tagline": "A free, private household budget calculator and savings simulator for families everywhere.",
+      "reportProblem": "Report a problem",
+      "calculator": {
+        "heading": "Calculator",
+        "start": "Start your budget",
+        "faq": "How it works (FAQ)",
+        "glossary": "Money words explained"
+      },
+      "tips": {
+        "heading": "Money tips",
+        "utilities": "Cut utility bills",
+        "subscriptions": "Stop subscription creep",
+        "food": "Spend less on food",
+        "impulse": "Beat impulse spending"
+      },
+      "legal": {
+        "heading": "Help & legal",
+        "contact": "Contact us",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "label": "Company"
+      },
+      "disclaimer": {
+        "title": "Financial disclaimer",
+        "education_html": "<strong class=\"font-semibold text-emerald-50\">Educational purposes only.</strong> This calculator and guide do not provide financial, investment, tax or legal advice, and nothing here is a recommendation to buy, sell or hold any security or financial product.",
+        "estimates_html": "<strong class=\"font-semibold text-emerald-50\">Estimates, not guarantees.</strong> Savings percentages are generalized estimates based on common household benchmarks. Your results depend on your location, providers, rates and habits.",
+        "investment_html": "<strong class=\"font-semibold text-emerald-50\">Investment risk.</strong> Projections are hypothetical, assume a constant return compounded monthly, and exclude taxes and fees. Investments can lose value, and past performance does not guarantee future results.",
+        "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consult a professional.</strong> Before making significant financial decisions, speak with a qualified, licensed financial adviser, accountant or tax professional."
+      },
+      "copyright": "Household Budget Optimizer & Savings Simulator. Made for households, not banks.",
+      "backToTop": "Back to top"
+    },
+    "theme": {
+      "toLight": "Switch to light mode",
+      "toDark": "Switch to dark mode"
+    }
+  },
+  "privacy": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Privacy Policy",
+      "label": "Breadcrumb"
+    },
+    "toc": {
+      "heading": "On this page",
+      "summary": "The short version",
+      "who": "Who we are",
+      "budgetData": "Your budget numbers",
+      "device": "Stored on your device",
+      "sharing": "Share links and backups",
+      "contactData": "When you contact us",
+      "ads": "Ads and cookies",
+      "logs": "Hosting and security logs",
+      "rights": "Your rights",
+      "children": "Children",
+      "transfers": "International transfers",
+      "links": "Links to other websites",
+      "changes": "Changes to this policy",
+      "contact": "Contact"
+    },
+    "title": "Privacy Policy",
+    "lead": "The Household Budget Optimizer is built so that your money stays your business. Your budget numbers are worked out in your own browser and are never sent to us.",
+    "sections": {
+      "summary": {
+        "title": "The short version",
+        "item1_html": "<strong>We never see your budget.</strong> Income, bills, debts, goals and saved months stay in your browser on your device.",
+        "item2_html": "<strong>No account, no sign-up.</strong> We don’t ask for your name, email or bank details to use the calculator.",
+        "item3_html": "<strong>You’re in control.</strong> Delete everything at any time with <em>Start over</em> → <em>Delete everything</em>, or by clearing your browser’s site data.",
+        "item4_html": "<strong>Ads keep the tool free.</strong> Google may use cookies to show ads. You can turn off personalised ads.",
+        "item5_html": "<strong>If you write to us,</strong> we use your name, email and message only to reply."
+      },
+      "who": {
+        "title": "Who we are",
+        "p1_html": "This policy covers the Household Budget Optimizer &amp; Savings Simulator website and calculator (“the site”, “we”, “us”). We are responsible for the personal information described here. You can reach us any time through our <a href=\"/contact/?topic=privacy\">contact form</a>."
+      },
+      "budgetData": {
+        "title": "Your budget numbers are never sent to us",
+        "p1": "Everything you type into the calculator, including your take-home pay, bills, loans, subscriptions, yearly costs, goals and the ideas you add to your plan, is calculated by code running in your browser. None of it is uploaded to our servers or anyone else’s. We have no copy of it, so we can’t see it, sell it or lose it in a data breach.",
+        "p2": "The calculator also never asks for bank logins, account numbers or card numbers. Please don’t send them to us either."
+      },
+      "device": {
+        "title": "What is stored on your device",
+        "table": {
+          "what": "What",
+          "why": "Why",
+          "howLong": "How long",
+          "budgetWhy": "Remembers your numbers, plan choices, goals and settings between visits.",
+          "untilDeleted": "Until you delete it",
+          "historyWhy": "Keeps the months you save so you can compare them. Up to 60 months.",
+          "themeWhy": "Remembers which colour theme you chose.",
+          "budget_html": "Your budget (<code>hbo:v3</code>)",
+          "history_html": "Month-by-month history (<code>hbo:history</code>)",
+          "theme_html": "Light or dark theme (<code>hbo:theme</code>)"
+        },
+        "p1_html": "So that your numbers are still there when you come back, the site saves them in your browser’s <em>local storage</em>. This is a small storage area that belongs to your browser on this device. It is not a cookie and it is not sent over the internet.",
+        "p2_html": "<strong>To delete it:</strong> open the calculator, choose <em>Edit my numbers</em> → <em>Start over</em>, then <em>Clear my numbers</em> (keeps your saved months) or <em>Delete everything</em>. You can also clear this site’s data in your browser settings. Anyone who uses your device and browser can see what is stored, so use a private window on a shared computer."
+      },
+      "sharing": {
+        "title": "Share links, backups, printing and reminders",
+        "p1": "These features only run when you choose them, and none of them upload your budget to us:",
+        "item1_html": "<strong>Share links.</strong> When you press <em>Make a share link</em>, your numbers are packed into the link itself, after the “#” sign. Browsers don’t send that part of a link to the website, so we never receive it. Anyone you give the link to can see the numbers in it, so share it only with people you trust.",
+        "item2_html": "<strong>Backups.</strong> <em>Download backup</em> saves a file to your device. Opening a backup reads it in your browser.",
+        "item3_html": "<strong>Printing and calendar reminders.</strong> The printable plan and the payday reminder file are made on your device."
+      },
+      "contactData": {
+        "title": "When you contact us",
+        "p2": "The form is delivered to our inbox by a third-party form service, which processes the message on our behalf and is not allowed to use it for anything else. We keep messages for up to 12 months after the conversation ends, then delete them, unless we need them longer to deal with a legal claim. We never add you to a mailing list and never sell or rent your details.",
+        "p3": "Please don’t include personal financial details, such as account numbers or passwords, in a message. We don’t need them to help you.",
+        "p1_html": "If you use our <a href=\"/contact/\">contact form</a> or email us, we receive your name, your email address, the topic you choose, your message and the page you were on. We use this only to read and answer your message, fix problems you report and improve the site. Our legal basis is our legitimate interest in replying to you, or the steps you ask us to take."
+      },
+      "ads": {
+        "title": "Advertising and cookies",
+        "p1": "The site is free because it shows ads. Ads are served by Google AdSense. We don’t give Google, or any advertiser, the numbers you enter in the calculator.",
+        "item1": "Third-party vendors, including Google, use cookies to serve ads based on your previous visits to this website and other websites.",
+        "item2": "Google’s use of advertising cookies lets it and its partners serve ads to you based on your visits to this site and other sites on the internet.",
+        "p2": "If you are in the European Economic Area, the UK or Switzerland, you’ll be asked for consent before personalised ads or their cookies are used, and you can change your choice at any time. If you decline, you may still see non-personalised ads, which rely on context rather than your browsing history. Ad-blocking or blocking third-party cookies in your browser also stops personalised ads, and the calculator keeps working either way.",
+        "p3": "The site itself sets no cookies, and we don’t use analytics or tracking tools.",
+        "item3_html": "You can opt out of personalised advertising in <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a>. You can also opt out of some third-party vendors’ personalised ads at <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> or, in Europe, <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
+        "item4_html": "Learn more in <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">how Google uses information from sites or apps that use its services</a>."
+      },
+      "logs": {
+        "title": "Hosting and security logs",
+        "p1": "Like every website, the site is delivered by a hosting provider. When your browser asks for a page, the host may briefly record technical details such as your IP address, browser type, the page requested and the time. These logs are used only to deliver the site, keep it secure and fix faults, and are deleted on the host’s normal schedule. They never contain your budget numbers."
+      },
+      "rights": {
+        "title": "Your privacy rights",
+        "p1": "Because your budget never leaves your device, you already hold all of it, and you can delete it yourself at any time. For anything else we hold about you, such as messages you sent us, you can ask us to:",
+        "item1": "tell you what we hold and give you a copy;",
+        "item2": "correct it if it’s wrong;",
+        "item3": "delete it;",
+        "item4": "stop or limit how we use it, or object to it.",
+        "p2": "These rights come from laws such as the EU and UK GDPR, the California Consumer Privacy Act (CCPA/CPRA) and India’s Digital Personal Data Protection Act 2023, and similar laws elsewhere. We don’t sell or share personal information for money, and we don’t use it to make automated decisions about you.",
+        "p3_html": "To make a request, or to raise a grievance under India’s DPDP Act, use the <a href=\"/contact/?topic=privacy\">contact form</a> and choose <em>Privacy or data request</em>. We’ll reply within 30 days. You can withdraw any consent you gave, such as for personalised ads, at any time. You also have the right to complain to your local data protection authority, such as the ICO in the UK."
+      },
+      "children": {
+        "title": "Children",
+        "p1": "The site is meant for adults managing a household budget. It isn’t directed at children under 13 (under 16 in the EEA and UK, and under 18 in India), and we don’t knowingly collect personal information from them. If you think a child has sent us personal information, please contact us and we will delete it."
+      },
+      "transfers": {
+        "title": "International transfers",
+        "p1": "Messages you send us, and data used by Google for ads, may be processed in countries other than yours, including the United States. Where the law requires it, these transfers are protected by safeguards such as the European Commission’s standard contractual clauses."
+      },
+      "links": {
+        "title": "Links to other websites",
+        "p1": "Our money tips and ads may link to other websites. We don’t control them and aren’t responsible for their privacy practices, so please read their policies before giving them any information."
+      },
+      "changes": {
+        "title": "Changes to this policy",
+        "p1": "We may update this policy when the site or the law changes. The date at the top shows the latest version. If a change affects how we handle information you have already given us, we’ll make it clear on the site before it takes effect."
+      },
+      "contact": {
+        "title": "Contact",
+        "p1_html": "Questions about this policy or your data? <a href=\"/contact/?topic=privacy\">Send us a message</a> and choose <em>Privacy or data request</em>. You can also read our <a href=\"/terms-of-use/\">Terms of Use</a>."
+      }
+    },
+    "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
+    "seo": {
+      "title": "Privacy Policy | Household Budget Optimizer",
+      "description": "Your budget stays in your browser: no accounts, nothing stored on our servers. What we keep on your device, how Google ads use cookies, and your rights.",
+      "ogTitle": "Privacy Policy | Household Budget Optimizer",
+      "ogDescription": "Your budget numbers never leave your browser. What we store, how ads use cookies, and your rights.",
+      "ldName": "Privacy Policy",
+      "ldDescription": "How the Household Budget Optimizer handles your data: budget numbers stay in your browser, what is stored on your device, advertising cookies and your privacy rights."
+    }
+  },
+  "terms": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Terms of Use",
+      "label": "Breadcrumb"
+    },
+    "toc": {
+      "heading": "On this page",
+      "summary": "The short version",
+      "agreement": "Agreeing to these terms",
+      "service": "What the tool is",
+      "notAdvice": "Not financial advice",
+      "accuracy": "Estimates and accuracy",
+      "yourData": "Your data and backups",
+      "use": "Fair use",
+      "ip": "Our content",
+      "thirdParty": "Ads and other websites",
+      "warranty": "No warranty",
+      "liability": "Limits of liability",
+      "law": "Governing law",
+      "changes": "Changes",
+      "contact": "Contact"
+    },
+    "title": "Terms of Use",
+    "lead": "These terms explain what you can expect from the Household Budget Optimizer and what we ask of you. We’ve kept them short and in plain English.",
+    "sections": {
+      "summary": {
+        "title": "The short version",
+        "item1_html": "<strong>It’s free</strong> for personal household budgeting. No account needed.",
+        "item2_html": "<strong>It’s an estimate, not advice.</strong> Check important decisions with a qualified professional.",
+        "item3_html": "<strong>Your numbers are yours.</strong> They stay in your browser, so keep a backup if they matter to you.",
+        "item4_html": "<strong>Please use it fairly.</strong> Don’t copy the site, attack it or scrape it."
+      },
+      "agreement": {
+        "title": "1. Agreeing to these terms",
+        "p1_html": "By using the Household Budget Optimizer &amp; Savings Simulator website and calculator (“the site”, “we”, “us”), you agree to these terms and to our <a href=\"/privacy-policy/\">Privacy Policy</a>. If you don’t agree, please don’t use the site."
+      },
+      "service": {
+        "title": "2. What the tool is",
+        "p1": "The site is a free budgeting calculator and money guide for personal, household use. It helps you see where your money goes, try ideas for spending less and estimate how savings, goals and debts could change over time. It runs in your web browser and doesn’t need an account.",
+        "p2": "We may add, change or remove features, or pause the site for maintenance, at any time. Because it’s a free service, we can’t promise it will always be available or free of errors."
+      },
+      "notAdvice": {
+        "title": "3. Not financial advice",
+        "p2": "Before making important money decisions, such as taking on or repaying debt, investing, or changing insurance, speak to a qualified, licensed financial adviser, accountant or tax professional. If you’re struggling with debt, free and confidential debt advice services are available in many countries.",
+        "p1_html": "Everything on the site, including results, savings ideas, health scores, growth projections, debt-free dates and articles, is <strong>general information for education only</strong>. It is not financial, investment, tax, legal or debt advice, and it doesn’t take your full circumstances into account. Nothing on the site is a recommendation to buy, sell or hold any financial product."
+      },
+      "accuracy": {
+        "title": "4. Estimates and accuracy",
+        "p1": "Results are only as good as the numbers you enter and the assumptions behind them. In particular:",
+        "item1": "savings percentages are typical estimates, and what you can actually save depends on your providers, location, prices and habits;",
+        "item2": "growth projections assume a steady return compounded monthly and ignore taxes and fees, while real investments go up and down and can lose value;",
+        "item3": "“typical” household amounts are rough guides, and for some currencies they are based on US figures;",
+        "item4": "the site doesn’t convert between currencies or use live interest or exchange rates.",
+        "p2_html": "We work hard to keep the maths correct, but we don’t guarantee that every result, figure or tip is complete, accurate or up to date. Please check anything important yourself. If you spot a mistake, <a href=\"/contact/?topic=calculation\">tell us</a> and we’ll look into it."
+      },
+      "yourData": {
+        "title": "5. Your data and backups",
+        "p1_html": "Your budget is stored only in your browser on your device. We don’t have a copy, so we can’t recover it if it’s lost. Clearing your browser data, using a private window, or switching device or browser can remove it. Use <em>Download backup</em> to keep a copy. You are responsible for the share links and backup files you create and who you give them to."
+      },
+      "use": {
+        "title": "6. Fair use",
+        "p1": "You may use the site for your own personal or household budgeting, and you may share links to it. You agree not to:",
+        "item1": "copy, republish, sell or frame the site or its content as your own, or remove our notices;",
+        "item2": "scrape the site in bulk, or overload, attack, probe or interfere with it or its security;",
+        "item3": "upload or send anything harmful, such as malware, or use the site or contact form for spam, abuse or anything unlawful;",
+        "item4": "use the site to give paid advice to others in a way that suggests we endorse it.",
+        "p2": "We may block access for anyone who breaks these rules."
+      },
+      "ip": {
+        "title": "7. Our content",
+        "p1_html": "The site’s design, text, calculations, graphics and code belong to us or our licensors and are protected by copyright and other laws. You may print or save your own results and the plan you make for personal use. Short quotes with a link back to the site are welcome. For anything else, please <a href=\"/contact/?topic=business\">ask us first</a>."
+      },
+      "thirdParty": {
+        "title": "8. Ads and other websites",
+        "p1": "The site shows ads, mostly served by Google, and may link to other websites. Ads and links are not endorsements. We don’t control other websites or the products advertised, and we aren’t responsible for their content, offers or privacy practices. Any deal you make with an advertiser is between you and them."
+      },
+      "warranty": {
+        "title": "9. No warranty",
+        "p1": "The site is provided free, “as is” and “as available”. To the fullest extent the law allows, we make no promises or warranties of any kind, express or implied, including that the site will be accurate, reliable, uninterrupted, secure or fit for a particular purpose."
+      },
+      "liability": {
+        "title": "10. Limits of liability",
+        "p1": "To the fullest extent the law allows, we are not liable for any loss or damage arising from your use of, or inability to use, the site, or from relying on its results or content. This includes financial loss, lost savings or profits, lost data, and indirect or consequential loss. You use the results at your own risk and are responsible for your own financial decisions.",
+        "p2": "Nothing in these terms limits liability that can’t be limited by law, such as for fraud, or removes rights you have as a consumer under the laws of the country where you live."
+      },
+      "law": {
+        "title": "11. Governing law",
+        "p1": "These terms are governed by the laws of the country where the site’s operator is based, and its courts will deal with any dispute. If you live elsewhere, you keep the protection of any mandatory consumer laws where you live and may bring a claim in your local courts. If any part of these terms can’t be enforced, the rest still applies."
+      },
+      "changes": {
+        "title": "12. Changes to these terms",
+        "p1": "We may update these terms from time to time. The date at the top shows the latest version. If you keep using the site after a change, you accept the updated terms."
+      },
+      "contact": {
+        "title": "13. Contact",
+        "p1_html": "Questions about these terms? <a href=\"/contact/\">Send us a message</a>. See also our <a href=\"/privacy-policy/\">Privacy Policy</a>."
+      }
+    },
+    "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
+    "seo": {
+      "title": "Terms of Use | Household Budget Optimizer",
+      "description": "The rules for using our free household budget calculator. Results are estimates for planning, not financial advice. Covers accuracy, fair use and liability.",
+      "ogTitle": "Terms of Use | Household Budget Optimizer",
+      "ogDescription": "Free to use, estimates only, not financial advice. The plain-English terms for our budget calculator.",
+      "ldName": "Terms of Use",
+      "ldDescription": "The terms for using the free Household Budget Optimizer calculator: estimates only, not financial advice, acceptable use and limits of liability."
+    }
+  },
+  "contact": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "Contact Us",
+      "label": "Breadcrumb"
+    },
+    "title": "Contact us",
+    "lead": "Found something that isn’t working, spotted a figure that looks wrong, or have an idea that would make the calculator more useful? We read every message.",
+    "form": {
+      "title": "Send us a message",
+      "replyTime": "We usually reply within 2 working days.",
+      "name": "Your name",
+      "email": "Email address",
+      "emailHelp": "Only used to reply to you.",
+      "topic": "What’s it about?",
+      "topicPlaceholder": "Choose a topic",
+      "message": "Your message",
+      "messageHelp": "For a problem, tell us what you did, what you expected and what happened, plus your browser and device.",
+      "honeypot": "Leave this empty",
+      "send": "Send message",
+      "privacyNote_html": "We use your details only to reply, never add you to a mailing list and delete messages within 12 months. Please don’t include bank details or passwords. See our <a href=\"/privacy-policy/#contact-data\" class=\"link\">Privacy Policy</a>.",
+      "sending": "Sending…"
+    },
+    "topics": {
+      "bug": "Something isn’t working",
+      "calculation": "Question about a calculation or figure",
+      "idea": "Idea, feature or currency request",
+      "question": "General question",
+      "privacy": "Privacy or data request",
+      "business": "Advertising or partnership",
+      "press": "Press or media",
+      "other": "Something else"
+    },
+    "faq": {
+      "title": "Before you write",
+      "seeBudget": {
+        "q": "Can you see my budget numbers?",
+        "a": "No. The calculator runs in your browser and never sends your numbers to us. That also means we can’t look at your budget to help, so please describe the problem in your message instead."
+      },
+      "restore": {
+        "q": "My numbers disappeared. Can you restore them?",
+        "a_html": "We don’t have a copy, so we can’t. They’re saved in the browser you used, so check you’re on the same device and browser, outside a private window. Use <em>Download backup</em> on the History tab to keep a copy in future."
+      },
+      "delete": {
+        "q": "How do I delete my data?",
+        "a_html": "In the calculator choose <em>Edit my numbers</em> → <em>Start over</em> → <em>Delete everything</em>, or clear this site’s data in your browser settings."
+      },
+      "advice": {
+        "q": "Can you give me personal financial advice?",
+        "a": "Sorry, we can’t. The tool is for general education only. For advice about your situation, speak to a qualified financial adviser or a free debt advice service."
+      },
+      "ads": {
+        "q": "Why does the site show ads?",
+        "a_html": "Ads keep the calculator free. You can turn off personalised ads at any time. See <a href=\"/privacy-policy/#ads\" class=\"link\">ads and cookies</a>."
+      }
+    },
+    "seo": {
+      "title": "Contact Us | Household Budget Optimizer",
+      "description": "Questions, bug reports or ideas for the free budget calculator? Send us a message and we usually reply within 2 working days. We can’t give financial advice.",
+      "ogTitle": "Contact Us | Household Budget Optimizer",
+      "ogDescription": "Found a bug, have an idea or a question about a calculation? Send us a message.",
+      "ldName": "Contact Us",
+      "ldDescription": "Send questions, bug reports and ideas about the Household Budget Optimizer calculator."
+    },
+    "emailAlt": "Prefer email? Write to {email}.",
+    "errors": {
+      "nameMissing": "Please tell us your name.",
+      "nameTooLong": "Please keep your name under {max} characters.",
+      "emailMissing": "Please add your email so we can reply.",
+      "emailInvalid": "That email doesn’t look right. Check for typos, like name@example.com.",
+      "topicMissing": "Please choose what your message is about.",
+      "messageTooShort": "Please write a little more (at least {min} characters) so we can help.",
+      "messageTooLong": "Please keep your message under {max} characters."
+    },
+    "status": {
+      "sentTitle": "Thanks, your message is on its way.",
+      "sentTextBrief": "We usually reply within 2 working days.",
+      "sentText": "We usually reply within 2 working days. Check your spam folder if you don’t hear back.",
+      "offlineTitle": "You’re offline.",
+      "offlineText": "Connect to the internet and press Send again. Your message is still in the form.",
+      "mailtoTitle": "Your email app should open now.",
+      "mailtoText": "Press send there to reach us. If nothing opened, write to {email}.",
+      "failedTitle": "Your message wasn’t sent.",
+      "notConfigured": "The contact form isn’t set up yet. Please try again later.",
+      "failedText": "Please check your connection and try again. Your message is still in the form.",
+      "failedTextWithEmail": "Please check your connection and try again, or email us at {email}. Your message is still in the form."
+    },
+    "mail": {
+      "subject": "Budget Optimizer: {topic}",
+      "body": "{message}\n\n—\n{name}\nTopic: {topic}"
+    }
+  }
+}

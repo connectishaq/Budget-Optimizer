@@ -7,16 +7,23 @@ import { PROFILES } from './engine/profiles.js';
 import { CURRENCIES } from './utils/format.js';
 import { VALUE_FIELDS, ALLOCATION_PRESETS, BUCKETS } from './engine/calculate.js';
 import { SUB_KINDS } from './engine/subscriptions.js';
+import { t } from './i18n/index.js';
 
 const STORAGE_KEY = 'hbo:v3';
 const THEME_KEY = 'hbo:theme';
 const SAVE_DELAY = 400;
 
+// label/hint are getters so they follow the current language
+const returnOption = (value, key) => ({
+  value,
+  get label() { return t(`charts.returns.${key}.label`); },
+  get hint() { return t(`charts.returns.${key}.hint`); }
+});
 export const RETURN_OPTIONS = [
-  { value: 0.04, label: '4%: Safe savings account', hint: 'Grows slowly, with very little risk.' },
-  { value: 0.06, label: '6%: Savings and investing', hint: 'Some ups and downs along the way.' },
-  { value: 0.08, label: '8%: Long-term investing', hint: 'More ups and downs. Works best over 10+ years.' },
-  { value: 0.1, label: '10%: Mostly shares', hint: 'Big ups and downs, and never guaranteed.' }
+  returnOption(0.04, 'safe'),
+  returnOption(0.06, 'mixed'),
+  returnOption(0.08, 'longTerm'),
+  returnOption(0.1, 'shares')
 ];
 
 export function defaultState() {

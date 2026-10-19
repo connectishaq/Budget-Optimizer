@@ -2,6 +2,7 @@
 // the light/dark switch. The calculator itself boots from main.js.
 
 import './styles.css';
+import { t } from './i18n/index.js';
 
 const THEME_KEY = 'hbo:theme';
 
@@ -12,7 +13,7 @@ function initTheme() {
   const apply = (dark) => {
     document.documentElement.classList.toggle('dark', dark);
     btn.setAttribute('aria-pressed', String(dark));
-    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.setAttribute('aria-label', t(dark ? 'layout.theme.toLight' : 'layout.theme.toDark'));
     meta?.setAttribute('content', dark ? '#020617' : '#0f172a');
   };
   apply(document.documentElement.classList.contains('dark'));

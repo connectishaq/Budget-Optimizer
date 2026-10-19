@@ -6,15 +6,17 @@ import { getState, setState } from '../state.js';
 import { paydayIcs } from '../utils/ics.js';
 import { $, esc, icon, setHTML, setText, toast } from './dom.js';
 import { helpBtn } from './help.js';
+import { t, getLanguage } from '../i18n/index.js';
 
 const monthKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
 const monthName = () => new Date().toLocaleDateString('en-US', { month: 'long' });
 
 /** "A, B and 2 more" */
-function listNames(names, fallback = 'your yearly costs') {
+function listNames(names, fallback = t('payday.list.fallback')) {
   if (!names.length) return fallback;
-  if (names.length <= 2) return names.join(' and ');
-  return `${names.slice(0, 2).join(', ')} and ${names.length - 2} more`;
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return t('payday.list.two', { a: names[0], b: names[1] });
+  return t('payday.list.more', { a: names[0], b: names[1], count: names.length - 2 });
 }
 
 /** The steps to show, each with plain text for the calendar reminder. */
@@ -25,50 +27,52 @@ function buildSteps(p, view) {
   if (p.yearlyMonthly > 0) {
     steps.push({
       key: 'yearly', icon: 'calendar',
-      title: `Put ${amt(p.yearlyMonthly)} aside for once-a-year costs`,
-      text: `Keep it in a separate account, so the money is ready for ${esc(listNames(p.yearlyNames))} (${esc(view.raw(p.yearlyTotal))} a year).`,
-      plain: `Put ${view.raw(p.yearlyMonthly)} aside for once-a-year costs`
+      title: t('payday.steps.yearly.title', { amount: amt(p.yearlyMonthly) }),
+      text: t('payday.steps.yearly.text', { names: esc(listNames(p.yearlyNames)), total: esc(view.raw(p.yearlyTotal)) }),
+      plain: t('payday.steps.yearly.title', { amount: view.raw(p.yearlyMonthly) })
     });
   } else {
     steps.push({
       key: 'yearly-add', icon: 'calendar', nudge: true,
-      title: 'Any big costs that come once a year?',
-      text: 'Festivals, school books or car repairs can wreck a month. Add them and we’ll show what to put aside each month.',
-      action: `<button type="button" class="btn btn-secondary" data-edit-step="2.5">${icon('plus', 'icon-sm')}Add yearly costs</button>`
+      title: t('payday.steps.yearlyAdd.title'),
+      text: t('payday.steps.yearlyAdd.text'),
+      action: `<button type="button" class="btn btn-secondary" data-edit-step="2.5">${icon('plus', 'icon-sm')}${t('payday.steps.yearlyAdd.action')}</button>`
     });
   }
 
   if (p.toSave > 0) {
     steps.push({
       key: 'save', icon: 'save',
-      title: `Move ${amt(p.toSave)} to savings first`,
-      text: 'Do it the day your pay arrives, before any spending, so it can’t get used by accident. An automatic transfer makes it effortless.',
-      action: '<a href="#goals" class="text-sm link">Choose where it goes</a>',
-      plain: `Move ${view.raw(p.toSave)} to savings first`
+      title: t('payday.steps.save.title', { amount: amt(p.toSave) }),
+      text: t('payday.steps.save.text'),
+      action: `<a href="#goals" class="text-sm link">${t('payday.steps.save.action')}</a>`,
+      plain: t('payday.steps.save.title', { amount: view.raw(p.toSave) })
     });
   } else {
     steps.push({
       key: 'save-short', icon: 'alert', nudge: true, warn: true,
-      title: p.short > 0 ? `Your costs are ${amt(p.short)} more than your income` : 'Nothing is left over to save yet',
-      text: 'Switch on more ideas to spend less, so there’s something to save on payday.',
-      action: '<a href="#plan" class="text-sm link">See ideas to spend less</a>'
+      title: p.short > 0 ? t('payday.steps.short.titleShort', { amount: amt(p.short) }) : t('payday.steps.short.titleNothing'),
+      text: t('payday.steps.short.text'),
+      action: `<a href="#plan" class="text-sm link">${t('payday.steps.short.action')}</a>`
     });
   }
 
   if (p.funMonthly > 0) {
     steps.push({
       key: 'allowance', icon: 'wallet', help: true,
-      title: `Spend up to ${amt(p.funWeekly)} a week on eating out and shopping`,
-      text: `That’s ${esc(view.raw(p.funMonthly))} a month, after the ideas in your plan. Move it to a separate card or take it as cash each week. When it’s gone, wait for next week.`,
-      plain: `Spend up to ${view.raw(p.funWeekly)} a week on eating out and shopping`
+      title: t('payday.steps.allowance.title', { amount: amt(p.funWeekly) }),
+      text: t('payday.steps.allowance.text', { amount: esc(view.raw(p.funMonthly)) }),
+      plain: t('payday.steps.allowance.title', { amount: view.raw(p.funWeekly) })
     });
   }
   // Not a monthly tick-box, so it goes after the numbered steps
   if (p.extrasMonthly > 0) {
     steps.push({
       key: 'bonus', icon: 'gift', nudge: true,
-      title: 'When a bonus comes in, save it first',
-      text: `${p.extrasNames.length > 1 ? `${esc(listNames(p.extrasNames))} add` : `${esc(p.extrasNames[0] || 'Your extra income')} adds`} about ${esc(view.raw(p.extrasMonthly))} a month on average, but it doesn’t come every month. Put each payment straight into savings or towards your yearly costs, so everyday bills never depend on it.`
+      title: t('payday.steps.bonus.title'),
+      text: p.extrasNames.length > 1
+        ? t('payday.steps.bonus.textMany', { names: esc(listNames(p.extrasNames)), amount: esc(view.raw(p.extrasMonthly)) })
+        : t('payday.steps.bonus.textOne', { name: esc(p.extrasNames[0] || t('payday.steps.bonus.fallbackName')), amount: esc(view.raw(p.extrasMonthly)) })
     });
   }
   return steps;
@@ -93,8 +97,8 @@ function stepMarkup(s, i, done) {
     <input type="checkbox" id="${id}" class="sr-only" data-payday="${s.key}" ${done ? 'checked' : ''}>
     <label for="${id}" class="pd-check cursor-pointer" aria-hidden="true">${icon('check', 'h-3.5 w-3.5')}</label>
     <div class="min-w-0 flex-1">
-      <label for="${id}" class="block cursor-pointer font-semibold text-slate-900 dark:text-white"><span class="sr-only">Step ${i + 1}: </span>${s.title}</label>
-      <p class="mt-1 text-sm muted">${s.text}${s.help ? ` ${helpBtn('allowance', 'Weekly spending limit', undefined, 'hp-allowance')}` : ''}</p>
+      <label for="${id}" class="block cursor-pointer font-semibold text-slate-900 dark:text-white"><span class="sr-only">${t('payday.stepNumber', { n: i + 1 })} </span>${s.title}</label>
+      <p class="mt-1 text-sm muted">${s.text}${s.help ? ` ${helpBtn('allowance', t('payday.weeklyLimit'), undefined, 'hp-allowance')}` : ''}</p>
       ${s.action ? `<div class="mt-2">${s.action}</div>` : ''}
     </div>
   </li>`;
@@ -104,6 +108,10 @@ let latest = null;
 
 export function renderPayday(state, result, view) {
   const p = result.payday;
+  if ($('paydayDay').__lang !== getLanguage()) {
+    fillDays($('paydayDay'));
+    $('paydayDay').value = String(state.payday.day);
+  }
   $('paydayEmpty').hidden = !!p;
   $('paydayBody').hidden = !p;
   if (!p) return;
@@ -121,7 +129,7 @@ export function renderPayday(state, result, view) {
   const all = checkable.length > 0 && doneCount === checkable.length;
   setText($('paydayProgress'), !checkable.length
     ? ''
-    : all ? `All done for ${monthName()}. Nice work!` : `${doneCount} of ${checkable.length} done for ${monthName()}`);
+    : all ? t('payday.progress.all', { month: monthName() }) : t('payday.progress.some', { done: doneCount, total: checkable.length, month: monthName() }));
   $('paydayProgress').className = `text-sm ${all ? 'font-medium text-emerald-700 dark:text-emerald-400' : 'muted'}`;
   $('paydayDay').value = String(state.payday.day);
   $('btnReminder').disabled = !checkable.length;
@@ -132,8 +140,8 @@ function downloadReminder() {
   const lines = (latest?.steps || []).filter((s) => s.plain).map((s, i) => `${i + 1}. ${s.plain}`);
   const ics = paydayIcs({
     day,
-    title: 'Payday: follow your money plan',
-    lines: [...lines, '', 'Amounts are from the day you saved this reminder. Open the budget tool to see the latest.']
+    title: t('ics.title'),
+    lines: [...lines, '', t('ics.note')]
   });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
@@ -142,16 +150,22 @@ function downloadReminder() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  toast('Reminder downloaded. Open it to add it to your calendar.');
+  toast(t('payday.reminderDownloaded'));
+}
+
+/** The payday options, filled again when the language changes. */
+function fillDays(sel) {
+  sel.__lang = getLanguage();
+  sel.innerHTML = Array.from({ length: 28 }, (_, i) => {
+    const d = i + 1;
+    const suffix = d % 10 === 1 && d !== 11 ? 'st' : d % 10 === 2 && d !== 12 ? 'nd' : d % 10 === 3 && d !== 13 ? 'rd' : 'th';
+    return `<option value="${d}">${t('payday.dayOfMonth', { day: d, suffix: t(`payday.ordinal.${suffix}`) })}</option>`;
+  }).join('') + `<option value="last">${t('payday.lastDay')}</option>`;
 }
 
 export function initPayday() {
   const sel = $('paydayDay');
-  sel.innerHTML = Array.from({ length: 28 }, (_, i) => {
-    const d = i + 1;
-    const suffix = d % 10 === 1 && d !== 11 ? 'st' : d % 10 === 2 && d !== 12 ? 'nd' : d % 10 === 3 && d !== 13 ? 'rd' : 'th';
-    return `<option value="${d}">${d}${suffix} of the month</option>`;
-  }).join('') + '<option value="last">Last day of the month</option>';
+  fillDays(sel);
   sel.addEventListener('change', () => setState((s) => { s.payday.day = sel.value === 'last' ? 'last' : Number(sel.value); }));
 
   $('paydaySteps').addEventListener('change', (e) => {

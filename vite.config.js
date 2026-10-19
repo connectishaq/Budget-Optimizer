@@ -83,7 +83,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
     plugins: [tailwindcss(), siteConfig(env)],
-    test: { include: ['src/**/*.test.js'] },
+    test: { include: ["src/**/*.test.js"] },
     build: {
       target: 'es2020',
       rollupOptions: {
