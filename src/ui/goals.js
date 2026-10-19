@@ -4,7 +4,7 @@
 
 import { getState, setState } from '../state.js';
 import { goalTimeline, emergencyFundStatus, debtFreeComparison, ALLOCATION_PRESETS, BUCKETS, rebalanceAllocation } from '../engine/calculate.js';
-import { parseAmount, duration, monthsFromNow, pct } from '../utils/format.js';
+import { parseAmount, decimalSeparator, duration, monthsFromNow, pct } from '../utils/format.js';
 import { newId } from '../engine/profiles.js';
 import { $, icon, esc, setText, setHTML, setAttr, toast } from './dom.js';
 import { t, getLanguage } from '../i18n/index.js';
@@ -237,7 +237,7 @@ export function initGoals() {
     const key = el.dataset.key;
     let v = el.value.slice(0, 60);
     if (key !== 'name') {
-      const r = parseAmount(el.value);
+      const r = parseAmount(el.value, { decimal: decimalSeparator(getState().currency) });
       v = r.value;
       el.setAttribute('aria-invalid', r.error ? 'true' : 'false');
       setText($(`${el.id}-msg`), r.error || '');

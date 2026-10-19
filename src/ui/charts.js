@@ -7,6 +7,7 @@ import { moneyShort, moneyNice } from '../utils/format.js';
 import { $, esc, setText, setHTML, setAttr } from './dom.js';
 import { createLineChart } from './svg-chart.js';
 import { t, getLanguage } from '../i18n/index.js';
+import { withSign } from '../utils/format.js';
 
 let currency = 'USD';
 const nice = (n) => moneyNice(n, currency, { friendly: true });
@@ -74,7 +75,7 @@ export function renderProjection(state, result, view) {
   const tag = (n) => view.tag(view.rawS(n), n);
   setHTML($('fvAlt'), tag(fvAlt));
   setHTML($('fvCur'), tag(fvCur));
-  setHTML($('fvDiff'), `+${tag(fvAlt - fvCur)}`);
+  setHTML($('fvDiff'), withSign('+', tag(fvAlt - fvCur)));
   setText($('fvYears'), t('charts.afterYears', { count: d.years }));
 
   const yearsTxt = t('charts.years', { count: d.years });

@@ -7,6 +7,7 @@ import { PROFILES, benchmarkFor } from '../engine/profiles.js';
 import { pct } from '../utils/format.js';
 import { $, esc, icon, setText, setHTML, setAttr, setMoney, animateNumber } from './dom.js';
 import { t } from '../i18n/index.js';
+import { withSign } from '../utils/format.js';
 
 // Validated categorical palette (needs / wants / savings); legend text carries identity too
 const SPLIT_COLORS = { needs: '#475569', wants: '#d97706', savings: '#047857' };
@@ -65,14 +66,14 @@ function renderReceipt(result, view) {
   const first = split ? pay : income;
   put('rcIncome', first > 0 ? view.m(first) : split ? view.m(0) : t('dashboard.receipt.notAdded'), first > 0 ? view.full(first * view.f) : '');
   $('rcExtrasRow').hidden = !split;
-  if (split) put('rcExtras', `+${view.m(extrasMonthly)}`, `+${view.full(extrasMonthly * view.f)}`);
-  put('rcBills', `−${view.m(spend)}`, `−${view.full(spend * view.f)}`);
+  if (split) put('rcExtras', withSign('+', view.m(extrasMonthly)), withSign('+', view.full(extrasMonthly * view.f)));
+  put('rcBills', withSign('−', view.m(spend)), withSign('−', view.full(spend * view.f)));
   setText($('rcLeftLabel'), left < 0 && income > 0 ? t('dashboard.receipt.shortBy') : t('dashboard.receipt.leftOver'));
   put('rcLeft', income > 0 ? view.m(Math.abs(left)) : '–', income > 0 ? view.full(Math.abs(left) * view.f) : '');
   $('rcLeft').className = `tabular-nums ${left < 0 && income > 0 ? 'font-semibold text-rose-700 dark:text-rose-400' : ''}`;
-  put('rcPlan', `+${view.s(result.savings)}`, `+${view.full(result.savings * view.f)}`);
+  put('rcPlan', withSign('+', view.s(result.savings)), withSign('+', view.full(result.savings * view.f)));
   const total = left + result.savings;
-  put('rcTotal', income > 0 ? `${total < 0 ? '−' : ''}${view.s(Math.abs(total))}` : '–', income > 0 ? view.full(total * view.f) : '');
+  put('rcTotal', income > 0 ? withSign(total < 0 ? '−' : '', view.s(Math.abs(total))) : '–', income > 0 ? view.full(total * view.f) : '');
   setText($('rcNote'), income > 0
     ? (total >= 0 ? t('dashboard.receipt.noteLeft') : t('dashboard.receipt.noteShort'))
     : t('dashboard.receipt.noteNoIncome'));

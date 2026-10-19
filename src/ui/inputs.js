@@ -6,11 +6,12 @@
 import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
 import { countryData } from '../engine/countries.js';
-import { CURRENCIES, parseAmount, moneyNice } from '../utils/format.js';
+import { CURRENCIES, parseAmount, decimalSeparator, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast } from './dom.js';
 import { helpBtn, HELP, nextHelpId } from './help.js';
 import { t } from '../i18n/index.js';
 import { SUB_KINDS, subKind } from '../engine/subscriptions.js';
+import { withSign } from '../utils/format.js';
 
 /** A field whose label (and optional help line) is translated when read. */
 function field(key, icon, extra = {}) {
@@ -336,7 +337,7 @@ export function renderInputs(state, result, view) {
     if (g.id === 'income') txt = values.income ? `${view.m(values.income)}${view.per}` : t('inputs.subtitle.startHere');
     else if (g.id === 'savings') txt = values.emergencyFund ? t('inputs.subtitle.saved', { amount: view.raw(values.emergencyFund) }) : t('inputs.subtitle.optional');
     else if (g.list === 'debts') txt = state.debts.length ? t('inputs.subtitle.added', { amount: `${view.m(debtPayments)}${view.per}`, count: state.debts.length }) : t('inputs.subtitle.optional');
-    else if (g.list === 'extras') txt = state.extras.length ? t('inputs.subtitle.added', { amount: `+${view.m(extrasMonthly)}${view.per}`, count: state.extras.length }) : t('inputs.subtitle.optional');
+    else if (g.list === 'extras') txt = state.extras.length ? t('inputs.subtitle.added', { amount: `${withSign('+', view.m(extrasMonthly))}${view.per}`, count: state.extras.length }) : t('inputs.subtitle.optional');
     else if (g.list === 'yearly') txt = state.yearly.length ? t('inputs.subtitle.added', { amount: `${view.m(yearlyMonthly)}${view.per}`, count: state.yearly.length }) : t('inputs.subtitle.optional');
     else if (g.list === 'subscriptions') txt = state.subscriptions.length ? t('inputs.subtitle.added', { amount: `${view.m(subsTotal)}${view.per}`, count: state.subscriptions.length }) : t('inputs.subtitle.optional');
     else txt = `${view.m(subtotal(g.fields.map((f) => f.key)))}${view.per}`;
@@ -435,7 +436,7 @@ function onFieldInput(e) {
   // Checkboxes and selects are handled once, on 'change'
   if (e.type === 'input' && el.matches('input[type="checkbox"], select')) return;
   if (el.dataset.field) {
-    const { value, error } = parseAmount(el.value);
+    const { value, error } = parseAmount(el.value, { decimal: decimalSeparator(getState().currency) });
     error ? errors.set(el.id, error) : errors.delete(el.id);
     el.setAttribute('aria-invalid', error ? 'true' : 'false');
     setState((s) => { s.values[el.dataset.field] = value; s.ui.sample = false; }, { reason: 'input' });
@@ -449,7 +450,7 @@ function onFieldInput(e) {
     else if (key === 'type') v = el.value === 'loan' ? 'loan' : 'card';
     else if (key === 'kind') v = SUB_KINDS[el.value] ? el.value : '';
     else {
-      const r = parseAmount(el.value);
+      const r = parseAmount(el.value, { decimal: decimalSeparator(getState().currency) });
       // Rates far above what's normal in the country are almost always typos
       const aprMax = Math.max(100, countryData(getState().country).defaults.cardApr);
       const aprCapped = key === 'apr' && !r.error && r.value > aprMax;

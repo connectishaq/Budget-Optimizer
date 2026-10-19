@@ -9,6 +9,7 @@ import { makeBackup, parseBackup, backupFileName, describeMonths, mergeHistory, 
 import { getHistory, importMonths, markBackup } from '../history-store.js';
 import { $, esc, toast, confirmDialog, choiceDialog } from './dom.js';
 import { t } from '../i18n/index.js';
+import { dateLocale } from '../utils/format.js';
 
 let latest = null; // { state, result, view } from the most recent render
 
@@ -132,7 +133,7 @@ function buildPrintPlan() {
   if (!latest) return;
   const { state, result, view } = latest;
   const committed = result.plan.filter((p) => p.committed).sort((a, b) => b.monthly - a.monthly);
-  const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const date = new Date().toLocaleDateString(dateLocale(), { year: 'numeric', month: 'long', day: 'numeric' });
   $('printPlan').innerHTML = `
     <h1 style="font-size:20pt;font-weight:800;margin:0">${esc(t('backup.print.title'))}</h1>
     <p style="color:#475569;margin:4px 0 14px">${esc(PROFILES[state.profile].name)} · ${state.currency} · ${date}</p>

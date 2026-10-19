@@ -10,7 +10,7 @@ import {
   bestMonth, savingsStreak, trendAlerts, goalsOverTime, MAX_MONTHS
 } from '../engine/history.js';
 import { getHistory, loadHistory, saveMonth, deleteMonth, restoreMonth, setMeta, subscribeHistory } from '../history-store.js';
-import { moneyNice, moneyShort, pct } from '../utils/format.js';
+import { moneyNice, moneyShort, pct, dateLocale, withSign } from '../utils/format.js';
 import { $, icon, esc, setText, setHTML, setAttr, toast, confirmDialog } from './dom.js';
 import { createLineChart } from './svg-chart.js';
 import { createBarChart } from './svg-bar-chart.js';
@@ -286,10 +286,10 @@ function statusText(state) {
   const cur = find(now);
   if (cur) {
     const at = lastSavedAt || new Date(cur.savedAt);
-    const time = at.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    const time = at.toLocaleTimeString(dateLocale(), { hour: 'numeric', minute: '2-digit' });
     return lastSavedAt
       ? tr('months.status.saved', { month: monthLabel(now, { long: true }), time })
-      : tr('months.status.savedOn', { month: monthLabel(now, { long: true }), time, date: at.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) });
+      : tr('months.status.savedOn', { month: monthLabel(now, { long: true }), time, date: at.toLocaleDateString(dateLocale(), { month: 'short', day: 'numeric' }) });
   }
   return hasData(state) ? tr('months.status.autoSave', { month: monthLabel(now, { long: true }) }) : '';
 }
@@ -470,7 +470,7 @@ function renderAlerts(list) {
     : `<li class="text-sm muted">${esc(full >= 2 ? tr('months.alerts.steady') : tr('months.alerts.needTwo'))}</li>`);
 }
 
-const signed = (n, fmt) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${fmt(Math.abs(n))}`;
+const signed = (n, fmt) => withSign(n > 0 ? '+' : n < 0 ? '−' : '', fmt(Math.abs(n)));
 
 function renderCompare(list) {
   const keys = list.map((m) => m.month);
@@ -602,7 +602,7 @@ function renderList(list) {
     return `<tr class="border-t border-slate-100 dark:border-slate-800">
       <th scope="row" class="py-2 pe-2 text-start font-semibold text-slate-900 dark:text-white"><span class="block">${label}</span>${tags.trim() ? `<span class="mt-0.5 flex flex-wrap gap-1 font-normal">${tags}</span>` : ''}</th>
       <td class="px-2 py-2 text-end tabular-nums">${esc(money(m.totals.spend, m.currency))}</td>
-      <td class="px-2 py-2 text-end tabular-nums ${m.totals.leftOver < 0 ? TONE_TEXT.bad : ''}">${m.totals.leftOver < 0 ? '−' : ''}${esc(money(Math.abs(m.totals.leftOver), m.currency))}</td>
+      <td class="px-2 py-2 text-end tabular-nums ${m.totals.leftOver < 0 ? TONE_TEXT.bad : ''}">${esc(withSign(m.totals.leftOver < 0 ? '−' : '', money(Math.abs(m.totals.leftOver), m.currency)))}</td>
       <td class="hidden px-2 py-2 text-end tabular-nums sm:table-cell">${m.totals.score ?? '—'}</td>
       <td class="hidden px-2 py-2 text-end tabular-nums sm:table-cell">${deltaTxt}</td>
       <td class="py-1 ps-1 text-end"><span class="inline-flex">

@@ -7,9 +7,10 @@ import { paydayIcs } from '../utils/ics.js';
 import { $, esc, icon, setHTML, setText, toast } from './dom.js';
 import { helpBtn } from './help.js';
 import { t, getLanguage } from '../i18n/index.js';
+import { dateLocale } from '../utils/format.js';
 
 const monthKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
-const monthName = () => new Date().toLocaleDateString('en-US', { month: 'long' });
+const monthName = () => new Date().toLocaleDateString(dateLocale(), { month: 'long' });
 
 /** "A, B and 2 more" */
 function listNames(names, fallback = t('payday.list.fallback')) {

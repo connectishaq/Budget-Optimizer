@@ -7,7 +7,7 @@
 
 import { CATEGORY_DEFS, computeBudget } from './calculate.js';
 import { PROFILES } from './profiles.js';
-import { CURRENCIES } from '../utils/format.js';
+import { CURRENCIES, dateLocale } from '../utils/format.js';
 import { normalizeState } from '../state.js';
 import { t } from '../i18n/index.js';
 
@@ -40,8 +40,8 @@ export function prevMonthKey(key) {
 export function monthLabel(key, { long = false, monthOnly = false } = {}) {
   const [y, m] = key.split('-').map(Number);
   const d = new Date(y, m - 1, 1);
-  if (monthOnly) return d.toLocaleDateString('en-US', { month: 'long' });
-  return d.toLocaleDateString('en-US', { month: long ? 'long' : 'short', year: 'numeric' });
+  if (monthOnly) return d.toLocaleDateString(dateLocale(), { month: 'long' });
+  return d.toLocaleDateString(dateLocale(), { month: long ? 'long' : 'short', year: 'numeric' });
 }
 
 // ---------------- Entries ----------------

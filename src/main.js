@@ -16,6 +16,7 @@ import { initHelp } from './ui/help.js';
 import { startMonths, initMonths, renderMonths, noteBudgetChange, loadThisMonth } from './ui/months.js';
 import { initReset } from './ui/reset.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
+import { setFormatRegion } from './utils/format.js';
 import { initAds } from './ads.js';
 import { t } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
@@ -75,6 +76,7 @@ function initTheme() {
  */
 async function applyCountry(code, { defaults = true } = {}) {
   const C = await loadCountry(code);
+  setFormatRegion(code);
   setState((s) => {
     const pick = returnOptions(s.country).findIndex((o) => o.value === s.projection.rate);
     s.country = code;
@@ -110,6 +112,7 @@ async function boot() {
   if (restored && getState().country !== GLOBAL) {
     await loadCountry(getState().country);
     storeCountry(getState().country);
+    setFormatRegion(getState().country);
   } else {
     await applyCountry(initialCountry(), { defaults: !restored });
   }

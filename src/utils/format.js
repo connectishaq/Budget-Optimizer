@@ -2,7 +2,39 @@
 // constructors are comparatively expensive and we format on every render.
 // Words (currency names, durations, errors) come from the "format" messages.
 
-import { t } from '../i18n/index.js';
+import { t, getLanguage, dirOf } from '../i18n/index.js';
+
+// ---------------- Locale ----------------
+// English keeps each currency's own English locale (the page reads exactly as
+// before). Other languages use language + the country's region, with Latin
+// digits so typed and shown numbers match: "de-DE", "hi-IN", "ar-AE".
+let region = null; // ISO region of the selected country; null for GLOBAL
+export function setFormatRegion(country) {
+  region = /^[A-Z]{2}$/.test(country || '') ? country : null;
+  cache.clear();
+}
+const currencyRegion = (currency) => (CURRENCIES[currency] || CURRENCIES.USD).locale.split('-')[1];
+
+/** BCP 47 locale for numbers and money in this currency. */
+export function numberLocale(currency = 'USD') {
+  const lang = getLanguage();
+  if (lang === 'en') return (CURRENCIES[currency] || CURRENCIES.USD).locale;
+  return `${lang}-${region || currencyRegion(currency)}-u-nu-latn`;
+}
+
+/** Locale for dates and month names: US English for English, otherwise language + region. */
+export function dateLocale() {
+  const lang = getLanguage();
+  return lang === 'en' ? 'en-US' : `${lang}-${region || 'US'}-u-nu-latn`;
+}
+
+// Right-to-left pages keep amounts reading left to right ("+$544", not "$544+")
+const LRI = '\u2066';
+const PDI = '\u2069';
+const ltr = (s) => (dirOf(getLanguage()) === 'rtl' ? `${LRI}${s}${PDI}` : s);
+const unwrapLtr = (s) => String(s).replace(/^\u2066|\u2069$/g, '');
+/** A formatted amount with a sign in front, kept together in right-to-left text. */
+export const withSign = (sign, formatted) => ltr(`${sign}${unwrapLtr(formatted)}`);
 
 export const CURRENCIES = {
   USD: { get label() { return t('format.currencies.USD'); }, locale: 'en-US' },
@@ -26,10 +58,10 @@ export const usesLakh = (currency) => LAKH_CURRENCIES.has(currency);
 
 const cache = new Map();
 function formatter(currency, digits, compact = false) {
-  const key = `${currency}|${digits}|${compact}`;
+  const locale = numberLocale(currency);
+  const key = `${locale}|${currency}|${digits}|${compact}`;
   let f = cache.get(key);
   if (!f) {
-    const { locale } = CURRENCIES[currency] || CURRENCIES.USD;
     f = new Intl.NumberFormat(locale, {
       style: 'currency',
       currency: CURRENCIES[currency] ? currency : 'USD',
@@ -54,9 +86,9 @@ export function currencySymbol(currency = 'USD') {
 const symbolGap = (sym) => (/[A-Za-z]$/.test(sym) ? ' ' : '');
 
 /** Exact whole-unit currency, e.g. "$1,234" or "Rs 1,160,000". Used for hover text and inputs. */
-export const money = (n, currency = 'USD') => formatter(currency, 0).format(Math.round(safe(n)));
+export const money = (n, currency = 'USD') => ltr(formatter(currency, 0).format(Math.round(safe(n))));
 /** Currency with cents, e.g. "$1,234.50". */
-export const money2 = (n, currency = 'USD') => formatter(currency, 2).format(safe(n));
+export const money2 = (n, currency = 'USD') => ltr(formatter(currency, 2).format(safe(n)));
 
 /**
  * Friendly rounding for estimates: nearest 100 for PKR/INR, nearest 1 elsewhere.
@@ -79,7 +111,7 @@ export function moneyNice(n, currency = 'USD', { friendly = false } = {}) {
     const sign = v < 0 ? '-' : '';
     const abs = Math.abs(v);
     const [value, unit] = abs >= 1e7 ? [abs / 1e7, 'format.crore'] : [abs / 1e5, 'format.lakh'];
-    return t(unit, { amount: `${sign}${sym}${symbolGap(sym)}${trim(value)}` });
+    return t(unit, { amount: ltr(`${sign}${sym}${symbolGap(sym)}${trim(value)}`) });
   }
   return money(v, currency);
 }
@@ -90,11 +122,11 @@ export function moneyShort(n, currency = 'USD') {
   if (usesLakh(currency)) {
     const sym = currencySymbol(currency);
     const gap = symbolGap(sym);
-    if (Math.abs(v) >= 1e7) return t('format.croreShort', { amount: `${sym}${gap}${trim(v / 1e7, 1)}` });
-    if (Math.abs(v) >= 1e5) return t('format.lakhShort', { amount: `${sym}${gap}${trim(v / 1e5, 1)}` });
+    if (Math.abs(v) >= 1e7) return t('format.croreShort', { amount: ltr(`${sym}${gap}${trim(v / 1e7, 1)}`) });
+    if (Math.abs(v) >= 1e5) return t('format.lakhShort', { amount: ltr(`${sym}${gap}${trim(v / 1e5, 1)}`) });
     return money(v, currency);
   }
-  return Math.abs(v) < 10000 ? money(v, currency) : formatter(currency, 0, true).format(v);
+  return Math.abs(v) < 10000 ? money(v, currency) : ltr(formatter(currency, 0, true).format(v));
 }
 
 export const pct = (ratio, digits = 0) => `${(safe(ratio) * 100).toFixed(digits)}%`;
@@ -116,7 +148,12 @@ export function duration(months) {
 export function monthsFromNow(months, from = new Date()) {
   if (months == null || !Number.isFinite(months)) return '—';
   const d = new Date(from.getFullYear(), from.getMonth() + Math.ceil(months), 1);
-  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  return d.toLocaleDateString(dateLocale(), { month: 'short', year: 'numeric' });
+}
+
+/** The decimal mark people type for this currency in the active language: "." or ",". */
+export function decimalSeparator(currency = 'USD') {
+  return formatter(currency, 2).formatToParts(1.5).find((p) => p.type === 'decimal')?.value === ',' ? ',' : '.';
 }
 
 export const MAX_AMOUNT = 1e12;
@@ -127,8 +164,10 @@ const CURRENCY_MARK = /^(?:[$£€₹]|rs\.?|aed|usd|gbp|eur|inr|pkr|cad|aud|[ca
  * Anything else ("5k", "1e6", "12abc") is an error rather than a guess.
  * Returns { value, error } where value is always a usable non-negative number.
  */
-export function parseAmount(raw) {
-  const str = String(raw ?? '').replace(/\s/g, '');
+export function parseAmount(raw, { decimal = '.' } = {}) {
+  let str = String(raw ?? '').replace(/\s/g, '');
+  // Where the decimal mark is a comma, swap the two marks and read it the same way
+  if (decimal === ',') str = str.replace(/[.,]/g, (c) => (c === '.' ? ',' : '.'));
   if (str === '') return { value: 0, error: null };
   let s = str.replace(CURRENCY_MARK, '');
   const negative = s.startsWith('-');
