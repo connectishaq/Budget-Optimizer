@@ -43,16 +43,17 @@ describe('rule dictionary', () => {
 });
 
 describe('evaluatePlan', () => {
-  it('fires carpooling at exactly 15% for suburban fuel > 200', () => {
-    const s = base({ values: { income: 6000, fuel: 300 } });
+  // US suburban fuel threshold = top of the typical range (450, US.json)
+  it('fires carpooling at exactly 15% for suburban fuel above typical', () => {
+    const s = base({ values: { income: 6000, fuel: 500 } });
     const carpool = evaluatePlan(s, computeTotals(s)).find((p) => p.id === 'fuel-carpool');
-    expect(carpool.monthly).toBeCloseTo(45, 5);
-    expect(carpool.annual).toBeCloseTo(540, 5);
+    expect(carpool.monthly).toBeCloseTo(75, 5);
+    expect(carpool.annual).toBeCloseTo(900, 5);
     expect(carpool.why).toMatch(/higher than what's typical for families/);
   });
 
   it('profile changes which rules fire', () => {
-    const values = { income: 6000, fuel: 300 };
+    const values = { income: 6000, fuel: 500 };
     const sub = evaluatePlan(base({ values }), computeTotals(base({ values })));
     const single = evaluatePlan(base({ profile: 'single', values }), computeTotals(base({ profile: 'single', values })));
     expect(ids(sub)).toContain('fuel-carpool');
@@ -60,8 +61,9 @@ describe('evaluatePlan', () => {
     expect(ids(single)).toContain('fuel-carlight');
   });
 
-  it('profile changes thresholds (utilities 170 fires for young pro, not suburban)', () => {
-    const values = { income: 6000, electricity: 120, waterGas: 50 };
+  // US utilities thresholds: young pro 190, suburban 340 (US.json)
+  it('profile changes thresholds (utilities 220 fires for young pro, not suburban)', () => {
+    const values = { income: 6000, electricity: 160, waterGas: 60 };
     const yp = base({ profile: 'youngpro', values });
     const sb = base({ values });
     expect(ids(evaluatePlan(yp, computeTotals(yp)))).toContain('utilities-efficiency');

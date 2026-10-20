@@ -53,19 +53,19 @@
       "ranges": {
         "income": {
           "value": [
-            90000,
-            160000
+            55000,
+            130000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [90000, 160000]; too high for a typical single urban worker. PBS LFS 2024-25 mean monthly wage of paid employees: urban ~Rs 44k, professionals Rs 62.8k, managers Rs 103.3k; +15% CPI uplift (PBS national CPI 304.3 in Sep 2026 vs ~265 mid-survey, derived from PBS YoY rates of 10.26% for Sep 2026 and 5.76% for Sep 2025) gives ~51k / 72k / 119k (income tax is small at these levels). Federal minimum wage is Rs 40,700 (Budget 2026-27)."
         },
         "rent": {
           "value": [
-            25000,
-            40000
+            20000,
+            45000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [25000, 40000]; Zameen Index average asking rents for flats, Aug 2026: North Karachi Rs 30k, Saddar Rs 41k, Lahore Central Park Rs 22k, Nawab Town Rs 36k, Johar Town (about 490 sq ft) Rs 45k. Low end allows a shared flat or room; rent stays under ~35% of the new income range."
         },
         "homeIns": {
           "value": [
@@ -80,8 +80,8 @@
             6000,
             14000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: about 190-345 units a month for an unprotected consumer. Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored. Protected users (200 units or less for 6 months) pay far less."
         },
         "waterGas": {
           "value": [
@@ -89,23 +89,23 @@
             4000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Gas minimum bill is over Rs 755 (protected) or Rs 1,820 (non-protected) a month after the July 2025 fixed-charge rise (Dawn), so the low end fits; winter usage, water and LPG costs above that are an estimate (no published bill averages)."
         },
         "internet": {
           "value": [
             3000,
             6000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: PTCL Flash Fiber 30 Mbps Rs 3,499 and 40 Mbps Rs 4,999 a month incl. tax (ProPakistani package list, Jun 2026), plus a mobile bundle."
         },
         "fuel": {
           "value": [
             5000,
             10000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 13-26 litres a month: a motorbike commute or light car use."
         },
         "transit": {
           "value": [
@@ -136,16 +136,16 @@
             0,
             0
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed by definition: this household type has no children."
         },
         "groceries": {
           "value": [
-            18000,
-            28000
+            12000,
+            22000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [18000, 28000]; PBS HIES 2024-25: food is ~37% of household spending; urban per-capita consumption Rs 16,795 (top urban quintile Rs 31,301), so about Rs 6-11k of food per person after a +15% CPI uplift. The range adds household items and a living-alone premium (judgement on top of the HIES figures)."
         },
         "dining": {
           "value": [
@@ -153,7 +153,7 @@
             12000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "HIES 2024-25: restaurants and hotels are 6.6% of household spending; people living alone eat out more, but there is no data by household type. Kept."
         },
         "misc": {
           "value": [
@@ -212,8 +212,8 @@
         },
         "fuel": {
           "value": 10000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
         },
         "transit": {
           "value": 8000,
@@ -222,8 +222,8 @@
         },
         "internet": {
           "value": 6000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
         },
         "insurance": {
           "value": 3000,
@@ -298,19 +298,19 @@
       "ranges": {
         "income": {
           "value": [
-            220000,
-            400000
+            130000,
+            350000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [220000, 400000]; above most urban families. PBS HIES 2024-25 average monthly urban household income: 4th quintile Rs 81,022, 5th quintile (avg 4.68 people) Rs 146,920; +15% CPI uplift (PBS national CPI 304.3 in Sep 2026 vs ~265 mid-survey, derived from PBS YoY rates of 10.26% for Sep 2026 and 5.76% for Sep 2025) gives ~93k and ~169k. A renting family of four with a car and private schooling sits around the top urban quintile, so the range runs from ~0.8x to ~2x that average."
         },
         "rent": {
           "value": [
-            50000,
-            90000
+            35000,
+            80000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [50000, 90000]; Zameen Index average asking rents, Aug 2026: houses in Lahore Alfalah Town Rs 50k, Shoukat Town Rs 43k; Faisalabad Nemat Colony Rs 46k, Canal Garden Rs 68k; Karachi Shah Faisal Town Rs 71k, Bahria Town Rs 81k; flats in Gulistan-e-Jauhar Rs 66k, Bahria Town Karachi Rs 44k. Low end is a house portion in a cheaper scheme."
         },
         "homeIns": {
           "value": [
@@ -325,8 +325,8 @@
             15000,
             32000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: about 370-650 units a month averaged over the year (ACs in summer). Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored."
         },
         "waterGas": {
           "value": [
@@ -334,23 +334,23 @@
             8000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Gas fixed charge is Rs 1,500 for non-protected homes from July 2025 (minimum bill over Rs 1,820, Dawn); winter slab use and water charges on top are an estimate."
         },
         "internet": {
           "value": [
             4000,
             8000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: PTCL Flash Fiber Rs 3,499-4,999 a month incl. tax (ProPakistani, Jun 2026) plus two adults' mobile bundles."
         },
         "fuel": {
           "value": [
             18000,
             28000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 46-72 litres a month: one family car (roughly 550-850 km at 12 km/l)."
         },
         "transit": {
           "value": [
@@ -382,15 +382,15 @@
             50000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools; Sindh and Lahore cap yearly rises at 5%. Two children at mid-range schools fits, but kept as an estimate."
         },
         "groceries": {
           "value": [
-            60000,
-            85000
+            35000,
+            65000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [60000, 85000]; PBS HIES 2024-25: food is ~37% of household spending; urban per-capita consumption Rs 13,976 (4th quintile) to Rs 31,301 (5th), so about Rs 5-11k of food per person after a +15% CPI uplift. Four people plus household items come to about Rs 35-65k."
         },
         "dining": {
           "value": [
@@ -457,8 +457,8 @@
         },
         "fuel": {
           "value": 28000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
         },
         "transit": {
           "value": 6000,
@@ -467,8 +467,8 @@
         },
         "internet": {
           "value": 8000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
         },
         "insurance": {
           "value": 8000,
@@ -546,16 +546,16 @@
             150000,
             300000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed as plausible: PBS LFS 2024-25 mean monthly wage of professionals Rs 62,822 and managers Rs 103,268; +15% CPI uplift gives ~72k and ~119k. Two professional earners make about Rs 145k; a manager couple or a single senior earner reaches the top of the range."
         },
         "rent": {
           "value": [
-            40000,
-            75000
+            45000,
+            95000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [40000, 75000]; Zameen Index average asking rents for flats, Aug 2026: Karachi Gulistan-e-Jauhar Rs 66k, Federal B Area Rs 75k, North Nazimabad Rs 87k, Gulshan-e-Iqbal Rs 96k; Lahore Johar Town Rs 45k, Bahria Town Rs 58k, Model Town Rs 73k; Islamabad G-15 Rs 63k, Gulberg Rs 87k, E-11 Rs 93k."
         },
         "homeIns": {
           "value": [
@@ -570,8 +570,8 @@
             10000,
             22000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: about 260-490 units a month. Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored."
         },
         "waterGas": {
           "value": [
@@ -586,16 +586,16 @@
             4000,
             7000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: PTCL Flash Fiber Rs 3,499-4,999 a month incl. tax (ProPakistani, Jun 2026) plus mobile bundles."
         },
         "fuel": {
           "value": [
             12000,
             22000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 31-56 litres a month."
         },
         "transit": {
           "value": [
@@ -634,8 +634,8 @@
             25000,
             38000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed as plausible: PBS HIES 2024-25 top urban quintile per-capita consumption Rs 31,301 with food ~37% of spending gives about Rs 11-13k of food per person after a +15% CPI uplift; two people plus household items and some packaged food come to about Rs 25-38k."
         },
         "dining": {
           "value": [
@@ -702,8 +702,8 @@
         },
         "fuel": {
           "value": 22000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
         },
         "transit": {
           "value": 7000,
@@ -712,8 +712,8 @@
         },
         "internet": {
           "value": 7000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
         },
         "insurance": {
           "value": 6000,
@@ -788,25 +788,25 @@
   "samples": {
     "single": {
       "values": {
-        "income": 150000,
-        "rent": 35000,
+        "income": 110000,
+        "rent": 28000,
         "homeIns": 0,
-        "electricity": 12000,
-        "waterGas": 2500,
-        "internet": 4500,
-        "fuel": 12000,
-        "transit": 9000,
+        "electricity": 8000,
+        "waterGas": 2000,
+        "internet": 3500,
+        "fuel": 6000,
+        "transit": 3000,
         "carIns": 0,
         "carLoan": 0,
         "school": 0,
-        "groceries": 30000,
-        "dining": 14000,
-        "misc": 12000,
-        "medical": 2500,
-        "homeHelp": 3000,
-        "familySupport": 5000,
-        "giving": 1500,
-        "other": 2000,
+        "groceries": 15000,
+        "dining": 6000,
+        "misc": 5000,
+        "medical": 2000,
+        "homeHelp": 0,
+        "familySupport": 8000,
+        "giving": 1000,
+        "other": 1000,
         "emergencyFund": 50000
       },
       "debts": [
@@ -844,51 +844,51 @@
       "extras": [
         {
           "name": "Festival bonus (Eid, Diwali, Christmas…)",
-          "amount": 75000
+          "amount": 90000
         },
         {
           "name": "Overtime",
-          "amount": 60000
+          "amount": 40000
         }
       ]
     },
     "suburban": {
       "values": {
-        "income": 400000,
-        "rent": 60000,
-        "homeIns": 1500,
-        "electricity": 36000,
-        "waterGas": 6000,
-        "internet": 9000,
-        "fuel": 32000,
+        "income": 280000,
+        "rent": 50000,
+        "homeIns": 1000,
+        "electricity": 22000,
+        "waterGas": 5000,
+        "internet": 6000,
+        "fuel": 20000,
         "transit": 2000,
-        "carIns": 6000,
-        "carLoan": 35000,
-        "school": 35000,
-        "groceries": 90000,
-        "dining": 15000,
-        "misc": 22000,
-        "medical": 6000,
-        "homeHelp": 15000,
-        "familySupport": 20000,
-        "giving": 4000,
-        "other": 6000,
+        "carIns": 4000,
+        "carLoan": 20000,
+        "school": 30000,
+        "groceries": 45000,
+        "dining": 8000,
+        "misc": 8000,
+        "medical": 5000,
+        "homeHelp": 10000,
+        "familySupport": 10000,
+        "giving": 3000,
+        "other": 3000,
         "emergencyFund": 150000
       },
       "debts": [
         {
           "type": "card",
           "name": "Credit card",
-          "balance": 180000,
+          "balance": 120000,
           "apr": 40,
-          "payment": 12000
+          "payment": 8000
         },
         {
           "type": "loan",
           "name": "Personal loan",
-          "balance": 400000,
+          "balance": 250000,
           "apr": 22,
-          "payment": 15000
+          "payment": 10000
         }
       ],
       "subscriptions": [
@@ -931,57 +931,57 @@
       "yearly": [
         {
           "name": "Festivals (Eid, Diwali, Christmas…)",
-          "cost": 120000
+          "cost": 100000
         },
         {
           "name": "School books, uniforms and admission",
-          "cost": 60000
+          "cost": 50000
         },
         {
           "name": "Car service and repairs",
-          "cost": 40000
+          "cost": 30000
         }
       ],
       "extras": [
         {
           "name": "Festival bonus (Eid, Diwali, Christmas…)",
-          "amount": 200000
-        },
-        {
-          "name": "Yearly performance bonus",
-          "amount": 400000
-        },
-        {
-          "name": "Overtime",
           "amount": 120000
         },
         {
+          "name": "Yearly performance bonus",
+          "amount": 150000
+        },
+        {
+          "name": "Overtime",
+          "amount": 60000
+        },
+        {
           "name": "Extra work or side jobs",
-          "amount": 180000
+          "amount": 90000
         }
       ]
     },
     "youngpro": {
       "values": {
-        "income": 290000,
-        "rent": 60000,
+        "income": 250000,
+        "rent": 65000,
         "homeIns": 0,
-        "electricity": 20000,
-        "waterGas": 3500,
-        "internet": 6500,
-        "fuel": 26000,
+        "electricity": 16000,
+        "waterGas": 3000,
+        "internet": 6000,
+        "fuel": 18000,
         "transit": 4000,
-        "carIns": 5000,
-        "carLoan": 45000,
+        "carIns": 4000,
+        "carLoan": 25000,
         "school": 0,
-        "groceries": 32000,
-        "dining": 34000,
-        "misc": 17000,
+        "groceries": 30000,
+        "dining": 15000,
+        "misc": 10000,
         "medical": 3000,
-        "homeHelp": 0,
-        "familySupport": 15000,
+        "homeHelp": 6000,
+        "familySupport": 12000,
         "giving": 2000,
-        "other": 4000,
+        "other": 3000,
         "emergencyFund": 80000
       },
       "debts": [
@@ -1176,7 +1176,7 @@
     {
       "title": "v1 PKR benchmark set (src/engine/profiles.js, commit ee4576a)",
       "url": "git:ee4576a:src/engine/profiles.js",
-      "usedFor": "all ranges, thresholds, category shares, one-off costs and sample budgets (ported unchanged)"
+      "usedFor": "values still marked verify: true (ported unchanged from v1)"
     },
     {
       "title": "SBP keeps policy rate at 11.5% (July 2026); inflation 10.9% Apr, 11.7% May 2026 — ARY News",
@@ -1202,7 +1202,92 @@
       "title": "MCB credit card summary box Jul–Dec 2026 (APR up to 44%); Allied Bank cards 34% p.a.",
       "url": "https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf",
       "usedFor": "defaults.cardApr (38% sits inside the 34–44% range)"
+    },
+    {
+      "title": "PBS — Household Integrated Economic Survey (HIES) 2024-25, Final Report",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/HIES-2024-25-Report-Final-1.pdf",
+      "usedFor": "urban household income by quintile, per-capita consumption, food and restaurant shares (income, groceries)"
+    },
+    {
+      "title": "PBS — Labour Force Survey 2024-25 Annual Report (Tables 5.2 and 5.4, monthly wages)",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/LFS-2024-25-Annual-Report.pdf",
+      "usedFor": "single and youngpro income"
+    },
+    {
+      "title": "PBS — CPI press release, September 2026 (10.26% YoY, national index 304.33)",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Press-Release-September-2026.pdf",
+      "usedFor": "inflating 2024-25 survey figures to late 2026"
+    },
+    {
+      "title": "PBS — CPI press release, September 2025 (5.76% YoY)",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/3.-Revised-Press-Release-September-2025.doc",
+      "usedFor": "inflating 2024-25 survey figures to late 2026"
+    },
+    {
+      "title": "Daily Pakistan — minimum wage raised to Rs 40,700 in Budget 2026-27 (12 Jun 2026)",
+      "url": "https://en.dailypakistan.com.pk/12-Jun-2026/pakistan-raises-minimum-wage-to-rs40700-in-budget-2026-27",
+      "usedFor": "single income (context)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for flats, Karachi (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/flats/karachi-2/",
+      "usedFor": "rent (single, suburban, youngpro)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for flats, Lahore (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/flats/lahore-1/",
+      "usedFor": "rent (single, youngpro)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for flats, Islamabad (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/flats/islamabad-3/",
+      "usedFor": "rent (youngpro)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for houses, Lahore (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/houses/lahore-1/",
+      "usedFor": "rent (suburban)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for houses, Faisalabad (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/houses/faisalabad-16/",
+      "usedFor": "rent (suburban)"
+    },
+    {
+      "title": "Zameen Index — average asking rent for houses, Karachi (Aug 2026)",
+      "url": "https://www.zameen.com/index/rent/houses/karachi-2/",
+      "usedFor": "rent (suburban)"
+    },
+    {
+      "title": "APP — OGRA cuts petrol price by Rs3.63 to Rs390.23 per litre (Oct 2026)",
+      "url": "https://www.app.com.pk/?p=1292415",
+      "usedFor": "fuel ranges and thresholds"
+    },
+    {
+      "title": "Nukta — Pakistan reduces average power tariff (NEPRA domestic slab rates, Jul 2025)",
+      "url": "https://nukta.com/pakistan-reduces-average-power-tariff",
+      "usedFor": "electricity ranges (bill calculation)"
+    },
+    {
+      "title": "The News — domestic consumers using up to 300 units hit with fixed charges (NEPRA, Feb 2026)",
+      "url": "https://www.thenews.pk/story/1398554-domestic-consumers-using-up-to-300-units-hit-with-fixed-charges",
+      "usedFor": "electricity ranges (fixed charges, slab cuts)"
+    },
+    {
+      "title": "Dawn — Govt notifies 50pc hike in gas charges (30 Jun 2025)",
+      "url": "https://www.dawn.com/news/1921120",
+      "usedFor": "waterGas (minimum gas bills; still unverified)"
+    },
+    {
+      "title": "ProPakistani — PTCL Flash Fiber packages (Jun 2026)",
+      "url": "https://propakistani.pk/packages/ptcl-flash-fiber-packages/",
+      "usedFor": "internet ranges and thresholds"
+    },
+    {
+      "title": "Result.pk — Punjab govt denies Rs 10,000 limit on private school fees",
+      "url": "https://www.result.pk/educom/punjab-govt-denies-rs-10000-limit-on-private-school-fees-55209.htm",
+      "usedFor": "school (context only; still unverified)"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-10-20"
 }

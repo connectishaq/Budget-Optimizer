@@ -6,11 +6,11 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1887 value(s) across 16 file(s).**
+**1794 value(s) across 16 file(s).**
 
-## AE · AED · last reviewed 2026-10-19
+## AE · AED · last reviewed 2026-10-20
 
-118 value(s) to verify.
+100 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -23,13 +23,10 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.ledKit` | 100 | Typical retail prices in the UAE; judgement, not checked against a price survey. |
 | `costs.smartThermostat` | 600 | Typical retail prices in the UAE; judgement, not checked against a price survey. |
 | `costs.tuneup` | 60 | Typical retail prices in the UAE; judgement, not checked against a price survey. |
-| `profiles.single.ranges.income` | 9000 – 16000 | No official wage data (last UAE wage dataset is from 2008). Based on crowdsourced/recruiter figures: Dubai median ~AED 12,000–15,000 a month. |
+| `profiles.single.ranges.income` | 9000 – 16000 | No official wage data (last UAE wage dataset is from 2008). Michael Page UAE Salary Guide 2026 (via The National): over 60% of 500+ listed roles pay AED 10,000–40,000 a month, retail sales associate ~7,000; no income tax, so gross ≈ take-home for expats. Range fits a junior–mid salaried single but no source gives a median for this household. |
 | `profiles.single.ranges.homeIns` | 0 – 60 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.single.ranges.electricity` | 250 – 600 | DEWA bill guides give AED 400–750 in summer for a 1-bed, much less in winter; averaged over the year. |
-| `profiles.single.ranges.waterGas` | 100 – 250 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.single.ranges.internet` | 350 – 600 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.single.ranges.fuel` | 300 – 700 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.single.ranges.transit` | 200 – 600 | Nol monthly pass ~AED 350 (unofficial) plus Salik at AED 6.30 peak / 4.20 off-peak. |
+| `profiles.single.ranges.fuel` | 300 – 700 | Special 95 is AED 4.28/L in Oct 2026 (Khaleej Times); 300–700 buys ~70–165 L, roughly 800–1,800 km a month in a mid-size car. Driving distance is an assumption; no UAE survey of household fuel spend found. |
+| `profiles.single.ranges.transit` | 200 – 600 | Salik AED 6.30 peak / 4.20 off-peak incl. VAT from June 2026 (Yallamotor). RTA nol pages list card prices but no current monthly pass price (older press: Silver all-zone pass AED 350); range kept as estimate. |
 | `profiles.single.ranges.carIns` | 100 – 250 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.single.ranges.carLoan` | 0 – 1800 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.single.ranges.groceries` | 1000 – 1800 | Estimate built from the cited 2026 price points for this household type; not a published average. |
@@ -40,10 +37,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.ranges.familySupport` | 0 – 3000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.single.ranges.giving` | 0 – 500 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.single.ranges.other` | 0 – 600 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.single.thresholds.utilities` | 800 | Set near the top of the typical range for this household; judgement. |
 | `profiles.single.thresholds.fuel` | 700 | Set near the top of the typical range for this household; judgement. |
 | `profiles.single.thresholds.transit` | 600 | Set near the top of the typical range for this household; judgement. |
-| `profiles.single.thresholds.internet` | 550 | Set near the top of the typical range for this household; judgement. |
 | `profiles.single.thresholds.insurance` | 250 | Set near the top of the typical range for this household; judgement. |
 | `profiles.single.thresholds.carLoan` | 1800 | Set near the top of the typical range for this household; judgement. |
 | `profiles.single.thresholds.school` | 2000 | Set near the top of the typical range for this household; judgement. |
@@ -57,12 +52,9 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Judgement estimate of typical share of take-home pay. |
 | `profiles.single.categoryShare.care` | 0.08 | Judgement estimate of typical share of take-home pay. |
 | `profiles.single.categoryShare.yearly` | 0.05 | Judgement estimate of typical share of take-home pay. |
-| `profiles.suburban.ranges.income` | 22000 – 40000 | Two-income expat family; no official household income data published. Judgement from recruiter salary guides. |
+| `profiles.suburban.ranges.income` | 22000 – 40000 | Two-income expat family; no official household income data (SCAD 2024 household survey results not found published). Michael Page 2026: most professional roles AED 10,000–40,000 a month per earner. Judgement. |
 | `profiles.suburban.ranges.homeIns` | 40 – 150 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.suburban.ranges.electricity` | 700 – 1500 | DEWA guides: 2–3 bed apartment AED 700–1,400 in summer, 3-bed villa 1,500–2,500; averaged over the year. |
-| `profiles.suburban.ranges.waterGas` | 250 – 600 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.suburban.ranges.internet` | 450 – 800 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.suburban.ranges.fuel` | 700 – 1300 | Estimate built from the cited 2026 price points for this household type; not a published average. |
+| `profiles.suburban.ranges.fuel` | 700 – 1300 | Special 95 AED 4.28/L in Oct 2026 (Khaleej Times); 700–1,300 buys ~165–300 L a month, i.e. two cars or long suburban commutes. Distance is an assumption; no survey found. |
 | `profiles.suburban.ranges.transit` | 0 – 400 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.suburban.ranges.carIns` | 250 – 500 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.suburban.ranges.carLoan` | 1500 – 3500 | Estimate built from the cited 2026 price points for this household type; not a published average. |
@@ -74,10 +66,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.ranges.familySupport` | 0 – 5000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.suburban.ranges.giving` | 0 – 1000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.suburban.ranges.other` | 0 – 1200 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.suburban.thresholds.utilities` | 2000 | Set near the top of the typical range for this household; judgement. |
 | `profiles.suburban.thresholds.fuel` | 1300 | Set near the top of the typical range for this household; judgement. |
 | `profiles.suburban.thresholds.transit` | 400 | Set near the top of the typical range for this household; judgement. |
-| `profiles.suburban.thresholds.internet` | 700 | Set near the top of the typical range for this household; judgement. |
 | `profiles.suburban.thresholds.insurance` | 500 | Set near the top of the typical range for this household; judgement. |
 | `profiles.suburban.thresholds.carLoan` | 3500 | Set near the top of the typical range for this household; judgement. |
 | `profiles.suburban.thresholds.school` | 9000 | Set near the top of the typical range for this household; judgement. |
@@ -91,13 +81,10 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Judgement estimate of typical share of take-home pay. |
 | `profiles.suburban.categoryShare.care` | 0.1 | Judgement estimate of typical share of take-home pay. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Judgement estimate of typical share of take-home pay. |
-| `profiles.youngpro.ranges.income` | 16000 – 30000 | Recruiter guides: most professional roles AED 10,000–40,000 a month; no official data. |
+| `profiles.youngpro.ranges.income` | 16000 – 30000 | Michael Page UAE Salary Guide 2026 (via The National): over 60% of roles AED 10,000–40,000 a month; secretarial/office support average 16,550, banking average 53,020. No income tax. No median for this household type, so range kept as estimate. |
 | `profiles.youngpro.ranges.homeIns` | 0 – 80 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.ranges.electricity` | 400 – 900 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.ranges.waterGas` | 150 – 350 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.ranges.internet` | 400 – 700 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.ranges.fuel` | 500 – 1000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.ranges.transit` | 200 – 800 | Estimate built from the cited 2026 price points for this household type; not a published average. |
+| `profiles.youngpro.ranges.fuel` | 500 – 1000 | Special 95 AED 4.28/L in Oct 2026 (Khaleej Times); 500–1,000 buys ~115–235 L a month. Distance is an assumption; no survey found. |
+| `profiles.youngpro.ranges.transit` | 200 – 800 | Salik AED 6.30 peak / 4.20 off-peak incl. VAT (Yallamotor); no current official nol pass price found. Estimate. |
 | `profiles.youngpro.ranges.carIns` | 180 – 400 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.youngpro.ranges.carLoan` | 0 – 3000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.youngpro.ranges.school` | 0 – 3000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
@@ -109,10 +96,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.youngpro.ranges.familySupport` | 0 – 4000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.youngpro.ranges.giving` | 0 – 800 | Estimate built from the cited 2026 price points for this household type; not a published average. |
 | `profiles.youngpro.ranges.other` | 0 – 1000 | Estimate built from the cited 2026 price points for this household type; not a published average. |
-| `profiles.youngpro.thresholds.utilities` | 1200 | Set near the top of the typical range for this household; judgement. |
 | `profiles.youngpro.thresholds.fuel` | 1000 | Set near the top of the typical range for this household; judgement. |
 | `profiles.youngpro.thresholds.transit` | 800 | Set near the top of the typical range for this household; judgement. |
-| `profiles.youngpro.thresholds.internet` | 650 | Set near the top of the typical range for this household; judgement. |
 | `profiles.youngpro.thresholds.insurance` | 400 | Set near the top of the typical range for this household; judgement. |
 | `profiles.youngpro.thresholds.carLoan` | 3000 | Set near the top of the typical range for this household; judgement. |
 | `profiles.youngpro.thresholds.school` | 3000 | Set near the top of the typical range for this household; judgement. |
@@ -126,9 +111,6 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.youngpro.categoryShare.subscriptions` | 0.02 | Judgement estimate of typical share of take-home pay. |
 | `profiles.youngpro.categoryShare.care` | 0.08 | Judgement estimate of typical share of take-home pay. |
 | `profiles.youngpro.categoryShare.yearly` | 0.05 | Judgement estimate of typical share of take-home pay. |
-| `extraFields[0].ranges.single` | 0 – 600 | Bill guides quote AED 500–2,000+ for district cooling; many units have cooling included, so the low end is 0. |
-| `extraFields[0].ranges.suburban` | 0 – 1000 | Estimate; villas usually have their own AC units (0). |
-| `extraFields[0].ranges.youngpro` | 0 – 800 | Estimate. |
 | `localTips[0].pct` | 0.05 | Judgement estimate of the discount for paying in fewer cheques. |
 | `localTips[1].pct` | 0.12 | Judgement estimate. |
 | `localTips[2].pct` | 0.2 | Judgement estimate. |
@@ -138,8 +120,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Driven Properties — apartments for rent in Dubai (studio ~AED 60,000, 1-bed ~97,000, 2-bed ~135,000 a year)](https://www.drivenproperties.com/apartments-for-rent-in-dubai?page_no=55): rent
 - [Engel & Völkers / Property Monitor — Dubai villa rents May 2026 (3-bed AED 212,220 a year)](https://www.engelvoelkers.com/ae/en/resources/villa-rental-prices): rent (suburban upper end)
 - [Oliva — DEWA bills explained (2026 summer bill table)](https://joinoliva.com/en/learn/blog/dewa-bills-understanding-electricity-costs): electricity, waterGas
-- [Real Estate Club Dubai — utilities and monthly bills (5% housing fee, district cooling)](https://realestateclubdubai.com/blog/dubai-life/utilities-monthly-bills-dubai): housingFee, chillerFee
-- [Khaleej Times — UAE fuel prices October 2026 (Special 95 AED 4.28)](https://www.khaleejtimes.com/uae/petrol-diesel-prices-october-2026-announced): fuel
+- [Real Estate Club Dubai — utilities and monthly bills (Mar 2026: DEWA, water, district cooling, internet, gas, 5% housing fee)](https://realestateclubdubai.com/blog/dubai-life/utilities-monthly-bills-dubai): electricity, waterGas, internet, chillerFee, housingFee, thresholds.utilities
+- [Khaleej Times — UAE fuel prices October 2026 (Special 95 AED 4.28)](https://www.khaleejtimes.com/uae/petrol-diesel-prices-october-2026-announced): fuel (price per litre)
 - [Yallamotor — Salik with 5% VAT from June 2026 (AED 6.30 peak / 4.20 off-peak)](https://www.yallamotor.com/news/salik-vat-uae-2026-5-percent-tolls-parking-55390): transit, localTips
 - [iSchoolAdvisor — Dubai international school fees 2026](https://www.ischooladvisor.com/articles/schooling-and-school-choice/costs-and-fees-understanding-funding/international-school-fees-in-dubai-2026-cost-guide): school
 - [WAM — KHDA confirms no fee increase for 2026–27](https://www.wam.ae/en/article/c0ca92k-khda-confirms-fee-increase-for-dubai’s-private): school
@@ -147,6 +129,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Focus Economics — UAE/Dubai inflation July 2026](https://www.focus-economics.com/countries/uae/news/inflation/uae-consumer-prices-e-20-08-2026-inflation-eases-in-july-from-the-prior-month/): inflation (context)
 - [CBUAE — EIBOR rates](https://www.centralbank.ae/en/forex-eibor/eibor-rates/): defaults.loanApr (context)
 - [Y-Axis — average salary in Dubai (unofficial)](https://www.y-axis.com/blog/average-salary-in-dubai/): income (context)
+- [e& UAE — Home Wireless plans (AED 229 / 299 a month + VAT)](https://www.eand.ae/en/c/home/home-wireless.jsp): internet
+- [The National — UAE salary guide 2026 (Michael Page: most roles AED 10,000–40,000 a month)](https://thenational.shorthandstories.com/uae-salary-guide-2026-trends/): income (context)
 
 ## AU · AUD · last reviewed 2026-10-19
 
@@ -1026,9 +1010,9 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [AFG: CAC 40 évolution et performance (GR +9.2%/yr since 1987, to 2021)](https://afg.asso.fr/app/uploads/2021/11/21-11-04-tribune-afg-cac40-volution-et-performance-vf.pdf): returns.longTerm
 - [Avenue des Investisseurs: ETF CAC 40 (~8.5%/yr since 1987, to 2022)](https://avenuedesinvestisseurs.fr/etf-cac-40/): returns.longTerm
 
-## GB · GBP · last reviewed 2026-10-19
+## GB · GBP · last reviewed 2026-10-20
 
-136 value(s) to verify.
+108 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1040,19 +1024,10 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.ledKit` | 30 | Pack of LED bulbs; estimate. |
 | `costs.smartThermostat` | 150 | Hive/Nest/tado smart thermostat street price; estimate. |
 | `costs.tuneup` | 15 | Draught-proofing and radiator reflector kit; estimate. |
-| `profiles.single.ranges.income` | 2300 – 3400 | Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region. |
-| `profiles.single.ranges.rent` | 900 – 1400 | Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); one-bedroom flat outside London. London is much higher. |
 | `profiles.single.ranges.homeIns` | 8 – 15 | Contents insurance for renters, buildings and contents for families; estimate. |
-| `profiles.single.ranges.electricity` | 45 – 75 | Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate. |
-| `profiles.single.ranges.waterGas` | 60 – 100 | Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate. |
-| `profiles.single.ranges.internet` | 35 – 60 | Broadband plus mobile phone; estimate. |
-| `profiles.single.ranges.fuel` | 60 – 120 | Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate. |
-| `profiles.single.ranges.transit` | 80 – 160 | Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher. |
+| `profiles.single.ranges.internet` | 35 – 60 | Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept. |
 | `profiles.single.ranges.carIns` | 40 – 80 | Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate. |
 | `profiles.single.ranges.carLoan` | 0 – 300 | PCP or car loan payment; estimate. |
-| `profiles.single.ranges.school` | 0 – 0 | State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate. |
-| `profiles.single.ranges.groceries` | 180 – 280 | Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type. |
-| `profiles.single.ranges.dining` | 100 – 250 | Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate. |
 | `profiles.single.ranges.misc` | 60 – 120 | Clothes, household items and personal spending; estimate. |
 | `profiles.single.ranges.medical` | 5 – 30 | NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate. |
 | `profiles.single.ranges.homeHelp` | 0 – 0 | Cleaner a few hours a month; uncommon; estimate. |
@@ -1076,19 +1051,11 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.single.categoryShare.care` | 0.03 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.single.categoryShare.yearly` | 0.04 | Estimated typical share of take-home pay; not from a single source. |
-| `profiles.suburban.ranges.income` | 4500 – 7000 | Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region. |
-| `profiles.suburban.ranges.rent` | 1300 – 1900 | Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 3-bedroom house outside London. London is much higher. |
 | `profiles.suburban.ranges.homeIns` | 25 – 50 | Contents insurance for renters, buildings and contents for families; estimate. |
-| `profiles.suburban.ranges.electricity` | 80 – 130 | Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate. |
-| `profiles.suburban.ranges.waterGas` | 110 – 170 | Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate. |
-| `profiles.suburban.ranges.internet` | 50 – 90 | Broadband plus mobile phone; estimate. |
-| `profiles.suburban.ranges.fuel` | 150 – 250 | Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate. |
-| `profiles.suburban.ranges.transit` | 20 – 80 | Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher. |
+| `profiles.suburban.ranges.internet` | 50 – 90 | Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept. |
+| `profiles.suburban.ranges.transit` | 20 – 80 | Mostly a car-using family; occasional bus/rail and child fares. No source gives a family figure; estimate kept. For reference a Bee Network 28-day bus ticket is £80 adult, £40 child. |
 | `profiles.suburban.ranges.carIns` | 80 – 140 | Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate. |
 | `profiles.suburban.ranges.carLoan` | 200 – 450 | PCP or car loan payment; estimate. |
-| `profiles.suburban.ranges.school` | 100 – 600 | State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate. |
-| `profiles.suburban.ranges.groceries` | 550 – 800 | Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type. |
-| `profiles.suburban.ranges.dining` | 150 – 350 | Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate. |
 | `profiles.suburban.ranges.misc` | 100 – 200 | Clothes, household items and personal spending; estimate. |
 | `profiles.suburban.ranges.medical` | 20 – 80 | NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate. |
 | `profiles.suburban.ranges.homeHelp` | 0 – 200 | Cleaner a few hours a month; uncommon; estimate. |
@@ -1112,19 +1079,11 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.categoryShare.care` | 0.04 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.categoryShare.yearly` | 0.05 | Estimated typical share of take-home pay; not from a single source. |
-| `profiles.youngpro.ranges.income` | 3400 – 5500 | Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region. |
-| `profiles.youngpro.ranges.rent` | 1300 – 2000 | Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 1–2 bed flat in a big city. London is much higher. |
 | `profiles.youngpro.ranges.homeIns` | 10 – 20 | Contents insurance for renters, buildings and contents for families; estimate. |
-| `profiles.youngpro.ranges.electricity` | 55 – 90 | Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate. |
-| `profiles.youngpro.ranges.waterGas` | 70 – 120 | Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate. |
-| `profiles.youngpro.ranges.internet` | 45 – 75 | Broadband plus mobile phone; estimate. |
-| `profiles.youngpro.ranges.fuel` | 80 – 160 | Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate. |
-| `profiles.youngpro.ranges.transit` | 100 – 200 | Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher. |
+| `profiles.youngpro.ranges.internet` | 45 – 75 | Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept. |
 | `profiles.youngpro.ranges.carIns` | 50 – 100 | Comprehensive car insurance (roughly £500–900 a year per car) shown monthly; estimate. |
 | `profiles.youngpro.ranges.carLoan` | 150 – 350 | PCP or car loan payment; estimate. |
-| `profiles.youngpro.ranges.school` | 0 – 200 | State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate. |
-| `profiles.youngpro.ranges.groceries` | 280 – 420 | Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type. |
-| `profiles.youngpro.ranges.dining` | 200 – 400 | Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate. |
+| `profiles.youngpro.ranges.school` | 0 – 200 | Usually no children; the top end allows for occasional childcare. No source for this household type; estimate kept. |
 | `profiles.youngpro.ranges.misc` | 80 – 160 | Clothes, household items and personal spending; estimate. |
 | `profiles.youngpro.ranges.medical` | 10 – 50 | NHS is free at point of use; covers prescriptions (£9.90 per item in England), dentist and opticians; estimate. |
 | `profiles.youngpro.ranges.homeHelp` | 0 – 100 | Cleaner a few hours a month; uncommon; estimate. |
@@ -1163,9 +1122,6 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `samples.youngpro.subscriptions[2].cost` | 2.99 | UK list price as remembered for late 2025/2026; prices change often. |
 | `samples.youngpro.subscriptions[3].cost` | 9.99 | UK list price as remembered for late 2025/2026; prices change often. |
 | `samples.youngpro.subscriptions[4].cost` | 39.99 | UK list price as remembered for late 2025/2026; prices change often. |
-| `extraFields[0].ranges.single` | 100 – 170 | Band A–C bill with the 25% single-person discount; England average Band D is £2,392 a year (£199 a month) in 2026-27. Estimate by band. |
-| `extraFields[0].ranges.suburban` | 160 – 260 | Band C–E bill; England average Band D £2,392 a year in 2026-27 (gov.uk). Estimate by band. |
-| `extraFields[0].ranges.youngpro` | 130 – 220 | Band B–D bill, no discount for a couple; England average Band D £2,392 a year in 2026-27. Estimate by band. |
 | `localTips[0].pct` | 0.08 | Assumed saving versus the price cap; depends on deals available at the time. |
 | `localTips[1].pct` | 0.25 | Single person discount is 25%; only applies to people living alone. |
 
@@ -1173,12 +1129,25 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 - [ONS Private rent and house prices, UK: September 2026](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/september2026): rent (UK average £1,400, England £1,459, Aug 2026)
 - [Ofgem energy price cap Oct–Dec 2026 (summarised by Octopus Energy)](https://octopus.energy/blog/energy-prices-from-october-2026-and-what-they-mean-for-you/): electricity and gas (typical dual fuel £1,723 a year, unit rates and standing charges)
-- [Council Tax levels set by local authorities in England 2026 to 2027 (gov.uk)](https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027): council tax (average Band D £2,392)
+- [Council Tax levels set by local authorities in England 2026 to 2027 (gov.uk)](https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027): council tax (average Band D £2,392, band ratios)
 - [Cost of TV licence fee set for 2026/27 (gov.uk)](https://www.gov.uk/government/news/cost-of-tv-licence-fee-set-for-202627): TV licence (£180 a year)
 - [ONS Family spending in the UK: April 2024 to March 2025](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/april2024tomarch2025): groceries, dining, category shares (average £676.60 a week)
 - [UK CPI August 2026 (Investment Week)](https://www.investmentweek.co.uk/news/4535806/uk-inflation-rises-31-thanks-fuel-price-increase): inflation (3.1% a year)
 - [Moneyfacts easy access savings accounts](https://moneyfactscompare.co.uk/savings-accounts/easy-access-savings-accounts/): savings return
 - [Average credit card interest rate UK (ClearScore, citing Bank of England)](https://www.clearscore.com/learn/credit-cards/average-credit-card-interest-rate-apr-uk): card APR (24.66% average, Dec 2025)
+- [ONS Price Index of Private Rents, UK: monthly price statistics (16 Sept 2026 dataset)](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics): rent by bedrooms and city (Aug 2026)
+- [ONS Employee earnings in the UK: 2025 (ASHE)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2025): income (median full-time pay £39,039)
+- [ONS Average household income, UK: financial year ending 2025](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householddisposableincomeandinequality/financialyearending2025): income by household type (median £39,200 equivalised)
+- [Income Tax rates and Personal Allowances (gov.uk)](https://www.gov.uk/income-tax-rates): take-home pay calculation
+- [ONS Family spending workbook 4: expenditure by household characteristic (FYE 2025)](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook4expenditurebyhouseholdcharacteristic): groceries and dining by household type (tables A56, A57)
+- [Ofgem: Changes to energy price cap between 1 October and 31 December 2026](https://ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026): electricity and gas unit rates and standing charges
+- [Ofgem: Energy price cap update from 1 July 2026 (revised TDCV)](https://www.ofgem.gov.uk/sites/default/files/2026-06/Summary-of-changes-to-energy-price-cap-1-July-to-30-September-2026-revised-TDCV.pdf): typical use 2,500 kWh electricity, 9,500 kWh gas
+- [MoneySavingExpert: water bills rise from April 2026 (Water UK figures)](https://www.moneysavingexpert.com/news/2026/01/water-bills-april-rise/): water bill (£639 a year average 2026/27)
+- [Weekly road fuel prices (gov.uk)](https://www.gov.uk/government/statistics/weekly-road-fuel-prices): fuel (petrol 174.57p a litre, 19 Oct 2026)
+- [DfT NTS0901: Annual mileage of cars (gov.uk)](https://www.gov.uk/government/statistical-data-sets/nts09-vehicle-mileage-and-occupancy): fuel (petrol car 6,200 miles a year, 2025)
+- [Mayor of London MD3464: March 2026 TfL fare changes](https://www.london.gov.uk/md3464-march-2026-transport-london-fare-changes): transit (Zones 1–2 Travelcard frozen; monthly £171.70)
+- [Bus News: Greater Manchester Bee Network simpler fares](https://bus-news.com/greater-manchesters-bee-network-set-to-introduce-simpler-fares/): transit (28-day bus ticket £80 from Jan 2025)
+- [Irish News (PA): holiday clubs cost £1,145 per child (Coram Family and Childcare 2026 survey)](https://www.irishnews.com/news/uk/families-face-typical-1145-bill-per-child-for-holiday-clubs-over-summer-3N7RLS6ARFLE5KOAIK4ERC4KYY/): school / childcare (after-school £70 a week, holiday club £191 a week)
 
 ## GLOBAL · any currency · last reviewed 2026-10-19
 
@@ -1456,9 +1425,9 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Cermati — suku bunga kartu kredit di Indonesia (cap 1.75% a month)](https://www.cermati.com/artikel/suku-bunga-kartu-kredit-di-indonesia): defaults.cardApr
 - [Bisnis.com — Vidio Platinum Rp32,480 incl. 12% VAT (Jan 2025)](https://teknologi.bisnis.com/read/20250102/266/1828401/vidio-terapkan-ppn-12-langganan-streaming-platinium-jadi-segini-harganya): sample subscriptions
 
-## IN · INR · last reviewed 2026-10-19
+## IN · INR · last reviewed 2026-10-20
 
-127 value(s) to verify.
+108 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1468,19 +1437,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.ledKit` | 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.smartThermostat` | 8000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.tuneup` | 800 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.income` | 50000 – 90000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.rent` | 15000 – 30000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.rent` | 8000 – 22000 | was [15000, 30000]; lowered to fit the new income (≈30% of take-home): shared flat or PG at the low end, 1BHK in a metro at the high end. Magicbricks (May 2025) puts a 1,000 sq ft unit at ≈₹36.8k Bengaluru / ₹31.4k Pune; a 1BHK at roughly half is my scaling. No official 1BHK rent index found. |
 | `profiles.single.ranges.homeIns` | 0 – 500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.electricity` | 1000 – 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.waterGas` | 800 – 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.internet` | 700 – 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.fuel` | 2000 – 4000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.transit` | 1500 – 4000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.waterGas` | 800 – 1500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); one cylinder every 1.5–2 months ≈ ₹470–630 a month; municipal water/PNG on top varies by city and is not sourced. |
+| `profiles.single.ranges.transit` | 1500 – 4000 | Kept; metro/bus fares vary by city and no survey of monthly commuting spend by household type was found. |
 | `profiles.single.ranges.carIns` | 0 – 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.carLoan` | 0 – 12000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.school` | 0 – 0 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.groceries` | 6000 – 10000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.dining` | 3000 – 7000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.dining` | 1500 – 6000 | was [3000, 7000]; lowered in line with the new income range. No survey of eating-out spend by household type found; estimate. |
 | `profiles.single.ranges.misc` | 3000 – 6000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.medical` | 500 – 2000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.homeHelp` | 0 – 3000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1504,19 +1467,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.care` | 0.1 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.yearly` | 0.05 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.income` | 120000 – 250000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.rent` | 25000 – 50000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.rent` | 12000 – 35000 | was [25000, 50000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹20–30k in KR Puram (outer Bengaluru), ₹28–40k Hebbal. Second cities are lower; the ₹12k floor is an estimate (no tier-2 rent index found). |
 | `profiles.suburban.ranges.homeIns` | 0 – 1000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.electricity` | 2500 – 6000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.waterGas` | 1200 – 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.internet` | 1200 – 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.fuel` | 5000 – 9000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.waterGas` | 1200 – 2500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); about one cylinder a month for a family of four ≈ ₹940; municipal water and PNG charges vary by city and are not sourced. |
 | `profiles.suburban.ranges.transit` | 0 – 3000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carIns` | 1500 – 3500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carLoan` | 0 – 20000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.school` | 10000 – 30000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.groceries` | 15000 – 25000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.dining` | 4000 – 10000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.dining` | 2000 – 8000 | was [4000, 10000]; lowered in line with the new income range. No survey of eating-out spend by household type found; estimate. |
 | `profiles.suburban.ranges.misc` | 5000 – 10000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.medical` | 2000 – 6000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.homeHelp` | 4000 – 12000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1529,7 +1486,6 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.thresholds.internet` | 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.insurance` | 3500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.carLoan` | 20000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.thresholds.school` | 30000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.diningFloor` | 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.subsActive` | 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.housing` | 0.25 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1540,19 +1496,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.care` | 0.12 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.income` | 80000 – 160000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.rent` | 20000 – 40000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.homeIns` | 0 – 500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.electricity` | 1500 – 3500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.waterGas` | 800 – 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.internet` | 1000 – 2000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.fuel` | 3000 – 6000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.youngpro.ranges.waterGas` | 800 – 1500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); a cylinder every 1–1.5 months ≈ ₹630–940; water/PNG not sourced. |
 | `profiles.youngpro.ranges.transit` | 1500 – 4000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.carIns` | 1000 – 2500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.carLoan` | 0 – 15000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.school` | 0 – 5000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.groceries` | 7000 – 12000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.dining` | 6000 – 15000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.youngpro.ranges.dining` | 4000 – 12000 | was [6000, 15000]; lowered in line with the new income range. No survey of eating-out spend found; estimate. |
 | `profiles.youngpro.ranges.misc` | 4000 – 8000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.medical` | 800 – 3000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.homeHelp` | 0 – 5000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1599,6 +1549,18 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Bajaj AMC — Nifty 50 historical returns (20-year CAGR ~11.1% price / ~12.4% TRI)](https://www.bajajamc.com/knowledge-centre/nifty-50-historical-returns): returns.longTerm, returns.shares
 - [Paisabazaar — credit card interest rates in India (typically 2.5–3.75% a month)](https://www.paisabazaar.com/credit-card/interest-rates): defaults.cardApr (3.5% a month ≈ 42% a year)
 - [PM Surya Ghar: Muft Bijli Yojana](https://pmsuryaghar.gov.in/): localTips in-rooftop-solar
+- [MoSPI — HCES 2023-24 press note (urban MPCE ₹6,996; food ≈40% of urban MPCE)](https://mospi.gov.in/sites/default/files/press_release/HCES_Report202324_Press_Note_30012025.pdf): groceries (all profiles), suburban income
+- [PLFS annual report Jul 2023–Jun 2024 (urban regular salaried earnings ₹24,434/month, Apr–Jun 2024) — Rural India Online library](https://ruralindiaonline.org/en/library/resource/periodic-labour-force-survey-plfs-annual-report-july-2023-june-2024/): income (all profiles)
+- [Indeed hiring report via People Matters — average starting offer for class of 2025 ₹3.5 LPA](https://www.peoplematters.in/?p=45358): single and youngpro income
+- [NoBroker H1 2025 rent report via Outlook Money (2BHK rents by locality, Bengaluru/Pune/Hyderabad)](https://www.outlookmoney.com/real-estate/rent-vs-buying-huge-gap-between-monthly-rental-yields-and-emis-check-roi): youngpro and suburban rent
+- [Magicbricks Rent Index May 2025 via Outlook Money (1,000 sq ft unit: Bengaluru ₹36,772, Pune ₹31,439, Mumbai ₹98,431)](https://www.outlookmoney.com/invest/ahmedabad-bengaluru-pune-lead-as-rental-yields-surge-across-indian-cities): single rent (scaling only)
+- [KERC tariff order FY26–28 for BESCOM — Deccan Herald (₹5.80/unit, ₹145/kW fixed, 36p P&G surcharge)](https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fhike-in-fixed-charge-to-raise-power-bill-in-karnataka-3466600): electricity (all profiles)
+- [Housing.com — Delhi electricity rates 2025 (DERC slabs ₹3/₹4.5/₹6.5, 200 free units)](https://housing.com/news/electricity-rates-in-delhi/): electricity (context)
+- [The Hans India — petrol and diesel prices, 15 Oct 2026 (Delhi petrol ₹102.12/L)](https://www.thehansindia.com/business/market-compass/petrol-and-diesel-prices-today-in-hyderabad-delhi-chennai-and-mumbai-on-15-october-2026-1132618): fuel (all profiles)
+- [News on AIR — domestic LPG hiked to ₹913 (Mar 2026); later ₹942 from June 2026](https://www.newsonair.gov.in/domestic-lpg-price-hiked-by-rs-60-commercial-cylinder-up-rs-115): waterGas notes (LPG)
+- [Smartprix — Jio AirFiber vs Airtel Xstream AirFiber plans 2026 (from ₹599 / ₹699 + GST)](https://www.smartprix.com/bytes/jio-airfiber-vs-airtel-xstream-airfiber-best-plans-prices-comparison-2026/): internet (all profiles)
+- [CEDA Ashoka — CMS: Education 2025 analysis (urban private unaided ≈₹35,798 a student a year)](https://ceda.ashoka.edu.in/?p=10786): suburban school
+- [Factly/Dataful — CMS: Education 2025 (urban course fee ₹19,457, transport ₹7,041)](https://factly.in/two-indias-in-one-classroom-how-income-and-geography-shape-education-access): suburban school
 
 ## MX · MXN · last reviewed 2026-10-19
 
@@ -1896,9 +1858,9 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Nairametrics — bank lending rates GTBank/Zenith/Access June 2026](https://nairametrics.com/2026/06/20/nigerian-bank-lending-rates-how-gtbank-zenith-access-compare-in-june-2026/): defaults.cardApr, defaults.loanApr
 - [VTpass — DStv packages and prices 2026 (Compact ₦19,000)](https://vtpass.com/blog/2026-dstv-packages-and-prices-in-nigeria-what-you-need-to-know/): sample subscriptions
 
-## PK · PKR · last reviewed 2026-10-19
+## PK · PKR · last reviewed 2026-10-20
 
-126 value(s) to verify.
+101 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1909,19 +1871,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.ledKit` | 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.smartThermostat` | 30000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.tuneup` | 2500 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.income` | 90000 – 160000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.rent` | 25000 – 40000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.homeIns` | 0 – 1000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.electricity` | 6000 – 14000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.waterGas` | 1500 – 4000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.internet` | 3000 – 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.fuel` | 5000 – 10000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.waterGas` | 1500 – 4000 | Gas minimum bill is over Rs 755 (protected) or Rs 1,820 (non-protected) a month after the July 2025 fixed-charge rise (Dawn), so the low end fits; winter usage, water and LPG costs above that are an estimate (no published bill averages). |
 | `profiles.single.ranges.transit` | 3000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.carIns` | 0 – 3000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.carLoan` | 0 – 25000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.school` | 0 – 0 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.groceries` | 18000 – 28000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.ranges.dining` | 5000 – 12000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.dining` | 5000 – 12000 | HIES 2024-25: restaurants and hotels are 6.6% of household spending; people living alone eat out more, but there is no data by household type. Kept. |
 | `profiles.single.ranges.misc` | 5000 – 10000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.medical` | 1500 – 5000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.homeHelp` | 0 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1929,9 +1884,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.ranges.giving` | 0 – 5000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.other` | 0 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.thresholds.utilities` | 18000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.thresholds.fuel` | 10000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.thresholds.transit` | 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.single.thresholds.internet` | 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.thresholds.insurance` | 3000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.thresholds.carLoan` | 25000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.thresholds.school` | 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1945,18 +1898,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.care` | 0.08 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.yearly` | 0.05 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.income` | 220000 – 400000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.rent` | 50000 – 90000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.homeIns` | 0 – 2000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.electricity` | 15000 – 32000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.waterGas` | 3000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.internet` | 4000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.fuel` | 18000 – 28000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.waterGas` | 3000 – 8000 | Gas fixed charge is Rs 1,500 for non-protected homes from July 2025 (minimum bill over Rs 1,820, Dawn); winter slab use and water charges on top are an estimate. |
 | `profiles.suburban.ranges.transit` | 0 – 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carIns` | 3000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carLoan` | 0 – 60000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.school` | 20000 – 50000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.groceries` | 60000 – 85000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.school` | 20000 – 50000 | No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools; Sindh and Lahore cap yearly rises at 5%. Two children at mid-range schools fits, but kept as an estimate. |
 | `profiles.suburban.ranges.dining` | 8000 – 20000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.misc` | 10000 – 18000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.medical` | 5000 – 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1965,9 +1912,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.ranges.giving` | 0 – 10000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.other` | 0 – 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.utilities` | 40000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.thresholds.fuel` | 28000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.transit` | 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.thresholds.internet` | 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.insurance` | 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.carLoan` | 60000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.thresholds.school` | 45000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1981,18 +1926,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.care` | 0.12 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.income` | 150000 – 300000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.rent` | 40000 – 75000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.homeIns` | 0 – 1500 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.electricity` | 10000 – 22000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.waterGas` | 2000 – 5000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.internet` | 4000 – 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.fuel` | 12000 – 22000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.transit` | 3000 – 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.carIns` | 3000 – 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.carLoan` | 0 – 50000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.school` | 0 – 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.ranges.groceries` | 25000 – 38000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.dining` | 12000 – 28000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.misc` | 8000 – 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.medical` | 2000 – 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -2001,9 +1940,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.youngpro.ranges.giving` | 0 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.other` | 0 – 10000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.thresholds.utilities` | 27000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.thresholds.fuel` | 22000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.thresholds.transit` | 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.youngpro.thresholds.internet` | 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.thresholds.insurance` | 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.thresholds.carLoan` | 50000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.thresholds.school` | 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -2031,12 +1968,29 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 **Sources**
 
-- [v1 PKR benchmark set (src/engine/profiles.js, commit ee4576a)](git:ee4576a:src/engine/profiles.js): all ranges, thresholds, category shares, one-off costs and sample budgets (ported unchanged)
+- [v1 PKR benchmark set (src/engine/profiles.js, commit ee4576a)](git:ee4576a:src/engine/profiles.js): values still marked verify: true (ported unchanged from v1)
 - [SBP keeps policy rate at 11.5% (July 2026); inflation 10.9% Apr, 11.7% May 2026 — ARY News](https://arynews.tv/sbp-retains-policy-rate-at-11-5-percent): inflation (context)
 - [CDNS cuts National Savings profit rates, Special Savings Certificate 11.2% (July 2026) — Express Tribune](https://tribune.com.pk/story/2619071/govt-cuts-profit-rates-on-savings-schemes): returns.savings
 - [KSE-100 posts ~14% compounded annual growth over 30 years — Business Recorder](https://www.brecorder.com/news/amp/40110781): returns.longTerm
 - [PSX returns 2025 (avg annual gains ~22% over 10 years, 21% over 20) — Nukta](https://nukta.com/psx-returns-2025): returns.shares (context)
 - [MCB credit card summary box Jul–Dec 2026 (APR up to 44%); Allied Bank cards 34% p.a.](https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf): defaults.cardApr (38% sits inside the 34–44% range)
+- [PBS — Household Integrated Economic Survey (HIES) 2024-25, Final Report](https://www.pbs.gov.pk/wp-content/uploads/2020/07/HIES-2024-25-Report-Final-1.pdf): urban household income by quintile, per-capita consumption, food and restaurant shares (income, groceries)
+- [PBS — Labour Force Survey 2024-25 Annual Report (Tables 5.2 and 5.4, monthly wages)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/LFS-2024-25-Annual-Report.pdf): single and youngpro income
+- [PBS — CPI press release, September 2026 (10.26% YoY, national index 304.33)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/Press-Release-September-2026.pdf): inflating 2024-25 survey figures to late 2026
+- [PBS — CPI press release, September 2025 (5.76% YoY)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/3.-Revised-Press-Release-September-2025.doc): inflating 2024-25 survey figures to late 2026
+- [Daily Pakistan — minimum wage raised to Rs 40,700 in Budget 2026-27 (12 Jun 2026)](https://en.dailypakistan.com.pk/12-Jun-2026/pakistan-raises-minimum-wage-to-rs40700-in-budget-2026-27): single income (context)
+- [Zameen Index — average asking rent for flats, Karachi (Aug 2026)](https://www.zameen.com/index/rent/flats/karachi-2/): rent (single, suburban, youngpro)
+- [Zameen Index — average asking rent for flats, Lahore (Aug 2026)](https://www.zameen.com/index/rent/flats/lahore-1/): rent (single, youngpro)
+- [Zameen Index — average asking rent for flats, Islamabad (Aug 2026)](https://www.zameen.com/index/rent/flats/islamabad-3/): rent (youngpro)
+- [Zameen Index — average asking rent for houses, Lahore (Aug 2026)](https://www.zameen.com/index/rent/houses/lahore-1/): rent (suburban)
+- [Zameen Index — average asking rent for houses, Faisalabad (Aug 2026)](https://www.zameen.com/index/rent/houses/faisalabad-16/): rent (suburban)
+- [Zameen Index — average asking rent for houses, Karachi (Aug 2026)](https://www.zameen.com/index/rent/houses/karachi-2/): rent (suburban)
+- [APP — OGRA cuts petrol price by Rs3.63 to Rs390.23 per litre (Oct 2026)](https://www.app.com.pk/?p=1292415): fuel ranges and thresholds
+- [Nukta — Pakistan reduces average power tariff (NEPRA domestic slab rates, Jul 2025)](https://nukta.com/pakistan-reduces-average-power-tariff): electricity ranges (bill calculation)
+- [The News — domestic consumers using up to 300 units hit with fixed charges (NEPRA, Feb 2026)](https://www.thenews.pk/story/1398554-domestic-consumers-using-up-to-300-units-hit-with-fixed-charges): electricity ranges (fixed charges, slab cuts)
+- [Dawn — Govt notifies 50pc hike in gas charges (30 Jun 2025)](https://www.dawn.com/news/1921120): waterGas (minimum gas bills; still unverified)
+- [ProPakistani — PTCL Flash Fiber packages (Jun 2026)](https://propakistani.pk/packages/ptcl-flash-fiber-packages/): internet ranges and thresholds
+- [Result.pk — Punjab govt denies Rs 10,000 limit on private school fees](https://www.result.pk/educom/punjab-govt-denies-rs-10000-limit-on-private-school-fees-55209.htm): school (context only; still unverified)
 
 ## SA · SAR · last reviewed 2026-10-19
 
@@ -2173,22 +2127,38 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [SAMA — rules for disclosing the prices of financing and savings products](https://www.sama.gov.sa/en-US/RulesInstructions/FinanceRules/Rules for disclosing the prices of financing and savings products.pdf): defaults.cardApr (context)
 - [Saudi Life Guide — Iqama fees 2026 (dependent levy SAR 400 a month)](https://saudilifeguide.com/saudi-arabia-iqama-fees/): dependentFee
 
-## US · USD · last reviewed 2026-10-19
+## US · USD · last reviewed 2026-10-20
 
-7 value(s) to verify.
+4 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 3 | Kept the app's existing default of 3%. Fed target is 2%; CPI was about 3.7% a year in Sept 2026 (energy-driven), so check the recent trend. |
-| `returns.longTerm` | 8 | Existing app value. S&P 500 long-run nominal total return is closer to 10%; 8% is a deliberately cautious figure. |
-| `returns.shares` | 10 | Existing app value; roughly the long-run S&P 500 nominal total return, never guaranteed. |
-| `extraFields[0].ranges.single` | 80 – 200 | Built around the KFF 2025 average worker contribution for single coverage ($1,440 a year, about $120 a month); spread is an estimate. |
-| `extraFields[0].ranges.suburban` | 350 – 800 | Built around the KFF 2025 average worker contribution for family coverage ($6,850 a year, about $570 a month); spread is an estimate. |
-| `extraFields[0].ranges.youngpro` | 100 – 350 | Between KFF single and family worker contributions (employee + spouse is not in our source); estimate. |
-| `localTips[0].pct` | 0.1 | Assumed saving from switching plans; estimate. |
+| `profiles.suburban.ranges.school` | 200 – 600 | Public school is free; this covers after-school care, camps and activities. Child Care Aware reports a 2025 national average of $13,184 a year for infant/preschool care but gives no national school-age figure; state school-age centre prices are often $5,000+ a year per child. Range kept as an estimate. |
+| `extraFields[0].ranges.single` | 80 – 200 | KFF 2025: average worker contribution for single coverage $1,440 a year (about $120 a month, 16% of the $9,325 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary. |
+| `extraFields[0].ranges.youngpro` | 100 – 350 | Between KFF 2025 single ($120 a month) and family ($570 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate. |
+| `localTips[0].pct` | 0.1 | Assumed saving from switching plans at open enrollment; no national study of the typical saving found, estimate kept. |
 
 **Sources**
 
 - [KFF 2025 Employer Health Benefits Survey (summary)](https://www.kff.org/health-costs/): health insurance premium ranges (worker contributions $1,440 single / $6,850 family)
 - [Best high-yield savings rates, Oct 2026 (The College Investor)](https://thecollegeinvestor.com/90524/best-high-yield-savings-rates-for-october-14-2026/): savings return (top online savings around 4.2–4.35% APY)
-- [US CPI September 2026 (Forex Fundamentals summary of BLS release)](https://forexfundamentals.com/economic-calendar/us-cpi/2026-10-14): inflation context (3.7% a year)
+- [BLS Consumer Price Index news release (Sept 2026 data)](https://www.bls.gov/news.release/cpi.nr0.htm): inflation (CPI-U 3.7% over the year to Sept 2026)
+- [Federal Reserve Bank of Cleveland, Inflation Expectations](https://www.clevelandfed.org/indicators-and-data/inflation-expectations): inflation (10-year expected inflation about 2.5%, Aug 2026)
+- [Damodaran, Historical Returns on Stocks, Bonds and Bills 1928-2025 (NYU Stern)](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html): long-term and shares returns (S&P 500 about 10.0% a year geometric)
+- [KFF Employer Health Benefits Survey 2025, Summary of Findings](https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf): health premium (premiums $9,325 / $26,993; worker shares 16% / 26%, 23% vs 36% by firm size)
+- [BLS Usual Weekly Earnings, Q2 2026 (July 21, 2026)](https://www.bls.gov/news.release/archives/wkyeng_07212026.htm): income (median full-time $1,251 a week; bachelor's $1,768)
+- [Census Bureau, Income in the United States: 2025 (Sept 15, 2026)](https://www.census.gov/newsroom/press-releases/2026/income-poverty-health-insurance-coverage.html): income (median household $87,460; post-tax $76,060)
+- [Census Bureau ACS 2024 1-year, median gross rent (table B25064)](https://data.census.gov/table/ACSDT1Y2024.B25064): rent (US median gross rent $1,487)
+- [Apartment List National Rent Report, Oct 2026](https://www.apartmentlist.com/research/national-rent-data): rent (national median $1,388; 1-bed $1,220; 2-bed $1,374)
+- [Zillow Research, rent reports and Observed Rent Index](https://www.zillow.com/research/data/): rent (typical US asking rent about $1,900-$1,950 in 2026)
+- [BLS Consumer Expenditures 2024 (news release, Dec 19, 2025)](https://www.bls.gov/news.release/archives/cesan_12192025.htm): groceries, fuel (all households: food at home $6,224, gasoline $2,411 a year)
+- [FRED / BLS CE: Food at home by size of consumer unit (1, 2, 4 people)](https://fred.stlouisfed.org/series/CXUFOODHOMELB0502M): groceries (2024: $3,395 one person, $6,088 two, $8,697 four; series CXUFOODHOMELB0502M/0504M/0506M)
+- [FRED / BLS CE: Gasoline, other fuels and motor oil by size of consumer unit](https://fred.stlouisfed.org/series/CXUGASOILLB0502M): fuel (2022: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)
+- [USDA FNS Food Plans: Monthly Cost of Food Reports (2026)](https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports): groceries (thrifty family of four $1,023 and adults 20-50 $253-$319, June 2026; moderate adults 19-50 $336-$398, May-July 2026)
+- [EIA, Residential Energy Consumption Survey 2020, table CE4.1](https://www.eia.gov/consumption/residential/data/2020/c&e/pdf/ce4.1.pdf): electricity (kWh by housing type: 5+ unit apartments about 6,100 kWh/yr, single-family detached about 12,400)
+- [EIA Short-Term Energy Outlook (2026 residential electricity price 18.2 cents/kWh)](https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php): electricity price
+- [EIA Today in Energy: residential electric bills by state (May 12, 2025)](https://www.eia.gov/todayinenergy/detail.php?id=65244): electricity (US average bill $144 a month in 2024)
+- [AAA Gas Prices](https://gasprices.aaa.com/): fuel (national regular average about $4.30-$4.41 in Oct 2026)
+- [EIA Today in Energy: 2024 retail gasoline prices (Jan 7, 2025)](https://www.eia.gov/todayinenergy/detail.php?id=64164): fuel (2024 regular average $3.30/gal)
+- [Federal Reserve G.19 Consumer Credit](https://www.federalreserve.gov/releases/g19/current/): card APR default (accounts assessed interest averaged 22.3% in 2025)
+- [Child Care Aware of America, Child Care in America: 2025 Price & Supply](https://info.childcareaware.org/price-and-supply-2025): school/childcare context (national average $13,184 a year, infant/preschool)

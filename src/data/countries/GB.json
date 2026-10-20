@@ -57,19 +57,19 @@
       "ranges": {
         "income": {
           "value": [
-            2300,
-            3400
+            2000,
+            3200
           ],
-          "verify": true,
-          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+          "verify": false,
+          "note": "was [2300, 3400]; ONS ASHE 2025 median full-time pay £39,039 gives about £2,500 a month take-home at 2026/27 rates (personal allowance £12,570, 20% basic rate, 8% employee NI, 5% auto-enrolment pension on earnings above £6,240); £2,000 ≈ £30k gross, £3,200 ≈ £52k gross. ONS HFS FYE 2025 median for a one-adult household is about £2,190 a month (0.67 × £39,200), so the old low end excluded typical single earners."
         },
         "rent": {
           "value": [
-            900,
-            1400
+            800,
+            1250
           ],
-          "verify": true,
-          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); one-bedroom flat outside London. London is much higher."
+          "verify": false,
+          "note": "was [900, 1400]; ONS PIPR Aug 2026 one-bed averages: UK £1,136, Leeds £782, Birmingham £830, Cardiff £908, Manchester £1,003, Bristol £1,225. London one-bed £1,760 is above the range."
         },
         "homeIns": {
           "value": [
@@ -84,16 +84,16 @@
             45,
             75
           ],
-          "verify": true,
-          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+          "verify": false,
+          "note": "Confirmed: Ofgem cap Oct–Dec 2026: 26.32p/kWh + 54.83p/day (no VAT on electricity Oct 2026–Mar 2027); 2026 typical use 2,500 kWh ≈ £72 a month. 1,300–2,500 kWh a year for a one-bed flat ≈ £45–72 a month (usage band is an assumption)."
         },
         "waterGas": {
           "value": [
-            60,
-            100
+            65,
+            110
           ],
-          "verify": true,
-          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+          "verify": false,
+          "note": "was [60, 100]; Ofgem cap Oct–Dec 2026 gas 7.97p/kWh + 29.68p/day (2026 typical use 9,500 kWh ≈ £72 a month); Water UK average 2026/27 water and sewerage bill £639 a year (£53 a month). One-bed flat: 4,000–8,000 kWh gas (£35–62) plus metered water £30–50 (usage and metered water are assumptions)."
         },
         "internet": {
           "value": [
@@ -101,23 +101,23 @@
             60
           ],
           "verify": true,
-          "note": "Broadband plus mobile phone; estimate."
+          "note": "Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept."
         },
         "fuel": {
           "value": [
             60,
             120
           ],
-          "verify": true,
-          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+          "verify": false,
+          "note": "Confirmed: gov.uk weekly road fuel prices: petrol 174.6p a litre (19 Oct 2026, up from about 160p in August); DfT NTS0901 average petrol car mileage 6,200 miles a year (England 2025); at an assumed 45 mpg one average car costs about £91 a month. Range ≈ 4,200–8,200 miles a year."
         },
         "transit": {
           "value": [
             80,
-            160
+            175
           ],
-          "verify": true,
-          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+          "verify": false,
+          "note": "was [80, 160]; Greater Manchester Bee Network adult 28-day bus ticket £80 (from Jan 2025; 2026 price not confirmed); London Zones 1–2 monthly Travelcard £171.70 (frozen in March 2026)."
         },
         "carIns": {
           "value": [
@@ -140,24 +140,24 @@
             0,
             0
           ],
-          "verify": true,
-          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+          "verify": false,
+          "note": "Confirmed: no children in this household type."
         },
         "groceries": {
           "value": [
             180,
             280
           ],
-          "verify": true,
-          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+          "verify": false,
+          "note": "Confirmed: ONS Family Spending workbook 4 (FYE 2023–2025), table A57: food and non-alcoholic drinks for households without children £41.00–63.90 a week in the bottom three income fifths (1.2–1.8 people) ≈ £178–277 a month; the supermarket shop also covers toiletries and cleaning."
         },
         "dining": {
           "value": [
             100,
             250
           ],
-          "verify": true,
-          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+          "verify": false,
+          "note": "Confirmed: ONS Family Spending workbook 4 (FYE 2023–2025), table A57: restaurants and hotels for households without children £26.90–57.60 a week in the 2nd–4th income fifths ≈ £117–250 a month (includes hotels)."
         },
         "misc": {
           "value": [
@@ -302,19 +302,19 @@
       "ranges": {
         "income": {
           "value": [
-            4500,
-            7000
+            3600,
+            6000
           ],
-          "verify": true,
-          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+          "verify": false,
+          "note": "was [4500, 7000]; ONS HFS FYE 2025 median equivalised disposable income £39,200 (modified OECD, childless couple = 1). A couple with two children under 14 (scale 1.4) at the median has about £54,900 a year, £4,570 a month incl. benefits, so the old range started at the median. New range ≈ 35th–70th percentile."
         },
         "rent": {
           "value": [
-            1300,
-            1900
+            1100,
+            1600
           ],
-          "verify": true,
-          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 3-bedroom house outside London. London is much higher."
+          "verify": false,
+          "note": "was [1300, 1900]; ONS PIPR Aug 2026 three-bed averages: UK £1,430, England £1,489, Birmingham £1,134, Leeds £1,138, Solihull £1,262, Stockport £1,266, Manchester £1,433, Trafford £1,483. Bristol (£1,759) and London (£2,643) are above."
         },
         "homeIns": {
           "value": [
@@ -326,19 +326,19 @@
         },
         "electricity": {
           "value": [
-            80,
-            130
+            75,
+            115
           ],
-          "verify": true,
-          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+          "verify": false,
+          "note": "was [80, 130]; Ofgem cap Oct–Dec 2026: 26.32p/kWh + 54.83p/day (no VAT on electricity Oct 2026–Mar 2027); 2026 typical use 2,500 kWh ≈ £72 a month. A family house using 2,700–4,500 kWh a year ≈ £76–115 a month (usage band is an assumption)."
         },
         "waterGas": {
           "value": [
-            110,
-            170
+            120,
+            175
           ],
-          "verify": true,
-          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+          "verify": false,
+          "note": "was [110, 170]; Ofgem cap Oct–Dec 2026 gas 7.97p/kWh + 29.68p/day (2026 typical use 9,500 kWh ≈ £72 a month); Water UK average 2026/27 water and sewerage bill £639 a year (£53 a month). Family house: 9,500–15,000 kWh gas (£72–109) plus water £50–65."
         },
         "internet": {
           "value": [
@@ -346,15 +346,15 @@
             90
           ],
           "verify": true,
-          "note": "Broadband plus mobile phone; estimate."
+          "note": "Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept."
         },
         "fuel": {
           "value": [
             150,
             250
           ],
-          "verify": true,
-          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+          "verify": false,
+          "note": "Confirmed: gov.uk weekly road fuel prices: petrol 174.6p a litre (19 Oct 2026, up from about 160p in August); DfT NTS0901 average petrol car mileage 6,200 miles a year (England 2025); at an assumed 45 mpg one average car costs about £91 a month. Two cars (or one high-mileage car) at 10,000–17,000 miles a year ≈ £150–250."
         },
         "transit": {
           "value": [
@@ -362,7 +362,7 @@
             80
           ],
           "verify": true,
-          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+          "note": "Mostly a car-using family; occasional bus/rail and child fares. No source gives a family figure; estimate kept. For reference a Bee Network 28-day bus ticket is £80 adult, £40 child."
         },
         "carIns": {
           "value": [
@@ -385,24 +385,24 @@
             100,
             600
           ],
-          "verify": true,
-          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+          "verify": false,
+          "note": "Confirmed: state school is free; this is wraparound care and clubs. Coram Family and Childcare 2026 survey: after-school club about £70 a week (≈ £220 a month per child over 38 term weeks) and holiday club about £191 a week (≈ £1,145 per child for the summer). Part-time use for two children fits £100–600."
         },
         "groceries": {
           "value": [
-            550,
-            800
+            420,
+            650
           ],
-          "verify": true,
-          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+          "verify": false,
+          "note": "was [550, 800]; ONS Family Spending workbook 4 (FYE 2023–2025), table A56: households with children (3.8 people on average) spend £88.80 a week on food and non-alcoholic drinks (£84.60–90.70 in the middle fifths) ≈ £365–395 a month at 2023–25 prices. Top of range allows for food price rises since (ONS food CPI 4.5% in Sept 2025) and household goods bought with the shop."
         },
         "dining": {
           "value": [
             150,
             350
           ],
-          "verify": true,
-          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+          "verify": false,
+          "note": "Confirmed: ONS Family Spending workbook 4 (FYE 2023–2025), table A56: restaurants and hotels for households with children £33.80–77.70 a week in the 3rd–5th income fifths ≈ £146–337 a month (includes hotels)."
         },
         "misc": {
           "value": [
@@ -547,19 +547,19 @@
       "ranges": {
         "income": {
           "value": [
-            3400,
-            5500
+            3000,
+            5200
           ],
-          "verify": true,
-          "note": "Monthly take-home pay estimated from ONS ASHE median full-time pay after income tax, NI and pension; varies a lot by region."
+          "verify": false,
+          "note": "was [3400, 5500]; take-home at 2026/27 rates (personal allowance £12,570, 20% basic rate, 8% employee NI, 5% auto-enrolment pension on earnings above £6,240): one earner on £47k ≈ £2,950 a month; two earners on £33k ≈ £4,300; two on the ASHE 2025 median (£39,039) ≈ £5,000. ONS HFS FYE 2025 median for a childless couple is £39,200 a year (£3,270 a month)."
         },
         "rent": {
           "value": [
-            1300,
-            2000
+            1000,
+            1800
           ],
-          "verify": true,
-          "note": "Built around ONS Price Index of Private Rents (UK average £1,400, England £1,459, Aug 2026); 1–2 bed flat in a big city. London is much higher."
+          "verify": false,
+          "note": "was [1300, 2000]; ONS PIPR Aug 2026 two-bed averages: Birmingham £1,003, Manchester £1,233, England £1,335, Bristol £1,544; London one-bed £1,760 (London two-bed £2,232 is above the range)."
         },
         "homeIns": {
           "value": [
@@ -574,16 +574,16 @@
             55,
             90
           ],
-          "verify": true,
-          "note": "Derived from Ofgem price cap (Oct–Dec 2026: £1,723 a year typical dual fuel, electricity 26.32p/kWh + 54.83p/day); usage by household type is an estimate."
+          "verify": false,
+          "note": "Confirmed: Ofgem cap Oct–Dec 2026: 26.32p/kWh + 54.83p/day (no VAT on electricity Oct 2026–Mar 2027); 2026 typical use 2,500 kWh ≈ £72 a month. 1,800–3,300 kWh a year ≈ £56–89 a month (usage band is an assumption)."
         },
         "waterGas": {
           "value": [
-            70,
-            120
+            90,
+            130
           ],
-          "verify": true,
-          "note": "Gas from Ofgem price cap (7.97p/kWh + 29.68p/day) plus a water bill (average England water bill roughly £50 a month); estimate."
+          "verify": false,
+          "note": "was [70, 120]; Ofgem cap Oct–Dec 2026 gas 7.97p/kWh + 29.68p/day (2026 typical use 9,500 kWh ≈ £72 a month); Water UK average 2026/27 water and sewerage bill £639 a year (£53 a month). Flat for one or two: 6,000–10,000 kWh gas (£49–75) plus water £45–55."
         },
         "internet": {
           "value": [
@@ -591,23 +591,23 @@
             75
           ],
           "verify": true,
-          "note": "Broadband plus mobile phone; estimate."
+          "note": "Broadband plus mobile phone. Ofcom Pricing Trends (Feb 2026) reports price changes, not a household spend level; ONS Family Spending 'communication' (£20–25 a week) also includes handsets and postage, so it is only an upper guide. Estimate kept."
         },
         "fuel": {
           "value": [
             80,
             160
           ],
-          "verify": true,
-          "note": "Petrol for one car (two for families) at about £1.35–1.45 a litre; estimate."
+          "verify": false,
+          "note": "Confirmed: gov.uk weekly road fuel prices: petrol 174.6p a litre (19 Oct 2026, up from about 160p in August); DfT NTS0901 average petrol car mileage 6,200 miles a year (England 2025); at an assumed 45 mpg one average car costs about £91 a month. One car at 5,500–11,000 miles a year."
         },
         "transit": {
           "value": [
             100,
             200
           ],
-          "verify": true,
-          "note": "Bus/rail season tickets and pay-as-you-go caps; estimate. London Travelcards are higher."
+          "verify": false,
+          "note": "Confirmed: one London Zones 1–2 monthly Travelcard is £171.70 (2026); two Greater Manchester 28-day bus tickets are £160 (£80 each from Jan 2025). Many households mix car and public transport."
         },
         "carIns": {
           "value": [
@@ -631,23 +631,23 @@
             200
           ],
           "verify": true,
-          "note": "State school is free; this is mostly childcare, wraparound care and clubs, which vary hugely; estimate."
+          "note": "Usually no children; the top end allows for occasional childcare. No source for this household type; estimate kept."
         },
         "groceries": {
           "value": [
             280,
             420
           ],
-          "verify": true,
-          "note": "Scaled from ONS Family Spending FYE 2025 (food and non-alcoholic drinks £73.70 a week for an average household); estimate by household type."
+          "verify": false,
+          "note": "Confirmed: ONS Family Spending workbook 4 (FYE 2023–2025), table A57: households without children spend £63.90–84.50 a week in the top three income fifths (1.8–2.4 people) ≈ £277–366 a month at 2023–25 prices; top end allows for price rises and household goods."
         },
         "dining": {
           "value": [
             200,
             400
           ],
-          "verify": true,
-          "note": "Eating out and takeaways; ONS Family Spending restaurants and hotels category as a guide; estimate."
+          "verify": false,
+          "note": "Confirmed: ONS Family Spending workbook 4 (FYE 2023–2025), table A57: restaurants and hotels for households without children £57.60–93.50 a week in the top two income fifths ≈ £250–405 a month (includes hotels)."
         },
         "misc": {
           "value": [
@@ -792,8 +792,8 @@
   "samples": {
     "single": {
       "values": {
-        "income": 2800,
-        "rent": 1150,
+        "income": 2600,
+        "rent": 1000,
         "homeIns": 12,
         "electricity": 60,
         "waterGas": 80,
@@ -872,25 +872,25 @@
     },
     "suburban": {
       "values": {
-        "income": 5600,
-        "rent": 1600,
+        "income": 4800,
+        "rent": 1350,
         "homeIns": 35,
-        "electricity": 110,
+        "electricity": 100,
         "waterGas": 145,
         "internet": 75,
         "fuel": 220,
         "transit": 40,
         "carIns": 110,
-        "carLoan": 320,
+        "carLoan": 280,
         "school": 400,
-        "groceries": 700,
-        "dining": 240,
-        "misc": 160,
+        "groceries": 520,
+        "dining": 200,
+        "misc": 140,
         "medical": 40,
-        "homeHelp": 80,
+        "homeHelp": 40,
         "familySupport": 100,
         "giving": 50,
-        "other": 80,
+        "other": 60,
         "emergencyFund": 6000,
         "councilTax": 200,
         "tvLicence": 15
@@ -1012,10 +1012,10 @@
     "youngpro": {
       "values": {
         "income": 4300,
-        "rent": 1650,
+        "rent": 1400,
         "homeIns": 15,
         "electricity": 70,
-        "waterGas": 95,
+        "waterGas": 105,
         "internet": 60,
         "fuel": 110,
         "transit": 150,
@@ -1121,24 +1121,24 @@
             100,
             170
           ],
-          "verify": true,
-          "note": "Band A–C bill with the 25% single-person discount; England average Band D is £2,392 a year (£199 a month) in 2026-27. Estimate by band."
+          "verify": false,
+          "note": "Confirmed: gov.uk: England average Band D £2,392 in 2026-27 (£199 a month over 12); bands are fixed ninths of Band D (A 6/9, B 7/9, C 8/9, E 11/9). With the 25% single person discount: Band A ≈ £100, C ≈ £133, D ≈ £150, E ≈ £183 a month."
         },
         "suburban": {
           "value": [
             160,
             260
           ],
-          "verify": true,
-          "note": "Band C–E bill; England average Band D £2,392 a year in 2026-27 (gov.uk). Estimate by band."
+          "verify": false,
+          "note": "Confirmed: gov.uk: England average Band D £2,392 in 2026-27 (£199 a month over 12); bands are fixed ninths of Band D (A 6/9, B 7/9, C 8/9, E 11/9). Band B ≈ £155, C ≈ £177, D ≈ £199, E ≈ £244 a month; local bills vary around this."
         },
         "youngpro": {
           "value": [
             130,
             220
           ],
-          "verify": true,
-          "note": "Band B–D bill, no discount for a couple; England average Band D £2,392 a year in 2026-27. Estimate by band."
+          "verify": false,
+          "note": "Confirmed: gov.uk: England average Band D £2,392 in 2026-27 (£199 a month over 12); bands are fixed ninths of Band D (A 6/9, B 7/9, C 8/9, E 11/9). No discount for a couple: Band A ≈ £133, B ≈ £155, D ≈ £199 a month; local bills vary around this."
         }
       }
     },
@@ -1220,7 +1220,7 @@
     {
       "title": "Council Tax levels set by local authorities in England 2026 to 2027 (gov.uk)",
       "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027",
-      "usedFor": "council tax (average Band D £2,392)"
+      "usedFor": "council tax (average Band D £2,392, band ratios)"
     },
     {
       "title": "Cost of TV licence fee set for 2026/27 (gov.uk)",
@@ -1246,7 +1246,72 @@
       "title": "Average credit card interest rate UK (ClearScore, citing Bank of England)",
       "url": "https://www.clearscore.com/learn/credit-cards/average-credit-card-interest-rate-apr-uk",
       "usedFor": "card APR (24.66% average, Dec 2025)"
+    },
+    {
+      "title": "ONS Price Index of Private Rents, UK: monthly price statistics (16 Sept 2026 dataset)",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
+      "usedFor": "rent by bedrooms and city (Aug 2026)"
+    },
+    {
+      "title": "ONS Employee earnings in the UK: 2025 (ASHE)",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2025",
+      "usedFor": "income (median full-time pay £39,039)"
+    },
+    {
+      "title": "ONS Average household income, UK: financial year ending 2025",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householddisposableincomeandinequality/financialyearending2025",
+      "usedFor": "income by household type (median £39,200 equivalised)"
+    },
+    {
+      "title": "Income Tax rates and Personal Allowances (gov.uk)",
+      "url": "https://www.gov.uk/income-tax-rates",
+      "usedFor": "take-home pay calculation"
+    },
+    {
+      "title": "ONS Family spending workbook 4: expenditure by household characteristic (FYE 2025)",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook4expenditurebyhouseholdcharacteristic",
+      "usedFor": "groceries and dining by household type (tables A56, A57)"
+    },
+    {
+      "title": "Ofgem: Changes to energy price cap between 1 October and 31 December 2026",
+      "url": "https://ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026",
+      "usedFor": "electricity and gas unit rates and standing charges"
+    },
+    {
+      "title": "Ofgem: Energy price cap update from 1 July 2026 (revised TDCV)",
+      "url": "https://www.ofgem.gov.uk/sites/default/files/2026-06/Summary-of-changes-to-energy-price-cap-1-July-to-30-September-2026-revised-TDCV.pdf",
+      "usedFor": "typical use 2,500 kWh electricity, 9,500 kWh gas"
+    },
+    {
+      "title": "MoneySavingExpert: water bills rise from April 2026 (Water UK figures)",
+      "url": "https://www.moneysavingexpert.com/news/2026/01/water-bills-april-rise/",
+      "usedFor": "water bill (£639 a year average 2026/27)"
+    },
+    {
+      "title": "Weekly road fuel prices (gov.uk)",
+      "url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+      "usedFor": "fuel (petrol 174.57p a litre, 19 Oct 2026)"
+    },
+    {
+      "title": "DfT NTS0901: Annual mileage of cars (gov.uk)",
+      "url": "https://www.gov.uk/government/statistical-data-sets/nts09-vehicle-mileage-and-occupancy",
+      "usedFor": "fuel (petrol car 6,200 miles a year, 2025)"
+    },
+    {
+      "title": "Mayor of London MD3464: March 2026 TfL fare changes",
+      "url": "https://www.london.gov.uk/md3464-march-2026-transport-london-fare-changes",
+      "usedFor": "transit (Zones 1–2 Travelcard frozen; monthly £171.70)"
+    },
+    {
+      "title": "Bus News: Greater Manchester Bee Network simpler fares",
+      "url": "https://bus-news.com/greater-manchesters-bee-network-set-to-introduce-simpler-fares/",
+      "usedFor": "transit (28-day bus ticket £80 from Jan 2025)"
+    },
+    {
+      "title": "Irish News (PA): holiday clubs cost £1,145 per child (Coram Family and Childcare 2026 survey)",
+      "url": "https://www.irishnews.com/news/uk/families-face-typical-1145-bill-per-child-for-holiday-clubs-over-summer-3N7RLS6ARFLE5KOAIK4ERC4KYY/",
+      "usedFor": "school / childcare (after-school £70 a week, holiday club £191 a week)"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-10-20"
 }

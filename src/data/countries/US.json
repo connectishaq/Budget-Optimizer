@@ -6,21 +6,21 @@
   "payFrequency": "biweekly",
   "inflation": {
     "value": 3,
-    "verify": true,
-    "note": "Kept the app's existing default of 3%. Fed target is 2%; CPI was about 3.7% a year in Sept 2026 (energy-driven), so check the recent trend."
+    "verify": false,
+    "note": "CPI-U was 3.7% a year in Sept 2026 (BLS, energy-driven) and the Cleveland Fed 10-year expected inflation was about 2.5% (Aug 2026); 3% sits between the current rate and the long-run expectation, so kept."
   },
   "returns": {
     "savings": 4,
     "balanced": 6,
     "longTerm": {
       "value": 8,
-      "verify": true,
-      "note": "Existing app value. S&P 500 long-run nominal total return is closer to 10%; 8% is a deliberately cautious figure."
+      "verify": false,
+      "note": "S&P 500 with dividends returned about 10.0% a year (geometric) over 1928-2025 (Damodaran, NYU Stern); 8% is kept as a deliberately cautious long-term figure below that history."
     },
     "shares": {
       "value": 10,
-      "verify": true,
-      "note": "Existing app value; roughly the long-run S&P 500 nominal total return, never guaranteed."
+      "verify": false,
+      "note": "Matches the S&P 500 1928-2025 geometric average of about 10.0% a year with dividends (Damodaran, NYU Stern); history, never guaranteed."
     }
   },
   "defaults": {
@@ -35,22 +35,34 @@
   "profiles": {
     "single": {
       "ranges": {
-        "income": [
-          3200,
-          5200
-        ],
-        "rent": [
-          1200,
-          1800
-        ],
+        "income": {
+          "value": [
+            3200,
+            5200
+          ],
+          "verify": false,
+          "note": "BLS Q2 2026 median full-time pay is $1,251 a week (about $65,000 a year), roughly $4,300 a month after federal, FICA and a typical state tax (our tax estimate); range covers about $46k-$80k gross."
+        },
+        "rent": {
+          "value": [
+            1200,
+            1800
+          ],
+          "verify": false,
+          "note": "ACS 2024 median gross rent $1,487 (Census); Apartment List Oct 2026 national median 1-bed $1,220, higher in big cities; Zillow typical asking rent about $1,950. Range kept."
+        },
         "homeIns": [
           12,
           25
         ],
-        "electricity": [
-          45,
-          85
-        ],
+        "electricity": {
+          "value": [
+            60,
+            110
+          ],
+          "verify": false,
+          "note": "was [45, 85]; EIA RECS 2020: apartments in 5+ unit buildings use about 6,100 kWh a year (508 a month); at EIA's 2026 average residential price of 18.2 cents/kWh that is about $92 a month; a person living alone uses somewhat less."
+        },
         "waterGas": [
           25,
           55
@@ -59,10 +71,14 @@
           55,
           85
         ],
-        "fuel": [
-          60,
-          120
-        ],
+        "fuel": {
+          "value": [
+            90,
+            180
+          ],
+          "verify": false,
+          "note": "was [60, 120]; BLS CE: one-person households spent $1,590 a year on gasoline in 2022 when regular averaged about $3.95; at the Oct 2026 AAA average of about $4.30 the same driving is about $145 a month. For a single person who drives."
+        },
         "transit": [
           80,
           130
@@ -79,10 +95,14 @@
           0,
           0
         ],
-        "groceries": [
-          250,
-          350
-        ],
+        "groceries": {
+          "value": [
+            280,
+            420
+          ],
+          "verify": false,
+          "note": "was [250, 350]; BLS CE 2024: one-person households spent $3,395 a year on food at home ($283 a month, about $300 in 2026 with roughly 3% a year food-at-home inflation); USDA 2026 food plans for one adult 19-50 with USDA's +20% one-person adjustment work out (our calculation) to about $300-$380 thrifty and $400-$480 moderate."
+        },
         "dining": [
           150,
           300
@@ -113,12 +133,36 @@
         ]
       },
       "thresholds": {
-        "utilities": 120,
-        "fuel": 120,
-        "transit": 130,
-        "internet": 80,
-        "insurance": 100,
-        "carLoan": 350,
+        "utilities": {
+          "value": 165,
+          "verify": false,
+          "note": "was 120; set to the top of the reviewed typical range (electricity + waterGas), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "fuel": {
+          "value": 180,
+          "verify": false,
+          "note": "was 120; set to the top of the reviewed typical range (fuel), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "transit": {
+          "value": 130,
+          "verify": false,
+          "note": "was 130; set to the top of the reviewed typical range (transit), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "internet": {
+          "value": 85,
+          "verify": false,
+          "note": "was 80; set to the top of the reviewed typical range (internet), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "insurance": {
+          "value": 160,
+          "verify": false,
+          "note": "was 100; set to the top of the reviewed typical range (carIns), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "carLoan": {
+          "value": 350,
+          "verify": false,
+          "note": "was 350; set to the top of the reviewed typical range (carLoan), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
         "school": 200,
         "diningFloor": 50,
         "subsActive": 45
@@ -136,22 +180,34 @@
     },
     "suburban": {
       "ranges": {
-        "income": [
-          6000,
-          9500
-        ],
-        "rent": [
-          1800,
-          2600
-        ],
+        "income": {
+          "value": [
+            6000,
+            9500
+          ],
+          "verify": false,
+          "note": "Census: 2025 median household income $87,460 ($76,060 after tax, about $6,340 a month) for all households; families of four, often with two earners (BLS median full-time pay $1,251 a week each), sit above that, so this take-home range is consistent; split by family type not in the release."
+        },
+        "rent": {
+          "value": [
+            1800,
+            2600
+          ],
+          "verify": false,
+          "note": "Zillow typical US asking rent about $1,950 (all homes, 2026); family-size houses rent above the 2-bed national median ($1,374, Apartment List Oct 2026). Range kept; no national 3-bed rent series found, so the top end is an estimate."
+        },
         "homeIns": [
           100,
           180
         ],
-        "electricity": [
-          110,
-          170
-        ],
+        "electricity": {
+          "value": [
+            140,
+            230
+          ],
+          "verify": false,
+          "note": "was [110, 170]; EIA RECS 2020: single-family detached homes use about 12,400 kWh a year (1,030 a month), about $188 a month at 18.2 cents/kWh (EIA STEO 2026); US average bill was $144 in 2024 (EIA)."
+        },
         "waterGas": [
           60,
           110
@@ -160,10 +216,14 @@
           70,
           110
         ],
-        "fuel": [
-          150,
-          200
-        ],
+        "fuel": {
+          "value": [
+            280,
+            450
+          ],
+          "verify": false,
+          "note": "was [150, 200]; BLS CE: four-person households spent $4,467 a year on gasoline in 2022 (regular about $3.95/gal); at the Oct 2026 AAA average of about $4.30 that is about $405 a month. BLS CE 2024 all households: $2,411 a year at $3.30/gal (EIA)."
+        },
         "transit": [
           20,
           60
@@ -176,14 +236,22 @@
           400,
           700
         ],
-        "school": [
-          200,
-          600
-        ],
-        "groceries": [
-          800,
-          950
-        ],
+        "school": {
+          "value": [
+            200,
+            600
+          ],
+          "verify": true,
+          "note": "Public school is free; this covers after-school care, camps and activities. Child Care Aware reports a 2025 national average of $13,184 a year for infant/preschool care but gives no national school-age figure; state school-age centre prices are often $5,000+ a year per child. Range kept as an estimate."
+        },
+        "groceries": {
+          "value": [
+            800,
+            1200
+          ],
+          "verify": false,
+          "note": "was [800, 950]; USDA Thrifty Food Plan for a family of four was $1,023 a month (June 2026), the cheapest of USDA's four plans; BLS CE 2024 four-person households spent $8,697 a year ($725 a month, about $760 in 2026)."
+        },
         "dining": [
           200,
           400
@@ -214,13 +282,41 @@
         ]
       },
       "thresholds": {
-        "utilities": 200,
-        "fuel": 200,
-        "transit": 100,
-        "internet": 80,
-        "insurance": 100,
-        "carLoan": 350,
-        "school": 200,
+        "utilities": {
+          "value": 340,
+          "verify": false,
+          "note": "was 200; set to the top of the reviewed typical range (electricity + waterGas), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "fuel": {
+          "value": 450,
+          "verify": false,
+          "note": "was 200; set to the top of the reviewed typical range (fuel), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "transit": {
+          "value": 60,
+          "verify": false,
+          "note": "was 100; set to the top of the reviewed typical range (transit), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "internet": {
+          "value": 110,
+          "verify": false,
+          "note": "was 80; set to the top of the reviewed typical range (internet), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "insurance": {
+          "value": 280,
+          "verify": false,
+          "note": "was 100; set to the top of the reviewed typical range (carIns), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "carLoan": {
+          "value": 700,
+          "verify": false,
+          "note": "was 350; set to the top of the reviewed typical range (carLoan), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "school": {
+          "value": 600,
+          "verify": false,
+          "note": "was 200; set to the top of the reviewed typical range (school), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
         "diningFloor": 50,
         "subsActive": 45
       },
@@ -237,22 +333,34 @@
     },
     "youngpro": {
       "ranges": {
-        "income": [
-          4500,
-          7000
-        ],
-        "rent": [
-          1400,
-          2100
-        ],
+        "income": {
+          "value": [
+            4500,
+            7000
+          ],
+          "verify": false,
+          "note": "BLS Q2 2026 median full-time pay for bachelor's degree holders is $1,768 a week (about $92,000 a year, roughly $5,900 a month after tax by our estimate); a two-earner couple is higher, so range kept."
+        },
+        "rent": {
+          "value": [
+            1400,
+            2100
+          ],
+          "verify": false,
+          "note": "Between the ACS 2024 median gross rent ($1,487) and Zillow's typical asking rent (about $1,950) for big-city flats; range kept."
+        },
         "homeIns": [
           15,
           30
         ],
-        "electricity": [
-          55,
-          95
-        ],
+        "electricity": {
+          "value": [
+            70,
+            130
+          ],
+          "verify": false,
+          "note": "was [55, 95]; EIA RECS 2020 apartments in 5+ unit buildings average 508 kWh a month, about $92 at EIA's 2026 price of 18.2 cents/kWh; range covers one or two people."
+        },
         "waterGas": [
           30,
           60
@@ -261,10 +369,14 @@
           65,
           95
         ],
-        "fuel": [
-          100,
-          150
-        ],
+        "fuel": {
+          "value": [
+            150,
+            300
+          ],
+          "verify": false,
+          "note": "was [100, 150]; BLS CE: two-person households spent $3,141 a year on gasoline in 2022 (regular about $3.95/gal), about $285 a month at the Oct 2026 AAA average of about $4.30; one-person about $145."
+        },
         "transit": [
           60,
           120
@@ -281,10 +393,14 @@
           0,
           300
         ],
-        "groceries": [
-          300,
-          400
-        ],
+        "groceries": {
+          "value": [
+            350,
+            600
+          ],
+          "verify": false,
+          "note": "was [300, 400]; BLS CE 2024: two-person households spent $6,088 a year on food at home ($507 a month, about $530 in 2026); one-person $283. Range covers a single high earner to a couple."
+        },
         "dining": [
           250,
           450
@@ -315,13 +431,41 @@
         ]
       },
       "thresholds": {
-        "utilities": 150,
-        "fuel": 150,
-        "transit": 100,
-        "internet": 80,
-        "insurance": 100,
-        "carLoan": 350,
-        "school": 200,
+        "utilities": {
+          "value": 190,
+          "verify": false,
+          "note": "was 150; set to the top of the reviewed typical range (electricity + waterGas), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "fuel": {
+          "value": 300,
+          "verify": false,
+          "note": "was 150; set to the top of the reviewed typical range (fuel), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "transit": {
+          "value": 120,
+          "verify": false,
+          "note": "was 100; set to the top of the reviewed typical range (transit), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "internet": {
+          "value": 95,
+          "verify": false,
+          "note": "was 80; set to the top of the reviewed typical range (internet), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "insurance": {
+          "value": 200,
+          "verify": false,
+          "note": "was 100; set to the top of the reviewed typical range (carIns), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "carLoan": {
+          "value": 450,
+          "verify": false,
+          "note": "was 350; set to the top of the reviewed typical range (carLoan), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
+        "school": {
+          "value": 300,
+          "verify": false,
+          "note": "was 200; set to the top of the reviewed typical range (school), the same rule as the other countries, so the idea fires only for bills above typical"
+        },
         "diningFloor": 50,
         "subsActive": 45
       },
@@ -418,9 +562,9 @@
         "carIns": 260,
         "carLoan": 480,
         "school": 450,
-        "groceries": 1150,
-        "dining": 380,
-        "misc": 260,
+        "groceries": 1050,
+        "dining": 300,
+        "misc": 150,
         "medical": 120,
         "homeHelp": 240,
         "familySupport": 200,
@@ -609,15 +753,15 @@
             200
           ],
           "verify": true,
-          "note": "Built around the KFF 2025 average worker contribution for single coverage ($1,440 a year, about $120 a month); spread is an estimate."
+          "note": "KFF 2025: average worker contribution for single coverage $1,440 a year (about $120 a month, 16% of the $9,325 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary."
         },
         "suburban": {
           "value": [
             350,
             800
           ],
-          "verify": true,
-          "note": "Built around the KFF 2025 average worker contribution for family coverage ($6,850 a year, about $570 a month); spread is an estimate."
+          "verify": false,
+          "note": "KFF 2025: average worker contribution for family coverage $6,850 a year (about $570 a month); worker share is 23% at large firms vs 36% at small firms of the $26,993 premium, i.e. about $520-$810 a month, which this range covers."
         },
         "youngpro": {
           "value": [
@@ -625,7 +769,7 @@
             350
           ],
           "verify": true,
-          "note": "Between KFF single and family worker contributions (employee + spouse is not in our source); estimate."
+          "note": "Between KFF 2025 single ($120 a month) and family ($570 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate."
         }
       }
     }
@@ -644,7 +788,7 @@
       "pct": {
         "value": 0.1,
         "verify": true,
-        "note": "Assumed saving from switching plans; estimate."
+        "note": "Assumed saving from switching plans at open enrollment; no national study of the typical saving found, estimate kept."
       },
       "effort": "Easy"
     }
@@ -664,10 +808,105 @@
       "usedFor": "savings return (top online savings around 4.2–4.35% APY)"
     },
     {
-      "title": "US CPI September 2026 (Forex Fundamentals summary of BLS release)",
-      "url": "https://forexfundamentals.com/economic-calendar/us-cpi/2026-10-14",
-      "usedFor": "inflation context (3.7% a year)"
+      "title": "BLS Consumer Price Index news release (Sept 2026 data)",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "usedFor": "inflation (CPI-U 3.7% over the year to Sept 2026)"
+    },
+    {
+      "title": "Federal Reserve Bank of Cleveland, Inflation Expectations",
+      "url": "https://www.clevelandfed.org/indicators-and-data/inflation-expectations",
+      "usedFor": "inflation (10-year expected inflation about 2.5%, Aug 2026)"
+    },
+    {
+      "title": "Damodaran, Historical Returns on Stocks, Bonds and Bills 1928-2025 (NYU Stern)",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+      "usedFor": "long-term and shares returns (S&P 500 about 10.0% a year geometric)"
+    },
+    {
+      "title": "KFF Employer Health Benefits Survey 2025, Summary of Findings",
+      "url": "https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf",
+      "usedFor": "health premium (premiums $9,325 / $26,993; worker shares 16% / 26%, 23% vs 36% by firm size)"
+    },
+    {
+      "title": "BLS Usual Weekly Earnings, Q2 2026 (July 21, 2026)",
+      "url": "https://www.bls.gov/news.release/archives/wkyeng_07212026.htm",
+      "usedFor": "income (median full-time $1,251 a week; bachelor's $1,768)"
+    },
+    {
+      "title": "Census Bureau, Income in the United States: 2025 (Sept 15, 2026)",
+      "url": "https://www.census.gov/newsroom/press-releases/2026/income-poverty-health-insurance-coverage.html",
+      "usedFor": "income (median household $87,460; post-tax $76,060)"
+    },
+    {
+      "title": "Census Bureau ACS 2024 1-year, median gross rent (table B25064)",
+      "url": "https://data.census.gov/table/ACSDT1Y2024.B25064",
+      "usedFor": "rent (US median gross rent $1,487)"
+    },
+    {
+      "title": "Apartment List National Rent Report, Oct 2026",
+      "url": "https://www.apartmentlist.com/research/national-rent-data",
+      "usedFor": "rent (national median $1,388; 1-bed $1,220; 2-bed $1,374)"
+    },
+    {
+      "title": "Zillow Research, rent reports and Observed Rent Index",
+      "url": "https://www.zillow.com/research/data/",
+      "usedFor": "rent (typical US asking rent about $1,900-$1,950 in 2026)"
+    },
+    {
+      "title": "BLS Consumer Expenditures 2024 (news release, Dec 19, 2025)",
+      "url": "https://www.bls.gov/news.release/archives/cesan_12192025.htm",
+      "usedFor": "groceries, fuel (all households: food at home $6,224, gasoline $2,411 a year)"
+    },
+    {
+      "title": "FRED / BLS CE: Food at home by size of consumer unit (1, 2, 4 people)",
+      "url": "https://fred.stlouisfed.org/series/CXUFOODHOMELB0502M",
+      "usedFor": "groceries (2024: $3,395 one person, $6,088 two, $8,697 four; series CXUFOODHOMELB0502M/0504M/0506M)"
+    },
+    {
+      "title": "FRED / BLS CE: Gasoline, other fuels and motor oil by size of consumer unit",
+      "url": "https://fred.stlouisfed.org/series/CXUGASOILLB0502M",
+      "usedFor": "fuel (2022: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)"
+    },
+    {
+      "title": "USDA FNS Food Plans: Monthly Cost of Food Reports (2026)",
+      "url": "https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports",
+      "usedFor": "groceries (thrifty family of four $1,023 and adults 20-50 $253-$319, June 2026; moderate adults 19-50 $336-$398, May-July 2026)"
+    },
+    {
+      "title": "EIA, Residential Energy Consumption Survey 2020, table CE4.1",
+      "url": "https://www.eia.gov/consumption/residential/data/2020/c&e/pdf/ce4.1.pdf",
+      "usedFor": "electricity (kWh by housing type: 5+ unit apartments about 6,100 kWh/yr, single-family detached about 12,400)"
+    },
+    {
+      "title": "EIA Short-Term Energy Outlook (2026 residential electricity price 18.2 cents/kWh)",
+      "url": "https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
+      "usedFor": "electricity price"
+    },
+    {
+      "title": "EIA Today in Energy: residential electric bills by state (May 12, 2025)",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=65244",
+      "usedFor": "electricity (US average bill $144 a month in 2024)"
+    },
+    {
+      "title": "AAA Gas Prices",
+      "url": "https://gasprices.aaa.com/",
+      "usedFor": "fuel (national regular average about $4.30-$4.41 in Oct 2026)"
+    },
+    {
+      "title": "EIA Today in Energy: 2024 retail gasoline prices (Jan 7, 2025)",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=64164",
+      "usedFor": "fuel (2024 regular average $3.30/gal)"
+    },
+    {
+      "title": "Federal Reserve G.19 Consumer Credit",
+      "url": "https://www.federalreserve.gov/releases/g19/current/",
+      "usedFor": "card APR default (accounts assessed interest averaged 22.3% in 2025)"
+    },
+    {
+      "title": "Child Care Aware of America, Child Care in America: 2025 Price & Supply",
+      "url": "https://info.childcareaware.org/price-and-supply-2025",
+      "usedFor": "school/childcare context (national average $13,184 a year, infant/preschool)"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-10-20"
 }

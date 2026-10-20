@@ -49,19 +49,19 @@
       "ranges": {
         "income": {
           "value": [
-            50000,
-            90000
+            25000,
+            70000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [50000, 90000]; too high for a typical urban single renter. PLFS Apr–Jun 2024: urban regular salaried earnings avg ₹24,434/month (gross); Indeed: class-of-2025 average starting offer ₹3.5 LPA (≈₹27k a month in hand, my arithmetic). Upper end (≈₹9–10 LPA experienced professional) is judgement."
         },
         "rent": {
           "value": [
-            15000,
-            30000
+            8000,
+            22000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "was [15000, 30000]; lowered to fit the new income (≈30% of take-home): shared flat or PG at the low end, 1BHK in a metro at the high end. Magicbricks (May 2025) puts a 1,000 sq ft unit at ≈₹36.8k Bengaluru / ₹31.4k Pune; a 1BHK at roughly half is my scaling. No official 1BHK rent index found."
         },
         "homeIns": {
           "value": [
@@ -73,11 +73,11 @@
         },
         "electricity": {
           "value": [
-            1000,
-            2500
+            800,
+            2200
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [1000, 2500]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 100–250 units a month (assumed use for a 1BHK, AC at the high end) gives ≈₹900–2,000."
         },
         "waterGas": {
           "value": [
@@ -85,23 +85,23 @@
             1500
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); one cylinder every 1.5–2 months ≈ ₹470–630 a month; municipal water/PNG on top varies by city and is not sourced."
         },
         "internet": {
           "value": [
             700,
             1500
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: Jio AirFiber from ₹599 + 18% GST (≈₹707) / Airtel from ₹699 + GST, plus mobile prepaid (≈₹350 a month for a 2GB/day plan, not separately sourced) ≈ ₹700–1,500."
         },
         "fuel": {
           "value": [
-            2000,
+            1000,
             4000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [2000, 4000]; petrol ₹102.12/L in Delhi (Oct 2026): 10–40 litres a month (two-wheeler commute to light car use; litres assumed). Many singles have no vehicle (leave at 0)."
         },
         "transit": {
           "value": [
@@ -109,7 +109,7 @@
             4000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Kept; metro/bus fares vary by city and no survey of monthly commuting spend by household type was found."
         },
         "carIns": {
           "value": [
@@ -132,24 +132,24 @@
             0,
             0
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: single person, no children."
         },
         "groceries": {
           "value": [
-            6000,
-            10000
+            3500,
+            8000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [6000, 10000]; HCES 2023-24 (MoSPI): urban average MPCE ₹6,996 a person a month, ~40% on food (≈₹2,800); uplifted ~10% to 2026 for CPI food inflation (≈7% FY25, ~0% FY26, ~5% mid-2026; rough cumulative, my arithmetic) → ≈₹3,100 per person; a person living alone spends more per head, so ₹3,500–8,000."
         },
         "dining": {
           "value": [
-            3000,
-            7000
+            1500,
+            6000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "was [3000, 7000]; lowered in line with the new income range. No survey of eating-out spend by household type found; estimate."
         },
         "misc": {
           "value": [
@@ -294,19 +294,19 @@
       "ranges": {
         "income": {
           "value": [
-            120000,
-            250000
+            45000,
+            140000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [120000, 250000]; that is the top few percent of urban households. HCES 2023-24 urban MPCE ₹6,996 → ≈₹28k a month consumption for an average family of four; PLFS urban salaried avg ₹24,434 (₹26,105 men). A one- or two-earner salaried family renting a 2BHK is ≈₹45k–1.4 lakh take-home; the upper end is judgement."
         },
         "rent": {
           "value": [
-            25000,
-            50000
+            12000,
+            35000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "was [25000, 50000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹20–30k in KR Puram (outer Bengaluru), ₹28–40k Hebbal. Second cities are lower; the ₹12k floor is an estimate (no tier-2 rent index found)."
         },
         "homeIns": {
           "value": [
@@ -318,11 +318,11 @@
         },
         "electricity": {
           "value": [
-            2500,
-            6000
+            2000,
+            5000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [2500, 6000]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 250–600 units a month for a 2–3 BHK (assumed use) ≈ ₹2,100–4,500. Delhi's 200 free units make bills lower there."
         },
         "waterGas": {
           "value": [
@@ -330,23 +330,23 @@
             2500
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); about one cylinder a month for a family of four ≈ ₹940; municipal water and PNG charges vary by city and are not sourced."
         },
         "internet": {
           "value": [
             1200,
             2500
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: Jio AirFiber from ₹599 + 18% GST (≈₹707) / Airtel from ₹699 + GST, plus mobile prepaid for 2–3 phones ≈ ₹1,200–2,500."
         },
         "fuel": {
           "value": [
-            5000,
-            9000
+            2500,
+            8000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [5000, 9000]; petrol ₹102.12/L in Delhi (Oct 2026): 25–80 litres a month (scooter only to car + scooter; litres assumed). Lower end added for families without a car."
         },
         "transit": {
           "value": [
@@ -374,27 +374,27 @@
         },
         "school": {
           "value": [
-            10000,
-            30000
+            5000,
+            20000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [10000, 30000]; CMS: Education 2025 (MoSPI, via CEDA Ashoka): urban private unaided schools ≈₹35,800 a student a year all-in (course fee ≈₹19.5k, transport ≈₹7k) → ≈₹6,000 a month for two children. Upper end for pricier CBSE/ICSE schools (≈₹1.2 lakh a child) is judgement."
         },
         "groceries": {
           "value": [
-            15000,
-            25000
+            10000,
+            20000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [15000, 25000]; HCES 2023-24 (MoSPI): urban average MPCE ₹6,996 a person a month, ~40% on food (≈₹2,800); uplifted ~10% to 2026 for CPI food inflation (≈7% FY25, ~0% FY26, ~5% mid-2026; rough cumulative, my arithmetic) → ≈₹12,300 a month for four people at the urban average; the range covers average to upper-middle families."
         },
         "dining": {
           "value": [
-            4000,
-            10000
+            2000,
+            8000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "was [4000, 10000]; lowered in line with the new income range. No survey of eating-out spend by household type found; estimate."
         },
         "misc": {
           "value": [
@@ -477,9 +477,9 @@
           "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
         },
         "school": {
-          "value": 30000,
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "value": 20000,
+          "verify": false,
+          "note": "was 30000; set to the top of the reviewed typical range (school 5,000–20,000 for two children, MoSPI 2025), like the other thresholds"
         },
         "diningFloor": {
           "value": 2500,
@@ -539,19 +539,19 @@
       "ranges": {
         "income": {
           "value": [
-            80000,
+            60000,
             160000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [80000, 160000]; lower end now fits a couple of early-career earners (Indeed: avg starting offer ₹3.5 LPA ≈ ₹27k in hand each). Upper end (two mid-career salaries or one senior one) kept; judgement."
         },
         "rent": {
           "value": [
-            20000,
+            18000,
             40000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [20000, 40000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹35–45k on Bengaluru's ORR/Sarjapur, ₹28–40k Hebbal, ₹20–30k KR Puram, ₹30–38k Baner (Pune), ₹25–33k Hafeezpet (Hyderabad). Floor lowered slightly for a 1BHK."
         },
         "homeIns": {
           "value": [
@@ -566,8 +566,8 @@
             1500,
             3500
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 200–450 units a month (assumed use, AC in summer) ≈ ₹1,650–3,500."
         },
         "waterGas": {
           "value": [
@@ -575,23 +575,23 @@
             1500
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); a cylinder every 1–1.5 months ≈ ₹630–940; water/PNG not sourced."
         },
         "internet": {
           "value": [
             1000,
             2000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: Jio AirFiber from ₹599 + 18% GST (≈₹707) / Airtel from ₹699 + GST, plus mobile prepaid for two phones ≈ ₹1,000–2,000."
         },
         "fuel": {
           "value": [
             3000,
             6000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "Confirmed: petrol ₹102.12/L in Delhi (Oct 2026): 30–60 litres a month (car or two scooters; litres assumed)."
         },
         "transit": {
           "value": [
@@ -627,19 +627,19 @@
         },
         "groceries": {
           "value": [
-            7000,
+            6000,
             12000
           ],
-          "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "verify": false,
+          "note": "was [7000, 12000]; HCES 2023-24 (MoSPI): urban average MPCE ₹6,996 a person a month, ~40% on food (≈₹2,800); uplifted ~10% to 2026 for CPI food inflation (≈7% FY25, ~0% FY26, ~5% mid-2026; rough cumulative, my arithmetic) → ≈₹6,200 for two people at the urban average; upper end for higher earners."
         },
         "dining": {
           "value": [
-            6000,
-            15000
+            4000,
+            12000
           ],
           "verify": true,
-          "note": "Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source."
+          "note": "was [6000, 15000]; lowered in line with the new income range. No survey of eating-out spend found; estimate."
         },
         "misc": {
           "value": [
@@ -784,40 +784,40 @@
   "samples": {
     "single": {
       "values": {
-        "income": 75000,
-        "rent": 22000,
+        "income": 45000,
+        "rent": 13000,
         "homeIns": 0,
-        "electricity": 1800,
-        "waterGas": 1000,
-        "internet": 1600,
-        "fuel": 3500,
-        "transit": 4200,
+        "electricity": 1200,
+        "waterGas": 900,
+        "internet": 950,
+        "fuel": 1500,
+        "transit": 1800,
         "carIns": 0,
         "carLoan": 0,
         "school": 0,
-        "groceries": 9000,
-        "dining": 7500,
-        "misc": 5500,
-        "medical": 1000,
-        "homeHelp": 2500,
-        "familySupport": 8000,
-        "giving": 500,
-        "other": 1500,
-        "emergencyFund": 60000
+        "groceries": 5000,
+        "dining": 2500,
+        "misc": 2500,
+        "medical": 800,
+        "homeHelp": 1000,
+        "familySupport": 3000,
+        "giving": 300,
+        "other": 800,
+        "emergencyFund": 40000
       },
       "debts": [
         {
           "type": "card",
           "name": "Credit card",
-          "balance": 45000,
+          "balance": 25000,
           "apr": 42,
-          "payment": 4000
+          "payment": 2500
         }
       ],
       "subscriptions": [
         {
           "name": "Netflix",
-          "cost": 499,
+          "cost": 199,
           "rarely": false
         },
         {
@@ -827,64 +827,64 @@
         },
         {
           "name": "Gym membership",
-          "cost": 2000,
+          "cost": 1200,
           "rarely": true
         }
       ],
       "yearly": [
         {
           "name": "Festivals (Diwali, Eid, Christmas…)",
-          "cost": 25000
+          "cost": 15000
         }
       ],
       "extras": [
         {
           "name": "Festival bonus (Eid, Diwali, Christmas…)",
-          "amount": 40000
+          "amount": 20000
         },
         {
           "name": "Overtime",
-          "amount": 30000
+          "amount": 15000
         }
       ]
     },
     "suburban": {
       "values": {
-        "income": 180000,
-        "rent": 35000,
-        "homeIns": 800,
-        "electricity": 5500,
-        "waterGas": 2000,
-        "internet": 1800,
-        "fuel": 9500,
-        "transit": 1500,
-        "carIns": 2500,
-        "carLoan": 15000,
-        "school": 22000,
-        "groceries": 24000,
-        "dining": 9000,
-        "misc": 9000,
-        "medical": 4000,
-        "homeHelp": 9000,
-        "familySupport": 10000,
-        "giving": 2000,
-        "other": 3000,
-        "emergencyFund": 200000
+        "income": 110000,
+        "rent": 20000,
+        "homeIns": 300,
+        "electricity": 3200,
+        "waterGas": 1600,
+        "internet": 1600,
+        "fuel": 5000,
+        "transit": 1000,
+        "carIns": 1500,
+        "carLoan": 7000,
+        "school": 9000,
+        "groceries": 13000,
+        "dining": 3500,
+        "misc": 3000,
+        "medical": 2500,
+        "homeHelp": 4500,
+        "familySupport": 3000,
+        "giving": 1000,
+        "other": 1500,
+        "emergencyFund": 150000
       },
       "debts": [
         {
           "type": "card",
           "name": "Credit card",
-          "balance": 120000,
+          "balance": 60000,
           "apr": 42,
-          "payment": 10000
+          "payment": 4000
         },
         {
           "type": "loan",
           "name": "Personal loan",
-          "balance": 250000,
+          "balance": 150000,
           "apr": 13,
-          "payment": 8000
+          "payment": 5000
         }
       ],
       "subscriptions": [
@@ -927,66 +927,66 @@
       "yearly": [
         {
           "name": "Festivals (Diwali, Eid, Christmas…)",
-          "cost": 60000
+          "cost": 35000
         },
         {
           "name": "School books, uniforms and admission",
-          "cost": 40000
+          "cost": 25000
         },
         {
           "name": "Car service and repairs",
-          "cost": 15000
+          "cost": 12000
         }
       ],
       "extras": [
         {
           "name": "Festival bonus (Eid, Diwali, Christmas…)",
-          "amount": 60000
+          "amount": 30000
         },
         {
           "name": "Yearly performance bonus",
-          "amount": 150000
+          "amount": 80000
         },
         {
           "name": "Overtime",
-          "amount": 36000
+          "amount": 20000
         },
         {
           "name": "Extra work or side jobs",
-          "amount": 60000
+          "amount": 30000
         }
       ]
     },
     "youngpro": {
       "values": {
-        "income": 120000,
-        "rent": 30000,
+        "income": 100000,
+        "rent": 26000,
         "homeIns": 0,
-        "electricity": 2800,
-        "waterGas": 1200,
-        "internet": 1800,
-        "fuel": 6500,
-        "transit": 3000,
-        "carIns": 1800,
-        "carLoan": 12000,
+        "electricity": 2200,
+        "waterGas": 1000,
+        "internet": 1300,
+        "fuel": 4000,
+        "transit": 2500,
+        "carIns": 1200,
+        "carLoan": 8000,
         "school": 0,
-        "groceries": 10000,
-        "dining": 15000,
-        "misc": 7000,
-        "medical": 1500,
+        "groceries": 8000,
+        "dining": 7000,
+        "misc": 5000,
+        "medical": 1000,
         "homeHelp": 2500,
-        "familySupport": 10000,
-        "giving": 1000,
-        "other": 2000,
-        "emergencyFund": 80000
+        "familySupport": 6000,
+        "giving": 500,
+        "other": 1500,
+        "emergencyFund": 100000
       },
       "debts": [
         {
           "type": "card",
           "name": "Credit card",
-          "balance": 80000,
+          "balance": 50000,
           "apr": 42,
-          "payment": 6000
+          "payment": 4000
         }
       ],
       "subscriptions": [
@@ -1025,11 +1025,11 @@
       "extras": [
         {
           "name": "Yearly performance bonus",
-          "amount": 120000
+          "amount": 80000
         },
         {
           "name": "Extra work or side jobs",
-          "amount": 60000
+          "amount": 40000
         }
       ]
     }
@@ -1231,7 +1231,67 @@
       "title": "PM Surya Ghar: Muft Bijli Yojana",
       "url": "https://pmsuryaghar.gov.in/",
       "usedFor": "localTips in-rooftop-solar"
+    },
+    {
+      "title": "MoSPI — HCES 2023-24 press note (urban MPCE ₹6,996; food ≈40% of urban MPCE)",
+      "url": "https://mospi.gov.in/sites/default/files/press_release/HCES_Report202324_Press_Note_30012025.pdf",
+      "usedFor": "groceries (all profiles), suburban income"
+    },
+    {
+      "title": "PLFS annual report Jul 2023–Jun 2024 (urban regular salaried earnings ₹24,434/month, Apr–Jun 2024) — Rural India Online library",
+      "url": "https://ruralindiaonline.org/en/library/resource/periodic-labour-force-survey-plfs-annual-report-july-2023-june-2024/",
+      "usedFor": "income (all profiles)"
+    },
+    {
+      "title": "Indeed hiring report via People Matters — average starting offer for class of 2025 ₹3.5 LPA",
+      "url": "https://www.peoplematters.in/?p=45358",
+      "usedFor": "single and youngpro income"
+    },
+    {
+      "title": "NoBroker H1 2025 rent report via Outlook Money (2BHK rents by locality, Bengaluru/Pune/Hyderabad)",
+      "url": "https://www.outlookmoney.com/real-estate/rent-vs-buying-huge-gap-between-monthly-rental-yields-and-emis-check-roi",
+      "usedFor": "youngpro and suburban rent"
+    },
+    {
+      "title": "Magicbricks Rent Index May 2025 via Outlook Money (1,000 sq ft unit: Bengaluru ₹36,772, Pune ₹31,439, Mumbai ₹98,431)",
+      "url": "https://www.outlookmoney.com/invest/ahmedabad-bengaluru-pune-lead-as-rental-yields-surge-across-indian-cities",
+      "usedFor": "single rent (scaling only)"
+    },
+    {
+      "title": "KERC tariff order FY26–28 for BESCOM — Deccan Herald (₹5.80/unit, ₹145/kW fixed, 36p P&G surcharge)",
+      "url": "https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fhike-in-fixed-charge-to-raise-power-bill-in-karnataka-3466600",
+      "usedFor": "electricity (all profiles)"
+    },
+    {
+      "title": "Housing.com — Delhi electricity rates 2025 (DERC slabs ₹3/₹4.5/₹6.5, 200 free units)",
+      "url": "https://housing.com/news/electricity-rates-in-delhi/",
+      "usedFor": "electricity (context)"
+    },
+    {
+      "title": "The Hans India — petrol and diesel prices, 15 Oct 2026 (Delhi petrol ₹102.12/L)",
+      "url": "https://www.thehansindia.com/business/market-compass/petrol-and-diesel-prices-today-in-hyderabad-delhi-chennai-and-mumbai-on-15-october-2026-1132618",
+      "usedFor": "fuel (all profiles)"
+    },
+    {
+      "title": "News on AIR — domestic LPG hiked to ₹913 (Mar 2026); later ₹942 from June 2026",
+      "url": "https://www.newsonair.gov.in/domestic-lpg-price-hiked-by-rs-60-commercial-cylinder-up-rs-115",
+      "usedFor": "waterGas notes (LPG)"
+    },
+    {
+      "title": "Smartprix — Jio AirFiber vs Airtel Xstream AirFiber plans 2026 (from ₹599 / ₹699 + GST)",
+      "url": "https://www.smartprix.com/bytes/jio-airfiber-vs-airtel-xstream-airfiber-best-plans-prices-comparison-2026/",
+      "usedFor": "internet (all profiles)"
+    },
+    {
+      "title": "CEDA Ashoka — CMS: Education 2025 analysis (urban private unaided ≈₹35,798 a student a year)",
+      "url": "https://ceda.ashoka.edu.in/?p=10786",
+      "usedFor": "suburban school"
+    },
+    {
+      "title": "Factly/Dataful — CMS: Education 2025 (urban course fee ₹19,457, transport ₹7,041)",
+      "url": "https://factly.in/two-indias-in-one-classroom-how-income-and-geography-shape-education-access",
+      "usedFor": "suburban school"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-10-20"
 }
