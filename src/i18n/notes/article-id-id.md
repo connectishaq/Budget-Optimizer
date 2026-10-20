@@ -1,0 +1,17 @@
+# Article notes: id-id
+- PLN tariff "sekitar Rp1.444 per kWh" for 1.300 VA and up (ID.json: R-1 Rp1,444.70/kWh, Q4 2026); confirm the same rate still applies to all classes from 1.300 VA.
+- Prepaid token (token listrik PLN): admin fee charged per purchase, so larger top-ups save on fees; fee depends on the seller.
+- "Listrik siluman" at "sekitar 5–10%" of the electricity bill: same hedged figure as the English article, not Indonesia-specific data.
+- LED "hingga 75% lebih sedikit" energy: carried over from English.
+- AC at 25–26°C with a timer, galon refill depots with a hygiene certificate, boiling PDAM water: from ID.json localTips.
+- Subscriptions named: Netflix, Vidio, Spotify, YouTube Premium, Google One, GoPay Plus (all in ID.json samples). "Rp150.000–Rp300.000 per bulan" is an estimate based on the subsActive thresholds (Rp150k–250k) and the sample lists, not a survey figure.
+- Food waste: worded vaguely ("sebagian cukup besar") on purpose; the English "30%" was dropped because there is no Indonesian source in the data file.
+- Delivery apps GoFood, GrabFood, ShopeeFood: real services; "ongkir dan biaya layanan" are general fees.
+- TransJakarta Rp3.500 per trip: from ID.json localTips; KRL, MRT, Jabodetabek mentioned without fares.
+- Car/motor insurance: all risk vs TLO are standard Indonesian terms; "polis dari dealer atau leasing sering diperpanjang begitu saja" is general advice, no figure (the English 10–15% was dropped).
+- Credit card interest "sekitar 1,75% per bulan, kurang lebih 21% setahun": BI cap since 2021 per ID.json; not re-confirmed for 2026. Rp6.000.000 × 1,75% = Rp105.000 interest a month.
+- OJK (Otoritas Jasa Keuangan) supervises licensed online lenders (pinjol); check wording "terdaftar dan diawasi OJK".
+- English fix "0% balance transfer card" replaced with advice against covering debt with new pinjol loans, since balance transfers are less common in Indonesia.
+- Savings options named: deposito, reksa dana pasar uang, SBN ritel; arisan described as earning no interest.
+- Compound example: Rp1.000.000 a month at 8% a year, compounded monthly = Rp182,9 juta after 10 years ("sekitar Rp183 juta") and Rp589 juta after 20 years ("lebih dari Rp585 juta"). 8% matches ID.json returns.longTerm (flagged verify).
+- Check that the toggle label “Tampilkan dalam nilai uang hari ini” matches the label in src/i18n/locales/id.json.

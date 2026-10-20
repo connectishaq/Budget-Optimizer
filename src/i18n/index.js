@@ -115,8 +115,10 @@ export async function setLanguage(next) {
   }
   lang = l;
   if (typeof document !== 'undefined') {
-    document.documentElement.lang = l;
-    document.documentElement.dir = dirOf(l);
+    // A language/country page keeps its regional tag (de-DE) from the build
+    const html = document.documentElement;
+    if (html.getAttribute('data-page-lang') !== l) html.lang = l;
+    html.dir = dirOf(l);
   }
   listeners.forEach((fn) => fn(l));
   return l;

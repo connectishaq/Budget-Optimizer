@@ -1,0 +1,17 @@
+# Article notes: en-pk
+- Electricity "Rs 15,000–30,000 or more a month in summer": close to the PK.json suburban electricity range (15,000–32,000; verify flag).
+- Standby load "around 5–10%": carried over from the English article, hedged; not Pakistan-specific data.
+- Protected slab: up to 200 units a month for six months in a row; one month over loses the status for the next six months (from PK.json localTips pk-protected-slab). Check against the current NEPRA/DISCO tariff rules.
+- AC at 26°C: general energy-saving advice, not an official PK figure.
+- Solar + lithium battery to cut generator hours, geyser timer, roof pipe insulation: from PK.json localTips.
+- Subscriptions "Rs 2,000–5,000 a month": estimate, not from a source.
+- "Dollar-priced apps can cost more whenever the rupee falls": general statement; some services bill in PKR, so this is hedged with "can".
+- Foodpanda named as the main delivery app example.
+- Food delivery "three to five times" the home cost: carried over from English, hedged.
+- Petrol prices "revised every fortnight": the government reviews petrol prices every 15 days; verify this is still the practice.
+- M-Tag: real motorway electronic toll tag (NHA/Motorway Police); Metro Bus exists in Lahore, Islamabad/Rawalpindi, Multan, Peshawar (BRT) and Karachi (Green Line).
+- Takaful operators offer car cover in Pakistan; car insurance via bank car financing is common.
+- Card interest "around 34–44% a year": PK.json sources (Allied Bank 34%, MCB up to 44%); Rs 1,00,000 × 38% / 12 ≈ Rs 3,170, written as "about Rs 3,000".
+- Committee (BC) payout used to clear card debt: suggestion only, hedged with "consider".
+- Wealth example: Rs 10,000 a month at 12% a year, monthly compounding ≈ Rs 23 lakh in 10 years and ≈ Rs 99 lakh ("close to Rs 1 crore") in 20. PK.json longTerm is 14%; 12% chosen as a cautious figure.
+- National Savings (CDNS) named as a saving option: real government scheme.

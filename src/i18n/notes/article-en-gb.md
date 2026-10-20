@@ -1,0 +1,17 @@
+# Article notes: en-gb
+- "Phantom load around 5–10% of a home's electricity use": generic estimate carried over from the English article, hedged.
+- Ofgem price cap changes quarterly in January, April, July and October; check this is still the schedule.
+- Hive, Nest and tado named as smart thermostats (from GB.json costs note).
+- Council tax single person discount of 25% (from GB.json localTips).
+- Social broadband tariffs for people on Universal Credit and some other benefits: check eligibility wording.
+- TV licence needed for live TV or BBC iPlayer (GB.json says £180 a year from April 2026).
+- "£30–£100 a month in subscriptions": estimate, consistent with the GB.json sample subscriptions (about £40–£100); not a statistic.
+- Food waste wording deliberately avoids a figure (no WRAP number quoted).
+- Clubcard and Nectar prices, Aldi and Lidl, Deliveroo and Just Eat: real brands named as examples.
+- FCA "price walking" ban since January 2022: renewal price can't exceed the new-customer price through the same channel. Check wording.
+- Railcards named: 16-25, Two Together, Family & Friends.
+- "Buy a few weeks before renewal" is hedged ("ideally"); not stated as a fact.
+- Credit card example: £2,400 at 25% ≈ £50 a month interest (24.66% UK average per GB.json source; 25% default).
+- Balance transfer fee "often around 3%"; StepChange named as a free debt charity.
+- Cash ISA, Stocks and Shares ISA, standing order, current account: UK terms.
+- Growth example: £200 a month at 7% a year ≈ £34,600 after 10 years and ≈ £104,000 after 20 (monthly compounding; 7% = GB.json longTerm).

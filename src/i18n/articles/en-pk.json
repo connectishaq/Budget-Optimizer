@@ -1,0 +1,71 @@
+{
+  "locale": "en-pk",
+  "seo": {
+    "title": "Free Household Budget Calculator Pakistan (Rs) – Private & Simple",
+    "description": "Plan your monthly budget in rupees: rent, electricity, UPS, groceries and savings. Free and private in your browser. Find and plug hidden expense leaks."
+  },
+  "guide": {
+    "toc": {
+      "title": "Table of contents",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Electricity, UPS &amp; gas",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Subscription creep",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Groceries &amp; ordering in",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Petrol &amp; insurance",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse buys &amp; card interest",
+      "wealth": "Turn leaks into savings",
+      "faq": "FAQ",
+      "try": "Try the calculator"
+    },
+    "eyebrow": "Money tips · 5 minute read",
+    "title": "5 Hidden Household Expense Leaks (And How to Plug Them Today)",
+    "intro1_html": "Most households in Pakistan don't have a spending problem so much as a <strong>leak problem</strong>. The big costs, such as rent, school fees or the car instalment, get discussed at home every month. Meanwhile, many small, repeating costs quietly take thousands of rupees every month without anyone noticing. Because these leaks are automatic, spread out and small on their own, they slip past even careful families.",
+    "intro2": "The good news? Leaks are usually the easiest money to win back. Unlike giving up things you enjoy, plugging a leak often means paying less for exactly the same life. Here are five common hidden household expense leaks in Pakistani homes, and simple steps you can take today to stop each one.",
+    "howToPlug": "How to plug it",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Electricity Slabs, UPS and Gas Geysers",
+      "body_html": "Electricity is often the biggest bill after rent, and many family homes pay <strong>Rs 15,000–30,000 or more a month</strong> in summer. The TV, receiver, router and chargers left on at the switch keep drawing power, and this standby load can be <strong>around 5–10% of a home's use</strong>. Slabs make it worse: going over 200 units can cost a home its <strong>protected</strong> status for the next six months. Then come load-shedding costs: generator petrol and a UPS with tired batteries.",
+      "fix1_html": "<strong>Switch off at the socket</strong> or use a power strip for the TV, receiver and computer so nothing sits on standby overnight.",
+      "fix2_html": "<strong>Watch your units, not just the rupees.</strong> Read the meter mid-month, stay under 200 units in winter if you can to keep the protected slab, and in summer run the AC at 26°C with a fan and a timer.",
+      "fix3_html": "<strong>Swap remaining bulbs and tube lights for LEDs</strong>, and on backup run only fans, lights and Wi-Fi. A small solar panel and lithium battery can cut generator hours.",
+      "fix4": "Put a timer on the gas geyser so it heats water only in the morning and evening, and insulate the hot-water pipes on the roof."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
+      "body_html": "Netflix, Spotify, YouTube Premium, cloud storage, gym memberships, cable packages and \"free trials\" that quietly turned paid add up fast. Many families pay <strong>Rs 2,000–5,000 a month for subscriptions</strong> they hardly use, and dollar-priced apps can cost more whenever the rupee falls. Each one feels small, so the total rarely gets checked.",
+      "fix1_html": "Go through the last three months of bank and card statements and list <strong>every repeating charge</strong>. Mark the ones you used less than twice last month.",
+      "fix2_html": "<strong>Rotate streaming apps</strong> instead of keeping all of them: take one for a month, watch what you want, cancel, then move to the next.",
+      "fix3": "Check your mobile and internet usage in the operator's app and move to a smaller bundle or a cheaper package if you never use the full data.",
+      "fix4": "Set a phone reminder two days before any free trial ends."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Ordering-In Premium",
+      "body_html": "Groceries are often the largest cost after rent, so waste here costs real money. Sabzi that wilts in the fridge, leftover salan that gets thrown out, and many small trips to the corner shop all add up. Then there's ordering in: delivery charges, platform fees and menu prices mean a Foodpanda meal can cost <strong>three to five times</strong> what the same food costs to cook at home.",
+      "fix1_html": "<strong>Plan the week's meals around what's already in the fridge</strong> before you write the list.",
+      "fix2": "Buy the monthly rashan, such as atta, rice, daal, ghee and sugar, in bulk from a wholesale market or a big store; it is often cheaper per kg than small packs.",
+      "fix3": "Shop once a week from a list, buy vegetables from the weekly bazaar where you can, and keep one \"leftovers night\" to clear the fridge.",
+      "fix4": "Replace two ordering-in nights a week with simple home meals, and pack office and school lunches the night before."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Petrol and Insurance on Autopilot",
+      "body_html": "Petrol prices are revised every fortnight, and habits decide how much you burn. Short, separate trips in city traffic, soft tyres and daily solo drives all waste fuel, and daily ride-hailing for short distances adds up too. Insurance is the quieter side of this leak. Car insurance, often arranged by the bank with a car loan, tends to renew automatically, and families who never compare can pay <strong>more than they need to</strong>.",
+      "fix1_html": "<strong>Club errands</strong> into one trip once or twice a week, and set up a <strong>carpool</strong> or a shared van for school runs and office.",
+      "fix2": "Check tyre pressure at the petrol pump every fortnight and get the car tuned on time; both help fuel economy.",
+      "fix3": "Where your city has a Metro Bus or a good bus route, compare its cost with daily ride-hailing, and keep your M-Tag topped up for motorway trips.",
+      "fix4_html": "<strong>Ask for car insurance quotes from two or three insurers or takaful operators before renewal</strong>, check what the bank's policy actually covers, and pick a deductible your savings can handle."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Impulse Buys and High-Interest Debt",
+      "body_html": "The daily chai and samosas, the late-night online sale, the \"only Rs 999\" order: impulse spending is hard to see because it never comes as one bill. Saved cards and one-tap wallet payments remove the small pause that would stop an unplanned buy. On a credit card, the leak grows fast. Card interest in Pakistan is often <strong>around 34–44% a year</strong>, so a Rs 1,00,000 balance can cost about <strong>Rs 3,000 a month in interest alone</strong>.",
+      "fix1_html": "<strong>Follow the 24-hour rule:</strong> wait a full day before any non-essential purchase. Most urges pass.",
+      "fix2": "Remove saved cards from shopping apps and turn off sale notifications from online stores.",
+      "fix3_html": "<strong>Clear the costliest loan first</strong>: pay the minimum due on everything, and put every extra rupee towards the debt with the highest interest rate, usually the credit card.",
+      "fix4": "If a committee (BC) payout is coming, consider using it to clear the card. You can also ask your bank about paying a large balance in instalments, but check the fees and real rate first."
+    },
+    "wealth": {
+      "title": "Turn Plugged Leaks Into Real Savings",
+      "p1_html": "Plugging leaks only helps if the money goes somewhere useful. The most powerful step is to <strong>save it straight away</strong>. The same week you cut a bill, set up a standing order for that exact amount into a separate savings account, National Savings, a mutual fund or your emergency fund. If the money never stays in your current account, it can't leak back out.",
+      "p2_html": "Small amounts become large ones over time. Putting Rs 10,000 a month into an investment that averages 12% a year grows to roughly <strong>Rs 23 lakh in ten years</strong> and close to <strong>Rs 1 crore in twenty</strong>. Returns are never guaranteed, so use the calculator above to try your own numbers, add only the ideas that suit your family, and switch on “Show in today’s money” to allow for high inflation.",
+      "p3": "Start with one leak this week. Check your subscriptions tonight, read the electricity meter tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+    }
+  }
+}

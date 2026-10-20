@@ -1,0 +1,71 @@
+{
+  "locale": "pt-br",
+  "seo": {
+    "title": "Calculadora de orçamento familiar grátis e privada (R$) | Brasil",
+    "description": "Calcule o orçamento da sua casa em reais, de graça e sem cadastro. Ache os vazamentos: rotativo, assinaturas, conta de luz, delivery e mais."
+  },
+  "guide": {
+    "toc": {
+      "title": "Índice",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Conta de luz &amp; consumo fantasma",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Assinaturas que se acumulam",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Mercado &amp; delivery",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transporte &amp; seguros",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulso &amp; rotativo",
+      "wealth": "Transforme vazamentos em patrimônio",
+      "faq": "Perguntas frequentes",
+      "try": "Experimente a calculadora"
+    },
+    "eyebrow": "Dicas de dinheiro · leitura de 5 minutos",
+    "title": "5 vazamentos escondidos no orçamento da casa (e como fechá-los hoje)",
+    "intro1_html": "A maioria das famílias não tem um problema de gastos, e sim um <strong>problema de vazamentos</strong>. Aluguel, condomínio e a parcela do carro a gente vigia todo mês. Já as pequenas cobranças no débito automático e na fatura do cartão levam centenas de reais sem ninguém perceber. Como são automáticas, espalhadas e pequenas, elas escapam até de quem anota tudo.",
+    "intro2": "A boa notícia? Vazamento é o dinheiro mais fácil de recuperar. Muitas vezes, é só pagar menos pela mesma vida de sempre. Veja os cinco vazamentos mais comuns nas casas brasileiras e o que fazer hoje para fechar cada um.",
+    "howToPlug": "Como fechar",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Conta de luz alta e consumo fantasma",
+      "body_html": "TV, decodificador, videogame e carregador na tomada gastam um pouquinho de energia o dia inteiro: é o <strong>consumo fantasma</strong>, o famoso stand-by. Mas o grande vilão em muitas casas é o <strong>chuveiro elétrico</strong>, seguido do ar-condicionado. E nos meses de <strong>bandeira tarifária vermelha</strong>, cada kWh fica mais caro. Para uma família, a conta costuma ficar entre R$ 300 e R$ 550, então pequenos ajustes já aparecem.",
+      "fix1_html": "<strong>Deixe o chuveiro na posição \"verão\"</strong> sempre que der e combine banhos de 5 a 8 minutos.",
+      "fix2_html": "<strong>Confira a bandeira na sua conta</strong> e segure o ar-condicionado e a secadora nos meses de bandeira vermelha.",
+      "fix3_html": "<strong>Troque as lâmpadas que sobraram por LED</strong> e use um filtro de linha com botão para desligar tudo de uma vez. Ao trocar um eletrodoméstico, prefira os com <strong>Selo Procel</strong>.",
+      "fix4": "Pergunte à distribuidora se sua família tem direito à Tarifa Social de Energia Elétrica, para famílias de baixa renda no CadÚnico."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Assinaturas que se acumulam",
+      "body_html": "Netflix, Globoplay, Max, Spotify, Clube iFood, nuvem, academia e aquele \"teste grátis\" que virou plano pago. Somando tudo, não é raro uma família pagar <strong>R$ 150 a R$ 300 por mês em assinaturas</strong>, algumas quase sem uso. Como cada uma parece barata sozinha, o total quase nunca é conferido.",
+      "fix1_html": "Abra as faturas do cartão dos últimos três meses e anote <strong>toda cobrança recorrente</strong>. Marque as que você usou menos de duas vezes no mês passado.",
+      "fix2_html": "<strong>Reveze os streamings</strong> em vez de pagar todos juntos: assine um, assista, cancele e passe para o próximo. Veja também se seu plano de celular já não inclui algum.",
+      "fix3": "Ligue para a operadora (Vivo, Claro, TIM ou outra) e peça uma oferta melhor, ou baixe para uma velocidade que você nem vai notar.",
+      "fix4": "Coloque um lembrete no celular dois dias antes de qualquer teste grátis acabar."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Desperdício no mercado e o preço do delivery",
+      "body_html": "Muita comida comprada acaba no lixo: a fruta que passou do ponto, a sobra esquecida no pote. Idas ao mercado sem lista e produtos em porção individual também custam mais. E tem o delivery: com taxa de entrega e de serviço, um pedido no app pode sair <strong>três a cinco vezes mais caro</strong> do que a mesma refeição feita em casa. Para uma família de quatro, o mercado costuma ficar entre R$ 1.800 e R$ 2.800 por mês, fora o iFood.",
+      "fix1_html": "<strong>Planeje o cardápio com o que já está na geladeira</strong> antes de fazer a lista.",
+      "fix2": "Prefira as marcas próprias do supermercado para o básico, como arroz, feijão e produtos de limpeza, e compare o preço por quilo no atacarejo.",
+      "fix3": "Faça uma compra por semana, com lista, e passe na feira perto do fim, quando os preços costumam baixar.",
+      "fix4": "Troque duas noites de delivery por semana por receitas rápidas, e prepare as marmitas do trabalho no domingo."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transporte e seguros no piloto automático",
+      "body_html": "Com a gasolina perto de R$ 6,50 o litro, o hábito pesa. Saídas curtas e picadas gastam mais, porque o motor frio é menos eficiente. Pneu murcho, ir sozinho de carro e corridas de app também somam. O seguro do carro é o irmão silencioso desse vazamento: costuma subir a cada renovação, e quem renova sem cotar muitas vezes paga <strong>mais do que pagaria em outra seguradora</strong>. O mesmo vale para o <strong>plano de saúde</strong>, que sobe todo ano.",
+      "fix1_html": "<strong>Junte os compromissos</strong> numa só saída e combine uma <strong>carona</strong> para a escola ou o trabalho. No carro flex, o etanol costuma compensar quando custa até uns 70% do preço da gasolina.",
+      "fix2": "Mantenha os pneus calibrados, o que ajuda a economizar combustível.",
+      "fix3": "Compare o gasto com Uber e 99 com um passe mensal de ônibus e metrô. Em muitos estados, pagar o IPVA à vista dá desconto.",
+      "fix4_html": "<strong>Cote o seguro do carro todo ano</strong> com um corretor ou mais de uma seguradora, levando sua classe de bônus. No plano de saúde, veja se um plano com coparticipação atende bem a família por menos."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Compras por impulso e os juros do rotativo",
+      "body_html": "O cafezinho na padaria, o pedido de madrugada, a compra \"porque estava em promoção\": o impulso nunca chega como uma conta só. O <strong>parcelado sem juros</strong> engana ainda mais: cada parcela parece pequena, mas juntas enchem a fatura dos próximos meses. Se você paga só o mínimo, o resto vai para o <strong>rotativo do cartão</strong>, que em 2026 passou de 400% ao ano, perto de 15% ao mês. Um saldo de R$ 2.000 no rotativo pode custar cerca de <strong>R$ 300 por mês só de juros</strong>.",
+      "fix1_html": "<strong>Adote a regra das 24 horas:</strong> espere um dia antes de qualquer compra que não seja essencial. Antes de parcelar, some as parcelas que já tem.",
+      "fix2": "Apague os cartões salvos nos apps de compras e desligue as notificações das lojas.",
+      "fix3_html": "<strong>Pague a fatura inteira sempre que puder.</strong> Se não der, pague o mínimo nas outras dívidas e coloque todo valor extra na de juros mais altos.",
+      "fix4": "Troque a dívida do cartão por um crédito mais barato, como o consignado, em vez do parcelamento da fatura. Para dívidas atrasadas, negocie com o banco ou pelo Serasa Limpa Nome."
+    },
+    "wealth": {
+      "title": "Transforme vazamentos fechados em patrimônio de verdade",
+      "p1_html": "Fechar vazamentos só vale se o dinheiro for para um lugar útil. O passo mais forte é <strong>automatizar a economia na hora</strong>. Na semana em que cortar uma conta, agende um Pix desse valor para sua reserva de emergência, no Tesouro Selic ou num CDB com liquidez diária. Se o dinheiro não fica parado na conta-corrente, ele não vaza de volta.",
+      "p2_html": "Números pequenos viram grandes com o tempo. Guardar R$ 300 por mês rendendo em média 10% ao ano chega a cerca de <strong>R$ 60 mil em dez anos</strong> e a mais de <strong>R$ 215 mil em vinte</strong>. Use a calculadora acima para testar seus números e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
+      "p3": "Comece com um vazamento esta semana. Confira suas assinaturas hoje à noite, coloque o chuveiro no \"verão\" amanhã e planeje as refeições no domingo. Cada ajuste leva minutos, e a economia se repete todo mês."
+    }
+  }
+}

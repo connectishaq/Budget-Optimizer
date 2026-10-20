@@ -1,0 +1,18 @@
+# Article notes: ar-ae
+- DEWA (Dubai), ADDC (Abu Dhabi), SEWA (Sharjah) described as charging electricity in slabs; no slab figures given. Verify ADDC/SEWA slab wording.
+- "Summer bills can be several times the winter bill" (أضعاف فاتورة الشتاء): hedged, verify against DEWA bill guides (Oliva source in AE.json).
+- District cooling providers Empower and Emicool named (from AE.json extraFields).
+- Dubai housing fee 5% of yearly rent added to the DEWA bill (from AE.json housingFee help).
+- AC at 24°C and duct/filter cleaning (from AE.json localTips ae-dewa-slab).
+- Streaming names: Netflix, OSN+, Shahid. Telecoms: du and e& (اتصالات); verify current brand naming.
+- Supermarkets: Carrefour, Lulu, co-operatives (الجمعيات التعاونية); store-brand saving left unquantified.
+- Food waste "may approach a third in some homes": softened from English 30% claim; no UAE-specific statistic.
+- UAE fuel prices change monthly (fuel price committee): verify wording.
+- Salik AED 6.30 peak / 4.20 off-peak; four peak crossings a working day > AED 500 a month (AE.json tip; 4 x 6.30 x 22 = 554).
+- Nol card and Dubai Metro.
+- Credit cards ~3.25–3.5% a month, "roughly 40% a year"; AED 10,000 at ~39% ≈ AED 325 a month (AE.json cardApr 39%).
+- Buy-now-pay-later mentioned in general terms, no providers named.
+- Balance transfer / instalment plans described generally with fee caution; no 0% or 3% figures given.
+- Wealth example: AED 1,000 a month at 7% (AE.json returns.longTerm, judgement) → ~AED 173,000 in 10 years, >AED 520,000 in 20 (monthly compounding).
+- "Fixed deposit" (وديعة لأجل) suggested; AE.json savings rate 3.4% not quoted.
+- Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.

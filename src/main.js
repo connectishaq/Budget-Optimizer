@@ -20,6 +20,7 @@ import { setFormatRegion } from './utils/format.js';
 import { initAds } from './ads.js';
 import { t } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
+import { initLanguageSuggestion } from './i18n/suggest.js';
 import { initialCountry, storeCountry, GLOBAL } from './i18n/countries.js';
 import { loadCountry, isCountryLoaded } from './engine/countries.js';
 
@@ -123,6 +124,7 @@ async function boot() {
 
   initTheme();
   initLocalePicker({ country: getState().country, onCountry: (c) => applyCountry(c) });
+  initLanguageSuggestion();
   initSavedIndicator();
   initInputs();
   initHelp();

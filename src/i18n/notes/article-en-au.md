@@ -1,0 +1,16 @@
+# Article notes: en-au
+- "Phantom load around 5–10% of a home's electricity use": generic estimate carried over from the English article, hedged.
+- Default Market Offer, Energy Made Easy, Victorian Energy Compare (from AU.json localTips and sources).
+- Air-con settings of 24–25°C for cooling and 18–20°C for heating: commonly given government energy advice (energy.gov.au); check the current wording.
+- "$50–$150 a month in subscriptions": carried over from the English article; consistent with the AU.json samples. Not a statistic.
+- Streaming services named: Netflix, Stan, Binge, Kayo, Amazon Prime, Spotify. Delivery apps named: Uber Eats, Menulog, DoorDash. Check Menulog is still operating in Australia.
+- NBN speed tiers; cheaper mobile providers on the same networks (no brand named).
+- Food waste wording deliberately avoids a figure.
+- Petrol price cycles in some capital cities (ACCC reports them); fuel price apps.
+- Rego payable every 3, 6 or 12 months: varies by state, so check the wording. Paying less often is not always cheaper; text says "suits you better".
+- Private health insurance premiums usually rise every April (from AU.json localTips).
+- Credit card example: $3,800 at 20.99% ≈ $66 a month interest (AU.json single sample).
+- National Debt Helpline: free financial counselling service.
+- Mortgage offset account, everyday account, high-interest savings account: Australian terms.
+- Growth example: $300 a month at 7% a year ≈ $51,900 after 10 years and ≈ $156,000 after 20 (monthly compounding; deliberately below AU.json longTerm of 9%).
+- Spelling: Australian/British (tyres, organise, kilometre); "program" kept for government programs.

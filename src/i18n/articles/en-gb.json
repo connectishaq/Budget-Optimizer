@@ -1,0 +1,71 @@
+{
+  "locale": "en-gb",
+  "seo": {
+    "title": "Free UK Household Budget Calculator (£) – Private, No Sign-Up",
+    "description": "Plan your UK household budget in pounds for free. Spot hidden leaks in energy bills, council tax and subscriptions. Private: your data stays on your device."
+  },
+  "guide": {
+    "toc": {
+      "title": "Contents",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Standby power &amp; energy bills",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Subscription creep",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Food shop &amp; takeaways",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Petrol, travel &amp; insurance",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse buys &amp; interest",
+      "wealth": "Turn leaks into savings",
+      "faq": "FAQ",
+      "try": "Try the calculator"
+    },
+    "eyebrow": "Money tips · 5 minute read",
+    "title": "5 Hidden Household Expense Leaks in the UK (And How to Plug Them Today)",
+    "intro1_html": "Most UK households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, the mortgage or car finance, get checked all the time. Meanwhile, lots of small Direct Debits and card payments quietly drain hundreds of pounds a month without anyone noticing. Because these leaks are automatic, spread out and small on their own, they slip past even careful budgeters.",
+    "intro2": "The good news? Leaks are usually the easiest money to win back. Unlike giving up things you enjoy, plugging a leak often means paying less for exactly the same way of life. Here are the five most common hidden household leaks in the UK, and simple steps you can take today to stop each one.",
+    "howToPlug": "How to plug it",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Standby Power and Energy Bills on Autopilot",
+      "body_html": "Every TV, games console, set-top box and phone charger left on standby draws a little electricity day and night. This \"phantom load\" can add up to <strong>around 5–10% of a home's electricity use</strong>. Add heating running while the house is empty, draughty doors and old bulbs, and your energy bills carry a lot of dead weight. Many homes also sit on a standard variable tariff, paying the Ofgem price cap rate without ever comparing it with a fixed deal.",
+      "fix1_html": "<strong>Switch devices off at the wall</strong>, or use a smart plug or standby-saver extension lead for the TV corner and home office.",
+      "fix2_html": "<strong>Turn the thermostat down by 1°C</strong> and set the heating to come on only when you're home. Smart thermostats such as Hive, Nest or tado can do this for you, and fitting draught strips and radiator reflectors costs little.",
+      "fix3_html": "<strong>Compare fixed tariffs against the price cap</strong> before each cap change (January, April, July and October), pay by Direct Debit, and swap any remaining old bulbs for LEDs.",
+      "fix4": "Wash clothes at 30°C, only boil the water you need, and check your council tax band and any discount you're owed, such as the 25% single person discount."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
+      "body_html": "Netflix, Disney+, NOW, Amazon Prime, Spotify, cloud storage, gym memberships and \"free trials\" that quietly became paid plans add up fast. Many families pay <strong>£30–£100 a month in subscriptions</strong> they hardly use. Because each one feels cheap on its own, the total rarely gets looked at.",
+      "fix1_html": "Go through your last three months of bank and card statements and list <strong>every Direct Debit and recurring payment</strong>. Mark the ones you used less than twice last month.",
+      "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
+      "fix3": "When your broadband or mobile contract ends, ring your provider and ask for their best deal, or move to a SIM-only plan. If you claim Universal Credit or some other benefits, ask about a cheaper social tariff.",
+      "fix4": "Set a phone reminder two days before any free trial ends, and check whether you still need your TV licence if you never watch live TV or BBC iPlayer."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Food Waste and the Takeaway Premium",
+      "body_html": "UK households throw away <strong>a surprising share of the food they buy</strong>, often bagged salad, bread and leftovers. Pre-cut veg, meal deals and small top-up shops at the corner shop all carry a convenience premium. Then there are takeaways and delivery apps: when a household spends more on Deliveroo and Just Eat than on the weekly shop, it's often paying several times more per meal for food it could make at home.",
+      "fix1_html": "<strong>Plan meals around what's already in your fridge and freezer</strong> before writing a shopping list.",
+      "fix2": "Try supermarket own brands for basics, or shop at Aldi or Lidl. They often cost noticeably less and many people can't taste the difference.",
+      "fix3": "Do one big shop a week with a list, use your Clubcard or Nectar prices only on things you planned to buy, and have a \"leftovers night\" to clear the fridge.",
+      "fix4": "Swap two takeaway nights a week for quick home meals, and batch-cook lunches for work on Sunday."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Petrol, Travel and Insurance on Autopilot",
+      "body_html": "Petrol and diesel are among the most changeable costs in a household budget, and habits drive them. Short, scattered journeys use far more fuel per mile because engines are least efficient when cold. Soft tyres, driving alone and paying full fare for trains all add up. Insurance is the quieter twin of this leak. Since 2022, FCA rules stop insurers charging you more at renewal than a new customer, but that only compares one insurer's own prices. Households that never shop around can still <strong>pay more than they need to</strong>.",
+      "fix1_html": "<strong>Combine errands</strong> into one trip once or twice a week, and set up a <strong>lift share</strong> for the school run or commute.",
+      "fix2": "Check your tyre pressures every month. Correctly inflated tyres use a little less fuel and last longer.",
+      "fix3": "Look at a railcard (such as 16-25, Two Together or Family & Friends), season tickets and bus passes, and compare them with what you pay per journey.",
+      "fix4_html": "<strong>Compare car and home insurance every year</strong> on a comparison site, ideally a few weeks before renewal, and only raise your excess to an amount your emergency fund can cover."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Impulse Buys and High-Interest Debt",
+      "body_html": "The daily coffee, the late-night online order, the \"it was on offer\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout, saved card details and buy now, pay later remove the short pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging around 25% interest a year (the APR), the leak grows: a £2,400 balance at 25% costs about <strong>£50 a month in interest alone</strong>.",
+      "fix1_html": "<strong>Try the 24-hour rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
+      "fix2": "Remove saved card details from shopping sites, unsubscribe from sale emails and turn off shopping app notifications.",
+      "fix3_html": "<strong>Pay the highest-interest debt first</strong>: pay the minimum on everything, and put every extra pound towards the debt with the highest interest rate.",
+      "fix4": "Consider a 0% balance transfer card. The fee, often around 3%, can be recovered within a few months of avoided interest. If debts feel out of control, free charities such as StepChange can help."
+    },
+    "wealth": {
+      "title": "Turn Plugged Leaks Into Real Savings",
+      "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>move the savings straight away</strong>. The same week you cut a bill, set up a standing order for that exact amount into an easy-access savings account, a Cash ISA, your emergency fund or a low-cost Stocks and Shares ISA. If the money never sits in your current account, it can't leak back out.",
+      "p2_html": "Small amounts become large ones over time. Putting £200 a month into an investment that averages 7% a year could grow to around <strong>£34,600 in ten years</strong> and about <strong>£104,000 in twenty</strong>. Returns go up and down and are never guaranteed. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+      "p3": "Start with one leak this week. Check your subscriptions tonight, set the heating timer tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+    }
+  }
+}

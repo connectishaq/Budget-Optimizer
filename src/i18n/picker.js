@@ -5,11 +5,23 @@
 
 import { t, dirOf, LANGUAGES, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
 import { ALL_COUNTRIES, GLOBAL, flagOf, countryName, storeCountry, initialCountry } from './countries.js';
+import { hrefFor } from './locale-pages.js';
 
 const SCROLL_KEY = 'hbo:scroll';
 
-/** Language for this page view: saved choice, else the browser's (saved on first visit). */
+/** The language a language/country page (/de-de/) was built in, or null on the home page. */
+export const pageLanguage = () => {
+  const l = document.documentElement.getAttribute('data-page-lang');
+  return LANGUAGES[l] ? l : null;
+};
+
+/**
+ * Language for this page view: a language/country page's own language, else
+ * the saved choice, else the browser's (saved on first visit).
+ */
 export function chooseLanguage() {
+  const page = pageLanguage();
+  if (page) return page;
   const stored = getStoredLanguage();
   if (stored) return stored;
   const detected = detectLanguage();
@@ -102,6 +114,12 @@ export function initLocalePicker({ country = initialCountry(), onCountry } = {})
 
   langSel.addEventListener('change', () => {
     storeLanguage(langSel.value);
+    // On a language/country page, go to the page for the new language (the
+    // same country where there is one; see hrefFor)
+    if (pageLanguage()) {
+      location.href = hrefFor(langSel.value, document.documentElement.getAttribute('data-page-country'));
+      return;
+    }
     reloadInPlace();
   });
   countrySel.addEventListener('change', () => {

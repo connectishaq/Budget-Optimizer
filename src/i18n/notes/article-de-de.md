@@ -1,0 +1,19 @@
+# Article notes: de-de
+- Tone: "du" form throughout, matching src/i18n/locales/de.json.
+- Grundversorgung often around 40 ct/kWh vs. cheapest new-customer tariffs around 30 ct/kWh (DE.json localTip de-energy-switch, StromAuskunft Oct 2026).
+- "Several hundred euros a year" for a family on 4,000 kWh: derived from the ~10 ct/kWh gap (~400 € before standing charges/bonuses); verify wording.
+- Check24 / Verivox named as comparison sites; 12-month Preisgarantie and "keine Vorkasse" as tariff advice.
+- "1 °C weniger spart oft rund 6 % Heizenergie" (DE.json localTip de-gas-switch; widely cited by Verbraucherzentrale/UBA).
+- Subscriptions "50–100 € im Monat" for many households: hedged estimate, lowered from English $50–150; not from a cited statistic.
+- Handyvertrag: after the minimum term contracts can be cancelled monthly (TKG 2021, applies to contracts since Dec 2021); verify wording.
+- Kündigungsbutton for online contracts (Fair-Verbraucherverträge-Gesetz, since July 2022).
+- Rundfunkbeitrag 18,36 € a month, one per Wohnung including WGs (DE.json extraFields).
+- Groceries 700–950 € a month for a family of four (DE.json suburban range). Food-waste share left unquantified on purpose (English "30%" dropped).
+- Eigenmarken named: ja! (REWE), Gut & Günstig (Edeka), Aldi/Lidl own brands.
+- Deutschlandticket 63 € a month in 2026 (DE.json); Deutschlandticket Job: employer pays ≥25 % plus extra discount (DE.json localTip de-jobticket).
+- Kfz-Versicherung: most contracts follow the calendar year, cancellation by 30 November; Sonderkündigungsrecht after a premium increase.
+- Dispokredit "oft über 10 %"; credit-card Teilzahlung "oft 15–20 % oder mehr" (DE.json sources: 15.75–27.57 %, default 17 %).
+- Example: 2.000 € at 17 % = ~28 € interest a month (2,000 × 0.17 / 12 = 28.33).
+- Ratenkredit "oft deutlich unter den Dispozinsen" (DE.json loanApr median ~6 %). English 0 % balance-transfer tip replaced, as such cards are uncommon in Germany.
+- Compounding: 250 €/month at 7 % a year → ~43.000 € after 10 years, >130.000 € after 20 (monthly compounding; 43,280 / 130,250). Uses 7 % rather than the English 8 % to stay below the DAX long-run 7.8 % in DE.json; added "garantiert ist nichts".
+- Toggle label quoted as „In heutigem Geld zeigen“; the actual de.json label is "In heutigem Geld zeigen (Preise steigen mit der Zeit)".

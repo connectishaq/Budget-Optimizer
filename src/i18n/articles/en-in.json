@@ -1,0 +1,71 @@
+{
+  "locale": "en-in",
+  "seo": {
+    "title": "Free Household Budget Calculator India (₹) – Private, No Sign-up",
+    "description": "Plan your monthly budget in rupees: rent, EMIs, bills, groceries and savings. Free, private, works in your browser. Find and plug hidden expense leaks."
+  },
+  "guide": {
+    "toc": {
+      "title": "Table of contents",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Standby power &amp; electricity slabs",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>OTT &amp; subscription creep",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Groceries &amp; food delivery",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Petrol, travel &amp; insurance",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse buys &amp; card interest",
+      "wealth": "Turn leaks into savings",
+      "faq": "FAQ",
+      "try": "Try the calculator"
+    },
+    "eyebrow": "Money tips · 5 minute read",
+    "title": "5 Hidden Household Expense Leaks (And How to Plug Them Today)",
+    "intro1_html": "Most Indian households don't have a spending problem so much as a <strong>leak problem</strong>. The big costs, such as rent, the home loan EMI, school fees or the car EMI, get checked every month. Meanwhile, many small, repeating charges quietly take a few thousand rupees every month without anyone noticing. Because these leaks are automatic, spread out and small on their own, they slip past even careful families.",
+    "intro2": "The good news? Leaks are usually the easiest money to win back. Unlike giving up things you enjoy, plugging a leak often means paying less for exactly the same life. Here are five common hidden household expense leaks in Indian homes, and simple steps you can take today to stop each one.",
+    "howToPlug": "How to plug it",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Standby Power and Electricity Slabs",
+      "body_html": "The TV, set-top box, Wi-Fi router and chargers left on at the switch keep drawing power day and night. This standby or \"phantom\" load can make up <strong>around 5–10% of a home's electricity use</strong>. Most DISCOMs charge by slabs, so a few extra units can push your bill into a higher rate. Add an AC set to 18°C, a geyser left on for hours and society DG backup charges, and a bill of ₹2,500–6,000 a month carries a lot of waste.",
+      "fix1_html": "<strong>Switch off at the plug point</strong> or use a power strip for the TV, set-top box and computer so nothing sits on standby overnight.",
+      "fix2_html": "<strong>Run the AC at 24–26°C</strong> with a ceiling fan, use the sleep timer, and clean the filters before summer. Check the units on your bill to see how close you are to the next slab.",
+      "fix3_html": "<strong>Swap old tube lights and bulbs for LEDs</strong>, and pick BEE 5-star models when you replace an AC, fridge or geyser.",
+      "fix4": "Put a timer on the geyser, use a pressure cooker and lids to save LPG, and if you own your home, look up rooftop solar under PM Surya Ghar."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>OTT and Subscription Creep",
+      "body_html": "Netflix, Prime, JioHotstar, music apps, cloud storage, gym apps, DTH packs and \"free trials\" that quietly turned paid add up fast. Many families pay <strong>₹500–1,500 a month for subscriptions</strong> they hardly use, sometimes twice, because the same OTT app also comes free with a mobile or broadband plan. Each one feels cheap, so the total rarely gets checked.",
+      "fix1_html": "Go through the last three months of bank and card statements and list <strong>every repeating charge</strong>. Also open your UPI app and check active <strong>AutoPay mandates</strong>. Mark anything you used less than twice last month.",
+      "fix2_html": "<strong>Rotate OTT apps</strong> instead of keeping all of them: take one for a month, watch what you want, cancel, then move to the next.",
+      "fix3": "Check which OTT apps already come with your mobile recharge or broadband plan, and cancel any you are paying for twice. Ask your provider about a cheaper plan or an annual pack.",
+      "fix4": "Set a phone reminder two days before any free trial ends."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Food-Delivery Premium",
+      "body_html": "Vegetables that wilt in the fridge, leftover dal that gets thrown out, and small top-up orders on quick-commerce apps all cost more than they seem. Then there's ordering in: delivery, platform and packing charges plus menu mark-ups mean a Swiggy or Zomato meal can cost <strong>three to five times</strong> what the same food costs to cook at home.",
+      "fix1_html": "<strong>Plan the week's meals around what's already in the fridge</strong> before you write the list or open an app.",
+      "fix2": "Buy staples like atta, rice, dal and oil in larger packs or store brands from your kirana or supermarket; they are often noticeably cheaper per kg.",
+      "fix3": "Shop once a week from a list, buy vegetables from the local mandi or sabziwala, and keep one \"leftovers night\" to clear the fridge.",
+      "fix4": "Replace two delivery nights a week with quick home meals, and pack office lunches the night before."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Petrol, Travel and Insurance on Autopilot",
+      "body_html": "Petrol is one of the most changeable costs in the budget, and habits drive it. Short, separate trips in traffic, soft tyres and daily solo drives all burn extra fuel, and daily autos and cabs for short distances add up too. Insurance is the quieter side of this leak. Car and health premiums tend to rise at each renewal, and families who simply click \"renew\" can end up paying <strong>more than they need to</strong>.",
+      "fix1_html": "<strong>Club errands</strong> into one trip once or twice a week, and set up a <strong>carpool</strong> for school runs or office.",
+      "fix2": "Check tyre pressure at the petrol pump every fortnight, and keep FASTag topped up so you never pay the higher cash toll.",
+      "fix3": "Use a metro smart card or a monthly bus pass instead of daily autos and cabs, and share the last mile with colleagues.",
+      "fix4_html": "<strong>Compare car and health insurance quotes before every renewal</strong>, keep your no-claim bonus, and choose add-ons you actually need rather than every one offered."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Impulse Buys and High-Interest Debt",
+      "body_html": "The daily chai and snacks, the late-night online sale, the \"just ₹299\" order: impulse spending is hard to see because it never comes as one bill. One-tap UPI and saved cards remove the small pause that would stop an unplanned buy. On a credit card, the leak grows fast. Card interest in India is often <strong>around 3–3.5% a month (roughly 36–42% a year)</strong>, so a ₹50,000 balance can cost about <strong>₹1,750 a month in interest alone</strong>.",
+      "fix1_html": "<strong>Follow the 24-hour rule:</strong> wait a full day before any non-essential purchase. Most urges pass.",
+      "fix2": "Remove saved cards from shopping apps, turn off sale notifications, and set a monthly limit on UPI spends you can see.",
+      "fix3_html": "<strong>Clear the costliest loan first</strong>: pay the minimum due on everything, and put every extra rupee towards the debt with the highest interest rate, usually the credit card.",
+      "fix4": "Ask your bank about converting a large card balance into an EMI, or moving it to a lower-rate personal loan. Check the processing fee and the real interest rate before you agree."
+    },
+    "wealth": {
+      "title": "Turn Plugged Leaks Into Real Savings",
+      "p1_html": "Plugging leaks only helps if the money goes somewhere useful. The most powerful step is to <strong>automate the saving straight away</strong>. The same week you cut a bill, set up a SIP or standing instruction for that exact amount into a recurring deposit, your emergency fund or a low-cost index fund. Money that never sits in your savings account can't leak back out.",
+      "p2_html": "Small amounts become large ones over time. Putting ₹5,000 a month into an investment that averages 10% a year grows to roughly <strong>₹10 lakh in ten years</strong> and about <strong>₹38 lakh in twenty</strong>. Returns are never guaranteed, so use the calculator above to try your own numbers, add only the ideas that suit your family, and switch on “Show in today’s money” to allow for rising prices.",
+      "p3": "Start with one leak this week. Check your subscriptions and UPI AutoPay tonight, set the AC timer tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+    }
+  }
+}

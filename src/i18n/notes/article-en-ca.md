@@ -1,0 +1,17 @@
+# Article notes: en-ca
+- "Phantom load around 5–10% of a home's electricity use": generic estimate carried over from the English article, hedged.
+- "Turn the heat down 2–3°C at night and when you're out" (from CA.json localTips).
+- ecobee and Nest named as smart thermostats; Enbridge and FortisBC rebates (from CA.json localTips). Rebate programs change often.
+- Time-of-use hydro rates and off-peak hours: mainly Ontario. Wording says "if you pay time-of-use".
+- "$50–$150 a month in subscriptions": carried over from the English article; consistent with the CA.json samples. Not a statistic.
+- "Cellphone and internet bills are often among the biggest monthly bills after housing": hedged; CA.json internet range is $90–$250.
+- Flanker brands Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom, Virgin Plus (from CA.json localTips).
+- No Name, President's Choice, Compliments store brands; the Flipp flyer app.
+- Food waste wording deliberately avoids a figure.
+- Winter tire insurance discount: Ontario insurers must offer one (since 2016), others may; winter tires are mandatory in Quebec; wording is "ask your insurer".
+- Shopping around for auto insurance only applies in provinces with private auto insurance (not BC, Saskatchewan, Manitoba, which have public insurers); text says this.
+- Credit card example: $3,500 at 20.99% ≈ $61 a month interest; text says "about $60".
+- Balance transfer fee "typical 1–3%": check against current Canadian offers.
+- TFSA, RRSP, high-interest savings account, chequing account: Canadian terms.
+- Growth example: $300 a month at 7% a year ≈ $51,900 after 10 years and ≈ $156,000 after 20 (monthly compounding; deliberately below CA.json longTerm of 8%).
+- Spelling: Canadian (kilometre, chequing, tire, organize, program).

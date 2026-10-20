@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { prerenderLocales, alternateLinks, sitemapXml } from './scripts/prerender-locales.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES = ['privacy-policy', 'terms-of-use', 'contact'];
@@ -38,7 +39,9 @@ function siteConfig(env) {
           '<meta property="og:image:width" content="1200">',
           '<meta property="og:image:height" content="630">',
           '<meta property="og:image:alt" content="Household Budget Optimizer: an example month showing income, bills and money to save">',
-          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`
+          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`,
+          // The home page lists every language/country page (the locale pages get the same set)
+          ...(pagePath === '/' ? [alternateLinks(siteUrl)] : [])
         ].join('\n  ')
         : '';
       const contact = contactEmail
@@ -62,17 +65,21 @@ function siteConfig(env) {
       const sitemap = path.join(outDir, 'sitemap.xml');
       if (!isBuild || !fs.existsSync(robots)) return; // dev server / tests: nothing to finalise
       const today = new Date().toISOString().slice(0, 10);
+      // One static page per language + country, same design (/en-gb/, /ar-ae/…)
+      const locales = prerenderLocales({ root: __dirname, outDir, siteUrl });
+      console.log(`✓ ${locales.length} language/country pages: /${locales.join('/, /')}/`);
       if (siteUrl) {
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/__SITE_URL__/g, siteUrl));
-        fs.writeFileSync(
-          sitemap,
-          fs.readFileSync(sitemap, 'utf8').replace(/__SITE_URL__/g, siteUrl).replace(/__LASTMOD__/g, today)
-        );
+        fs.writeFileSync(sitemap, sitemapXml(siteUrl, today, [
+          { path: 'contact', priority: '0.5' },
+          { path: 'privacy-policy', priority: '0.3' },
+          { path: 'terms-of-use', priority: '0.3' }
+        ]));
       } else {
         // Without a domain a sitemap would be invalid, so drop it and the robots.txt reference.
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/^Sitemap:.*$/m, '').trimEnd() + '\n');
         fs.rmSync(sitemap, { force: true });
-        console.warn('\n⚠  SITE_URL is not set in .env — canonical tag, og:url, the share image and sitemap.xml were skipped.\n');
+        console.warn('\n⚠  SITE_URL is not set in .env — canonical tags, hreflang links, og:url, the share image and sitemap.xml were skipped.\n');
       }
       if (!adsClient) console.warn('ℹ  VITE_ADSENSE_CLIENT is not set — ad slots are hidden in this build.');
       if (!contactEmail) console.warn('ℹ  VITE_CONTACT_EMAIL is not set — the Contact section shows a generic line.');

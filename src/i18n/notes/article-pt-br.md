@@ -1,0 +1,21 @@
+# Article notes: pt-br
+- Electricity "entre R$ 300 e R$ 550" for a family: BR.json suburban electricity range (derived estimate).
+- Chuveiro elétrico as a main consumer, "verão" setting, 5–8 minute showers, bandeira vermelha advice: from BR.json localTips (br-bandeira-chuveiro).
+- Selo Procel (energy-efficiency label): real programme; no figure claimed.
+- Tarifa Social de Energia Elétrica for low-income families in CadÚnico: verify eligibility wording.
+- Subscriptions "R$ 150 a R$ 300 por mês": estimate consistent with BR.json samples (suburban sample sums to about R$ 295), not a published statistic.
+- Services named (Netflix, Globoplay, Max, Spotify, Clube iFood, Vivo, Claro, TIM, Uber, 99, iFood): real; first ones from BR.json samples.
+- Delivery "três a cinco vezes mais caro" than home-cooked: carried over from the English article's range, hedged with "pode".
+- Groceries "R$ 1.800 a R$ 2.800" for a family of four: BR.json suburban groceries range.
+- Cheaper prices near the end of the feira (xepa) and price per kilo at the atacarejo: general consumer advice, no figure.
+- Gasoline "perto de R$ 6,50 o litro": ANP ~R$ 6,53/l (Aug 2026), BR.json source.
+- Etanol worth it at up to ~70% of the gasoline price in flex cars: widely used rule of thumb; verify.
+- IPVA discount for paying à vista "em muitos estados": varies by state.
+- Seguro auto "classe de bônus", premiums creeping at renewal: no percentage claimed (English 10–15% dropped).
+- Plano de saúde "sobe todo ano": annual readjustment (ANS caps individual plans, 5.11% for 2026–27; collective plans are not capped).
+- Rotativo "passou de 400% ao ano, perto de 15% ao mês": BCB average 444.9% a year in Aug 2026 (Jornal do Comércio source in BR.json).
+- R$ 2.000 at ~15%/month ≈ R$ 300/month interest: simple arithmetic on the above.
+- Consignado instead of parcelamento da fatura (~192% a year); Serasa Limpa Nome: from BR.json localTips.
+- Wealth: R$ 300/month at 10% a year → about R$ 60 mil in 10 years (R$ 59.959–61.453 depending on compounding), more than R$ 215 mil in 20 (R$ 215.478–227.811). Nominal; 10% matches BR.json returns.savings.
+- Tesouro Selic, CDB com liquidez diária, Pix agendado: real products; no rates quoted.
+- Toggle label “Mostrar em dinheiro de hoje” matches pt.json.

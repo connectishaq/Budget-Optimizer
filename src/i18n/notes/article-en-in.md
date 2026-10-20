@@ -1,0 +1,18 @@
+# Article notes: en-in
+- Standby load "around 5–10% of a home's electricity use": carried over from the English article, hedged; not India-specific data.
+- Electricity bill "₹2,500–6,000 a month": the suburban electricity range in IN.json (verify flag: v1 estimates).
+- "Most DISCOMs charge by slabs": true of most state residential tariffs; slab limits differ by state.
+- AC "24–26°C": BEE/Ministry of Power advisory sets 24°C as the default AC temperature; 24–26°C is the commonly advised band.
+- "BEE 5-star" appliance labels: real BEE star-rating scheme.
+- PM Surya Ghar (rooftop solar subsidy): real scheme, cited in IN.json sources.
+- Subscriptions "₹500–1,500 a month": estimate, not from a source; check it feels right.
+- Netflix, Prime, JioHotstar, Swiggy, Zomato named as examples; JioHotstar is the merged JioCinema/Disney+ Hotstar brand (check it is still current).
+- UPI AutoPay mandates visible and cancellable in UPI apps: real NPCI feature.
+- Food delivery "three to five times" the home-cooked cost: carried over from English, hedged with "can".
+- Dropped the English "30% of food thrown away" figure (no India source).
+- FASTag: vehicles without a valid FASTag pay a higher (double) cash toll under NHAI rules; check wording "higher cash toll".
+- No-claim bonus (NCB) on car insurance: real Indian motor insurance feature.
+- Card interest "around 3–3.5% a month (roughly 36–42% a year)": IN.json defaults.cardApr 42% (Paisabazaar: 2.5–3.75% a month). ₹50,000 × 42% / 12 ≈ ₹1,750.
+- Card balance to EMI / personal loan: common bank offers; advice is hedged to check fees.
+- Wealth example: ₹5,000 a month at 10% a year, monthly compounding ≈ ₹10.2 lakh in 10 years and ≈ ₹38 lakh in 20 (IN.json longTerm is 11%; 10% chosen as a rounder, more cautious figure).
+- SIP, recurring deposit, standing instruction: standard Indian banking/mutual fund terms.

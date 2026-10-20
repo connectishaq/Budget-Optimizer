@@ -1,0 +1,25 @@
+# Article notes: es-mx
+- Standby consumption "alrededor de un 5–10% del recibo": carried over from the English article, hedged.
+- CFE bills every two months ("recibo bimestral"); kWh blocks básico/intermedio/excedente; DAC based on 12-month average, unsubsidised, about a year to leave: from MX.json localTips (mx-tarifa-dac) and sources (UnoTV, CFE tariffs).
+- AC at "25–26 °C" and replacing fridges / AC units over 10 years old: MX.json localTips.
+- "Uno o dos cilindros de gas LP al mes" and weekly maximum price per kg: MX.json waterGas note and localTips (mx-gas-lp); price cap regime should be checked as still in force.
+- Thermostat advice dropped on purpose (rule hidden for MX in MX.json).
+- Subscriptions "$600 a $1,500 al mes": estimate from MX.json sample subscriptions (Netflix 249, Spotify 129, Disney+ 219, Smart Fit 599 …); not a statistic.
+- Providers named: Telmex, Totalplay, izzi, Telcel, AT&T (MX.json internet note); ViX, Max, Disney+, Netflix, Spotify, Amazon Prime (MX.json samples).
+- Food waste "una buena parte": deliberately no number (English said ~30%).
+- Dining out "$1,500 a $3,500 al mes" for a single person: MX.json single profile range.
+- Gasoline Magna "alrededor de $24 el litro": MX.json fuel note; check current price.
+- Uber / DiDi, Metro / Metrobús / camión: MX.json transit note.
+- "Tenencia o refrendo y verificación si aplican en tu estado": varies by state; wording kept general.
+- "Buen Fin": real annual Mexican sales event.
+- Meses sin intereses tying up future quincenas and pushing to minimum payments: MX.json localTips (mx-meses-sin-intereses).
+- Card CAT "alrededor del 55% al año": MX.json cardApr (Banxico transparency data via press, 54.82%; year unclear). CAT includes fees.
+- "$18,000 … unos $800 al mes en intereses": 18,000 × 55% / 12 ≈ 825 (approximation; CAT is not a pure interest rate).
+- "Totalero": common Mexican term for paying the full balance.
+- Crédito de nómina with lower CAT: MX.json loanApr estimate ~30%.
+- CONDUSEF for comparing products: real agency with comparison tools; check the wording "compara en la CONDUSEF".
+- Cetes via cetesdirecto, ahorro voluntario in the Afore: real options; MX.json savings note (Banxico 6.50%, Cetes slightly below).
+- Aguinaldo and "utilidades" (PTU): MX.json sample extras.
+- "$2,000 al mes al 8% → unos $365,000 en diez años y más de $1,170,000 en veinte": monthly compounding gives 365,892 and 1,178,041. 8% chosen below the MX.json longTerm judgment of 9%.
+- Number format "$1,200" (comma thousands) as in the brief. "$" means pesos throughout; consider "MXN" if ambiguity with USD is a concern.
+- SEO title is exactly 70 characters.

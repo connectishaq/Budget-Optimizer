@@ -1,0 +1,18 @@
+# Article notes: en-ae
+- DEWA/ADDC slab (tiered) electricity tariffs: from AE.json localTips ae-dewa-slab; ADDC's tariff for expats is also tiered, check wording "and other providers".
+- District cooling companies Empower and Emicool: named in AE.json extraFields chillerFee.
+- Standby load "around 5–10%": carried over from the English article, hedged; not UAE-specific data.
+- AC "24°C or higher": from AE.json localTips.
+- "Summer tap water is often warm already" (water heater timer advice): common UAE observation, not a sourced figure.
+- Subscriptions "AED 100–300 a month": estimate, not from a source.
+- OSN+, Shahid, Netflix; du and e& (formerly Etisalat): real providers.
+- Talabat, Deliveroo; Carrefour, Lulu, Union Coop: real UAE brands named as examples.
+- Food delivery "three to five times": carried over from English, hedged.
+- UAE fuel prices change monthly (UAE Fuel Price Committee): real.
+- Salik AED 6.30 peak / AED 4.20 off-peak (with 5% VAT from June 2026) and "four peak crossings a working day can pass AED 500 a month": from AE.json sources (Yallamotor) and localTips. 4 × 6.30 × ~22 days ≈ AED 554.
+- Nol card for Dubai Metro/bus: real RTA card.
+- Car insurance renewed with annual vehicle registration: standard UAE practice. "More than a new customer would" is hedged, no figure.
+- Card interest "around 3% a month (36–40% a year)": AE.json defaults.cardApr 39%; AED 10,000 × 39% / 12 ≈ AED 325.
+- Balance transfer / instalment plans: offered by many UAE banks; advice hedged to check fees.
+- Wealth example: AED 1,000 a month at 7% a year (AE.json longTerm), monthly compounding ≈ AED 173,000 in 10 years and ≈ AED 521,000 in 20.
+- Weekend: "plan next week's meals at the weekend" kept neutral since the UAE weekend is Saturday–Sunday since 2022.

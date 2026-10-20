@@ -1,0 +1,14 @@
+# Article notes: ar-sa
+- Saudi Electricity Company residential tariff: 18 halalas/kWh up to 6,000 kWh a month, 30 halalas above (SA.json source, 2022 schedule): verify still current.
+- AC at 24°C, switch off in empty rooms and majlis, shade west windows, service before summer (SA.json localTips sa-6000-kwh).
+- "Turn off the water heater in summer if water arrives warm": common advice, not from data; check reviewers are comfortable.
+- Streaming: Netflix, Shahid. Telecoms: STC, Mobily (موبايلي), Zain.
+- Food waste "may approach a third in some homes", linked to banquets/gatherings: no Saudi statistic quoted on purpose.
+- Rent on Ejar (منصة إيجار) paid in instalments: mentioned in intro and wealth section (SA.json sa-rent-instalments).
+- Riyadh Metro and buses suggested: verify service coverage is suitable for a general audience.
+- No tolls mentioned (none in general use); fuel prices not quoted.
+- Buy-now-pay-later in general terms only (no providers named), per brief; 24-hour rule for purchases over SAR 500 (SA.json sa-bnpl).
+- Card cost "can reach 30% or more a year"; SAR 10,000 at 32% ≈ SAR 265 a month (SA.json cardApr 32%, judgement). Worded as fees/profit (رسوم وأرباح) to suit Islamic card products.
+- «معدل النسبة السنوي» used for APR (SAMA disclosure term): verify.
+- Wealth example: SAR 1,000 a month at 8% (SA.json returns.longTerm, TASI-based judgement) → ~SAR 183,000 in 10 years, >SAR 589,000 in 20 (monthly compounding).
+- Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.

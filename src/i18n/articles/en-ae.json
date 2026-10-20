@@ -1,0 +1,71 @@
+{
+  "locale": "en-ae",
+  "seo": {
+    "title": "Free Household Budget Calculator UAE (AED) – Private, No Sign-up",
+    "description": "Plan your monthly budget in dirhams: rent cheques, DEWA, Salik, school fees and savings. Free and private in your browser. Find hidden expense leaks."
+  },
+  "guide": {
+    "toc": {
+      "title": "Table of contents",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>AC, DEWA &amp; chiller bills",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Subscription creep",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Groceries &amp; delivery apps",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Salik, fuel &amp; insurance",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse buys &amp; card interest",
+      "wealth": "Turn leaks into wealth",
+      "faq": "FAQ",
+      "try": "Try the calculator"
+    },
+    "eyebrow": "Money tips · 5 minute read",
+    "title": "5 Hidden Household Expense Leaks (And How to Plug Them Today)",
+    "intro1_html": "Most households in the UAE don't have a spending problem so much as a <strong>leak problem</strong>. The big costs, such as the rent cheques, school fees or the car loan, get planned carefully. Meanwhile, many small, repeating charges quietly take hundreds of dirhams every month without anyone noticing. Because these leaks are automatic, spread out and small on their own, they slip past even careful budgeters.",
+    "intro2": "The good news? Leaks are usually the easiest money to win back. Unlike giving up things you enjoy, plugging a leak often means paying less for exactly the same life. Here are five common hidden household expense leaks for UAE residents, and simple steps you can take today to stop each one.",
+    "howToPlug": "How to plug it",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>AC, Standby Power and Utility Slabs",
+      "body_html": "In the UAE, the air-conditioning is the bill. DEWA, ADDC and other providers charge more per kWh as your use moves into higher slabs, so summer costs far more per unit. Many homes also pay a separate <strong>district cooling (chiller) bill</strong> to a company such as Empower or Emicool. On top of that, the TV, router and chargers left on at the switch keep drawing power, and this standby load can be <strong>around 5–10% of a home's electricity use</strong>.",
+      "fix1_html": "<strong>Switch off at the socket</strong> or use a power strip for the TV, games console and home office so nothing sits on standby.",
+      "fix2_html": "<strong>Set the AC to 24°C or higher</strong> and use timers so it isn't cooling empty rooms while you're at work or away for the summer. Get ducts and filters cleaned before the hot months.",
+      "fix3_html": "<strong>Swap remaining bulbs for LEDs</strong>, which use far less energy and add less heat for the AC to remove.",
+      "fix4": "Compare your monthly kWh in the DEWA or ADDC app with the slab limits on your bill, and set the water heater timer, since summer tap water is often warm already."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
+      "body_html": "Streaming services like Netflix, OSN+ and Shahid, cloud storage, gym memberships, delivery-app memberships and \"free trials\" that quietly turned paid add up fast. Many families carry <strong>AED 100–300 a month in subscriptions</strong> they rarely use, sometimes twice, because a streaming app also comes with the home internet or mobile plan. Each one feels cheap, so the total almost never gets checked.",
+      "fix1_html": "Go through the last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.",
+      "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
+      "fix3": "Call du or e& before your home internet contract renews and ask for the current offer, or a cheaper plan with the apps you actually use.",
+      "fix4": "Set a phone reminder two days before any free trial ends."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Delivery Premium",
+      "body_html": "Fruit and salad that go off in the fridge, imported brands chosen out of habit, and quick top-up orders all cost more than they seem. Then there's eating out and ordering in: with delivery fees, service charges and menu prices, a Talabat or Deliveroo dinner can cost <strong>three to five times</strong> what the same food costs to cook at home.",
+      "fix1_html": "<strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.",
+      "fix2": "Choose supermarket own brands and regional products for staples at stores like Carrefour, Lulu or Union Coop; they are often noticeably cheaper than imported names.",
+      "fix3": "Shop once a week with a list, use the loyalty programme of the store you already use, and keep one \"leftovers night\" to clear the fridge.",
+      "fix4": "Replace two delivery nights a week with quick home recipes, and pack work lunches the night before."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Salik, Fuel and Insurance on Autopilot",
+      "body_html": "Fuel prices change every month, and driving habits decide how much you burn. Short trips and soft tyres waste fuel, and tolls quietly add up: each <strong>Salik</strong> gate in Dubai costs <strong>AED 6.30 at peak times and AED 4.20 off-peak</strong>, so four peak crossings a working day can pass AED 500 a month. Insurance is the quieter twin of this leak. Drivers who renew with the same insurer every year can end up paying <strong>more than a new customer would</strong>.",
+      "fix1_html": "<strong>Batch errands</strong> into one trip once or twice a week, and organise a <strong>carpool</strong> for school runs or the office.",
+      "fix2": "Check tyre pressure regularly, especially in summer heat, and check whether a route without Salik gates adds only a few minutes.",
+      "fix3": "Try the Metro or bus with a Nol card a few days a week, and compare the cost with fuel, Salik and parking for the same trips.",
+      "fix4_html": "<strong>Compare car insurance quotes every year before you renew your registration</strong>, check what your employer's health plan already covers, and choose an excess your emergency fund can cover."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Impulse Spending and High-Interest Debt",
+      "body_html": "The daily coffee, the late-night online order, the \"mall sale\" purchase: impulse spending is hard to see because it never arrives as one bill. Saved cards and one-tap payments remove the brief pause that would stop an unplanned buy. On a credit card, the leak grows. Card interest in the UAE is often <strong>around 3% a month (36–40% a year)</strong>, so an AED 10,000 balance can cost about <strong>AED 325 a month in interest alone</strong>.",
+      "fix1_html": "<strong>Adopt the 24-hour rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
+      "fix2": "Remove saved card details from shopping sites and turn off retailer notifications.",
+      "fix3_html": "<strong>Pay the highest-interest debt first</strong>: pay the minimum on everything, and put every extra dirham towards the debt with the highest interest rate.",
+      "fix4": "Ask your bank about a balance transfer or an instalment plan at a lower rate. Check the processing fee and the rate after any offer period before you agree."
+    },
+    "wealth": {
+      "title": "Turn Plugged Leaks Into Real Wealth",
+      "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up a standing instruction for that exact amount into a savings account, a fixed deposit, your emergency fund or a low-cost index fund. If the money never stays in your current account, it can't leak back out.",
+      "p2_html": "Small numbers become large ones over time. Redirecting AED 1,000 a month into an investment averaging 7% a year grows to roughly <strong>AED 173,000 in ten years</strong> and more than <strong>AED 520,000 in twenty</strong>. Returns are never guaranteed, so use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+      "p3": "Start with one leak this week. Check your subscriptions tonight, set the AC timers tomorrow, and plan next week's meals at the weekend. Each fix takes minutes, and the savings repeat every month."
+    }
+  }
+}

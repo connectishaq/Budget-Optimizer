@@ -1,0 +1,71 @@
+{
+  "locale": "es-mx",
+  "seo": {
+    "title": "Calculadora de presupuesto familiar gratis y privada en pesos (México)",
+    "description": "Calcula gratis el presupuesto de tu hogar en pesos, por quincena o por mes y sin registrarte. Tus datos se quedan en tu dispositivo. Encuentra tus fugas."
+  },
+  "guide": {
+    "toc": {
+      "title": "Índice",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Luz, gas y consumo fantasma",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Suscripciones que se acumulan",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Súper y comer fuera",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transporte y seguros",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulsos, MSI e intereses",
+      "wealth": "Convierte las fugas en ahorro",
+      "faq": "Preguntas frecuentes",
+      "try": "Prueba la calculadora"
+    },
+    "eyebrow": "Consejos de dinero · 5 minutos de lectura",
+    "title": "5 fugas de dinero ocultas en casa (y cómo taparlas hoy mismo)",
+    "intro1_html": "En la mayoría de las casas el problema no es gastar de más, sino tener <strong>fugas</strong>. Los gastos grandes, como la renta del departamento o el pago del carro, los tenemos bien vigilados. Pero muchos cargos pequeños se van cada quincena sin que nadie se fije. Como son automáticos y cada uno parece poca cosa, se le escapan hasta a quien lleva sus cuentas con cuidado.",
+    "intro2": "¿La buena noticia? Las fugas suelen ser el dinero más fácil de recuperar. Tapar una fuga casi siempre significa pagar menos por lo mismo, sin dejar lo que te gusta. Estas son las cinco más comunes en los hogares de México y lo que puedes hacer hoy con cada una.",
+    "howToPlug": "Cómo taparla",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma, recibo de la CFE y gas LP",
+      "body_html": "La tele, el módem, el microondas y los cargadores del celular siguen gastando luz aunque no los uses: puede ser <strong>alrededor de un 5–10% del recibo</strong>. Pero la fuga más cara suele ser otra. La CFE cobra más caro cada bloque de kWh arriba del consumo básico, y si tu promedio de 12 meses es muy alto te pasa a la <strong>tarifa DAC</strong>, sin subsidio; salir de ella puede tardar un año. Además, una familia puede gastar uno o dos cilindros de gas LP al mes.",
+      "fix1_html": "<strong>Revisa tu recibo bimestral de la CFE</strong>: la línea «Tarifa» y cuántos kWh caen en cada bloque. Si te acercas al límite, recorta antes de que te cambien a DAC.",
+      "fix2_html": "<strong>Pon el aire acondicionado en 25–26 °C</strong> y, cuando puedas, cambia el refri o el minisplit de más de 10 años por uno eficiente.",
+      "fix3_html": "<strong>Usa multicontactos con apagador</strong> en la zona de la tele y la computadora, y cambia los focos que te queden por LED.",
+      "fix4": "Antes de pagar el gas, revisa el precio máximo por kilo de la semana en tu zona, y busca fugas con agua y jabón en la manguera y el regulador."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Suscripciones que se acumulan sin que te des cuenta",
+      "body_html": "Netflix, Disney+, Max, ViX, Spotify, Amazon Prime, la nube, el gym al que ya no vas y esa «prueba gratis» que se volvió cobro mensual. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente $600 a $1,500 al mes</strong>. Con el internet y el plan del celular pasa algo parecido: al terminar la promoción, la mensualidad sube y casi nadie reclama.",
+      "fix1_html": "Revisa los estados de cuenta de los últimos tres meses y apunta <strong>cada cargo que se repite</strong>. Cancela lo que casi no usas.",
+      "fix2_html": "<strong>Rota las plataformas</strong> en vez de tenerlas todas: contrata una, ve lo que te interesa, cancélala y pásate a la siguiente.",
+      "fix3": "Llama a tu compañía de internet (Telmex, Totalplay, izzi u otra) o de celular (Telcel, AT&T u otra) y pide mejor precio o un plan más chico.",
+      "fix4": "Pon un recordatorio dos días antes de que termine cualquier prueba gratis."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Comida que se tira y el sobreprecio de comer fuera",
+      "body_html": "En muchos hogares termina en la basura <strong>una buena parte de la comida que se compra</strong>: fruta que se pasa, tortillas que se endurecen, guisados olvidados en el refri. Las compras rápidas en la tiendita también salen más caras. Y luego están la comida por app, los antojitos y el café diario, que para una persona sola pueden rondar los $1,500 a $3,500 al mes. Cada comida fuera cuesta varias veces más que hecha en casa.",
+      "fix1_html": "<strong>Planea el menú de la semana con lo que ya tienes en el refri y la alacena</strong> antes de hacer la lista.",
+      "fix2": "Prueba las marcas propias del súper en lo básico, y compra fruta y verdura de temporada en el mercado o el tianguis.",
+      "fix3": "Haz una compra grande a la semana con lista, compara el precio por kilo y deja un día para el recalentado.",
+      "fix4": "Cambia dos pedidos por app a la semana por recetas de 20 minutos, y lleva tu comida al trabajo."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transporte y seguros en piloto automático",
+      "body_html": "Con la gasolina Magna alrededor de $24 el litro, el carro es uno de los gastos que más dependen de los hábitos. Los trayectos cortos y las llantas bajas suben el consumo. Si no tienes carro, los viajes en Uber o DiDi se suman sin que lo notes. El seguro es el gemelo silencioso de esta fuga: muchas veces se renueva solo y, si nunca comparas, <strong>puedes pagar bastante más</strong> por la misma cobertura.",
+      "fix1_html": "<strong>Junta tus pendientes en un solo viaje</strong> y organiza un <strong>aventón compartido</strong> para la escuela o el trabajo.",
+      "fix2": "Revisa la presión de las llantas cada mes y lleva el carro a su servicio a tiempo.",
+      "fix3": "Suma lo que gastas en apps de viaje y compáralo con el Metro, el Metrobús o el camión.",
+      "fix4_html": "<strong>Cotiza el seguro del carro cada año</strong> con varias aseguradoras antes de que se renueve solo, y aparta dinero para la tenencia o el refrendo y la verificación si aplican en tu estado."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Compras por impulso, meses sin intereses y tarjetas",
+      "body_html": "El café diario, el pedido en línea de madrugada, lo que compraste porque «estaba en el Buen Fin»: las compras por impulso nunca llegan en un solo cobro. Los <strong>meses sin intereses</strong> parecen gratis, pero varios a la vez comprometen tus próximas quincenas y empujan a pagar solo el mínimo. Ahí la tarjeta cobra un CAT de <strong>alrededor del 55% al año</strong>: un saldo de $18,000 puede generar unos <strong>$800 al mes en intereses</strong>.",
+      "fix1_html": "<strong>Aplica la regla de las 24 horas:</strong> espera un día antes de comprar algo que no sea indispensable.",
+      "fix2": "Suma las mensualidades de MSI que sigan vigentes antes de comprar algo más a meses, y pregunta el precio de contado.",
+      "fix3_html": "<strong>Nunca pagues solo el mínimo; trata de ser totalero.</strong> Si ya tienes deuda, cubre el mínimo en todo y manda cada peso extra a la de CAT más alto.",
+      "fix4": "Pregunta por un crédito de nómina con un CAT más bajo para liquidar la tarjeta, y compara en la CONDUSEF antes de firmar."
+    },
+    "wealth": {
+      "title": "Convierte las fugas tapadas en ahorro de verdad",
+      "p1_html": "Tapar fugas solo sirve si ese dinero va a algún lado útil. Lo más eficaz es <strong>automatizar el ahorro de inmediato</strong>: la misma semana en que bajes un gasto, programa un traspaso por esa cantidad el día de quincena, a una cuenta con rendimiento, a Cetes con cetesdirecto, a tu fondo de emergencia o al ahorro voluntario de tu Afore. Y cuando lleguen el aguinaldo o las utilidades, aparta una parte antes de gastarla.",
+      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes $2,000 al mes y obtienes en promedio un 8% al año, tendrías unos <strong>$365,000 en diez años</strong> y más de <strong>$1,170,000 en veinte</strong>. No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tomar en cuenta la inflación.",
+      "p3": "Empieza con una fuga esta semana: hoy en la noche revisa tus suscripciones, mañana checa tu recibo de la CFE y el domingo planea las comidas. Cada cambio toma minutos, y el ahorro se repite cada quincena."
+    }
+  }
+}

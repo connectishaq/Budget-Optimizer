@@ -55,11 +55,17 @@ export function detectCountry(list = typeof navigator !== 'undefined' ? navigato
   return null;
 }
 
+/** The country of a language/country page (/en-gb/ -> "GB"), or null on the home page. */
+export function pageCountry() {
+  const c = typeof document !== 'undefined' ? document.documentElement.getAttribute('data-page-country') : null;
+  return COUNTRY_CODES.includes(c) ? c : null;
+}
+
 /**
- * The country to use when none is stored yet: a returning user's saved
- * currency wins (so their numbers keep making sense), then the browser's
- * region, then GLOBAL.
+ * The country to use when none is stored yet: the page's own country
+ * (/en-gb/), then a returning user's saved currency (so their numbers keep
+ * making sense), then the browser's region, then GLOBAL.
  */
 export function initialCountry(savedCurrency, list) {
-  return getStoredCountry() || COUNTRY_FOR_CURRENCY[savedCurrency] || detectCountry(list) || GLOBAL;
+  return getStoredCountry() || pageCountry() || COUNTRY_FOR_CURRENCY[savedCurrency] || detectCountry(list) || GLOBAL;
 }

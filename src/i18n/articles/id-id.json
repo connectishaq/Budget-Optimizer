@@ -1,0 +1,71 @@
+{
+  "locale": "id-id",
+  "seo": {
+    "title": "Kalkulator Anggaran Rumah Tangga Gratis & Privat (Rupiah)",
+    "description": "Hitung anggaran bulanan keluarga dalam rupiah, gratis dan privat. Temukan kebocoran: token listrik, langganan, ojek online, paylater, dan lainnya."
+  },
+  "guide": {
+    "toc": {
+      "title": "Daftar isi",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Listrik siluman &amp; tagihan rumah",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Langganan yang menumpuk",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Belanja dapur &amp; jajan di luar",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transportasi &amp; asuransi",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Belanja impulsif &amp; bunga",
+      "wealth": "Ubah kebocoran jadi tabungan",
+      "faq": "Tanya jawab",
+      "try": "Coba kalkulatornya"
+    },
+    "eyebrow": "Tips keuangan · Bacaan 5 menit",
+    "title": "5 Kebocoran Pengeluaran Rumah Tangga yang Tersembunyi (dan Cara Menambalnya Hari Ini)",
+    "intro1_html": "Banyak keluarga sebenarnya tidak boros. Masalahnya adalah <strong>kebocoran</strong>. Pengeluaran besar seperti sewa kontrakan, cicilan KPR, atau cicilan motor selalu kita ingat. Tapi puluhan pengeluaran kecil yang berulang diam-diam bisa menghabiskan ratusan ribu rupiah setiap bulan. Karena kecil, otomatis, dan tersebar, kebocoran ini sering lolos, bahkan dari orang yang rajin mencatat pengeluaran.",
+    "intro2": "Kabar baiknya, uang dari kebocoran biasanya paling mudah diselamatkan. Anda tidak perlu berhenti menikmati hal yang Anda sukai. Menambal kebocoran sering berarti membayar lebih sedikit untuk gaya hidup yang sama. Berikut lima kebocoran yang paling sering terjadi di rumah tangga Indonesia, beserta langkah praktis yang bisa Anda mulai hari ini.",
+    "howToPlug": "Cara menambalnya",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Listrik Siluman dan Tagihan Rumah yang Boros",
+      "body_html": "TV, rice cooker yang terus dalam mode hangat, dispenser, dan charger yang tetap tercolok menyedot listrik sepanjang hari. Listrik \"siluman\" ini bisa memakan <strong>sekitar 5–10% tagihan listrik</strong> sebuah rumah. Di Indonesia, pemakan listrik terbesar biasanya AC dan pemanas air. Untuk rumah 1.300 VA ke atas, tarif PLN per kWh sama, sekitar Rp1.444 per kWh. Jadi satu-satunya cara berhemat adalah memakai lebih sedikit kWh. Jangan lupa air minum: membeli galon bermerek setiap minggu juga bisa terasa di akhir bulan.",
+      "fix1_html": "<strong>Cabut colokan atau pakai stopkontak bersaklar</strong> untuk TV, dispenser, dan charger, lalu matikan saklarnya sebelum tidur.",
+      "fix2_html": "<strong>Setel AC di 25–26°C dan pakai timer</strong>, tutup pintu kamar yang didinginkan, dan bersihkan filter AC secara rutin. Kalau Anda pakai token listrik PLN, beli dalam jumlah lebih besar, karena biaya admin dihitung per transaksi.",
+      "fix3_html": "<strong>Ganti lampu neon lama dan bohlam pijar dengan LED</strong>. Lampu LED bisa memakai energi hingga 75% lebih sedikit dan jauh lebih awet.",
+      "fix4": "Untuk air minum, coba depot isi ulang galon yang menunjukkan sertifikat laik higiene, atau rebus air PDAM untuk memasak."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Langganan yang Diam-diam Menumpuk",
+      "body_html": "Netflix, Vidio, Spotify, YouTube Premium, Google One, keanggotaan GoPay Plus, aplikasi olahraga, dan \"uji coba gratis\" yang otomatis berubah jadi berbayar. Satu per satu terasa murah, sering hanya puluhan ribu rupiah. Tapi kalau dijumlah, banyak keluarga bisa membayar <strong>Rp150.000–Rp300.000 per bulan untuk langganan</strong> yang jarang dipakai. Totalnya jarang sekali diperiksa.",
+      "fix1_html": "Buka mutasi rekening, riwayat e-wallet, dan tagihan kartu kredit tiga bulan terakhir. Catat <strong>setiap tagihan yang berulang</strong>, lalu tandai yang Anda pakai kurang dari dua kali bulan lalu.",
+      "fix2_html": "<strong>Gilir layanan streaming</strong>, jangan ditumpuk: langganan satu, tonton yang Anda mau, berhenti, lalu pindah ke yang lain bulan berikutnya.",
+      "fix3": "Cek kembali paket internet rumah dan paket data ponsel. Tanyakan promo terbaru ke penyedia Anda, atau turunkan kecepatan yang ternyata tidak terasa bedanya.",
+      "fix4": "Pasang pengingat di kalender ponsel dua hari sebelum masa uji coba gratis berakhir."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Makanan Terbuang dan Mahalnya Jajan di Luar",
+      "body_html": "Sayur yang layu di kulkas, lauk yang tidak habis, dan belanja dadakan di minimarket di tengah minggu: semua ini menambah pengeluaran tanpa terasa. Penelitian di berbagai negara memperkirakan rumah tangga bisa membuang <strong>sebagian cukup besar makanan yang dibeli</strong>. Lalu ada pesan antar lewat GoFood, GrabFood, atau ShopeeFood. Selain harga menu, ada ongkir dan biaya layanan. Kalau pengeluaran jajan sudah mendekati belanja dapur, satu porsi bisa jadi beberapa kali lebih mahal daripada masak sendiri.",
+      "fix1_html": "<strong>Susun menu mingguan dari bahan yang sudah ada di kulkas</strong> sebelum menulis daftar belanja.",
+      "fix2": "Untuk kebutuhan pokok seperti beras, minyak goreng, dan gula, bandingkan harga di pasar, warung grosir, dan merek milik supermarket. Pilihan ini sering lebih murah untuk kualitas yang mirip.",
+      "fix3": "Belanja seminggu sekali dengan daftar, dan sisihkan satu hari untuk menghabiskan sisa lauk sebelum belanja lagi.",
+      "fix4": "Ganti dua kali pesan antar per minggu dengan masakan rumah yang cepat, dan bawa bekal makan siang ke kantor atau sekolah."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transportasi dan Asuransi yang Dibiarkan Berjalan Sendiri",
+      "body_html": "Bensin, ojek online, dan parkir adalah pengeluaran yang sangat dipengaruhi kebiasaan. Perjalanan pendek yang terpisah-pisah memboroskan bensin, karena mesin paling boros saat masih dingin. Naik ojek online setiap hari untuk jarak yang dilayani KRL atau TransJakarta juga bisa jauh lebih mahal. Sebagai gambaran, tarif TransJakarta Rp3.500 sekali jalan. Asuransi kendaraan adalah kebocoran yang lebih senyap. Premi bisa naik di setiap perpanjangan, dan polis dari dealer atau leasing sering diperpanjang begitu saja, sehingga Anda bisa <strong>membayar lebih mahal dari yang perlu</strong>.",
+      "fix1_html": "<strong>Gabungkan urusan</strong> dalam satu perjalanan sekali atau dua kali seminggu, dan atur <strong>berangkat bersama</strong> atau antar-jemput sekolah bergantian dengan tetangga.",
+      "fix2": "Periksa tekanan ban motor dan mobil secara rutin. Ban yang kurang angin membuat bensin lebih boros dan ban cepat aus.",
+      "fix3": "Di Jabodetabek, pakai ojek online hanya untuk kilometer pertama dan terakhir ke stasiun, lalu lanjut dengan KRL, TransJakarta, atau MRT.",
+      "fix4_html": "<strong>Bandingkan penawaran asuransi kendaraan sebelum perpanjangan</strong>, setiap tahun. Pilih jenis perlindungan (all risk atau TLO) sesuai umur dan nilai kendaraan, dan pastikan risiko sendiri masih bisa ditanggung dana darurat Anda."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Belanja Impulsif dan Utang Berbunga Tinggi",
+      "body_html": "Kopi susu kekinian setiap hari, flash sale tengah malam, barang yang dibeli \"mumpung diskon\": belanja impulsif paling sulit terlihat karena tidak pernah datang sebagai satu tagihan. Checkout sekali klik, saldo e-wallet, dan tombol paylater menghilangkan jeda singkat yang biasanya membuat kita berpikir ulang. Kalau belanja itu dibayar dengan kartu kredit, bunganya bisa sekitar 1,75% per bulan, atau kurang lebih 21% setahun. Saldo Rp6.000.000 yang tidak dilunasi bisa memakan sekitar <strong>Rp105.000 per bulan hanya untuk bunga</strong>. Paylater dan pinjol juga punya bunga dan denda.",
+      "fix1_html": "<strong>Terapkan Aturan 24 Jam:</strong> tunggu satu hari penuh sebelum membeli barang yang tidak penting. Biasanya keinginannya hilang sendiri.",
+      "fix2": "Hapus data kartu yang tersimpan di aplikasi belanja, matikan fitur paylater yang tidak perlu, dan matikan notifikasi promo dari toko online.",
+      "fix3_html": "<strong>Lunasi dulu utang dengan bunga tertinggi</strong>: bayar minimal untuk semua cicilan, lalu masukkan setiap uang lebih ke utang yang bunganya paling tinggi.",
+      "fix4": "Jangan menutup utang dengan pinjaman baru dari pinjol. Kalau perlu pinjaman, pastikan pemberi pinjaman terdaftar dan diawasi OJK, dan baca total bunga serta biayanya sebelum setuju."
+    },
+    "wealth": {
+      "title": "Ubah Kebocoran yang Tertambal Menjadi Tabungan Nyata",
+      "p1_html": "Menambal kebocoran baru berarti kalau uangnya dipindahkan ke tempat yang berguna. Langkah paling ampuh adalah <strong>langsung mengotomatiskan tabungan</strong>. Di minggu yang sama saat Anda memangkas satu tagihan, atur autodebet sebesar jumlah itu setiap tanggal gajian. Tujuannya bisa rekening dana darurat, deposito, reksa dana pasar uang, atau SBN ritel. Arisan melatih disiplin, tapi uangnya tidak berbunga. Kalau uangnya tidak pernah mampir ke rekening harian, uang itu tidak bisa bocor lagi.",
+      "p2_html": "Angka kecil bisa menjadi besar seiring waktu. Menyisihkan Rp1.000.000 per bulan ke investasi dengan hasil rata-rata 8% per tahun bisa tumbuh menjadi sekitar <strong>Rp183 juta dalam sepuluh tahun</strong> dan lebih dari <strong>Rp585 juta dalam dua puluh tahun</strong>. Hasil investasi tidak dijamin dan bisa naik turun. Pakai kalkulator di atas untuk mencoba angka Anda sendiri, masukkan hanya ide yang cocok dengan hidup Anda, dan nyalakan “Tampilkan dalam nilai uang hari ini” untuk memperhitungkan kenaikan harga.",
+      "p3": "Mulailah dengan satu kebocoran minggu ini. Periksa langganan Anda malam ini, cabut colokan yang tidak perlu besok pagi, dan susun menu minggu depan di hari Minggu. Setiap langkah hanya butuh beberapa menit, dan hasilnya terasa setiap bulan."
+    }
+  }
+}

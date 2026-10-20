@@ -1,0 +1,16 @@
+# Article notes: ur-pk
+- Leak 1: summer electricity bill "Rs 15,000 to Rs 30,000" for many homes, based on PK.json electricity ranges (6,000–32,000; family 15,000–32,000); not a published statistic.
+- Leak 1: protected consumer rule (up to 200 units a month for six consecutive months; crossing once loses status for the next six months), taken from PK.json localTips `pk-protected-slab`; confirm against the current NEPRA/DISCO tariff.
+- Leak 1: AC at "around 26°C" is general energy-saving advice (no figure claimed); LED "uses much less electricity" left unquantified on purpose.
+- Leak 1: gas geyser timer, pipe insulation and switching off the electric element come from PK.json localTips `pk-gas-geyser` and `pk-protected-slab`.
+- Leak 1: solar/UPS/generator advice from PK.json `pk-solar-ups`; no prices quoted.
+- Leak 2: names Netflix and YouTube Premium as examples; subscriptions total described only as "several thousand rupees a month" (hedged, no source).
+- Leak 3: family monthly groceries "Rs 60,000 or more", from PK.json suburban groceries range (60,000–85,000).
+- Leak 3: "Sunday bazaar or mandi usually cheaper" is general advice; no figure.
+- Leak 4: "petrol price changes every few weeks" refers to the government's fortnightly price revisions; check wording is still accurate.
+- Leak 4: metro bus mentioned generically (Lahore/Islamabad/Multan/Peshawar); no provider or fare named.
+- Leak 5: card APR "often 34% to 44%", from PK.json sources (Allied Bank 34%, MCB up to 44%); example uses 38% (PK.json defaults.cardApr).
+- Leak 5: Rs 1 lakh at 38% = about Rs 3,167 a month interest; written as "more than about Rs 3,000".
+- Wealth: Rs 10,000 a month at 12% a year (monthly compounding) = about Rs 23 lakh in 10 years (2,300,387) and about Rs 99 lakh in 20 years (9,892,554); 12% sits near PK.json returns.balanced (12.5%). Text adds that returns aren't guaranteed and inflation erodes value.
+- Wealth: National Savings, bank savings, mutual funds and committee (BC) named generically as places to send savings; no rates given.
+- Phrase: "“آج کے پیسوں میں دکھائیں”" must match the calculator toggle label in ur.json.

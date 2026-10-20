@@ -1,0 +1,71 @@
+{
+  "locale": "fr-fr",
+  "seo": {
+    "title": "Calculateur de budget familial gratuit et privé, en euros",
+    "description": "Calculez votre budget familial en euros, gratuitement et sans compte : vos données restent sur votre appareil. Repérez les fuites et voyez quoi épargner."
+  },
+  "guide": {
+    "toc": {
+      "title": "Sommaire",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Veille &amp; électricité",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>L’accumulation d’abonnements",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Courses &amp; restaurants",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transports &amp; assurances",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Achats impulsifs &amp; crédit",
+      "wealth": "Transformer les fuites en épargne",
+      "faq": "FAQ",
+      "try": "Essayer le calculateur"
+    },
+    "eyebrow": "Conseils · 5 minutes de lecture",
+    "title": "5 fuites cachées dans le budget du foyer (et comment les colmater dès aujourd’hui)",
+    "intro1_html": "La plupart des foyers n’ont pas vraiment un problème de dépenses, mais plutôt un <strong>problème de fuites</strong>. Le loyer ou le crédit immobilier, on les surveille de près. Mais box, forfaits, streaming, assurances et salle de sport reviennent chaque mois en petits prélèvements. Un par un, ils semblent minuscules. Ensemble, ils peuvent peser des centaines d’euros par mois sans que personne ne le remarque.",
+    "intro2": "La bonne nouvelle ? Ces fuites sont souvent l’argent le plus facile à récupérer. Il ne s’agit pas de vous priver, mais de payer moins pour la même vie. Voici les cinq fuites les plus courantes dans un budget familial en France, et comment arrêter chacune dès aujourd’hui.",
+    "howToPlug": "Comment la colmater",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Appareils en veille et énergie mal maîtrisée",
+      "body_html": "Télé, box, console, chargeurs : tout ce qui reste branché consomme un peu jour et nuit. Cette consommation de veille peut représenter <strong>5 à 10 % de la facture d’électricité</strong>. En France, beaucoup de logements sont chauffés à l’électricité : selon le logement, la facture tourne souvent autour de 40 à 200 € par mois. Un radiateur qui chauffe un logement vide ou un contrat mal choisi alourdit vite la note.",
+      "fix1_html": "<strong>Branchez la télé, la box et la console sur une multiprise à interrupteur</strong>, et éteignez-la le soir.",
+      "fix2_html": "<strong>Visez 19 °C dans les pièces de vie</strong> et un peu moins dans les chambres, et baissez le chauffage quand vous êtes absent. Un thermostat programmable ou connecté (comptez environ 150 €) le fait pour vous.",
+      "fix3_html": "<strong>Comparez votre offre au tarif réglementé (TRV)</strong> sur energie-info.fr, le comparateur public du médiateur national de l’énergie. Si le ballon d’eau chaude et les machines tournent la nuit, l’option heures creuses peut valoir le coup. Vérifiez aussi votre puissance (kVA).",
+      "fix4": "Lavez à 30 °C, remplacez les dernières ampoules par des LED, et vérifiez si vous avez droit au chèque énergie."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>L’accumulation d’abonnements",
+      "body_html": "Netflix, Canal+, Disney+, Deezer, Amazon Prime, stockage en ligne, et ces « essais gratuits » devenus payants : tout cela s’additionne vite. Beaucoup de familles paient <strong>plusieurs dizaines d’euros par mois d’abonnements</strong> qu’elles utilisent peu. Un abonnement Basic-Fit à environ 30 € par mois, oublié depuis la rentrée, coûte à lui seul autour de 360 € par an.",
+      "fix1_html": "Reprenez trois relevés de compte et listez <strong>tous les prélèvements réguliers</strong>. Entourez ceux que vous utilisez peu.",
+      "fix2_html": "<strong>Alternez les plateformes de streaming</strong> au lieu de les cumuler : une à la fois, puis résiliez. Depuis 2023, la plupart des abonnements souscrits en ligne doivent pouvoir se résilier en ligne, en quelques clics.",
+      "fix3": "Appelez votre opérateur (Orange, SFR, Bouygues Telecom, Free) et demandez le service fidélisation : le prix de la box augmente souvent après un an. Les forfaits mobiles sans engagement à petit prix sont nombreux.",
+      "fix4": "Mettez un rappel dans votre agenda deux jours avant la fin de chaque essai gratuit."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Le gaspillage alimentaire et le surcoût des restaurants",
+      "body_html": "Les courses pèsent lourd : souvent <strong>650 à 900 € par mois pour une famille de quatre</strong>. Une partie finit pourtant à la poubelle. Les petits formats et les passages imprévus à la supérette coûtent plus cher. Et un repas livré coûte souvent trois à cinq fois plus qu’un repas fait maison.",
+      "fix1_html": "<strong>Prévoyez vos repas avec ce qui est déjà dans le frigo et les placards</strong> avant d’écrire la liste de courses.",
+      "fix2": "Prenez les marques distributeur pour les produits de base et comparez le prix au kilo.",
+      "fix3": "Faites une grosse course par semaine avec une liste, prévoyez un « soir des restes », et regardez les paniers anti-gaspillage comme ceux de Too Good To Go.",
+      "fix4": "Remplacez deux soirs de livraison par des recettes de 20 minutes, et préparez vos déjeuners du bureau le dimanche."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transports et assurances en pilote automatique",
+      "body_html": "Avec un litre de carburant souvent autour de 1,75 à 1,90 €, une famille qui roule beaucoup peut dépenser 150 à 280 € par mois à la pompe. Les petits trajets à moteur froid consomment plus. Côté transports en commun, beaucoup de salariés oublient que <strong>leur employeur doit rembourser la moitié de leur abonnement</strong> (la prime transport). Quant aux assurances, auto, habitation et mutuelle augmentent souvent à chaque échéance. Les foyers qui ne comparent jamais paient souvent <strong>10 à 15 % de plus</strong> qu’un nouveau client.",
+      "fix1_html": "<strong>Regroupez vos déplacements</strong> en une seule tournée une ou deux fois par semaine, et organisez un <strong>covoiturage</strong> pour l’école ou le travail.",
+      "fix2": "Envoyez votre justificatif Navigo ou d’abonnement local au service paie, et demandez le forfait mobilités durables si vous venez à vélo.",
+      "fix3": "Gardez des pneus bien gonflés, et comparez le Navigo Annuel ou le télépéage avec ce que vous payez au trajet.",
+      "fix4_html": "<strong>Faites jouer la concurrence chaque année.</strong> Grâce à la loi Hamon, vous pouvez résilier votre assurance auto ou habitation à tout moment après un an ; la mutuelle aussi. Demandez trois devis pour les mêmes garanties et la même franchise."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Achats impulsifs et crédit renouvelable",
+      "body_html": "Le café à emporter, la commande tard le soir, l’achat « en promo » : les achats impulsifs n’arrivent jamais en une seule facture. Le paiement en un clic, les cartes enregistrées et le paiement en 3 ou 4 fois rendent chaque achat indolore. Quand ces achats finissent sur un crédit renouvelable (souvent autour de 15 à 21 % de TAEG), la fuite grossit : un solde de 2 000 € à 19 % coûte environ <strong>30 € par mois rien qu’en intérêts</strong>.",
+      "fix1_html": "<strong>Adoptez la règle des 24 heures :</strong> attendez une journée entière avant tout achat non essentiel. La plupart des envies passent.",
+      "fix2": "Supprimez les cartes enregistrées sur les sites marchands et évitez le paiement fractionné.",
+      "fix3_html": "<strong>Remboursez d’abord le crédit le plus cher</strong> : le minimum partout, et chaque euro en plus sur la dette au taux le plus élevé.",
+      "fix4": "Demandez à votre banque si un prêt personnel à taux plus bas peut remplacer votre crédit renouvelable. Un Point conseil budget peut aussi vous aider gratuitement."
+    },
+    "wealth": {
+      "title": "Transformer les fuites colmatées en vraie épargne",
+      "p1_html": "Colmater une fuite n’a d’intérêt que si l’argent sert. Le bon réflexe : <strong>automatiser l’épargne tout de suite</strong>. La semaine où vous réduisez une facture, mettez en place un virement permanent du même montant vers votre Livret A pour l’épargne de précaution, ou vers une assurance-vie ou un PEA avec un fonds indiciel à frais réduits. Si l’argent n’arrive jamais sur votre compte courant, il ne peut pas s’en échapper.",
+      "p2_html": "Les petites sommes deviennent grandes avec le temps. Placer 200 € par mois sur un investissement qui rapporterait en moyenne 8 % par an donnerait environ <strong>36 000 € en dix ans</strong> et plus de <strong>117 000 € en vingt ans</strong>. Ce rendement n’est pas garanti. Utilisez le calculateur ci-dessus pour essayer vos propres chiffres, et activez « Afficher en valeur d’aujourd’hui » pour tenir compte de la hausse des prix.",
+      "p3": "Commencez par une seule fuite cette semaine. Vérifiez vos abonnements ce soir, réglez le chauffage demain et préparez les menus dimanche. Chaque geste prend quelques minutes, et les économies se répètent chaque mois."
+    }
+  }
+}

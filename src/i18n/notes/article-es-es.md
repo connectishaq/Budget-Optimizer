@@ -1,0 +1,25 @@
+# Article notes: es-es
+- Standby consumption "alrededor de un 5–10% de la factura": carried over from the English article, hedged; not from a Spanish source.
+- Electricity "35–60 € al mes" for a small flat: ES.json single profile range (Roams 2026 / Papernest PVPC figures).
+- PVPC changes price hourly; fixed-price free-market tariff may be cheaper or dearer: from ES.json localTips (es-pvpc-vs-libre).
+- "Comparador de la CNMC": the CNMC energy offers comparison tool; check the name/URL is still current.
+- "Bajar la potencia contratada si nunca te salta el automático": ES.json localTips; reviewer may prefer "ICP"/"limitador".
+- Off-peak hours "de 00:00 a 08:00 y los fines de semana" (periodo valle, 2.0TD): ES.json localTips; confirm for PVPC and that weekends/holidays are all valle.
+- Heating "en torno a 19–21 °C": general Spanish recommendation (IDAE-style), not a cited figure; verify.
+- "Bono social eléctrico" for low-income or large families (familia numerosa): real programme; eligibility is wider/narrower than stated, check wording.
+- Subscriptions "40–80 € al mes": estimate based on ES.json sample subscriptions (Netflix 13.99, Disney+ 9.99, Spotify 11.99, Amazon Prime 4.99 …); not a statistic.
+- Telecoms named: Movistar, Vodafone, Orange, Digi (from ES.json internet note).
+- Food waste "una parte importante": deliberately replaced the English "about 30%" with no number.
+- Dining out "100–220 € al mes" for a single person: ES.json single profile range.
+- Fuel "1,60–1,75 € el litro": ES.json fuel note; check current pump prices.
+- "Abono transporte de tu comunidad autónoma", "abono joven" under 26: ES.json localTips; age limit varies by region (often under 26, some up to 30).
+- "Tarjeta transporte como retribución flexible" saves tax: ES.json localTips; exempt up to an annual cap (around 1.500 €), check.
+- Insurance notice "normalmente al menos un mes antes del vencimiento": Ley de Contrato de Seguro (art. 22) for the policyholder; verify.
+- Revolving "en torno a un 22–24% TAE": ES.json sources (Finantres; revolving 22.4–23.9% TAE).
+- "2.400 € … unos 44 € al mes solo en intereses": 2,400 × 22% / 12 ≈ 44 (simple monthly approximation).
+- Personal loan "suelen rondar el 7%": ES.json loanApr (BdE consumer credit 6.96%, Jul 2026).
+- OCU and Asufin as consumer associations for possible "usura" claims: from ES.json localTips.
+- "Paga extra": Spanish 14-payment salaries; ES.json treats as 13th-month salary.
+- "200 € al mes al 7% → unos 34.000 € en diez años y más de 100.000 € en veinte": monthly compounding gives 34,617 and 104,185. 7% chosen just below ES.json longTerm 7.9.
+- Number format follows the brief ("2.400 €", "34.000 €"); RAE prefers no separator in 4-digit numbers ("2400 €"), reviewer may change.
+- SEO title is exactly 70 characters.

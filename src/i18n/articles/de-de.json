@@ -1,0 +1,71 @@
+{
+  "locale": "de-de",
+  "seo": {
+    "title": "Haushaltsbuch-Rechner für Deutschland: kostenlos und privat (€)",
+    "description": "Kostenloser, privater Haushaltsrechner für Deutschland: Finde versteckte Geldlecks bei Strom, Abos, Einkauf und Versicherung. Alles bleibt auf deinem Gerät."
+  },
+  "guide": {
+    "toc": {
+      "title": "Inhalt",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Strom, Heizung &amp; Standby",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Abos &amp; Handyverträge",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Lebensmittel &amp; Essen gehen",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Mobilität &amp; Versicherungen",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Spontankäufe &amp; Dispozinsen",
+      "wealth": "Aus Lecks wird Vermögen",
+      "faq": "FAQ",
+      "try": "Rechner ausprobieren"
+    },
+    "eyebrow": "Spartipps · 5 Minuten Lesezeit",
+    "title": "5 versteckte Geldlecks im Haushalt (und wie du sie heute stopfst)",
+    "intro1_html": "Die meisten Haushalte haben weniger ein Ausgabenproblem als ein <strong>Leck-Problem</strong>. Die großen Posten wie Miete, Kreditrate oder Autorate hast du im Blick. Aber Dutzende kleine Abbuchungen laufen jeden Monat still mit: der alte Stromtarif, das vergessene Abo, der Handyvertrag von vor drei Jahren. Weil sie automatisch kommen und einzeln klein sind, fallen sie selbst sorgfältigen Planern kaum auf. Zusammen können sie leicht ein paar Hundert Euro im Monat ausmachen.",
+    "intro2": "Die gute Nachricht: Dieses Geld holst du meist am leichtesten zurück. Du musst auf nichts verzichten, was dir wichtig ist. Oft zahlst du einfach weniger für genau dasselbe. Hier sind die fünf häufigsten Geldlecks in deutschen Haushalten und was du heute schon dagegen tun kannst.",
+    "howToPlug": "So stopfst du das Leck",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Alter Stromtarif, Heizung und Standby",
+      "body_html": "Das größte Leck bei den Energiekosten ist oft nicht der Verbrauch, sondern der Tarif. Wer nie gewechselt hat, steckt meist noch in der <strong>Grundversorgung</strong> des örtlichen Versorgers. Dort zahlst du derzeit oft rund 40 ct pro kWh, während günstige Neukundentarife bei etwa 30 ct liegen. Bei einer Familie mit 4.000 kWh im Jahr kann das <strong>mehrere Hundert Euro im Jahr</strong> ausmachen. Dazu kommen Fernseher, Konsolen und Ladegeräte im Standby, die rund um die Uhr ein wenig Strom ziehen, und eine Heizung, die leere Räume warm hält.",
+      "fix1_html": "<strong>Stromanbieter wechseln:</strong> Nimm deine kWh von der letzten Jahresabrechnung und vergleiche Tarife, zum Beispiel bei Check24 oder Verivox. Achte auf eine Preisgarantie von 12 Monaten und keine Vorkasse.",
+      "fix2_html": "<strong>Heizung gezielt absenken:</strong> Schon 1 °C weniger spart oft rund 6 % Heizenergie. Nachts und wenn niemand zu Hause ist, darf es ein paar Grad kühler sein. Smarte Heizkörperthermostate machen das automatisch.",
+      "fix3_html": "<strong>Steckdosenleisten mit Schalter</strong> für Fernseh-Ecke und Schreibtisch nutzen, damit Geräte ganz ausgehen. Restliche alte Glühbirnen gegen LEDs tauschen.",
+      "fix4": "Prüf auch den Gastarif und deinen monatlichen Abschlag. Passt der Abschlag zu deinem echten Verbrauch, gibt es keine böse Nachzahlung."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Abos und alte Handyverträge",
+      "body_html": "Netflix, Spotify, Disney+, Amazon Prime, iCloud, das Fitnessstudio, die Sprach-App und der „Gratis-Monat“, der still in ein Bezahl-Abo übergegangen ist: Das summiert sich schnell. Viele Haushalte zahlen so <strong>50–100 € im Monat</strong>, oft für Dienste, die kaum jemand nutzt. Ein zweites Leck sind <strong>Handyverträge</strong>: Nach 24 Monaten läuft der Vertrag oft zum alten Preis weiter, obwohl das Handy längst abbezahlt ist. Fest bleibt dagegen der Rundfunkbeitrag von 18,36 € im Monat. Den zahlst du aber nur einmal pro Wohnung, auch in einer WG.",
+      "fix1_html": "Geh die Kontoauszüge der letzten drei Monate durch und schreib <strong>jede wiederkehrende Abbuchung</strong> auf. Markiere alles, was du im letzten Monat kaum genutzt hast.",
+      "fix2_html": "<strong>Streamingdienste abwechseln</strong> statt stapeln: einen buchen, schauen, kündigen, zum nächsten wechseln. Online-Abos kannst du über den Kündigungsbutton auf der Website schnell beenden.",
+      "fix3": "Prüf deinen Handyvertrag: Nach der Mindestlaufzeit ist er monatlich kündbar. Ein SIM-only-Tarif ist oft deutlich günstiger. Frag auch beim Internetanbieter nach einem besseren Angebot.",
+      "fix4": "Stell dir zwei Tage vor dem Ende jedes Probe-Abos eine Erinnerung im Handy."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Lebensmittel im Müll und teures Essengehen",
+      "body_html": "Für eine vierköpfige Familie kommen beim Einkauf schnell <strong>700–950 € im Monat</strong> zusammen. Ein spürbarer Teil davon landet oft im Müll: der welke Salat, das abgelaufene Joghurt, die Reste vom Wochenende. Dazu kommen Lieferdienst, Bäcker-Snacks und Restaurantbesuche. Eine Mahlzeit vom Lieferdienst kostet oft ein Mehrfaches dessen, was du für dasselbe Essen zu Hause zahlst.",
+      "fix1_html": "<strong>Plane die Woche mit dem, was schon im Kühlschrank ist</strong>, und schreib erst dann die Einkaufsliste.",
+      "fix2": "Greif bei Grundnahrungsmitteln zu Eigenmarken wie ja!, Gut & Günstig oder den Marken von Aldi und Lidl. Sie sind oft deutlich günstiger und geschmacklich kaum anders.",
+      "fix3": "Kauf einmal pro Woche mit Liste ein, plane einen „Reste-Abend“ und bring Pfandflaschen regelmäßig zurück.",
+      "fix4": "Ersetze ein oder zwei Liefer-Abende pro Woche durch schnelle Gerichte und nimm sonntags vorgekochtes Mittagessen für die Arbeit mit."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Mobilität und Versicherungen auf Autopilot",
+      "body_html": "Beim Auto zählen die Gewohnheiten. Viele kurze Fahrten kosten pro Kilometer deutlich mehr Sprit, weil der Motor kalt am meisten verbraucht. Zu wenig Reifendruck und allein pendeln kommen dazu. Gleichzeitig zahlen viele noch Einzel- oder Monatskarten, obwohl das <strong>Deutschlandticket</strong> mit 63 € im Monat bundesweit für Bus und Regionalverkehr gilt. Das stillere Leck ist die <strong>Kfz-Versicherung</strong>: Beiträge steigen gern Jahr für Jahr, und wer nie vergleicht, zahlt oft mehr als ein Neukunde für denselben Schutz.",
+      "fix1_html": "<strong>Erledigungen bündeln</strong> und ein- oder zweimal pro Woche in einer Runde fahren. Für Schule oder Arbeit lohnt sich eine <strong>Fahrgemeinschaft</strong>.",
+      "fix2": "Prüf den Reifendruck einmal im Monat an der Tankstelle. Das spart Sprit und schont die Reifen.",
+      "fix3": "Rechne nach, ob sich das Deutschlandticket für dich lohnt. Frag deinen Arbeitgeber nach dem Deutschlandticket Job: Zahlt er mindestens 25 % dazu, wird es für dich noch günstiger.",
+      "fix4_html": "<strong>Kfz-Versicherung jedes Jahr vergleichen:</strong> Die meisten Verträge laufen bis zum 31. Dezember und sind bis zum <strong>30. November</strong> kündbar. Bei einer Beitragserhöhung hast du außerdem ein Sonderkündigungsrecht. Prüf auch Hausrat- und Haftpflichtversicherung und wähle eine Selbstbeteiligung, die dein Notgroschen tragen kann."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Spontankäufe, Dispo und Kreditkartenzinsen",
+      "body_html": "Der Coffee to go, die Bestellung spät am Abend, der „War doch reduziert“-Kauf: Spontankäufe sind schwer zu sehen, weil sie nie als eine Rechnung kommen. Mit einem Klick und gespeicherten Zahlungsdaten fehlt die kurze Pause zum Nachdenken. Teuer wird es, wenn das Konto dadurch dauerhaft im Minus ist. Der <strong>Dispokredit</strong> kostet oft über 10 % Zinsen im Jahr, Kreditkarten mit Teilzahlung oft 15–20 % oder mehr. Ein Kartensaldo von 2.000 € bei 17 % kostet rund <strong>28 € im Monat nur an Zinsen</strong>.",
+      "fix1_html": "<strong>Nutze die 24-Stunden-Regel:</strong> Warte einen ganzen Tag vor jedem Kauf, der nicht nötig ist. Die meisten Wünsche sind dann vorbei.",
+      "fix2": "Lösch gespeicherte Zahlungsdaten in Online-Shops und schalte Newsletter und Push-Nachrichten von Händlern ab.",
+      "fix3_html": "<strong>Den teuersten Kredit zuerst abzahlen</strong>: Überall nur das Minimum zahlen und jeden Euro extra in die Schuld mit dem höchsten Zinssatz stecken. Bei der Kreditkarte stellst du am besten auf volle Rückzahlung statt Teilzahlung um.",
+      "fix4": "Steckst du dauerhaft im Dispo, frag deine Bank nach einem günstigeren Ratenkredit, um ihn abzulösen. Dessen Zinsen liegen oft deutlich unter den Dispozinsen."
+    },
+    "wealth": {
+      "title": "Aus gestopften Lecks echtes Vermögen machen",
+      "p1_html": "Lecks zu stopfen bringt nur etwas, wenn das gesparte Geld auch bleibt. Der wichtigste Schritt: <strong>Automatisiere das Sparen sofort</strong>. In derselben Woche, in der du einen Vertrag günstiger machst, richtest du einen Dauerauftrag über genau diesen Betrag ein: auf ein Tagesgeldkonto für den Notgroschen oder in einen ETF-Sparplan. Was nie auf dem Girokonto landet, kann auch nicht wieder versickern.",
+      "p2_html": "Aus kleinen Beträgen werden mit der Zeit große. Wer 250 € im Monat anlegt und im Schnitt 7 % im Jahr erzielt, hätte nach zehn Jahren rund <strong>43.000 €</strong> und nach zwanzig mehr als <strong>130.000 €</strong>. Renditen schwanken aber, garantiert ist nichts. Probier mit dem Rechner oben deine eigenen Zahlen aus, nimm nur die Ideen, die zu deinem Leben passen, und schalte „In heutigem Geld zeigen“ ein, um steigende Preise einzurechnen.",
+      "p3": "Fang diese Woche mit einem Leck an. Prüf heute Abend deine Abos, vergleiche morgen deinen Stromtarif und plane am Sonntag das Essen für die nächste Woche. Jeder Schritt dauert nur Minuten, und die Ersparnis kommt jeden Monat wieder."
+    }
+  }
+}

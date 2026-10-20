@@ -1,0 +1,25 @@
+# Article notes: hi-in
+- Standby load "बिजली बिल का लगभग 5–10%": carried over from the English article; Indian-specific figure not sourced.
+- DISCOM slab (telescopic) tariffs: true for most states, but slab structure varies by state/DISCOM.
+- AC at 24–26°C: matches BEE's 24°C default-temperature guidance for room ACs; verify current wording.
+- BEE star rating for AC, fridge, geyser: verify geysers (storage water heaters) are still on the BEE star-label list.
+- PM सूर्य घर (PM Surya Ghar: Muft Bijli Yojana) rooftop solar subsidy: from IN.json localTips/sources; scheme still running?
+- LPG linked to Aadhaar and bank so any subsidy reaches the account (DBTL/PAHAL): wording kept conditional ("कोई सब्सिडी मिलती हो तो").
+- Society maintenance bill with DG backup charges: from IN.json extraFields (societyMaintenance, powerBackup).
+- Subscriptions "₹500 से ₹2,000 महीना": estimate consistent with IN.json subsActive thresholds (₹1,200–1,500) and sample subscriptions; not a published statistic.
+- UPI AutoPay: users can view/cancel mandates inside their UPI app (BHIM, PhonePe, Google Pay, Paytm). Generic wording, no app named.
+- Mobile/fiber plans bundling OTT (Jio, Airtel etc.): generic, no brand named.
+- Food waste: replaced the English "roughly 30%" with a hedged "अच्छा-ख़ासा हिस्सा" (no Indian figure cited).
+- Delivery app fees (delivery fee, platform fee, packing charge) and "3–5x a home-cooked meal": the multiple is carried over from English; verify it reads as reasonable for India.
+- Tyre pressure: English "up to 3%" dropped to "थोड़ा बेहतर" (no figure).
+- Metro smart card / NCMC (National Common Mobility Card): from IN.json localTips in-metro-card.
+- FASTag monthly pass / local discounts at toll plazas: exists for local residents near plazas, and NHAI announced an annual FASTag pass in 2025; wording kept as "पता करें". Verify.
+- Motor insurance: No Claim Bonus transfers when switching insurer; voluntary deductible exists. Health insurance portability (IRDAI). Verify phrasing.
+- Insurance "10–15% ज़्यादा" from English replaced with unquantified "ज़रूरत से ज़्यादा प्रीमियम".
+- Credit card interest "2.5–3.75% a month, about 30–45% a year": from the Paisabazaar source in IN.json; 42% default = 3.5%/month.
+- Example: ₹50,000 balance at 3.5%/month = ₹1,750 interest a month (simple monthly interest).
+- "No-cost EMI" often adds processing fee + GST: common, but varies by bank/merchant.
+- Balance transfer (English fix4) replaced by converting the card balance to EMI or a cheaper personal loan (IN.json loanApr note: ~10.5–24%).
+- Wealth example: ₹5,000/month at 8.5% a year (IN.json returns.balanced) = about ₹9.4 lakh in 10 years and about ₹31 lakh in 20 years (monthly compounding, computed: ₹9,40,692 and ₹31,34,995).
+- RD (recurring deposit), SIP into a low-cost index fund: generic product names, no provider named.
+- seo.title uses "–" and "₹"; 69 characters by JS length. seo.description 145 characters; says data stays "आपके फ़ोन में" (on device) — confirm this matches the app's privacy claim wording (could be "डिवाइस").

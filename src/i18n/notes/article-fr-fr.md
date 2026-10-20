@@ -1,0 +1,24 @@
+# Article notes: fr-fr
+- Typography: U+00A0 (no-break space) before : ; ? ! % € » and after «, and as thousands separator (2 000 €, 36 000 €), matching fr.json.
+- seo.title "Calculateur de budget familial gratuit et privé, en euros" (57 chars); seo.description 153 chars.
+- Leak 1: "5 à 10 % de la facture d’électricité" for standby power is carried over from the English article, not a French source.
+- Leak 1: electricity bill "40 à 200 € par mois" = full span of FR.json electricity ranges (single to family, electric heating common).
+- Leak 1: "Visez 19 °C dans les pièces de vie" follows the usual ADEME / government heating advice; verify wording.
+- Leak 1: energie-info.fr described as the public comparator of the médiateur national de l’énergie (from FR.json localTips); TRV, heures creuses, kVA, chèque énergie.
+- Leak 1: smart thermostat "environ 150 €" from FR.json costs.smartThermostat (estimate).
+- Leak 2: "Depuis 2023 ... résilier en ligne, en quelques clics" refers to the résiliation en trois clics rule (in force June 2023); check scope wording ("la plupart des abonnements souscrits en ligne").
+- Leak 2: Basic-Fit "environ 30 € par mois" (29,99 € in FR.json samples) -> "autour de 360 € par an".
+- Leak 2: "plusieurs dizaines d’euros par mois" replaces the US "$50–150"; deliberately vague, no French statistic.
+- Leak 2: box price "augmente souvent après un an" (promotional first-year pricing at Orange/SFR/Bouygues/Free) is a general observation; verify.
+- Leak 3: groceries "650 à 900 € par mois pour une famille de quatre" = FR.json suburban groceries range (estimate, not a statistic). The English "30% of food thrown away" figure was dropped (no French source).
+- Leak 3: "trois à cinq fois plus" per meal carried over from the English article.
+- Leak 3: Too Good To Go named as an example anti-waste app.
+- Leak 4: fuel "1,75 à 1,90 €" per litre and "150 à 280 € par mois" = FR.json fuel note and suburban range.
+- Leak 4: prime transport (employer pays 50% of the public-transport pass), forfait mobilités durables, Navigo Annuel — from FR.json localTips.
+- Leak 4: loi Hamon (cancel car/home insurance any time after one year, new insurer handles it); mutuelle cancellable any time after one year (résiliation infra-annuelle, since Dec 2020) — verify.
+- Leak 4: "10 à 15 % de plus" than a new customer carried over from the English article; not a French statistic.
+- Leak 5: crédit renouvelable TAEG "15 à 21 %" from the Selectra source in FR.json; example 2 000 € at 19 % = 31,67 €/month interest, written "environ 30 €".
+- Leak 5: the US "0% balance transfer card" tip has no French equivalent; replaced with asking the bank for a cheaper prêt personnel and the free Point conseil budget (PCB) service — verify PCB is the right service to name.
+- Wealth: Livret A, assurance-vie, PEA named as savings vehicles (no rate quoted).
+- Wealth: 200 €/month at 8 %/year, monthly compounding = 36 589 € after 10 years ("environ 36 000 €") and 117 804 € after 20 years ("plus de 117 000 €"); explicitly said to be not guaranteed.
+- Toggle label « Afficher en valeur d’aujourd’hui » must match fr.json.

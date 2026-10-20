@@ -1,0 +1,71 @@
+{
+  "locale": "es-es",
+  "seo": {
+    "title": "Calculadora de presupuesto familiar gratis y privada en euros (España)",
+    "description": "Calcula gratis el presupuesto de tu hogar en España, en euros y sin registrarte. Tus datos se quedan en tu dispositivo. Descubre dónde se escapa tu dinero."
+  },
+  "guide": {
+    "toc": {
+      "title": "Índice",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Consumo fantasma y tarifa de luz",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Suscripciones que se acumulan",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Supermercado y comer fuera",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transporte y seguros",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulsos y tarjetas revolving",
+      "wealth": "Convierte las fugas en ahorro",
+      "faq": "Preguntas frecuentes",
+      "try": "Prueba la calculadora"
+    },
+    "eyebrow": "Consejos de dinero · 5 minutos de lectura",
+    "title": "5 fugas de dinero ocultas en casa (y cómo taparlas hoy mismo)",
+    "intro1_html": "En la mayoría de las casas el problema no es gastar demasiado, sino tener <strong>fugas</strong>. Los gastos grandes, como el alquiler del piso, la hipoteca o la letra del coche, los tenemos muy vigilados. Pero muchos cargos pequeños se cobran cada mes sin que nadie se fije. Como son automáticos y cada uno parece poca cosa, se escapan incluso a quien lleva las cuentas con cuidado.",
+    "intro2": "¿La buena noticia? Las fugas suelen ser el dinero más fácil de recuperar. Tapar una fuga casi siempre significa pagar menos por lo mismo, sin renunciar a lo que te gusta. Estas son las cinco más comunes en los hogares españoles y lo que puedes hacer hoy con cada una.",
+    "howToPlug": "Cómo taparla",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma y una tarifa de luz que no te conviene",
+      "body_html": "La tele, el router, la cafetera y los cargadores del móvil siguen gastando luz aunque no los uses. Este consumo en espera puede suponer <strong>alrededor de un 5–10% de la factura</strong>. Además, muchos hogares tienen una tarifa o una potencia que no encaja con su forma de vivir. El PVPC cambia de precio cada hora; una tarifa fija del mercado libre puede salir más barata, o más cara, según tus hábitos. En un piso pequeño la luz suele rondar los 35–60 € al mes.",
+      "fix1_html": "<strong>Compara tu tarifa en el comparador de la CNMC</strong> con tus últimas facturas, y mira si puedes <strong>bajar la potencia contratada</strong> si nunca te salta el automático.",
+      "fix2_html": "<strong>Pon la lavadora y el lavavajillas en horas valle</strong> (de 00:00 a 08:00 y los fines de semana). En invierno, deja la calefacción en torno a 19–21 °C y bájala cuando no haya nadie.",
+      "fix3_html": "<strong>Usa regletas con interruptor</strong> en la zona de la tele y el ordenador, y cambia las bombillas que te queden por LED.",
+      "fix4": "Si tu familia tiene ingresos bajos o es numerosa, mira si puedes pedir el bono social eléctrico."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Suscripciones que se acumulan sin que te des cuenta",
+      "body_html": "Netflix, Disney+, Movistar Plus+, Spotify, Amazon Prime, la nube, el gimnasio al que ya no vas y esa «prueba gratis» que se convirtió en cuota. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente 40–80 € al mes</strong>. Con la fibra y el móvil pasa algo parecido: cuando acaba la promoción, la cuota sube y casi nadie llama.",
+      "fix1_html": "Revisa los movimientos del banco y de la tarjeta de los últimos tres meses y apunta <strong>cada cargo que se repite</strong>. Date de baja de lo que casi no usas.",
+      "fix2_html": "<strong>Alterna las plataformas</strong> en lugar de tenerlas todas: contrata una, ve lo que te interesa, cancélala y pasa a la siguiente.",
+      "fix3": "Llama a tu compañía (Movistar, Vodafone, Orange, Digi u otra) y pide mejor precio, o plantéate la portabilidad. A menudo no necesitas tantos gigas.",
+      "fix4": "Pon un aviso en el calendario dos días antes de que acabe cualquier prueba gratuita."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Comida que se tira y el sobrecoste de comer fuera",
+      "body_html": "En muchos hogares acaba en la basura <strong>una parte importante de la comida que se compra</strong>: fruta que se pasa, yogures caducados, sobras olvidadas. Las bandejas ya cortadas y las compras rápidas entre semana también salen caras. Y luego están las cañas, el menú del día y la comida a domicilio, que para una persona sola pueden rondar los 100–220 € al mes. Cada comida fuera cuesta varias veces más que hecha en casa.",
+      "fix1_html": "<strong>Planifica el menú de la semana con lo que ya tienes en la nevera</strong> antes de hacer la lista.",
+      "fix2": "Prueba la marca blanca en lo básico (leche, aceite, legumbres, limpieza). Suele costar bastante menos.",
+      "fix3": "Haz una compra grande a la semana con lista, compara el precio por kilo y deja un día para las sobras.",
+      "fix4": "Cambia dos pedidos a domicilio a la semana por recetas de 20 minutos, y llévate el táper al trabajo algunos días."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transporte y seguros en piloto automático",
+      "body_html": "Con el combustible a unos 1,60–1,75 € el litro, el coche es uno de los gastos que más dependen de los hábitos. Los trayectos cortos y los neumáticos con poca presión suben el consumo, y el aparcamiento se suma a la cuenta. El seguro es el gemelo silencioso de esta fuga: la prima suele subir en cada renovación y, si nunca comparas, <strong>puedes pagar bastante más que un cliente nuevo</strong>.",
+      "fix1_html": "<strong>Mira el abono transporte de tu comunidad autónoma</strong>. Suele estar subvencionado, y el abono joven es aún más barato si tienes menos de 26 años.",
+      "fix2": "Agrupa los recados en un solo viaje, comparte coche cuando puedas y revisa la presión de los neumáticos cada mes.",
+      "fix3": "Pregunta en tu empresa por la tarjeta transporte como retribución flexible: puede ahorrarte impuestos.",
+      "fix4_html": "<strong>Pide presupuestos del seguro del coche y del hogar cada año</strong>. Si quieres cambiar, avisa a tu aseguradora con tiempo, normalmente al menos un mes antes del vencimiento."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Compras por impulso y tarjetas revolving",
+      "body_html": "El café de cada mañana, el pedido online de madrugada, lo que compraste porque «estaba en rebajas»: las compras por impulso nunca llegan en una sola factura, por eso cuesta verlas. El problema crece si acaban en una tarjeta revolving o en «pago aplazado», que suelen cobrar <strong>en torno a un 22–24% TAE</strong>. Una deuda de 2.400 € a ese tipo cuesta unos <strong>44 € al mes solo en intereses</strong>.",
+      "fix1_html": "<strong>Aplica la regla de las 24 horas:</strong> espera un día antes de comprar algo que no sea imprescindible.",
+      "fix2": "Borra la tarjeta guardada en las webs de compras y desactiva las notificaciones de ofertas.",
+      "fix3_html": "<strong>Cambia la tarjeta a pago total a fin de mes.</strong> Si ya tienes deuda, paga el mínimo en todo y destina cada euro extra a la de interés más alto.",
+      "fix4": "Pregunta por un préstamo personal (suelen rondar el 7%) para cancelar la revolving. Si tu tarjeta cobraba mucho más que la media, consulta a OCU o Asufin por si fuera usura."
+    },
+    "wealth": {
+      "title": "Convierte las fugas tapadas en ahorro de verdad",
+      "p1_html": "Tapar fugas solo sirve si ese dinero va a algún sitio útil. Lo más eficaz es <strong>automatizar el ahorro enseguida</strong>: la misma semana en que bajes una factura, programa una transferencia por esa cantidad, justo después de cobrar la nómina, a una cuenta remunerada, a tu fondo de emergencia o a un fondo indexado de bajo coste. Y cuando llegue la paga extra, aparta una parte antes de gastarla.",
+      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes 200 € al mes y obtienes de media un 7% al año, tendrías unos <strong>34.000 € en diez años</strong> y más de <strong>100.000 € en veinte</strong>. No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
+      "p3": "Empieza con una fuga esta semana: esta noche revisa tus suscripciones, mañana compara tu tarifa de luz y el domingo planifica las comidas. Cada cambio lleva minutos, y el ahorro se repite cada mes."
+    }
+  }
+}
