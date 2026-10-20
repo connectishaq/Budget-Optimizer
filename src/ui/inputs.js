@@ -107,7 +107,7 @@ function moneyField(f) {
     <div class="relative${pay ? ' min-w-0 flex-1' : ''}">
       <span class="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
       <input id="${id}" ${f.local ? `data-local="${f.key}"` : `data-field="${f.key}"`} type="text" inputmode="decimal" autocomplete="off" placeholder="0"
-        class="input ps-12 ${f.balance ? '' : 'pe-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}${pay ? ` ${id}-month` : ''}">
+        class="input ps-12 ${f.balance || (pay && freq !== 'monthly') ? '' : 'pe-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}${pay ? ` ${id}-month` : ''}">
       ${f.balance ? '' : `<span class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400"${pay ? ` data-pay-suffix${freq === 'monthly' ? '' : ' hidden'}` : ''}>${esc(t('inputs.fields.perMonth'))}</span>`}
     </div>`;
   // Pay frequency sits beside the income box, styled like the other dropdowns
@@ -476,6 +476,8 @@ export function renderInputs(state, result, view) {
   setText(document.querySelector('label[for="f-income"]'), incomeLabel(freq));
   const suffix = document.querySelector('[data-pay-suffix]');
   if (suffix) suffix.hidden = freq !== 'monthly';
+  // Room for "a month" only while it's shown, so a narrow box keeps the whole amount visible
+  $('f-income').classList.toggle('pe-16', freq === 'monthly');
   setText($('f-income-month'), freq !== 'monthly' && values.income > 0 ? t('inputs.payFrequency.perMonth', { amount: view.raw(values.income) }) : '');
 
   // The country's own bills: typical range in the "?" and "higher than typical"
