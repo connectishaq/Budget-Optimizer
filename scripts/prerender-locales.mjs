@@ -16,7 +16,7 @@ const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 /** Fills {placeholders} from a data-i18n-vars JSON attribute. */
-const fill = (msg, vars) => (vars ? msg.replace(/{(w+)}/g, (m, n) => JSON.parse(vars)[n] ?? m) : msg);
+const fill = (msg, vars) => (vars ? msg.replace(/\{(\w+)\}/g, (m, n) => JSON.parse(vars)[n] ?? m) : msg);
 
 const isPlural = (v) => v && typeof v === 'object' && typeof v.other === 'string';
 function lookup(obj, key) {

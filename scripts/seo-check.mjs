@@ -41,6 +41,12 @@ for (const f of files) {
     last = level;
   }
 
+  // A {placeholder} left in visible text means a message wasn't filled in
+  const body = doc.querySelector('body');
+  body.querySelectorAll('script, style, template').forEach((el) => el.remove());
+  const left = body.text.match(/\{[a-zA-Z]\w*\}/g);
+  if (left) errors.push(`${rel}: unfilled placeholder(s) in the page text: ${[...new Set(left)].join(', ')}`);
+
   for (const img of doc.querySelectorAll('img')) {
     if (!img.hasAttribute('alt')) errors.push(`${rel}: <img src="${img.getAttribute('src')}"> has no alt attribute`);
   }
