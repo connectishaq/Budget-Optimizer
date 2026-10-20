@@ -1,5 +1,6 @@
 {
   "locale": "en-gb",
+  "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for the UK</span>",
   "seo": {
     "title": "Free UK Household Budget Calculator (£) – Private, No Sign-Up",
     "description": "Plan your UK household budget in pounds for free. Spot hidden leaks in energy bills, council tax and subscriptions. Private: your data stays on your device."

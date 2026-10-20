@@ -1435,15 +1435,15 @@
       "howToPlug": "Cómo taparla",
       "leak1": {
         "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma y suministros poco eficientes",
-        "body_html": "Cada televisor, videoconsola, cafetera y cargador de móvil que se queda enchufado consume un poco de electricidad día y noche. Este «consumo fantasma», también llamado consumo en espera, puede suponer <strong>entre un 5 y un 10% de la factura de luz de un hogar típico</strong>. Si a eso le sumas un termostato que calienta o enfría una casa vacía, y bombillas incandescentes que aún quedan en las lámparas, tu factura de suministros carga con mucho peso muerto.",
-        "fix1_html": "<strong>Usa regletas inteligentes</strong> en la zona de la tele y en la oficina de casa para que los aparatos que no se usan se apaguen del todo.",
-        "fix2_html": "<strong>Ajusta tu termostato 4–6 °C (7–10 °F)</strong> durante ocho horas al día mientras duermes o estás fuera. Un termostato inteligente lo hace solo y a menudo se amortiza en menos de dos años.",
+        "body_html": "Cada televisor, videoconsola, cafetera y cargador de móvil que se queda enchufado consume un poco de electricidad día y noche. Este «consumo fantasma», también llamado consumo en espera, puede suponer <strong>entre un 5 y un 10% de la factura de luz de un hogar típico</strong>. Si a eso le sumas la calefacción o el aire acondicionado funcionando en una casa vacía, y bombillas antiguas que aún quedan en las lámparas, tu factura de luz carga con mucho peso muerto.",
+        "fix1_html": "<strong>Usa regletas con interruptor</strong> en la zona de la tele y en la oficina de casa para que los aparatos que no se usan se apaguen del todo.",
+        "fix2_html": "<strong>Baja la calefacción o sube el aire acondicionado 4–6 °C (7–10 °F)</strong> mientras duermes o estás fuera. Un temporizador o un termostato inteligente puede hacerlo por ti.",
         "fix3_html": "<strong>Cambia las bombillas que te queden por LED</strong>, que gastan hasta un 75% menos de energía y duran muchas veces más.",
-        "fix4": "Lava la ropa en frío y pon el calentador de agua a 49 °C (120 °F)."
+        "fix4": "Lava la ropa en frío y pon el calentador de agua o termo a unos 50 °C (120 °F)."
       },
       "leak2": {
         "title_html": "<span class=\"num-badge\">2</span>Suscripciones que se acumulan",
-        "body_html": "Plataformas de streaming, almacenamiento en la nube, membresías de apps, kits de comida, apps de ejercicio y «pruebas gratuitas» que pasaron a ser de pago sin avisar suman muy rápido. Muchas familias pagan <strong>$50–$150 al mes en suscripciones</strong> que casi no usan. Como cada una parece barata por sí sola, casi nadie revisa el total.",
+        "body_html": "Plataformas de streaming, almacenamiento en la nube, membresías de apps, kits de comida, apps de ejercicio y «pruebas gratuitas» que pasaron a ser de pago sin avisar suman muy rápido. Muchas familias pagan <strong>varias suscripciones que casi no usan</strong>. Como cada una parece barata por sí sola, casi nadie revisa el total.",
         "fix1_html": "Saca los extractos del banco y de la tarjeta de los últimos tres meses y apunta <strong>cada cargo recurrente</strong>. Marca los que usaste menos de dos veces el mes pasado.",
         "fix2_html": "<strong>Alterna los servicios de streaming</strong> en lugar de acumularlos: suscríbete a uno, mira lo que quieras, cancélalo y pasa al siguiente.",
         "fix3": "Llama a tus compañías de internet y teléfono y pide al departamento de bajas los precios promocionales actuales, o baja a una velocidad en la que no notarás la diferencia.",
@@ -1451,33 +1451,33 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Comida desperdiciada y el sobrecoste de comer fuera",
-        "body_html": "Muchos hogares tiran <strong>una parte sorprendente de la comida que compran</strong>. La fruta y verdura ya cortada, los envases individuales y las compras imprevistas entre semana tienen un sobrecoste por comodidad. Y luego está comer fuera: cuando un hogar gasta más en restaurantes y comida para llevar que en el supermercado, suele pagar de tres a cinco veces más por cada comida que podría hacer en casa.",
+        "body_html": "Muchos hogares tiran <strong>una parte sorprendente de la comida que compran</strong>. La fruta y verdura ya cortada, los envases individuales y las compras imprevistas entre semana tienen un sobrecoste por comodidad. Y luego está comer fuera: cuando un hogar gasta más en restaurantes, comida para llevar y pedidos a domicilio que en el supermercado, suele pagar varias veces más por cada comida que podría hacer en casa.",
         "fix1_html": "<strong>Planifica las comidas según lo que ya tienes en la nevera</strong> antes de hacer la lista de la compra.",
-        "fix2": "Elige marca blanca para lo básico. A menudo se fabrica en las mismas instalaciones que las marcas conocidas y cuesta un 20–30% menos.",
+        "fix2": "Elige marca blanca para lo básico. A menudo se fabrica en los mismos sitios que las grandes marcas y suele costar menos.",
         "fix3": "Haz la compra una vez a la semana con una lista, y reserva una «noche de sobras» para vaciar la nevera.",
-        "fix4": "Cambia dos noches de comida para llevar a la semana por recetas caseras de 20 minutos, y prepara el domingo las comidas del trabajo."
+        "fix4": "Cambia dos noches de comida para llevar a la semana por recetas caseras rápidas, y cocina el fin de semana las comidas del trabajo."
       },
       "leak4": {
         "title_html": "<span class=\"num-badge\">4</span>Transporte y seguros en piloto automático",
-        "body_html": "El combustible es uno de los gastos más variables del presupuesto familiar, y depende de los hábitos. Los trayectos cortos y dispersos gastan mucho más combustible por kilómetro porque el motor es menos eficiente en frío. Los neumáticos con poca presión, ir solo al trabajo y pagar los peajes a precio completo también suman. Los seguros son el gemelo silencioso de esta fuga. Las primas suelen subir poco a poco en cada renovación y las aseguradoras rara vez premian la fidelidad, así que los hogares que nunca comparan precios a menudo pagan <strong>un 10–15% más</strong> que un cliente nuevo.",
+        "body_html": "El combustible es uno de los gastos más variables del presupuesto familiar, y depende de los hábitos. Los trayectos cortos y dispersos gastan mucho más combustible por kilómetro porque el motor es menos eficiente en frío. Los neumáticos con poca presión, ir solo al trabajo y pagar los peajes a precio completo también suman. Los seguros son el gemelo silencioso de esta fuga. Las primas suelen subir poco a poco en cada renovación y las aseguradoras rara vez premian la fidelidad, así que los hogares que nunca comparan precios <strong>a menudo pagan más que un cliente nuevo</strong>.",
         "fix1_html": "<strong>Agrupa los recados</strong> en una sola ruta una o dos veces por semana, y organiza un <strong>coche compartido</strong> para llevar a los niños al colegio o ir al trabajo.",
-        "fix2": "Mantén los neumáticos con la presión correcta, lo que puede mejorar el consumo de combustible hasta un 3%.",
-        "fix3": "Compara los abonos mensuales de transporte y los descuentos del telepeaje con lo que pagas por trayecto.",
-        "fix4_html": "<strong>Pide cada año nuevos presupuestos para el seguro de hogar y de coche</strong>, contrata las pólizas con una sola aseguradora y sube la franquicia hasta un nivel que tu fondo de emergencia pueda cubrir."
+        "fix2": "Mantén los neumáticos con la presión correcta: gastarás menos combustible y conducirás más seguro.",
+        "fix3": "Compara los abonos mensuales de transporte y los dispositivos de telepeaje con lo que pagas por trayecto.",
+        "fix4_html": "<strong>Pide cada año nuevos presupuestos para el seguro de hogar y de coche</strong>, pregunta por descuentos por tener varias pólizas y plantéate una franquicia (deducible) más alta que tu fondo de emergencia pueda cubrir."
       },
       "leak5": {
         "title_html": "<span class=\"num-badge\">5</span>Compras por impulso y deudas con interés alto",
-        "body_html": "El café de cada día, el pedido online a medianoche, la compra porque «estaba de oferta»: las compras por impulso son la fuga más difícil de ver porque nunca llegan en una sola factura. Comprar con un clic y tener la tarjeta guardada eliminan esa pequeña pausa que normalmente frenaría una compra no planeada. Cuando esas compras se quedan en una tarjeta de crédito que cobra un 20–30% de interés al año (la TAE), la fuga crece: un saldo de $3,000 al 24% cuesta unos <strong>$60 al mes solo en intereses</strong>.",
+        "body_html": "El café de cada día, el pedido online a medianoche, la compra porque «estaba de oferta»: las compras por impulso son la fuga más difícil de ver porque nunca llegan en una sola factura. Comprar con un clic y tener la tarjeta guardada eliminan esa pequeña pausa que normalmente frenaría una compra no planeada. Cuando esas compras se quedan en una tarjeta de crédito con un interés alto (la TAE), la fuga crece: un saldo de 3,000 en cualquier moneda al 24% anual cuesta unos <strong>60 al mes solo en intereses</strong>.",
         "fix1_html": "<strong>Aplica la regla de las 24 horas:</strong> espera un día entero antes de cualquier compra que no sea imprescindible. La mayoría de los antojos se pasan.",
         "fix2": "Borra los datos de tarjeta guardados en las webs de compras y desactiva las notificaciones de las tiendas.",
         "fix3_html": "<strong>Paga primero la deuda con el interés más alto</strong>: paga el mínimo en todo y destina cada cantidad extra a la deuda con el tipo de interés más alto.",
-        "fix4": "Plantéate una tarjeta con traspaso de saldo al 0%. La comisión típica del 3% a menudo se recupera en pocos meses gracias a los intereses que te ahorras."
+        "fix4": "Donde las ofrezcan, una tarjeta con traspaso de saldo al 0% puede ayudar: una comisión única de alrededor del 3% a menudo se recupera en pocos meses gracias a los intereses que te ahorras."
       },
       "wealth": {
         "title": "Convierte las fugas tapadas en patrimonio real",
-        "p1_html": "Tapar fugas solo sirve si el dinero va a algún sitio útil. El paso más potente es <strong>automatizar el ahorro de inmediato</strong>. La misma semana en que reduzcas una factura, programa una transferencia automática por esa misma cantidad a una cuenta de ahorro remunerada, a tu fondo de emergencia o a un fondo indexado de bajo coste. Si el dinero nunca llega a tu cuenta corriente, no puede volver a escaparse.",
-        "p2_html": "Las cifras pequeñas se hacen grandes con el tiempo. Destinar $250 al mes a una inversión que rinda de media un 8% al año se convierte en unos <strong>$46,000 en diez años</strong> y en más de <strong>$147,000 en veinte</strong>. Usa la calculadora de arriba para probar con tus propios números, añade solo las ideas que encajen con tu vida y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
-        "p3": "Empieza con una fuga esta semana. Revisa tus suscripciones esta noche, ajusta el horario del termostato mañana y planifica el domingo las comidas de la semana que viene. Cada cambio lleva minutos, y el ahorro se repite cada mes."
+        "p1_html": "Tapar fugas solo sirve si el dinero va a algún sitio útil. El paso más potente es <strong>automatizar el ahorro de inmediato</strong>. La misma semana en que reduzcas una factura, programa una transferencia automática por esa misma cantidad a una cuenta de ahorro que dé intereses, a tu fondo de emergencia o a un fondo de inversión de bajo coste. Si el dinero nunca llega a la cuenta que usas a diario, no puede volver a escaparse.",
+        "p2_html": "Las cifras pequeñas se hacen grandes con el tiempo. Destinar 250 al mes (en cualquier moneda) a una inversión que rinda de media un 8% al año se convierte en unos <strong>46,000 en diez años</strong> y en más de <strong>147,000 en veinte</strong>. El crecimiento nunca está garantizado. Usa la calculadora de arriba para probar con tus propios números, añade solo las ideas que encajen con tu vida y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
+        "p3": "Empieza con una fuga esta semana. Revisa tus suscripciones esta noche, mira mañana cómo tienes la calefacción o el aire acondicionado y planifica el fin de semana las comidas de la semana que viene. Cada cambio lleva minutos, y el ahorro se repite cada mes."
       }
     },
     "faq": {

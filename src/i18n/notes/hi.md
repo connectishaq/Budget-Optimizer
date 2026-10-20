@@ -119,3 +119,11 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - `about.toc.standards` "संपादकीय मानक" (editorial standards) is formal; "हमारे नियम" would be plainer.
 - `about.sections.how.item1_html` utilities written as "बिजली-पानी जैसे बिल".
 - `about.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
+
+## Neutral home article
+- `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).
+- `leak1.fix1_html` "स्विच वाले एक्सटेंशन बोर्ड" for switched power strips (what Indians call them); alternative "पावर स्ट्रिप".
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; "AC उतना ही ज़्यादा कर दें" means a warmer AC setting and could be misread as more cooling.
+- `leak4.fix4_html` "ज़्यादा डिडक्टिबल (excess)"; insurance excess is not a common idea for Indian car/home policies.
+- `leak5.body_html` "किसी भी करेंसी में 3,000" and "हर महीने लगभग 60" read bare without a currency word, like the English.
+- `wealth.p2_html` "(किसी भी करेंसी में)"; "मुद्रा" is the formal alternative to "करेंसी".

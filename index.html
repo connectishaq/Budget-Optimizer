@@ -203,7 +203,7 @@
         <p class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
           <svg class="icon icon-sm" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n="page.hero.privacy">100% Private. Your financial data is processed locally and never leaves your device.</span>
         </p>
-        <h1 class="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white" data-i18n-html="page.hero.title_html">Household Budget Optimizer <span class="text-emerald-700 dark:text-emerald-400">&amp; Savings Simulator</span></h1>
+        <h1 class="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-white" data-i18n-html="page.hero.title_html">Household Budget Calculator <span class="text-emerald-700 dark:text-emerald-400">&amp; Savings Planner</span></h1>
         <p class="mt-4 max-w-xl text-lg text-slate-700 dark:text-slate-300" data-i18n="page.hero.lead">Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.</p>
         <div class="mt-7 flex flex-wrap items-center gap-3">
           <a href="#app" class="btn btn-primary px-5" data-i18n="page.hero.start">Start: about 2 minutes</a>
@@ -220,14 +220,14 @@
             <span class="rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400" data-i18n="page.hero.receipt.badge">Example</span>
           </div>
           <div class="mt-4 space-y-1.5">
-            <div class="flex justify-between"><span data-i18n="page.hero.receipt.income">Income</span><span>$7,200</span></div>
-            <div class="flex justify-between"><span data-i18n="page.hero.receipt.bills">Bills</span><span>−$6,517</span></div>
+            <div class="flex justify-between"><span data-i18n="page.hero.receipt.income">Income</span><span data-example="income">$7,200</span></div>
+            <div class="flex justify-between"><span data-i18n="page.hero.receipt.bills">Bills</span><span data-example="bills">−$6,517</span></div>
           </div>
           <div class="rule my-3"></div>
-          <div class="flex justify-between"><span data-i18n="page.hero.receipt.leftOver">Left over</span><span>$683</span></div>
-          <div class="flex justify-between text-emerald-700 dark:text-emerald-400"><span data-i18n="page.hero.receipt.plan">+ Your plan</span><span>$531</span></div>
+          <div class="flex justify-between"><span data-i18n="page.hero.receipt.leftOver">Left over</span><span data-example="left">$683</span></div>
+          <div class="flex justify-between text-emerald-700 dark:text-emerald-400"><span data-i18n="page.hero.receipt.plan">+ Your plan</span><span data-example="plan">$531</span></div>
           <div class="rule-double my-3"></div>
-          <div class="flex justify-between text-base font-semibold text-slate-900 dark:text-white"><span data-i18n="page.hero.receipt.toSave">To save</span><span>$1,214</span></div>
+          <div class="flex justify-between text-base font-semibold text-slate-900 dark:text-white"><span data-i18n="page.hero.receipt.toSave">To save</span><span data-example="toSave">$1,214</span></div>
         </div>
       </div>
     </div>
@@ -802,21 +802,21 @@
 
         <section id="leak-1" aria-labelledby="leak-1-title">
           <h3 id="leak-1-title" data-i18n-html="page.guide.leak1.title_html"><span class="num-badge">1</span>Phantom Power and Inefficient Utilities</h3>
-          <p data-i18n-html="page.guide.leak1.body_html">Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This "phantom load", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.</p>
+          <p data-i18n-html="page.guide.leak1.body_html">Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This "phantom load", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add heating or air conditioning running in an empty house, and old bulbs still lurking in lamps, and your power bill carries a lot of dead weight.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
-              <li data-i18n-html="page.guide.leak1.fix1_html"><strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.</li>
-              <li data-i18n-html="page.guide.leak1.fix2_html"><strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.</li>
+              <li data-i18n-html="page.guide.leak1.fix1_html"><strong>Use switched power strips</strong> for the TV corner and home office so idle devices switch off completely.</li>
+              <li data-i18n-html="page.guide.leak1.fix2_html"><strong>Turn heating down or air conditioning up by 4–6°C (7–10°F)</strong> while you sleep or are away. A timer or smart thermostat can do this for you.</li>
               <li data-i18n-html="page.guide.leak1.fix3_html"><strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.</li>
-              <li data-i18n="page.guide.leak1.fix4">Wash laundry in cold water and set your water heater to 120°F (49°C).</li>
+              <li data-i18n="page.guide.leak1.fix4">Wash laundry in cold water and set your water heater or geyser to about 50°C (120°F).</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-2" aria-labelledby="leak-2-title">
           <h3 id="leak-2-title" data-i18n-html="page.guide.leak2.title_html"><span class="num-badge">2</span>Subscription Creep</h3>
-          <p data-i18n-html="page.guide.leak2.body_html">Streaming services, cloud storage, app memberships, meal kits, fitness apps and "free trials" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.</p>
+          <p data-i18n-html="page.guide.leak2.body_html">Streaming services, cloud storage, app memberships, meal kits, fitness apps and "free trials" that quietly converted to paid plans add up fast. Many families pay for <strong>several subscriptions they rarely use</strong>. Because each one feels cheap on its own, the total almost never gets examined.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
@@ -837,51 +837,51 @@
 
         <section id="leak-3" aria-labelledby="leak-3-title">
           <h3 id="leak-3-title" data-i18n-html="page.guide.leak3.title_html"><span class="num-badge">3</span>Grocery Waste and the Dining-Out Premium</h3>
-          <p data-i18n-html="page.guide.leak3.body_html">Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
+          <p data-i18n-html="page.guide.leak3.body_html">Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's eating out: when a household spends more on restaurants, takeaways and delivery than on groceries, it's usually paying several times more per meal for food it could make at home.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
               <li data-i18n-html="page.guide.leak3.fix1_html"><strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.</li>
-              <li data-i18n="page.guide.leak3.fix2">Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.</li>
+              <li data-i18n="page.guide.leak3.fix2">Choose store brands for staples. They're often made in the same places as big brands and usually cost less.</li>
               <li data-i18n="page.guide.leak3.fix3">Shop once a week with a list, and schedule one "leftovers night" to clear the fridge.</li>
-              <li data-i18n="page.guide.leak3.fix4">Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday.</li>
+              <li data-i18n="page.guide.leak3.fix4">Replace two takeaway nights a week with quick home recipes, and cook work lunches ahead at the weekend.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-4" aria-labelledby="leak-4-title">
           <h3 id="leak-4-title" data-i18n-html="page.guide.leak4.title_html"><span class="num-badge">4</span>Transport and Insurance on Autopilot</h3>
-          <p data-i18n-html="page.guide.leak4.body_html">Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.</p>
+          <p data-i18n-html="page.guide.leak4.body_html">Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per kilometre because engines are least efficient when cold. Under-inflated tyres, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around <strong>often pay more than a new customer would</strong>.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
               <li data-i18n-html="page.guide.leak4.fix1_html"><strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.</li>
-              <li data-i18n="page.guide.leak4.fix2">Keep tires properly inflated, which can improve fuel economy by up to 3%.</li>
-              <li data-i18n="page.guide.leak4.fix3">Compare monthly transit passes and toll transponder discounts against what you pay per trip.</li>
-              <li data-i18n-html="page.guide.leak4.fix4_html"><strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover.</li>
+              <li data-i18n="page.guide.leak4.fix2">Keep tyres properly inflated, which helps fuel economy and safety.</li>
+              <li data-i18n="page.guide.leak4.fix3">Compare monthly transport passes and toll tags against what you pay per trip.</li>
+              <li data-i18n-html="page.guide.leak4.fix4_html"><strong>Get new home and car insurance quotes every year</strong>, ask about multi-policy discounts, and consider a higher excess (deductible) that your emergency fund can cover.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-5" aria-labelledby="leak-5-title">
           <h3 id="leak-5-title" data-i18n-html="page.guide.leak5.title_html"><span class="num-badge">5</span>Impulse Spending and High-Interest Debt</h3>
-          <p data-i18n-html="page.guide.leak5.body_html">The daily coffee, the late-night online order, the "it was on sale" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.</p>
+          <p data-i18n-html="page.guide.leak5.body_html">The daily coffee, the late-night online order, the "it was on sale" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging high interest (the APR), the leak grows: a balance of 3,000 in any currency at 24% a year costs about <strong>60 a month in interest alone</strong>.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
               <li data-i18n-html="page.guide.leak5.fix1_html"><strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.</li>
               <li data-i18n="page.guide.leak5.fix2">Remove saved card details from shopping sites and turn off retailer notifications.</li>
               <li data-i18n-html="page.guide.leak5.fix3_html"><strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.</li>
-              <li data-i18n="page.guide.leak5.fix4">Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest.</li>
+              <li data-i18n="page.guide.leak5.fix4">Where they're offered, a 0% balance transfer card can help: a one-off fee of around 3% is often recovered within a few months of avoided interest.</li>
             </ul>
           </div>
         </section>
 
         <section id="leak-wealth" aria-labelledby="leak-wealth-title" class="mt-12">
           <h3 id="leak-wealth-title" class="!mt-0" data-i18n="page.guide.wealth.title">Turn Plugged Leaks Into Real Wealth</h3>
-          <p data-i18n-html="page.guide.wealth.p1_html">Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.</p>
-          <p data-i18n-html="page.guide.wealth.p2_html">Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.</p>
-          <p class="!mb-0" data-i18n="page.guide.wealth.p3">Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month.</p>
+          <p data-i18n-html="page.guide.wealth.p1_html">Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a savings account that pays interest, your emergency fund or a low-cost investment fund. If the money never lands in your everyday bank account, it can't leak back out.</p>
+          <p data-i18n-html="page.guide.wealth.p2_html">Small numbers become large ones over time. Putting 250 a month (in any currency) into an investment averaging 8% a year grows to roughly <strong>46,000 in ten years</strong> and more than <strong>147,000 in twenty</strong>. Growth is never guaranteed. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.</p>
+          <p class="!mb-0" data-i18n="page.guide.wealth.p3">Start with one leak this week. Check your subscriptions tonight, look at your heating or cooling settings tomorrow, and plan next week's meals at the weekend. Each fix takes minutes, and the savings repeat every month.</p>
         </section>
 
         <!-- FAQ (mirrors the FAQPage JSON-LD in <head>) -->

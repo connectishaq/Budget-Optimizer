@@ -12,7 +12,8 @@
     "benchmarks:review": "node scripts/review-benchmarks.mjs",
     "i18n:missing": "node scripts/i18n-missing.mjs",
     "articles:check": "node scripts/articles-check.mjs",
-    "i18n:notes": "node scripts/translation-notes.mjs"
+    "i18n:notes": "node scripts/translation-notes.mjs",
+    "seo:check": "node scripts/seo-check.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

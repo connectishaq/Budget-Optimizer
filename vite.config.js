@@ -3,7 +3,9 @@ import tailwindcss from '@tailwindcss/vite';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { prerenderLocales, alternateLinks, sitemapXml } from './scripts/prerender-locales.mjs';
+import { parse } from 'node-html-parser';
+import { prerenderLocales, alternateLinks, sitemapXml, fillFigures } from './scripts/prerender-locales.mjs';
+import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about'];
@@ -61,13 +63,20 @@ function siteConfig(env) {
         .replace(/__CONTACT_EMAIL__/g, contactEmail)
         .replace(/__YEAR__/g, String(new Date().getFullYear()));
     },
-    closeBundle() {
+    async closeBundle() {
       const robots = path.join(outDir, 'robots.txt');
       const sitemap = path.join(outDir, 'sitemap.xml');
       if (!isBuild || !fs.existsSync(robots)) return; // dev server / tests: nothing to finalise
       const today = new Date().toISOString().slice(0, 10);
+      // Real example figures in the static HTML: the home page (US example, as
+      // before) and each language/country page (its own country)
+      const figures = await exampleFigures([['en', 'US'], ...LOCALE_PAGES.map((p) => [p.lang, p.country])]);
+      const homeFile = path.join(outDir, 'index.html');
+      const home = parse(fs.readFileSync(homeFile, 'utf8'), { comment: true });
+      fillFigures(home, figures['en-US']);
+      fs.writeFileSync(homeFile, home.toString());
       // One static page per language + country, same design (/en-gb/, /ar-ae/…)
-      const locales = prerenderLocales({ root: __dirname, outDir, siteUrl });
+      const locales = prerenderLocales({ root: __dirname, outDir, siteUrl, figures });
       console.log(`✓ ${locales.length} language/country pages: /${locales.join('/, /')}/`);
       if (siteUrl) {
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/__SITE_URL__/g, siteUrl));
@@ -95,6 +104,30 @@ function siteConfig(env) {
       }
     }
   };
+}
+
+/**
+ * Example figures for the static HTML: runs the calculator on each country's
+ * example budget through Vite's SSR loader (src/prerender-figures.js), so the
+ * same code and data as the page are used. Returns { "<lang>-<CC>": figures }.
+ */
+async function exampleFigures(pairs) {
+  const { createServer } = await import('vite');
+  const server = await createServer({
+    configFile: false, root: __dirname, plugins: [englishSplit()], logLevel: 'error',
+    server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom'
+  });
+  try {
+    const mod = await server.ssrLoadModule('/src/prerender-figures.js');
+    const out = {};
+    for (const [lang, country] of pairs) {
+      const key = `${lang}-${country}`;
+      if (!out[key]) out[key] = await mod.exampleFigures(lang, country);
+    }
+    return out;
+  } finally {
+    await server.close();
+  }
 }
 
 /**

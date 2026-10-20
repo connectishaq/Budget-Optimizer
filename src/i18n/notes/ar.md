@@ -115,3 +115,11 @@ verbatim where the policy refers to it.
 - `about.sections.why.p1` / `how.item4_html` use «فوائد» for interest; Islamic-finance wording would be «أرباح» / «رسوم» (see regional table).
 - `about.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
 - `about.sections.how.item1_html` utilities as «الخدمات» (could be «فواتير الخدمات» or «الكهرباء والماء»).
+
+## Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the note above about keeping US figures is superseded (plain «250»، «46,000»، Celsius first).
+- `leak1.fix1_html` «مشترك كهرباء بمفتاح» for a switched power strip; «توصيلة كهرباء بمفتاح» is a Gulf colloquial alternative.
+- `leak1.fix2_html` «ارفع حرارة التكييف» (set the AC warmer) for "air conditioning up"; could be misread as "turn the AC up (colder)" — check.
+- `leak4.fix4_html` "excess (deductible)" rendered once as «مبلغ التحمّل» without a second synonym.
+- `leak5.body_html` «رصيد 3,000 بأي عملة» and «60 شهريًا» read bare without a currency name, like the English; «فائدة» kept (Islamic banks would say «ربح»).
+- `wealth.p1_html` «حساب ادخار يمنح عائدًا» for "savings account that pays interest" (avoids «فائدة» for Gulf readers); «حسابك البنكي اليومي» for everyday bank account (alt. «حسابك الجاري»).

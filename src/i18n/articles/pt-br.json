@@ -1,5 +1,6 @@
 {
   "locale": "pt-br",
+  "h1_html": "Calculadora de orçamento familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para o Brasil</span>",
   "seo": {
     "title": "Calculadora de orçamento familiar grátis e privada (R$) | Brasil",
     "description": "Calcule o orçamento da sua casa em reais, de graça e sem cadastro. Ache os vazamentos: rotativo, assinaturas, conta de luz, delivery e mais."

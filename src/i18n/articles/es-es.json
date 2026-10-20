@@ -1,5 +1,6 @@
 {
   "locale": "es-es",
+  "h1_html": "Calculadora de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para España</span>",
   "seo": {
     "title": "Calculadora de presupuesto familiar gratis y privada en euros (España)",
     "description": "Calcula gratis el presupuesto de tu hogar en España, en euros y sin registrarte. Tus datos se quedan en tu dispositivo. Descubre dónde se escapa tu dinero."

@@ -134,3 +134,12 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `about.sections.standards.p1` "información general" for "general education" (literal "educación general" reads like schooling).
 - `about.sections.how.item1_html` "suministros" for utilities; Mexico would say "servicios".
 - `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
+
+## Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (figures now plain: "3,000", "46,000", Celsius first).
+- `leak1.fix1_html` "regletas con interruptor" for switched power strips; MX alt.: "multicontactos con apagador".
+- `leak1.fix4` "calentador de agua o termo" (Spain); MX would say "boiler" / "calentador".
+- `leak4.fix3` "dispositivos de telepeaje" for toll tags (MX: "TAG").
+- `leak4.fix4_html` "franquicia (deducible)" gives both the Spain and Latin American term, mirroring the English "excess (deductible)".
+- `leak5.body_html` "un saldo de 3,000 en cualquier moneda" and "60 al mes" read a little bare without a currency; the English is the same.
+- `wealth.p1_html` "la cuenta que usas a diario" for "everyday bank account" (Spain would also say "cuenta corriente", MX "cuenta de débito").

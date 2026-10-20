@@ -1,5 +1,6 @@
 {
   "locale": "en-in",
+  "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for India</span>",
   "seo": {
     "title": "Free Household Budget Calculator India (₹) – Private, No Sign-up",
     "description": "Plan your monthly budget in rupees: rent, EMIs, bills, groceries and savings. Free, private, works in your browser. Find and plug hidden expense leaks."

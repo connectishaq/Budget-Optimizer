@@ -70,3 +70,11 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - `about.toc.standards` "ادارتی اصول" (editorial standards) is formal; "ہمارے اصول" would be plainer.
 - `about.table.sourceCount` uses "ذریعہ / ذرائع" for sources; "سورس" is a common loan word alternative.
 - `about.sections.how.item1_html` utilities as "بجلی، گیس اور پانی".
+
+## Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the guide note above about keeping $ amounts is superseded (plain "250"، "46,000"، Celsius first).
+- `leak1.fix1_html` "سوئچ والے ایکسٹینشن بورڈ" for switched power strips (everyday Pakistani term).
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
+- `leak4.fix4_html` "زیادہ ایکسیس (ڈیڈکٹیبل)": rare concept in Pakistan, kept as loan words.
+- `leak5.body_html` "کسی بھی کرنسی میں 3,000" and "تقریباً 60 ماہانہ" read bare without a currency word, like the English.
+- `wealth.p1_html` "منافع دینے والے سیونگز اکاؤنٹ" (profit, as Pakistani banks say) for "pays interest".

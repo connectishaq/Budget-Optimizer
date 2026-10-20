@@ -1,0 +1,72 @@
+{
+  "locale": "en-us",
+  "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for the United States</span>",
+  "seo": {
+    "title": "Free US Household Budget Calculator ($) – Private, No Sign-Up",
+    "description": "Plan your US household budget in dollars for free. Spot hidden leaks in utilities, subscriptions and card interest. Private: your data stays on your device."
+  },
+  "guide": {
+    "toc": {
+      "title": "Table of contents",
+      "leak1_html": "<span class=\"tabular-nums text-slate-400\">1</span>Phantom power &amp; utilities",
+      "leak2_html": "<span class=\"tabular-nums text-slate-400\">2</span>Subscription creep",
+      "leak3_html": "<span class=\"tabular-nums text-slate-400\">3</span>Groceries &amp; dining out",
+      "leak4_html": "<span class=\"tabular-nums text-slate-400\">4</span>Transport &amp; insurance",
+      "leak5_html": "<span class=\"tabular-nums text-slate-400\">5</span>Impulse spending &amp; interest",
+      "wealth": "Turn leaks into wealth",
+      "faq": "FAQ",
+      "try": "Try the calculator"
+    },
+    "eyebrow": "Money tips · 5 minute read",
+    "title": "5 Hidden Household Expense Leaks (And How to Plug Them Today)",
+    "intro1_html": "Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.",
+    "intro2": "The good news? Leaks are usually the easiest money to recover. Unlike cutting back on things you love, plugging a leak typically means paying less for exactly the same lifestyle. Here are the five most common hidden household expense leaks, and the practical steps you can take today to stop each one.",
+    "howToPlug": "How to plug it",
+    "leak1": {
+      "title_html": "<span class=\"num-badge\">1</span>Phantom Power and Inefficient Utilities",
+      "body_html": "Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This \"phantom load\", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.",
+      "fix1_html": "<strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.",
+      "fix2_html": "<strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.",
+      "fix3_html": "<strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.",
+      "fix4": "Wash laundry in cold water and set your water heater to 120°F (49°C)."
+    },
+    "leak2": {
+      "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
+      "body_html": "Streaming services, cloud storage, app memberships, meal kits, fitness apps and \"free trials\" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.",
+      "fix1_html": "Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.",
+      "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
+      "fix3": "Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.",
+      "fix4": "Set a calendar reminder two days before any free trial ends."
+    },
+    "leak3": {
+      "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Dining-Out Premium",
+      "body_html": "Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.",
+      "fix1_html": "<strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.",
+      "fix2": "Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.",
+      "fix3": "Shop once a week with a list, and schedule one \"leftovers night\" to clear the fridge.",
+      "fix4": "Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday."
+    },
+    "leak4": {
+      "title_html": "<span class=\"num-badge\">4</span>Transport and Insurance on Autopilot",
+      "body_html": "Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.",
+      "fix1_html": "<strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.",
+      "fix2": "Keep tires properly inflated, which can improve fuel economy by up to 3%.",
+      "fix3": "Compare monthly transit passes and toll transponder discounts against what you pay per trip.",
+      "fix4_html": "<strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover."
+    },
+    "leak5": {
+      "title_html": "<span class=\"num-badge\">5</span>Impulse Spending and High-Interest Debt",
+      "body_html": "The daily coffee, the late-night online order, the \"it was on sale\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.",
+      "fix1_html": "<strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
+      "fix2": "Remove saved card details from shopping sites and turn off retailer notifications.",
+      "fix3_html": "<strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.",
+      "fix4": "Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest."
+    },
+    "wealth": {
+      "title": "Turn Plugged Leaks Into Real Wealth",
+      "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.",
+      "p2_html": "Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+      "p3": "Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+    }
+  }
+}

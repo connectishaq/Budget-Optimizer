@@ -1395,15 +1395,15 @@
       "howToPlug": "How to plug it",
       "leak1": {
         "title_html": "<span class=\"num-badge\">1</span>Phantom Power and Inefficient Utilities",
-        "body_html": "Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This \"phantom load\", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add a thermostat that heats or cools an empty house, and incandescent bulbs still lurking in lamps, and your utility bill carries a lot of dead weight.",
-        "fix1_html": "<strong>Use smart power strips</strong> for entertainment centers and home offices so idle devices shut off completely.",
-        "fix2_html": "<strong>Set your thermostat back 7–10°F (4–6°C)</strong> for eight hours a day while you sleep or are away. A smart thermostat automates this and often pays for itself within two years.",
+        "body_html": "Every television, game console, coffee maker and phone charger left plugged in draws a trickle of electricity around the clock. This \"phantom load\", also called vampire power, can account for <strong>5–10% of a typical home's electricity bill</strong>. Add heating or air conditioning running in an empty house, and old bulbs still lurking in lamps, and your power bill carries a lot of dead weight.",
+        "fix1_html": "<strong>Use switched power strips</strong> for the TV corner and home office so idle devices switch off completely.",
+        "fix2_html": "<strong>Turn heating down or air conditioning up by 4–6°C (7–10°F)</strong> while you sleep or are away. A timer or smart thermostat can do this for you.",
         "fix3_html": "<strong>Swap remaining bulbs for LEDs</strong>, which use up to 75% less energy and last many times longer.",
-        "fix4": "Wash laundry in cold water and set your water heater to 120°F (49°C)."
+        "fix4": "Wash laundry in cold water and set your water heater or geyser to about 50°C (120°F)."
       },
       "leak2": {
         "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
-        "body_html": "Streaming services, cloud storage, app memberships, meal kits, fitness apps and \"free trials\" that quietly converted to paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total almost never gets examined.",
+        "body_html": "Streaming services, cloud storage, app memberships, meal kits, fitness apps and \"free trials\" that quietly converted to paid plans add up fast. Many families pay for <strong>several subscriptions they rarely use</strong>. Because each one feels cheap on its own, the total almost never gets examined.",
         "fix1_html": "Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.",
         "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
         "fix3": "Call your internet and phone providers and ask the retention team for current promotional pricing, or drop to a speed tier you'll never notice.",
@@ -1411,33 +1411,33 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Dining-Out Premium",
-        "body_html": "Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.",
+        "body_html": "Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's eating out: when a household spends more on restaurants, takeaways and delivery than on groceries, it's usually paying several times more per meal for food it could make at home.",
         "fix1_html": "<strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.",
-        "fix2": "Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.",
+        "fix2": "Choose store brands for staples. They're often made in the same places as big brands and usually cost less.",
         "fix3": "Shop once a week with a list, and schedule one \"leftovers night\" to clear the fridge.",
-        "fix4": "Replace two takeout nights a week with 20-minute home recipes, and meal-prep work lunches on Sunday."
+        "fix4": "Replace two takeaway nights a week with quick home recipes, and cook work lunches ahead at the weekend."
       },
       "leak4": {
         "title_html": "<span class=\"num-badge\">4</span>Transport and Insurance on Autopilot",
-        "body_html": "Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per mile because engines are least efficient when cold. Underinflated tires, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around often pay <strong>10–15% more</strong> than a new customer would.",
+        "body_html": "Fuel is one of the most variable costs in a household budget, and habits drive it. Short, scattered trips burn far more fuel per kilometre because engines are least efficient when cold. Under-inflated tyres, solo commuting and full-price tolls all add up. Insurance is the quieter twin of this leak. Premiums tend to creep up at every renewal, and insurers rarely reward loyalty, so households that never shop around <strong>often pay more than a new customer would</strong>.",
         "fix1_html": "<strong>Batch errands</strong> into a single loop once or twice a week, and organize a <strong>carpool</strong> for school runs or commuting.",
-        "fix2": "Keep tires properly inflated, which can improve fuel economy by up to 3%.",
-        "fix3": "Compare monthly transit passes and toll transponder discounts against what you pay per trip.",
-        "fix4_html": "<strong>Re-quote home and car insurance every year</strong>, bundle policies with one insurer, and raise deductibles to a level your emergency fund can cover."
+        "fix2": "Keep tyres properly inflated, which helps fuel economy and safety.",
+        "fix3": "Compare monthly transport passes and toll tags against what you pay per trip.",
+        "fix4_html": "<strong>Get new home and car insurance quotes every year</strong>, ask about multi-policy discounts, and consider a higher excess (deductible) that your emergency fund can cover."
       },
       "leak5": {
         "title_html": "<span class=\"num-badge\">5</span>Impulse Spending and High-Interest Debt",
-        "body_html": "The daily coffee, the late-night online order, the \"it was on sale\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging 20–30% interest a year (the APR), the leak grows: a $3,000 balance at 24% costs about <strong>$60 a month in interest alone</strong>.",
+        "body_html": "The daily coffee, the late-night online order, the \"it was on sale\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout and saved card details remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging high interest (the APR), the leak grows: a balance of 3,000 in any currency at 24% a year costs about <strong>60 a month in interest alone</strong>.",
         "fix1_html": "<strong>Adopt the 24-Hour Rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
         "fix2": "Remove saved card details from shopping sites and turn off retailer notifications.",
         "fix3_html": "<strong>Pay the highest-interest loan first</strong>: pay the minimum on everything, and put every extra amount towards the debt with the highest interest rate.",
-        "fix4": "Consider a 0% balance transfer card. A typical 3% fee is often recovered within a few months of avoided interest."
+        "fix4": "Where they're offered, a 0% balance transfer card can help: a one-off fee of around 3% is often recovered within a few months of avoided interest."
       },
       "wealth": {
         "title": "Turn Plugged Leaks Into Real Wealth",
-        "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-yield savings account, your emergency fund or a low-cost index fund. If the money never lands in your checking account, it can't leak back out.",
-        "p2_html": "Small numbers become large ones over time. Redirecting $250 a month into an investment averaging 8% a year grows to roughly <strong>$46,000 in ten years</strong> and more than <strong>$147,000 in twenty</strong>. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
-        "p3": "Start with one leak this week. Check your subscriptions tonight, adjust the thermostat schedule tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
+        "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings immediately</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a savings account that pays interest, your emergency fund or a low-cost investment fund. If the money never lands in your everyday bank account, it can't leak back out.",
+        "p2_html": "Small numbers become large ones over time. Putting 250 a month (in any currency) into an investment averaging 8% a year grows to roughly <strong>46,000 in ten years</strong> and more than <strong>147,000 in twenty</strong>. Growth is never guaranteed. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+        "p3": "Start with one leak this week. Check your subscriptions tonight, look at your heating or cooling settings tomorrow, and plan next week's meals at the weekend. Each fix takes minutes, and the savings repeat every month."
       }
     },
     "faq": {

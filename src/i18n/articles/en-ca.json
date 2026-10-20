@@ -1,5 +1,6 @@
 {
   "locale": "en-ca",
+  "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for Canada</span>",
   "seo": {
     "title": "Free Canadian Household Budget Calculator (C$) – Private, No Sign-Up",
     "description": "Plan your family budget in Canadian dollars for free. Find hidden leaks in hydro bills, phone plans and subscriptions. Private: your data stays on your device."

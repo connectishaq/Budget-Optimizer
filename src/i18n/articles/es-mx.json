@@ -1,5 +1,6 @@
 {
   "locale": "es-mx",
+  "h1_html": "Calculadora de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para México</span>",
   "seo": {
     "title": "Calculadora de presupuesto familiar gratis y privada en pesos (México)",
     "description": "Calcula gratis el presupuesto de tu hogar en pesos, por quincena o por mes y sin registrarte. Tus datos se quedan en tu dispositivo. Encuentra tus fugas."

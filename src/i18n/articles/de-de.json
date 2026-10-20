@@ -1,5 +1,6 @@
 {
   "locale": "de-de",
+  "h1_html": "Haushaltsbudget-Rechner <span class=\"text-emerald-700 dark:text-emerald-400\">für Deutschland</span>",
   "seo": {
     "title": "Haushaltsbuch-Rechner für Deutschland: kostenlos und privat (€)",
     "description": "Kostenloser, privater Haushaltsrechner für Deutschland: Finde versteckte Geldlecks bei Strom, Abos, Einkauf und Versicherung. Alles bleibt auf deinem Gerät."

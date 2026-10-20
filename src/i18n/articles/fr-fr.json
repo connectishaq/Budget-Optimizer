@@ -1,5 +1,6 @@
 {
   "locale": "fr-fr",
+  "h1_html": "Calculateur de budget familial <span class=\"text-emerald-700 dark:text-emerald-400\">pour la France</span>",
   "seo": {
     "title": "Calculateur de budget familial gratuit et privé, en euros",
     "description": "Calculez votre budget familial en euros, gratuitement et sans compte : vos données restent sur votre appareil. Repérez les fuites et voyez quoi épargner."

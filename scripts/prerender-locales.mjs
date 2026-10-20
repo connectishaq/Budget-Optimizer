@@ -91,10 +91,28 @@ function jsonLd(t, page, currency, pageUrl) {
 }
 
 /**
- * Writes <outDir>/<page>/index.html for every locale page. Returns the list
- * of pages written.
+ * Puts example figures (src/prerender-figures.js) into the hero card, the
+ * results summary and the phone's sticky bar. Scripts replace them later.
  */
-export function prerenderLocales({ root, outDir, siteUrl }) {
+export function fillFigures(doc, f) {
+  const put = (sel, text) => { for (const el of doc.querySelectorAll(sel)) el.set_content(esc(text)); };
+  put('[data-example="income"]', f.income);
+  put('[data-example="bills"]', `−${f.bills}`);
+  put('[data-example="left"]', f.left);
+  put('[data-example="plan"]', f.plan);
+  put('[data-example="toSave"]', f.toSave);
+  put('#sumMonthly', f.monthly);
+  put('#sumAnnual', f.annual);
+  put('#sumCurrent', f.current);
+  put('#sumOptimized', f.optimized);
+  put('#mbAmount', f.monthly);
+}
+
+/**
+ * Writes <outDir>/<page>/index.html for every locale page. `figures` maps
+ * "<lang>-<country>" to example figures. Returns the list of pages written.
+ */
+export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
   const home = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
   const en = readJson(path.join(root, 'src/i18n/locales/en.json'));
   const written = [];
@@ -137,13 +155,24 @@ export function prerenderLocales({ root, outDir, siteUrl }) {
       }
     }
 
+    // ---- The page's own H1 ("Household Budget Calculator for Pakistan"), kept
+    // when the browser translates the page
+    if (article?.h1_html) {
+      const h1 = doc.querySelector('h1');
+      h1.set_content(article.h1_html);
+      h1.removeAttribute('data-i18n-html');
+    }
+
+    // ---- The country's example budget, so the figures aren't 0 before scripts run
+    if (figures?.[`${page.lang}-${page.country}`]) fillFigures(doc, figures[`${page.lang}-${page.country}`]);
+
     // ---- Links stay on this page ("/#app" -> "#app", home -> /de-de/), and the
     // privacy policy, terms and contact pages open in this page's language
     for (const a of doc.querySelectorAll('a[href]')) {
       const href = a.getAttribute('href');
       if (href === '/') a.setAttribute('href', `/${page.path}/`);
       else if (href.startsWith('/#')) a.setAttribute('href', href.slice(1));
-      else if (/^\/(privacy-policy|terms-of-use|contact)\//.test(href)) {
+      else if (/^\/(privacy-policy|terms-of-use|contact|about)\//.test(href)) {
         a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${page.lang}`);
       }
     }

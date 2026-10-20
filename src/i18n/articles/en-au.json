@@ -1,5 +1,6 @@
 {
   "locale": "en-au",
+  "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for Australia</span>",
   "seo": {
     "title": "Free Australian Household Budget Calculator (A$) – Private, No Sign-Up",
     "description": "Plan your household budget in Australian dollars for free. Find hidden leaks in power bills, rego and subscriptions. Private: your data stays on your device."
