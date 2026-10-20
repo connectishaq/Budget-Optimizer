@@ -1,4 +1,4 @@
-// Form rendering, validation and the settings card (profile, currency, period,
+// Form rendering, validation and the settings card (profile, period,
 // sample data; starting over lives in reset.js). Group markup is built once; afterwards only the parts
 // that change (subtotals, hints, dynamic rows) are touched. The wizard moves
 // these same group elements into its steps, so there is one set of inputs.
@@ -103,7 +103,7 @@ function moneyField(f) {
   const pay = f.key === 'income';
   const freq = getState().payFrequency;
   const label = pay ? incomeLabel(freq) : f.label;
-  // Income: the currency sign is also a currency picker (same list as the settings card).
+  // Income: the currency sign is also the currency picker.
   // The real <select> is invisible over "₹ ▾", so the open list still shows full names.
   const symbol = pay
     ? `<select id="incomeCurrency" class="peer absolute inset-y-0 start-0 z-10 w-16 cursor-pointer opacity-0" aria-label="${esc(t('page.inputs.currency'))}"></select>
@@ -416,7 +416,6 @@ export function syncInputs() {
   $('payFrequency').value = s.payFrequency;
   renderRows(true);
   $('profile').value = s.profile;
-  $('currency').value = s.currency;
   $('incomeCurrency').value = s.currency;
   document.querySelectorAll('input[name="period"]').forEach((r) => { r.checked = r.value === s.period; });
 }
@@ -430,8 +429,8 @@ export function renderInputs(state, result, view) {
   const nice = (n) => moneyNice(n, state.currency);
 
   document.querySelectorAll('[data-symbol]').forEach((el) => setText(el, view.symbol));
-  // Either currency picker may have changed it; keep both showing the current one
-  for (const id of ['currency', 'incomeCurrency']) if ($(id).value !== state.currency) $(id).value = state.currency;
+  // The country picker or a loaded month can change it too
+  if ($('incomeCurrency').value !== state.currency) $('incomeCurrency').value = state.currency;
 
   for (const g of GROUPS) {
     const el = document.querySelector(`[data-sub="${g.id}"]`);
@@ -612,9 +611,7 @@ function onFieldInput(e) {
 export function initInputs() {
   const s = getState();
   $('inputGroups').innerHTML = GROUPS.map((g, i) => groupCard(g, i, s.ui.collapsed[g.id])).join('');
-  const currencyOptions = Object.entries(CURRENCIES).map(([code, c]) => `<option value="${code}">${esc(c.label)}</option>`).join('');
-  $('currency').innerHTML = currencyOptions;
-  $('incomeCurrency').innerHTML = currencyOptions;
+  $('incomeCurrency').innerHTML = Object.entries(CURRENCIES).map(([code, c]) => `<option value="${code}">${esc(c.label)}</option>`).join('');
 
   $('budgetForm').addEventListener('submit', (e) => e.preventDefault());
   // Inputs may live inside the wizard or the sidebar; listen on the document.
@@ -682,10 +679,7 @@ export function initInputs() {
 
   // Settings card
   $('profile').addEventListener('change', (e) => setState((st) => { st.profile = e.target.value; }));
-  // Two pickers for one setting: the settings card and the income box
-  const setCurrency = (e) => setState((st) => { st.currency = e.target.value; });
-  $('currency').addEventListener('change', setCurrency);
-  $('incomeCurrency').addEventListener('change', setCurrency);
+  $('incomeCurrency').addEventListener('change', (e) => setState((st) => { st.currency = e.target.value; }));
   document.querySelectorAll('input[name="period"]').forEach((r) =>
     r.addEventListener('change', () => setState((st) => { st.period = r.value; }))
   );
