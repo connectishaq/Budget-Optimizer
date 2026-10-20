@@ -4,7 +4,7 @@
 // every part of the page (including text built at start-up) uses it at once.
 
 import { t, dirOf, LANGUAGES, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
-import { ALL_COUNTRIES, GLOBAL, flagOf, countryName, storeCountry, initialCountry } from './countries.js';
+import { ALL_COUNTRIES, GLOBAL, flagOf, flagsDrawn, countryName, storeCountry, initialCountry } from './countries.js';
 import { hrefFor } from './locale-pages.js';
 
 const SCROLL_KEY = 'hbo:scroll';
@@ -73,7 +73,9 @@ function fillCountries(select, current) {
     .sort((a, b) => coll.compare(a.name, b.name));
   rows.push({ c: GLOBAL, name: other }); // "Other country" always last
   select.innerHTML = '';
-  for (const { c, name } of rows) select.add(new Option(`${flagOf(c)} ${name}`, c, false, c === current));
+  // Flags only where the device draws them (not on Windows, where they'd show as letters)
+  const flags = flagsDrawn();
+  for (const { c, name } of rows) select.add(new Option(flags ? `${flagOf(c)} ${name}` : name, c, false, c === current));
 }
 
 /** Reloads keeping the scroll position, so a language/country switch feels in place. */
@@ -87,10 +89,12 @@ function reloadInPlace() {
   } else location.reload();
 }
 
+/** Puts the page back where it was before a language/country reload. True when it did. */
 export function restoreScroll() {
   let y = null;
   try { y = sessionStorage.getItem(SCROLL_KEY); sessionStorage.removeItem(SCROLL_KEY); } catch { /* ignore */ }
   if (y != null) requestAnimationFrame(() => window.scrollTo(0, Number(y) || 0));
+  return y != null;
 }
 
 /**

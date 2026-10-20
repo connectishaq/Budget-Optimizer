@@ -757,7 +757,7 @@
     "hideInputs": "Masquer les saisies",
     "steps": {
       "1": {
-        "title": "Quels sont vos revenus mensuels ?",
+        "title": "Quels sont vos revenus ?",
         "sub": "Votre salaire net après impôts, plus les primes ou heures supplémentaires de l’année. Vous pourrez le modifier à tout moment."
       },
       "2": {
@@ -1451,7 +1451,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Le gaspillage alimentaire et le surcoût des restaurants",
-        "body_html": "Les études estiment régulièrement que les foyers jettent <strong>environ 30 % de la nourriture qu’ils achètent</strong>. Les légumes prédécoupés, les portions individuelles et les courses imprévues en milieu de semaine coûtent tous plus cher. Et puis il y a les restaurants : quand un foyer dépense plus en restaurants et plats à emporter qu’en courses, il paie généralement trois à cinq fois plus cher par repas des plats qu’il pourrait préparer à la maison.",
+        "body_html": "Beaucoup de foyers jettent <strong>une part étonnante de la nourriture qu’ils achètent</strong>. Les légumes prédécoupés, les portions individuelles et les courses imprévues en milieu de semaine coûtent tous plus cher. Et puis il y a les restaurants : quand un foyer dépense plus en restaurants et plats à emporter qu’en courses, il paie généralement trois à cinq fois plus cher par repas des plats qu’il pourrait préparer à la maison.",
         "fix1_html": "<strong>Prévoyez vos repas en fonction de ce qu’il y a déjà dans le frigo</strong> avant d’écrire votre liste de courses.",
         "fix2": "Choisissez les marques distributeur pour les produits de base. Elles sont souvent fabriquées dans les mêmes usines que les grandes marques et coûtent 20 à 30 % moins cher.",
         "fix3": "Faites les courses une fois par semaine avec une liste, et prévoyez un « soir des restes » pour vider le frigo.",
@@ -1824,7 +1824,9 @@
         "one": "{count} objectif. Attribuez aux objectifs une part de votre épargne pour voir les dates.",
         "many": "{count} objectifs. Attribuez aux objectifs une part de votre épargne pour voir les dates.",
         "other": "{count} objectifs. Attribuez aux objectifs une part de votre épargne pour voir les dates."
-      }
+      },
+      "emergencyNoneIn": "Rien d’épargné pour l’instant. 3 mois dans environ {time}.",
+      "emergencyNoneNeedsShare": "Rien d’épargné pour l’instant. Pour 3 mois, il faut y consacrer une part de votre épargne."
     },
     "removed": "Objectif « {name} » supprimé",
     "untitled": "Sans titre"
@@ -2981,5 +2983,11 @@
         "3": "Si vous souscrivez sur HealthCare.gov ou le Marketplace de votre État, mettez à jour vos revenus : vous pourriez avoir droit à un crédit d’impôt plus élevé."
       }
     }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "lead": "Le lien est peut-être ancien ou mal saisi. Votre budget ne risque rien : il est enregistré dans ce navigateur, pas sur cette page.",
+    "calculator": "Ouvrir le calculateur",
+    "tips": "Lire les conseils"
   }
 }

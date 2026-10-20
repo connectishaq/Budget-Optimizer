@@ -757,7 +757,7 @@
     "hideInputs": "Ocultar datos",
     "steps": {
       "1": {
-        "title": "¿Cuáles son tus ingresos mensuales?",
+        "title": "¿Cuáles son tus ingresos?",
         "sub": "Tu sueldo neto después de impuestos, más las pagas extra u horas extra del año. Puedes cambiarlo cuando quieras."
       },
       "2": {
@@ -1451,7 +1451,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Comida desperdiciada y el sobrecoste de comer fuera",
-        "body_html": "Los estudios calculan una y otra vez que los hogares tiran <strong>alrededor del 30% de la comida que compran</strong>. La fruta y verdura ya cortada, los envases individuales y las compras imprevistas entre semana tienen un sobrecoste por comodidad. Y luego está comer fuera: cuando un hogar gasta más en restaurantes y comida para llevar que en el supermercado, suele pagar de tres a cinco veces más por cada comida que podría hacer en casa.",
+        "body_html": "Muchos hogares tiran <strong>una parte sorprendente de la comida que compran</strong>. La fruta y verdura ya cortada, los envases individuales y las compras imprevistas entre semana tienen un sobrecoste por comodidad. Y luego está comer fuera: cuando un hogar gasta más en restaurantes y comida para llevar que en el supermercado, suele pagar de tres a cinco veces más por cada comida que podría hacer en casa.",
         "fix1_html": "<strong>Planifica las comidas según lo que ya tienes en la nevera</strong> antes de hacer la lista de la compra.",
         "fix2": "Elige marca blanca para lo básico. A menudo se fabrica en las mismas instalaciones que las marcas conocidas y cuesta un 20–30% menos.",
         "fix3": "Haz la compra una vez a la semana con una lista, y reserva una «noche de sobras» para vaciar la nevera.",
@@ -1824,7 +1824,9 @@
         "one": "{count} meta. Asigna a las metas una parte de tu ahorro para ver fechas.",
         "many": "{count} de metas. Asigna a las metas una parte de tu ahorro para ver fechas.",
         "other": "{count} metas. Asigna a las metas una parte de tu ahorro para ver fechas."
-      }
+      },
+      "emergencyNoneIn": "Aún no has ahorrado nada. 3 meses en unos {time}.",
+      "emergencyNoneNeedsShare": "Aún no has ahorrado nada. Para 3 meses hace falta una parte de tu ahorro."
     },
     "removed": "Se ha quitado la meta «{name}»",
     "untitled": "Sin título"
@@ -2981,5 +2983,11 @@
         "3": "Si contratas en HealthCare.gov o en el Marketplace de tu estado, actualiza tus ingresos: puede que te corresponda un crédito fiscal mayor."
       }
     }
+  },
+  "notFound": {
+    "title": "No encontramos esa página",
+    "lead": "Puede que el enlace sea antiguo o tenga un error. Tu presupuesto está a salvo: se guarda en este navegador, no en esta página.",
+    "calculator": "Abrir la calculadora",
+    "tips": "Leer los consejos"
   }
 }

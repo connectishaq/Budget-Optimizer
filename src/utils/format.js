@@ -129,6 +129,9 @@ export function moneyShort(n, currency = 'USD') {
   return Math.abs(v) < 10000 ? money(v, currency) : ltr(formatter(currency, 0, true).format(v));
 }
 
+/** A number with one decimal in the page's language (1.5, 1,5…), e.g. months of savings. */
+export const oneDecimal = (n) => new Intl.NumberFormat(numberLocale(), { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(safe(n));
+
 export const pct = (ratio, digits = 0) => `${(safe(ratio) * 100).toFixed(digits)}%`;
 
 /** 14 -> "1 year 2 months", 5 -> "5 months", 0 -> "right away". */

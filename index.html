@@ -267,7 +267,7 @@
       <div>
         <div class="panel">
           <div class="flex items-center justify-between gap-2 text-sm">
-            <p id="wizStepLabel" class="font-medium text-slate-900 dark:text-white">Step 1 of 4</p>
+            <p id="wizStepLabel" class="font-medium text-slate-900 dark:text-white" data-i18n="wizard.stepOf" data-i18n-vars='{"step":1,"total":4}'>Step 1 of 4</p>
             <div class="flex items-center gap-2">
               <span id="wizStartWrap" class="flex items-center gap-2"><button type="button" id="wizStartOver" class="min-h-11 px-1 link" data-i18n="page.wizard.startOver">Start over</button><span class="text-slate-300 dark:text-slate-600" aria-hidden="true">·</span></span>
               <button type="button" id="wizSkip" class="min-h-11 px-1 link" data-i18n="page.wizard.skip">Skip to results</button>
@@ -278,13 +278,13 @@
             <div id="wizBar" class="h-full rounded-full bg-emerald-700 transition-all duration-300 dark:bg-emerald-500" style="width:25%"></div>
           </div>
           <p id="wizSubStep" class="mt-3 text-sm muted empty:hidden"></p>
-          <h2 id="wizTitle" tabindex="-1" class="mt-4 text-2xl font-semibold tracking-tight text-slate-900 focus:outline-none sm:text-3xl dark:text-white">What’s your monthly income?</h2>
+          <h2 id="wizTitle" tabindex="-1" class="mt-4 text-2xl font-semibold tracking-tight text-slate-900 focus:outline-none sm:text-3xl dark:text-white" data-i18n="wizard.steps.1.title">What’s your income?</h2>
           <p id="wizSub" class="mt-1 muted"></p>
           <div id="wizBody" class="mt-6 space-y-6"></div>
           <p id="wizNote" hidden class="mt-5 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200" data-i18n-html="page.wizard.note_html">Your income lets us work out your health score and what’s left over. You can add it later. Press <strong>Next</strong> again to carry on without it.</p>
           <div class="mt-8 flex items-center gap-3 border-t border-slate-100 pt-5 dark:border-slate-800">
             <button type="button" id="wizBack" class="btn btn-secondary" data-i18n="page.wizard.back">Back</button>
-            <button type="button" id="wizNext" class="btn btn-primary ms-auto min-w-32">Next</button>
+            <button type="button" id="wizNext" class="btn btn-primary ms-auto min-w-32" data-i18n="wizard.next">Next</button>
           </div>
         </div>
         <p class="mt-4 text-sm muted" data-i18n-html="page.wizard.justLooking_html">Just looking? <button type="button" data-action="sample" class="min-h-11 link">See an example budget</button></p>
@@ -296,11 +296,11 @@
       <div class="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl dark:text-white" data-i18n="page.results.title">Your results</h2>
-          <p id="savedIndicator" class="mt-1 inline-flex items-center gap-1.5 rounded px-1 text-xs muted" role="status"><svg class="icon h-3.5 w-3.5 text-emerald-700 dark:text-emerald-400" aria-hidden="true"><use href="#i-check-circle"></use></svg><span id="savedText">Saved on this device</span></p>
+          <p id="savedIndicator" class="mt-1 inline-flex items-center gap-1.5 rounded px-1 text-xs muted" role="status"><svg class="icon h-3.5 w-3.5 text-emerald-700 dark:text-emerald-400" aria-hidden="true"><use href="#i-check-circle"></use></svg><span id="savedText" data-i18n="app.saved">Saved on this device</span></p>
         </div>
         <div class="flex flex-wrap gap-2">
           <button type="button" id="btnEdit" class="btn btn-primary"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pencil"></use></svg><span data-i18n="page.results.editNumbers">Edit my numbers</span></button>
-          <button type="button" id="btnShowAll" class="btn btn-secondary" aria-pressed="false" aria-controls="inputs"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sliders"></use></svg><span id="btnShowAllText">Show all inputs</span></button>
+          <button type="button" id="btnShowAll" class="btn btn-secondary" aria-pressed="false" aria-controls="inputs"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-sliders"></use></svg><span id="btnShowAllText" data-i18n="wizard.showAllInputs">Show all inputs</span></button>
         </div>
       </div>
 
@@ -370,14 +370,14 @@
             <div id="welcomeBanner" hidden class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900 py-3">
               <div class="flex items-start justify-between gap-3">
                 <div class="min-w-0">
-                  <p id="welcomeTitle" class="font-semibold text-slate-900 dark:text-white">Welcome back</p>
+                  <p id="welcomeTitle" class="font-semibold text-slate-900 dark:text-white"></p>
                   <ul id="welcomeList" class="mt-1.5 space-y-1"></ul>
                 </div>
                 <button type="button" id="welcomeClose" class="btn-icon -me-2 -mt-1.5 h-9 w-9 shrink-0" aria-label="Close the welcome note" data-i18n-attr="aria-label:page.banners.welcomeClose"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
               </div>
             </div>
             <div id="copiedBanner" hidden class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm dark:border-slate-800 dark:bg-slate-900">
-              <p id="copiedText">We’ve copied last month’s numbers. Update anything that changed.</p>
+              <p id="copiedText" data-i18n="months.banners.copiedLast">We’ve copied last month’s numbers. Update anything that changed.</p>
               <button type="button" id="startBlank" class="min-h-11 link" data-i18n="page.banners.startBlank">Start from blank instead</button>
             </div>
             <div id="capBanner" hidden role="alert" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
@@ -446,11 +446,11 @@
                   <svg class="icon text-slate-400" aria-hidden="true"><use href="#i-receipt"></use></svg>
                 </div>
                 <dl class="mt-4 space-y-2 font-mono text-[13px] text-slate-700 dark:text-slate-300">
-                  <div class="flex justify-between gap-3"><dt id="rcIncomeLabel">Income</dt><dd id="rcIncome" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3"><dt id="rcIncomeLabel" data-i18n="dashboard.receipt.income">Income</dt><dd id="rcIncome" class="tabular-nums">–</dd></div>
                   <div id="rcExtrasRow" hidden class="flex justify-between gap-3"><dt data-i18n="page.summary.bonuses">+ Bonuses (spread over the year)</dt><dd id="rcExtras" class="tabular-nums">–</dd></div>
                   <div class="flex justify-between gap-3"><dt data-i18n="page.summary.billsEntered">Bills you entered</dt><dd id="rcBills" class="tabular-nums">–</dd></div>
                   <div class="rule !my-3"></div>
-                  <div class="flex justify-between gap-3"><dt id="rcLeftLabel">Left over</dt><dd id="rcLeft" class="tabular-nums">–</dd></div>
+                  <div class="flex justify-between gap-3"><dt id="rcLeftLabel" data-i18n="dashboard.receipt.leftOver">Left over</dt><dd id="rcLeft" class="tabular-nums">–</dd></div>
                   <div class="flex justify-between gap-3 text-emerald-700 dark:text-emerald-400"><dt data-i18n="page.summary.planSavings">+ Savings from your plan</dt><dd id="rcPlan" class="tabular-nums">–</dd></div>
                   <div class="rule-double !my-3"></div>
                   <div class="flex justify-between gap-3 text-[15px] font-semibold text-slate-900 dark:text-white"><dt data-i18n="page.summary.leftWithPlan">Left with your plan</dt><dd id="rcTotal" class="tabular-nums">–</dd></div>
@@ -574,7 +574,7 @@
                   <div>
                     <div class="flex items-center justify-between gap-2">
                       <label for="years" class="label" data-i18n="page.growth.years">How many years?</label>
-                      <output id="yearsOut" for="years" class="text-sm font-semibold tabular-nums text-slate-900 dark:text-white">10 years</output>
+                      <output id="yearsOut" for="years" class="text-sm font-semibold tabular-nums text-slate-900 dark:text-white" data-i18n="charts.yearsValueText" data-i18n-vars='{"years":10}'>10 years</output>
                     </div>
                     <input id="years" type="range" min="1" max="20" step="1" value="10" class="range">
                   </div>
@@ -584,7 +584,7 @@
                     <p id="rateHint" class="mt-1 text-xs muted"></p>
                   </div>
                   <div class="flex items-start gap-3">
-                    <button type="button" role="switch" id="inflationSwitch" class="switch-btn tap -mt-2.5" aria-checked="false" aria-labelledby="inflLabel"><span class="switch" aria-hidden="true"></span><span id="inflationState" class="sr-only">Off</span></button>
+                    <button type="button" role="switch" id="inflationSwitch" class="switch-btn tap -mt-2.5" aria-checked="false" aria-labelledby="inflLabel"><span class="switch" aria-hidden="true"></span><span id="inflationState" class="sr-only" data-i18n="charts.off">Off</span></button>
                     <span id="inflLabel" class="text-sm text-slate-800 dark:text-slate-200"><span data-i18n="page.growth.inflation">Show in today’s money (prices rise over time)</span> <span data-help="inflation" data-help-label="Today’s money"></span></span>
                   </div>
                   <label class="flex items-center gap-2 text-sm"><span class="muted" data-i18n="page.growth.pricesRise">Prices rise by</span>
@@ -665,7 +665,7 @@
                   <h3 id="monthsTitle" class="h-section" data-i18n="page.months.title">Month by month</h3>
                   <p id="monthsStatus" class="mt-1 text-sm muted" aria-live="polite"></p>
                 </div>
-                <button type="button" id="btnSnapshot" class="btn btn-secondary">Save this month</button>
+                <button type="button" id="btnSnapshot" class="btn btn-secondary" data-i18n="months.saveThisMonth">Save this month</button>
               </div>
               <p class="mt-3 flex items-start gap-2 text-sm muted"><svg class="icon icon-sm mt-0.5 text-slate-400" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n="page.months.localNote">Your history is saved only in this browser on this device. Use Backup to keep a copy or move it to another device.</span></p>
               <div id="safariNote" hidden class="mt-3 flex items-start gap-3 rounded-xl bg-amber-50 px-4 py-2 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200 py-3">
@@ -696,7 +696,7 @@
                   </div>
                   <p id="trendNote" class="mt-2 text-xs muted"></p>
                 </div>
-                <p id="trendOne" hidden class="mt-6 text-sm muted">Your chart appears once two months are saved.</p>
+                <p id="trendOne" hidden class="mt-6 text-sm muted" data-i18n="months.trend.needTwo">Your chart appears once two months are saved.</p>
                 <div id="barsWrap" class="mt-8">
                   <div class="flex flex-wrap items-center justify-between gap-3">
                     <h4 class="text-sm font-semibold text-slate-900 dark:text-white" data-i18n="page.months.eachMonth">Each month</h4>
@@ -837,7 +837,7 @@
 
         <section id="leak-3" aria-labelledby="leak-3-title">
           <h3 id="leak-3-title" data-i18n-html="page.guide.leak3.title_html"><span class="num-badge">3</span>Grocery Waste and the Dining-Out Premium</h3>
-          <p data-i18n-html="page.guide.leak3.body_html">Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
+          <p data-i18n-html="page.guide.leak3.body_html">Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.</p>
           <div class="fix">
             <h4 data-i18n="page.guide.howToPlug">How to plug it</h4>
             <ul>
@@ -956,8 +956,8 @@
   <div id="mobileBar" class="fixed inset-x-0 bottom-0 z-40 translate-y-[150%] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-transform duration-300 lg:hidden" aria-hidden="true">
     <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-lg dark:border-slate-700 dark:bg-slate-900">
       <p class="min-w-0">
-        <span id="mbLabel" class="block text-xs muted">You could save each month</span>
-        <span class="block truncate font-semibold tabular-nums"><span id="mbAmount" class="text-lg text-emerald-700 dark:text-emerald-400">0</span><span id="mbPer" class="text-xs font-normal muted">/month</span></span>
+        <span id="mbLabel" class="block text-xs muted" data-i18n="dashboard.mobile.saveMonth">You could save each month</span>
+        <span class="block truncate font-semibold tabular-nums"><span id="mbAmount" class="text-lg text-emerald-700 dark:text-emerald-400">0</span><span id="mbPer" class="text-xs font-normal muted" data-i18n="common.per.month">/month</span></span>
       </p>
       <a href="#plan" class="btn btn-primary shrink-0" data-i18n="page.mobileBar.seeIdeas">See ideas</a>
     </div>
@@ -984,7 +984,7 @@
       <div class="mt-6 flex flex-wrap justify-end gap-2">
         <button id="confirmCancel" value="cancel" class="btn btn-secondary" data-i18n="page.dialog.cancel">Cancel</button>
         <button id="confirmAlt" value="alt" hidden class="btn btn-secondary"></button>
-        <button id="confirmOk" value="ok" class="btn btn-primary">Confirm</button>
+        <button id="confirmOk" value="ok" class="btn btn-primary" data-i18n="common.confirm">Confirm</button>
       </div>
     </form>
   </dialog>

@@ -87,16 +87,50 @@ function siteConfig(env) {
   };
 }
 
+/**
+ * English is bundled with the app, but on English pages the article, privacy
+ * policy, terms and search text are already in the HTML. So en.json is served
+ * as two modules: "virtual:en-core" (everything the scripts use) and
+ * "virtual:en-static" (that page text), loaded only with another language, as
+ * its fallback. en.json itself stays one file for translators and the checks.
+ */
+const EN_STATIC = ['page', 'privacy', 'terms', 'seo'];
+const EN_STATIC_KEEP = { page: ['inputs'] }; // used by scripts too
+function englishSplit() {
+  const file = path.resolve(__dirname, 'src/i18n/locales/en.json');
+  const ids = { 'virtual:en-core': '\0en-core', 'virtual:en-static': '\0en-static' };
+  return {
+    name: 'english-split',
+    resolveId: (id) => ids[id],
+    load(id) {
+      if (id !== ids['virtual:en-core'] && id !== ids['virtual:en-static']) return null;
+      this.addWatchFile(file);
+      const en = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const core = {};
+      const rest = {};
+      for (const [ns, v] of Object.entries(en)) {
+        if (!EN_STATIC.includes(ns)) { core[ns] = v; continue; }
+        const keep = EN_STATIC_KEEP[ns] || [];
+        rest[ns] = Object.fromEntries(Object.entries(v).filter(([k]) => !keep.includes(k)));
+        if (keep.length) core[ns] = Object.fromEntries(Object.entries(v).filter(([k]) => keep.includes(k)));
+      }
+      return `export default ${JSON.stringify(id === ids['virtual:en-core'] ? core : rest)};`;
+    }
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
-    plugins: [tailwindcss(), siteConfig(env)],
+    plugins: [tailwindcss(), englishSplit(), siteConfig(env)],
     test: { include: ["src/**/*.test.js"] },
     build: {
       target: 'es2020',
       rollupOptions: {
         input: Object.fromEntries([
           ['main', path.resolve(__dirname, 'index.html')],
+          // Served by static hosts for any missing address (Netlify, Cloudflare Pages, GitHub Pages…)
+          ['404', path.resolve(__dirname, '404.html')],
           ...PAGES.map((p) => [p, path.resolve(__dirname, p, 'index.html')])
         ])
       },

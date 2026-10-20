@@ -15,6 +15,8 @@ import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
+/** Fills {placeholders} from a data-i18n-vars JSON attribute. */
+const fill = (msg, vars) => (vars ? msg.replace(/{(w+)}/g, (m, n) => JSON.parse(vars)[n] ?? m) : msg);
 
 const isPlural = (v) => v && typeof v === 'object' && typeof v.other === 'string';
 function lookup(obj, key) {
@@ -112,7 +114,7 @@ export function prerenderLocales({ root, outDir, siteUrl }) {
     const doc = parse(home, { comment: true });
 
     // ---- Words: the same keys the browser would translate
-    for (const el of doc.querySelectorAll('[data-i18n]')) el.set_content(esc(t(el.getAttribute('data-i18n'))));
+    for (const el of doc.querySelectorAll('[data-i18n]')) el.set_content(esc(fill(t(el.getAttribute('data-i18n')), el.getAttribute('data-i18n-vars'))));
     for (const el of doc.querySelectorAll('[data-i18n-html]')) el.set_content(t(el.getAttribute('data-i18n-html')));
     for (const el of doc.querySelectorAll('[data-i18n-attr]')) {
       for (const pair of el.getAttribute('data-i18n-attr').split(';')) {

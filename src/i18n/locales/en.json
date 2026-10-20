@@ -740,7 +740,7 @@
     "hideInputs": "Hide inputs",
     "steps": {
       "1": {
-        "title": "What’s your monthly income?",
+        "title": "What’s your income?",
         "sub": "Your take-home pay after tax, plus any bonuses or overtime during the year. You can change it any time."
       },
       "2": {
@@ -1411,7 +1411,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Grocery Waste and the Dining-Out Premium",
-        "body_html": "Studies consistently estimate that households throw away <strong>roughly 30% of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.",
+        "body_html": "Many households throw away <strong>a surprising share of the food they buy</strong>. Pre-cut produce, single-serve packaging and unplanned mid-week trips all carry a convenience premium. Then there's dining out: when a household spends more on restaurants and takeout than on groceries, it's usually paying three to five times more per meal for food it could make at home.",
         "fix1_html": "<strong>Plan meals around what's already in your fridge</strong> before writing a shopping list.",
         "fix2": "Choose store brands for staples. They're often made in the same facilities as name brands and cost 20–30% less.",
         "fix3": "Shop once a week with a list, and schedule one \"leftovers night\" to clear the fridge.",
@@ -1780,7 +1780,9 @@
       "goalsNeedShare": {
         "one": "{count} goal. Give goals a share of your savings to see dates.",
         "other": "{count} goals. Give goals a share of your savings to see dates."
-      }
+      },
+      "emergencyNoneIn": "Nothing saved yet. 3 months in about {time}.",
+      "emergencyNoneNeedsShare": "Nothing saved yet. 3 months needs a share of your savings."
     },
     "removed": "Goal \"{name}\" removed",
     "untitled": "Untitled"
@@ -2933,5 +2935,11 @@
         "3": "If you buy on HealthCare.gov or a state Marketplace, update your income: you may qualify for a bigger tax credit."
       }
     }
+  },
+  "notFound": {
+    "title": "We can’t find that page",
+    "lead": "The link may be old or mistyped. Your budget is safe: it’s saved in this browser, not on this page.",
+    "calculator": "Open the calculator",
+    "tips": "Read the money tips"
   }
 }

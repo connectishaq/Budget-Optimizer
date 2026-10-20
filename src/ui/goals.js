@@ -4,7 +4,7 @@
 
 import { getState, setState } from '../state.js';
 import { goalTimeline, emergencyFundStatus, debtFreeComparison, ALLOCATION_PRESETS, BUCKETS, rebalanceAllocation } from '../engine/calculate.js';
-import { parseAmount, decimalSeparator, duration, monthsFromNow, pct } from '../utils/format.js';
+import { parseAmount, decimalSeparator, duration, monthsFromNow, pct, oneDecimal } from '../utils/format.js';
 import { newId } from '../engine/profiles.js';
 import { $, icon, esc, setText, setHTML, setAttr, toast } from './dom.js';
 import { t, getLanguage } from '../i18n/index.js';
@@ -119,7 +119,7 @@ function renderEmergency(state, result, view) {
     </div>`;
   };
   const cover = e.fund > 0
-    ? t('goals.emergency.cover_html', { fund: view.raw(e.fund), months: e.coverage.toFixed(1), essentials: view.raw(e.essentials) })
+    ? t('goals.emergency.cover_html', { fund: view.raw(e.fund), months: oneDecimal(e.coverage), essentials: view.raw(e.essentials) })
     : t('goals.emergency.none', { amount: view.raw(e.essentials) });
   setHTML($('emergencyBody'), `
     <p class="text-sm muted">${cover}</p>
@@ -174,9 +174,10 @@ function renderRowSummaries(state, result, view) {
 
   const e = emergencyFundStatus(result.totals.needs, result.totals.values.emergencyFund, amounts.emergency);
   setText($('sumEmergency'), !(e.essentials > 0) ? t('goals.summary.emergencyNoBills')
-    : e.gap3 === 0 ? t(e.gap6 === 0 ? 'goals.summary.emergencyFull' : 'goals.summary.emergencyStart', { months: e.coverage.toFixed(1) })
-      : e.monthsTo3 != null ? t('goals.summary.emergencyIn', { months: e.coverage.toFixed(1), time: duration(e.monthsTo3) })
-        : t('goals.summary.emergencyNeedsShare', { months: e.coverage.toFixed(1) }));
+    : e.gap3 === 0 ? t(e.gap6 === 0 ? 'goals.summary.emergencyFull' : 'goals.summary.emergencyStart', { months: oneDecimal(e.coverage) })
+      // "Nothing saved yet" reads better than "0.0 months saved"
+      : e.monthsTo3 != null ? t(e.fund > 0 ? 'goals.summary.emergencyIn' : 'goals.summary.emergencyNoneIn', { months: oneDecimal(e.coverage), time: duration(e.monthsTo3) })
+        : t(e.fund > 0 ? 'goals.summary.emergencyNeedsShare' : 'goals.summary.emergencyNoneNeedsShare', { months: oneDecimal(e.coverage) }));
 
   const debts = result.totals.debts.filter((d) => d.balance > 0);
   if (!debts.length) setText($('sumDebt'), t('goals.summary.debtNone'));

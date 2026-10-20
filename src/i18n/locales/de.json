@@ -747,7 +747,7 @@
     "hideInputs": "Eingaben ausblenden",
     "steps": {
       "1": {
-        "title": "Wie hoch ist dein monatliches Einkommen?",
+        "title": "Wie hoch ist dein Einkommen?",
         "sub": "Dein Nettoverdienst nach Steuern, plus Boni oder Überstunden im Laufe des Jahres. Du kannst es jederzeit ändern."
       },
       "2": {
@@ -1422,7 +1422,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Lebensmittelverschwendung und der Aufpreis fürs Essengehen",
-        "body_html": "Studien schätzen immer wieder, dass Haushalte <strong>rund 30 % der gekauften Lebensmittel</strong> wegwerfen. Vorgeschnittenes Gemüse, Einzelportionen und ungeplante Einkäufe unter der Woche kosten alle einen Bequemlichkeitsaufschlag. Dazu kommt das Essengehen: Gibt ein Haushalt mehr für Restaurants und Lieferdienste aus als für Lebensmittel, zahlt er meist das Drei- bis Fünffache pro Mahlzeit für Essen, das er selbst kochen könnte.",
+        "body_html": "Viele Haushalte werfen <strong>einen überraschend großen Teil der gekauften Lebensmittel</strong> weg. Vorgeschnittenes Gemüse, Einzelportionen und ungeplante Einkäufe unter der Woche kosten alle einen Bequemlichkeitsaufschlag. Dazu kommt das Essengehen: Gibt ein Haushalt mehr für Restaurants und Lieferdienste aus als für Lebensmittel, zahlt er meist das Drei- bis Fünffache pro Mahlzeit für Essen, das er selbst kochen könnte.",
         "fix1_html": "<strong>Plane Mahlzeiten mit dem, was schon im Kühlschrank ist</strong>, bevor du eine Einkaufsliste schreibst.",
         "fix2": "Wähle bei Grundnahrungsmitteln Eigenmarken. Sie werden oft in denselben Werken wie Markenprodukte hergestellt und kosten 20–30 % weniger.",
         "fix3": "Kauf einmal pro Woche mit Liste ein und plane einen „Reste-Abend“, um den Kühlschrank zu leeren.",
@@ -1791,7 +1791,9 @@
       "goalsNeedShare": {
         "one": "{count} Ziel. Gib Zielen einen Anteil deiner Ersparnisse, um Termine zu sehen.",
         "other": "{count} Ziele. Gib Zielen einen Anteil deiner Ersparnisse, um Termine zu sehen."
-      }
+      },
+      "emergencyNoneIn": "Noch nichts gespart. 3 Monate in etwa {time}.",
+      "emergencyNoneNeedsShare": "Noch nichts gespart. Für 3 Monate braucht es einen Teil deines Sparbetrags."
     },
     "removed": "Ziel „{name}“ entfernt",
     "untitled": "Ohne Titel"
@@ -2944,5 +2946,11 @@
         "3": "Wenn du über HealthCare.gov oder einen Marketplace deines Bundesstaats versichert bist, aktualisier dein Einkommen: Vielleicht steht dir eine höhere Steuergutschrift zu."
       }
     }
+  },
+  "notFound": {
+    "title": "Diese Seite gibt es nicht",
+    "lead": "Der Link ist vielleicht veraltet oder falsch geschrieben. Dein Budget ist sicher: Es ist in diesem Browser gespeichert, nicht auf dieser Seite.",
+    "calculator": "Zum Rechner",
+    "tips": "Spartipps lesen"
   }
 }

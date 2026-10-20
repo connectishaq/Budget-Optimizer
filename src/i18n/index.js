@@ -1,6 +1,9 @@
 // Tiny i18n layer: t(key, vars) with {placeholder} interpolation, plural forms
 // chosen by Intl.PluralRules, and English as the fallback for missing keys.
 // English is bundled; every other language is loaded only when it's active.
+// English page text that's already in the HTML (article, legal pages, search
+// text) is left out of the bundle and loaded with other languages as their
+// fallback (see englishSplit in vite.config.js).
 //
 // Message files are nested JSON. A key is its dot path ("wizard.next").
 // A plural message is an object of Intl.PluralRules categories, always with
@@ -8,7 +11,7 @@
 // Keys ending in "_html" may contain markup; their vars are inserted as-is,
 // so callers must escape anything that came from the user.
 
-import en from './locales/en.json';
+import enCore from 'virtual:en-core';
 
 export const LANGUAGES = {
   en: { name: 'English', dir: 'ltr' },
@@ -24,7 +27,17 @@ export const LANGUAGES = {
 export const DEFAULT_LANG = 'en';
 const LANG_KEY = 'hbo:lang';
 
-const loaders = import.meta.glob('./locales/*.json');
+const loaders = import.meta.glob(['./locales/*.json', '!./locales/en.json']);
+
+let en = enCore;
+/** Adds the English page text, so another language can fall back to it. */
+async function loadEnglishPageText() {
+  if (en !== enCore) return;
+  const rest = (await import('virtual:en-static')).default;
+  const full = { ...enCore };
+  for (const [ns, v] of Object.entries(rest)) full[ns] = { ...v, ...(enCore[ns] || {}) };
+  en = full;
+}
 
 let lang = DEFAULT_LANG;
 let messages = en;
@@ -111,7 +124,8 @@ export async function setLanguage(next) {
   if (l === DEFAULT_LANG) messages = en;
   else {
     const load = loaders[`./locales/${l}.json`];
-    messages = load ? ((await load()).default ?? en) : en;
+    const [mod] = await Promise.all([load ? load() : null, loadEnglishPageText()]);
+    messages = mod?.default ?? en;
   }
   lang = l;
   if (typeof document !== 'undefined') {
@@ -132,14 +146,14 @@ export function onLanguageChange(fn) {
 
 /**
  * Translates static markup:
- *   data-i18n="key"            -> textContent
+ *   data-i18n="key"            -> textContent (data-i18n-vars='{"n":1}' fills placeholders)
  *   data-i18n-html="key"       -> innerHTML (trusted message files only)
  *   data-i18n-attr="aria-label:key;placeholder:key2"
  * English text stays inline in the HTML, so the English page needs no JS.
  */
 export function translateDom(root = document) {
   root.querySelectorAll('[data-i18n]').forEach((el) => {
-    const v = t(el.dataset.i18n);
+    const v = t(el.dataset.i18n, el.dataset.i18nVars ? JSON.parse(el.dataset.i18nVars) : undefined);
     if (el.textContent !== v) el.textContent = v;
   });
   root.querySelectorAll('[data-i18n-html]').forEach((el) => {

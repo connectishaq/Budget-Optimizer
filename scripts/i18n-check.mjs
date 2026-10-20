@@ -79,6 +79,7 @@ for (const f of jsFiles) {
 
 const htmlFiles = [
   path.join(root, 'index.html'),
+  path.join(root, '404.html'),
   ...['privacy-policy', 'terms-of-use', 'contact'].map((p) => path.join(root, p, 'index.html')),
   ...walk(path.join(root, 'src/partials'), ['.html'])
 ].filter((f) => fs.existsSync(f));
@@ -89,8 +90,11 @@ for (const f of htmlFiles) {
   for (const el of doc.querySelectorAll('[data-i18n]')) {
     const key = el.getAttribute('data-i18n');
     used.add(key);
-    if (typeof en[key] === 'string' && norm(el.text) !== norm(decode(en[key])) && !/__\w+__/.test(el.text)) {
-      errors.push(`${rel}: inline text of [data-i18n="${key}"] differs from en.json\n    html: ${norm(el.text).slice(0, 120)}\n    json: ${norm(decode(en[key])).slice(0, 120)}`);
+    // data-i18n-vars='{"step":1}' fills the message's placeholders, as the page does
+    const vars = el.getAttribute('data-i18n-vars');
+    const msg = typeof en[key] === 'string' && vars ? en[key].replace(/\{(\w+)\}/g, (m, n) => JSON.parse(vars)[n] ?? m) : en[key];
+    if (typeof msg === 'string' && norm(el.text) !== norm(decode(msg)) && !/__\w+__/.test(el.text)) {
+      errors.push(`${rel}: inline text of [data-i18n="${key}"] differs from en.json\n    html: ${norm(el.text).slice(0, 120)}\n    json: ${norm(decode(msg)).slice(0, 120)}`);
     }
   }
   for (const el of doc.querySelectorAll('[data-i18n-html]')) {

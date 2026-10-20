@@ -737,7 +737,7 @@
     "hideInputs": "Sembunyikan isian",
     "steps": {
       "1": {
-        "title": "Berapa penghasilan bulanan Anda?",
+        "title": "Berapa penghasilan Anda?",
         "sub": "Gaji bersih setelah pajak, ditambah bonus atau lembur selama setahun. Anda bisa mengubahnya kapan saja."
       },
       "2": {
@@ -1393,7 +1393,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Makanan Terbuang dan Mahalnya Makan di Luar",
-        "body_html": "Berbagai penelitian secara konsisten memperkirakan rumah tangga membuang <strong>sekitar 30% makanan yang mereka beli</strong>. Sayur yang sudah dipotong, kemasan sekali makan, dan belanja dadakan di tengah minggu semuanya mengandung biaya kepraktisan. Lalu ada makan di luar: jika rumah tangga menghabiskan lebih banyak untuk restoran dan pesan antar daripada belanja dapur, biasanya mereka membayar tiga sampai lima kali lipat per porsi untuk makanan yang bisa dimasak di rumah.",
+        "body_html": "Banyak rumah tangga membuang <strong>cukup banyak makanan yang mereka beli</strong>. Sayur yang sudah dipotong, kemasan sekali makan, dan belanja dadakan di tengah minggu semuanya mengandung biaya kepraktisan. Lalu ada makan di luar: jika rumah tangga menghabiskan lebih banyak untuk restoran dan pesan antar daripada belanja dapur, biasanya mereka membayar tiga sampai lima kali lipat per porsi untuk makanan yang bisa dimasak di rumah.",
         "fix1_html": "<strong>Rencanakan menu dari bahan yang sudah ada di kulkas</strong> sebelum menulis daftar belanja.",
         "fix2": "Pilih merek toko untuk kebutuhan pokok. Sering kali dibuat di pabrik yang sama dengan merek terkenal dan harganya 20–30% lebih murah.",
         "fix3": "Belanja seminggu sekali dengan daftar, dan jadwalkan satu \"malam sisa makanan\" untuk mengosongkan kulkas.",
@@ -1758,7 +1758,9 @@
       "firstGoal": "Target pertama",
       "goalsNeedShare": {
         "other": "{count} target. Beri target porsi dari tabungan Anda untuk melihat tanggalnya."
-      }
+      },
+      "emergencyNoneIn": "Belum ada yang ditabung. 3 bulan dalam sekitar {time}.",
+      "emergencyNoneNeedsShare": "Belum ada yang ditabung. Untuk 3 bulan, sisihkan sebagian tabungan Anda."
     },
     "removed": "Target \"{name}\" dihapus",
     "untitled": "Tanpa judul"
@@ -2907,5 +2909,11 @@
         "3": "Jika Anda membeli di HealthCare.gov atau Marketplace negara bagian, perbarui data penghasilan Anda: Anda mungkin berhak atas kredit pajak yang lebih besar."
       }
     }
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "lead": "Tautannya mungkin sudah lama atau salah ketik. Anggaran Anda aman: tersimpan di browser ini, bukan di halaman ini.",
+    "calculator": "Buka kalkulator",
+    "tips": "Baca tips hemat"
   }
 }

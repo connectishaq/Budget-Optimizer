@@ -38,6 +38,7 @@ Ad slots are marked in `index.html` with `<!-- ===== ADSENSE: … START/END ====
 
 ```
 index.html              page markup, SEO article, FAQ, JSON-LD, inline SVG icon sprite
+404.html                "page not found" page; static hosts (Netlify, Cloudflare Pages, GitHub Pages) serve it for missing addresses
 src/main.js             bootstrap: compute -> render loop (typing debounced 150 ms)
 src/state.js            single source of truth, validation, localStorage persistence ('hbo:v3')
 src/history-store.js    month-by-month history in localStorage ('hbo:history', versioned)

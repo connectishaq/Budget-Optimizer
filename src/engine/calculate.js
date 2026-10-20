@@ -6,6 +6,7 @@ import { PROFILES, benchmarkFor } from './profiles.js';
 import { countryData } from './countries.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
 import { t } from '../i18n/index.js';
+import { oneDecimal } from '../utils/format.js';
 
 export const EXPENSE_FIELDS = [
   'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
@@ -231,8 +232,8 @@ export function healthScore({ income, spend, rent, debtPayments, emergencyFund, 
   let emergencyText;
   if (months == null) emergencyText = t('calc.health.emergency.noBills');
   else if (emergencyFund <= 0) emergencyText = t('calc.health.emergency.none', { target: fmt(needs * 3) });
-  else if (months < 3) emergencyText = t('calc.health.emergency.under3', { months: months.toFixed(1), target: fmt(needs * 3) });
-  else if (months < 6) emergencyText = t('calc.health.emergency.under6', { months: months.toFixed(1), target: fmt(needs * 6) });
+  else if (months < 3) emergencyText = t('calc.health.emergency.under3', { months: oneDecimal(months), target: fmt(needs * 3) });
+  else if (months < 6) emergencyText = t('calc.health.emergency.under6', { months: oneDecimal(months), target: fmt(needs * 6) });
   else emergencyText = t('calc.health.emergency.done');
 
   const parts = [

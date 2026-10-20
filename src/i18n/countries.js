@@ -16,6 +16,23 @@ export const isCountry = (c) => ALL_COUNTRIES.includes(c);
 /** The country a currency most likely belongs to; GLOBAL when it's ambiguous (EUR) or unknown. */
 export const countryForCurrency = (currency) => COUNTRY_FOR_CURRENCY[currency] || GLOBAL;
 
+let flagsOk = null;
+/**
+ * Whether this device draws flag emoji. Windows doesn't: 🇺🇸 shows as the
+ * letters "US", which beside "United States" just looks like a typo. An
+ * undrawn flag is two letter boxes, about twice as wide as one.
+ */
+export function flagsDrawn() {
+  if (flagsOk == null) {
+    try {
+      const ctx = document.createElement('canvas').getContext('2d');
+      ctx.font = '32px sans-serif';
+      flagsOk = ctx.measureText('🇺🇸').width < ctx.measureText('🇺').width * 1.5;
+    } catch { flagsOk = true; }
+  }
+  return flagsOk;
+}
+
 /** 🇺🇸 from "US" (regional indicator symbols); 🌐 for any other country. */
 export function flagOf(code) {
   if (!COUNTRY_CODES.includes(code)) return '🌐';

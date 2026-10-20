@@ -757,7 +757,7 @@
     "hideInputs": "Ocultar campos",
     "steps": {
       "1": {
-        "title": "Qual é a sua renda mensal?",
+        "title": "Qual é a sua renda?",
         "sub": "Seu salário líquido, depois dos impostos, mais bônus ou horas extras ao longo do ano. Você pode mudar quando quiser."
       },
       "2": {
@@ -1451,7 +1451,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Desperdício no mercado e o preço de comer fora",
-        "body_html": "Estudos estimam com frequência que as famílias jogam fora <strong>cerca de 30% da comida que compram</strong>. Alimentos já cortados, embalagens individuais e idas ao mercado sem planejamento no meio da semana custam mais pela conveniência. E tem o comer fora: quando uma família gasta mais com restaurantes e delivery do que com mercado, geralmente paga de três a cinco vezes mais por refeição por uma comida que poderia fazer em casa.",
+        "body_html": "Muitas famílias jogam fora <strong>uma parte surpreendente da comida que compram</strong>. Alimentos já cortados, embalagens individuais e idas ao mercado sem planejamento no meio da semana custam mais pela conveniência. E tem o comer fora: quando uma família gasta mais com restaurantes e delivery do que com mercado, geralmente paga de três a cinco vezes mais por refeição por uma comida que poderia fazer em casa.",
         "fix1_html": "<strong>Planeje as refeições com o que já está na geladeira</strong> antes de fazer a lista de compras.",
         "fix2": "Escolha marcas próprias para o básico. Muitas vezes são feitas nas mesmas fábricas das marcas conhecidas e custam 20–30% menos.",
         "fix3": "Faça compras uma vez por semana, com lista, e reserve uma \"noite das sobras\" para esvaziar a geladeira.",
@@ -1824,7 +1824,9 @@
         "one": "{count} meta. Dê às metas uma parte das suas economias para ver as datas.",
         "many": "{count} metas. Dê às metas uma parte das suas economias para ver as datas.",
         "other": "{count} metas. Dê às metas uma parte das suas economias para ver as datas."
-      }
+      },
+      "emergencyNoneIn": "Nada guardado ainda. 3 meses em cerca de {time}.",
+      "emergencyNoneNeedsShare": "Nada guardado ainda. Para 3 meses, separe uma parte da sua poupança."
     },
     "removed": "Meta \"{name}\" removida",
     "untitled": "Sem nome"
@@ -2981,5 +2983,11 @@
         "3": "Se você contrata pelo HealthCare.gov ou pelo Marketplace do seu estado, atualize a sua renda: você pode ter direito a um crédito fiscal maior."
       }
     }
+  },
+  "notFound": {
+    "title": "Não encontramos essa página",
+    "lead": "O link pode estar desatualizado ou com erro de digitação. Seu orçamento está seguro: ele fica salvo neste navegador, não nesta página.",
+    "calculator": "Abrir a calculadora",
+    "tips": "Ler as dicas"
   }
 }

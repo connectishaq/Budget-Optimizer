@@ -108,7 +108,8 @@ async function boot() {
   const restored = loadState();
   // Returning users with saved numbers go straight to their results;
   // everyone else starts the guided steps.
-  if (restored && hasData()) getState().ui.mode = 'results';
+  const returning = restored && hasData();
+  if (returning) getState().ui.mode = 'results';
   if (!restored) replaceState(defaultState(), 'boot');
   // Country: a saved budget keeps its own; a new one starts from the saved
   // choice or the browser's region, with that country's defaults.
@@ -167,7 +168,9 @@ async function boot() {
   // JS now controls which view is shown
   document.documentElement.classList.remove('returning');
   initAds();
-  restoreScroll();
+  // Returning visitors start at their results (the intro is still above), unless
+  // a link pointed somewhere (#guide…) or a language switch is keeping its place
+  if (!restoreScroll() && returning && !location.hash) requestAnimationFrame(() => $('resultsView').scrollIntoView({ block: 'start' }));
 }
 
 boot();
