@@ -1129,7 +1129,7 @@
     },
     "hero": {
       "privacy": "100% Pribadi. Data keuangan Anda diproses di perangkat Anda sendiri dan tidak pernah keluar dari perangkat.",
-      "title_html": "Pengoptimal Anggaran Rumah Tangga <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Simulator Tabungan</span>",
+      "title_html": "Kalkulator anggaran rumah tangga <span class=\"text-emerald-700 dark:text-emerald-400\">dan perencana tabungan</span>",
       "lead": "Isi tagihan bulanan Anda. Lihat ke mana uang Anda pergi, cara mudah untuk berhemat, dan berapa yang bisa Anda tabung.",
       "start": "Mulai: sekitar 2 menit",
       "receipt": {
@@ -1905,7 +1905,8 @@
       "nav": {
         "calculator": "Kalkulator",
         "moneyTips": "Tips keuangan",
-        "contact": "Kontak"
+        "contact": "Kontak",
+        "about": "Tentang"
       },
       "navLabel": "Utama"
     },
@@ -1950,7 +1951,8 @@
         "privacy": "Kebijakan Privasi",
         "terms": "Ketentuan Penggunaan",
         "label": "Perusahaan",
-        "choices": "Pilihan privasi"
+        "choices": "Pilihan privasi",
+        "about": "Tentang kami"
       },
       "disclaimer": {
         "title": "Penafian keuangan",
@@ -2919,5 +2921,74 @@
     "lead": "Tautannya mungkin sudah lama atau salah ketik. Anggaran Anda aman: tersimpan di browser ini, bukan di halaman ini.",
     "calculator": "Buka kalkulator",
     "tips": "Baca tips hemat"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Beranda",
+      "current": "Tentang",
+      "label": "Navigasi jejak"
+    },
+    "toc": {
+      "heading": "Di halaman ini",
+      "why": "Mengapa alat ini ada",
+      "who": "Siapa pengelolanya",
+      "how": "Cara kerja kalkulator",
+      "numbers": "Dari mana angkanya",
+      "privacy": "Privasi Anda",
+      "standards": "Standar editorial"
+    },
+    "title": "Tentang Budget Optimizer",
+    "lead": "Kalkulator anggaran rumah tangga yang gratis dan pribadi, untuk membantu keluarga melihat ke mana uang mereka pergi dan menemukan cara sederhana agar lebih banyak yang tersisa.",
+    "sections": {
+      "why": {
+        "title": "Mengapa alat ini ada",
+        "p1": "Kebanyakan rumah tangga tidak kehilangan uang sekaligus dalam jumlah besar. Uang bocor lewat biaya kecil yang rutin dan mudah terlewat: langganan yang tidak dipakai siapa pun, tagihan yang diam-diam naik, bunga kartu kredit. Alat ini membantu Anda menemukan kebocoran itu dan menambalnya.",
+        "p2": "Alat ini gratis, tanpa pendaftaran, dan bisa dipakai di banyak negara dan bahasa, karena merencanakan keuangan dengan cermat tidak seharusnya bergantung pada tempat tinggal Anda atau kemampuan Anda membayar aplikasi."
+      },
+      "who": {
+        "title": "Siapa pengelolanya",
+        "p1": "Budget Optimizer adalah proyek independen yang dibuat dan dirawat oleh tim kecil yang ingin membuat keuangan rumah tangga lebih mudah dipahami."
+      },
+      "how": {
+        "title": "Cara kerja kalkulator",
+        "item1_html": "<strong>Anda mengisi tagihan Anda.</strong> Pendapatan, tempat tinggal, listrik dan air, transportasi, makanan, cicilan, dan langganan, sesuai yang Anda bayar dalam bulan biasa. Biaya tahunan dibagi rata ke dua belas bulan.",
+        "item2_html": "<strong>Kami membandingkannya dengan rumah tangga pada umumnya.</strong> Setiap tagihan dibandingkan dengan kisaran umum untuk rumah tangga seperti Anda di negara yang Anda pilih.",
+        "item3_html": "<strong>Kami menyarankan perubahan, lengkap dengan hitungannya.</strong> Setiap ide menunjukkan tagihan yang disasar, porsi yang biasanya bisa dihemat, dan hasilnya, di bagian “Dari mana angka ini?”. Jika dua ide memangkas tagihan yang sama, ide kedua hanya menghitung sisanya.",
+        "item4_html": "<strong>Hanya pilihan Anda yang dihitung.</strong> Ide yang Anda masukkan ke rencana akan mengubah hasil Anda. Bunga utang yang bisa Anda hindari ditampilkan terpisah dan tidak dihitung sebagai penghematan bulanan."
+      },
+      "numbers": {
+        "title": "Dari mana angkanya",
+        "p1": "Setiap negara punya file angka umumnya sendiri: pendapatan, sewa, belanja dapur, listrik, bensin, biaya sekolah, dan lainnya, untuk tiga jenis rumah tangga. Angka ini adalah perkiraan untuk perencanaan, bukan angka pasti untuk kota Anda, dan sebagian masih dicocokkan dengan data lokal. Untuk negara lain, angka umum dihitung sebagai persentase dari pendapatan Anda sendiri.",
+        "p2": "Tabel menunjukkan kapan angka setiap negara terakhir ditinjau dan berapa sumber yang dipakai. Daftar sumbernya bisa Anda buka di bawah tabel."
+      },
+      "privacy": {
+        "title": "Privasi Anda",
+        "p1_html": "Anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami. Tidak ada akun dan tidak perlu mendaftar. Iklan membuat alat ini tetap gratis. Baca <a href=\"/privacy-policy/\">Kebijakan Privasi</a> selengkapnya."
+      },
+      "standards": {
+        "title": "Standar editorial",
+        "p1": "Semua isi di sini untuk edukasi umum. Ini bukan nasihat keuangan, pajak, atau hukum, dan tidak merekomendasikan produk atau penyedia mana pun. Angka-angkanya adalah perkiraan, dan kami menyebutkannya jika suatu angka belum pasti.",
+        "p2_html": "Menemukan kesalahan, angka yang tampak keliru, atau tautan rusak? Mohon <a href=\"/contact/?topic=bug\">beri tahu kami</a>. Kami membaca setiap pesan dan memperbaiki kesalahan secepat mungkin."
+      }
+    },
+    "table": {
+      "country": "Negara",
+      "currency": "Mata uang",
+      "reviewed": "Terakhir ditinjau",
+      "sources": "Sumber",
+      "otherCountries": "Negara lain",
+      "listTitle": "Sumber per negara",
+      "sourceCount": {
+        "other": "{count} sumber"
+      }
+    },
+    "seo": {
+      "title": "Tentang | Household Budget Optimizer",
+      "description": "Mengapa kalkulator anggaran rumah tangga yang gratis dan pribadi ini ada, cara kerjanya, dari mana angkanya, dan standar yang kami pegang.",
+      "ogTitle": "Tentang | Household Budget Optimizer",
+      "ogDescription": "Kalkulator gratis dan pribadi yang membantu rumah tangga menemukan dan menambal kebocoran uang. Cara kerjanya dan dari mana angkanya.",
+      "ldName": "Tentang Household Budget Optimizer",
+      "ldDescription": "Mengapa kalkulator anggaran rumah tangga yang gratis dan pribadi ini ada, cara kerjanya, dari mana angkanya, dan standar yang kami pegang."
+    }
   }
 }

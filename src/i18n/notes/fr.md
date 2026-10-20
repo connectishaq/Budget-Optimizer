@@ -85,3 +85,9 @@
 - Ride-hailing = « VTC »; Indian autos/cabs = « rickshaw ou taxi »; ojek and galon kept; Indonesian « tokens » (prepaid electricity codes) kept as « tokens ».
 - Currency amounts rewritten in French order (« 6,30 AED », « 1 444,70 Rp », « 500 SAR », « 63 € »), numbers unchanged. Times as « 6 h », « 20 h », « de 0 h à 8 h ».
 - Possibly long titles: ae-salik-nol (« Passez moins de portiques Salik et prenez la carte Nol pour vos trajets »), in-lpg-subsidy, pk-solar-ups, gb-council-tax-discount.
+
+## About page
+- Nav "About" = « À propos »; footer "About us" = « Qui sommes-nous » (common French site label, not a literal "about us").
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while older pages' SEO titles use « Optimiseur de budget familial »; pick one.
+- "Utilities" in how.item1 = « énergie et eau »; "Your privacy" = « Vos données personnelles » (more natural than « Votre vie privée »).
+- "plug the leaks" = « colmater les fuites »; "Editorial standards" = « Règles éditoriales » (alternative: « Charte éditoriale »).

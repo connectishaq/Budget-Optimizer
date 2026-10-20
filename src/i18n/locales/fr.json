@@ -1187,7 +1187,7 @@
     },
     "hero": {
       "privacy": "100 % confidentiel. Vos données financières sont traitées sur votre appareil et ne le quittent jamais.",
-      "title_html": "Optimiseur de budget familial <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; simulateur d’épargne</span>",
+      "title_html": "Calculateur de budget familial <span class=\"text-emerald-700 dark:text-emerald-400\">et planificateur d’épargne</span>",
       "lead": "Ajoutez vos dépenses mensuelles. Voyez où va votre argent, des moyens simples de dépenser moins, et combien vous pourriez économiser.",
       "start": "Commencer : environ 2 minutes",
       "receipt": {
@@ -1979,7 +1979,8 @@
       "nav": {
         "calculator": "Calculateur",
         "moneyTips": "Conseils",
-        "contact": "Contact"
+        "contact": "Contact",
+        "about": "À propos"
       },
       "navLabel": "Principal"
     },
@@ -2024,7 +2025,8 @@
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d’utilisation",
         "label": "Société",
-        "choices": "Choix de confidentialité"
+        "choices": "Choix de confidentialité",
+        "about": "Qui sommes-nous"
       },
       "disclaimer": {
         "title": "Avertissement financier",
@@ -2993,5 +2995,76 @@
     "lead": "Le lien est peut-être ancien ou mal saisi. Votre budget ne risque rien : il est enregistré dans ce navigateur, pas sur cette page.",
     "calculator": "Ouvrir le calculateur",
     "tips": "Lire les conseils"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "current": "À propos",
+      "label": "Fil d’Ariane"
+    },
+    "toc": {
+      "heading": "Sur cette page",
+      "why": "Pourquoi cet outil existe",
+      "who": "Qui le gère",
+      "how": "Comment fonctionne le calculateur",
+      "numbers": "D’où viennent les chiffres",
+      "privacy": "Vos données personnelles",
+      "standards": "Règles éditoriales"
+    },
+    "title": "À propos de Budget Optimizer",
+    "lead": "Un calculateur de budget familial gratuit et confidentiel, qui aide les familles à voir où va leur argent et à trouver des moyens simples d’en garder davantage.",
+    "sections": {
+      "why": {
+        "title": "Pourquoi cet outil existe",
+        "p1": "La plupart des foyers ne perdent pas leur argent d’un seul coup. Il file par de petites dépenses régulières, faciles à oublier : un abonnement que personne n’utilise, une facture qui a grimpé sans bruit, les intérêts d’une carte de crédit. Cet outil vous aide à repérer ces fuites et à les colmater.",
+        "p2": "Il est gratuit, sans inscription, et fonctionne dans de nombreux pays et langues, car bien gérer son budget ne devrait dépendre ni de l’endroit où l’on vit, ni de ce qu’on peut payer pour une application."
+      },
+      "who": {
+        "title": "Qui le gère",
+        "p1": "Budget Optimizer est un projet indépendant, créé et entretenu par une petite équipe qui veut rendre l’argent du foyer plus simple à comprendre."
+      },
+      "how": {
+        "title": "Comment fonctionne le calculateur",
+        "item1_html": "<strong>Vous saisissez vos dépenses.</strong> Revenus, logement, énergie et eau, transports, alimentation, crédits et abonnements, tels que vous les payez un mois normal. Les frais annuels sont répartis sur douze mois.",
+        "item2_html": "<strong>Nous les comparons à des foyers types.</strong> Chaque dépense est mise en regard d’une fourchette habituelle pour les foyers comme le vôtre, dans le pays que vous choisissez.",
+        "item3_html": "<strong>Nous proposons des changements, calcul à l’appui.</strong> Chaque idée indique la dépense concernée, la part qu’elle permet généralement d’économiser et le résultat, sous « Comment avons-nous calculé ? ». Si deux idées réduisent la même dépense, la seconde ne compte que ce qui reste.",
+        "item4_html": "<strong>Seul ce que vous choisissez compte.</strong> Les idées ajoutées à votre plan modifient vos résultats. Les intérêts évités sur vos dettes sont affichés à part et ne sont pas comptés comme une économie mensuelle."
+      },
+      "numbers": {
+        "title": "D’où viennent les chiffres",
+        "p1": "Chaque pays a son propre fichier de montants types : revenus, loyer, courses, électricité, carburant, frais de scolarité et plus encore, pour trois types de foyers. Ce sont des estimations pour vous aider à planifier, pas des chiffres exacts pour votre ville, et certaines sont encore en cours de vérification avec des données locales. Pour les autres pays, les montants types sont calculés en part de vos propres revenus.",
+        "p2": "Le tableau indique la date de dernière vérification des chiffres de chaque pays et le nombre de sources utilisées. La liste des sources se trouve juste en dessous."
+      },
+      "privacy": {
+        "title": "Vos données personnelles",
+        "p1_html": "Votre budget est calculé dans votre propre navigateur et ne nous est jamais envoyé. Pas de compte, rien à créer. La publicité permet à l’outil de rester gratuit. Lisez notre <a href=\"/privacy-policy/\">Politique de confidentialité</a> complète."
+      },
+      "standards": {
+        "title": "Règles éditoriales",
+        "p1": "Tout ce que vous trouvez ici est donné à titre d’information générale. Ce n’est pas un conseil financier, fiscal ou juridique, et nous ne recommandons aucun produit ni aucun prestataire. Les chiffres sont des estimations, et nous le précisons quand un montant est incertain.",
+        "p2_html": "Vous avez repéré une erreur, un chiffre qui semble faux ou un lien cassé ? <a href=\"/contact/?topic=bug\">Signalez-le-nous</a>. Nous lisons chaque message et corrigeons les erreurs dès que possible."
+      }
+    },
+    "table": {
+      "country": "Pays",
+      "currency": "Devise",
+      "reviewed": "Dernière vérification",
+      "sources": "Sources",
+      "otherCountries": "Autres pays",
+      "listTitle": "Sources par pays",
+      "sourceCount": {
+        "one": "{count} source",
+        "many": "{count} sources",
+        "other": "{count} sources"
+      }
+    },
+    "seo": {
+      "title": "À propos | Household Budget Optimizer",
+      "description": "Pourquoi ce calculateur de budget familial gratuit et confidentiel existe, comment il fonctionne, d’où viennent ses chiffres et les règles qui l’encadrent.",
+      "ogTitle": "À propos | Household Budget Optimizer",
+      "ogDescription": "Un calculateur gratuit et confidentiel qui aide les foyers à repérer et colmater les fuites d’argent. Son fonctionnement et l’origine de ses chiffres.",
+      "ldName": "À propos de Household Budget Optimizer",
+      "ldDescription": "Pourquoi ce calculateur de budget familial gratuit et confidentiel existe, comment il fonctionne, d’où viennent ses chiffres et les règles qui l’encadrent."
+    }
   }
 }

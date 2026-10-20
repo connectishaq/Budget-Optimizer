@@ -127,3 +127,10 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `de-energy-switch.why`: "ct/kWh" written as "céntimos/kWh" (MX would say "centavos de euro").
 - `sa-6000-kwh.why`: "villas" = "chalés" (Spain; MX: "casas grandes" / "residencias").
 - Possibly long titles for cards: `ae-salik-nol.title`, `id-krl-tj.title`, `in-lpg-subsidy.title`, `sa-bnpl.title`.
+
+## About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use the translated brand "Optimizador de Presupuesto"; align if the brand decision changes.
+- Nav "Acerca de" vs footer "Sobre nosotros" (English "About" / "About us"); either could be used in both places.
+- `about.sections.standards.p1` "información general" for "general education" (literal "educación general" reads like schooling).
+- `about.sections.how.item1_html` "suministros" for utilities; Mexico would say "servicios".
+- `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.

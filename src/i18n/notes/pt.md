@@ -95,3 +95,9 @@ numbers (e.g. 1 milhão), so it uses the same text as `other` everywhere.
 - "money-market fund" → "fundo de renda fixa (money market)"; Brazilian readers may know it as "fundo DI".
 - "villas" (`sa-6000-kwh`) → "casas grandes (villas)"; "split units" → "splits".
 - "Default Market Offer" (Australia) kept in English.
+
+## About page
+- Nav "About" = "Sobre"; footer "About us" = "Quem somos" (usual Brazilian site label).
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while other pages' SEO titles use "Otimizador de Orçamento Doméstico"; body text uses "Otimizador de Orçamento" (as `layout.brand`).
+- "Utilities" = "contas de consumo"; "groceries" = "mercado"; "plug the leaks" = "tapar os vazamentos".
+- "Avise a gente" (tell us) is informal on purpose; "Entre em contato" would be more neutral.

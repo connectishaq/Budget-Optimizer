@@ -112,3 +112,10 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - `us-open-enrollment` tip 2 "you are both covered" → "पति-पत्नी दोनों" (assumes a couple; alternative "आप दोनों").
 - `ca-phone-flanker`: "retention department" kept as "retention विभाग".
 - Possibly long card titles: `ae-rent-cheques.title`, `gb-council-tax-discount.title`, `id-krl-tj.title`, `sa-rent-instalments.title`.
+
+## About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use "बजट ऑप्टिमाइज़र"; align if the brand decision changes.
+- Nav and footer both use "हमारे बारे में" (English "About" / "About us").
+- `about.toc.standards` "संपादकीय मानक" (editorial standards) is formal; "हमारे नियम" would be plainer.
+- `about.sections.how.item1_html` utilities written as "बिजली-पानी जैसे बिल".
+- `about.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.

@@ -1147,7 +1147,7 @@
     },
     "hero": {
       "privacy": "100% Private. Your financial data is processed locally and never leaves your device.",
-      "title_html": "Household Budget Optimizer <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Savings Simulator</span>",
+      "title_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Savings Planner</span>",
       "lead": "Add your monthly bills. See where your money goes, simple ways to spend less, and how much you could save.",
       "start": "Start: about 2 minutes",
       "note": "Free. No sign-up. Works in 13 currencies, including rupees in lakh and crore.",
@@ -1931,7 +1931,8 @@
       "nav": {
         "calculator": "Calculator",
         "moneyTips": "Money tips",
-        "contact": "Contact"
+        "contact": "Contact",
+        "about": "About"
       },
       "navLabel": "Main"
     },
@@ -1976,7 +1977,8 @@
         "privacy": "Privacy Policy",
         "terms": "Terms of Use",
         "label": "Company",
-        "choices": "Privacy choices"
+        "choices": "Privacy choices",
+        "about": "About us"
       },
       "disclaimer": {
         "title": "Financial disclaimer",
@@ -2945,5 +2947,75 @@
     "lead": "The link may be old or mistyped. Your budget is safe: it’s saved in this browser, not on this page.",
     "calculator": "Open the calculator",
     "tips": "Read the money tips"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Home",
+      "current": "About",
+      "label": "Breadcrumb"
+    },
+    "toc": {
+      "heading": "On this page",
+      "why": "Why this tool exists",
+      "who": "Who runs it",
+      "how": "How the calculator works",
+      "numbers": "Where the numbers come from",
+      "privacy": "Your privacy",
+      "standards": "Editorial standards"
+    },
+    "title": "About Budget Optimizer",
+    "lead": "A free, private household budget calculator that helps families see where their money goes and find simple ways to keep more of it.",
+    "sections": {
+      "why": {
+        "title": "Why this tool exists",
+        "p1": "Most households don’t lose money in one big way. It slips out through small, regular costs that are easy to miss: a subscription nobody uses, a bill that crept up, interest on a card. This tool helps you find those leaks and plug them.",
+        "p2": "It is free, needs no sign-up and works in many countries and languages, because careful money planning shouldn’t depend on where you live or what you can pay for an app."
+      },
+      "who": {
+        "title": "Who runs it",
+        "p1": "Budget Optimizer is an independent project, built and looked after by a small team who want household money to be simpler to understand."
+      },
+      "how": {
+        "title": "How the calculator works",
+        "item1_html": "<strong>You enter your bills.</strong> Income, housing, utilities, transport, food, loans and subscriptions, as you pay them in a normal month. Costs that come once a year are spread over twelve months.",
+        "item2_html": "<strong>We compare them with typical households.</strong> Each bill is set against a typical range for households like yours in the country you choose.",
+        "item3_html": "<strong>We suggest changes, with the sum behind each.</strong> Every idea shows the bill it works on, the share it usually saves and the result, under “How did we get this?”. If two ideas cut the same bill, the second only counts what is left.",
+        "item4_html": "<strong>Only what you choose counts.</strong> Ideas you add to your plan change your results. Interest you would avoid on debt is shown separately and is not counted as money saved each month."
+      },
+      "numbers": {
+        "title": "Where the numbers come from",
+        "p1": "Each country has its own file of typical amounts: income, rent, groceries, power, fuel, school fees and more, for three kinds of household. These are estimates for planning, not exact figures for your city, and some are still being checked against local data. For any other country, typical amounts are worked out as shares of your own income.",
+        "p2": "The table shows when each country’s figures were last reviewed and how many sources were used. You can open the list of sources below it."
+      },
+      "privacy": {
+        "title": "Your privacy",
+        "p1_html": "Your budget is worked out in your own browser and is never sent to us. There is no account and nothing to sign up for. Ads keep the tool free. Read the full <a href=\"/privacy-policy/\">Privacy Policy</a>."
+      },
+      "standards": {
+        "title": "Editorial standards",
+        "p1": "Everything here is for general education. It is not financial, tax or legal advice, and it does not recommend any product or provider. Figures are estimates, and we say so when a number is uncertain.",
+        "p2_html": "Found a mistake, a figure that looks wrong or a broken link? Please <a href=\"/contact/?topic=bug\">tell us</a>. We read every message and correct errors as soon as we can."
+      }
+    },
+    "table": {
+      "country": "Country",
+      "currency": "Currency",
+      "reviewed": "Last reviewed",
+      "sources": "Sources",
+      "otherCountries": "Other countries",
+      "listTitle": "Sources by country",
+      "sourceCount": {
+        "one": "{count} source",
+        "other": "{count} sources"
+      }
+    },
+    "seo": {
+      "title": "About | Household Budget Optimizer",
+      "description": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it.",
+      "ogTitle": "About | Household Budget Optimizer",
+      "ogDescription": "A free, private calculator that helps households find and plug money leaks. How it works and where the numbers come from.",
+      "ldName": "About Household Budget Optimizer",
+      "ldDescription": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it."
+    }
   }
 }

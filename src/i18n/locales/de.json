@@ -1158,7 +1158,7 @@
     },
     "hero": {
       "privacy": "100 % privat. Deine Finanzdaten werden lokal verarbeitet und verlassen nie dein Gerät.",
-      "title_html": "Haushaltsbudget-Optimierer <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Sparrechner</span>",
+      "title_html": "Haushaltsbudget-Rechner <span class=\"text-emerald-700 dark:text-emerald-400\">&amp; Sparplaner</span>",
       "lead": "Trag deine monatlichen Rechnungen ein. Sieh, wohin dein Geld geht, wie du einfach weniger ausgibst und wie viel du sparen könntest.",
       "start": "Start: ca. 2 Minuten",
       "receipt": {
@@ -1942,7 +1942,8 @@
       "nav": {
         "calculator": "Rechner",
         "moneyTips": "Spartipps",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "about": "Über uns"
       },
       "navLabel": "Hauptmenü"
     },
@@ -1987,7 +1988,8 @@
         "privacy": "Datenschutzerklärung",
         "terms": "Nutzungsbedingungen",
         "label": "Unternehmen",
-        "choices": "Datenschutz-Einstellungen"
+        "choices": "Datenschutz-Einstellungen",
+        "about": "Über uns"
       },
       "disclaimer": {
         "title": "Finanzieller Haftungsausschluss",
@@ -2956,5 +2958,75 @@
     "lead": "Der Link ist vielleicht veraltet oder falsch geschrieben. Dein Budget ist sicher: Es ist in diesem Browser gespeichert, nicht auf dieser Seite.",
     "calculator": "Zum Rechner",
     "tips": "Spartipps lesen"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Startseite",
+      "current": "Über uns",
+      "label": "Brotkrumennavigation"
+    },
+    "toc": {
+      "heading": "Auf dieser Seite",
+      "why": "Warum es dieses Tool gibt",
+      "who": "Wer dahintersteht",
+      "how": "So funktioniert der Rechner",
+      "numbers": "Woher die Zahlen kommen",
+      "privacy": "Deine Privatsphäre",
+      "standards": "Redaktionelle Grundsätze"
+    },
+    "title": "Über Budget Optimizer",
+    "lead": "Ein kostenloser, privater Haushaltsrechner, der Familien zeigt, wohin ihr Geld fließt, und einfache Wege findet, mehr davon zu behalten.",
+    "sections": {
+      "why": {
+        "title": "Warum es dieses Tool gibt",
+        "p1": "Die meisten Haushalte verlieren ihr Geld nicht auf einen Schlag. Es versickert in kleinen, regelmäßigen Kosten, die man leicht übersieht: ein Abo, das keiner nutzt, eine Rechnung, die still gestiegen ist, Zinsen auf der Kreditkarte. Dieses Tool hilft dir, diese Lecks zu finden und zu stopfen.",
+        "p2": "Es ist kostenlos, braucht keine Anmeldung und funktioniert in vielen Ländern und Sprachen. Denn ein gut geplantes Budget sollte nicht davon abhängen, wo du wohnst oder was du für eine App bezahlen kannst."
+      },
+      "who": {
+        "title": "Wer dahintersteht",
+        "p1": "Budget Optimizer ist ein unabhängiges Projekt. Ein kleines Team baut und pflegt es, weil es Haushaltsfinanzen leichter verständlich machen möchte."
+      },
+      "how": {
+        "title": "So funktioniert der Rechner",
+        "item1_html": "<strong>Du trägst deine Ausgaben ein.</strong> Einkommen, Wohnen, Nebenkosten, Mobilität, Essen, Kredite und Abos, so wie du sie in einem normalen Monat zahlst. Jährliche Kosten werden auf zwölf Monate verteilt.",
+        "item2_html": "<strong>Wir vergleichen sie mit typischen Haushalten.</strong> Jede Ausgabe wird einer üblichen Spanne für Haushalte wie deinen im gewählten Land gegenübergestellt.",
+        "item3_html": "<strong>Wir schlagen Änderungen vor – mit der Rechnung dazu.</strong> Jede Idee zeigt unter „Wie kommen wir darauf?“, um welche Ausgabe es geht, welchen Anteil sie meist spart und was dabei herauskommt. Senken zwei Ideen dieselbe Ausgabe, zählt die zweite nur, was übrig ist.",
+        "item4_html": "<strong>Nur was du auswählst, zählt.</strong> Ideen, die du in deinen Plan übernimmst, verändern deine Ergebnisse. Zinsen, die du bei Schulden vermeiden würdest, werden getrennt gezeigt und nicht als monatliche Ersparnis gezählt."
+      },
+      "numbers": {
+        "title": "Woher die Zahlen kommen",
+        "p1": "Jedes Land hat eine eigene Datei mit typischen Beträgen: Einkommen, Miete, Lebensmittel, Strom, Sprit, Schulgebühren und mehr, für drei Arten von Haushalten. Das sind Schätzwerte zum Planen, keine genauen Zahlen für deine Stadt, und einige werden noch mit lokalen Daten abgeglichen. Für alle anderen Länder werden typische Beträge als Anteile deines eigenen Einkommens berechnet.",
+        "p2": "Die Tabelle zeigt, wann die Zahlen für jedes Land zuletzt geprüft wurden und wie viele Quellen dafür genutzt wurden. Darunter kannst du die Liste der Quellen aufklappen."
+      },
+      "privacy": {
+        "title": "Deine Privatsphäre",
+        "p1_html": "Dein Budget wird in deinem eigenen Browser berechnet und nie an uns geschickt. Es gibt kein Konto und keine Anmeldung. Werbung hält das Tool kostenlos. Lies die vollständige <a href=\"/privacy-policy/\">Datenschutzerklärung</a>."
+      },
+      "standards": {
+        "title": "Redaktionelle Grundsätze",
+        "p1": "Alles hier dient der allgemeinen Information. Es ist keine Finanz-, Steuer- oder Rechtsberatung und empfiehlt keine Produkte oder Anbieter. Die Zahlen sind Schätzungen, und wir sagen es dazu, wenn ein Wert unsicher ist.",
+        "p2_html": "Du hast einen Fehler, eine merkwürdige Zahl oder einen kaputten Link gefunden? <a href=\"/contact/?topic=bug\">Sag uns Bescheid</a>. Wir lesen jede Nachricht und korrigieren Fehler so schnell wie möglich."
+      }
+    },
+    "table": {
+      "country": "Land",
+      "currency": "Währung",
+      "reviewed": "Zuletzt geprüft",
+      "sources": "Quellen",
+      "otherCountries": "Andere Länder",
+      "listTitle": "Quellen nach Land",
+      "sourceCount": {
+        "one": "{count} Quelle",
+        "other": "{count} Quellen"
+      }
+    },
+    "seo": {
+      "title": "Über uns | Household Budget Optimizer",
+      "description": "Warum es diesen kostenlosen, privaten Haushaltsbudget-Rechner gibt, wie er funktioniert, woher seine Zahlen kommen und nach welchen Grundsätzen wir arbeiten.",
+      "ogTitle": "Über uns | Household Budget Optimizer",
+      "ogDescription": "Ein kostenloser, privater Rechner, der Haushalten hilft, Geldlecks zu finden und zu stopfen. So funktioniert er und daher kommen die Zahlen.",
+      "ldName": "Über Household Budget Optimizer",
+      "ldDescription": "Warum es diesen kostenlosen, privaten Haushaltsbudget-Rechner gibt, wie er funktioniert, woher seine Zahlen kommen und nach welchen Grundsätzen wir arbeiten."
+    }
   }
 }

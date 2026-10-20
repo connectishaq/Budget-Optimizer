@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { prerenderLocales, alternateLinks, sitemapXml } from './scripts/prerender-locales.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PAGES = ['privacy-policy', 'terms-of-use', 'contact'];
+const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about'];
 
 /**
  * Injects site-specific values (domain, AdSense, contact email) into index.html
@@ -53,6 +53,7 @@ function siteConfig(env) {
         .replace('<!--SITE_HEADER-->', () => partial('header'))
         .replace('<!--SITE_FOOTER-->', () => partial('footer'))
         .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
+        .replace('<!--COUNTRY_SOURCES-->', () => countrySourcesHtml())
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
@@ -72,6 +73,7 @@ function siteConfig(env) {
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/__SITE_URL__/g, siteUrl));
         fs.writeFileSync(sitemap, sitemapXml(siteUrl, today, [
           { path: 'contact', priority: '0.5' },
+          { path: 'about', priority: '0.5' },
           { path: 'privacy-policy', priority: '0.3' },
           { path: 'terms-of-use', priority: '0.3' }
         ]));
@@ -93,6 +95,45 @@ function siteConfig(env) {
       }
     }
   };
+}
+
+/**
+ * About page, "Where the numbers come from": a table of every country file
+ * (currency, last reviewed, number of sources) and the source lists, read from
+ * src/data/countries so it never goes out of date. English names and dates;
+ * src/about.js shows them in the visitor's language.
+ */
+function countrySourcesHtml() {
+  const dir = path.resolve(__dirname, 'src/data/countries');
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const names = new Intl.DisplayNames(['en'], { type: 'region' });
+  const files = fs.readdirSync(dir).filter((f) => /^([A-Z]{2}|GLOBAL)\.json$/.test(f))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')))
+    // Only public web sources are listed and counted (not internal notes such as "v1 benchmark set")
+    .map((c) => ({ ...c, sources: (c.sources || []).filter((src) => /^https?:\/\//.test(src.url || '')) }))
+    .sort((a, b) => (a.code === 'GLOBAL') - (b.code === 'GLOBAL') || names.of(a.code === 'GLOBAL' ? 'US' : a.code).localeCompare(names.of(b.code === 'GLOBAL' ? 'US' : b.code)));
+  const name = (c) => (c.code === 'GLOBAL'
+    ? '<span data-i18n="about.table.otherCountries">Other countries</span>'
+    : `<span data-country-name="${c.code}">${esc(names.of(c.code))}</span>`);
+  const date = (d) => `<time datetime="${esc(d)}">${esc(new Date(`${d}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }))}</time>`;
+  const count = (n) => `<span data-i18n="about.table.sourceCount" data-i18n-vars='{"count":${n}}'>${n === 1 ? '1 source' : `${n} sources`}</span>`;
+  const rows = files.map((c) => `<tr><td>${name(c)}</td><td>${esc(c.currency || '')}</td><td>${date(c.lastReviewed)}</td><td>${c.sources.length}</td></tr>`).join('\n              ');
+  const lists = files.filter((c) => c.sources.length).map((c) => {
+    const items = c.sources.map((s) => `<li><a href="${esc(s.url)}" rel="noopener nofollow" target="_blank">${esc(s.title)}</a></li>`).join('');
+    return `<details class="faq"><summary><span>${name(c)} · ${count(c.sources.length)}</span></summary><ul class="mt-0 pb-4 pe-4 ps-9 text-sm">${items}</ul></details>`;
+  }).join('\n          ');
+  return `<div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col" class="text-start" data-i18n="about.table.country">Country</th><th scope="col" class="text-start" data-i18n="about.table.currency">Currency</th><th scope="col" class="text-start" data-i18n="about.table.reviewed">Last reviewed</th><th scope="col" class="text-start" data-i18n="about.table.sources">Sources</th></tr></thead>
+              <tbody>
+              ${rows}
+              </tbody>
+            </table>
+          </div>
+          <h3 class="mt-6 font-semibold text-slate-900 dark:text-white" data-i18n="about.table.listTitle">Sources by country</h3>
+          <div class="mt-3 space-y-3">
+          ${lists}
+          </div>`;
 }
 
 /**

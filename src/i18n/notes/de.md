@@ -125,3 +125,9 @@ reviewed**. A German lawyer should check them before launch, in particular:
 - `sa-bnpl`: "buy now, pay later" → „Jetzt kaufen, später zahlen“; "BNPL"/"Ratenkauf" are alternatives.
 - `de-jobticket`: uses the official name "Deutschlandticket Job"; check the 63 € price is still current at launch.
 - `fr-prime-transport`: "transit pass" → "Zeitkarte" (covers monthly and yearly passes).
+
+## About page
+- Nav "About" and footer "About us" are both "Über uns" (no natural shorter distinction in German).
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while other pages' SEO titles use "Haushaltsbudget-Optimierer"; please align.
+- "Utilities" = "Nebenkosten", "transport" = "Mobilität"; "money leaks" = "Geldlecks" (slightly figurative).
+- how.item3 reorders the sentence so „Wie kommen wir darauf?“ comes first; "Editorial standards" = "Redaktionelle Grundsätze".

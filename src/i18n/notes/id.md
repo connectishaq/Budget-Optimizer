@@ -127,3 +127,9 @@ Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approxim
 - `es-revolving.tips.3`: "usurious" is "melanggar hukum (usura)"; "riba" was avoided because of its religious meaning.
 - `pk-protected-slab`: "units" is kept in quotes because that is the word printed on Pakistani bills.
 - Long titles that may wrap on small cards: `ae-dewa-slab.title`, `ae-salik-nol.title`, `id-krl-tj.title`.
+
+## About page
+- Nav "About" = "Tentang"; footer "About us" = "Tentang kami".
+- `about.seo.*` keep the English brand "Household Budget Optimizer", consistent with the other id SEO titles.
+- "Utilities" = "listrik dan air"; "plug the leaks" = "menambal kebocoran"; "Who runs it" = "Siapa pengelolanya".
+- "shares of your own income" = "persentase dari pendapatan Anda" (porsi would be more literal).

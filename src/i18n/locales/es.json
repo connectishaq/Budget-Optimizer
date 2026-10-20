@@ -1187,7 +1187,7 @@
     },
     "hero": {
       "privacy": "100% privado. Tus datos financieros se procesan en tu dispositivo y nunca salen de él.",
-      "title_html": "Optimizador de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">y simulador de ahorro</span>",
+      "title_html": "Calculadora de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">y planificador de ahorro</span>",
       "lead": "Añade tus facturas mensuales. Descubre en qué se va tu dinero, formas sencillas de gastar menos y cuánto podrías ahorrar.",
       "start": "Empezar: unos 2 minutos",
       "receipt": {
@@ -1979,7 +1979,8 @@
       "nav": {
         "calculator": "Calculadora",
         "moneyTips": "Consejos de dinero",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "about": "Acerca de"
       },
       "navLabel": "Principal"
     },
@@ -2024,7 +2025,8 @@
         "privacy": "Política de privacidad",
         "terms": "Condiciones de uso",
         "label": "Empresa",
-        "choices": "Opciones de privacidad"
+        "choices": "Opciones de privacidad",
+        "about": "Sobre nosotros"
       },
       "disclaimer": {
         "title": "Aviso financiero",
@@ -2993,5 +2995,76 @@
     "lead": "Puede que el enlace sea antiguo o tenga un error. Tu presupuesto está a salvo: se guarda en este navegador, no en esta página.",
     "calculator": "Abrir la calculadora",
     "tips": "Leer los consejos"
+  },
+  "about": {
+    "breadcrumb": {
+      "home": "Inicio",
+      "current": "Acerca de",
+      "label": "Ruta de navegación"
+    },
+    "toc": {
+      "heading": "En esta página",
+      "why": "Por qué existe esta herramienta",
+      "who": "Quién la gestiona",
+      "how": "Cómo funciona la calculadora",
+      "numbers": "De dónde salen las cifras",
+      "privacy": "Tu privacidad",
+      "standards": "Criterios editoriales"
+    },
+    "title": "Acerca del Optimizador de Presupuesto",
+    "lead": "Una calculadora de presupuesto familiar gratuita y privada que ayuda a las familias a ver en qué se va su dinero y a encontrar formas sencillas de conservar más.",
+    "sections": {
+      "why": {
+        "title": "Por qué existe esta herramienta",
+        "p1": "La mayoría de los hogares no pierden dinero de golpe. Se les escapa en gastos pequeños y regulares que es fácil pasar por alto: una suscripción que nadie usa, una factura que ha ido subiendo, los intereses de una tarjeta. Esta herramienta te ayuda a encontrar esas fugas y a taparlas.",
+        "p2": "Es gratis, no necesita registro y funciona en muchos países e idiomas, porque planificar bien el dinero no debería depender de dónde vives ni de lo que puedas pagar por una app."
+      },
+      "who": {
+        "title": "Quién la gestiona",
+        "p1": "Optimizador de Presupuesto es un proyecto independiente, creado y mantenido por un pequeño equipo que quiere que el dinero de casa sea más fácil de entender."
+      },
+      "how": {
+        "title": "Cómo funciona la calculadora",
+        "item1_html": "<strong>Introduces tus facturas.</strong> Ingresos, vivienda, suministros, transporte, comida, préstamos y suscripciones, tal como los pagas en un mes normal. Los gastos que llegan una vez al año se reparten entre doce meses.",
+        "item2_html": "<strong>Las comparamos con hogares típicos.</strong> Cada factura se compara con un rango habitual para hogares como el tuyo en el país que elijas.",
+        "item3_html": "<strong>Te sugerimos cambios, con la cuenta detrás de cada uno.</strong> Cada idea muestra la factura sobre la que actúa, el porcentaje que suele ahorrar y el resultado, en «¿Cómo lo hemos calculado?». Si dos ideas reducen la misma factura, la segunda solo cuenta lo que queda.",
+        "item4_html": "<strong>Solo cuenta lo que tú eliges.</strong> Las ideas que añades a tu plan cambian tus resultados. Los intereses de deudas que te ahorrarías se muestran aparte y no se cuentan como dinero ahorrado cada mes."
+      },
+      "numbers": {
+        "title": "De dónde salen las cifras",
+        "p1": "Cada país tiene su propio archivo de importes típicos: ingresos, alquiler, compra, luz, combustible, gastos escolares y más, para tres tipos de hogar. Son estimaciones para planificar, no cifras exactas de tu ciudad, y algunas aún se están contrastando con datos locales. Para cualquier otro país, los importes típicos se calculan como porcentajes de tus propios ingresos.",
+        "p2": "La tabla muestra cuándo se revisaron por última vez las cifras de cada país y cuántas fuentes se usaron. Debajo puedes abrir la lista de fuentes."
+      },
+      "privacy": {
+        "title": "Tu privacidad",
+        "p1_html": "Tu presupuesto se calcula en tu propio navegador y nunca se nos envía. No hay cuenta ni nada en lo que registrarse. Los anuncios mantienen la herramienta gratis. Lee la <a href=\"/privacy-policy/\">Política de privacidad</a> completa."
+      },
+      "standards": {
+        "title": "Criterios editoriales",
+        "p1": "Todo lo que hay aquí es información general. No es asesoramiento financiero, fiscal ni legal, y no recomienda ningún producto ni proveedor. Las cifras son estimaciones, y lo decimos cuando un número es incierto.",
+        "p2_html": "¿Has encontrado un error, una cifra que parece incorrecta o un enlace roto? Por favor, <a href=\"/contact/?topic=bug\">avísanos</a>. Leemos todos los mensajes y corregimos los errores lo antes posible."
+      }
+    },
+    "table": {
+      "country": "País",
+      "currency": "Moneda",
+      "reviewed": "Última revisión",
+      "sources": "Fuentes",
+      "otherCountries": "Otros países",
+      "listTitle": "Fuentes por país",
+      "sourceCount": {
+        "one": "{count} fuente",
+        "many": "{count} de fuentes",
+        "other": "{count} fuentes"
+      }
+    },
+    "seo": {
+      "title": "Acerca de | Household Budget Optimizer",
+      "description": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían.",
+      "ogTitle": "Acerca de | Household Budget Optimizer",
+      "ogDescription": "Una calculadora gratuita y privada que ayuda a los hogares a encontrar y tapar fugas de dinero. Cómo funciona y de dónde salen las cifras.",
+      "ldName": "Acerca de Household Budget Optimizer",
+      "ldDescription": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían."
+    }
   }
 }

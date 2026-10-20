@@ -63,3 +63,10 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - `sa-6000-kwh`: "halalas" → "ہللہ"; "majlis" → "مجلس".
 - `sa-bnpl` title quotes "ابھی خریدیں، بعد میں ادا کریں" for buy-now-pay-later; "BNPL" is not widely known in Pakistan.
 - Longer than English: `ae-salik-nol.title`, `id-galon-depot.title`, `sa-rent-instalments.title` may wrap on small cards.
+
+## About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use "بجٹ آپٹیمائزر"; align if the brand decision changes.
+- Nav and footer both use "ہمارے بارے میں" (English "About" / "About us").
+- `about.toc.standards` "ادارتی اصول" (editorial standards) is formal; "ہمارے اصول" would be plainer.
+- `about.table.sourceCount` uses "ذریعہ / ذرائع" for sources; "سورس" is a common loan word alternative.
+- `about.sections.how.item1_html` utilities as "بجلی، گیس اور پانی".

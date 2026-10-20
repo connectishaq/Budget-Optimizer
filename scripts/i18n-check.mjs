@@ -63,7 +63,8 @@ const warnings = [];
 const used = new Set();
 const namespaces = new Set(Object.keys(en).map((k) => k.split('.')[0]));
 const dynamicPrefixes = new Set();
-const jsFiles = walk(path.join(root, 'src'), ['.js']);
+// vite.config.js builds some markup too (the About page's country table)
+const jsFiles = [...walk(path.join(root, 'src'), ['.js']), path.join(root, 'vite.config.js')];
 for (const f of jsFiles) {
   const src = read(f);
   for (const m of src.matchAll(/\bt\(\s*(['"])([\w.-]+)\1/g)) used.add(m[2]);
@@ -80,6 +81,7 @@ for (const f of jsFiles) {
 const htmlFiles = [
   path.join(root, 'index.html'),
   path.join(root, '404.html'),
+  path.join(root, 'about', 'index.html'),
   ...['privacy-policy', 'terms-of-use', 'contact'].map((p) => path.join(root, p, 'index.html')),
   ...walk(path.join(root, 'src/partials'), ['.html'])
 ].filter((f) => fs.existsSync(f));
@@ -119,7 +121,7 @@ for (const f of htmlFiles) {
 }
 
 // Head/SEO keys are read by the build (Phase 8), not by page code
-const buildPrefixes = ['seo.', 'privacy.seo.', 'terms.seo.', 'contact.seo.'];
+const buildPrefixes = ['seo.', 'privacy.seo.', 'terms.seo.', 'contact.seo.', 'about.seo.'];
 const isUsed = (k) => used.has(k) || buildPrefixes.some((p) => k.startsWith(p)) || [...dynamicPrefixes].some((p) => k.startsWith(p));
 
 for (const k of used) if (!(k in en)) errors.push(`missing in en.json: ${k}`);
