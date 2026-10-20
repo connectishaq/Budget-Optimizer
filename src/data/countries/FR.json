@@ -1117,7 +1117,8 @@
         "value": 0.3,
         "verify": true,
         "note": "Estimate: only applies to people not already claiming the 50% refund"
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "fr-energy-offer",
@@ -1133,7 +1134,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Estimate; market offers typically sit a few % to ~15% below the TRV"
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "fr-loi-hamon",
@@ -1149,7 +1151,8 @@
         "value": 0.12,
         "verify": true,
         "note": "Same as the general insurance re-quote rule; not a French statistic"
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

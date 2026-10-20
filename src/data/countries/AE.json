@@ -1101,7 +1101,8 @@
         "value": 0.05,
         "verify": true,
         "note": "Judgement estimate of the discount for paying in fewer cheques."
-      }
+      },
+      "effort": "Medium"
     },
     {
       "id": "ae-dewa-slab",
@@ -1117,7 +1118,8 @@
         "value": 0.12,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "ae-salik-nol",
@@ -1133,7 +1135,8 @@
         "value": 0.2,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Medium"
     }
   ],
   "hideRules": [],

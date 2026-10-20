@@ -2473,5 +2473,475 @@
         "help": "Was du jeden Monat für deine Krankenversicherung zahlst, inklusive des Betrags, der für einen Arbeitgebertarif vom Lohn abgezogen wird, oder eines Marketplace-Tarifs nach Steuergutschrift."
       }
     }
+  },
+  "localTips": {
+    "ae-rent-cheques": {
+      "label": "Miete",
+      "noun": "Miete",
+      "title": "Weniger Mietschecks anbieten, weniger Miete zahlen",
+      "why": "Die Miete wird pro Jahr vereinbart und mit 1–12 vordatierten Schecks bezahlt. Vermieter nehmen oft weniger, wenn du mit 1 oder 2 Schecks zahlst. Trag deine Miete hier als Jahresbetrag geteilt durch 12 ein.",
+      "evidence": "Wer mit weniger Schecks zahlt, spart bei der Jahresmiete oft",
+      "tips": {
+        "1": "Frag, wie hoch die Miete mit 1 oder 2 Schecks statt mit 4 oder mehr wäre.",
+        "2": "Prüf vor der Verlängerung den RERA-Mietindex-Rechner: Er zeigt, ob dein Vermieter die Miete erhöhen darf.",
+        "3": "Fang 90 Tage vor Vertragsende mit der Suche an; Vermieter müssen jede Erhöhung 90 Tage vorher ankündigen."
+      }
+    },
+    "ae-dewa-slab": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Halte deinen Strom aus den teuren DEWA-Stufen heraus",
+      "why": "DEWA (der Strom- und Wasserversorger in Dubai) verlangt pro kWh mehr, je höher dein Monatsverbrauch in den Tarifstufen steigt. Deshalb kostet jede Einheit in den Sommermonaten mit Klimaanlage deutlich mehr.",
+      "evidence": "Wer nicht in die obersten Stufen rutscht, spart meist",
+      "tips": {
+        "1": "Stell die Klimaanlage auf 24 °C oder höher und nutz Zeitschaltungen, damit sie keine leeren Räume kühlt.",
+        "2": "Lass Lüftungskanäle und Filter der Klimaanlage vor dem Sommer reinigen.",
+        "3": "Vergleich deinen Monatsverbrauch in kWh in der DEWA-App mit den Stufengrenzen auf deiner Rechnung."
+      }
+    },
+    "ae-salik-nol": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "Weniger Salik-Mautstellen, mehr Nol-Karte auf dem Arbeitsweg",
+      "why": "Jede Fahrt durch eine Salik-Mautstelle kostet zur Stoßzeit 6,30 AED und sonst 4,20 AED; vier Durchfahrten zur Stoßzeit pro Arbeitstag ergeben über 500 AED im Monat.",
+      "evidence": "Weniger Salik-Durchfahrten zur Stoßzeit und die Nol-Karte für einige Fahrten sparen meist",
+      "tips": {
+        "1": "Prüf, ob eine Strecke ohne Salik-Mautstellen nur ein paar Minuten länger dauert.",
+        "2": "Fahr kurz vor 6 Uhr oder nach 20 Uhr, wenn die Maut niedriger ist.",
+        "3": "Nimm an ein paar Tagen pro Woche die Metro mit der Nol-Karte und vergleich die Kosten."
+      }
+    },
+    "au-energy-made-easy": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Vergleich deinen Stromtarif auf Energy Made Easy",
+      "why": "Viele Haushalte haben Tarife auf oder nahe dem Default Market Offer (dem staatlich festgelegten Standardpreis), während Marktangebote desselben oder anderer Anbieter oft günstiger sind.",
+      "evidence": "Ein Wechsel zu einem günstigeren Marktangebot spart oft",
+      "tips": {
+        "1": "Lad deine Rechnung bei Energy Made Easy (in Victoria: Victorian Energy Compare) hoch, um günstigere Tarife für deinen tatsächlichen Verbrauch zu sehen.",
+        "2": "Bitte deinen jetzigen Anbieter, das beste Angebot mitzugehen, bevor du wechselst.",
+        "3": "Wenn du Solarstrom hast oder deinen Verbrauch verschieben kannst, vergleich zeitabhängige Tarife mit günstigen Preisen zur Mittagszeit."
+      }
+    },
+    "au-health-cover-review": {
+      "label": "Private Krankenversicherung",
+      "noun": "die private Krankenversicherung",
+      "title": "Prüf Tarifstufe und Zusatzleistungen deiner privaten Krankenversicherung",
+      "why": "Die Beiträge steigen jedes Jahr im April, und viele zahlen für Zusatzleistungen (extras) oder Krankenhausleistungen, die sie nie nutzen.",
+      "evidence": "Wer ungenutzte Leistungen und Zusatzleistungen streicht, spart meist",
+      "tips": {
+        "1": "Vergleich Tarife auf privatehealth.gov.au, der kostenlosen Vergleichsseite der Regierung.",
+        "2": "Prüf, ob du die Zusatzleistungen so oft nutzt, dass sie den Beitrag wert sind; wenn nicht, streich sie oder wähl eine günstigere Stufe.",
+        "3": "Eine höhere Selbstbeteiligung senkt den Beitrag; überleg auch, vor dem 1. April für das ganze Jahr zu zahlen, um den alten Preis zu sichern."
+      }
+    },
+    "br-sair-do-rotativo": {
+      "label": "Kreditkarten",
+      "noun": "Kreditkartenzinsen",
+      "title": "Raus aus dem Rotativo der Kreditkarte – jetzt",
+      "why": "Der Rotativo (revolvierender Kartenkredit) kostete im August 2026 im Schnitt etwa 445 % im Jahr, die Ratenzahlung der Kartenrechnung etwa 192 % im Jahr. Fast jeder andere Kredit ist günstiger.",
+      "evidence": "Den Saldo in einen deutlich günstigeren Kredit umzuschulden, vermeidet meist",
+      "tips": {
+        "1": "Zahl die ganze Kartenrechnung, wenn du es irgendwie kannst; zahlst du nur den Mindestbetrag, landet der Rest im Rotativo.",
+        "2": "Wenn das nicht geht, lös den Saldo mit einem Kredit mit Lohnabzug (consignado) oder einem Privatkredit zu einem viel niedrigeren Zins ab, statt das Ratenangebot der Bank anzunehmen.",
+        "3": "Verhandle überfällige Kartenschulden über deine Bank oder Serasa Limpa Nome neu; dort sind Nachlässe üblich."
+      }
+    },
+    "br-bandeira-chuveiro": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Elektrodusche und Bandeira im Griff",
+      "why": "Elektroduschen gehören zu den größten Stromfressern in brasilianischen Haushalten, und in Monaten mit roter Flagge (bandeira vermelha) kommt auf jede kWh ein Aufschlag.",
+      "evidence": "Kürzer und auf der Sommerstufe zu duschen, spart meist",
+      "tips": {
+        "1": "Stell die Dusche auf die Stufe „verão“ (Sommer) und dusch nur 5–8 Minuten.",
+        "2": "Schau auf deiner Rechnung nach der Bandeira und nutz Klimaanlage und Trockner in Monaten mit roter Flagge weniger.",
+        "3": "Frag deinen Netzbetreiber, ob du Anspruch auf den Sozialtarif (Tarifa Social) hast."
+      }
+    },
+    "ca-phone-flanker": {
+      "label": "Internet & Telefon",
+      "noun": "Internet und Telefon",
+      "title": "Wechsle mit deinem Handyvertrag zu einer günstigeren Marke",
+      "why": "Den drei großen Anbietern gehören günstigere Marken im selben Netz, und deren Tarife kosten für dasselbe Datenvolumen oft viel weniger.",
+      "evidence": "Ein Wechsel zu einer günstigeren Marke im selben Netz spart oft",
+      "tips": {
+        "1": "Vergleich deinen Tarif mit Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom oder Virgin Plus; deine Nummer kannst du mitnehmen.",
+        "2": "Ruf die Kundenrückgewinnung deines Internetanbieters an und frag nach dem Neukundenpreis – oder wechsle.",
+        "3": "Wenn du über deinen Vertrag ein Handy abbezahlst, prüf, wann das endet, und wechsle dann zu einem günstigeren Tarif ohne Gerät."
+      }
+    },
+    "ca-home-energy-rebates": {
+      "label": "Wasser & Gas",
+      "noun": "Wasser und Gas",
+      "title": "Nutz Energie-Zuschüsse für dein Zuhause vor dem Winter",
+      "why": "Heizen ist in den meisten kanadischen Haushalten der größte Energiekostenpunkt, und Provinzen und Versorger bezahlen viele Modernisierungen.",
+      "evidence": "Geförderte Dämmung und eine bessere Heizung sparen meist",
+      "tips": {
+        "1": "Prüf die Förderprogramme deiner Provinz und deines Gasversorgers (zum Beispiel Enbridge oder FortisBC) für Dämmung, smarte Thermostate und Wärmepumpen.",
+        "2": "Dichte Zugluft an Türen und Fenstern ab und dreh die Heizung nachts und wenn du weg bist um 2–3 °C herunter.",
+        "3": "Wenn dein Versorger gleichbleibende Monatsbeträge anbietet, nutz sie, um böse Überraschungen im Winter zu vermeiden (die Gesamtkosten sinken dadurch nicht)."
+      }
+    },
+    "de-energy-switch": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Raus aus der Grundversorgung beim Strom",
+      "why": "Haushalte, die noch in der Grundversorgung des örtlichen Versorgers sind, zahlen rund 40 ct/kWh, während die günstigsten Neukundentarife bei etwa 30 ct/kWh liegen.",
+      "evidence": "Wer die Grundversorgung verlässt, spart meist",
+      "tips": {
+        "1": "Such deinen Jahresverbrauch in kWh auf der letzten Rechnung heraus und vergleich Tarife bei Check24 oder Verivox.",
+        "2": "Wähl einen Tarif mit 12 Monaten Preisgarantie und ohne Vorauskasse.",
+        "3": "Stell dir eine Erinnerung, um vor Ende des ersten Jahres neu zu vergleichen, wenn die Boni auslaufen."
+      }
+    },
+    "de-gas-switch": {
+      "label": "Wasser & Gas",
+      "noun": "Wasser und Gas",
+      "title": "Wechsle deinen Gasanbieter",
+      "why": "Gaspreise für Neukunden liegen deutlich unter der Grundversorgung und vielen langjährigen Verträgen.",
+      "evidence": "Ein Wechsel des Gasanbieters spart meist",
+      "tips": {
+        "1": "Vergleich Gastarife mit deinem Jahresverbrauch in kWh aus der letzten Abrechnung.",
+        "2": "Prüf, ob dein monatlicher Abschlag zu deinem echten Verbrauch passt, damit dir keine hohe Nachzahlung droht.",
+        "3": "Entlüfte die Heizkörper und dreh die Heizung um 1 °C herunter; jedes Grad spart etwa 6 %."
+      }
+    },
+    "de-jobticket": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "Frag nach dem Deutschlandticket Job",
+      "why": "Wenn dein Arbeitgeber mindestens 25 % des Deutschlandtickets übernimmt, sinkt der Preis um weitere 5 %, sodass dein Anteil deutlich unter 63 € fallen kann.",
+      "evidence": "Ein vom Arbeitgeber bezuschusstes Deutschlandticket spart meist",
+      "tips": {
+        "1": "Frag in der Personalabteilung, ob es das Deutschlandticket Job gibt.",
+        "2": "Verzichte auf Einzelfahrscheine und örtliche Monatskarten, die das Deutschlandticket schon abdeckt.",
+        "3": "Prüf, ob dein Bundesland eine günstigere Version für Studierende oder ein Sozialticket anbietet."
+      }
+    },
+    "es-pvpc-vs-libre": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Vergleich den PVPC mit einem Festpreistarif",
+      "why": "Der regulierte PVPC-Tarif folgt Stunde für Stunde den Großhandelspreisen; je nach deinen Gewohnheiten kann ein Festpreistarif auf dem freien Markt günstiger sein – oder umgekehrt.",
+      "evidence": "Der Tarif, der zu deinen Gewohnheiten passt, spart meist",
+      "tips": {
+        "1": "Vergleich mit dem Tarifrechner der CNMC (spanische Markt- und Wettbewerbsbehörde) anhand deiner letzten Rechnungen.",
+        "2": "Senk deine vertraglich vereinbarte Leistung (potencia), wenn die Sicherung nie herausspringt.",
+        "3": "Lass Waschmaschine und Spülmaschine in den günstigen Zeiten laufen (00:00–08:00 Uhr und am Wochenende)."
+      }
+    },
+    "es-revolving": {
+      "label": "Kreditkarten",
+      "noun": "Kreditkartenzinsen",
+      "title": "Raus aus dem revolvierenden Kredit",
+      "why": "Revolving-Karten kosten rund 22–24 % effektiven Jahreszins (TAE), und niedrige feste Raten können dich jahrelang in den Schulden halten.",
+      "evidence": "Den revolvierenden Kredit mit einem günstigeren Darlehen abzulösen, vermeidet meist",
+      "tips": {
+        "1": "Stell die Karte von „pago aplazado“ (Teilzahlung) auf Zahlung des vollen Betrags jeden Monat um.",
+        "2": "Frag deine Bank nach einem Privatkredit (im Schnitt ~7 %), um die Karte abzulösen.",
+        "3": "Wenn der Zins deiner Karte beim Abschluss weit über dem Marktdurchschnitt lag, frag eine Verbraucherorganisation (OCU, Asufin), ob er wucherisch sein könnte."
+      }
+    },
+    "es-abono-transporte": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "Nutz die vergünstigte Monatskarte",
+      "why": "Regional und staatlich bezuschusste Monatskarten (abono joven, abono único) sind für regelmäßige Pendler viel günstiger als Einzelfahrscheine.",
+      "evidence": "Eine bezuschusste Monatskarte spart meist",
+      "tips": {
+        "1": "Prüf die Monatskarte deiner Region und den Jugendrabatt, wenn du unter 26 bist.",
+        "2": "Vergleich sie mit dem, was du für Einzelfahrscheine und Parken ausgibst.",
+        "3": "Frag deinen Arbeitgeber nach steuerfreien Fahrkarten (tarjeta transporte)."
+      }
+    },
+    "fr-prime-transport": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "Hol dir die 50 % Fahrtkostenerstattung",
+      "why": "Arbeitgeber müssen die Hälfte deiner Zeitkarte für Bus und Bahn erstatten (prime transport). Manche beantragen das nie.",
+      "evidence": "Wer sich die Erstattung vom Arbeitgeber holt, spart meist",
+      "tips": {
+        "1": "Schick den Beleg für deine Navigo- oder örtliche Zeitkarte an die Personal- oder Lohnabteilung.",
+        "2": "Nimm die Jahreskarte (Navigo Annuel), wenn du sie jeden Monat nutzt.",
+        "3": "Frag nach dem forfait mobilités durables (Zuschuss vom Arbeitgeber), wenn du mit dem Rad fährst oder Fahrgemeinschaften nutzt."
+      }
+    },
+    "fr-energy-offer": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Vergleich Angebote mit dem regulierten Tarif",
+      "why": "Viele Marktangebote sind günstiger als der regulierte Tarif (tarif réglementé, TRV), und die Nebenzeit-Option (heures creuses) kann die Rechnung senken, wenn deine Geräte nachts laufen.",
+      "evidence": "Ein günstigeres Marktangebot spart meist",
+      "tips": {
+        "1": "Vergleich Angebote auf energie-info.fr, der Vergleichsseite des nationalen Energie-Ombudsmanns.",
+        "2": "Prüf, ob die Anschlussleistung deines Zählers (kVA) höher ist als nötig.",
+        "3": "Frag, ob du Anspruch auf den chèque énergie (staatlicher Energiezuschuss) hast."
+      }
+    },
+    "fr-loi-hamon": {
+      "label": "Kfz-Versicherung",
+      "noun": "die Kfz-Versicherung",
+      "title": "Nach einem Jahr jederzeit die Versicherung wechseln",
+      "why": "Nach der loi Hamon kannst du Hausrat- und Kfz-Versicherung nach dem ersten Jahr jederzeit kündigen, und die neue Versicherung kümmert sich darum.",
+      "evidence": "Ein Versicherungswechsel nach dem ersten Jahr spart oft",
+      "tips": {
+        "1": "Hol 3 Angebote für denselben Schutz und dieselbe Selbstbeteiligung ein.",
+        "2": "Lass die neue Versicherung den alten Vertrag für dich kündigen.",
+        "3": "Leg Hausrat und Auto bei einer Versicherung zusammen, um Rabatt zu bekommen."
+      }
+    },
+    "gb-energy-switch": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Such einen Festpreistarif unter der Preisobergrenze",
+      "why": "Die meisten Haushalte im variablen Standardtarif zahlen den Satz der Ofgem-Preisobergrenze (price cap). Festpreistarife und smarte zeitabhängige Tarife sind manchmal günstiger.",
+      "evidence": "Ein Festpreistarif unter der Preisobergrenze spart meist",
+      "tips": {
+        "1": "Vergleich Festpreistarife mit der aktuellen Preisobergrenze auf einem Vergleichsportal, bevor sie sich das nächste Mal ändert (Januar, April, Juli, Oktober).",
+        "2": "Gib einen Zählerstand durch und stell auf Lastschrift (Direct Debit) um; das ist günstiger als Zahlung nach Rechnung.",
+        "3": "Wenn du einen Smart Meter hast und deinen Verbrauch verschieben kannst, schau dir zeitabhängige Tarife mit günstigerem Nachtstrom an."
+      }
+    },
+    "gb-council-tax-discount": {
+      "label": "Council Tax",
+      "noun": "die Council Tax",
+      "title": "Hol dir die Council-Tax-Rabatte, die dir zustehen",
+      "why": "Wenn nur ein Erwachsener in einer Wohnung lebt, ist die Rechnung 25 % niedriger, und manche Wohnungen sind im falschen Band (Steuerstufe) eingestuft.",
+      "evidence": "Der Rabatt für Alleinlebende (single person discount) spart",
+      "tips": {
+        "1": "Wenn du allein lebst (oder die anderen Erwachsenen nur Studierende oder Azubis sind), beantrag auf der Website deines Councils den Rabatt von 25 % für Alleinlebende.",
+        "2": "Vergleich dein Band mit ähnlichen Häusern in deiner Straße auf der Website der Valuation Office Agency (in Schottland: Scottish Assessors).",
+        "3": "Frag dein Council nach Council Tax Reduction, wenn dein Einkommen niedrig ist."
+      }
+    },
+    "id-va-power": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Prüf deine PLN-Anschlussleistung und wie du Tokens kaufst",
+      "why": "Alle Haushalte ab 1.300 VA zahlen denselben Preis von 1.444,70 Rp pro kWh, also sparst du nur, indem du weniger kWh verbrauchst – vor allem bei Klimaanlage und Warmwasserbereiter.",
+      "evidence": "Klimaanlage und Warmwasserbereiter weniger laufen zu lassen, spart meist",
+      "tips": {
+        "1": "Stell die Klimaanlage mit Timer auf 25–26 °C und schließ die Türen des Raums, den du kühlst.",
+        "2": "Kauf Prepaid-Tokens (Stromguthaben) in größeren Beträgen: Die Verwaltungsgebühr fällt pro Kauf an.",
+        "3": "Ersetz alte Leuchtstoffröhren und Glühbirnen durch LED."
+      }
+    },
+    "id-krl-tj": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "KRL, TransJakarta und MRT statt täglich Ojek",
+      "why": "TransJakarta kostet 3.500 Rp pro Fahrt und KRL-Fahrten (Pendlerzug) beginnen bei ein paar Tausend Rupiah – weit weniger als Fahrdienste per App (z. B. Ojek, Motorradtaxi) für dieselbe Strecke.",
+      "evidence": "Wer regelmäßige Wege mit KRL, TransJakarta oder MRT fährt, spart meist",
+      "tips": {
+        "1": "Nimm ein Ojek nur für den ersten und letzten Kilometer zum Bahnhof.",
+        "2": "Nutz eine einzige Karte (z. B. mit JakLingko verknüpft), damit Umstiege verbunden und günstiger sind.",
+        "3": "Vergleich die Belege einer Woche Fahrdienste mit den Kosten derselben Wege mit Bus und Bahn."
+      }
+    },
+    "id-galon-depot": {
+      "label": "Trinkwasser",
+      "noun": "Trinkwasser",
+      "title": "Markengalons gegen ein vertrauenswürdiges Nachfülldepot tauschen",
+      "why": "Nachfüllen in einem zugelassenen Depot kostet nur einen Bruchteil von Markengalons.",
+      "evidence": "Ein zugelassenes Nachfülldepot spart meist",
+      "tips": {
+        "1": "Wähl ein Depot, das ein gültiges Gesundheits- bzw. Hygienezertifikat zeigt.",
+        "2": "Oder koch und filtere PDAM-Leitungswasser zum Kochen.",
+        "3": "Bestell Galons im monatlichen Lieferabo, wenn dein Depot eines anbietet."
+      }
+    },
+    "in-rooftop-solar": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Prüf die Förderung für Solaranlagen auf dem Dach",
+      "why": "Wenn dir dein Zuhause gehört und die Klimaanlage fast das ganze Jahr läuft, kann eine kleine Dachanlage den größten Teil einer Rechnung in den höheren Tarifstufen wegfallen lassen.",
+      "evidence": "Eine kleine Solaranlage auf dem Dach spart meist",
+      "tips": {
+        "1": "Schau dir PM Surya Ghar auf dem offiziellen Portal an: Das Programm zahlt einen staatlichen Zuschuss für private Dach-Solaranlagen bis 3 kW.",
+        "2": "Beantrag bei deinem DISCOM (dem örtlichen Stromversorger) einen Zweirichtungszähler (Net Meter), damit eingespeiste Einheiten von deiner Rechnung abgezogen werden.",
+        "3": "Hol 2–3 Angebote von Anbietern auf der zugelassenen Liste des DISCOM ein, bevor du etwas bezahlst."
+      }
+    },
+    "in-lpg-subsidy": {
+      "label": "Wasser & Gas",
+      "noun": "Wasser und Gas",
+      "title": "Gasflaschen nur bei Bedarf bestellen und Zuschüsse nutzen",
+      "why": "Kochgas (LPG) macht in indischen Haushalten den größten Teil des Postens „Wasser und Gas“ aus.",
+      "evidence": "Sparsamer Gasverbrauch und mögliche Zuschüsse sparen meist",
+      "tips": {
+        "1": "Verknüpf deinen LPG-Anschluss mit Aadhaar und deinem Bankkonto, damit Zuschüsse auf deinem Konto ankommen.",
+        "2": "Nutz einen Schnellkochtopf und Deckel auf den Töpfen: Das senkt den Gasverbrauch spürbar.",
+        "3": "Wenn dein Haus Erdgas aus der Leitung (PNG) hat, vergleich die monatlichen Kosten mit dem Nachfüllen von Flaschen."
+      }
+    },
+    "in-metro-card": {
+      "label": "Fahrkarten & Maut",
+      "noun": "Fahrkarten und Maut",
+      "title": "Nutz eine Metro-Chipkarte oder Monatskarte",
+      "why": "Metro-Chipkarten und Monatskarten für den Bus sind pro Fahrt günstiger als Barzahlung oder täglich Autorikscha und Taxi.",
+      "evidence": "Eine Metro-Karte oder Monatskarte spart meist",
+      "tips": {
+        "1": "Nutz eine Metro-Chipkarte oder NCMC-Karte statt einzelner Tokens; viele Metros geben pro Fahrt Rabatt.",
+        "2": "Prüf, ob die Busgesellschaft deiner Stadt eine Monatskarte verkauft.",
+        "3": "Teil dir für die letzte Strecke ein Taxi mit Kollegen, statt allein zu fahren."
+      }
+    },
+    "mx-meses-sin-intereses": {
+      "label": "Einkäufe & Extras",
+      "noun": "Einkäufe und Extras",
+      "title": "Behalt deine „meses sin intereses“ im Blick",
+      "why": "Zinsfreie Raten (MSI) fühlen sich kostenlos an, aber mehrere gleichzeitig binden künftige Quincenas (halbmonatliche Gehälter) und verleiten dazu, nur den Mindestbetrag der Karte zu zahlen – dort liegt der Zins bei etwa 55 % im Jahr.",
+      "evidence": "Weniger neue Ratenkäufe sparen meist",
+      "tips": {
+        "1": "Rechne alle laufenden MSI-Raten zusammen, bevor du etwas Neues auf Raten kaufst.",
+        "2": "Halt MSI-Raten bei einem kleinen Teil jeder Quincena und zahl nie nur den Mindestbetrag.",
+        "3": "Frag nach dem Barpreis; manche Geschäfte geben einen Rabatt, den MSI verdeckt."
+      }
+    },
+    "mx-tarifa-dac": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Bleib aus dem DAC-Tarif heraus",
+      "why": "Die CFE (staatlicher Stromversorger) stuft Haushalte mit hohem Verbrauch anhand der letzten 12 Monate in den nicht subventionierten DAC-Tarif ein, und herauszukommen dauert ein Jahr mit niedrigerem Verbrauch. Außerdem kostet jede Stufe über dem Grundverbrauch mehr pro kWh.",
+      "evidence": "Wer unter der DAC-Grenze bleibt, spart meist",
+      "tips": {
+        "1": "Prüf die Zeile „Tarifa“ und die kWh-Stufen auf deiner CFE-Rechnung.",
+        "2": "Stell die Klimaanlage auf 25–26 °C und ersetz Kühlschränke und Klimageräte, die älter als 10 Jahre sind, durch sparsame Modelle.",
+        "3": "Verleg Bügeln, Waschen und Pumpen aus den heißesten Stunden."
+      }
+    },
+    "mx-gas-lp": {
+      "label": "Wasser & Gas",
+      "noun": "Wasser und Gas",
+      "title": "Komm mit jeder Gasflasche länger aus",
+      "why": "Die Preise für Flüssiggas (Gas LP) haben eine wöchentliche Obergrenze, aber eine Familie braucht leicht ein bis zwei Flaschen im Monat.",
+      "evidence": "Wer mit jeder Flasche länger auskommt, spart meist",
+      "tips": {
+        "1": "Prüf vor dem Bezahlen der Lieferung den wöchentlichen Höchstpreis pro kg für deine Gegend.",
+        "2": "Such mit Seifenwasser an Schlauch und Regler nach Lecks.",
+        "3": "Nutz Deckel auf den Töpfen und, wenn möglich, einen Solar- oder sparsamen Warmwasserbereiter."
+      }
+    },
+    "ng-solar-inverter": {
+      "label": "Sprit für den Generator",
+      "noun": "Sprit für den Generator",
+      "title": "Vom Generator zum Solar-Inverter wechseln",
+      "why": "Sprit für den Generator ist in nigerianischen Haushalten oft der größte einzelne Stromkostenpunkt, und Benzin- und Dieselpreise schwanken mit dem Wechselkurs.",
+      "evidence": "Ein Solar-Inverter spart meist",
+      "tips": {
+        "1": "Hol Preise für einen Inverter mit 2–5 kVA, Lithium-Batterien und ein paar Solarmodulen ein; viele Anbieter bieten Ratenzahlung an.",
+        "2": "Betreib nur Ventilatoren, Licht, Fernseher und Router über den Notstrom; heb große Verbraucher für die Stunden mit Netzstrom auf.",
+        "3": "Lass den Generator regelmäßig warten und schalte ihn aus, sobald der Inverter geladen ist."
+      }
+    },
+    "ng-meter-band": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Hol dir einen Prepaid-Zähler und prüf dein Band",
+      "why": "Geschätzte („verrückte“) Abrechnungen und Band-A-Preise ohne die Versorgungsstunden von Band A treiben die Stromrechnung beide in die Höhe.",
+      "evidence": "Ein Prepaid-Zähler im richtigen Band spart meist",
+      "tips": {
+        "1": "Beantrag über das MAP-Programm deines DisCo (örtlicher Stromversorger) einen Prepaid-Zähler, statt geschätzte Rechnungen zu zahlen.",
+        "2": "Notier eine Woche lang deine Versorgungsstunden; bekommst du in Band A weniger als 20 pro Tag, beschwer dich beim DisCo und bei der NERC (Regulierungsbehörde).",
+        "3": "Kauf Stromeinheiten über deine Banking-App, um Händlergebühren zu vermeiden."
+      }
+    },
+    "ng-rent-yearly": {
+      "label": "Miete",
+      "noun": "Miete",
+      "title": "Plan für Miete, die ein oder zwei Jahre im Voraus fällig ist",
+      "why": "Vermieter verlangen meist 1–2 Jahresmieten im Voraus, dazu Makler- und Anwaltsgebühren. Trag die Miete hier als Jahresbetrag geteilt durch 12 ein und spar jeden Monat für die nächste Zahlung.",
+      "evidence": "Wer vor der Verlängerung verhandelt, spart meist",
+      "tips": {
+        "1": "Leg den Monatsanteil der Miete fürs nächste Jahr auf ein eigenes Sparkonto oder in einen Geldmarktfonds.",
+        "2": "Verhandle die Verlängerung früh, bevor der Vermieter die Wohnung inseriert.",
+        "3": "Frag, ob der Vermieter die Miete in zwei Hälften statt auf einmal annimmt."
+      }
+    },
+    "pk-protected-slab": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Bleib im Winter in der geschützten Stufe bis 200 Einheiten",
+      "why": "Haushalte, die sechs Monate in Folge höchstens 200 Einheiten (kWh) im Monat verbrauchen, zahlen einen viel niedrigeren „geschützten“ (protected) Tarif. Ein Monat darüber kann dich diesen Status für die nächsten sechs Monate kosten.",
+      "evidence": "Wer in der geschützten Stufe bleibt, spart meist",
+      "tips": {
+        "1": "Prüf die „Units“ der letzten 6 Monate auf deiner Rechnung, um zu sehen, ob du nah am geschützten Status bist.",
+        "2": "Schalt im Winter den elektrischen Heizstab des Geysers (Warmwasserboiler) aus und nutz stattdessen Gas oder einen Durchlauferhitzer.",
+        "3": "Lies Mitte des Monats deinen Zähler ab, damit du sparen kannst, bevor du 200 Einheiten überschreitest."
+      }
+    },
+    "pk-solar-ups": {
+      "label": "Generator & USV",
+      "noun": "Generator und USV",
+      "title": "Generatorstunden gegen Solar mit Batterie tauschen",
+      "why": "Benzin für einen Generator ist eine der teuersten Arten, Strom zu erzeugen. Ein kleines Solarmodul mit Lithium-Batterie kann Ventilatoren, Licht und Router während der Stromabschaltungen (Load-Shedding) versorgen.",
+      "evidence": "Eine Solaranlage mit Batterie spart meist",
+      "tips": {
+        "1": "Hol Preise für ein Solar-Set mit 1–3 kW und einem Inverter ein, der auch aus dem Netz laden kann.",
+        "2": "Betreib nur Ventilatoren, Licht und WLAN über den Notstrom; heb Klimaanlage und Bügeleisen für die Stunden mit Netzstrom auf.",
+        "3": "Lass Generator und USV-Batterien vor dem Sommer warten, damit sie keinen Sprit oder Strom verschwenden."
+      }
+    },
+    "pk-gas-geyser": {
+      "label": "Wasser & Gas",
+      "noun": "Wasser und Gas",
+      "title": "Bau eine Zeitschaltuhr oder einen Durchlauferhitzer ein",
+      "why": "Gas-Geyser (Warmwasserboiler), die den ganzen Tag laufen, machen einen großen Teil der Gasrechnung im Winter aus, und die Gaspreise steigen in den höheren Stufen stark.",
+      "evidence": "Eine Zeitschaltuhr am Geyser oder ein Durchlauferhitzer spart meist",
+      "tips": {
+        "1": "Bau eine Zeitschaltuhr an den Geyser, damit er nur morgens und abends Wasser heizt.",
+        "2": "Denk an einen Durchlauferhitzer (ohne Speicher), wenn der alte Geyser ersetzt werden muss.",
+        "3": "Dämm die Warmwasserrohre auf dem Dach."
+      }
+    },
+    "sa-rent-instalments": {
+      "label": "Miete",
+      "noun": "Miete",
+      "title": "Verhandle die Miete, wenn du wählst, wie oft du zahlst",
+      "why": "Die Miete wird meist pro Jahr über Ejar (die staatliche Mietplattform) vereinbart und in 1, 2 oder 4 Raten gezahlt. Trag sie hier als Jahresbetrag geteilt durch 12 ein. Wer in weniger Raten zahlt, kann einen Rabatt bekommen.",
+      "evidence": "Wer in weniger Raten zahlt, spart bei der Jahresmiete oft",
+      "tips": {
+        "1": "Frag den Vermieter, wie hoch die Jahresmiete wäre, wenn du in 1 oder 2 Raten zahlst.",
+        "2": "Achte darauf, dass der Vertrag bei Ejar registriert ist, damit Erhöhungen den vereinbarten Bedingungen folgen.",
+        "3": "Vergleich 2 Monate vor der Verlängerung ähnliche Wohnungen in deinem Viertel in Immobilien-Apps."
+      }
+    },
+    "sa-6000-kwh": {
+      "label": "Strom",
+      "noun": "Strom",
+      "title": "Bleib im Sommer unter 6.000 kWh im Monat",
+      "why": "Haushalte zahlen bis 6.000 kWh im Monat 18 Halalas pro kWh und darüber 30 Halalas. Deshalb kostet jede Einheit in den heißesten Monaten für große Villen deutlich mehr.",
+      "evidence": "Wer im Sommer unter 6.000 kWh bleibt, spart meist",
+      "tips": {
+        "1": "Prüf den Monatsverbrauch in der SEC-App (Saudi Electricity Company); versuch, in den Spitzenmonaten unter 6.000 zu bleiben.",
+        "2": "Stell Split-Klimageräte auf 24 °C und schalte die Klimaanlage in leeren Räumen und im Majlis (Empfangsraum) aus.",
+        "3": "Beschatte Fenster nach Westen und lass die Klimageräte vor dem Sommer warten."
+      }
+    },
+    "sa-bnpl": {
+      "label": "Einkäufe & Extras",
+      "noun": "Einkäufe und Extras",
+      "title": "Weniger „Jetzt kaufen, später zahlen“ beim Alltagseinkauf",
+      "why": "Wenn du Einkäufe in Raten aufteilst, gibst du schnell jeden Monat mehr aus als geplant.",
+      "evidence": "Ratenkäufe nur für Notwendiges zu nutzen, spart meist",
+      "tips": {
+        "1": "Schalt Ratenzahlung als Standard-Zahlungsart in Shopping-Apps aus.",
+        "2": "Führ eine laufende Liste offener Ratenkäufe und ihrer Fälligkeiten.",
+        "3": "Warte 24 Stunden, bevor du etwas über 500 SAR kaufst."
+      }
+    },
+    "us-open-enrollment": {
+      "label": "Krankenversicherung",
+      "noun": "Beiträge zur Krankenversicherung",
+      "title": "Vergleich Krankenversicherungen in der Open Enrollment",
+      "why": "Tarife über den Arbeitgeber und den Marketplace ändern jedes Jahr ihre Preise, und oft läuft man einfach im selben Tarif weiter.",
+      "evidence": "Wer in der Open Enrollment (jährliche Wechselfrist) den passenden Tarif wählt, spart oft",
+      "tips": {
+        "1": "Vergleich in der Open Enrollment den Beitrag plus die Selbstbeteiligung (deductible), die du realistisch zahlen wirst – nicht nur den Beitrag.",
+        "2": "Wenn ihr beide über die Arbeit versichert seid, prüf, ob ein Familientarif oder zwei getrennte Tarife günstiger sind.",
+        "3": "Wenn du über HealthCare.gov oder einen Marketplace deines Bundesstaats versichert bist, aktualisier dein Einkommen: Vielleicht steht dir eine höhere Steuergutschrift zu."
+      }
+    }
   }
 }

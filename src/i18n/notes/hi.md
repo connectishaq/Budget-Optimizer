@@ -99,3 +99,16 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - Foreign proper nouns (Rundfunkbeitrag, condomínio, mutuelle, taxe foncière, iqama, IPL, iuran RT/RW, LAWMA, Medicare levy surcharge) kept in Latin script with a Hindi gloss.
 - `countryFields.SA.dependentFee.label` "प्रवासियों" for expats; alternative "विदेशी कर्मचारियों".
 - `format.currencies.BRL` "ब्राज़ीली रियाल" (alternative "ब्राज़ीलियाई रियल"); `IDR` "इंडोनेशियाई रुपिया".
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.evidence` follows the same "…से आमतौर पर / अक्सर" pattern as `rules.*.evidence`; the rent ideas (`ae-rent-cheques`, `sa-rent-instalments`) read "कम चेक/किस्तों में किराया देने से अक्सर इस खर्च का {words} बच जाता है" — the English "lowers the yearly rent by" is folded into "इस खर्च".
+- `localTips.*.noun` is oblique (after "पर"): "किराए", "किराए-भाड़े और टोल", "गाड़ी के बीमे", "पीने के पानी", "ख़रीदारी और दूसरे खर्चों", "जनरेटर के ईंधन", "जनरेटर और UPS के खर्च".
+- `in-rooftop-solar`: "PM सूर्य घर योजना" (Hindi name of the scheme; official English "PM Surya Ghar"); DISCOM glossed "(बिजली कंपनी)"; "नेट मीटर" kept in English.
+- `in-lpg-subsidy`: "आधार" for Aadhaar; PNG explained as "पाइप वाली गैस".
+- `in-metro-card`: "last mile" → "आख़िरी हिस्से के सफ़र"; alternative "लास्ट-माइल".
+- Foreign local terms kept in Latin script with a Hindi gloss: Salik (टोल), Nol, Grundversorgung, Abschlag, PVPC, potencia, TAE (सालाना ब्याज), pago aplazado, usura (सूदखोरी), abono joven/único, prime transport, tarif réglementé (TRV), chèque énergie, loi Hamon, Ofgem, rotativo, consignado, bandeira vermelha (लाल झंडा), quincena (हर 15 दिन की सैलरी), meses sin intereses/MSI, DAC, ojek (बाइक टैक्सी), galon, PDAM (नल का पानी), DisCo, Band A, Ejar, open enrollment, Marketplace, extras/excess (AU).
+- `pk-protected-slab`: "protected" kept in Latin as Pakistani bills print it; alternative "सुरक्षित (protected)".
+- `de-energy-switch`: "ct/kWh" → "सेंट/kWh"; `sa-6000-kwh`: "halalas" → "हलाला".
+- `us-open-enrollment` tip 2 "you are both covered" → "पति-पत्नी दोनों" (assumes a couple; alternative "आप दोनों").
+- `ca-phone-flanker`: "retention department" kept as "retention विभाग".
+- Possibly long card titles: `ae-rent-cheques.title`, `gb-council-tax-discount.title`, `id-krl-tj.title`, `sa-rent-instalments.title`.

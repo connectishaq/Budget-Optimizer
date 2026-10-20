@@ -1170,7 +1170,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Assumed saving from switching to a market offer; estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "au-health-cover-review",
@@ -1186,7 +1187,8 @@
         "value": 0.12,
         "verify": true,
         "note": "Assumed saving from changing tier/excess; estimate."
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

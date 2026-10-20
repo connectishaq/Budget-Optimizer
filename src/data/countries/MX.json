@@ -1130,7 +1130,8 @@
         "value": 0.15,
         "verify": true,
         "note": "Estimate; not from a cited study"
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "mx-tarifa-dac",
@@ -1146,7 +1147,8 @@
         "value": 0.15,
         "verify": true,
         "note": "Estimate; matches the existing slab rule"
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "mx-gas-lp",
@@ -1162,7 +1164,8 @@
         "value": 0.08,
         "verify": true,
         "note": "Estimate; not from a cited study"
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

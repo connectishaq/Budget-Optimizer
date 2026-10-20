@@ -6,7 +6,7 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1883 value(s) across 16 file(s).**
+**1887 value(s) across 16 file(s).**
 
 ## AE · AED · last reviewed 2026-10-19
 
@@ -1458,7 +1458,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 ## IN · INR · last reviewed 2026-10-19
 
-126 value(s) to verify.
+127 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1586,6 +1586,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `extraFields[2].ranges.suburban` | 0 – 25000 | Estimate; no published average for household chit/kitty contributions. |
 | `extraFields[2].ranges.youngpro` | 0 – 20000 | Estimate; no published average for household chit/kitty contributions. |
 | `localTips[0].pct` | 0.3 | Rough share of the electricity bill a 2–3 kW system offsets; depends on roof, state tariff and usage. |
+| `localTips[0].upfront` | 110000 | 2–3 kW system after the PM Surya Ghar central subsidy; prices vary by state and vendor. |
 | `localTips[1].pct` | 0.1 | Judgement estimate. |
 | `localTips[2].pct` | 0.1 | Judgement estimate. |
 
@@ -1746,7 +1747,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 ## NG · NGN · last reviewed 2026-10-19
 
-128 value(s) to verify.
+129 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1876,6 +1877,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `extraFields[2].ranges.suburban` | 0 – 150000 | Estimate; no published average. |
 | `extraFields[2].ranges.youngpro` | 0 – 100000 | Estimate; no published average. |
 | `localTips[0].pct` | 0.5 | Judgement estimate. |
+| `localTips[0].upfront` | 1500000 | Small home solar inverter with panels and batteries for lights, fans and a fridge; prices move with the naira. |
 | `localTips[1].pct` | 0.15 | Judgement estimate. |
 | `localTips[2].pct` | 0.05 | Judgement estimate. |
 
@@ -1896,7 +1898,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 ## PK · PKR · last reviewed 2026-10-19
 
-124 value(s) to verify.
+126 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -2023,7 +2025,9 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `extraFields[1].ranges.youngpro` | 0 – 40000 | Estimate; no published average for committee contributions. |
 | `localTips[0].pct` | 0.2 | Judgement estimate; the saving depends on the slab rates in your DISCO’s current tariff. |
 | `localTips[1].pct` | 0.4 | Judgement estimate. |
+| `localTips[1].upfront` | 250000 | Two or three panels with a lithium battery and hybrid inverter for fans, lights and the router; prices vary by city. |
 | `localTips[2].pct` | 0.15 | Judgement estimate. |
+| `localTips[2].upfront` | 4000 | Geyser timer or conversion kit, fitted. |
 
 **Sources**
 

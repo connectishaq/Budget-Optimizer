@@ -38,8 +38,9 @@ Never present an estimate as a fact: if it isn't from a source you cite, mark it
       "help": "Your monthly council tax bill (10 or 12 instalments a year shown as a monthly amount).",
       "ranges": { "single": [90, 160], "suburban": [150, 260], "youngpro": [100, 180] } }
   ],
-  "localTips": [                    // ideas for Phase 7, plain English, will become rule variants
-    { "id": "gb-energy-switch", "pool": "electricity", "title": "…", "why": "…", "tips": ["…", "…", "…"], "pct": 0.1 }
+  "localTips": [                    // savings ideas only for this country (see "localTips" below)
+    { "id": "gb-energy-switch", "pool": "electricity", "title": "…", "why": "…", "tips": ["…", "…", "…"], "pct": 0.1,
+      "effort": "Easy", "upfront": 0, "profiles": ["single"] }
   ],
   "hideRules": [],                  // ids of existing rules that don't apply here (see src/engine/rules.js RULES ids)
   "sources": [ { "title": "…", "url": "https://…", "usedFor": "rent, groceries" } ],
@@ -54,6 +55,19 @@ bill when `need` is true (otherwise a nice-to-have), and are available to saving
 `ctx.v.<key>`. `label` and `help` here are the English source: the page shows
 `countryFields.<CODE>.<key>.label/help` from the message files (copy new ones into `en.json`, then
 translate). Example budgets fill must-pay ones at the middle of their range.
+
+### localTips — the country's own savings ideas
+Each becomes a savings card like the built-in rules (src/engine/rules.js `localRules`), shown when
+the bill named by `pool` is above 0. `pool` is any input field, one of the country's `extraFields`,
+or `cardInterest` (interest on high-rate cards; saves interest, not cash). `pct` is the default
+share of that bill saved; ideas on the same bill stack on what's left, after the general ones.
+`effort` is `Easy`, `Medium` or `Requires purchase`; `upfront` is a one-off cost in local money
+(omit for none); `profiles` limits the idea to some household types (omit for all). The text
+shown is `localTips.<id>.{label, noun, title, why, evidence, tips.1-3}` in the message files:
+`label`/`noun` name the bill ("Council tax" / "council tax"), and `evidence` starts the "How did
+we get this?" sentence ("The single person discount cuts" … "a quarter of this spending").
+`hideRules` lists built-in rule ids that don't fit the country (e.g. `electricity-slab` where
+tariffs aren't slab-based).
 
 ### profiles.*.ranges — `[low, high]` typical monthly amount for each existing input field
 `income` (monthly take-home pay), `rent`, `homeIns`, `electricity`, `waterGas`, `internet`, `fuel`,

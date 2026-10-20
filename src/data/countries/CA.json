@@ -1133,7 +1133,8 @@
         "value": 0.2,
         "verify": true,
         "note": "Assumed saving from switching; estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "ca-home-energy-rebates",
@@ -1149,7 +1150,8 @@
         "value": 0.08,
         "verify": true,
         "note": "Assumed saving; estimate."
-      }
+      },
+      "effort": "Medium"
     }
   ],
   "hideRules": [

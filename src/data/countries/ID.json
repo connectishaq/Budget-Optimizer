@@ -1164,7 +1164,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "id-krl-tj",
@@ -1180,7 +1181,8 @@
         "value": 0.25,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "id-galon-depot",
@@ -1196,7 +1198,8 @@
         "value": 0.4,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

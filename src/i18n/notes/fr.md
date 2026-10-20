@@ -74,3 +74,14 @@
 - `countryFields.IN.societyMaintenance` = « Charges de résidence (society) »; `MX.gastosMedicos` label is long (« Assurance santé privée (gastos médicos mayores) ») and may wrap.
 - Rotating savings groups (arisan, chit fund, ajo/esusu, committee/BC) explained as « groupe d’épargne tournant » (French equivalent: « tontine », used in help.text.other).
 - `countryFields.SA.dependentFee` = « Taxe sur les personnes à charge (expatriés) »; officially the « dependent fee / مقابل المرافقين ». Long label.
+
+## Phase 7 additions (country savings ideas)
+- `evidence` strings follow the existing pattern (« … permet généralement d’économiser » / « d’éviter » for the credit-card ideas br-sair-do-rotativo and es-revolving, which feed `plan.explain.interest`). The two rent ideas (ae-rent-cheques, sa-rent-instalments) read « … permet souvent de réduire le loyer annuel et d’économiser {words} de cette dépense » to keep the sentence grammatical.
+- `fr-prime-transport`: the English "prime transport" is rendered with the official term « prise en charge des frais de transport » (the 50 % employer refund); « prime transport » is a separate, optional employer bonus in France, so the English id/term is slightly misleading. Forfait mobilités durables, Navigo Annuel, TRV (« tarif réglementé de vente »), chèque énergie, loi Hamon and energie-info.fr kept as official names.
+- `fr-energy-offer`: « médiateur national de l’énergie » for "national energy ombudsman".
+- New labels: « Achats et extras » (Shopping & extras), « Cartes de crédit », « Assurance santé privée » (AU), « Assurance santé » (US), « Eau potable », « Carburant groupe électrogène » (NG; the countryField label is « Carburant groupe / onduleur »), « Groupe électrogène / UPS » (PK, same as the countryField), « Council tax » kept in English.
+- Local terms kept with a gloss: rotativo, consignado, bandeira vermelha (« drapeau rouge »), meses sin intereses/MSI, quincenas (« paies de quinzaine »), pago aplazado, Grundversorgung, Abschlag (« acompte mensuel »), potencia (« puissance souscrite »), open enrollment (« période d’inscription annuelle »), load-shedding (« délestage »), « crazy billing », band (« tranche »), single person discount.
+- es-revolving: Spanish « TAE » kept (explained as taux annuel) rather than the French TAEG used elsewhere.
+- Ride-hailing = « VTC »; Indian autos/cabs = « rickshaw ou taxi »; ojek and galon kept; Indonesian « tokens » (prepaid electricity codes) kept as « tokens ».
+- Currency amounts rewritten in French order (« 6,30 AED », « 1 444,70 Rp », « 500 SAR », « 63 € »), numbers unchanged. Times as « 6 h », « 20 h », « de 0 h à 8 h ».
+- Possibly long titles: ae-salik-nol (« Passez moins de portiques Salik et prenez la carte Nol pour vos trajets »), in-lpg-subsidy, pk-solar-ups, gb-council-tax-discount.

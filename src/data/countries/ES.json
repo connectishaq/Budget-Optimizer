@@ -1122,7 +1122,8 @@
         "value": 0.12,
         "verify": true,
         "note": "Estimate; not from a cited study"
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "es-revolving",
@@ -1138,7 +1139,8 @@
         "value": 0.6,
         "verify": true,
         "note": "Estimate: share of card interest avoided by moving to a ~7% personal loan"
-      }
+      },
+      "effort": "Medium"
     },
     {
       "id": "es-abono-transporte",
@@ -1154,7 +1156,8 @@
         "value": 0.2,
         "verify": true,
         "note": "Estimate; depends on the region"
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

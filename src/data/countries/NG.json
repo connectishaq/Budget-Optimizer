@@ -1165,6 +1165,12 @@
         "value": 0.5,
         "verify": true,
         "note": "Judgement estimate."
+      },
+      "effort": "Requires purchase",
+      "upfront": {
+        "value": 1500000,
+        "verify": true,
+        "note": "Small home solar inverter with panels and batteries for lights, fans and a fridge; prices move with the naira."
       }
     },
     {
@@ -1181,7 +1187,8 @@
         "value": 0.15,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Medium"
     },
     {
       "id": "ng-rent-yearly",
@@ -1197,7 +1204,8 @@
         "value": 0.05,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Medium"
     }
   ],
   "hideRules": [

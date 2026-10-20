@@ -80,3 +80,18 @@ numbers (e.g. 1 milhão), so it uses the same text as `other` everywhere.
 - `countryFields.SA.dependentFee.help`: "cidadão saudita" is masculine generic.
 - Rotating savings groups (arisan, ajo/esusu, committee/BC, chit fund) explained as "grupo de poupança rotativa"; Brazilian readers may know the informal equivalent as "vaquinha" or compare it to a "consórcio" (not identical).
 - `layout.locale.*` (noted earlier as untranslated) are now translated.
+
+## Phase 7 additions (country savings ideas)
+- `evidence` strings follow the existing `rules.*.evidence` pattern ("… costuma reduzir" + {words} "desse gasto"); credit-card ideas (`br-sair-do-rotativo`, `es-revolving`) end in "evita" to read "… evita {words} desses juros".
+- Rent ideas (`ae-rent-cheques`, `sa-rent-instalments`) read "…costuma baixar o aluguel anual em cerca de um décimo (10%) desse gasto" — slightly redundant but grammatical; reviewer may prefer dropping "anual".
+- Nouns chosen to fit "gasta {amount} por mês com {noun}": "luz", "aluguel", "água potável", "combustível do gerador", "gerador e nobreak", "mensalidade do plano de saúde", "compras e extras", "council tax".
+- Numbers re-punctuated with Brazilian separators only (AED 6,30; Rp1.444,70; Rp3.500; 6.000 kWh); values unchanged. "40 ct/kWh" written as "40 centavos de euro por kWh".
+- `br-sair-do-rotativo`: "rotativo", "parcelamento da fatura", "consignado", "Serasa Limpa Nome"; `br-bandeira-chuveiro`: "bandeira vermelha", "posição verão", "Tarifa Social".
+- Local terms kept with a gloss where helpful: Ofgem price cap ("teto de preço"), council tax/bands/single person discount, Grundversorgung, Abschlag, Deutschlandticket Job, PVPC, potencia, pago aplazado, abono joven/único, tarjeta transporte, prime transport, Navigo, TRV, chèque énergie, forfait mobilités durables, loi Hamon, DEWA, Salik, Nol, RERA, Ejar, SEC, majlis, PLN, KRL, TransJakarta, ojek, JakLingko, PDAM, galão, PM Surya Ghar, DISCOM, net meter, Aadhaar, PNG, NCMC, CFE, DAC, MSI/"meses sin intereses", quincena, gas LP, DisCo, MAP, NERC, Band A, load-shedding, open enrollment, deductible.
+- "Usurious" (`es-revolving`) → "abusivos (usura)"; "TAE" kept (Spanish annual rate).
+- "geyser" → "aquecedor (geyser)"; "instant geyser" → "aquecedor de passagem".
+- "autos and cabs" (`in-metro-card`) → "autorriquixá e táxi"; "ride-hailing" → "app de transporte".
+- "crazy billing" (`ng-meter-band`) → 'a conta "maluca"' — informal rendering of a Nigerian expression.
+- "money-market fund" → "fundo de renda fixa (money market)"; Brazilian readers may know it as "fundo DI".
+- "villas" (`sa-6000-kwh`) → "casas grandes (villas)"; "split units" → "splits".
+- "Default Market Offer" (Australia) kept in English.

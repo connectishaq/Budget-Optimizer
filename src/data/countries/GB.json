@@ -1179,7 +1179,8 @@
         "value": 0.08,
         "verify": true,
         "note": "Assumed saving versus the price cap; depends on deals available at the time."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "gb-council-tax-discount",
@@ -1195,7 +1196,11 @@
         "value": 0.25,
         "verify": true,
         "note": "Single person discount is 25%; only applies to people living alone."
-      }
+      },
+      "effort": "Easy",
+      "profiles": [
+        "single"
+      ]
     }
   ],
   "hideRules": [

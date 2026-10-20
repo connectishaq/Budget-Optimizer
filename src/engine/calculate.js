@@ -1,7 +1,7 @@
 // All budget math lives here as pure functions: no DOM, no storage, no globals.
 // UI modules call computeBudget() once per change and render from the result.
 
-import { RULES, highAprCards } from './rules.js';
+import { RULES, highAprCards, localRules } from './rules.js';
 import { PROFILES, benchmarkFor } from './profiles.js';
 import { countryData } from './countries.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
@@ -161,7 +161,8 @@ export function evaluatePlan(state, totals, fmt = plainFmt) {
 
   const pools = {};
   const items = [];
-  for (const rule of RULES) {
+  // The country's own ideas come after the general ones, so they work on what's left
+  for (const rule of [...RULES, ...localRules(C)]) {
     if (hidden.has(rule.id) || !rule.when(ctx)) continue;
     for (const key of rule.pools) if (!(key in pools)) pools[key] = poolValue(key);
 

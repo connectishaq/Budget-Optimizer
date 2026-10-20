@@ -2436,5 +2436,475 @@
         "help": "Yang Anda bayar tiap bulan untuk asuransi kesehatan, termasuk potongan gaji untuk asuransi dari kantor, atau asuransi Marketplace setelah dikurangi kredit pajak."
       }
     }
+  },
+  "localTips": {
+    "ae-rent-cheques": {
+      "label": "Sewa",
+      "noun": "sewa",
+      "title": "Tawarkan lebih sedikit cek sewa demi harga sewa lebih rendah",
+      "why": "Di UEA, sewa disepakati per tahun dan dibayar dengan 1–12 cek mundur (post-dated). Pemilik sering mau menurunkan harga jika Anda membayar dengan 1 atau 2 cek. Isi sewa Anda di sini sebagai jumlah per tahun dibagi 12.",
+      "evidence": "Membayar dengan lebih sedikit cek sering menurunkan sewa tahunan sebesar",
+      "tips": {
+        "1": "Tanyakan berapa sewanya jika dibayar dengan 1 atau 2 cek, bukan 4 cek atau lebih.",
+        "2": "Cek kalkulator indeks sewa RERA sebelum memperpanjang: di situ terlihat apakah pemilik boleh menaikkan sewa.",
+        "3": "Mulai cari tempat 90 hari sebelum kontrak berakhir; pemilik wajib memberi tahu kenaikan sewa 90 hari sebelumnya."
+      }
+    },
+    "ae-dewa-slab": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Jaga pemakaian listrik agar tidak masuk golongan tarif DEWA yang lebih tinggi",
+      "why": "DEWA (perusahaan listrik dan air Dubai) menarik tarif per kWh yang makin mahal seiring pemakaian bulanan Anda naik ke golongan berikutnya, jadi bulan-bulan musim panas dengan AC menyala jauh lebih mahal per unit.",
+      "evidence": "Menjaga pemakaian di luar golongan tarif teratas biasanya memangkas",
+      "tips": {
+        "1": "Atur AC di 24°C atau lebih dan pakai timer agar tidak mendinginkan ruangan kosong.",
+        "2": "Bersihkan saluran dan filter AC sebelum musim panas.",
+        "3": "Bandingkan pemakaian kWh bulanan di aplikasi DEWA dengan batas golongan tarif di tagihan Anda."
+      }
+    },
+    "ae-salik-nol": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Kurangi lewat gerbang Salik dan pakai kartu Nol untuk pulang-pergi kerja",
+      "why": "Setiap kali melewati gerbang tol Salik, biayanya AED 6,30 di jam sibuk dan 4,20 di luar jam sibuk; empat kali lewat di jam sibuk setiap hari kerja bisa mencapai lebih dari AED 500 per bulan.",
+      "evidence": "Lebih jarang lewat Salik di jam sibuk dan memakai kartu Nol untuk sebagian perjalanan biasanya memangkas",
+      "tips": {
+        "1": "Cek apakah rute tanpa gerbang Salik hanya menambah beberapa menit.",
+        "2": "Berangkat sebelum jam 6 pagi atau setelah jam 8 malam, saat tarif tol lebih rendah.",
+        "3": "Coba naik Metro dengan kartu Nol beberapa hari seminggu, lalu bandingkan biayanya."
+      }
+    },
+    "au-energy-made-easy": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Bandingkan paket listrik Anda di Energy Made Easy",
+      "why": "Banyak rumah tangga memakai paket yang harganya sama atau mendekati Default Market Offer (tarif acuan pemerintah), padahal penawaran pasar dari penyedia yang sama atau lain sering lebih murah.",
+      "evidence": "Pindah ke penawaran pasar yang lebih murah sering memangkas",
+      "tips": {
+        "1": "Unggah tagihan Anda ke Energy Made Easy (atau Victorian Energy Compare di Victoria) untuk melihat paket yang lebih murah sesuai pemakaian Anda.",
+        "2": "Minta penyedia Anda sekarang menyamai penawaran terbaik sebelum pindah.",
+        "3": "Jika Anda punya panel surya atau bisa menggeser pemakaian, bandingkan paket berdasarkan waktu pemakaian dengan tarif murah di siang hari."
+      }
+    },
+    "au-health-cover-review": {
+      "label": "Asuransi kesehatan swasta",
+      "noun": "asuransi kesehatan swasta",
+      "title": "Tinjau tingkat perlindungan dan manfaat tambahan asuransi kesehatan Anda",
+      "why": "Premi naik setiap April, dan banyak orang membayar manfaat tambahan (extras) atau layanan rumah sakit yang tidak pernah mereka pakai.",
+      "evidence": "Melepas perlindungan dan manfaat tambahan yang tidak Anda pakai biasanya memangkas",
+      "tips": {
+        "1": "Bandingkan polis di privatehealth.gov.au, situs pembanding gratis milik pemerintah.",
+        "2": "Cek apakah manfaat tambahan yang Anda pakai sepadan dengan preminya; jika tidak, lepas manfaat tambahan atau pilih tingkat yang lebih murah.",
+        "3": "Risiko sendiri (excess) yang lebih tinggi menurunkan premi; pertimbangkan membayar tahunan sebelum 1 April untuk mengunci harga lama."
+      }
+    },
+    "br-sair-do-rotativo": {
+      "label": "Kartu kredit",
+      "noun": "bunga kartu kredit",
+      "title": "Segera keluar dari rotativo kartu kredit",
+      "why": "Rotativo kartu kredit (bunga atas sisa tagihan yang tidak dibayar) rata-rata sekitar 445% per tahun pada Agustus 2026, dan cicilan tagihan dari bank sekitar 192% per tahun. Hampir semua jenis kredit lain lebih murah.",
+      "evidence": "Memindahkan saldo ke pinjaman yang jauh lebih murah menghindari",
+      "tips": {
+        "1": "Bayar tagihan kartu secara penuh jika memungkinkan; jika hanya membayar minimum, sisanya masuk ke rotativo.",
+        "2": "Jika tidak bisa, ganti saldo itu dengan pinjaman potong gaji (consignado) atau pinjaman pribadi berbunga jauh lebih rendah, bukan tawaran cicilan dari bank.",
+        "3": "Negosiasikan ulang utang kartu yang menunggak lewat bank Anda atau Serasa Limpa Nome; potongan sering diberikan."
+      }
+    },
+    "br-bandeira-chuveiro": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Kendalikan shower listrik dan biaya bandeira",
+      "why": "Shower listrik adalah salah satu pemakai listrik terbesar di rumah-rumah Brasil, dan pada bulan bendera merah (bandeira vermelha) ada biaya tambahan untuk setiap kWh.",
+      "evidence": "Mandi lebih singkat dengan pengaturan musim panas biasanya memangkas",
+      "tips": {
+        "1": "Atur shower ke posisi \"verão\" (musim panas) dan mandi cukup 5–8 menit.",
+        "2": "Cek bandeira di tagihan Anda dan kurangi pemakaian AC dan pengering pakaian pada bulan bendera merah.",
+        "3": "Tanyakan ke perusahaan listrik Anda apakah Anda berhak atas potongan Tarifa Social."
+      }
+    },
+    "ca-phone-flanker": {
+      "label": "Internet & telepon",
+      "noun": "internet dan telepon",
+      "title": "Pindahkan paket ponsel ke merek yang lebih murah",
+      "why": "Tiga operator besar punya merek yang lebih murah di jaringan yang sama, dan paketnya sering jauh lebih murah untuk kuota data yang sama.",
+      "evidence": "Pindah ke merek yang lebih murah di jaringan yang sama sering memangkas",
+      "tips": {
+        "1": "Bandingkan paket Anda dengan Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom, atau Virgin Plus; nomor Anda tetap bisa dipakai.",
+        "2": "Telepon bagian retensi penyedia internet Anda dan minta harga pelanggan baru, atau pindah penyedia.",
+        "3": "Jika Anda mencicil ponsel lewat paket, cek kapan cicilannya selesai, lalu pindah ke paket lebih murah dengan ponsel sendiri."
+      }
+    },
+    "ca-home-energy-rebates": {
+      "label": "Air & gas",
+      "noun": "air dan gas",
+      "title": "Manfaatkan potongan biaya (rebate) energi rumah sebelum musim dingin",
+      "why": "Pemanas adalah biaya energi terbesar di kebanyakan rumah di Kanada, dan pemerintah provinsi serta perusahaan utilitas membiayai banyak perbaikan rumah.",
+      "evidence": "Insulasi dan perbaikan pemanas yang dibiayai rebate biasanya memangkas",
+      "tips": {
+        "1": "Cek program rebate dari provinsi dan perusahaan gas Anda (misalnya Enbridge atau FortisBC) untuk insulasi, termostat pintar, dan pompa panas (heat pump).",
+        "2": "Tutup celah angin di sekitar pintu dan jendela, dan turunkan pemanas 2–3°C di malam hari dan saat Anda keluar rumah.",
+        "3": "Jika perusahaan utilitas Anda menawarkan tagihan bulanan yang dibuat sama rata, pakai agar tidak kaget dengan tagihan musim dingin (totalnya tidak berkurang)."
+      }
+    },
+    "de-energy-switch": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Tinggalkan tarif listrik standar",
+      "why": "Rumah tangga yang masih memakai tarif standar penyedia lokal (Grundversorgung) membayar sekitar 40 sen/kWh, sedangkan tarif pelanggan baru yang termurah sekitar 30 sen/kWh.",
+      "evidence": "Meninggalkan tarif standar biasanya memangkas",
+      "tips": {
+        "1": "Lihat pemakaian kWh setahun di tagihan terakhir Anda dan bandingkan tarif di Check24 atau Verivox.",
+        "2": "Pilih tarif dengan jaminan harga 12 bulan dan tanpa pembayaran di muka.",
+        "3": "Pasang pengingat untuk membandingkan lagi sebelum tahun pertama berakhir, saat bonusnya habis."
+      }
+    },
+    "de-gas-switch": {
+      "label": "Air & gas",
+      "noun": "air dan gas",
+      "title": "Ganti penyedia gas Anda",
+      "why": "Harga gas untuk pelanggan baru jauh di bawah tarif standar dan banyak kontrak lama.",
+      "evidence": "Mengganti penyedia gas biasanya memangkas",
+      "tips": {
+        "1": "Bandingkan tarif gas dengan pemakaian kWh setahun dari laporan tagihan terakhir.",
+        "2": "Cek apakah cicilan bulanan di muka (Abschlag) sesuai pemakaian nyata agar tidak ada tagihan susulan yang besar.",
+        "3": "Buang udara dari radiator dan turunkan pemanas 1°C; setiap derajat menghemat sekitar 6%."
+      }
+    },
+    "de-jobticket": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Minta Deutschlandticket Job ke kantor",
+      "why": "Jika kantor Anda membayar minimal 25% dari Deutschlandticket (tiket transportasi umum bulanan se-Jerman), harganya turun lagi 5%, jadi bagian Anda bisa jauh di bawah €63.",
+      "evidence": "Deutschlandticket yang dibantu kantor biasanya memangkas",
+      "tips": {
+        "1": "Tanyakan ke bagian HR apakah mereka menawarkan Deutschlandticket Job.",
+        "2": "Hentikan tiket sekali jalan dan kartu langganan lokal yang sudah dicakup Deutschlandticket.",
+        "3": "Cek apakah negara bagian Anda punya versi lebih murah untuk pelajar atau warga berpenghasilan rendah."
+      }
+    },
+    "es-pvpc-vs-libre": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Bandingkan PVPC dengan tarif harga tetap",
+      "why": "Tarif resmi PVPC mengikuti harga grosir dari jam ke jam; tergantung kebiasaan Anda, tarif pasar bebas dengan harga tetap bisa lebih murah, atau sebaliknya.",
+      "evidence": "Memakai tarif yang cocok dengan kebiasaan Anda biasanya memangkas",
+      "tips": {
+        "1": "Bandingkan dengan alat pembanding CNMC memakai tagihan terakhir Anda.",
+        "2": "Turunkan daya kontrak (potencia) jika sekring Anda tidak pernah turun.",
+        "3": "Nyalakan mesin cuci dan pencuci piring di luar jam sibuk (00.00–08.00 dan akhir pekan)."
+      }
+    },
+    "es-revolving": {
+      "label": "Kartu kredit",
+      "noun": "bunga kartu kredit",
+      "title": "Keluar dari kredit revolving",
+      "why": "Kartu revolving mengenakan bunga sekitar 22–24% TAE (bunga per tahun), dan cicilan tetap yang kecil bisa membuat Anda terjebak utang bertahun-tahun.",
+      "evidence": "Melunasi kredit revolving dengan pinjaman yang lebih murah menghindari",
+      "tips": {
+        "1": "Ubah pengaturan kartu dari \"pago aplazado\" (bayar ditunda) menjadi bayar penuh setiap bulan.",
+        "2": "Minta pinjaman pribadi ke bank Anda (rata-rata ~7%) untuk melunasi kartu.",
+        "3": "Jika bunga kartu Anda jauh di atas rata-rata pasar saat Anda mendaftar, tanyakan ke lembaga konsumen (OCU, Asufin) apakah bunganya bisa dianggap melanggar hukum (usura)."
+      }
+    },
+    "es-abono-transporte": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Pakai kartu langganan bulanan bersubsidi",
+      "why": "Kartu langganan bersubsidi dari pemerintah daerah dan pusat (abono joven, abono único) jauh lebih murah daripada tiket sekali jalan bagi yang rutin pulang-pergi.",
+      "evidence": "Kartu langganan bulanan bersubsidi biasanya memangkas",
+      "tips": {
+        "1": "Cek kartu langganan bulanan di daerah Anda dan potongan untuk anak muda jika usia Anda di bawah 26.",
+        "2": "Bandingkan dengan pengeluaran Anda untuk tiket sekali jalan dan parkir.",
+        "3": "Tanyakan ke kantor tentang kartu transportasi bebas pajak (tarjeta transporte)."
+      }
+    },
+    "fr-prime-transport": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Klaim penggantian 50% ongkos transportasi umum",
+      "why": "Kantor wajib mengganti separuh biaya kartu langganan transportasi umum Anda (prime transport). Sebagian orang tidak pernah mengklaimnya.",
+      "evidence": "Mengklaim penggantian dari kantor biasanya memangkas",
+      "tips": {
+        "1": "Kirim bukti pembayaran Navigo atau kartu langganan lokal Anda ke HR atau bagian penggajian.",
+        "2": "Pilih langganan tahunan (Navigo Annuel) jika Anda memakainya setiap bulan.",
+        "3": "Tanyakan tentang forfait mobilités durables (tunjangan transportasi ramah lingkungan) jika Anda bersepeda atau berbagi kendaraan."
+      }
+    },
+    "fr-energy-offer": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Bandingkan penawaran dengan tarif resmi",
+      "why": "Banyak penawaran pasar lebih murah daripada tarif resmi (tarif réglementé, TRV), dan opsi tarif di luar jam sibuk bisa menurunkan tagihan jika Anda menyalakan alat listrik di malam hari.",
+      "evidence": "Penawaran pasar yang lebih murah biasanya memangkas",
+      "tips": {
+        "1": "Bandingkan penawaran di energie-info.fr, situs pembanding milik ombudsman energi nasional.",
+        "2": "Cek apakah daya meteran Anda (kVA) tidak lebih besar dari yang dibutuhkan.",
+        "3": "Tanyakan apakah Anda berhak atas chèque énergie (bantuan biaya energi)."
+      }
+    },
+    "fr-loi-hamon": {
+      "label": "Asuransi mobil",
+      "noun": "asuransi mobil",
+      "title": "Ganti perusahaan asuransi kapan saja setelah satu tahun",
+      "why": "Berdasarkan loi Hamon (undang-undang konsumen Prancis), Anda bisa membatalkan asuransi rumah dan mobil kapan saja setelah tahun pertama, dan perusahaan asuransi baru yang mengurusnya.",
+      "evidence": "Mengganti perusahaan asuransi setelah tahun pertama sering memangkas",
+      "tips": {
+        "1": "Minta 3 penawaran untuk perlindungan dan risiko sendiri yang sama.",
+        "2": "Biarkan perusahaan asuransi baru membatalkan kontrak lama untuk Anda.",
+        "3": "Gabungkan asuransi rumah dan mobil di satu perusahaan untuk mendapat potongan."
+      }
+    },
+    "gb-energy-switch": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Cari paket energi harga tetap di bawah batas harga",
+      "why": "Kebanyakan rumah dengan tarif variabel standar membayar sesuai batas harga (price cap) dari Ofgem, regulator energi Inggris. Paket harga tetap dan tarif pintar berdasarkan waktu pemakaian kadang lebih murah.",
+      "evidence": "Paket harga tetap di bawah batas harga biasanya memangkas",
+      "tips": {
+        "1": "Bandingkan tarif tetap dengan batas harga saat ini di situs pembanding sebelum batas harga berikutnya berubah (Januari, April, Juli, Oktober).",
+        "2": "Kirim angka meteran dan beralih ke pembayaran Direct Debit (autodebet), yang lebih murah daripada membayar setelah tagihan datang.",
+        "3": "Jika Anda punya meteran pintar dan bisa menggeser pemakaian, lihat tarif berdasarkan waktu pemakaian dengan harga malam yang lebih murah."
+      }
+    },
+    "gb-council-tax-discount": {
+      "label": "Pajak daerah (council tax)",
+      "noun": "pajak daerah (council tax)",
+      "title": "Klaim potongan council tax yang menjadi hak Anda",
+      "why": "Jika hanya satu orang dewasa yang tinggal di rumah, tagihannya 25% lebih rendah, dan sebagian golongan (band) rumah salah ditetapkan.",
+      "evidence": "Potongan untuk penghuni tunggal memangkas",
+      "tips": {
+        "1": "Jika Anda tinggal sendiri (atau orang dewasa lain di rumah hanya pelajar atau peserta magang), ajukan potongan 25% untuk penghuni tunggal di situs pemerintah daerah (council) Anda.",
+        "2": "Bandingkan golongan rumah Anda dengan rumah serupa di jalan Anda di situs Valuation Office Agency (atau Scottish Assessors).",
+        "3": "Tanyakan ke council tentang Council Tax Reduction jika penghasilan Anda rendah."
+      }
+    },
+    "id-va-power": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Cek daya VA PLN dan kebiasaan beli token Anda",
+      "why": "Semua rumah tangga mulai daya 1.300 VA ke atas membayar tarif yang sama, Rp1.444,70 per kWh, jadi penghematan datang dari memakai lebih sedikit kWh, terutama AC dan pemanas air.",
+      "evidence": "Mengurangi pemakaian AC dan pemanas air biasanya memangkas",
+      "tips": {
+        "1": "Atur AC di 25–26°C dengan timer dan tutup pintu ruangan yang sedang didinginkan.",
+        "2": "Beli token listrik dalam nominal lebih besar: biaya admin dikenakan per pembelian.",
+        "3": "Ganti lampu neon dan lampu pijar lama dengan lampu LED."
+      }
+    },
+    "id-krl-tj": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Kombinasikan KRL, TransJakarta, dan MRT daripada naik ojek setiap hari",
+      "why": "Tarif TransJakarta Rp3.500 sekali jalan dan tarif KRL mulai dari beberapa ribu rupiah, jauh lebih murah daripada ojek atau taksi online untuk jarak yang sama.",
+      "evidence": "Naik KRL, TransJakarta, atau MRT untuk perjalanan rutin biasanya memangkas",
+      "tips": {
+        "1": "Naik ojek online hanya untuk jarak pertama dan terakhir ke stasiun atau halte.",
+        "2": "Pakai satu kartu (misalnya yang terhubung dengan JakLingko) agar transit terintegrasi dan lebih murah.",
+        "3": "Bandingkan bukti perjalanan ojek dan taksi online selama seminggu dengan biaya transportasi umum untuk perjalanan yang sama."
+      }
+    },
+    "id-galon-depot": {
+      "label": "Air minum",
+      "noun": "air minum",
+      "title": "Ganti galon bermerek dengan depot isi ulang yang tepercaya",
+      "why": "Isi ulang di depot air minum yang berizin hanya sebagian kecil dari harga galon bermerek.",
+      "evidence": "Depot isi ulang yang berizin biasanya memangkas",
+      "tips": {
+        "1": "Pilih depot yang memajang sertifikat laik higiene sanitasi yang masih berlaku.",
+        "2": "Atau rebus dan saring air PDAM untuk memasak.",
+        "3": "Pesan galon dengan langganan antar bulanan jika depot Anda menyediakannya."
+      }
+    },
+    "in-rooftop-solar": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Cek subsidi panel surya atap",
+      "why": "Jika rumah milik sendiri dan AC menyala hampir sepanjang tahun, sistem panel surya atap yang kecil bisa menghapus sebagian besar tagihan yang masuk golongan tarif tinggi.",
+      "evidence": "Sistem panel surya atap yang kecil biasanya memangkas",
+      "tips": {
+        "1": "Cari PM Surya Ghar di portal resmi: program ini memberi subsidi pemerintah pusat untuk panel surya atap rumah hingga 3 kW.",
+        "2": "Minta net meter (meteran ekspor-impor) ke DISCOM (perusahaan distribusi listrik) Anda agar listrik yang Anda kirim ke jaringan mengurangi tagihan.",
+        "3": "Minta 2–3 penawaran dari vendor yang terdaftar di DISCOM sebelum membayar apa pun."
+      }
+    },
+    "in-lpg-subsidy": {
+      "label": "Air & gas",
+      "noun": "air dan gas",
+      "title": "Pesan isi ulang LPG hanya saat perlu dan klaim subsidinya",
+      "why": "Gas untuk memasak adalah bagian terbesar dari pos “air dan gas” di rumah-rumah India.",
+      "evidence": "Hemat memakai LPG dan memanfaatkan subsidi biasanya memangkas",
+      "tips": {
+        "1": "Hubungkan sambungan LPG Anda ke Aadhaar (nomor identitas India) dan rekening bank agar subsidi masuk ke rekening Anda.",
+        "2": "Pakai panci presto dan tutup panci: cara ini jelas menghemat gas masak.",
+        "3": "Jika gedung Anda punya gas pipa (PNG), bandingkan biaya bulanannya dengan isi ulang tabung."
+      }
+    },
+    "in-metro-card": {
+      "label": "Ongkos & tol",
+      "noun": "ongkos transportasi dan tol",
+      "title": "Pakai kartu pintar metro atau kartu langganan bulanan",
+      "why": "Kartu pintar metro dan kartu langganan bus bulanan lebih murah per perjalanan daripada bayar tunai atau naik bajaj dan taksi setiap hari.",
+      "evidence": "Kartu metro atau kartu langganan bulanan biasanya memangkas",
+      "tips": {
+        "1": "Pakai kartu pintar metro atau kartu NCMC, bukan token sekali jalan; banyak metro memberi potongan per perjalanan.",
+        "2": "Cek apakah layanan bus kota Anda menjual kartu langganan bulanan.",
+        "3": "Untuk jarak terakhir, naik taksi bersama rekan kerja daripada sendirian."
+      }
+    },
+    "mx-meses-sin-intereses": {
+      "label": "Belanja & lain-lain",
+      "noun": "belanja dan lain-lain",
+      "title": "Awasi cicilan \"meses sin intereses\"",
+      "why": "Cicilan tanpa bunga (MSI) terasa gratis, tapi beberapa cicilan sekaligus mengikat gaji quincena (gaji per dua minggu) Anda ke depan dan mendorong orang hanya membayar minimum kartu, yang bunganya sekitar 55% per tahun.",
+      "evidence": "Lebih sedikit mengambil cicilan baru biasanya memangkas",
+      "tips": {
+        "1": "Jumlahkan semua cicilan MSI yang masih berjalan sebelum membeli apa pun lagi dengan cicilan.",
+        "2": "Jaga pembayaran MSI tetap kecil dari setiap quincena dan jangan pernah hanya membayar minimum.",
+        "3": "Tanyakan harga tunai; sebagian toko memberi potongan yang tersembunyi di balik MSI."
+      }
+    },
+    "mx-tarifa-dac": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Jangan sampai masuk tarif DAC",
+      "why": "CFE (perusahaan listrik Meksiko) memindahkan rumah dengan pemakaian tinggi ke tarif DAC tanpa subsidi berdasarkan pemakaian 12 bulan, dan untuk keluar butuh setahun pemakaian lebih rendah. Setiap blok di atas pemakaian dasar juga lebih mahal per kWh.",
+      "evidence": "Menjaga pemakaian di bawah batas DAC biasanya memangkas",
+      "tips": {
+        "1": "Cek baris \"Tarifa\" dan blok kWh di tagihan CFE Anda.",
+        "2": "Atur AC di 25–26°C, dan ganti kulkas serta AC yang berusia lebih dari 10 tahun dengan model hemat energi.",
+        "3": "Geser kegiatan menyetrika, mencuci, dan menyalakan pompa air ke luar jam-jam terpanas."
+      }
+    },
+    "mx-gas-lp": {
+      "label": "Air & gas",
+      "noun": "air dan gas",
+      "title": "Buat setiap tabung gas lebih awet",
+      "why": "Harga gas LP dibatasi pemerintah setiap minggu, tapi satu keluarga bisa menghabiskan satu atau dua tabung per bulan.",
+      "evidence": "Membuat setiap tabung lebih awet biasanya memangkas",
+      "tips": {
+        "1": "Cek harga maksimum per kg minggu ini untuk daerah Anda sebelum membayar pengantar gas.",
+        "2": "Cari kebocoran dengan air sabun di selang dan regulator.",
+        "3": "Pakai tutup panci, dan pemanas air tenaga surya atau yang hemat energi jika memungkinkan."
+      }
+    },
+    "ng-solar-inverter": {
+      "label": "BBM genset",
+      "noun": "BBM genset",
+      "title": "Beralih dari genset ke inverter tenaga surya",
+      "why": "BBM genset sering menjadi biaya listrik terbesar di rumah-rumah Nigeria, dan harga bensin dan solar naik-turun mengikuti nilai tukar.",
+      "evidence": "Inverter tenaga surya biasanya memangkas",
+      "tips": {
+        "1": "Cek harga inverter 2–5 kVA dengan baterai lithium dan beberapa panel surya; banyak penjual menawarkan cicilan.",
+        "2": "Saat memakai cadangan daya, nyalakan hanya kipas angin, lampu, TV, dan router; simpan alat berdaya besar untuk jam listrik jaringan menyala.",
+        "3": "Servis genset secara rutin dan matikan begitu inverter sudah terisi penuh."
+      }
+    },
+    "ng-meter-band": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Pasang meteran prabayar dan cek golongan (band) Anda",
+      "why": "Tagihan taksiran yang asal-asalan dan membayar tarif Band A tanpa mendapat jam listrik Band A sama-sama membengkakkan tagihan listrik.",
+      "evidence": "Meteran prabayar dengan golongan yang benar biasanya memangkas",
+      "tips": {
+        "1": "Ajukan meteran prabayar lewat program MAP dari DisCo (perusahaan distribusi listrik) Anda, daripada membayar tagihan taksiran.",
+        "2": "Catat jam listrik menyala selama seminggu; jika kurang dari 20 jam sehari padahal Anda di Band A, ajukan keluhan ke DisCo dan NERC.",
+        "3": "Beli token lewat aplikasi bank agar tidak kena biaya dari penjual."
+      }
+    },
+    "ng-rent-yearly": {
+      "label": "Sewa",
+      "noun": "sewa",
+      "title": "Siapkan sewa yang dibayar satu atau dua tahun di muka",
+      "why": "Pemilik biasanya meminta sewa 1–2 tahun di muka, ditambah biaya agen dan biaya hukum. Isi sewa di sini sebagai jumlah per tahun dibagi 12, dan menabunglah untuk pembayaran berikutnya setiap bulan.",
+      "evidence": "Bernegosiasi sebelum memperpanjang biasanya memangkas",
+      "tips": {
+        "1": "Sisihkan bagian bulanan sewa tahun depan di rekening tabungan terpisah atau reksa dana pasar uang.",
+        "2": "Negosiasikan perpanjangan lebih awal, sebelum pemilik mengiklankan rumah atau apartemennya.",
+        "3": "Tanyakan apakah pemilik mau menerima sewa dalam dua kali bayar, bukan sekaligus."
+      }
+    },
+    "pk-protected-slab": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Bertahan di golongan terlindungi 200 unit saat musim dingin",
+      "why": "Rumah yang memakai paling banyak 200 unit per bulan selama enam bulan berturut-turut membayar tarif “terlindungi” (protected) yang jauh lebih rendah. Lewat sebulan saja bisa membuat status itu hilang selama enam bulan berikutnya.",
+      "evidence": "Bertahan di golongan terlindungi biasanya memangkas",
+      "tips": {
+        "1": "Cek angka “units” 6 bulan terakhir di tagihan Anda untuk melihat apakah Anda hampir mendapat status terlindungi.",
+        "2": "Saat musim dingin, matikan elemen listrik pada pemanas air (geyser) dan pakai gas atau pemanas air instan.",
+        "3": "Baca meteran di pertengahan bulan agar Anda bisa berhemat sebelum melewati 200 unit."
+      }
+    },
+    "pk-solar-ups": {
+      "label": "Genset & UPS",
+      "noun": "biaya genset dan UPS",
+      "title": "Ganti jam genset dengan panel surya + baterai",
+      "why": "Bensin untuk genset adalah salah satu cara paling mahal menghasilkan listrik. Panel surya kecil dan baterai lithium bisa menyalakan kipas angin, lampu, dan router selama pemadaman bergilir (load-shedding).",
+      "evidence": "Panel surya dengan baterai biasanya memangkas",
+      "tips": {
+        "1": "Cek harga paket panel surya 1–3 kW dengan inverter yang juga bisa mengisi dari listrik jaringan.",
+        "2": "Saat memakai cadangan daya, nyalakan hanya kipas angin, lampu, dan Wi-Fi; pakai AC dan setrika saat listrik jaringan menyala.",
+        "3": "Servis genset dan baterai UPS sebelum musim panas agar tidak boros BBM atau daya."
+      }
+    },
+    "pk-gas-geyser": {
+      "label": "Air & gas",
+      "noun": "air dan gas",
+      "title": "Pasang timer di pemanas air (geyser) atau pakai pemanas instan",
+      "why": "Pemanas air gas yang menyala seharian adalah bagian besar dari tagihan gas musim dingin, dan tarif gas naik tajam di golongan yang lebih tinggi.",
+      "evidence": "Timer pemanas air atau pemanas instan biasanya memangkas",
+      "tips": {
+        "1": "Pasang timer di geyser agar hanya memanaskan air pagi dan sore.",
+        "2": "Pertimbangkan pemanas air instan (tanpa tangki) saat geyser lama perlu diganti.",
+        "3": "Beri insulasi pada pipa air panas di atap."
+      }
+    },
+    "sa-rent-instalments": {
+      "label": "Sewa",
+      "noun": "sewa",
+      "title": "Tawar harga sewa saat memilih berapa kali membayar",
+      "why": "Sewa biasanya disepakati per tahun di platform Ejar dan dibayar dalam 1, 2, atau 4 kali angsuran. Isi di sini sebagai jumlah per tahun dibagi 12. Membayar dengan lebih sedikit angsuran bisa mendapat potongan.",
+      "evidence": "Membayar dengan lebih sedikit angsuran sering menurunkan sewa tahunan sebesar",
+      "tips": {
+        "1": "Tanyakan ke pemilik berapa sewa tahunannya jika Anda membayar dalam 1 atau 2 kali angsuran.",
+        "2": "Pastikan kontrak terdaftar di Ejar agar kenaikan sewa mengikuti ketentuan yang disepakati.",
+        "3": "Bandingkan apartemen serupa di wilayah Anda di aplikasi iklan properti 2 bulan sebelum perpanjangan."
+      }
+    },
+    "sa-6000-kwh": {
+      "label": "Listrik",
+      "noun": "listrik",
+      "title": "Jaga pemakaian di bawah 6.000 kWh pada bulan-bulan musim panas",
+      "why": "Rumah membayar 18 halala per kWh sampai 6.000 kWh per bulan dan 30 halala di atasnya, jadi bulan-bulan terpanas jauh lebih mahal per unit bagi vila besar.",
+      "evidence": "Menjaga pemakaian musim panas di bawah 6.000 kWh biasanya memangkas",
+      "tips": {
+        "1": "Cek kWh bulanan di aplikasi SEC; usahakan bulan puncak tetap di bawah 6.000.",
+        "2": "Atur AC split di 24°C dan matikan AC di ruangan kosong dan majelis (ruang tamu).",
+        "3": "Beri peneduh pada jendela yang menghadap barat dan servis AC sebelum musim panas."
+      }
+    },
+    "sa-bnpl": {
+      "label": "Belanja & lain-lain",
+      "noun": "belanja dan lain-lain",
+      "title": "Batasi paylater untuk belanja sehari-hari",
+      "why": "Membagi pembelian menjadi cicilan membuat Anda mudah belanja lebih banyak dari rencana setiap bulan.",
+      "evidence": "Membatasi cicilan hanya untuk kebutuhan pokok biasanya memangkas",
+      "tips": {
+        "1": "Matikan opsi cicilan sebagai metode pembayaran utama di aplikasi belanja.",
+        "2": "Catat total cicilan yang masih berjalan dan tanggal jatuh temponya.",
+        "3": "Tunggu 24 jam sebelum membeli apa pun di atas SAR 500."
+      }
+    },
+    "us-open-enrollment": {
+      "label": "Asuransi kesehatan",
+      "noun": "premi asuransi kesehatan",
+      "title": "Bandingkan paket asuransi kesehatan saat open enrollment",
+      "why": "Paket dari kantor dan dari Marketplace berubah harga setiap tahun, dan bawaannya sering otomatis diperpanjang di paket yang sama.",
+      "evidence": "Memilih paket yang tepat saat open enrollment (masa pendaftaran tahunan) sering memangkas",
+      "tips": {
+        "1": "Saat open enrollment, bandingkan premi ditambah risiko sendiri (deductible) yang realistis akan Anda bayar, bukan premi saja.",
+        "2": "Jika Anda dan pasangan sama-sama ditanggung kantor, cek apakah satu paket keluarga atau dua paket terpisah yang lebih murah.",
+        "3": "Jika Anda membeli di HealthCare.gov atau Marketplace negara bagian, perbarui data penghasilan Anda: Anda mungkin berhak atas kredit pajak yang lebih besar."
+      }
+    }
   }
 }

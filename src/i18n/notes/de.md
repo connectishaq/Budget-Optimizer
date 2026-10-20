@@ -111,3 +111,17 @@ reviewed**. A German lawyer should check them before launch, in particular:
 - `countryFields.GB.*`: "Council Tax" and "TV Licence" kept as proper nouns, explained in the help text.
 - `countryFields.SA.dependentFee.help`: "saudischer Staatsbürger" is the generic masculine; neutral alternative "wenn du die saudische Staatsbürgerschaft hast".
 - `format.currencies.NGN`: "Nigerianischer Naira" (masculine, per Duden); "Naira" is sometimes used as feminine.
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.evidence`: same pattern as `rules.*.evidence`, ending in "spart meist/oft" or "vermeidet meist" (credit-card ideas), so "{evidence} {words} dieser Ausgaben/Zinsen." reads as a sentence.
+- `ae-rent-cheques` / `sa-rent-instalments` evidence: English "lowers the yearly rent by" became "spart bei der Jahresmiete oft" so it fits "… etwa ein Zehntel dieser Ausgaben".
+- `localTips.*.noun`: accusative after "für" ("für Strom", "für die Kfz-Versicherung", "für die Council Tax", "für Beiträge zur Krankenversicherung").
+- Local names kept, with a short German gloss in brackets on first use: DEWA, Salik, Nol, Default Market Offer, Rotativo, consignado, bandeira vermelha, Tarifa Social, PVPC, potencia, CNMC, TAE, pago aplazado, prime transport, forfait mobilités durables, TRV/heures creuses, chèque énergie, loi Hamon, Ofgem price cap, Direct Debit, single person discount, PLN, KRL, Ojek, PDAM, PM Surya Ghar, DISCOM, Aadhaar, PNG, NCMC, MSI/Quincena, CFE/DAC, Gas LP, DisCo/MAP/NERC, Band A, Geyser, Ejar, SEC, Majlis, Open Enrollment, Marketplace, deductible.
+- `gb-council-tax-discount`: council tax "band" → "Band (Steuerstufe)"; German has no equivalent.
+- `in-rooftop-solar`: "net meter" → "Zweirichtungszähler (Net Meter)".
+- `pk-*`: "geyser" kept as "Geyser (Warmwasserboiler)"; "instant geyser" → "Durchlauferhitzer".
+- `ng-meter-band`: "crazy billing" → "verrückte" Abrechnungen in quotes; a Nigerian colloquialism, may read oddly.
+- `ng-solar-inverter` label/noun "Sprit für den Generator" (matches `countryFields.NG.generatorFuel`); `pk-solar-ups` "Generator & USV".
+- `sa-bnpl`: "buy now, pay later" → „Jetzt kaufen, später zahlen“; "BNPL"/"Ratenkauf" are alternatives.
+- `de-jobticket`: uses the official name "Deutschlandticket Job"; check the 63 € price is still current at launch.
+- `fr-prime-transport`: "transit pass" → "Zeitkarte" (covers monthly and yearly passes).

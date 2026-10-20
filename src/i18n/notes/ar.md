@@ -93,3 +93,18 @@ verbatim where the policy refers to it.
 - `countryFields.IN.powerBackup` uses «إنفرتر» (transliteration); «محوّل كهربائي» is the formal alternative.
 - `countryFields.GB.councilTax` / `tvLicence`, `FR.*`, `ES.*`, `MX.*`, `BR.*`, `DE.*`: Arabic description plus the local name in brackets; these labels are longer than the English — check width.
 - `format.currencies.NGN` «نايرا نيجيرية» («نيرة» is also seen); `MXN` «بيزو مكسيكي».
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.evidence` is written to end in «يخفّض عادةً/غالبًا» (or «يجنّبك عادةً» for the credit-card ideas) like `rules.*.evidence`, so it reads «… يخفّض عادةً نحو العُشر (10%) من هذا الإنفاق.» — check on screen.
+- `ae-rent-cheques` / `sa-rent-instalments` evidence: English "lowers the yearly rent by" shortened to «يخفّض غالبًا» because {words} is followed by «من هذا الإنفاق»; «يخفّض الإيجار السنوي غالبًا بمقدار» would double the object.
+- `ae-*`: «سالك» and «بطاقة نول» in Arabic script; DEWA kept in Latin as elsewhere in the file, spelled out once as «هيئة كهرباء ومياه دبي (DEWA)»; RERA as «مؤسسة التنظيم العقاري (RERA)»; rent cheques «شيكات مؤجلة».
+- `ae-salik-nol` / `sa-bnpl`: amounts kept with currency codes («6.30 AED», «500 SAR») per the guide; «درهم» / «ريال» would read more naturally.
+- `sa-rent-instalments`: Ejar → «منصة إيجار» (the word also means "rent", so «منصة» is added to avoid ambiguity); `sa-6000-kwh`: «هللة», SEC → «الشركة السعودية للكهرباء (SEC)», «مكيّفات السبليت», «المجلس».
+- `sa-bnpl` title «اشترِ الآن وادفع لاحقًا» in quotes; Gulf readers may know it as «تقسيط» or by brand (Tabby/Tamara), not mentioned since the English doesn't.
+- Labels reuse existing terms: «الكهرباء», «الماء والغاز», «الأجرة ورسوم الطرق», «الإنترنت والهاتف», «تأمين السيارة», «وقود المولّد»; new: «التسوق والكماليات» (Shopping & extras), «بطاقات الائتمان», «مياه الشرب», «المولّد وUPS», «التأمين الصحي»/«التأمين الصحي الخاص», «ضريبة المجلس المحلي».
+- Other countries' terms kept in Latin with a short Arabic gloss: rotativo, consignado, bandeira vermelha, Grundversorgung, Abschlag, Deutschlandticket, PVPC, potencia, revolving/TAE, pago aplazado, abono joven/único, prime transport, Navigo, forfait mobilités durables, TRV, chèque énergie, loi Hamon («قانون آمون»), Ofgem, Direct Debit, Council Tax Reduction, PLN/VA/token, ojek, KRL, galon, PDAM, DISCOM, net meter, LPG/PNG, Aadhaar, auto («الريكشا»), MSI/quincena, DAC/CFE, Band A/DisCo/MAP/NERC, geyser, load-shedding, open enrollment/tax credit.
+- `es-revolving` tip 3: "usurious" → «فائدة فاحشة» (Spanish legal concept *usura*); «ربوية» avoided because in Arabic it implies any interest.
+- `us-open-enrollment` tip 3: "tax credit" → «خصم ضريبي (tax credit)»; «إعفاء ضريبي» is a common but less exact alternative.
+- `ng-meter-band` "crazy" billing → «الفواتير التقديرية («المجنونة»)», literal; «العشوائية» is an alternative.
+- `pk-protected-slab`: "protected status" → «الشريحة المحمية» / «هذه الميزة».
+- `ca-home-energy-rebates` title "rebates" → «دعم تحسينات طاقة المنزل»; «المبالغ المستردّة» is closer to "rebate" but less clear.

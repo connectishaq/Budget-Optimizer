@@ -107,3 +107,23 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Long labels that may wrap above an input: "Cuotas del barrio o del edificio (IPL, iuran RT/RW)", "Impuesto sobre la propiedad (taxe foncière)", "Tasa de radiotelevisión (Rundfunkbeitrag)", "Seguro médico complementario (mutuelle)".
 - `GB.councilTax` / `GB.tvLicence` keep the English name in brackets after a Spanish gloss; `ID.galon` "garrafas galon" keeps the Indonesian word.
 - Currency names: "Riyal saudí", "Real brasileño", "Peso mexicano", "Rupia indonesia", "Naira nigeriana" (naira is feminine in RAE usage).
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.label` / `noun` reuse the existing field names ("Luz", "Agua y gas", "Billetes y peajes", "Internet y teléfono", "Seguro del coche"); new ones: "Tarjetas de crédito" / "intereses de la tarjeta de crédito", "Compras y extras", "Agua potable", "Generador y UPS", "Impuesto municipal" (noun keeps "(council tax)").
+- Evidence fragments follow `rules.*.evidence` ("… suele reducir" + {words} + "de este gasto"); credit-card ideas use "… evita" to fit `plan.explain.interest` ("… de esos intereses"). The rent ideas (`ae-rent-cheques`, `sa-rent-instalments`) read "suele rebajar el alquiler anual en aproximadamente una décima parte (10%) de este gasto", slightly clunky, like the English.
+- Rent ideas for AE, SA and NG use the Spain forms "alquiler" / "casero" / "piso" (MX: renta / arrendador / departamento).
+- `mx-*` ideas use Mexican wording: "quincena", "meses sin intereses (MSI)", "precio de contado", "recibo de la CFE", "tanque de gas" (Spain: bombona), "refrigeradores" and "minisplits", "boiler" (Spain: calentador / termo), "repartidor".
+- `es-*` ideas use Spain wording: "potencia contratada", "te salta el automático", "horas valle", "abono joven / abono único", "tarjeta transporte", "tarjeta revolving", "pago aplazado", "usuraria".
+- `es-pvpc-vs-libre.tips.3`: English says off-peak = 00:00–08:00 and weekends; in Spain that is the "periodo valle" of the 2.0TD tariff, so "horas valle" is used.
+- `br-sair-do-rotativo`: "rotativo" kept as the Brazilian term ("el rotativo de la tarjeta"); "consignado" glossed as "préstamo con descuento en nómina".
+- `br-bandeira-chuveiro`: "bandeira" kept, glossed once as "bandera roja (bandeira vermelha)"; "ducha eléctrica" for chuveiro elétrico.
+- `pk-*`: "geyser" glossed as "calentador (geyser)"; load-shedding = "cortes programados (load-shedding)"; "units" kept in quotes as printed on Pakistani bills.
+- `in-metro-card.why`: "autos" (auto-rickshaws) rendered as "autorickshaw" to avoid confusion with "auto" = car in Mexico.
+- `in-lpg-subsidy`: LPG = "GLP", cylinder = "bombona" (Spain; MX: tanque / cilindro).
+- `id-galon-depot`: "galones" for Indonesian galon water jugs (19 L), "depósito de recarga" for depot isi ulang; could also be "garrafas" as in `countryFields.ID.galon`.
+- `ng-meter-band.why`: "crazy" billing = facturas «locas»; DisCo, NERC, MAP kept as acronyms.
+- `gb-council-tax-discount`: council = "ayuntamiento (council)"; "single person discount" kept in brackets.
+- `us-open-enrollment`: "inscripción abierta (open enrollment)" and "deducible" (the usual US Spanish term) rather than Spain "franquicia"; "Si los dos tienen seguro" uses ustedes, natural for the US market (Spain: "tenéis" would break the no-vosotros rule).
+- `de-energy-switch.why`: "ct/kWh" written as "céntimos/kWh" (MX would say "centavos de euro").
+- `sa-6000-kwh.why`: "villas" = "chalés" (Spain; MX: "casas grandes" / "residencias").
+- Possibly long titles for cards: `ae-salik-nol.title`, `id-krl-tj.title`, `in-lpg-subsidy.title`, `sa-bnpl.title`.

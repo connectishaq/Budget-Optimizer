@@ -30,7 +30,7 @@
 // Text is looked up in the "rules" messages when read (getters and functions),
 // so it follows the active language.
 
-import { t } from '../i18n/index.js';
+import { t, has } from '../i18n/index.js';
 
 const HIGH_APR = 15;
 
@@ -364,6 +364,52 @@ export const RULES = [
     }
   }
 ];
+
+// ---------------- Country ideas ----------------
+// Each country's data file lists `localTips` (energy tariff switching in GB/DE,
+// generator-to-solar in PK/NG, rent cheques in AE…). They become rules shaped
+// like the ones above, on the bill named by `pool`, so they share the same
+// cards, stacking and plan. Their text is in the "localTips.<id>" messages;
+// the data file's English is the fallback.
+
+const POOL_ICON = {
+  rent: 'key', electricity: 'bolt', waterGas: 'flame', transit: 'ticket', internet: 'wifi', carIns: 'umbrella',
+  misc: 'bag', cardInterest: 'card', councilTax: 'home', privateHealth: 'heart-pulse', healthPremium: 'heart-pulse',
+  generatorFuel: 'fuel', galon: 'cart'
+};
+
+/** The amount a country idea works on: card interest, or a bill (including the country's own). */
+const poolAmount = (c, pool) => (pool === 'cardInterest'
+  ? highAprCards(c.debts).reduce((a, d) => a + (d.balance * d.apr) / 1200, 0)
+  : c.v[pool] || 0);
+
+function localRule(tip) {
+  const k = `localTips.${tip.id}`;
+  const msg = (key, fallback) => (has(`${k}.${key}`) ? t(`${k}.${key}`) : fallback);
+  return {
+    id: tip.id, category: 'Local', icon: POOL_ICON[tip.pool] || 'lightbulb', local: true,
+    kind: tip.pool === 'cardInterest' ? 'interest' : 'cash',
+    get label() { return msg('label', tip.title); },
+    get noun() { return msg('noun', tip.pool); },
+    pools: [tip.pool],
+    // Shown when the bill is there to work on, and only for the households it fits
+    when: (c) => poolAmount(c, tip.pool) > 0 && (!tip.profiles || tip.profiles.includes(c.profile)),
+    pct: tip.pct, maxPct: tip.pool === 'cardInterest' ? 1 : undefined,
+    effort: EFFORT_ORDER[tip.effort] == null ? 'Easy' : tip.effort,
+    upfront: () => tip.upfront || 0,
+    get title() { return msg('title', tip.title); },
+    why: () => msg('why', tip.why),
+    get evidence() { return msg('evidence', ''); },
+    tips: () => tip.tips.map((x, i) => msg(`tips.${i + 1}`, x))
+  };
+}
+
+const localCache = new WeakMap();
+/** The country's ideas as rules (built once per loaded country). */
+export function localRules(C) {
+  if (!localCache.has(C)) localCache.set(C, (C.localTips || []).map(localRule));
+  return localCache.get(C);
+}
 
 export const EFFORT_ORDER = { Easy: 0, Medium: 1, 'Requires purchase': 2 };
 // Keys are the stored `effort` values; the displayed words follow the active language.

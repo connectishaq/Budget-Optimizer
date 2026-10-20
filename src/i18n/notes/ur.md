@@ -49,3 +49,17 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - Foreign proper nouns (DEWA, Empower, Rundfunkbeitrag, condomínio, mutuelle, taxe foncière, IPL, iuran RT/RW, LAWMA, Medicare levy surcharge, Marketplace) are kept in Latin script inside the Urdu; this mixes LTR runs into RTL text.
 - `countryFields.SA.dependentFee` "ڈیپنڈنٹ فیس": Pakistanis in KSA also call it "مرافقین فیس" / "فیملی ٹیکس".
 - `format.currencies.IDR` "انڈونیشین روپیہ" (rupiah); "روپیا" is a closer transliteration.
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.evidence` follow the `rules.*.evidence` pattern ("…سے عموماً" / "…سے اکثر"), so `plan.explain.*` adds "{words} بچ جاتا ہے" after them.
+- `ae-rent-cheques` / `sa-rent-instalments` evidence "…سالانہ کرایے میں سے اکثر" + "اس خرچ کا {words}…" reads slightly doubled ("کرایے" then "اس خرچ"); acceptable, but check in context.
+- `gb-council-tax-discount` evidence has no "عموماً" (English "cuts" is definite), like `subsCancelUnused`.
+- Rent ideas use the oblique noun "کرایے" (and "پینے کے پانی"، "جنریٹر کے ایندھن"، "خریداری اور اضافی چیزوں"، "جنریٹر اور UPS کے خرچ") because `plan.explain.start` puts "پر" after `{noun}`.
+- `pk-protected-slab`: "protected سلیب" kept in Latin as printed on bills/news; some say "محفوظ صارف". "یونٹس" in quotes matches the bill wording.
+- `pk-solar-ups`: grid power called "واپڈا کی بجلی" (everyday term even though DISCOMs now bill); "لوڈشیڈنگ" used for load-shedding. Geyser electric element → "بجلی والا راڈ".
+- `pk-gas-geyser`: tankless geyser → "انسٹنٹ (بغیر ٹینکی والا) گیزر".
+- Foreign terms kept in Latin with a short Urdu gloss in brackets: Salik (ٹول)، rotativo، consignado، bandeira، revolving، pago aplazado، usurious، Grundversorgung، Abschlag، Deutschlandticket، PVPC، potencia، tarif réglementé (TRV)، chèque énergie، loi Hamon، Ofgem، price cap، band، KRL، ojek، galon، PDAM، DISCOM، Aadhaar، MSI/quincena، CFE، DAC، Gas LP، DisCo، Band A، Ejar، open enrollment. Mixed LTR runs in RTL text.
+- `id-krl-tj`: "rupiah" rendered as "روپیہ" (as in `format.currencies.IDR`).
+- `sa-6000-kwh`: "halalas" → "ہللہ"; "majlis" → "مجلس".
+- `sa-bnpl` title quotes "ابھی خریدیں، بعد میں ادا کریں" for buy-now-pay-later; "BNPL" is not widely known in Pakistan.
+- Longer than English: `ae-salik-nol.title`, `id-galon-depot.title`, `sa-rent-instalments.title` may wrap on small cards.

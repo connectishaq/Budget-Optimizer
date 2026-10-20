@@ -2462,5 +2462,475 @@
         "help": "What you pay each month for health insurance, including the amount taken from your paycheck for an employer plan or a Marketplace plan after any tax credit."
       }
     }
+  },
+  "localTips": {
+    "ae-rent-cheques": {
+      "label": "Rent",
+      "noun": "rent",
+      "title": "Offer fewer rent cheques for a lower rent",
+      "why": "Rent is agreed per year and paid in 1–12 post-dated cheques. Landlords often take less if you pay in 1 or 2 cheques. Enter your rent here as the yearly amount divided by 12.",
+      "evidence": "Paying in fewer cheques often saves",
+      "tips": {
+        "1": "Ask what the rent would be with 1 or 2 cheques instead of 4 or more.",
+        "2": "Check the RERA rental index calculator before renewing: it shows whether your landlord can raise the rent.",
+        "3": "Start looking 90 days before your contract ends; landlords must give 90 days’ notice of any increase."
+      }
+    },
+    "ae-dewa-slab": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Keep electricity out of the higher DEWA slabs",
+      "why": "DEWA charges more per kWh as your monthly use moves through its slabs, so the summer AC months cost far more per unit.",
+      "evidence": "Keeping use out of the top slabs usually cuts",
+      "tips": {
+        "1": "Set the AC to 24°C or higher and use timers so it isn’t cooling empty rooms.",
+        "2": "Get the AC ducts and filters cleaned before summer.",
+        "3": "Compare your monthly kWh on the DEWA app with the slab limits on your bill."
+      }
+    },
+    "ae-salik-nol": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Cut Salik gates and use Nol for the commute",
+      "why": "Each Salik crossing costs AED 6.30 at peak and 4.20 off-peak; four peak crossings a working day add up to over AED 500 a month.",
+      "evidence": "Fewer peak Salik crossings and a Nol card for some trips usually cut",
+      "tips": {
+        "1": "Check if a route without Salik gates adds only a few minutes.",
+        "2": "Travel just before 6 am or after 8 pm when the toll is lower.",
+        "3": "Try the Metro with a Nol card a few days a week and compare the cost."
+      }
+    },
+    "au-energy-made-easy": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Compare your electricity plan on Energy Made Easy",
+      "why": "Many households are on plans priced at or near the Default Market Offer, while market offers from the same or other retailers are often cheaper.",
+      "evidence": "Moving to a cheaper market offer often cuts",
+      "tips": {
+        "1": "Upload your bill to Energy Made Easy (or Victorian Energy Compare in Victoria) to see cheaper plans for your actual usage.",
+        "2": "Ask your current retailer to match the best offer before switching.",
+        "3": "If you have solar or can shift usage, compare time-of-use plans with cheap midday rates."
+      }
+    },
+    "au-health-cover-review": {
+      "label": "Private health cover",
+      "noun": "private health cover",
+      "title": "Review your private health cover tier and extras",
+      "why": "Premiums rise every April, and many people pay for extras or hospital services they never use.",
+      "evidence": "Dropping cover and extras you don’t use usually cuts",
+      "tips": {
+        "1": "Compare policies on privatehealth.gov.au, the government’s free comparison site.",
+        "2": "Check whether you use your extras enough to beat the premium; if not, drop extras or pick a cheaper tier.",
+        "3": "A higher excess lowers the premium; consider paying annually before 1 April to lock in the old price."
+      }
+    },
+    "br-sair-do-rotativo": {
+      "label": "Credit cards",
+      "noun": "credit card interest",
+      "title": "Get off the card rotativo now",
+      "why": "The card rotativo averaged about 445% a year in August 2026 and the bill-instalment plan about 192% a year. Almost any other credit is cheaper.",
+      "evidence": "Moving the balance to a much cheaper loan avoids",
+      "tips": {
+        "1": "Pay the full card bill if you possibly can; paying only the minimum puts the rest on the rotativo.",
+        "2": "If you can’t, swap the balance for a payroll-deducted loan (consignado) or a personal loan at a much lower rate instead of the bank’s instalment offer.",
+        "3": "Renegotiate overdue card debt through your bank or Serasa Limpa Nome, where discounts are common."
+      }
+    },
+    "br-bandeira-chuveiro": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Tame the electric shower and the bandeira",
+      "why": "Electric showers are one of the biggest power users in Brazilian homes, and red-flag (bandeira vermelha) months add a surcharge to every kWh.",
+      "evidence": "Shorter showers on the summer setting usually cut",
+      "tips": {
+        "1": "Set the shower to the \"verão\" (summer) setting and keep showers to 5–8 minutes.",
+        "2": "Check the bandeira on your bill and cut AC and dryer use in red-flag months.",
+        "3": "Ask your distributor whether you qualify for the Tarifa Social discount."
+      }
+    },
+    "ca-phone-flanker": {
+      "label": "Internet & phone",
+      "noun": "internet and phone",
+      "title": "Move your phone plan to a lower-cost brand",
+      "why": "The big three carriers own cheaper brands on the same networks, and their plans often cost much less for the same data.",
+      "evidence": "Moving to a lower-cost brand on the same network often cuts",
+      "tips": {
+        "1": "Compare your plan with Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom or Virgin Plus; you can keep your number.",
+        "2": "Call your internet provider’s retention department and ask for the new-customer price, or switch.",
+        "3": "If you pay off a phone through your plan, check when it ends and move to a cheaper bring-your-own-phone plan."
+      }
+    },
+    "ca-home-energy-rebates": {
+      "label": "Water & gas",
+      "noun": "water and gas",
+      "title": "Use home energy rebates before winter",
+      "why": "Heating is the biggest energy cost in most Canadian homes, and provinces and utilities pay for many upgrades.",
+      "evidence": "Rebate-funded insulation and heating upgrades usually cut",
+      "tips": {
+        "1": "Check your province’s and gas utility’s rebate programs (for example Enbridge or FortisBC) for insulation, smart thermostats and heat pumps.",
+        "2": "Seal drafts around doors and windows and turn the heat down 2–3°C at night and when you are out.",
+        "3": "If your utility offers equal monthly billing, use it to avoid winter bill shocks (it does not lower the total)."
+      }
+    },
+    "de-energy-switch": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Leave the default electricity tariff",
+      "why": "Households still on the local supplier’s default tariff (Grundversorgung) pay around 40 ct/kWh, while the cheapest new-customer tariffs are around 30 ct/kWh.",
+      "evidence": "Leaving the default tariff usually cuts",
+      "tips": {
+        "1": "Find your yearly kWh on your last bill and compare tariffs on Check24 or Verivox.",
+        "2": "Pick a tariff with a 12-month price guarantee and no prepayment.",
+        "3": "Set a reminder to compare again before the first year ends, when bonuses run out."
+      }
+    },
+    "de-gas-switch": {
+      "label": "Water & gas",
+      "noun": "water and gas",
+      "title": "Switch your gas supplier",
+      "why": "Gas prices for new customers are well below the default tariff and many long-standing contracts.",
+      "evidence": "Switching gas supplier usually cuts",
+      "tips": {
+        "1": "Compare gas tariffs with your yearly kWh from the last statement.",
+        "2": "Check your monthly prepayment (Abschlag) matches your real use so you avoid a big back-payment.",
+        "3": "Bleed radiators and turn the heating down 1°C; each degree saves about 6%."
+      }
+    },
+    "de-jobticket": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Ask for a Deutschlandticket Job",
+      "why": "If your employer pays at least 25% of the Deutschlandticket, the price drops a further 5%, so your share can fall well below €63.",
+      "evidence": "An employer-supported Deutschlandticket usually cuts",
+      "tips": {
+        "1": "Ask HR whether they offer the Deutschlandticket Job.",
+        "2": "Cancel single tickets and local monthly passes the Deutschlandticket already covers.",
+        "3": "Check whether your state offers a cheaper student or social version."
+      }
+    },
+    "es-pvpc-vs-libre": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Check PVPC against a fixed-price tariff",
+      "why": "The regulated PVPC follows wholesale prices hour by hour; depending on your habits a fixed-price free-market tariff may be cheaper, or the other way round.",
+      "evidence": "Being on the tariff that suits your habits usually cuts",
+      "tips": {
+        "1": "Compare with the CNMC comparison tool using your last bills.",
+        "2": "Lower your contracted power (potencia) if you never trip the fuse.",
+        "3": "Run the washing machine and dishwasher in the off-peak hours (00:00–08:00 and weekends)."
+      }
+    },
+    "es-revolving": {
+      "label": "Credit cards",
+      "noun": "credit card interest",
+      "title": "Get out of revolving credit",
+      "why": "Revolving cards charge around 22–24% TAE, and low fixed payments can keep you in debt for years.",
+      "evidence": "Paying off revolving credit with a cheaper loan avoids",
+      "tips": {
+        "1": "Switch the card from \"pago aplazado\" to paying the full balance each month.",
+        "2": "Ask your bank for a personal loan (~7% average) to clear the card.",
+        "3": "If your card charged far above the market average when you signed, ask a consumer association (OCU, Asufin) whether it may be usurious."
+      }
+    },
+    "es-abono-transporte": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Use the subsidised monthly pass",
+      "why": "Regional and state-subsidised passes (abono joven, abono único) are much cheaper than single tickets for regular commuters.",
+      "evidence": "A subsidised monthly pass usually cuts",
+      "tips": {
+        "1": "Check your region’s monthly pass and the youth discount if you are under 26.",
+        "2": "Compare it with what you spend on single tickets and parking.",
+        "3": "Ask your employer about tax-free transport cards (tarjeta transporte)."
+      }
+    },
+    "fr-prime-transport": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Claim your 50% transit refund",
+      "why": "Employers must reimburse half of your public-transport pass (prime transport). Some people never claim it.",
+      "evidence": "Claiming the employer refund usually cuts",
+      "tips": {
+        "1": "Send your Navigo or local pass receipt to HR or payroll.",
+        "2": "Choose the yearly pass (Navigo Annuel) if you use it every month.",
+        "3": "Ask about the forfait mobilités durables if you cycle or carpool."
+      }
+    },
+    "fr-energy-offer": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Compare offers to the regulated tariff",
+      "why": "Many market offers are cheaper than the tarif réglementé (TRV), and the off-peak option can lower bills if you run appliances at night.",
+      "evidence": "A cheaper market offer usually cuts",
+      "tips": {
+        "1": "Compare offers on energie-info.fr, the national energy ombudsman’s comparison site.",
+        "2": "Check that your meter power (kVA) is not higher than you need.",
+        "3": "Ask whether you are eligible for the chèque énergie."
+      }
+    },
+    "fr-loi-hamon": {
+      "label": "Car insurance",
+      "noun": "car insurance",
+      "title": "Switch insurer at any time after one year",
+      "why": "Under the loi Hamon you can cancel home and car insurance at any time after the first year, and the new insurer handles it.",
+      "evidence": "Switching insurer after the first year often cuts",
+      "tips": {
+        "1": "Get 3 quotes for the same cover and excess.",
+        "2": "Let the new insurer cancel the old contract for you.",
+        "3": "Combine home and car with one insurer for a discount."
+      }
+    },
+    "gb-energy-switch": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Check for a fixed energy deal below the price cap",
+      "why": "Most homes on a standard variable tariff pay the Ofgem price cap rate. Fixed deals and smart time-of-use tariffs are sometimes cheaper.",
+      "evidence": "A fixed deal below the price cap usually cuts",
+      "tips": {
+        "1": "Compare fixed tariffs against the current price cap on a comparison site before the next cap change (January, April, July, October).",
+        "2": "Give a meter reading and switch to paying by Direct Debit, which is cheaper than paying on receipt of bill.",
+        "3": "If you have a smart meter and can shift usage, look at time-of-use tariffs with cheaper overnight rates."
+      }
+    },
+    "gb-council-tax-discount": {
+      "label": "Council tax",
+      "noun": "council tax",
+      "title": "Claim council tax discounts you are entitled to",
+      "why": "If only one adult lives in a home, the bill is 25% lower, and some bands are wrong.",
+      "evidence": "The single person discount cuts",
+      "tips": {
+        "1": "If you live alone (or the only other adults are students or apprentices), apply for the 25% single person discount on your council’s website.",
+        "2": "Check your band against similar homes on your street on the Valuation Office Agency (or Scottish Assessors) site.",
+        "3": "Ask your council about Council Tax Reduction if your income is low."
+      }
+    },
+    "id-va-power": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Check your PLN power level and token habits",
+      "why": "All households from 1,300 VA up pay the same Rp1,444.70 per kWh, so savings come from using fewer kWh, mainly AC and water heaters.",
+      "evidence": "Running the AC and water heater less usually cuts",
+      "tips": {
+        "1": "Set the AC to 25–26°C with a timer and close doors to the room you are cooling.",
+        "2": "Buy prepaid tokens in larger amounts: the admin fee is per purchase.",
+        "3": "Swap old fluorescent tubes and incandescent bulbs for LED."
+      }
+    },
+    "id-krl-tj": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Mix KRL, TransJakarta and MRT instead of daily ojek",
+      "why": "TransJakarta costs Rp3,500 a trip and KRL fares start from a few thousand rupiah, far below ride-hailing for the same distance.",
+      "evidence": "Taking KRL, TransJakarta or MRT for regular trips usually cuts",
+      "tips": {
+        "1": "Use ojek only for the first and last kilometre to the station.",
+        "2": "Use one card (e.g. JakLingko-linked) so transfers are integrated and cheaper.",
+        "3": "Compare a week of ride-hailing receipts with the public transport cost of the same trips."
+      }
+    },
+    "id-galon-depot": {
+      "label": "Drinking water",
+      "noun": "drinking water",
+      "title": "Switch branded galons for a trusted refill depot",
+      "why": "Refilling at a licensed depot costs a fraction of branded galons.",
+      "evidence": "A licensed refill depot usually cuts",
+      "tips": {
+        "1": "Choose a depot that shows a current health/hygiene certificate.",
+        "2": "Or boil and filter PDAM water for cooking.",
+        "3": "Buy galons in a monthly delivery plan if your depot offers one."
+      }
+    },
+    "in-rooftop-solar": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Check the rooftop solar subsidy",
+      "why": "If you own your home and the AC runs most of the year, a small rooftop system can wipe out most of a bill that sits in the higher slabs.",
+      "evidence": "A small rooftop system usually cuts",
+      "tips": {
+        "1": "Look up PM Surya Ghar on the official portal: it pays a central subsidy for home rooftop solar up to 3 kW.",
+        "2": "Ask your DISCOM for a net meter so units you export are taken off your bill.",
+        "3": "Get 2–3 quotes from vendors on the DISCOM’s approved list before you pay anything."
+      }
+    },
+    "in-lpg-subsidy": {
+      "label": "Water & gas",
+      "noun": "water and gas",
+      "title": "Book LPG refills only when needed and claim any subsidy",
+      "why": "Cooking gas is most of the “water and gas” line in Indian homes.",
+      "evidence": "Careful LPG use and any subsidy usually cut",
+      "tips": {
+        "1": "Link your LPG connection to Aadhaar and your bank so any subsidy reaches your account.",
+        "2": "Use a pressure cooker and lids on pans: they cut cooking gas noticeably.",
+        "3": "If your building has piped gas (PNG), compare its cost per month with cylinder refills."
+      }
+    },
+    "in-metro-card": {
+      "label": "Fares & tolls",
+      "noun": "fares and tolls",
+      "title": "Use a metro smart card or monthly pass",
+      "why": "Metro smart cards and monthly bus passes are cheaper per trip than paying cash or taking autos and cabs every day.",
+      "evidence": "A metro card or monthly pass usually cuts",
+      "tips": {
+        "1": "Use a metro smart card or NCMC card instead of single tokens; many metros give a discount per trip.",
+        "2": "Check if your city bus service sells a monthly pass.",
+        "3": "Share cabs with colleagues for the last mile instead of solo rides."
+      }
+    },
+    "mx-meses-sin-intereses": {
+      "label": "Shopping & extras",
+      "noun": "shopping and extras",
+      "title": "Watch your \"meses sin intereses\"",
+      "why": "Interest-free instalments feel free, but several at once tie up future quincenas and push people into paying only the card minimum, where interest is around 55% a year.",
+      "evidence": "Taking on fewer new instalment plans usually cuts",
+      "tips": {
+        "1": "Add up every MSI instalment still running before buying anything new on instalments.",
+        "2": "Keep MSI payments to a small share of each quincena and never pay just the minimum.",
+        "3": "Ask for the cash price; some shops give a discount that MSI hides."
+      }
+    },
+    "mx-tarifa-dac": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Stay out of the DAC tariff",
+      "why": "CFE moves high-use homes to the unsubsidised DAC tariff based on 12 months of use, and getting out takes a year of lower use. Each block above basic use also costs more per kWh.",
+      "evidence": "Staying below the DAC limit usually cuts",
+      "tips": {
+        "1": "Check the \"Tarifa\" line and kWh blocks on your CFE bill.",
+        "2": "Run the AC at 25–26°C, and replace fridges and AC units over 10 years old with efficient models.",
+        "3": "Move ironing, washing and pumps out of the hottest hours."
+      }
+    },
+    "mx-gas-lp": {
+      "label": "Water & gas",
+      "noun": "water and gas",
+      "title": "Make each gas cylinder last longer",
+      "why": "Gas LP prices are capped weekly, but a family can go through one or two cylinders a month.",
+      "evidence": "Making each cylinder last longer usually cuts",
+      "tips": {
+        "1": "Check the weekly maximum price per kg for your area before you pay the delivery.",
+        "2": "Look for leaks with soapy water on the hose and regulator.",
+        "3": "Use lids on pots and a solar or efficient water heater if you can."
+      }
+    },
+    "ng-solar-inverter": {
+      "label": "Generator fuel",
+      "noun": "generator fuel",
+      "title": "Move from generator to a solar inverter",
+      "why": "Generator fuel is often the single biggest power cost in Nigerian homes, and petrol and diesel prices swing with the exchange rate.",
+      "evidence": "A solar inverter usually cuts",
+      "tips": {
+        "1": "Price a 2–5 kVA inverter with lithium batteries and a few solar panels; many vendors offer instalment plans.",
+        "2": "Run only fans, lights, TV and router on backup; save heavy loads for grid hours.",
+        "3": "Service the generator regularly and switch it off once the inverter is charged."
+      }
+    },
+    "ng-meter-band": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Get a prepaid meter and check your band",
+      "why": "Estimated (“crazy”) billing and paying Band A rates without Band A hours both inflate the electricity bill.",
+      "evidence": "A prepaid meter on the right band usually cuts",
+      "tips": {
+        "1": "Apply for a prepaid meter through your DisCo’s MAP scheme instead of paying estimated bills.",
+        "2": "Track your supply hours for a week; if you get fewer than 20 a day on Band A, complain to the DisCo and NERC.",
+        "3": "Buy units through your bank app to avoid vendor charges."
+      }
+    },
+    "ng-rent-yearly": {
+      "label": "Rent",
+      "noun": "rent",
+      "title": "Plan for rent paid a year or two in advance",
+      "why": "Landlords usually ask for 1–2 years’ rent upfront, plus agency and legal fees. Enter rent here as the yearly amount divided by 12, and save towards the next payment every month.",
+      "evidence": "Negotiating before you renew usually cuts",
+      "tips": {
+        "1": "Set aside the monthly share of next year’s rent in a separate savings account or money-market fund.",
+        "2": "Negotiate the renewal early, before the landlord advertises the flat.",
+        "3": "Ask if the landlord accepts rent in two halves instead of one lump sum."
+      }
+    },
+    "pk-protected-slab": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Stay in the protected 200-unit slab in winter",
+      "why": "Homes that use up to 200 units a month for six months in a row pay a much lower “protected” rate. One month over can cost you that status for the next six months.",
+      "evidence": "Staying in the protected slab usually cuts",
+      "tips": {
+        "1": "Check the last 6 months of “units” on your bill to see if you are close to protected status.",
+        "2": "In winter, switch off the geyser’s electric element and use gas or an instant geyser instead.",
+        "3": "Read your meter mid-month so you can cut back before you cross 200 units."
+      }
+    },
+    "pk-solar-ups": {
+      "label": "Generator & UPS",
+      "noun": "generator and UPS costs",
+      "title": "Swap generator hours for a solar + battery setup",
+      "why": "Petrol for a generator is one of the most expensive ways to make electricity. A small solar panel and lithium battery can cover fans, lights and the router during load-shedding.",
+      "evidence": "A solar and battery setup usually cuts",
+      "tips": {
+        "1": "Price a 1–3 kW solar kit with an inverter that can also charge from the grid.",
+        "2": "Run only fans, lights and Wi-Fi on backup; keep the AC and iron for grid hours.",
+        "3": "Service the generator and UPS batteries before summer so they don’t waste fuel or charge."
+      }
+    },
+    "pk-gas-geyser": {
+      "label": "Water & gas",
+      "noun": "water and gas",
+      "title": "Fit a geyser timer or instant geyser",
+      "why": "Gas geysers left on all day are a big part of winter gas bills, and gas tariffs rise steeply in higher slabs.",
+      "evidence": "A geyser timer or instant geyser usually cuts",
+      "tips": {
+        "1": "Put a timer on the geyser so it heats water only morning and evening.",
+        "2": "Consider an instant (tankless) geyser when the old one needs replacing.",
+        "3": "Insulate the hot-water pipes on the roof."
+      }
+    },
+    "sa-rent-instalments": {
+      "label": "Rent",
+      "noun": "rent",
+      "title": "Negotiate rent when you choose how often to pay",
+      "why": "Rent is usually agreed per year on Ejar and paid in 1, 2 or 4 instalments. Enter it here as the yearly amount divided by 12. Paying in fewer instalments can earn a discount.",
+      "evidence": "Paying in fewer instalments often saves",
+      "tips": {
+        "1": "Ask the landlord what the yearly rent would be if you paid in 1 or 2 instalments.",
+        "2": "Make sure the contract is registered on Ejar so increases follow the agreed terms.",
+        "3": "Compare similar flats in your district on listing apps 2 months before renewal."
+      }
+    },
+    "sa-6000-kwh": {
+      "label": "Electricity",
+      "noun": "electricity",
+      "title": "Stay under 6,000 kWh in summer months",
+      "why": "Homes pay 18 halalas a kWh up to 6,000 kWh a month and 30 halalas above it, so the hottest months cost much more per unit for big villas.",
+      "evidence": "Keeping summer use under 6,000 kWh usually cuts",
+      "tips": {
+        "1": "Check monthly kWh in the SEC app; aim to keep peak months under 6,000.",
+        "2": "Set split units to 24°C and switch off AC in empty rooms and majlis.",
+        "3": "Shade west-facing windows and service AC units before summer."
+      }
+    },
+    "sa-bnpl": {
+      "label": "Shopping & extras",
+      "noun": "shopping and extras",
+      "title": "Limit buy-now-pay-later on everyday shopping",
+      "why": "Splitting purchases into instalments makes it easy to spend more than planned each month.",
+      "evidence": "Keeping instalment plans to essentials usually cuts",
+      "tips": {
+        "1": "Turn off instalment options as the default payment in shopping apps.",
+        "2": "Keep a running total of open instalment plans and their due dates.",
+        "3": "Wait 24 hours before buying anything over SAR 500."
+      }
+    },
+    "us-open-enrollment": {
+      "label": "Health insurance",
+      "noun": "health insurance premiums",
+      "title": "Compare health plans at open enrollment",
+      "why": "Employer and Marketplace plans change prices every year, and the default is often to roll over into the same plan.",
+      "evidence": "Picking the right plan at open enrollment often cuts",
+      "tips": {
+        "1": "At open enrollment, compare the premium plus the deductible you realistically expect to pay, not the premium alone.",
+        "2": "If you are both covered at work, check whether one family plan or two separate plans costs less.",
+        "3": "If you buy on HealthCare.gov or a state Marketplace, update your income: you may qualify for a bigger tax credit."
+      }
+    }
   }
 }

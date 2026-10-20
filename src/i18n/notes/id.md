@@ -111,3 +111,19 @@ Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approxim
 - `countryFields.GB.councilTax` "Pajak daerah (council tax)" and `IN.societyMaintenance` "Iuran pengelola" are approximations; local terms are kept in brackets.
 - Generator/inverter fields use "genset" (common Indonesian word) and "BBM"/"solar" for fuel/diesel; "aki" for battery.
 - Several country-field labels with a local term in brackets (e.g. MX gastosMedicos, BR planoSaude) may wrap above the input.
+
+## Phase 7 additions (country savings ideas)
+- `localTips.*.evidence` follow the `rules.*.evidence` pattern ("…biasanya memangkas"/"sering memangkas"); credit-card ideas (br-sair-do-rotativo, es-revolving) end in "menghindari" to fit `plan.explain.interest`.
+- Rent ideas (ae-rent-cheques, sa-rent-instalments) end in "sering menurunkan sewa tahunan sebesar", so the sentence reads "…sebesar sekitar 10% dari pengeluaran ini". Please check this reads well with live {words}.
+- Labels reuse earlier terms: "Listrik", "Air & gas", "Ongkos & tol", "Internet & telepon", "Sewa", "Kartu kredit", "Belanja & lain-lain", "Air minum", "BBM genset", "Genset & UPS", "Pajak daerah (council tax)".
+- `id-va-power`: "daya VA PLN" and "token listrik"; the price is written Rp1.444,70 (Indonesian decimal comma). "Lampu neon" is used for fluorescent tubes ("lampu TL" is an alternative).
+- `id-krl-tj`: "ride-hailing" is "ojek atau taksi online"; "first and last kilometre" is "jarak pertama dan terakhir ke stasiun atau halte".
+- `id-galon-depot`: "depot air minum isi ulang" and "sertifikat laik higiene sanitasi" (the official name of the depot hygiene certificate). "PDAM water" is kept as "air PDAM".
+- `in-metro-card`: "autos" (auto-rickshaws) is "bajaj", the nearest Indonesian equivalent.
+- `sa-bnpl`: "buy-now-pay-later" is "paylater", the everyday Indonesian term.
+- `ng-solar-inverter`/`pk-solar-ups`: "grid hours" is "jam listrik jaringan menyala"; "load-shedding" is "pemadaman bergilir".
+- Foreign local terms are kept with a short explanation in brackets: DEWA, Salik, Nol, RERA, Default Market Offer, rotativo, consignado, bandeira vermelha, Grundversorgung, Abschlag, Deutschlandticket, PVPC, potencia, TAE, usura, prime transport, forfait mobilités durables, TRV, chèque énergie, loi Hamon, Ofgem price cap, Direct Debit, DISCOM, Aadhaar, PNG, NCMC, MSI/quincena, CFE/DAC, DisCo/NERC/MAP, Ejar, SEC, open enrollment, deductible.
+- "excess"/"deductible" use "risiko sendiri", as in the terminology table.
+- `es-revolving.tips.3`: "usurious" is "melanggar hukum (usura)"; "riba" was avoided because of its religious meaning.
+- `pk-protected-slab`: "units" is kept in quotes because that is the word printed on Pakistani bills.
+- Long titles that may wrap on small cards: `ae-dewa-slab.title`, `ae-salik-nol.title`, `id-krl-tj.title`.

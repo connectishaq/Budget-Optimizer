@@ -1150,6 +1150,12 @@
         "value": 0.3,
         "verify": true,
         "note": "Rough share of the electricity bill a 2–3 kW system offsets; depends on roof, state tariff and usage."
+      },
+      "effort": "Requires purchase",
+      "upfront": {
+        "value": 110000,
+        "verify": true,
+        "note": "2–3 kW system after the PM Surya Ghar central subsidy; prices vary by state and vendor."
       }
     },
     {
@@ -1166,7 +1172,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "in-metro-card",
@@ -1182,7 +1189,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

@@ -1121,7 +1121,8 @@
         "value": 0.2,
         "verify": true,
         "note": "Judgement estimate; the saving depends on the slab rates in your DISCO’s current tariff."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "pk-solar-ups",
@@ -1137,6 +1138,12 @@
         "value": 0.4,
         "verify": true,
         "note": "Judgement estimate."
+      },
+      "effort": "Requires purchase",
+      "upfront": {
+        "value": 250000,
+        "verify": true,
+        "note": "Two or three panels with a lithium battery and hybrid inverter for fans, lights and the router; prices vary by city."
       }
     },
     {
@@ -1153,6 +1160,12 @@
         "value": 0.15,
         "verify": true,
         "note": "Judgement estimate."
+      },
+      "effort": "Medium",
+      "upfront": {
+        "value": 4000,
+        "verify": true,
+        "note": "Geyser timer or conversion kit, fitted."
       }
     }
   ],

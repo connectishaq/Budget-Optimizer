@@ -2510,5 +2510,475 @@
         "help": "Ce que vous payez chaque mois pour votre assurance santé, y compris la part prélevée sur votre salaire pour un contrat employeur, ou un contrat Marketplace après crédit d’impôt."
       }
     }
+  },
+  "localTips": {
+    "ae-rent-cheques": {
+      "label": "Loyer",
+      "noun": "votre loyer",
+      "title": "Payez en moins de chèques pour un loyer plus bas",
+      "why": "Le loyer est fixé à l’année et payé en 1 à 12 chèques postdatés. Les propriétaires acceptent souvent moins si vous payez en 1 ou 2 chèques. Indiquez ici votre loyer annuel divisé par 12.",
+      "evidence": "Payer en moins de chèques permet souvent de réduire le loyer annuel et d’économiser",
+      "tips": {
+        "1": "Demandez quel serait le loyer avec 1 ou 2 chèques au lieu de 4 ou plus.",
+        "2": "Consultez le calculateur de l’indice des loyers RERA avant de renouveler : il indique si votre propriétaire peut augmenter le loyer.",
+        "3": "Commencez à chercher 90 jours avant la fin du contrat : le propriétaire doit annoncer toute hausse 90 jours à l’avance."
+      }
+    },
+    "ae-dewa-slab": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Évitez les tranches DEWA les plus chères",
+      "why": "DEWA facture le kWh plus cher à mesure que votre consommation mensuelle passe d’une tranche à l’autre : les mois d’été avec la clim coûtent donc bien plus cher par unité.",
+      "evidence": "Rester en dehors des tranches les plus hautes permet généralement d’économiser",
+      "tips": {
+        "1": "Réglez la clim sur 24 °C ou plus et utilisez les minuteurs pour ne pas refroidir des pièces vides.",
+        "2": "Faites nettoyer les conduits et les filtres de la clim avant l’été.",
+        "3": "Comparez vos kWh mensuels dans l’appli DEWA avec les limites des tranches indiquées sur votre facture."
+      }
+    },
+    "ae-salik-nol": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Passez moins de portiques Salik et prenez la carte Nol pour vos trajets",
+      "why": "Chaque passage Salik coûte 6,30 AED aux heures de pointe et 4,20 AED en heures creuses : quatre passages aux heures de pointe par jour travaillé dépassent 500 AED par mois.",
+      "evidence": "Passer moins de portiques Salik aux heures de pointe et prendre la carte Nol pour certains trajets permet généralement d’économiser",
+      "tips": {
+        "1": "Vérifiez si un itinéraire sans portique Salik ne rallonge le trajet que de quelques minutes.",
+        "2": "Circulez juste avant 6 h ou après 20 h, quand le péage est moins cher.",
+        "3": "Essayez le métro avec une carte Nol quelques jours par semaine et comparez le coût."
+      }
+    },
+    "au-energy-made-easy": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Comparez votre offre d’électricité sur Energy Made Easy",
+      "why": "Beaucoup de foyers ont une offre au prix de la Default Market Offer (tarif de référence) ou presque, alors que les offres de marché du même fournisseur ou d’autres sont souvent moins chères.",
+      "evidence": "Passer à une offre de marché moins chère permet souvent d’économiser",
+      "tips": {
+        "1": "Téléchargez votre facture sur Energy Made Easy (ou Victorian Energy Compare dans le Victoria) pour voir les offres moins chères pour votre consommation réelle.",
+        "2": "Demandez à votre fournisseur actuel de s’aligner sur la meilleure offre avant de changer.",
+        "3": "Si vous avez des panneaux solaires ou pouvez décaler votre consommation, comparez les offres à tarif horaire avec des prix bas en milieu de journée."
+      }
+    },
+    "au-health-cover-review": {
+      "label": "Assurance santé privée",
+      "noun": "votre assurance santé privée",
+      "title": "Revoyez le niveau et les options de votre assurance santé privée",
+      "why": "Les cotisations augmentent chaque année en avril, et beaucoup de gens paient des options (extras) ou des garanties hospitalières qu’ils n’utilisent jamais.",
+      "evidence": "Supprimer les garanties et options que vous n’utilisez pas permet généralement d’économiser",
+      "tips": {
+        "1": "Comparez les contrats sur privatehealth.gov.au, le comparateur gratuit du gouvernement.",
+        "2": "Vérifiez si vous utilisez assez vos options pour qu’elles valent leur prix ; sinon, supprimez-les ou choisissez un niveau moins cher.",
+        "3": "Une franchise plus élevée baisse la cotisation ; pensez à payer à l’année avant le 1er avril pour garder l’ancien prix."
+      }
+    },
+    "br-sair-do-rotativo": {
+      "label": "Cartes de crédit",
+      "noun": "les intérêts de carte de crédit",
+      "title": "Sortez tout de suite du rotativo de la carte",
+      "why": "Le rotativo de la carte coûtait en moyenne environ 445 % par an en août 2026, et le paiement de la facture en plusieurs fois environ 192 % par an. Presque tout autre crédit est moins cher.",
+      "evidence": "Remplacer le solde par un prêt bien moins cher permet généralement d’éviter",
+      "tips": {
+        "1": "Payez la facture de la carte en entier si vous le pouvez : en ne payant que le minimum, le reste passe en rotativo.",
+        "2": "Sinon, remplacez le solde par un prêt prélevé sur salaire (consignado) ou un prêt personnel à un taux bien plus bas, plutôt que d’accepter le paiement en plusieurs fois proposé par la banque.",
+        "3": "Renégociez les dettes de carte en retard avec votre banque ou via Serasa Limpa Nome, où les remises sont fréquentes."
+      }
+    },
+    "br-bandeira-chuveiro": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Maîtrisez la douche électrique et la bandeira",
+      "why": "La douche électrique est l’un des plus gros consommateurs d’électricité des foyers brésiliens, et les mois en drapeau rouge (bandeira vermelha) ajoutent un supplément à chaque kWh.",
+      "evidence": "Des douches plus courtes en position « été » permettent généralement d’économiser",
+      "tips": {
+        "1": "Réglez la douche en position « verão » (été) et limitez les douches à 5 à 8 minutes.",
+        "2": "Vérifiez la bandeira sur votre facture et utilisez moins la clim et le sèche-linge les mois en drapeau rouge.",
+        "3": "Demandez à votre distributeur si vous avez droit à la réduction Tarifa Social."
+      }
+    },
+    "ca-phone-flanker": {
+      "label": "Internet et téléphone",
+      "noun": "internet et le téléphone",
+      "title": "Passez à une marque à petit prix pour votre forfait mobile",
+      "why": "Les trois grands opérateurs possèdent des marques moins chères sur les mêmes réseaux, et leurs forfaits coûtent souvent bien moins pour autant de données.",
+      "evidence": "Passer à une marque à petit prix sur le même réseau permet souvent d’économiser",
+      "tips": {
+        "1": "Comparez votre forfait avec Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom ou Virgin Plus ; vous pouvez garder votre numéro.",
+        "2": "Appelez le service de fidélisation de votre fournisseur internet et demandez le prix accordé aux nouveaux clients, ou changez de fournisseur.",
+        "3": "Si vous remboursez un téléphone avec votre forfait, vérifiez quand cela se termine et passez ensuite à un forfait moins cher sans téléphone."
+      }
+    },
+    "ca-home-energy-rebates": {
+      "label": "Eau et gaz",
+      "noun": "l’eau et le gaz",
+      "title": "Profitez des subventions pour la rénovation énergétique avant l’hiver",
+      "why": "Le chauffage est la plus grosse dépense d’énergie dans la plupart des logements canadiens, et les provinces et les fournisseurs d’énergie financent de nombreux travaux.",
+      "evidence": "Isoler et moderniser le chauffage grâce aux subventions permet généralement d’économiser",
+      "tips": {
+        "1": "Consultez les programmes de subventions de votre province et de votre fournisseur de gaz (par exemple Enbridge ou FortisBC) pour l’isolation, les thermostats connectés et les pompes à chaleur.",
+        "2": "Bouchez les courants d’air autour des portes et fenêtres, et baissez le chauffage de 2 à 3 °C la nuit et quand vous êtes absent.",
+        "3": "Si votre fournisseur propose la facturation mensuelle égale, utilisez-la pour éviter les mauvaises surprises en hiver (elle ne baisse pas le total)."
+      }
+    },
+    "de-energy-switch": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Quittez le tarif d’électricité par défaut",
+      "why": "Les foyers encore au tarif par défaut du fournisseur local (Grundversorgung) paient environ 40 ct/kWh, alors que les tarifs nouveaux clients les moins chers sont autour de 30 ct/kWh.",
+      "evidence": "Quitter le tarif par défaut permet généralement d’économiser",
+      "tips": {
+        "1": "Relevez votre consommation annuelle en kWh sur votre dernière facture et comparez les tarifs sur Check24 ou Verivox.",
+        "2": "Choisissez un tarif avec une garantie de prix de 12 mois et sans paiement d’avance.",
+        "3": "Programmez un rappel pour comparer à nouveau avant la fin de la première année, quand les bonus s’arrêtent."
+      }
+    },
+    "de-gas-switch": {
+      "label": "Eau et gaz",
+      "noun": "l’eau et le gaz",
+      "title": "Changez de fournisseur de gaz",
+      "why": "Les prix du gaz pour les nouveaux clients sont bien inférieurs au tarif par défaut et à beaucoup de contrats anciens.",
+      "evidence": "Changer de fournisseur de gaz permet généralement d’économiser",
+      "tips": {
+        "1": "Comparez les tarifs du gaz avec votre consommation annuelle en kWh indiquée sur le dernier décompte.",
+        "2": "Vérifiez que votre acompte mensuel (Abschlag) correspond à votre consommation réelle pour éviter un gros rattrapage.",
+        "3": "Purgez les radiateurs et baissez le chauffage de 1 °C : chaque degré fait économiser environ 6 %."
+      }
+    },
+    "de-jobticket": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Demandez un Deutschlandticket Job",
+      "why": "Si votre employeur paie au moins 25 % du Deutschlandticket, le prix baisse encore de 5 % : votre part peut alors tomber bien en dessous de 63 €.",
+      "evidence": "Un Deutschlandticket financé en partie par l’employeur permet généralement d’économiser",
+      "tips": {
+        "1": "Demandez aux RH s’ils proposent le Deutschlandticket Job.",
+        "2": "Arrêtez les billets à l’unité et les abonnements locaux déjà couverts par le Deutschlandticket.",
+        "3": "Vérifiez si votre Land propose une version moins chère pour les étudiants ou à tarif social."
+      }
+    },
+    "es-pvpc-vs-libre": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Comparez le PVPC à un tarif à prix fixe",
+      "why": "Le PVPC, tarif réglementé, suit heure par heure les prix du marché de gros ; selon vos habitudes, un tarif à prix fixe du marché libre peut être moins cher, ou l’inverse.",
+      "evidence": "Choisir le tarif adapté à vos habitudes permet généralement d’économiser",
+      "tips": {
+        "1": "Comparez avec le comparateur de la CNMC à l’aide de vos dernières factures.",
+        "2": "Baissez votre puissance souscrite (potencia) si le disjoncteur ne saute jamais.",
+        "3": "Faites tourner le lave-linge et le lave-vaisselle aux heures creuses (de 0 h à 8 h et le week-end)."
+      }
+    },
+    "es-revolving": {
+      "label": "Cartes de crédit",
+      "noun": "les intérêts de carte de crédit",
+      "title": "Sortez du crédit renouvelable (revolving)",
+      "why": "Les cartes revolving facturent environ 22 à 24 % de TAE (taux annuel), et de petites mensualités fixes peuvent vous garder endetté pendant des années.",
+      "evidence": "Rembourser le crédit revolving avec un prêt moins cher permet généralement d’éviter",
+      "tips": {
+        "1": "Passez la carte du « pago aplazado » (paiement différé) au remboursement total du solde chaque mois.",
+        "2": "Demandez à votre banque un prêt personnel (environ 7 % en moyenne) pour solder la carte.",
+        "3": "Si votre carte facturait bien plus que la moyenne du marché à la signature, demandez à une association de consommateurs (OCU, Asufin) si le taux peut être jugé usuraire."
+      }
+    },
+    "es-abono-transporte": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Prenez l’abonnement mensuel subventionné",
+      "why": "Les abonnements subventionnés par la région et l’État (abono joven, abono único) coûtent bien moins cher que les billets à l’unité pour les trajets réguliers.",
+      "evidence": "Un abonnement mensuel subventionné permet généralement d’économiser",
+      "tips": {
+        "1": "Renseignez-vous sur l’abonnement mensuel de votre région et la réduction jeunes si vous avez moins de 26 ans.",
+        "2": "Comparez-le avec ce que vous dépensez en billets à l’unité et en stationnement.",
+        "3": "Demandez à votre employeur s’il propose des cartes de transport exonérées d’impôt (tarjeta transporte)."
+      }
+    },
+    "fr-prime-transport": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Demandez le remboursement de 50 % de votre abonnement",
+      "why": "L’employeur doit rembourser la moitié de votre abonnement de transports en commun (prise en charge des frais de transport). Certains salariés ne la demandent jamais.",
+      "evidence": "Demander la prise en charge par l’employeur permet généralement d’économiser",
+      "tips": {
+        "1": "Envoyez votre justificatif Navigo ou d’abonnement local aux RH ou au service paie.",
+        "2": "Choisissez l’abonnement annuel (Navigo Annuel) si vous l’utilisez tous les mois.",
+        "3": "Renseignez-vous sur le forfait mobilités durables si vous venez à vélo ou en covoiturage."
+      }
+    },
+    "fr-energy-offer": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Comparez les offres au tarif réglementé",
+      "why": "Beaucoup d’offres de marché sont moins chères que le tarif réglementé de vente (TRV), et l’option heures creuses peut réduire la facture si vous faites tourner vos appareils la nuit.",
+      "evidence": "Une offre de marché moins chère permet généralement d’économiser",
+      "tips": {
+        "1": "Comparez les offres sur energie-info.fr, le comparateur du médiateur national de l’énergie.",
+        "2": "Vérifiez que la puissance de votre compteur (kVA) n’est pas plus élevée que nécessaire.",
+        "3": "Vérifiez si vous avez droit au chèque énergie."
+      }
+    },
+    "fr-loi-hamon": {
+      "label": "Assurance auto",
+      "noun": "votre assurance auto",
+      "title": "Changez d’assureur à tout moment après un an",
+      "why": "Avec la loi Hamon, vous pouvez résilier votre assurance habitation et auto à tout moment après la première année, et c’est le nouvel assureur qui s’en occupe.",
+      "evidence": "Changer d’assureur après la première année permet souvent d’économiser",
+      "tips": {
+        "1": "Demandez 3 devis pour les mêmes garanties et la même franchise.",
+        "2": "Laissez le nouvel assureur résilier l’ancien contrat à votre place.",
+        "3": "Regroupez habitation et auto chez un seul assureur pour obtenir une remise."
+      }
+    },
+    "gb-energy-switch": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Cherchez une offre d’énergie à prix fixe sous le plafond",
+      "why": "La plupart des foyers au tarif variable standard paient le prix plafond fixé par l’Ofgem (price cap). Les offres à prix fixe et les tarifs horaires pour compteur communicant sont parfois moins chers.",
+      "evidence": "Une offre à prix fixe sous le plafond permet généralement d’économiser",
+      "tips": {
+        "1": "Comparez les offres à prix fixe avec le plafond actuel sur un comparateur avant le prochain changement de plafond (janvier, avril, juillet, octobre).",
+        "2": "Transmettez un relevé de compteur et passez au prélèvement automatique (Direct Debit), moins cher que le paiement à réception de facture.",
+        "3": "Si vous avez un compteur communicant et pouvez décaler votre consommation, regardez les tarifs horaires avec des prix de nuit plus bas."
+      }
+    },
+    "gb-council-tax-discount": {
+      "label": "Council tax",
+      "noun": "la council tax",
+      "title": "Demandez les réductions de council tax auxquelles vous avez droit",
+      "why": "Si un seul adulte vit dans le logement, la facture baisse de 25 %, et certains logements sont classés dans la mauvaise tranche (band).",
+      "evidence": "La réduction pour personne seule permet d’économiser",
+      "tips": {
+        "1": "Si vous vivez seul (ou si les seuls autres adultes sont étudiants ou apprentis), demandez la réduction de 25 % pour personne seule (single person discount) sur le site de votre council.",
+        "2": "Comparez votre tranche (band) avec celle de logements similaires de votre rue sur le site de la Valuation Office Agency (ou des Scottish Assessors).",
+        "3": "Si vos revenus sont faibles, renseignez-vous auprès de votre council sur la Council Tax Reduction."
+      }
+    },
+    "id-va-power": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Vérifiez votre puissance PLN et vos habitudes d’achat de tokens",
+      "why": "Tous les foyers à partir de 1 300 VA paient le même prix de 1 444,70 Rp par kWh : les économies viennent donc d’une plus faible consommation, surtout de la clim et du chauffe-eau.",
+      "evidence": "Moins utiliser la clim et le chauffe-eau permet généralement d’économiser",
+      "tips": {
+        "1": "Réglez la clim sur 25 à 26 °C avec un minuteur et fermez les portes de la pièce que vous refroidissez.",
+        "2": "Achetez les tokens prépayés en plus grosses quantités : les frais de service s’appliquent à chaque achat.",
+        "3": "Remplacez les vieux tubes fluorescents et ampoules à incandescence par des LED."
+      }
+    },
+    "id-krl-tj": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Combinez KRL, TransJakarta et MRT au lieu de l’ojek quotidien",
+      "why": "Un trajet TransJakarta coûte 3 500 Rp et les tickets KRL démarrent à quelques milliers de roupies, bien moins qu’un VTC pour la même distance.",
+      "evidence": "Prendre le KRL, TransJakarta ou le MRT pour les trajets réguliers permet généralement d’économiser",
+      "tips": {
+        "1": "Ne prenez l’ojek que pour le premier et le dernier kilomètre jusqu’à la gare.",
+        "2": "Utilisez une seule carte (par ex. liée à JakLingko) pour des correspondances intégrées et moins chères.",
+        "3": "Comparez une semaine de reçus de VTC avec le coût en transports en commun des mêmes trajets."
+      }
+    },
+    "id-galon-depot": {
+      "label": "Eau potable",
+      "noun": "l’eau potable",
+      "title": "Remplacez les galons de marque par un dépôt de recharge fiable",
+      "why": "Faire remplir ses bonbonnes dans un dépôt agréé coûte une fraction du prix des galons de marque.",
+      "evidence": "Un dépôt de recharge agréé permet généralement d’économiser",
+      "tips": {
+        "1": "Choisissez un dépôt qui affiche un certificat sanitaire ou d’hygiène à jour.",
+        "2": "Ou faites bouillir et filtrez l’eau du réseau PDAM pour cuisiner.",
+        "3": "Prenez une formule de livraison mensuelle de galons si votre dépôt en propose une."
+      }
+    },
+    "in-rooftop-solar": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Renseignez-vous sur la subvention pour le solaire en toiture",
+      "why": "Si vous êtes propriétaire et que la clim tourne presque toute l’année, une petite installation sur le toit peut effacer l’essentiel d’une facture située dans les tranches élevées.",
+      "evidence": "Une petite installation solaire en toiture permet généralement d’économiser",
+      "tips": {
+        "1": "Cherchez PM Surya Ghar sur le portail officiel : ce programme verse une subvention de l’État central pour le solaire résidentiel en toiture jusqu’à 3 kW.",
+        "2": "Demandez à votre DISCOM un compteur net pour que les unités injectées soient déduites de votre facture.",
+        "3": "Demandez 2 ou 3 devis à des installateurs de la liste agréée par la DISCOM avant de payer quoi que ce soit."
+      }
+    },
+    "in-lpg-subsidy": {
+      "label": "Eau et gaz",
+      "noun": "l’eau et le gaz",
+      "title": "Ne commandez vos bouteilles de GPL qu’au besoin et demandez la subvention",
+      "why": "Le gaz de cuisine représente l’essentiel de la ligne « eau et gaz » dans les foyers indiens.",
+      "evidence": "Un usage attentif du GPL et l’éventuelle subvention permettent généralement d’économiser",
+      "tips": {
+        "1": "Liez votre raccordement GPL à votre Aadhaar et à votre banque pour que toute subvention arrive sur votre compte.",
+        "2": "Utilisez un autocuiseur et des couvercles sur les casseroles : la consommation de gaz baisse nettement.",
+        "3": "Si votre immeuble a le gaz de ville (PNG), comparez son coût mensuel avec celui des bouteilles."
+      }
+    },
+    "in-metro-card": {
+      "label": "Transports et péages",
+      "noun": "les transports et les péages",
+      "title": "Prenez une carte de métro ou un abonnement mensuel",
+      "why": "Les cartes de métro et les abonnements mensuels de bus reviennent moins cher par trajet que de payer en espèces ou de prendre un rickshaw ou un taxi tous les jours.",
+      "evidence": "Une carte de métro ou un abonnement mensuel permet généralement d’économiser",
+      "tips": {
+        "1": "Utilisez une carte de métro ou une carte NCMC plutôt que des jetons à l’unité ; beaucoup de métros accordent une réduction par trajet.",
+        "2": "Vérifiez si le réseau de bus de votre ville vend un abonnement mensuel.",
+        "3": "Partagez un taxi avec des collègues pour le dernier kilomètre plutôt que de rouler seul."
+      }
+    },
+    "mx-meses-sin-intereses": {
+      "label": "Achats et extras",
+      "noun": "vos achats et extras",
+      "title": "Surveillez vos « meses sin intereses »",
+      "why": "Le paiement en plusieurs fois sans frais semble gratuit, mais plusieurs à la fois engagent vos prochaines quincenas (paies de quinzaine) et poussent à ne payer que le minimum de la carte, où les intérêts sont d’environ 55 % par an.",
+      "evidence": "Prendre moins de nouveaux paiements en plusieurs fois permet généralement d’économiser",
+      "tips": {
+        "1": "Additionnez toutes les mensualités MSI en cours avant d’acheter quoi que ce soit de nouveau en plusieurs fois.",
+        "2": "Limitez les paiements MSI à une petite part de chaque quincena et ne payez jamais seulement le minimum.",
+        "3": "Demandez le prix au comptant : certains magasins accordent une remise que le MSI cache."
+      }
+    },
+    "mx-tarifa-dac": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Évitez le tarif DAC",
+      "why": "La CFE fait passer les foyers à forte consommation au tarif DAC, non subventionné, d’après 12 mois de consommation, et il faut un an de consommation plus faible pour en sortir. Chaque tranche au-delà de la consommation de base coûte aussi plus cher par kWh.",
+      "evidence": "Rester sous la limite DAC permet généralement d’économiser",
+      "tips": {
+        "1": "Vérifiez la ligne « Tarifa » et les tranches de kWh sur votre facture CFE.",
+        "2": "Réglez la clim sur 25 à 26 °C, et remplacez les réfrigérateurs et climatiseurs de plus de 10 ans par des modèles économes.",
+        "3": "Repassez, lavez et faites tourner les pompes en dehors des heures les plus chaudes."
+      }
+    },
+    "mx-gas-lp": {
+      "label": "Eau et gaz",
+      "noun": "l’eau et le gaz",
+      "title": "Faites durer chaque bouteille de gaz plus longtemps",
+      "why": "Le prix du gaz LP est plafonné chaque semaine, mais une famille peut utiliser une ou deux bouteilles par mois.",
+      "evidence": "Faire durer chaque bouteille plus longtemps permet généralement d’économiser",
+      "tips": {
+        "1": "Vérifiez le prix maximum hebdomadaire au kilo dans votre zone avant de payer la livraison.",
+        "2": "Cherchez les fuites avec de l’eau savonneuse sur le tuyau et le détendeur.",
+        "3": "Mettez des couvercles sur les casseroles et, si possible, utilisez un chauffe-eau solaire ou économe."
+      }
+    },
+    "ng-solar-inverter": {
+      "label": "Carburant groupe électrogène",
+      "noun": "le carburant du groupe électrogène",
+      "title": "Passez du groupe électrogène à un onduleur solaire",
+      "why": "Le carburant du groupe électrogène est souvent la plus grosse dépense d’électricité des foyers nigérians, et les prix de l’essence et du gazole varient avec le taux de change.",
+      "evidence": "Un onduleur solaire permet généralement d’économiser",
+      "tips": {
+        "1": "Demandez le prix d’un onduleur de 2 à 5 kVA avec batteries lithium et quelques panneaux solaires ; beaucoup de vendeurs proposent le paiement en plusieurs fois.",
+        "2": "Ne faites fonctionner que les ventilateurs, l’éclairage, la télé et la box sur le secours ; gardez les gros appareils pour les heures de courant du réseau.",
+        "3": "Faites entretenir le groupe régulièrement et éteignez-le dès que l’onduleur est chargé."
+      }
+    },
+    "ng-meter-band": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Prenez un compteur prépayé et vérifiez votre bande",
+      "why": "La facturation estimée (« crazy billing ») et le tarif de la bande A payé sans les heures de courant de la bande A font tous deux gonfler la facture d’électricité.",
+      "evidence": "Un compteur prépayé sur la bonne bande permet généralement d’économiser",
+      "tips": {
+        "1": "Demandez un compteur prépayé via le programme MAP de votre DisCo au lieu de payer des factures estimées.",
+        "2": "Notez vos heures de courant pendant une semaine ; si vous en avez moins de 20 par jour en bande A, portez plainte auprès de la DisCo et de la NERC.",
+        "3": "Achetez vos unités via l’appli de votre banque pour éviter les frais des revendeurs."
+      }
+    },
+    "ng-rent-yearly": {
+      "label": "Loyer",
+      "noun": "votre loyer",
+      "title": "Prévoyez un loyer payé un ou deux ans à l’avance",
+      "why": "Les propriétaires demandent généralement 1 à 2 ans de loyer d’avance, plus les frais d’agence et de dossier juridique. Indiquez ici le loyer annuel divisé par 12, et épargnez chaque mois en vue du prochain paiement.",
+      "evidence": "Négocier avant le renouvellement permet généralement d’économiser",
+      "tips": {
+        "1": "Mettez de côté chaque mois la part du loyer de l’an prochain sur un compte d’épargne séparé ou un fonds monétaire.",
+        "2": "Négociez le renouvellement tôt, avant que le propriétaire ne mette l’appartement en annonce.",
+        "3": "Demandez si le propriétaire accepte le loyer en deux moitiés plutôt qu’en une seule fois."
+      }
+    },
+    "pk-protected-slab": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Restez dans la tranche protégée des 200 unités en hiver",
+      "why": "Les foyers qui consomment jusqu’à 200 unités par mois pendant six mois de suite paient un tarif « protégé » bien plus bas. Un seul mois au-dessus peut vous faire perdre ce statut pour les six mois suivants.",
+      "evidence": "Rester dans la tranche protégée permet généralement d’économiser",
+      "tips": {
+        "1": "Regardez les « units » des 6 derniers mois sur votre facture pour voir si vous êtes proche du statut protégé.",
+        "2": "En hiver, coupez la résistance électrique du geyser et utilisez plutôt le gaz ou un geyser instantané.",
+        "3": "Relevez votre compteur en milieu de mois pour réduire votre consommation avant de dépasser 200 unités."
+      }
+    },
+    "pk-solar-ups": {
+      "label": "Groupe électrogène / UPS",
+      "noun": "le groupe électrogène et l’UPS",
+      "title": "Remplacez les heures de groupe électrogène par du solaire avec batterie",
+      "why": "L’essence d’un groupe électrogène est l’une des façons les plus chères de produire de l’électricité. Un petit panneau solaire et une batterie lithium peuvent alimenter les ventilateurs, l’éclairage et la box pendant le délestage (load-shedding).",
+      "evidence": "Une installation solaire avec batterie permet généralement d’économiser",
+      "tips": {
+        "1": "Demandez le prix d’un kit solaire de 1 à 3 kW avec un onduleur qui peut aussi se recharger sur le réseau.",
+        "2": "Ne faites fonctionner que les ventilateurs, l’éclairage et le Wi-Fi sur le secours ; gardez la clim et le fer à repasser pour les heures de courant du réseau.",
+        "3": "Faites entretenir le groupe et les batteries de l’UPS avant l’été pour qu’ils ne gaspillent ni carburant ni charge."
+      }
+    },
+    "pk-gas-geyser": {
+      "label": "Eau et gaz",
+      "noun": "l’eau et le gaz",
+      "title": "Installez un minuteur sur le geyser ou un geyser instantané",
+      "why": "Les geysers au gaz allumés toute la journée pèsent lourd dans les factures de gaz d’hiver, et les tarifs du gaz augmentent fortement dans les tranches élevées.",
+      "evidence": "Un minuteur sur le geyser ou un geyser instantané permet généralement d’économiser",
+      "tips": {
+        "1": "Installez un minuteur sur le geyser pour qu’il ne chauffe l’eau que le matin et le soir.",
+        "2": "Pensez à un geyser instantané (sans réservoir) quand l’ancien sera à remplacer.",
+        "3": "Isolez les tuyaux d’eau chaude sur le toit."
+      }
+    },
+    "sa-rent-instalments": {
+      "label": "Loyer",
+      "noun": "votre loyer",
+      "title": "Négociez le loyer en choisissant le nombre de versements",
+      "why": "Le loyer est généralement fixé à l’année sur Ejar et payé en 1, 2 ou 4 versements. Indiquez ici le montant annuel divisé par 12. Payer en moins de versements peut vous valoir une remise.",
+      "evidence": "Payer en moins de versements permet souvent de réduire le loyer annuel et d’économiser",
+      "tips": {
+        "1": "Demandez au propriétaire quel serait le loyer annuel si vous payiez en 1 ou 2 versements.",
+        "2": "Vérifiez que le contrat est enregistré sur Ejar pour que les hausses respectent les conditions convenues.",
+        "3": "Comparez des appartements similaires de votre quartier sur les applis d’annonces 2 mois avant le renouvellement."
+      }
+    },
+    "sa-6000-kwh": {
+      "label": "Électricité",
+      "noun": "l’électricité",
+      "title": "Restez sous 6 000 kWh pendant les mois d’été",
+      "why": "Les foyers paient 18 halalas le kWh jusqu’à 6 000 kWh par mois et 30 halalas au-delà : les mois les plus chauds coûtent donc bien plus cher par unité pour les grandes villas.",
+      "evidence": "Garder la consommation d’été sous 6 000 kWh permet généralement d’économiser",
+      "tips": {
+        "1": "Suivez vos kWh mensuels dans l’appli SEC ; visez moins de 6 000 pendant les mois de pointe.",
+        "2": "Réglez les splits sur 24 °C et coupez la clim dans les pièces vides et le majlis.",
+        "3": "Protégez du soleil les fenêtres orientées à l’ouest et faites entretenir les climatiseurs avant l’été."
+      }
+    },
+    "sa-bnpl": {
+      "label": "Achats et extras",
+      "noun": "vos achats et extras",
+      "title": "Limitez le paiement fractionné pour les achats du quotidien",
+      "why": "Payer ses achats en plusieurs fois incite facilement à dépenser plus que prévu chaque mois.",
+      "evidence": "Réserver le paiement fractionné à l’essentiel permet généralement d’économiser",
+      "tips": {
+        "1": "Désactivez le paiement en plusieurs fois comme mode de paiement par défaut dans les applis d’achat.",
+        "2": "Tenez à jour le total des paiements fractionnés en cours et leurs échéances.",
+        "3": "Attendez 24 heures avant tout achat de plus de 500 SAR."
+      }
+    },
+    "us-open-enrollment": {
+      "label": "Assurance santé",
+      "noun": "vos cotisations d’assurance santé",
+      "title": "Comparez les contrats santé pendant l’open enrollment",
+      "why": "Les contrats de l’employeur et du Marketplace changent de prix chaque année, et par défaut on est souvent reconduit dans le même contrat.",
+      "evidence": "Choisir le bon contrat pendant l’open enrollment permet souvent d’économiser",
+      "tips": {
+        "1": "Pendant l’open enrollment (période d’inscription annuelle), comparez la cotisation plus la franchise que vous risquez réellement de payer, pas la cotisation seule.",
+        "2": "Si vous êtes tous les deux couverts au travail, vérifiez ce qui coûte le moins entre un contrat familial et deux contrats séparés.",
+        "3": "Si vous souscrivez sur HealthCare.gov ou le Marketplace de votre État, mettez à jour vos revenus : vous pourriez avoir droit à un crédit d’impôt plus élevé."
+      }
+    }
   }
 }

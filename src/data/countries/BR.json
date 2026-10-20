@@ -1130,7 +1130,8 @@
         "value": 0.8,
         "verify": true,
         "note": "Derived: moving from ~445% (rotativo) to ~30–80% (consignado/personal loan) avoids most of the interest"
-      }
+      },
+      "effort": "Medium"
     },
     {
       "id": "br-bandeira-chuveiro",
@@ -1146,7 +1147,8 @@
         "value": 0.12,
         "verify": true,
         "note": "Estimate; not from a cited study"
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [

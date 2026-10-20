@@ -1075,7 +1075,8 @@
         "value": 0.05,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Medium"
     },
     {
       "id": "sa-6000-kwh",
@@ -1091,7 +1092,8 @@
         "value": 0.15,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     },
     {
       "id": "sa-bnpl",
@@ -1107,7 +1109,8 @@
         "value": 0.15,
         "verify": true,
         "note": "Judgement estimate."
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [],

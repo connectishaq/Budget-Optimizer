@@ -2510,5 +2510,475 @@
         "help": "Quanto você paga por mês pelo plano de saúde, incluindo o valor descontado do salário para o plano da empresa ou um plano do Marketplace depois de qualquer crédito fiscal."
       }
     }
+  },
+  "localTips": {
+    "ae-rent-cheques": {
+      "label": "Aluguel",
+      "noun": "aluguel",
+      "title": "Ofereça menos cheques e pague um aluguel menor",
+      "why": "O aluguel é combinado por ano e pago em 1 a 12 cheques pré-datados. Muitos proprietários aceitam menos se você pagar em 1 ou 2 cheques. Informe aqui o aluguel como o valor anual dividido por 12.",
+      "evidence": "Pagar com menos cheques costuma baixar o aluguel anual em",
+      "tips": {
+        "1": "Pergunte quanto ficaria o aluguel com 1 ou 2 cheques em vez de 4 ou mais.",
+        "2": "Antes de renovar, consulte a calculadora do índice de aluguéis da RERA: ela mostra se o proprietário pode aumentar o aluguel.",
+        "3": "Comece a procurar 90 dias antes do fim do contrato; o proprietário precisa avisar qualquer aumento com 90 dias de antecedência."
+      }
+    },
+    "ae-dewa-slab": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Mantenha a conta de luz fora das faixas mais caras da DEWA",
+      "why": "A DEWA cobra mais por kWh à medida que o consumo do mês passa pelas faixas, então os meses de ar-condicionado no verão custam bem mais por unidade.",
+      "evidence": "Manter o consumo fora das faixas mais altas costuma reduzir",
+      "tips": {
+        "1": "Deixe o ar-condicionado em 24°C ou mais e use o timer para não resfriar cômodos vazios.",
+        "2": "Mande limpar os dutos e filtros do ar-condicionado antes do verão.",
+        "3": "Compare o seu consumo mensal em kWh no app da DEWA com os limites das faixas na conta."
+      }
+    },
+    "ae-salik-nol": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Passe menos pelo Salik e use o cartão Nol no trajeto ao trabalho",
+      "why": "Cada passagem pelo Salik custa AED 6,30 no horário de pico e 4,20 fora dele; quatro passagens no pico por dia útil somam mais de AED 500 por mês.",
+      "evidence": "Passar menos pelo Salik no pico e usar o cartão Nol em algumas viagens costuma reduzir",
+      "tips": {
+        "1": "Veja se um caminho sem pórticos do Salik leva só alguns minutos a mais.",
+        "2": "Saia um pouco antes das 6h ou depois das 20h, quando o pedágio é mais barato.",
+        "3": "Experimente o metrô com o cartão Nol alguns dias por semana e compare o custo."
+      }
+    },
+    "au-energy-made-easy": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Compare o seu plano de luz no Energy Made Easy",
+      "why": "Muitas famílias estão em planos com preço igual ou próximo à Default Market Offer, enquanto as ofertas de mercado da mesma empresa ou de outras costumam ser mais baratas.",
+      "evidence": "Mudar para uma oferta de mercado mais barata costuma reduzir",
+      "tips": {
+        "1": "Envie a sua conta ao Energy Made Easy (ou ao Victorian Energy Compare, em Victoria) para ver planos mais baratos para o seu consumo real.",
+        "2": "Antes de trocar, peça à sua empresa atual para igualar a melhor oferta.",
+        "3": "Se você tem energia solar ou pode mudar o horário de consumo, compare planos com tarifa por horário e preço baixo ao meio-dia."
+      }
+    },
+    "au-health-cover-review": {
+      "label": "Plano de saúde privado",
+      "noun": "plano de saúde privado",
+      "title": "Revise o nível do seu plano de saúde e as coberturas extras",
+      "why": "As mensalidades sobem todo mês de abril, e muita gente paga por extras ou serviços hospitalares que nunca usa.",
+      "evidence": "Tirar coberturas e extras que você não usa costuma reduzir",
+      "tips": {
+        "1": "Compare planos no privatehealth.gov.au, o site gratuito de comparação do governo.",
+        "2": "Veja se você usa os extras o suficiente para compensar a mensalidade; se não, tire os extras ou escolha um nível mais barato.",
+        "3": "Uma franquia maior baixa a mensalidade; pense em pagar o ano inteiro antes de 1º de abril para garantir o preço antigo."
+      }
+    },
+    "br-sair-do-rotativo": {
+      "label": "Cartões de crédito",
+      "noun": "juros do cartão de crédito",
+      "title": "Saia do rotativo do cartão agora",
+      "why": "O rotativo do cartão teve média de cerca de 445% ao ano em agosto de 2026, e o parcelamento da fatura, cerca de 192% ao ano. Quase qualquer outro crédito é mais barato.",
+      "evidence": "Trocar o saldo por um empréstimo bem mais barato evita",
+      "tips": {
+        "1": "Pague a fatura inteira se for possível; pagar só o mínimo joga o resto no rotativo.",
+        "2": "Se não der, troque o saldo por um empréstimo consignado ou um empréstimo pessoal com juros bem menores, em vez do parcelamento da fatura oferecido pelo banco.",
+        "3": "Renegocie a dívida atrasada do cartão com o seu banco ou pelo Serasa Limpa Nome, onde descontos são comuns."
+      }
+    },
+    "br-bandeira-chuveiro": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Controle o chuveiro elétrico e a bandeira tarifária",
+      "why": "O chuveiro elétrico é um dos aparelhos que mais gastam energia nas casas brasileiras, e nos meses de bandeira vermelha cada kWh vem com um acréscimo.",
+      "evidence": "Banhos mais curtos na posição verão costumam reduzir",
+      "tips": {
+        "1": "Deixe o chuveiro na posição \"verão\" e tome banhos de 5 a 8 minutos.",
+        "2": "Confira a bandeira na sua conta e use menos o ar-condicionado e a secadora nos meses de bandeira vermelha.",
+        "3": "Pergunte à sua distribuidora se você tem direito ao desconto da Tarifa Social."
+      }
+    },
+    "ca-phone-flanker": {
+      "label": "Internet e telefone",
+      "noun": "internet e telefone",
+      "title": "Leve o seu plano de celular para uma marca mais barata",
+      "why": "As três grandes operadoras têm marcas mais baratas nas mesmas redes, e os planos delas costumam custar bem menos pela mesma quantidade de dados.",
+      "evidence": "Mudar para uma marca mais barata na mesma rede costuma reduzir",
+      "tips": {
+        "1": "Compare o seu plano com Fizz, Public Mobile, Lucky Mobile, Koodo, Freedom ou Virgin Plus; você pode manter o seu número.",
+        "2": "Ligue para o setor de retenção do seu provedor de internet e peça o preço de cliente novo, ou troque de provedor.",
+        "3": "Se você está pagando um aparelho junto com o plano, veja quando termina e mude para um plano mais barato usando o seu próprio aparelho."
+      }
+    },
+    "ca-home-energy-rebates": {
+      "label": "Água e gás",
+      "noun": "água e gás",
+      "title": "Aproveite os reembolsos para energia em casa antes do inverno",
+      "why": "O aquecimento é o maior gasto de energia na maioria das casas canadenses, e províncias e concessionárias pagam por muitas melhorias.",
+      "evidence": "Isolamento e melhorias no aquecimento pagos com reembolsos costumam reduzir",
+      "tips": {
+        "1": "Veja os programas de reembolso da sua província e da sua distribuidora de gás (por exemplo, Enbridge ou FortisBC) para isolamento, termostatos inteligentes e bombas de calor.",
+        "2": "Vede as frestas de portas e janelas e baixe o aquecimento em 2–3°C à noite e quando você sai.",
+        "3": "Se a sua distribuidora oferece cobrança igual todo mês, use para evitar sustos com a conta no inverno (o total não diminui)."
+      }
+    },
+    "de-energy-switch": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Saia da tarifa padrão de luz",
+      "why": "As famílias que ainda estão na tarifa padrão do fornecedor local (Grundversorgung) pagam cerca de 40 centavos de euro por kWh, enquanto as tarifas mais baratas para clientes novos ficam em torno de 30 centavos.",
+      "evidence": "Sair da tarifa padrão costuma reduzir",
+      "tips": {
+        "1": "Veja o seu consumo anual em kWh na última conta e compare tarifas no Check24 ou no Verivox.",
+        "2": "Escolha uma tarifa com preço garantido por 12 meses e sem pagamento adiantado.",
+        "3": "Crie um lembrete para comparar de novo antes do fim do primeiro ano, quando os bônus acabam."
+      }
+    },
+    "de-gas-switch": {
+      "label": "Água e gás",
+      "noun": "água e gás",
+      "title": "Troque de fornecedor de gás",
+      "why": "Os preços do gás para clientes novos estão bem abaixo da tarifa padrão e de muitos contratos antigos.",
+      "evidence": "Trocar de fornecedor de gás costuma reduzir",
+      "tips": {
+        "1": "Compare tarifas de gás usando o seu consumo anual em kWh da última fatura.",
+        "2": "Confira se o seu pagamento mensal adiantado (Abschlag) corresponde ao seu consumo real, para evitar uma grande cobrança de diferença.",
+        "3": "Tire o ar dos aquecedores e baixe o aquecimento em 1°C; cada grau economiza cerca de 6%."
+      }
+    },
+    "de-jobticket": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Peça o Deutschlandticket Job",
+      "why": "Se a empresa pagar pelo menos 25% do Deutschlandticket, o preço cai mais 5%, então a sua parte pode ficar bem abaixo de €63.",
+      "evidence": "Um Deutschlandticket pago em parte pela empresa costuma reduzir",
+      "tips": {
+        "1": "Pergunte ao RH se a empresa oferece o Deutschlandticket Job.",
+        "2": "Cancele passagens avulsas e passes mensais locais que o Deutschlandticket já cobre.",
+        "3": "Veja se o seu estado oferece uma versão mais barata para estudantes ou de tarifa social."
+      }
+    },
+    "es-pvpc-vs-libre": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Compare a PVPC com uma tarifa de preço fixo",
+      "why": "A PVPC, tarifa regulada, acompanha o preço do mercado atacadista hora a hora; dependendo dos seus hábitos, uma tarifa de preço fixo do mercado livre pode sair mais barata, ou o contrário.",
+      "evidence": "Estar na tarifa certa para os seus hábitos costuma reduzir",
+      "tips": {
+        "1": "Compare no comparador da CNMC usando as suas últimas contas.",
+        "2": "Diminua a potência contratada (potencia) se o disjuntor nunca desarma.",
+        "3": "Use a máquina de lavar roupa e a lava-louças nos horários mais baratos (00:00–08:00 e fins de semana)."
+      }
+    },
+    "es-revolving": {
+      "label": "Cartões de crédito",
+      "noun": "juros do cartão de crédito",
+      "title": "Saia do crédito rotativo",
+      "why": "Os cartões rotativos (revolving) cobram cerca de 22–24% de TAE, e pagamentos fixos baixos podem te manter endividado por anos.",
+      "evidence": "Quitar o crédito rotativo com um empréstimo mais barato evita",
+      "tips": {
+        "1": "Mude o cartão de \"pago aplazado\" para pagar a fatura inteira todo mês.",
+        "2": "Peça ao seu banco um empréstimo pessoal (média de ~7%) para quitar o cartão.",
+        "3": "Se o seu cartão cobrava muito acima da média do mercado quando você assinou, pergunte a uma associação de consumidores (OCU, Asufin) se os juros podem ser considerados abusivos (usura)."
+      }
+    },
+    "es-abono-transporte": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Use o passe mensal subsidiado",
+      "why": "Os passes subsidiados pela região e pelo governo (abono joven, abono único) saem bem mais baratos que passagens avulsas para quem viaja todo dia.",
+      "evidence": "Um passe mensal subsidiado costuma reduzir",
+      "tips": {
+        "1": "Veja o passe mensal da sua região e o desconto para jovens, se você tem menos de 26 anos.",
+        "2": "Compare com o que você gasta em passagens avulsas e estacionamento.",
+        "3": "Pergunte à empresa sobre o cartão de transporte isento de impostos (tarjeta transporte)."
+      }
+    },
+    "fr-prime-transport": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Peça o reembolso de 50% do transporte",
+      "why": "A empresa é obrigada a reembolsar metade do seu passe de transporte público (prime transport). Tem gente que nunca pede.",
+      "evidence": "Pedir o reembolso da empresa costuma reduzir",
+      "tips": {
+        "1": "Envie o comprovante do seu passe Navigo ou local ao RH ou ao setor de folha de pagamento.",
+        "2": "Escolha o passe anual (Navigo Annuel) se você usa todo mês.",
+        "3": "Pergunte sobre o forfait mobilités durables se você vai de bicicleta ou de carona."
+      }
+    },
+    "fr-energy-offer": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Compare as ofertas com a tarifa regulada",
+      "why": "Muitas ofertas de mercado são mais baratas que a tarif réglementé (TRV), e a opção de horário fora de pico pode baixar a conta se você usa os aparelhos à noite.",
+      "evidence": "Uma oferta de mercado mais barata costuma reduzir",
+      "tips": {
+        "1": "Compare ofertas no energie-info.fr, o site de comparação do mediador nacional de energia.",
+        "2": "Veja se a potência do seu medidor (kVA) não é maior do que você precisa.",
+        "3": "Pergunte se você tem direito ao chèque énergie."
+      }
+    },
+    "fr-loi-hamon": {
+      "label": "Seguro do carro",
+      "noun": "seguro do carro",
+      "title": "Troque de seguradora quando quiser depois de um ano",
+      "why": "Pela loi Hamon, você pode cancelar o seguro residencial e o do carro a qualquer momento depois do primeiro ano, e a nova seguradora cuida disso.",
+      "evidence": "Trocar de seguradora depois do primeiro ano costuma reduzir",
+      "tips": {
+        "1": "Faça 3 cotações com a mesma cobertura e a mesma franquia.",
+        "2": "Deixe a nova seguradora cancelar o contrato antigo por você.",
+        "3": "Junte o seguro da casa e o do carro na mesma seguradora para ganhar desconto."
+      }
+    },
+    "gb-energy-switch": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Procure uma tarifa fixa de energia abaixo do teto de preço",
+      "why": "A maioria das casas na tarifa variável padrão paga o valor do teto de preço da Ofgem (price cap). Tarifas fixas e tarifas inteligentes por horário às vezes são mais baratas.",
+      "evidence": "Uma tarifa fixa abaixo do teto de preço costuma reduzir",
+      "tips": {
+        "1": "Compare tarifas fixas com o teto de preço atual num site de comparação antes da próxima mudança do teto (janeiro, abril, julho, outubro).",
+        "2": "Informe a leitura do medidor e passe a pagar por débito automático (Direct Debit), que sai mais barato do que pagar ao receber a conta.",
+        "3": "Se você tem medidor inteligente e pode mudar o horário de consumo, veja tarifas por horário com preço menor de madrugada."
+      }
+    },
+    "gb-council-tax-discount": {
+      "label": "Council tax",
+      "noun": "council tax",
+      "title": "Peça os descontos de council tax a que você tem direito",
+      "why": "Se só um adulto mora na casa, a conta é 25% menor, e algumas faixas (bands) estão erradas.",
+      "evidence": "O desconto para quem mora sozinho reduz",
+      "tips": {
+        "1": "Se você mora sozinho (ou os outros adultos são só estudantes ou aprendizes), peça o desconto de 25% para quem mora sozinho (single person discount) no site da sua prefeitura (council).",
+        "2": "Compare a sua faixa com a de casas parecidas na sua rua no site da Valuation Office Agency (ou dos Scottish Assessors).",
+        "3": "Pergunte à prefeitura sobre o Council Tax Reduction se a sua renda é baixa."
+      }
+    },
+    "id-va-power": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Confira a potência da PLN e o seu jeito de comprar tokens",
+      "why": "Todas as casas a partir de 1.300 VA pagam o mesmo Rp1.444,70 por kWh, então a economia vem de usar menos kWh, principalmente com ar-condicionado e aquecedor de água.",
+      "evidence": "Usar menos o ar-condicionado e o aquecedor de água costuma reduzir",
+      "tips": {
+        "1": "Deixe o ar-condicionado em 25–26°C com timer e feche as portas do cômodo que está resfriando.",
+        "2": "Compre os tokens pré-pagos em valores maiores: a taxa administrativa é cobrada por compra.",
+        "3": "Troque lâmpadas fluorescentes tubulares e incandescentes antigas por LED."
+      }
+    },
+    "id-krl-tj": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Combine KRL, TransJakarta e MRT em vez de ojek todo dia",
+      "why": "A TransJakarta custa Rp3.500 por viagem e a passagem do KRL começa em poucos milhares de rupias, bem menos que um app de transporte para a mesma distância.",
+      "evidence": "Usar KRL, TransJakarta ou MRT nas viagens de rotina costuma reduzir",
+      "tips": {
+        "1": "Use ojek só no primeiro e no último quilômetro até a estação.",
+        "2": "Use um único cartão (ex.: vinculado ao JakLingko) para que as baldeações sejam integradas e mais baratas.",
+        "3": "Compare uma semana de recibos de app de transporte com o custo das mesmas viagens no transporte público."
+      }
+    },
+    "id-galon-depot": {
+      "label": "Água potável",
+      "noun": "água potável",
+      "title": "Troque o galão de marca por um depósito de recarga confiável",
+      "why": "Recarregar num depósito licenciado custa uma fração do galão de marca.",
+      "evidence": "Um depósito de recarga licenciado costuma reduzir",
+      "tips": {
+        "1": "Escolha um depósito que mostre um certificado de saúde/higiene em dia.",
+        "2": "Ou ferva e filtre a água da PDAM para cozinhar.",
+        "3": "Compre os galões num plano de entrega mensal, se o seu depósito oferecer."
+      }
+    },
+    "in-rooftop-solar": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Veja o subsídio para energia solar no telhado",
+      "why": "Se a casa é sua e o ar-condicionado fica ligado a maior parte do ano, um pequeno sistema no telhado pode acabar com a maior parte de uma conta que está nas faixas mais caras.",
+      "evidence": "Um pequeno sistema solar no telhado costuma reduzir",
+      "tips": {
+        "1": "Procure o PM Surya Ghar no portal oficial: ele paga um subsídio do governo central para energia solar residencial no telhado de até 3 kW.",
+        "2": "Peça à sua DISCOM um medidor bidirecional (net meter) para que as unidades que você injeta na rede sejam descontadas da conta.",
+        "3": "Faça 2–3 orçamentos com fornecedores da lista aprovada pela DISCOM antes de pagar qualquer coisa."
+      }
+    },
+    "in-lpg-subsidy": {
+      "label": "Água e gás",
+      "noun": "água e gás",
+      "title": "Peça recarga de gás (LPG) só quando precisar e use o subsídio",
+      "why": "O gás de cozinha é a maior parte da linha \"água e gás\" nas casas indianas.",
+      "evidence": "Usar o gás com cuidado e receber o subsídio costuma reduzir",
+      "tips": {
+        "1": "Vincule a sua ligação de LPG ao Aadhaar e à sua conta bancária para que qualquer subsídio caia na sua conta.",
+        "2": "Use panela de pressão e tampe as panelas: isso reduz bem o gasto de gás.",
+        "3": "Se o seu prédio tem gás encanado (PNG), compare o custo mensal com o das recargas do botijão."
+      }
+    },
+    "in-metro-card": {
+      "label": "Passagens e pedágios",
+      "noun": "passagens e pedágios",
+      "title": "Use um cartão do metrô ou um passe mensal",
+      "why": "Cartões do metrô e passes mensais de ônibus saem mais baratos por viagem do que pagar em dinheiro ou pegar autorriquixá e táxi todo dia.",
+      "evidence": "Um cartão do metrô ou um passe mensal costuma reduzir",
+      "tips": {
+        "1": "Use um cartão do metrô ou o cartão NCMC em vez de fichas avulsas; muitos metrôs dão desconto por viagem.",
+        "2": "Veja se o ônibus da sua cidade vende passe mensal.",
+        "3": "Divida o táxi com colegas no último trecho em vez de ir sozinho."
+      }
+    },
+    "mx-meses-sin-intereses": {
+      "label": "Compras e extras",
+      "noun": "compras e extras",
+      "title": "Cuidado com os \"meses sin intereses\"",
+      "why": "Parcelas sem juros parecem de graça, mas várias ao mesmo tempo comprometem as próximas quincenas e levam muita gente a pagar só o mínimo do cartão, onde os juros ficam em torno de 55% ao ano.",
+      "evidence": "Fazer menos parcelamentos novos costuma reduzir",
+      "tips": {
+        "1": "Some todas as parcelas MSI ainda em aberto antes de comprar qualquer coisa nova parcelada.",
+        "2": "Mantenha as parcelas MSI numa parte pequena de cada quincena e nunca pague só o mínimo.",
+        "3": "Pergunte o preço à vista; algumas lojas dão um desconto que o MSI esconde."
+      }
+    },
+    "mx-tarifa-dac": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Fique fora da tarifa DAC",
+      "why": "A CFE passa as casas de consumo alto para a tarifa DAC, sem subsídio, com base em 12 meses de consumo, e sair dela exige um ano de consumo menor. Cada bloco acima do consumo básico também custa mais por kWh.",
+      "evidence": "Ficar abaixo do limite da DAC costuma reduzir",
+      "tips": {
+        "1": "Confira a linha \"Tarifa\" e os blocos de kWh na sua conta da CFE.",
+        "2": "Use o ar-condicionado em 25–26°C e troque geladeiras e aparelhos de ar com mais de 10 anos por modelos eficientes.",
+        "3": "Passe o ferro, a máquina de lavar e as bombas d’água para fora dos horários mais quentes."
+      }
+    },
+    "mx-gas-lp": {
+      "label": "Água e gás",
+      "noun": "água e gás",
+      "title": "Faça cada botijão de gás durar mais",
+      "why": "O preço do gás LP tem teto semanal, mas uma família pode gastar um ou dois botijões por mês.",
+      "evidence": "Fazer cada botijão durar mais costuma reduzir",
+      "tips": {
+        "1": "Confira o preço máximo semanal por kg na sua região antes de pagar a entrega.",
+        "2": "Procure vazamentos passando água com sabão na mangueira e no regulador.",
+        "3": "Tampe as panelas e use um aquecedor de água solar ou eficiente, se puder."
+      }
+    },
+    "ng-solar-inverter": {
+      "label": "Combustível do gerador",
+      "noun": "combustível do gerador",
+      "title": "Troque o gerador por um inversor com energia solar",
+      "why": "O combustível do gerador costuma ser o maior gasto com energia nas casas nigerianas, e os preços da gasolina e do diesel variam com o câmbio.",
+      "evidence": "Um inversor com energia solar costuma reduzir",
+      "tips": {
+        "1": "Faça orçamento de um inversor de 2–5 kVA com baterias de lítio e alguns painéis solares; muitos fornecedores parcelam.",
+        "2": "Na energia reserva, ligue só ventiladores, lâmpadas, TV e roteador; deixe os aparelhos pesados para quando houver energia da rede.",
+        "3": "Faça a manutenção do gerador com regularidade e desligue-o assim que o inversor estiver carregado."
+      }
+    },
+    "ng-meter-band": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Peça um medidor pré-pago e confira a sua faixa (band)",
+      "why": "A cobrança por estimativa (a conta \"maluca\") e pagar a tarifa da Band A sem ter as horas de energia da Band A deixam a conta de luz mais cara.",
+      "evidence": "Um medidor pré-pago na faixa certa costuma reduzir",
+      "tips": {
+        "1": "Peça um medidor pré-pago pelo programa MAP da sua distribuidora (DisCo) em vez de pagar contas estimadas.",
+        "2": "Anote as suas horas de energia durante uma semana; se você tiver menos de 20 por dia na Band A, reclame com a DisCo e com a NERC.",
+        "3": "Compre créditos de energia pelo app do banco para evitar taxas de revendedores."
+      }
+    },
+    "ng-rent-yearly": {
+      "label": "Aluguel",
+      "noun": "aluguel",
+      "title": "Planeje o aluguel pago com um ou dois anos de antecedência",
+      "why": "Os proprietários costumam pedir 1–2 anos de aluguel adiantado, mais taxas de imobiliária e de advogado. Informe aqui o aluguel como o valor anual dividido por 12 e guarde todo mês para o próximo pagamento.",
+      "evidence": "Negociar antes de renovar costuma reduzir",
+      "tips": {
+        "1": "Separe todo mês a parte do aluguel do próximo ano numa conta poupança separada ou num fundo de renda fixa (money market).",
+        "2": "Negocie a renovação cedo, antes de o proprietário anunciar o imóvel.",
+        "3": "Pergunte se o proprietário aceita o aluguel em duas metades em vez de um pagamento único."
+      }
+    },
+    "pk-protected-slab": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Fique na faixa protegida de 200 unidades no inverno",
+      "why": "Casas que consomem até 200 unidades por mês por seis meses seguidos pagam uma tarifa \"protegida\" bem menor. Um mês acima disso pode tirar esse status pelos próximos seis meses.",
+      "evidence": "Ficar na faixa protegida costuma reduzir",
+      "tips": {
+        "1": "Confira as \"unidades\" dos últimos 6 meses na sua conta para ver se você está perto do status protegido.",
+        "2": "No inverno, desligue a resistência elétrica do aquecedor (geyser) e use gás ou um aquecedor de passagem.",
+        "3": "Leia o medidor no meio do mês para poder economizar antes de passar de 200 unidades."
+      }
+    },
+    "pk-solar-ups": {
+      "label": "Gerador e nobreak",
+      "noun": "gerador e nobreak",
+      "title": "Troque horas de gerador por energia solar com bateria",
+      "why": "Gasolina no gerador é uma das formas mais caras de produzir energia. Um pequeno painel solar com bateria de lítio pode manter ventiladores, lâmpadas e o roteador durante os cortes de energia (load-shedding).",
+      "evidence": "Um sistema solar com bateria costuma reduzir",
+      "tips": {
+        "1": "Faça orçamento de um kit solar de 1–3 kW com um inversor que também carregue pela rede.",
+        "2": "Na energia reserva, ligue só ventiladores, lâmpadas e Wi-Fi; deixe o ar-condicionado e o ferro para quando houver energia da rede.",
+        "3": "Faça a manutenção do gerador e das baterias do nobreak antes do verão para não desperdiçar combustível nem carga."
+      }
+    },
+    "pk-gas-geyser": {
+      "label": "Água e gás",
+      "noun": "água e gás",
+      "title": "Instale um timer no aquecedor ou use um aquecedor de passagem",
+      "why": "Aquecedores a gás (geysers) ligados o dia todo pesam muito na conta de gás do inverno, e a tarifa do gás sobe bastante nas faixas mais altas.",
+      "evidence": "Um timer no aquecedor ou um aquecedor de passagem costuma reduzir",
+      "tips": {
+        "1": "Coloque um timer no aquecedor para ele esquentar água só de manhã e à noite.",
+        "2": "Quando o aquecedor antigo precisar ser trocado, pense num aquecedor de passagem (sem reservatório).",
+        "3": "Isole os canos de água quente no telhado."
+      }
+    },
+    "sa-rent-instalments": {
+      "label": "Aluguel",
+      "noun": "aluguel",
+      "title": "Negocie o aluguel ao escolher de quanto em quanto tempo pagar",
+      "why": "O aluguel costuma ser combinado por ano no Ejar e pago em 1, 2 ou 4 parcelas. Informe aqui o valor anual dividido por 12. Pagar em menos parcelas pode render um desconto.",
+      "evidence": "Pagar em menos parcelas costuma baixar o aluguel anual em",
+      "tips": {
+        "1": "Pergunte ao proprietário quanto ficaria o aluguel anual se você pagasse em 1 ou 2 parcelas.",
+        "2": "Confira se o contrato está registrado no Ejar, para que os aumentos sigam o que foi combinado.",
+        "3": "Compare imóveis parecidos no seu bairro em apps de anúncios 2 meses antes da renovação."
+      }
+    },
+    "sa-6000-kwh": {
+      "label": "Luz",
+      "noun": "luz",
+      "title": "Fique abaixo de 6.000 kWh nos meses de verão",
+      "why": "As casas pagam 18 halalas por kWh até 6.000 kWh por mês e 30 halalas acima disso, então os meses mais quentes custam bem mais por unidade para as casas grandes (villas).",
+      "evidence": "Manter o consumo de verão abaixo de 6.000 kWh costuma reduzir",
+      "tips": {
+        "1": "Confira o consumo mensal em kWh no app da SEC; tente manter os meses de pico abaixo de 6.000.",
+        "2": "Deixe os splits em 24°C e desligue o ar-condicionado em cômodos vazios e no majlis.",
+        "3": "Faça sombra nas janelas voltadas para o oeste e a manutenção do ar-condicionado antes do verão."
+      }
+    },
+    "sa-bnpl": {
+      "label": "Compras e extras",
+      "noun": "compras e extras",
+      "title": "Limite o \"compre agora, pague depois\" nas compras do dia a dia",
+      "why": "Dividir as compras em parcelas facilita gastar mais do que o planejado todo mês.",
+      "evidence": "Parcelar só o essencial costuma reduzir",
+      "tips": {
+        "1": "Desative o parcelamento como forma de pagamento padrão nos apps de compras.",
+        "2": "Anote o total das parcelas em aberto e as datas de vencimento.",
+        "3": "Espere 24 horas antes de comprar qualquer coisa acima de SAR 500."
+      }
+    },
+    "us-open-enrollment": {
+      "label": "Plano de saúde",
+      "noun": "mensalidade do plano de saúde",
+      "title": "Compare planos de saúde no período de adesão (open enrollment)",
+      "why": "Os planos da empresa e do Marketplace mudam de preço todo ano, e o padrão costuma ser renovar automaticamente no mesmo plano.",
+      "evidence": "Escolher o plano certo no período de adesão costuma reduzir",
+      "tips": {
+        "1": "No período de adesão, compare a mensalidade mais a franquia (deductible) que você realmente espera pagar, e não só a mensalidade.",
+        "2": "Se vocês dois têm plano pelo trabalho, veja se um plano familiar ou dois planos separados custam menos.",
+        "3": "Se você contrata pelo HealthCare.gov ou pelo Marketplace do seu estado, atualize a sua renda: você pode ter direito a um crédito fiscal maior."
+      }
+    }
   }
 }

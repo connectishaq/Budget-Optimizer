@@ -645,7 +645,8 @@
         "value": 0.1,
         "verify": true,
         "note": "Assumed saving from switching plans; estimate."
-      }
+      },
+      "effort": "Easy"
     }
   ],
   "hideRules": [
