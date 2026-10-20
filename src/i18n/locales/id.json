@@ -2300,6 +2300,10 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nTopik: {topic}"
+    },
+    "unavailable": {
+      "title": "Pesan belum bisa dikirim dari sini",
+      "text": "Formulir kontak belum aktif, jadi apa pun yang Anda tulis di sini tidak akan sampai ke kami. Silakan kembali lagi nanti. Sementara itu, jawaban di halaman ini mencakup pertanyaan yang paling sering diajukan."
     }
   },
   "countryFields": {

@@ -30,6 +30,25 @@ Copy `.env.example` to `.env`, fill it in, then run `npm run build`:
 | `VITE_CMP_SRC` | Optional. Script URL of a Google-certified consent tool (IAB TCF v2.2) for visitors in the EEA, UK and Switzerland. Leave empty if you use Google's own consent message (see below). |
 | `VITE_CONTACT_EMAIL` | Public email shown in the footer Contact section. |
 
+**Contact form.** The contact page sends messages through a free form service, so no server code
+is needed. Until one is set up (and no `VITE_CONTACT_EMAIL` either), the page shows "Messages can't
+be sent from here yet" instead of the form and the build prints a warning. Pick one service:
+
+- *Formspree:* sign up at formspree.io and confirm your email address. Choose **New form**, give it
+  a name and copy its endpoint (it looks like `https://formspree.io/f/abcdwxyz`).
+  Netlify variables: `VITE_CONTACT_FORM_ENDPOINT` = that endpoint.
+- *Web3Forms:* on web3forms.com enter the email address that should receive messages and press
+  **Create Access Key**; the key arrives by email. Netlify variables:
+  `VITE_CONTACT_FORM_ENDPOINT` = `https://api.web3forms.com/submit` and
+  `VITE_CONTACT_FORM_KEY` = your access key (it's meant to be public).
+
+Optionally also set `VITE_CONTACT_EMAIL` (shown under the form as a second way to write to you).
+In Netlify: **Site configuration → Environment variables → Add a variable** for each one, then
+**Deploys → Trigger deploy → Deploy site**. `VITE_` values are read when the site is built, so a new
+deploy is needed after every change. Send yourself a test message afterwards. The form already
+has a hidden spam trap, checks the fields, can't be sent twice, and shows clear sent / failed /
+offline messages.
+
 **Ad consent (EEA, UK, Switzerland).** AdSense requires a Google-certified consent tool there. The simplest is Google's own: in AdSense open *Privacy & messaging → European regulations*, create and publish the message; it needs no code. Either way, `src/ads.js` sets Google Consent Mode v2 defaults before any Google script, so ads stay non-personalised in those regions until the visitor agrees. The slot is marked in `index.html` with `CONSENT (CMP) SLOT`.
 
 Ad slots are marked in `index.html` with `<!-- ===== ADSENSE: … START/END ===== -->` comments and reserve their height to prevent layout shift. The sidebar slot is desktop-only, so on phones no ad sits between the inputs and the results.

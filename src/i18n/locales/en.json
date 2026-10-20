@@ -2326,6 +2326,10 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nTopic: {topic}"
+    },
+    "unavailable": {
+      "title": "Messages can’t be sent from here yet",
+      "text": "The contact form isn’t set up yet, so nothing you type here would reach us. Please check back soon. Meanwhile, the answers on this page cover the most common questions."
     }
   },
   "countryFields": {

@@ -83,6 +83,14 @@ function siteConfig(env) {
       }
       if (!adsClient) console.warn('ℹ  VITE_ADSENSE_CLIENT is not set — ad slots are hidden in this build.');
       if (!contactEmail) console.warn('ℹ  VITE_CONTACT_EMAIL is not set — the Contact section shows a generic line.');
+      if (!contactEmail && !(env.VITE_CONTACT_FORM_ENDPOINT || '').trim()) {
+        console.warn([
+          '',
+          '⚠  WARNING: neither VITE_CONTACT_FORM_ENDPOINT nor VITE_CONTACT_EMAIL is set. The contact page can’t send',
+          '   messages, so it shows “Messages can’t be sent from here yet” instead of the form. See README → Contact form.',
+          ''
+        ].join('\n'));
+      }
     }
   };
 }

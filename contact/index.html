@@ -80,7 +80,13 @@
     <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_340px] lg:items-start">
       <section class="panel" aria-labelledby="formTitle">
         <h2 id="formTitle" class="text-xl font-semibold text-slate-900 dark:text-white" data-i18n="contact.form.title">Send us a message</h2>
-        <p class="mt-1 flex items-center gap-2 text-sm muted"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="contact.form.replyTime">We usually reply within 2 working days.</span></p>
+        <p id="c-reply-time" class="mt-1 flex items-center gap-2 text-sm muted"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="contact.form.replyTime">We usually reply within 2 working days.</span></p>
+
+        <!-- Shown instead of the form when no form service or email is set up (src/contact.js) -->
+        <div id="c-unavailable" hidden class="mt-6 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:bg-amber-950/60 dark:text-amber-200">
+          <p class="font-semibold" data-i18n="contact.unavailable.title">Messages can’t be sent from here yet</p>
+          <p class="mt-1" data-i18n="contact.unavailable.text">The contact form isn’t set up yet, so nothing you type here would reach us. Please check back soon. Meanwhile, the answers on this page cover the most common questions.</p>
+        </div>
 
         <form id="contactForm" class="mt-6 grid gap-5" novalidate>
           <div class="grid gap-5 sm:grid-cols-2">

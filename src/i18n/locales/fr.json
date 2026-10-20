@@ -2374,6 +2374,10 @@
     "mail": {
       "subject": "Budget Optimizer : {topic}",
       "body": "{message}\n\n—\n{name}\nSujet : {topic}"
+    },
+    "unavailable": {
+      "title": "Impossible d’envoyer un message d’ici pour l’instant",
+      "text": "Le formulaire de contact n’est pas encore en service : rien de ce que vous écrivez ici ne nous parviendrait. Revenez bientôt. En attendant, les réponses de cette page couvrent les questions les plus fréquentes."
     }
   },
   "countryFields": {

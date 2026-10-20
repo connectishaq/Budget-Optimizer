@@ -2337,6 +2337,10 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nThema: {topic}"
+    },
+    "unavailable": {
+      "title": "Nachrichten können hier noch nicht gesendet werden",
+      "text": "Das Kontaktformular ist noch nicht eingerichtet, deshalb würde nichts, was du hier schreibst, bei uns ankommen. Schau bald wieder vorbei. Bis dahin beantworten die Fragen auf dieser Seite das Wichtigste."
     }
   },
   "countryFields": {

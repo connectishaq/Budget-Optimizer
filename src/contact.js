@@ -1,6 +1,8 @@
 // Contact page form. Sends through the form service set in .env
 // (VITE_CONTACT_FORM_ENDPOINT, e.g. Formspree or Web3Forms). Without one it
 // falls back to opening the visitor's email app addressed to VITE_CONTACT_EMAIL.
+// With neither, the form is hidden and a note says messages can't be sent yet,
+// so the page never pretends to send.
 
 import { pageReady } from './page.js';
 import { t } from './i18n/index.js';
@@ -108,6 +110,14 @@ function initContactForm() {
   if (!form) return;
   const button = $('c-submit');
 
+  if (!ENDPOINT && !EMAIL) {
+    form.hidden = true;
+    $('c-reply-time').hidden = true;
+    $('c-unavailable').hidden = false;
+    return;
+  }
+  let sending = false;
+
   if (EMAIL) {
     const alt = $('c-email-alt');
     const [before, after = ''] = t('contact.emailAlt').split('{email}');
@@ -143,6 +153,7 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (sending) return; // one message at a time, however often the button is pressed
     $('c-status').hidden = true;
     const bad = validate(form);
     if (bad) { $(`c-${bad}`).focus(); return; }
@@ -159,6 +170,7 @@ function initContactForm() {
       return;
     }
 
+    sending = true;
     button.disabled = true;
     button.textContent = t('contact.form.sending');
     try {
@@ -170,11 +182,17 @@ function initContactForm() {
         showStatus('success', t('contact.status.sentTitle'), t('contact.status.sentText'));
       }
     } catch (err) {
+      // The connection dropped while sending (fetch throws a TypeError)
+      if (err.name === 'TypeError' && navigator.onLine === false) {
+        showStatus('error', t('contact.status.offlineTitle'), t('contact.status.offlineText'));
+        return;
+      }
       showStatus('error', t('contact.status.failedTitle'),
         err.message === 'not-configured'
           ? t('contact.status.notConfigured')
           : EMAIL ? t('contact.status.failedTextWithEmail', { email: EMAIL }) : t('contact.status.failedText'));
     } finally {
+      sending = false;
       button.disabled = false;
       button.textContent = t('contact.form.send');
     }

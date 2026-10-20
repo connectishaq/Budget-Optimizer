@@ -2374,6 +2374,10 @@
     "mail": {
       "subject": "Optimizador de Presupuesto: {topic}",
       "body": "{message}\n\n—\n{name}\nTema: {topic}"
+    },
+    "unavailable": {
+      "title": "Todavía no se pueden enviar mensajes desde aquí",
+      "text": "El formulario de contacto aún no está activo, así que nada de lo que escribas aquí nos llegaría. Vuelve pronto. Mientras tanto, las respuestas de esta página resuelven las dudas más comunes."
     }
   },
   "countryFields": {
