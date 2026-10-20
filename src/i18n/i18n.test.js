@@ -8,8 +8,10 @@ describe('i18n helper', () => {
     expect(t('no.such.key')).toBe('no.such.key');
   });
 
-  it('picks the first supported browser language', () => {
-    expect(detectLanguage(['de-AT', 'en'])).toBe('de');
+  it('picks the first live browser language', () => {
+    expect(detectLanguage(['es-MX', 'en'])).toBe('es');
+    // German has a translation but is switched off (src/i18n/enabled.js)
+    expect(detectLanguage(['de-AT', 'en'])).toBe('en');
     expect(detectLanguage(['ja-JP', 'ur-PK'])).toBe('ur');
     expect(detectLanguage(['ja-JP'])).toBe('en');
     expect(detectLanguage([])).toBe('en');

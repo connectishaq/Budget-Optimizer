@@ -23,7 +23,8 @@ describe('ad consent', () => {
 
 describe('?lang= from language/country pages', () => {
   it('opens the legal pages in that language for the visit', () => {
-    expect(urlLanguage('?lang=de')).toBe('de');
+    expect(urlLanguage('?lang=hi')).toBe('hi');
+    expect(urlLanguage('?lang=de')).toBeNull(); // switched off
     expect(urlLanguage('?topic=bug&lang=ur')).toBe('ur');
     expect(urlLanguage('?lang=xx')).toBeNull();
     expect(urlLanguage('')).toBeNull();

@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { prerenderLocales, alternateLinks, sitemapXml, fillFigures } from './scripts/prerender-locales.mjs';
 import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
+import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about'];
@@ -59,6 +60,7 @@ function siteConfig(env) {
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
+        .replace('__LIVE_LANGUAGES__', JSON.stringify(ENABLED_LANGUAGES))
         .replace(/<!--CONTACT_EMAIL-->/g, contact)
         .replace(/__CONTACT_EMAIL__/g, contactEmail)
         .replace(/__YEAR__/g, String(new Date().getFullYear()));

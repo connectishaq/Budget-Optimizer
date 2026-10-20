@@ -4,7 +4,7 @@
 // The sentence is written in the browser's language, so it lives here rather
 // than in the (lazily loaded) message files.
 
-import { dirOf } from './index.js';
+import { dirOf, isLive } from './index.js';
 import { hrefFor } from './locale-pages.js';
 
 const KEY = 'hbo:suggestClosed';
@@ -25,14 +25,14 @@ const TEXT = {
 export function browserLanguage(list = navigator.languages || [navigator.language]) {
   for (const tag of list || []) {
     const base = String(tag || '').toLowerCase().split('-')[0];
-    if (TEXT[base]) return base;
+    if (TEXT[base] && isLive(base)) return base;
   }
   return null;
 }
 
 /** The page to suggest for this browser, or null (same language, unsupported, or closed before). */
 export function suggestion(pageLang, pageCountry, browserLang, closed = false) {
-  if (closed || !TEXT[browserLang] || browserLang === pageLang) return null;
+  if (closed || !TEXT[browserLang] || !isLive(browserLang) || browserLang === pageLang) return null;
   return { lang: browserLang, href: hrefFor(browserLang, pageCountry), text: TEXT[browserLang][0], close: TEXT[browserLang][1] };
 }
 

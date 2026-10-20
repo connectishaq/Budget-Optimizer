@@ -14,7 +14,7 @@
     (function () {
       var d = document.documentElement, t = null;
       // Non-English visitors: hide the page until it's translated (max 2s), and set direction early
-      var L = ['en', 'es', 'hi', 'ar', 'ur', 'fr', 'pt', 'id', 'de'], l = null;
+      var L = __LIVE_LANGUAGES__, l = null; // filled in from src/i18n/enabled.js at build time
       try { l = localStorage.getItem('hbo:lang'); } catch (e) {}
       if (L.indexOf(l) < 0) {
         l = 'en';

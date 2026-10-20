@@ -3,7 +3,7 @@
 // holding the same two dropdowns. A choice is saved and the page reloads, so
 // every part of the page (including text built at start-up) uses it at once.
 
-import { t, dirOf, LANGUAGES, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
+import { t, dirOf, LANGUAGES, isLive, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
 import { ALL_COUNTRIES, GLOBAL, flagOf, flagsDrawn, countryName, storeCountry, initialCountry } from './countries.js';
 import { hrefFor } from './locale-pages.js';
 
@@ -12,13 +12,13 @@ const SCROLL_KEY = 'hbo:scroll';
 /** The language a language/country page (/de-de/) was built in, or null on the home page. */
 export const pageLanguage = () => {
   const l = document.documentElement.getAttribute('data-page-lang');
-  return LANGUAGES[l] ? l : null;
+  return isLive(l) ? l : null;
 };
 
 /** ?lang=xx on links from a language/country page (to the privacy policy…), or null. */
 export const urlLanguage = (search = location.search) => {
   const l = new URLSearchParams(search).get('lang');
-  return LANGUAGES[l] ? l : null;
+  return isLive(l) ? l : null;
 };
 
 /**
@@ -57,7 +57,8 @@ export async function startI18n() {
 function fillLanguages(select) {
   const cur = getLanguage();
   select.innerHTML = '';
-  for (const [code, { name }] of Object.entries(LANGUAGES)) {
+  // Only languages that are switched on (src/i18n/enabled.js)
+  for (const [code, { name }] of Object.entries(LANGUAGES).filter(([c]) => isLive(c))) {
     const o = new Option(name, code, false, code === cur);
     o.lang = code; // each name is shown in its own script
     select.add(o);

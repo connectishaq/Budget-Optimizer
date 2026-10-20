@@ -12,6 +12,7 @@
 // so callers must escape anything that came from the user.
 
 import enCore from 'virtual:en-core';
+import { isEnabledLanguage } from './enabled.js';
 
 export const LANGUAGES = {
   en: { name: 'English', dir: 'ltr' },
@@ -98,11 +99,14 @@ export const has = (key) => lookup(messages, key) != null || lookup(en, key) != 
 export const getLanguage = () => lang;
 export const dirOf = (l = lang) => LANGUAGES[l]?.dir || 'ltr';
 
-/** Picks the first supported language from the browser's list, or English. */
+/** A language that has a translation file and is switched on (src/i18n/enabled.js). */
+export const isLive = (l) => !!LANGUAGES[l] && isEnabledLanguage(l);
+
+/** Picks the first live language from the browser's list, or English. */
 export function detectLanguage(list = typeof navigator !== 'undefined' ? navigator.languages || [navigator.language] : []) {
   for (const tag of list || []) {
     const base = String(tag || '').toLowerCase().split('-')[0];
-    if (LANGUAGES[base]) return base;
+    if (isLive(base)) return base;
   }
   return DEFAULT_LANG;
 }
@@ -110,7 +114,8 @@ export function detectLanguage(list = typeof navigator !== 'undefined' ? navigat
 export function getStoredLanguage() {
   try {
     const l = localStorage.getItem(LANG_KEY);
-    return LANGUAGES[l] ? l : null;
+    // A saved language that has since been switched off falls back to the default choice
+    return isLive(l) ? l : null;
   } catch { return null; }
 }
 

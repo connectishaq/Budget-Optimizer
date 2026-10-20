@@ -4,7 +4,10 @@
 // en-us uses the article in en.json). The root / stays the English page and
 // is the x-default for search engines.
 
-export const LOCALE_PAGES = [
+import { isEnabledLanguage } from './enabled.js';
+
+/** Every page there is content for, live or not. */
+export const ALL_LOCALE_PAGES = [
   { path: 'en-us', lang: 'en', country: 'US' },
   { path: 'en-gb', lang: 'en', country: 'GB' },
   { path: 'en-in', lang: 'en', country: 'IN' },
@@ -23,6 +26,9 @@ export const LOCALE_PAGES = [
   { path: 'id-id', lang: 'id', country: 'ID' },
   { path: 'de-de', lang: 'de', country: 'DE' }
 ];
+
+/** The pages that are built: only languages switched on in src/i18n/enabled.js. */
+export const LOCALE_PAGES = ALL_LOCALE_PAGES.filter((p) => isEnabledLanguage(p.lang));
 
 /** "en-gb" -> "en-GB" (the form used in hreflang and lang attributes). */
 export const bcp47 = (path) => path.replace(/-([a-z]{2})$/, (m, r) => `-${r.toUpperCase()}`);

@@ -86,10 +86,18 @@ each with its own title, description, JSON-LD and country article. `/` stays the
 the `x-default`. The site never redirects; a small banner suggests the visitor's browser language
 when there is a page for it.
 
+### Switch a language on or off
+`src/i18n/enabled.js` lists the live languages (now: English, Urdu, Hindi, Arabic, Spanish;
+French, Portuguese, German and Indonesian are off until they're reviewed). A switched-off language
+is hidden from the language picker, never picked from the browser or a saved choice, gets no
+/xx-yy/ pages, hreflang links or sitemap entries, and is never suggested by the banner. Its
+translation file stays in `src/i18n/locales/`. To switch it back on, add its code to
+`ENABLED_LANGUAGES` and rebuild; nothing else needs changing.
+
 ### Add a language
-1. Add it to `LANGUAGES` in `src/i18n/index.js` (code, name in its own script, `dir`), and to the
-   `L` list in the inline `<script>` at the top of `index.html`, `privacy-policy/`, `terms-of-use/`
-   and `contact/`.
+1. Add it to `LANGUAGES` in `src/i18n/index.js` (code, name in its own script, `dir`) and to
+   `ENABLED_LANGUAGES` in `src/i18n/enabled.js` (the pages' early language check is filled in from
+   there at build time).
 2. Copy `src/i18n/locales/en.json` to `<code>.json` and translate it, following
    `src/i18n/TRANSLATING.md`. `npm run i18n:missing -- <code>` shows what's left; `npm run i18n:check`
    must report no errors. Put uncertain phrases in `src/i18n/notes/<code>.md` and run `npm run i18n:notes`.
