@@ -98,3 +98,16 @@ New keys: `format.currencies.SAR/BRL/MXN/IDR/NGN`, `layout.locale.*`.
 Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approximate`,
 `dashboard.categories.basisIncomeApprox`, `page.hero.note` (13 currencies), `page.faq.a8`,
 `seo.faq.a8`, `seo.app.featureList[11]`, `charts.returns.*.label` (now "{pct}%: …").
+
+## Phase 6 additions
+- `inputs.payFrequency.options.semimonthly` "2x sebulan" is shortened for the narrow dropdown; "Dua kali sebulan" is the full form if space allows.
+- `inputs.payFrequency.fieldLabel.semimonthly` "Gaji bersih per gajian": "per gajian" is informal but common; "per periode gaji" is the more formal alternative.
+- `inputs.payFrequency.label` uses "gajian" (payday, everyday word); "Frekuensi gaji" is the more formal alternative.
+- `inputs.custom.add` "Tambah pengeluaran lain" ("other expense") reads more naturally than "pengeluaran kustom"; may be long for a small button.
+- `inputs.custom.need/want` reuse "Tagihan wajib" / "Keinginan" from the 50/30/20 split labels.
+- `countryFields.ID.estateFees` label "Iuran lingkungan (IPL, iuran RT/RW)": "iuran warga" or "iuran bulanan" are regional alternatives; IPL = Iuran Pengelolaan Lingkungan (apartments/estates).
+- `countryFields.ID.galon` "isi ulang galon": "air galon" is the everyday alternative.
+- `countryFields.*` rotating-savings groups (chit fund, ajo/esusu, committee/BC) are explained as "mirip arisan" so Indonesian readers recognise them.
+- `countryFields.GB.councilTax` "Pajak daerah (council tax)" and `IN.societyMaintenance` "Iuran pengelola" are approximations; local terms are kept in brackets.
+- Generator/inverter fields use "genset" (common Indonesian word) and "BBM"/"solar" for fuel/diesel; "aki" for battery.
+- Several country-field labels with a local term in brackets (e.g. MX gastosMedicos, BR planoSaude) may wrap above the input.

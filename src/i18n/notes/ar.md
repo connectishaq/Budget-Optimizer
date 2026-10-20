@@ -1,7 +1,7 @@
 # Arabic (ar): translation notes
 
-Translated from the frozen English snapshot `en-snapshot-p1.json` (1,507 messages). The 4 keys added to
-en.json after that snapshot (`layout.locale.*`) are not translated yet; they get the next pass.
+Translated from the frozen English snapshot `en-snapshot-p1.json` (1,507 messages); keys added since then were
+translated in later passes.
 
 ## Register and variety
 - Modern Standard Arabic for the UAE and Saudi Arabia, kept plain and short.
@@ -79,3 +79,17 @@ UAE (PDPL, Federal Decree-Law 45/2021) and Saudi (PDPL) laws are not mentioned b
 mention them; a lawyer should confirm whether they should be. These pages **need review by a qualified
 Arabic legal translator/lawyer before launch**. The contact topic «طلب يتعلق بالخصوصية أو البيانات» is used
 verbatim where the policy refers to it.
+
+## Phase 6 additions
+- `inputs.custom.need`/`want` reuse «فاتورة لا بد منها» (singular of the split label «فواتير لا بد منها») and «الكماليات»; «الكماليات» reads as a category in the dropdown — «من الكماليات» or «رغبة» are alternatives.
+- `inputs.custom.add` «أضف مصروفًا خاصًا»: «مخصّص» is an alternative for "custom".
+- `inputs.payFrequency.fieldLabel.semimonthly` «صافي الراتب في كل دفعة» ("each payday"); «في كل يوم صرف» is closer but less clear.
+- `inputs.payFrequency.options.*`: «أسبوعيًا / كل أسبوعين / مرتين شهريًا / شهريًا» — short enough for the dropdown; check «مرتين شهريًا» at 140px.
+- Lakh/crore written as «اللاك والكرور» (page.hero.note, page/seo.faq.a8) — unfamiliar to most Gulf readers but it names the Indian system; keep.
+- `countryFields.AE.chillerFee` «فاتورة التبريد المركزي (التشيلر)»: «التشيلر» is how UAE residents commonly say it; drop it if the label is too long.
+- `countryFields.AE.housingFee` «رسوم السكن البلدية»: in Dubai often called «رسوم البلدية» or «رسوم السكن» on the DEWA bill.
+- `countryFields.SA.dependentFee` «رسوم المرافقين (للمقيمين)»: «المقابل المالي للمرافقين» is the official Saudi term; «للوافدين» is an alternative to «للمقيمين».
+- `countryFields.PK.committee` «الكميتي (BC)», `IN.chitFund`, `ID.arisan`, `NG.esusu`: local savings-circle names kept in Latin script (except كميتي) and explained as «جمعية ادخار دوّارة»; Gulf readers know this as «الجمعية».
+- `countryFields.IN.powerBackup` uses «إنفرتر» (transliteration); «محوّل كهربائي» is the formal alternative.
+- `countryFields.GB.councilTax` / `tvLicence`, `FR.*`, `ES.*`, `MX.*`, `BR.*`, `DE.*`: Arabic description plus the local name in brackets; these labels are longer than the English — check width.
+- `format.currencies.NGN` «نايرا نيجيرية» («نيرة» is also seen); `MXN` «بيزو مكسيكي».

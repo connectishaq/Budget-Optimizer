@@ -56,6 +56,20 @@ describe('saving a month', () => {
     expect(oldestToDrop(months.slice(1), '2025-01')).toBeNull();
   });
 
+  it("keeps the country, pay frequency, local bills and custom expenses", () => {
+    const e = entry('2026-10', { income: 2600 }, {
+      country: 'GB', currency: 'GBP', payFrequency: 'weekly',
+      local: { councilTax: 160 }, custom: [{ id: 'c1', name: 'Pet food', amount: 50, need: true }]
+    });
+    const back = normalizeEntry(JSON.parse(JSON.stringify(e)));
+    expect(back.inputs).toMatchObject({ country: 'GB', payFrequency: 'weekly', local: { councilTax: 160 } });
+    expect(back.inputs.custom[0].name).toBe('Pet food');
+    // Older months had neither: loading them keeps the form's own country and pay frequency
+    const old = normalizeEntry({ month: '2026-09', currency: 'EUR', inputs: { values: { income: 3000 } }, totals: {} });
+    expect('country' in old.inputs).toBe(false);
+    expect('payFrequency' in old.inputs).toBe(false);
+  });
+
   it('round-trips through storage validation unchanged', () => {
     const e = entry('2026-10', { income: 3000, fuel: 200 }, { extras: [{ id: 'x', name: 'Bonus', amount: 600 }] });
     expect(normalizeEntry(JSON.parse(JSON.stringify(e)))).toEqual(e);

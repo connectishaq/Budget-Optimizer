@@ -459,7 +459,12 @@
       "PKR": "PKR — Roupie pakistanaise",
       "AED": "AED — Dirham des Émirats",
       "CAD": "CAD — Dollar canadien",
-      "AUD": "AUD — Dollar australien"
+      "AUD": "AUD — Dollar australien",
+      "SAR": "SAR — Riyal saoudien",
+      "BRL": "BRL — Réal brésilien",
+      "MXN": "MXN — Peso mexicain",
+      "IDR": "IDR — Roupie indonésienne",
+      "NGN": "NGN — Naira nigérian"
     },
     "lakh": "{amount} lakh",
     "crore": "{amount} crore",
@@ -645,7 +650,8 @@
       "thisDebt": "cette dette",
       "thisSubscription": "cet abonnement",
       "thisCost": "cette dépense",
-      "thisIncome": "ce revenu"
+      "thisIncome": "ce revenu",
+      "thisExpense": "cette dépense"
     },
     "debts": {
       "addCard": "Ajouter une carte de crédit",
@@ -699,7 +705,8 @@
       "nothing": "généralement rien",
       "range": "généralement de {min} à {max} par mois",
       "tip": "{help} Pour {group}, c’est {range}{approx}.",
-      "higher": "Plus élevé que d’habitude pour {group} (généralement jusqu’à {max})"
+      "higher": "Plus élevé que d’habitude pour {group} (généralement jusqu’à {max})",
+      "approximate": " (une estimation, calculée à partir de vos revenus car nous n’avons pas encore de chiffres pour votre pays)"
     },
     "toast": {
       "removed": "{name} supprimé",
@@ -709,12 +716,36 @@
         "debts": "Crédit",
         "subscriptions": "Abonnement",
         "yearly": "Dépense",
-        "extras": "Revenu supplémentaire"
+        "extras": "Revenu supplémentaire",
+        "custom": "Dépense"
       }
     },
     "sample": {
       "goalHoliday": "Vacances en famille",
       "goalLaptop": "Nouvel ordinateur portable"
+    },
+    "payFrequency": {
+      "label": "Fréquence de paie",
+      "options": {
+        "weekly": "Chaque semaine",
+        "biweekly": "Toutes les 2 sem.",
+        "semimonthly": "2 fois par mois",
+        "monthly": "Chaque mois"
+      },
+      "fieldLabel": {
+        "weekly": "Salaire net hebdomadaire",
+        "biweekly": "Salaire net toutes les 2 semaines",
+        "semimonthly": "Salaire net par paie"
+      },
+      "perMonth": "Environ {amount} par mois."
+    },
+    "custom": {
+      "add": "Ajouter une dépense",
+      "amount": "Montant par mois",
+      "placeholder": "ex. : croquettes",
+      "type": "Type",
+      "need": "Dépense obligatoire",
+      "want": "Petit plaisir"
     }
   },
   "wizard": {
@@ -822,7 +853,8 @@
       "goals": "Ce pour quoi vous épargnez. Nous calculons quand vous atteindrez chaque objectif selon la part d’épargne que vous leur consacrez.",
       "emergency": "L’argent mis de côté pour les imprévus, comme une perte d’emploi ou une réparation de voiture. Visez 3 à 6 mois de dépenses essentielles.",
       "debtFree": "Quand vos crédits seraient entièrement remboursés : aujourd’hui, et si vous y consacrez la part d’épargne prévue pour les dettes.",
-      "history": "Enregistrez un instantané chaque mois pour voir si vos dépenses baissent avec le temps."
+      "history": "Enregistrez un instantané chaque mois pour voir si vos dépenses baissent avec le temps.",
+      "customAmount": "Ce que cela coûte un mois normal. Choisissez « Dépense obligatoire » si vous ne pouvez pas vous en passer, ou « Petit plaisir » si vous pourriez la supprimer."
     }
   },
   "months": {
@@ -1166,7 +1198,8 @@
         "leftOver": "Reste",
         "plan": "+ Votre plan",
         "toSave": "À épargner"
-      }
+      },
+      "note": "Gratuit. Sans inscription. Fonctionne avec 13 devises, dont la roupie en lakhs et crores."
     },
     "common": {
       "seeExample": "Voir un exemple",
@@ -1463,7 +1496,8 @@
       "a6": "Un compte d’épargne sans risque a récemment rapporté environ 4 % par an. Sur de longues périodes, investir à long terme dans un large panier d’actions a rapporté en moyenne environ 8 % par an, mais avec des hauts et des bas. La croissance n’est jamais garantie : essayez plusieurs options et activez « Afficher en valeur d’aujourd’hui » pour tenir compte de la hausse des prix.",
       "q7": "Quel doit être le montant de mon épargne de précaution ?",
       "a7": "Un repère courant est de 3 à 6 mois de dépenses obligatoires. Visez le haut de la fourchette si votre foyer n’a qu’un seul revenu, un salaire variable ou des personnes à charge. L’outil montre combien de temps vous tiendriez aujourd’hui et combien de temps il faut pour atteindre chaque niveau.",
-      "q8": "Puis-je utiliser des roupies et d’autres devises ?"
+      "q8": "Puis-je utiliser des roupies et d’autres devises ?",
+      "a8": "Oui. Choisissez votre pays en haut de la page et le calculateur utilise sa devise, les montants habituels des foyers et des conseils locaux. Vous pouvez passer entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR et NGN, et les montants en roupies s’affichent en lakhs et crores. Pour les autres pays, les montants habituels sont calculés en part de vos revenus."
     },
     "glossary": {
       "title": "Les mots de l’argent, expliqués simplement",
@@ -1549,7 +1583,8 @@
       "a6": "Un compte d’épargne sans risque a récemment rapporté environ 4 % par an. Sur de longues périodes, investir à long terme dans un large panier d’actions a rapporté en moyenne environ 8 % par an, mais avec des hauts et des bas. La croissance n’est jamais garantie : essayez plusieurs options et activez « Afficher en valeur d’aujourd’hui » pour tenir compte de la hausse des prix.",
       "q7": "Quel doit être le montant de mon épargne de précaution ?",
       "a7": "Un repère courant est de 3 à 6 mois de dépenses obligatoires. Visez le haut de la fourchette si votre foyer n’a qu’un seul revenu, un salaire variable ou des personnes à charge. L’outil montre combien de temps vous tiendriez aujourd’hui et combien de temps il faut pour atteindre chaque niveau.",
-      "q8": "Puis-je utiliser des roupies et d’autres devises ?"
+      "q8": "Puis-je utiliser des roupies et d’autres devises ?",
+      "a8": "Oui. Choisissez votre pays en haut de la page et le calculateur utilise sa devise, les montants habituels des foyers et des conseils locaux. Vous pouvez passer entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR et NGN, et les montants en roupies s’affichent en lakhs et crores. Pour les autres pays, les montants habituels sont calculés en part de vos revenus."
     }
   },
   "dashboard": {
@@ -1621,7 +1656,8 @@
       "basisSpend": "Part de vos dépenses totales. Ajoutez vos revenus pour comparer avec des foyers types.",
       "typical": "Habituel : {pct} des revenus",
       "higher": "Plus élevé que d’habitude (environ {pct})",
-      "nothingFor": "Rien de saisi pour : {list}."
+      "nothingFor": "Rien de saisi pour : {list}.",
+      "basisIncomeApprox": "Part de vos revenus, comparée à un profil type « {profile} » (une estimation, car nous n’avons pas encore de chiffres pour votre pays)."
     },
     "mobile": {
       "saveYear": "Vous pourriez économiser chaque année",
@@ -2000,6 +2036,12 @@
     "theme": {
       "toLight": "Passer en mode clair",
       "toDark": "Passer en mode sombre"
+    },
+    "locale": {
+      "language": "Langue",
+      "country": "Pays",
+      "otherCountry": "Autre pays",
+      "toggle": "Langue : {language}. Pays : {country}"
     }
   },
   "privacy": {
@@ -2329,6 +2371,144 @@
     "mail": {
       "subject": "Budget Optimizer : {topic}",
       "body": "{message}\n\n—\n{name}\nSujet : {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "Climatisation urbaine (chiller)",
+        "help": "Si la climatisation de votre immeuble est fournie par un réseau de froid urbain (par exemple Empower ou Emicool), sa facture mensuelle. Elle est distincte de celle de DEWA, ADDC ou SEWA. Laissez 0 si la climatisation est comprise dans le loyer ou si vous avez vos propres climatiseurs."
+      },
+      "housingFee": {
+        "label": "Taxe municipale d’habitation",
+        "help": "À Dubaï, les locataires paient une taxe d’habitation de 5 % du loyer annuel, ajoutée à la facture DEWA en mensualités. Les autres émirats appliquent des taxes similaires (à Abu Dhabi, elle est prélevée avec la facture ADDC). Indiquez ce que vous payez chaque mois."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Assurance santé privée",
+        "help": "Votre cotisation mensuelle (hospitalisation et/ou soins courants) après la remise de l’État. Facultative, mais beaucoup de gens ont une couverture hospitalière pour éviter la surtaxe Medicare (Medicare levy surcharge)."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Charges (condomínio)",
+        "help": "Vos charges mensuelles de condomínio pour l’immeuble ou la résidence fermée, si vous les payez en plus du loyer."
+      },
+      "planoSaude": {
+        "label": "Mutuelle (plano de saúde)",
+        "help": "Votre cotisation mensuelle de plano de saúde (assurance santé), y compris les éventuels restes à charge. Si votre employeur la paie entièrement, laissez vide."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Redevance (Rundfunkbeitrag)",
+        "help": "La redevance audiovisuelle payée par chaque foyer (18,36 € par mois en 2026, généralement facturée tous les trois mois, soit 55,08 €)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Charges de copropriété (comunidad)",
+        "help": "La cotisation mensuelle à la copropriété de votre immeuble. Pour les locataires, elle est généralement comprise dans le loyer : dans ce cas, laissez vide."
+      },
+      "seguroMedico": {
+        "label": "Assurance santé privée",
+        "help": "Cotisation mensuelle de votre assurance santé privée (par ex. Sanitas, Adeslas, DKV), si vous en avez une."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Mutuelle santé",
+        "help": "Votre mutuelle (complémentaire santé) par mois. Si celle de votre employeur est prélevée sur votre fiche de paie, laissez vide."
+      },
+      "taxeFonciere": {
+        "label": "Taxe foncière",
+        "help": "Propriétaires uniquement : votre taxe foncière annuelle ramenée au mois. Les locataires laissent vide."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Council tax (taxe locale)",
+        "help": "Votre council tax (impôt local britannique) par mois. La plupart des communes la facturent en 10 mensualités ; répartissez-la ici sur 12 mois. Une personne vivant seule a généralement 25 % de réduction."
+      },
+      "tvLicence": {
+        "label": "Redevance TV (TV licence)",
+        "help": "Obligatoire pour regarder la télévision en direct ou utiliser BBC iPlayer. 180 £ par an à partir d’avril 2026, soit environ 15 £ par mois."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Eau potable (bonbonnes galon)",
+        "help": "L’eau potable en bonbonne — recharges galon de 19 litres achetées dans un dépôt ou d’une marque comme Aqua — par mois. L’eau du robinet (PDAM) va dans la case eau et gaz."
+      },
+      "estateFees": {
+        "label": "Charges de quartier ou d’immeuble (IPL, iuran RT/RW)",
+        "help": "Les frais mensuels de votre quartier ou immeuble : iuran RT/RW, sécurité, collecte des ordures, ou charges d’appartement (IPL) si elles ne sont pas comprises dans le loyer."
+      },
+      "arisan": {
+        "label": "Cotisation arisan",
+        "help": "Votre versement mensuel à un arisan — un groupe d’épargne tournant où chaque membre cotise et où un membre remporte toute la cagnotte à chaque tour. Cela ressemble à de l’épargne plutôt qu’à une dépense, donc ce n’est pas une dépense obligatoire, mais notez-le ici pour savoir où va votre argent."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Charges de résidence (society)",
+        "help": "Les charges mensuelles perçues par votre résidence ou association de copropriétaires (sécurité, ascenseurs, parties communes, pompes à eau). Laissez 0 si elles sont déjà comprises dans le loyer."
+      },
+      "powerBackup": {
+        "label": "Secours électrique (onduleur, groupe)",
+        "help": "Le groupe électrogène diesel facturé par votre résidence, ou l’entretien des batteries d’onduleur, par mois. Ignorez cette ligne si vous n’avez pas de secours."
+      },
+      "chitFund": {
+        "label": "Chit fund / kitty",
+        "help": "Votre cotisation mensuelle à un chit fund, une kitty ou un autre groupe d’épargne tournant. Chaque membre cotise tous les mois et touche une fois toute la cagnotte. Cela fonctionne comme de l’épargne, donc vous pouvez la suspendre si l’argent manque, mais notez-la ici pour savoir où va votre argent."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Charges d’immeuble (mantenimiento)",
+        "help": "Les charges mensuelles de votre immeuble ou résidence fermée (cuota de mantenimiento), si elles ne sont pas comprises dans le loyer."
+      },
+      "gastosMedicos": {
+        "label": "Assurance santé privée (gastos médicos mayores)",
+        "help": "Votre cotisation d’assurance gros risques médicaux ramenée au mois, si vous la payez vous-même."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "Carburant groupe / onduleur",
+        "help": "L’essence ou le gazole de votre groupe électrogène (ou pour recharger un onduleur) pendant les coupures de courant, par mois. N’incluez pas l’achat du groupe, de l’onduleur ou des batteries (ajoutez-les en dépenses annuelles)."
+      },
+      "estateDues": {
+        "label": "Charges de résidence et ordures",
+        "help": "Les cotisations mensuelles de résidence ou d’association de propriétaires (sécurité, voirie, éclairage public) et votre facture de collecte des ordures (par exemple LAWMA à Lagos). Si vos charges sont payées à l’année, divisez-les par 12."
+      },
+      "esusu": {
+        "label": "Cotisation ajo / esusu",
+        "help": "Votre versement mensuel à un ajo, esusu ou adashi — un groupe d’épargne tournant où chaque membre cotise et où un membre touche toute la cagnotte à chaque tour. Cela ressemble à de l’épargne plutôt qu’à une dépense, donc ce n’est pas une dépense obligatoire, mais notez-le ici pour savoir où va votre argent."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Groupe électrogène / UPS",
+        "help": "L’essence ou le gazole d’un groupe électrogène, plus l’entretien des batteries d’UPS, pendant les délestages — par mois. N’incluez pas l’achat du groupe ou de l’UPS (ajoutez-le en dépense annuelle)."
+      },
+      "committee": {
+        "label": "Committee / BC",
+        "help": "Votre versement mensuel à un committee (BC) — un groupe d’épargne tournant où chaque membre cotise tous les mois et où un membre touche toute la cagnotte à chaque tour. Cela ressemble à de l’épargne plutôt qu’à une dépense, donc ce n’est pas une dépense obligatoire, mais notez-le ici pour savoir où va votre argent."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Taxe sur les personnes à charge (expatriés)",
+        "help": "Si vous vivez en Arabie saoudite avec un iqama, la taxe publique pour chaque membre de la famille que vous parrainez (400 SAR par mois et par personne), généralement payée pour l’année entière au renouvellement de l’iqama. Indiquez-la par mois. Laissez 0 si vous êtes citoyen saoudien."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Assurance santé (cotisation)",
+        "help": "Ce que vous payez chaque mois pour votre assurance santé, y compris la part prélevée sur votre salaire pour un contrat employeur, ou un contrat Marketplace après crédit d’impôt."
+      }
     }
   }
 }

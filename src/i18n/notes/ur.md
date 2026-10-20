@@ -39,5 +39,13 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - `rules.groceriesPlan.title` "کھانوں کی منصوبہ بندی کریں اور اسٹور کا اپنا برانڈ لیں"
 - `rules.*.effort.purchase` "کچھ خریدنا ہوگا"
 
-## Not translated in this pass
-The 4 `layout.locale.*` keys were added to en.json after the snapshot, so they are not in ur.json yet. They need a follow-up pass.
+## Phase 6 additions
+- `inputs.payFrequency.options.semimonthly` "مہینے میں 2 بار" and `biweekly` "ہر 2 ہفتے": twice-monthly vs fortnightly pay is rare in Pakistan; check they fit the ~140px dropdown ("پندرہ روزہ" is an alternative for biweekly).
+- `inputs.payFrequency.fieldLabel.semimonthly` "ہر تنخواہ والے دن ہاتھ میں آنے والی رقم" is much longer than the English; could wrap.
+- `inputs.custom.need` / `want` reuse "لازمی بل" / "شوق کی چیزیں" from `dashboard.split`; `help.text.customAmount` quotes them the same way.
+- `inputs.typical.approximate` / `dashboard.categories.basisIncomeApprox`: "موٹا اندازہ" for "rough guide"; "اندازاً" is a more formal alternative.
+- `countryFields.PK.committee` "کمیٹی / BC کی قسط": "BC" (بیسی) is the Punjab/Karachi term; some say just "کمیٹی". `PK.generatorFuel` UPS upkeep rendered as battery care ("پانی ڈلوانا"), since that's the usual recurring cost.
+- `countryFields.IN.chitFund` "چٹ فنڈ / کٹی": Indian terms kept; Pakistani readers know the idea as "کمیٹی". ID `arisan` and NG `ajo/esusu` help texts explain them as "کمیٹی جیسا" for Pakistani readers.
+- Foreign proper nouns (DEWA, Empower, Rundfunkbeitrag, condomínio, mutuelle, taxe foncière, IPL, iuran RT/RW, LAWMA, Medicare levy surcharge, Marketplace) are kept in Latin script inside the Urdu; this mixes LTR runs into RTL text.
+- `countryFields.SA.dependentFee` "ڈیپنڈنٹ فیس": Pakistanis in KSA also call it "مرافقین فیس" / "فیملی ٹیکس".
+- `format.currencies.IDR` "انڈونیشین روپیہ" (rupiah); "روپیا" is a closer transliteration.

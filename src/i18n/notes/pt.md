@@ -68,4 +68,15 @@ numbers (e.g. 1 milhão), so it uses the same text as `other` everywhere.
 ## Source changes noticed during translation
 - After the frozen snapshot, `en.json` changed `charts.returns.*.label` to start with "{pct}%" instead of a fixed
   number; pt was updated to match ("{pct}%: Aplicação segura" etc.), so the pt file follows current en for these 4 keys.
-- New `layout.locale.*` keys (4) in en.json were not translated (left for the later pass).
+
+## Phase 6 additions
+- `inputs.payFrequency.options.semimonthly` → "2x por mês" (short for the narrow dropdown); "Duas vezes por mês" is clearer if space allows. `biweekly` → "A cada 2 semanas" ("Quinzenal" was avoided: in Brazil it usually means twice a month, the other option).
+- `inputs.payFrequency.fieldLabel.semimonthly` → "Salário líquido por pagamento"; alternative "Salário líquido de cada quinzena".
+- `inputs.custom.add` → "Adicionar outro gasto" (natural for "custom expense"); literal alternative "Adicionar gasto personalizado". need/want reuse the split terms in singular: "Conta obrigatória" / "Não essencial".
+- `inputs.custom.placeholder` → "ex.: Ração do pet"; "Ração do cachorro/gato" is also common.
+- `countryFields.*`: foreign proper nouns kept with a Portuguese gloss. "Nobreak" used for UPS (Brazilian term); "inversor" for inverter; "society" kept for Indian housing societies (no exact Brazilian equivalent; label says "Taxa do condomínio (society)").
+- `countryFields.ES.comunidad` / `MX.mantenimiento` / `NG.estateDues` use "condomínio" as the closest Brazilian concept.
+- `countryFields.DE.rundfunkbeitrag.help`: amounts written with Brazilian decimal comma (€18,36, €55,08); numbers themselves unchanged.
+- `countryFields.SA.dependentFee.help`: "cidadão saudita" is masculine generic.
+- Rotating savings groups (arisan, ajo/esusu, committee/BC, chit fund) explained as "grupo de poupança rotativa"; Brazilian readers may know the informal equivalent as "vaquinha" or compare it to a "consórcio" (not identical).
+- `layout.locale.*` (noted earlier as untranslated) are now translated.

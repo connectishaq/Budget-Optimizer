@@ -42,7 +42,7 @@ async function deleteEverything() {
   forgetSession();
   clearStorage();
   clearHistory();
-  replaceState({ ...defaultState(), profile: keep.profile, currency: keep.currency }, 'reset');
+  replaceState({ ...defaultState(), profile: keep.profile, country: keep.country, currency: keep.currency, payFrequency: keep.payFrequency }, 'reset');
   toast(t('reset.deleted'), { tone: 'info' });
 }
 

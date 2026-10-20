@@ -18,7 +18,7 @@ const HELP_KEYS = [
   'subName', 'subCost', 'subKind', 'subRarely', 'housingFree', 'summary',
   'spendNow', 'spendCould', 'saveMonth', 'saveYear', 'top3', 'health',
   'split', 'categories', 'payday', 'allowance', 'plan', 'cut',
-  'addToPlan', 'interestAvoided', 'years', 'rate', 'inflation', 'allocation',
+  'addToPlan', 'interestAvoided', 'years', 'rate', 'inflation', 'allocation', 'customAmount',
   'goals', 'emergency', 'debtFree', 'history'
 ];
 

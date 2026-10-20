@@ -445,7 +445,12 @@
       "PKR": "PKR — Rupee Pakistan",
       "AED": "AED — Dirham UEA",
       "CAD": "CAD — Dolar Kanada",
-      "AUD": "AUD — Dolar Australia"
+      "AUD": "AUD — Dolar Australia",
+      "SAR": "SAR — Riyal Saudi",
+      "BRL": "BRL — Real Brasil",
+      "MXN": "MXN — Peso Meksiko",
+      "IDR": "IDR — Rupiah Indonesia",
+      "NGN": "NGN — Naira Nigeria"
     },
     "lakh": "{amount} lakh",
     "crore": "{amount} crore",
@@ -627,7 +632,8 @@
       "thisDebt": "utang ini",
       "thisSubscription": "langganan ini",
       "thisCost": "biaya ini",
-      "thisIncome": "penghasilan ini"
+      "thisIncome": "penghasilan ini",
+      "thisExpense": "pengeluaran ini"
     },
     "debts": {
       "addCard": "Tambah kartu kredit",
@@ -679,7 +685,8 @@
       "nothing": "biasanya tidak ada",
       "range": "biasanya {min} sampai {max} per bulan",
       "tip": "{help} Untuk {group}, angka ini {range}{approx}.",
-      "higher": "Lebih tinggi dari biasanya untuk {group} (umumnya hingga {max})"
+      "higher": "Lebih tinggi dari biasanya untuk {group} (umumnya hingga {max})",
+      "approximate": " (perkiraan kasar, dihitung dari penghasilan Anda karena kami belum punya data untuk negara Anda)"
     },
     "toast": {
       "removed": "{name} dihapus",
@@ -689,12 +696,36 @@
         "debts": "Pinjaman",
         "subscriptions": "Langganan",
         "yearly": "Biaya",
-        "extras": "Penghasilan tambahan"
+        "extras": "Penghasilan tambahan",
+        "custom": "Pengeluaran"
       }
     },
     "sample": {
       "goalHoliday": "Liburan keluarga",
       "goalLaptop": "Laptop baru"
+    },
+    "payFrequency": {
+      "label": "Seberapa sering Anda gajian",
+      "options": {
+        "weekly": "Mingguan",
+        "biweekly": "Tiap 2 minggu",
+        "semimonthly": "2x sebulan",
+        "monthly": "Bulanan"
+      },
+      "fieldLabel": {
+        "weekly": "Gaji bersih mingguan",
+        "biweekly": "Gaji bersih per 2 minggu",
+        "semimonthly": "Gaji bersih per gajian"
+      },
+      "perMonth": "Sekitar {amount} per bulan."
+    },
+    "custom": {
+      "add": "Tambah pengeluaran lain",
+      "amount": "Jumlah per bulan",
+      "placeholder": "mis. Makanan hewan",
+      "type": "Jenis",
+      "need": "Tagihan wajib",
+      "want": "Keinginan"
     }
   },
   "wizard": {
@@ -802,7 +833,8 @@
       "goals": "Hal-hal yang sedang Anda tabung. Kami menghitung kapan Anda mencapai masing-masing dengan porsi tabungan yang Anda berikan untuk target.",
       "emergency": "Uang yang disisihkan untuk kejadian tak terduga seperti kehilangan pekerjaan atau perbaikan mobil. Targetkan 3 sampai 6 bulan tagihan pokok.",
       "debtFree": "Kapan pinjaman Anda lunas: sekarang, dan jika Anda memakai porsi tabungan untuk utang guna melunasinya.",
-      "history": "Simpan catatan tiap bulan untuk melihat apakah pengeluaran Anda turun dari waktu ke waktu."
+      "history": "Simpan catatan tiap bulan untuk melihat apakah pengeluaran Anda turun dari waktu ke waktu.",
+      "customAmount": "Biayanya dalam sebulan biasa. Pilih “Tagihan wajib” jika tidak bisa dilewatkan, atau “Keinginan” jika bisa dipangkas."
     }
   },
   "months": {
@@ -1108,7 +1140,8 @@
         "leftOver": "Sisa",
         "plan": "+ Rencana Anda",
         "toSave": "Untuk ditabung"
-      }
+      },
+      "note": "Gratis. Tanpa daftar. Mendukung 13 mata uang, termasuk rupee dalam lakh dan crore."
     },
     "common": {
       "seeExample": "Lihat contoh",
@@ -1405,7 +1438,8 @@
       "a6": "Rekening tabungan yang aman belakangan ini memberi sekitar 4% per tahun. Investasi jangka panjang di campuran saham yang luas rata-rata sekitar 8% per tahun dalam jangka panjang, tetapi naik turun. Pertumbuhan tidak pernah dijamin, jadi coba beberapa pilihan dan nyalakan \"Tampilkan dalam nilai uang hari ini\" untuk memperhitungkan kenaikan harga.",
       "q7": "Seberapa besar dana darurat saya sebaiknya?",
       "a7": "Panduan umumnya 3 sampai 6 bulan tagihan wajib. Targetkan angka yang lebih tinggi jika rumah tangga Anda hanya punya satu penghasilan, penghasilan yang berubah-ubah, atau ada orang yang bergantung pada Anda. Alat ini menunjukkan berapa lama dana Anda cukup sekarang dan berapa lama untuk mencapai setiap tingkat.",
-      "q8": "Bisakah saya memakai rupee dan mata uang lain?"
+      "q8": "Bisakah saya memakai rupee dan mata uang lain?",
+      "a8": "Ya. Pilih negara Anda di bagian atas halaman, dan kalkulator akan memakai mata uang, jumlah pengeluaran rumah tangga yang umum, serta tips lokal negara itu. Anda bisa beralih antara USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR, dan NGN, dan jumlah dalam rupee ditampilkan dalam lakh dan crore. Untuk negara lain, jumlah yang umum dihitung sebagai porsi dari penghasilan Anda."
     },
     "glossary": {
       "title": "Istilah keuangan, dijelaskan dengan sederhana",
@@ -1491,7 +1525,8 @@
       "a6": "Rekening tabungan yang aman belakangan ini memberi sekitar 4% per tahun. Investasi jangka panjang di campuran saham yang luas rata-rata sekitar 8% per tahun dalam jangka panjang, tetapi naik turun. Pertumbuhan tidak pernah dijamin, jadi coba beberapa pilihan dan nyalakan \"Tampilkan dalam nilai uang hari ini\" untuk memperhitungkan kenaikan harga.",
       "q7": "Seberapa besar dana darurat saya sebaiknya?",
       "a7": "Panduan umumnya 3 sampai 6 bulan tagihan wajib. Targetkan angka yang lebih tinggi jika rumah tangga Anda hanya punya satu penghasilan, penghasilan yang berubah-ubah, atau ada orang yang bergantung pada Anda. Alat ini menunjukkan berapa lama dana Anda cukup sekarang dan berapa lama untuk mencapai setiap tingkat.",
-      "q8": "Bisakah saya memakai rupee dan mata uang lain?"
+      "q8": "Bisakah saya memakai rupee dan mata uang lain?",
+      "a8": "Ya. Pilih negara Anda di bagian atas halaman, dan kalkulator akan memakai mata uang, jumlah pengeluaran rumah tangga yang umum, serta tips lokal negara itu. Anda bisa beralih antara USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR, dan NGN, dan jumlah dalam rupee ditampilkan dalam lakh dan crore. Untuk negara lain, jumlah yang umum dihitung sebagai porsi dari penghasilan Anda."
     }
   },
   "dashboard": {
@@ -1559,7 +1594,8 @@
       "basisSpend": "Porsi dari total pengeluaran Anda. Isi penghasilan Anda untuk membandingkan dengan rumah tangga pada umumnya.",
       "typical": "Umumnya: {pct} dari penghasilan",
       "higher": "Lebih tinggi dari umumnya (sekitar {pct})",
-      "nothingFor": "Belum diisi: {list}."
+      "nothingFor": "Belum diisi: {list}.",
+      "basisIncomeApprox": "Porsi dari penghasilan Anda, dibandingkan dengan {profile} pada umumnya (perkiraan kasar, karena kami belum punya data untuk negara Anda)."
     },
     "mobile": {
       "saveYear": "Anda bisa menghemat tiap tahun",
@@ -1926,6 +1962,12 @@
     "theme": {
       "toLight": "Beralih ke mode terang",
       "toDark": "Beralih ke mode gelap"
+    },
+    "locale": {
+      "language": "Bahasa",
+      "country": "Negara",
+      "otherCountry": "Negara lain",
+      "toggle": "Bahasa: {language}. Negara: {country}"
     }
   },
   "privacy": {
@@ -2255,6 +2297,144 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nTopik: {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "Tagihan pendingin kawasan (chiller)",
+        "help": "Jika AC gedung Anda dipasok perusahaan pendingin kawasan (misalnya Empower atau Emicool), isi tagihan bulanannya. Tagihan ini terpisah dari DEWA, ADDC, atau SEWA. Biarkan 0 jika pendingin sudah termasuk dalam sewa atau Anda memakai AC sendiri."
+      },
+      "housingFee": {
+        "label": "Biaya perumahan kota (housing fee)",
+        "help": "Di Dubai, penyewa membayar biaya perumahan sebesar 5% dari sewa tahunan, yang ditambahkan ke tagihan DEWA dan dicicil tiap bulan. Emirat lain memungut biaya serupa (di Abu Dhabi ditagih bersama tagihan ADDC). Isi jumlah yang Anda bayar setiap bulan."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Asuransi kesehatan swasta",
+        "help": "Premi bulanan untuk perlindungan rumah sakit dan/atau tambahan (extras), setelah potongan dari pemerintah. Tidak wajib, tetapi banyak orang punya perlindungan rumah sakit agar tidak kena Medicare levy surcharge."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Iuran gedung (condomínio)",
+        "help": "Iuran condomínio bulanan untuk gedung atau kompleks perumahan Anda, jika dibayar terpisah dari sewa."
+      },
+      "planoSaude": {
+        "label": "Asuransi kesehatan (plano de saúde)",
+        "help": "Tagihan bulanan asuransi kesehatan Anda, termasuk biaya urun (co-payment). Jika kantor Anda menanggung seluruhnya, biarkan kosong."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Iuran penyiaran (Rundfunkbeitrag)",
+        "help": "Iuran wajib yang dibayar setiap rumah tangga (€18,36 per bulan pada 2026, biasanya ditagih tiap tiga bulan sebesar €55,08)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Iuran pemilik gedung (comunidad)",
+        "help": "Iuran bulanan untuk perkumpulan pemilik unit di gedung Anda. Bagi penyewa, biasanya sudah termasuk dalam sewa; jika begitu, biarkan kosong."
+      },
+      "seguroMedico": {
+        "label": "Asuransi kesehatan swasta",
+        "help": "Premi bulanan asuransi kesehatan swasta (mis. Sanitas, Adeslas, DKV), jika Anda punya."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Asuransi kesehatan tambahan (mutuelle)",
+        "help": "Iuran mutuelle (complémentaire santé) bulanan Anda. Jika iuran dari kantor sudah dipotong dari slip gaji, biarkan kosong."
+      },
+      "taxeFonciere": {
+        "label": "Pajak properti (taxe foncière)",
+        "help": "Khusus pemilik rumah: taxe foncière tahunan Anda, dihitung per bulan. Penyewa biarkan kosong."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Pajak daerah (council tax)",
+        "help": "Tagihan council tax bulanan Anda. Kebanyakan pemda menagih dalam 10 cicilan; di sini bagi rata ke 12 bulan. Jika tinggal sendiri, biasanya dapat potongan 25%."
+      },
+      "tvLicence": {
+        "label": "Lisensi TV (TV licence)",
+        "help": "Wajib untuk menonton siaran TV langsung atau memakai BBC iPlayer. £180 per tahun mulai April 2026, sekitar £15 per bulan."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Air minum (isi ulang galon)",
+        "help": "Air minum kemasan, yaitu isi ulang galon 19 liter dari depot atau merek seperti Aqua, dihitung per bulan. Air keran (PDAM) masuk ke kotak air dan gas."
+      },
+      "estateFees": {
+        "label": "Iuran lingkungan (IPL, iuran RT/RW)",
+        "help": "Iuran bulanan untuk lingkungan atau gedung Anda: iuran RT/RW, keamanan, sampah, atau IPL apartemen jika belum termasuk dalam sewa."
+      },
+      "arisan": {
+        "label": "Setoran arisan",
+        "help": "Setoran bulanan Anda ke arisan, yaitu kelompok tabungan bergilir: setiap anggota menyetor, dan satu anggota mendapat seluruh uangnya di tiap putaran. Arisan lebih mirip menabung daripada belanja, jadi bukan tagihan wajib, tetapi tetap catat di sini agar Anda tahu ke mana uang Anda pergi."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Iuran pengelola (society maintenance)",
+        "help": "Biaya pemeliharaan bulanan yang ditarik oleh perkumpulan perumahan atau apartemen Anda (keamanan, lift, area bersama, pompa air). Biarkan 0 jika sudah termasuk dalam sewa."
+      },
+      "powerBackup": {
+        "label": "Listrik cadangan (inverter/genset)",
+        "help": "Biaya genset diesel (DG) yang ditagih oleh pengelola perumahan, atau perawatan aki inverter dan UPS, dihitung per bulan. Lewati jika Anda tidak punya listrik cadangan."
+      },
+      "chitFund": {
+        "label": "Setoran chit fund / kitty",
+        "help": "Setoran bulanan Anda ke chit fund, kitty, atau kelompok tabungan bergilir lain (mirip arisan). Setiap anggota menyetor tiap bulan dan masing-masing mendapat seluruh uangnya sekali. Ini mirip menabung, jadi bisa dihentikan sementara saat keuangan sedang sulit, tetapi tetap catat di sini agar Anda tahu ke mana uang Anda pergi."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Iuran pemeliharaan (mantenimiento)",
+        "help": "Iuran pemeliharaan bulanan untuk gedung atau kompleks perumahan Anda (cuota de mantenimiento), jika belum termasuk dalam sewa."
+      },
+      "gastosMedicos": {
+        "label": "Asuransi kesehatan (gastos médicos mayores)",
+        "help": "Premi asuransi kesehatan untuk biaya medis besar, dihitung per bulan, jika Anda membayarnya sendiri."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "BBM genset / inverter",
+        "help": "Bensin atau solar untuk genset Anda (atau untuk mengisi inverter) saat listrik dari jaringan padam, dihitung per bulan. Jangan masukkan harga beli genset, inverter, atau aki (masukkan itu sebagai biaya tahunan)."
+      },
+      "estateDues": {
+        "label": "Iuran lingkungan dan sampah",
+        "help": "Iuran bulanan perumahan atau perkumpulan pemilik (keamanan, jalan, lampu jalan) dan tagihan angkut sampah (misalnya LAWMA di Lagos). Jika biaya layanan dibayar tahunan, isi jumlahnya dibagi 12."
+      },
+      "esusu": {
+        "label": "Setoran ajo / esusu",
+        "help": "Setoran bulanan Anda ke ajo, esusu, atau adashi, yaitu kelompok tabungan bergilir (mirip arisan): setiap anggota menyetor, dan satu anggota mendapat seluruh uangnya di tiap putaran. Ini lebih mirip menabung daripada belanja, jadi bukan tagihan wajib, tetapi tetap catat di sini agar Anda tahu ke mana uang Anda pergi."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Biaya genset / UPS",
+        "help": "Bensin atau solar untuk genset, ditambah perawatan aki UPS, selama pemadaman bergilir (load-shedding), dihitung per bulan. Jangan masukkan harga beli genset atau UPS-nya (masukkan itu sebagai biaya tahunan)."
+      },
+      "committee": {
+        "label": "Setoran committee / BC",
+        "help": "Setoran bulanan Anda ke committee (BC), yaitu kelompok tabungan bergilir (mirip arisan): setiap anggota menyetor tiap bulan, dan satu anggota mendapat seluruh uangnya di tiap giliran. Ini lebih mirip menabung daripada belanja, jadi bukan tagihan wajib, tetapi tetap catat di sini agar Anda tahu ke mana uang Anda pergi."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Biaya tanggungan (ekspatriat)",
+        "help": "Jika Anda tinggal di Arab Saudi dengan iqama, ini biaya pemerintah untuk setiap anggota keluarga yang Anda sponsori (SAR 400 per orang per bulan), biasanya dibayar untuk setahun penuh saat iqama diperpanjang. Isi sebagai jumlah per bulan. Biarkan 0 jika Anda warga negara Saudi."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Premi asuransi kesehatan",
+        "help": "Yang Anda bayar tiap bulan untuk asuransi kesehatan, termasuk potongan gaji untuk asuransi dari kantor, atau asuransi Marketplace setelah dikurangi kredit pajak."
+      }
     }
   }
 }

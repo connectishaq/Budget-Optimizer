@@ -62,5 +62,15 @@
   **These need a professional legal review before launch.**
 - "Google Ads Settings" kept as the brand name, followed by a French gloss in brackets.
 
-## Not translated yet
-- `layout.locale.*` (4 keys) were added to en.json after the snapshot and are left for the later pass.
+## Phase 6 additions
+- `inputs.payFrequency.options.biweekly` = « Toutes les 2 sem. » (abbreviated to fit the ~140px dropdown). « Tous les 15 jours » is more idiomatic but blurs with « 2 fois par mois ».
+- `inputs.payFrequency.fieldLabel.semimonthly` = « Salaire net par paie »; « Salaire net par quinzaine » is an alternative.
+- `inputs.custom.add` = « Ajouter une dépense » (dropped “custom”; « Ajouter une dépense perso » if the distinction matters). need/want use the singular of the existing terms: « Dépense obligatoire » / « Petit plaisir ».
+- `inputs.custom.placeholder` = « ex. : croquettes » (pet food shortened; « nourriture pour animaux » is longer).
+- Lakh/crore written « lakhs et crores » (Indian units with no French equivalent; could add « 100 000 / 10 millions » as a gloss).
+- `countryFields.BR.planoSaude.label` = « Mutuelle (plano de saúde) »: a Brazilian plano is a full private health plan, not a top-up; « Assurance santé (plano de saúde) » is more exact but longer.
+- `countryFields.AE.chillerFee.label` = « Climatisation urbaine (chiller) » (« réseau de froid » is the technical French term).
+- `countryFields.GB.councilTax` / `tvLicence` keep the English name with a French gloss (« taxe locale », « Redevance TV »).
+- `countryFields.IN.societyMaintenance` = « Charges de résidence (society) »; `MX.gastosMedicos` label is long (« Assurance santé privée (gastos médicos mayores) ») and may wrap.
+- Rotating savings groups (arisan, chit fund, ajo/esusu, committee/BC) explained as « groupe d’épargne tournant » (French equivalent: « tontine », used in help.text.other).
+- `countryFields.SA.dependentFee` = « Taxe sur les personnes à charge (expatriés) »; officially the « dependent fee / مقابل المرافقين ». Long label.

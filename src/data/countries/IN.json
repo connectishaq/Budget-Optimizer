@@ -1069,6 +1069,39 @@
       }
     },
     {
+      "key": "powerBackup",
+      "label": "Power backup (inverter or DG charges)",
+      "group": "utilities",
+      "need": true,
+      "help": "Diesel generator backup charged by your society, or inverter battery and UPS upkeep, as a monthly amount. Skip it if you have no backup.",
+      "ranges": {
+        "single": {
+          "value": [
+            0,
+            800
+          ],
+          "verify": true,
+          "note": "Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate."
+        },
+        "suburban": {
+          "value": [
+            0,
+            1500
+          ],
+          "verify": true,
+          "note": "Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate."
+        },
+        "youngpro": {
+          "value": [
+            0,
+            1200
+          ],
+          "verify": true,
+          "note": "Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate."
+        }
+      }
+    },
+    {
       "key": "chitFund",
       "label": "Chit fund / kitty payment",
       "group": "care",

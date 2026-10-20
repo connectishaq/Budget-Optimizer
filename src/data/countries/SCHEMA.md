@@ -47,6 +47,14 @@ Never present an estimate as a fact: if it isn't from a source you cite, mark it
 }
 ```
 
+### extraFields — the country's own bills
+Shown only for that country, inside the existing input group named by `group` (`housing`,
+`utilities`, `transport`, `family` or `care`). They count in that group's category, as a must-pay
+bill when `need` is true (otherwise a nice-to-have), and are available to savings rules as
+`ctx.v.<key>`. `label` and `help` here are the English source: the page shows
+`countryFields.<CODE>.<key>.label/help` from the message files (copy new ones into `en.json`, then
+translate). Example budgets fill must-pay ones at the middle of their range.
+
 ### profiles.*.ranges — `[low, high]` typical monthly amount for each existing input field
 `income` (monthly take-home pay), `rent`, `homeIns`, `electricity`, `waterGas`, `internet`, `fuel`,
 `transit`, `carIns`, `carLoan`, `school`, `groceries`, `dining`, `misc`, `medical`, `homeHelp`,

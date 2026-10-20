@@ -14,6 +14,22 @@ export const EXPENSE_FIELDS = [
 ];
 export const VALUE_FIELDS = ['income', ...EXPENSE_FIELDS, 'emergencyFund'];
 
+// How often pay arrives, and how many of those pays make one month on average.
+// Income is always stored per month; the income box shows one pay.
+export const PAY_FREQUENCIES = { weekly: 52 / 12, biweekly: 26 / 12, semimonthly: 2, monthly: 1 };
+export const isPayFrequency = (f) => Object.hasOwn(PAY_FREQUENCIES, f);
+/** One pay -> a month's worth. */
+export const toMonthly = (amount, freq) => amount * (PAY_FREQUENCIES[freq] ?? 1);
+/** A month's worth -> one pay. */
+export const fromMonthly = (monthly, freq) => monthly / (PAY_FREQUENCIES[freq] ?? 1);
+
+/**
+ * The selected country's own bills (council tax, society maintenance…), from
+ * `extraFields` in its data file. Each has a group (= category), a need flag
+ * and typical ranges per household type.
+ */
+export const localFields = (country) => countryData(country).extraFields || [];
+
 export const CATEGORY_DEFS = [
   { key: 'housing', get label() { return t('calc.categories.housing'); }, fields: ['rent', 'homeIns'] },
   { key: 'utilities', get label() { return t('calc.categories.utilities'); }, fields: ['electricity', 'waterGas', 'internet'] },
@@ -24,6 +40,9 @@ export const CATEGORY_DEFS = [
   { key: 'debt', get label() { return t('calc.categories.debt'); }, derived: 'debtPayments' },
   { key: 'subscriptions', get label() { return t('calc.categories.subscriptions'); }, derived: 'subsTotal' }
 ];
+
+// The category (and input group) that custom expenses belong to
+export const CUSTOM_CATEGORY = 'care';
 
 // 50/30/20 classification. Minimum loan payments and the monthly set-aside
 // for once-a-year costs count as must-pay bills.
@@ -53,12 +72,18 @@ export function cleanInputs(state) {
   const yearly = (state.yearly || []).map((y) => ({ ...y, cost: num(y.cost) }));
   // Bonuses, overtime and other money that doesn't come every month, per year
   const extras = (state.extras || []).map((x) => ({ ...x, amount: num(x.amount) }));
-  return { values, debts, subs, yearly, extras };
+  // The country's own bills join the values (so rules can use them too);
+  // amounts kept for another country's bills are ignored
+  const local = localFields(state.country);
+  for (const f of local) values[f.key] = num(state.local?.[f.key]);
+  // Expenses the user named themselves, monthly, each a need or a want
+  const custom = (state.custom || []).map((x) => ({ ...x, amount: num(x.amount), need: x.need !== false }));
+  return { values, debts, subs, yearly, extras, local, custom };
 }
 
 /** Totals, category breakdown and 50/30/20 buckets for the current budget. */
 export function computeTotals(state) {
-  const { values, debts, subs, yearly, extras } = cleanInputs(state);
+  const { values, debts, subs, yearly, extras, local, custom } = cleanInputs(state);
   // Income = monthly take-home pay + the year's extras spread evenly over 12 months
   const pay = values.income;
   const extrasYearly = sum(extras.map((x) => x.amount));
@@ -72,9 +97,13 @@ export function computeTotals(state) {
   const yearlyTotal = sum(yearly.map((y) => y.cost));
   const yearlyMonthly = yearlyTotal / 12;
   const derived = { debtPayments, subsTotal, yearlyMonthly };
+  const customTotal = sum(custom.map((x) => x.amount));
+  // Local bills count in their own group; custom expenses sit with "anything else"
+  const groupExtra = (key) => sum(local.filter((f) => f.group === key).map((f) => values[f.key]))
+    + (key === CUSTOM_CATEGORY ? customTotal : 0);
 
   const categories = CATEGORY_DEFS.map((c) => {
-    const amount = c.derived ? derived[c.derived] : sum(c.fields.map((f) => values[f]));
+    const amount = c.derived ? derived[c.derived] : sum(c.fields.map((f) => values[f])) + groupExtra(c.key);
     const benchmark = B.categoryShare[c.key];
     const share = income > 0 ? amount / income : null;
     return { ...c, amount, share, benchmark, over: share != null && amount > 0 && share > benchmark };
@@ -85,11 +114,13 @@ export function computeTotals(state) {
   const subsNeeds = sum(subs.filter((s) => SUB_KINDS[s.kind].need).map((s) => s.cost));
   const subsByKind = {};
   for (const s of subs) if (s.cost > 0) subsByKind[s.kind] = (subsByKind[s.kind] || 0) + s.cost;
-  const needs = sum(NEEDS_FIELDS.map((f) => values[f])) + debtPayments + yearlyMonthly + subsNeeds;
-  const wants = sum(WANTS_FIELDS.map((f) => values[f])) + subsTotal - subsNeeds;
+  const localNeeds = sum(local.filter((f) => f.need).map((f) => values[f.key])) + sum(custom.filter((x) => x.need).map((x) => x.amount));
+  const localWants = sum(local.filter((f) => !f.need).map((f) => values[f.key])) + sum(custom.filter((x) => !x.need).map((x) => x.amount));
+  const needs = sum(NEEDS_FIELDS.map((f) => values[f])) + debtPayments + yearlyMonthly + subsNeeds + localNeeds;
+  const wants = sum(WANTS_FIELDS.map((f) => values[f])) + subsTotal - subsNeeds + localWants;
 
   return {
-    values, debts, subs, yearly, extras, income, pay, extrasYearly, extrasMonthly,
+    values, debts, subs, yearly, extras, local, custom, customTotal, income, pay, extrasYearly, extrasMonthly,
     debtPayments, subsTotal, subsByKind, yearlyTotal, yearlyMonthly,
     categories, spend, needs, wants, surplus: income - spend
   };

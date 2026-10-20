@@ -6,7 +6,7 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1880 value(s) across 16 file(s).**
+**1883 value(s) across 16 file(s).**
 
 ## AE · AED · last reviewed 2026-10-19
 
@@ -1458,7 +1458,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 ## IN · INR · last reviewed 2026-10-19
 
-123 value(s) to verify.
+126 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
@@ -1579,9 +1579,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `extraFields[0].ranges.single` | 0 – 3000 | Estimate: typical metro society charges ~₹2–5 per sq ft a month; often included in rent for single renters. |
 | `extraFields[0].ranges.suburban` | 2000 – 8000 | Estimate for a 2–3 BHK (900–1,500 sq ft) at ~₹2–5 per sq ft a month. |
 | `extraFields[0].ranges.youngpro` | 1500 – 6000 | Estimate for a 1–2 BHK in a gated society. |
-| `extraFields[1].ranges.single` | 0 – 10000 | Estimate; no published average for household chit/kitty contributions. |
-| `extraFields[1].ranges.suburban` | 0 – 25000 | Estimate; no published average for household chit/kitty contributions. |
-| `extraFields[1].ranges.youngpro` | 0 – 20000 | Estimate; no published average for household chit/kitty contributions. |
+| `extraFields[1].ranges.single` | 0 – 800 | Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate. |
+| `extraFields[1].ranges.suburban` | 0 – 1500 | Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate. |
+| `extraFields[1].ranges.youngpro` | 0 – 1200 | Society DG (diesel generator) backup charges or inverter battery upkeep; varies widely by city and society. Estimate. |
+| `extraFields[2].ranges.single` | 0 – 10000 | Estimate; no published average for household chit/kitty contributions. |
+| `extraFields[2].ranges.suburban` | 0 – 25000 | Estimate; no published average for household chit/kitty contributions. |
+| `extraFields[2].ranges.youngpro` | 0 – 20000 | Estimate; no published average for household chit/kitty contributions. |
 | `localTips[0].pct` | 0.3 | Rough share of the electricity bill a 2–3 kW system offsets; depends on roof, state tariff and usage. |
 | `localTips[1].pct` | 0.1 | Judgement estimate. |
 | `localTips[2].pct` | 0.1 | Judgement estimate. |

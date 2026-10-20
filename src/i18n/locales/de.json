@@ -452,7 +452,12 @@
       "PKR": "PKR — Pakistanische Rupie",
       "AED": "AED — VAE-Dirham",
       "CAD": "CAD — Kanadischer Dollar",
-      "AUD": "AUD — Australischer Dollar"
+      "AUD": "AUD — Australischer Dollar",
+      "SAR": "SAR — Saudi-Riyal",
+      "BRL": "BRL — Brasilianischer Real",
+      "MXN": "MXN — Mexikanischer Peso",
+      "IDR": "IDR — Indonesische Rupiah",
+      "NGN": "NGN — Nigerianischer Naira"
     },
     "lakh": "{amount} Lakh",
     "crore": "{amount} Crore",
@@ -636,7 +641,8 @@
       "thisDebt": "diese Schuld",
       "thisSubscription": "dieses Abo",
       "thisCost": "diese Ausgabe",
-      "thisIncome": "dieses Einkommen"
+      "thisIncome": "dieses Einkommen",
+      "thisExpense": "diese Ausgabe"
     },
     "debts": {
       "addCard": "Kreditkarte hinzufügen",
@@ -689,7 +695,8 @@
       "nothing": "meist nichts",
       "range": "meist {min} bis {max} im Monat",
       "tip": "{help} Für {group} sind das {range}{approx}.",
-      "higher": "Höher als üblich für {group} (meist bis zu {max})"
+      "higher": "Höher als üblich für {group} (meist bis zu {max})",
+      "approximate": " (ein grober Richtwert, aus deinem Einkommen berechnet, weil wir für dein Land noch keine Zahlen haben)"
     },
     "toast": {
       "removed": "{name} entfernt",
@@ -699,12 +706,36 @@
         "debts": "Kredit",
         "subscriptions": "Abo",
         "yearly": "Ausgabe",
-        "extras": "Zusatzeinkommen"
+        "extras": "Zusatzeinkommen",
+        "custom": "Ausgabe"
       }
     },
     "sample": {
       "goalHoliday": "Familienurlaub",
       "goalLaptop": "Neuer Laptop"
+    },
+    "payFrequency": {
+      "label": "Wie oft du Geld bekommst",
+      "options": {
+        "weekly": "Wöchentlich",
+        "biweekly": "Alle 2 Wochen",
+        "semimonthly": "2× im Monat",
+        "monthly": "Monatlich"
+      },
+      "fieldLabel": {
+        "weekly": "Wöchentliches Nettoeinkommen",
+        "biweekly": "Nettoeinkommen alle 2 Wochen",
+        "semimonthly": "Nettoeinkommen pro Zahltag"
+      },
+      "perMonth": "Etwa {amount} im Monat."
+    },
+    "custom": {
+      "add": "Eigene Ausgabe hinzufügen",
+      "amount": "Betrag im Monat",
+      "placeholder": "z. B. Tierfutter",
+      "type": "Art",
+      "need": "Pflichtausgabe",
+      "want": "Extra"
     }
   },
   "wizard": {
@@ -812,7 +843,8 @@
       "goals": "Dinge, für die du sparst. Wir berechnen, wann du jedes erreichst, mit dem Anteil der Ersparnis, den du für Ziele vorsiehst.",
       "emergency": "Geld, das für Überraschungen wie Jobverlust oder eine Autoreparatur zurückgelegt ist. Ziel: 3 bis 6 Monate an wichtigen Rechnungen.",
       "debtFree": "Wann deine Kredite komplett abbezahlt wären: jetzt und wenn du deinen Schuldenanteil der Ersparnis dafür einsetzt.",
-      "history": "Speichere jeden Monat einen Schnappschuss, um zu sehen, ob deine Ausgaben mit der Zeit sinken."
+      "history": "Speichere jeden Monat einen Schnappschuss, um zu sehen, ob deine Ausgaben mit der Zeit sinken.",
+      "customAmount": "Was es in einem normalen Monat kostet. Wähl „Pflichtausgabe“, wenn du nicht darauf verzichten kannst, oder „Extra“, wenn du es streichen könntest."
     }
   },
   "months": {
@@ -1137,7 +1169,8 @@
         "leftOver": "Übrig",
         "plan": "+ Dein Plan",
         "toSave": "Zum Sparen"
-      }
+      },
+      "note": "Kostenlos. Ohne Anmeldung. Funktioniert in 13 Währungen, auch mit Rupien in Lakh und Crore."
     },
     "common": {
       "seeExample": "Beispiel ansehen",
@@ -1434,7 +1467,8 @@
       "a6": "Ein sicheres Sparkonto hat zuletzt etwa 4 % im Jahr gebracht. Langfristiges Anlegen in einer breiten Mischung aus Aktien hat über lange Zeiträume im Schnitt etwa 8 % im Jahr gebracht, schwankt aber. Wachstum ist nie garantiert – probier also ein paar Optionen aus und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
       "q7": "Wie groß sollte mein Notgroschen sein?",
       "a7": "Eine gängige Faustregel sind 3 bis 6 Monate an Pflichtausgaben. Peile das obere Ende an, wenn dein Haushalt nur ein Einkommen hat, dein Einkommen schwankt oder Menschen auf dich angewiesen sind. Das Tool zeigt, wie lange dein Polster jetzt reicht und wie lange es dauert, jede Stufe zu erreichen.",
-      "q8": "Kann ich Rupien und andere Währungen nutzen?"
+      "q8": "Kann ich Rupien und andere Währungen nutzen?",
+      "a8": "Ja. Wähl oben auf der Seite dein Land, dann nutzt der Rechner dessen Währung, typische Haushaltsbeträge und Tipps für dein Land. Du kannst zwischen USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR und NGN wechseln, und Rupien-Beträge werden in Lakh und Crore angezeigt. Für andere Länder berechnen wir typische Beträge als Anteile an deinem Einkommen."
     },
     "glossary": {
       "title": "Geldbegriffe einfach erklärt",
@@ -1520,7 +1554,8 @@
       "a6": "Ein sicheres Sparkonto hat zuletzt etwa 4 % im Jahr gebracht. Langfristiges Anlegen in einer breiten Mischung aus Aktien hat über lange Zeiträume im Schnitt etwa 8 % im Jahr gebracht, schwankt aber. Wachstum ist nie garantiert – probier also ein paar Optionen aus und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
       "q7": "Wie groß sollte mein Notgroschen sein?",
       "a7": "Eine gängige Faustregel sind 3 bis 6 Monate an Pflichtausgaben. Peile das obere Ende an, wenn dein Haushalt nur ein Einkommen hat, dein Einkommen schwankt oder Menschen auf dich angewiesen sind. Das Tool zeigt, wie lange dein Polster jetzt reicht und wie lange es dauert, jede Stufe zu erreichen.",
-      "q8": "Kann ich Rupien und andere Währungen nutzen?"
+      "q8": "Kann ich Rupien und andere Währungen nutzen?",
+      "a8": "Ja. Wähl oben auf der Seite dein Land, dann nutzt der Rechner dessen Währung, typische Haushaltsbeträge und Tipps für dein Land. Du kannst zwischen USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR und NGN wechseln, und Rupien-Beträge werden in Lakh und Crore angezeigt. Für andere Länder berechnen wir typische Beträge als Anteile an deinem Einkommen."
     }
   },
   "dashboard": {
@@ -1590,7 +1625,8 @@
       "basisSpend": "Anteil an deinen Gesamtausgaben. Trag dein Einkommen ein, um mit typischen Haushalten zu vergleichen.",
       "typical": "Üblich: {pct} des Einkommens",
       "higher": "Höher als üblich (etwa {pct})",
-      "nothingFor": "Nichts eingetragen für: {list}."
+      "nothingFor": "Nichts eingetragen für: {list}.",
+      "basisIncomeApprox": "Anteil an deinem Einkommen, verglichen mit einem typischen Haushalt „{profile}“ (ein grober Richtwert, weil wir für dein Land noch keine Zahlen haben)."
     },
     "mobile": {
       "saveYear": "Du könntest jährlich sparen",
@@ -1963,6 +1999,12 @@
     "theme": {
       "toLight": "Zum hellen Modus wechseln",
       "toDark": "Zum dunklen Modus wechseln"
+    },
+    "locale": {
+      "language": "Sprache",
+      "country": "Land",
+      "otherCountry": "Anderes Land",
+      "toggle": "Sprache: {language}. Land: {country}"
     }
   },
   "privacy": {
@@ -2292,6 +2334,144 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nThema: {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "Fernkälte (Chiller-Rechnung)",
+        "help": "Wenn die Klimaanlage deines Gebäudes von einem Fernkälte-Anbieter kommt (z. B. Empower oder Emicool), trag hier dessen monatliche Rechnung ein. Sie kommt zusätzlich zu DEWA, ADDC oder SEWA. Lass 0 stehen, wenn die Kühlung in der Miete enthalten ist oder du eigene Klimageräte hast."
+      },
+      "housingFee": {
+        "label": "Kommunale Wohngebühr",
+        "help": "In Dubai zahlen Mieter eine Wohngebühr von 5 % der Jahresmiete, die in Monatsraten auf die DEWA-Rechnung aufgeschlagen wird. Andere Emirate verlangen ähnliche Gebühren (in Abu Dhabi läuft sie über die ADDC-Rechnung). Trag ein, was du jeden Monat zahlst."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Private Krankenversicherung",
+        "help": "Dein monatlicher Beitrag für Krankenhaus- und/oder Zusatzleistungen (hospital/extras cover) nach dem staatlichen Zuschuss. Freiwillig, aber viele haben eine Krankenhausversicherung, um den Medicare Levy Surcharge zu vermeiden."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Hausgeld (condomínio)",
+        "help": "Deine monatliche condomínio-Gebühr für das Gebäude oder die Wohnanlage, wenn du sie getrennt von der Miete zahlst."
+      },
+      "planoSaude": {
+        "label": "Krankenversicherung (plano de saúde)",
+        "help": "Die monatliche Rechnung für deinen plano de saúde, inklusive Zuzahlungen. Wenn dein Arbeitgeber sie komplett übernimmt, lass das Feld leer."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Rundfunkbeitrag",
+        "help": "Der Beitrag, den jeder Haushalt zahlt (2026: 18,36 € im Monat, meist vierteljährlich mit 55,08 € abgebucht)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Hausgeld (comunidad)",
+        "help": "Monatlicher Beitrag an die Eigentümergemeinschaft deines Hauses. Bei Mietern ist er meist in der Miete enthalten – dann lass das Feld leer."
+      },
+      "seguroMedico": {
+        "label": "Private Krankenversicherung",
+        "help": "Monatlicher Beitrag für eine private Krankenversicherung (z. B. Sanitas, Adeslas, DKV), falls du eine hast."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Zusatzversicherung (mutuelle)",
+        "help": "Deine monatliche mutuelle (complémentaire santé). Wenn der Beitrag für die Versicherung deines Arbeitgebers direkt vom Lohn abgezogen wird, lass das Feld leer."
+      },
+      "taxeFonciere": {
+        "label": "Grundsteuer (taxe foncière)",
+        "help": "Nur für Eigentümer: deine jährliche taxe foncière als Monatsbetrag. Mieter lassen das Feld leer."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Council Tax",
+        "help": "Deine monatliche Council Tax (Gemeindesteuer). Die meisten Councils buchen sie in 10 Raten ab; verteil sie hier auf 12 Monate. Wer allein wohnt, bekommt meist 25 % Rabatt."
+      },
+      "tvLicence": {
+        "label": "TV Licence",
+        "help": "Nötig, um live fernzusehen oder den BBC iPlayer zu nutzen. Ab April 2026 180 £ im Jahr, also etwa 15 £ im Monat."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Trinkwasser (Galon)",
+        "help": "Abgefülltes Trinkwasser – 19-Liter-Galons zum Nachfüllen aus einem Depot oder von einer Marke wie Aqua – als Monatsbetrag. Leitungswasser (PDAM) gehört ins Feld für Wasser und Gas."
+      },
+      "estateFees": {
+        "label": "Viertel- oder Hausgebühren (IPL, RT/RW)",
+        "help": "Monatliche Gebühren für dein Viertel oder Gebäude: iuran RT/RW, Sicherheitsdienst, Müllabfuhr oder die Servicegebühr für deine Wohnung (IPL), wenn sie nicht in der Miete enthalten ist."
+      },
+      "arisan": {
+        "label": "Arisan-Beitrag",
+        "help": "Deine monatliche Einzahlung in einen Arisan – einen Sparzirkel, in den alle Mitglieder einzahlen und bei dem in jeder Runde ein Mitglied den ganzen Topf bekommt. Das ist eher Sparen als Ausgeben, also keine Pflichtausgabe. Trag es trotzdem hier ein, damit du weißt, wohin dein Geld geht."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Society-Instandhaltung",
+        "help": "Die monatliche Instandhaltungsgebühr deiner Wohnanlage (housing society) oder Eigentümervereinigung (Sicherheitsdienst, Aufzüge, Gemeinschaftsflächen, Wasserpumpen). Lass 0 stehen, wenn sie schon in der Miete enthalten ist."
+      },
+      "powerBackup": {
+        "label": "Notstrom (Inverter oder Generator)",
+        "help": "Kosten für den Dieselgenerator (DG) deiner Wohnanlage oder für die Wartung von Inverter-Batterie und USV, als Monatsbetrag. Lass das Feld leer, wenn du keinen Notstrom hast."
+      },
+      "chitFund": {
+        "label": "Chit Fund / Kitty",
+        "help": "Dein monatlicher Beitrag zu einem Chit Fund, einer Kitty oder einem anderen Sparzirkel. Alle Mitglieder zahlen jeden Monat ein, und jedes bekommt einmal den ganzen Topf. Das ist eher Sparen, also kannst du es bei knappem Geld pausieren. Trag es trotzdem hier ein, damit du weißt, wohin dein Geld geht."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Hausgeld (mantenimiento)",
+        "help": "Monatliche Instandhaltungsgebühr für dein Gebäude oder deine Wohnanlage (cuota de mantenimiento), wenn sie nicht in der Miete enthalten ist."
+      },
+      "gastosMedicos": {
+        "label": "Private Krankenvers. (gastos médicos mayores)",
+        "help": "Dein Beitrag für eine Krankenversicherung für größere Behandlungen (gastos médicos mayores) als Monatsbetrag, wenn du sie selbst zahlst."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "Sprit für Generator / Inverter",
+        "help": "Benzin oder Diesel für deinen Generator (oder zum Laden eines Inverters), wenn der Netzstrom ausfällt, als Monatsbetrag. Die Anschaffung von Generator, Inverter oder Batterien gehört nicht hierher (trag sie als jährliche Kosten ein)."
+      },
+      "estateDues": {
+        "label": "Siedlungsgebühren und Müllabfuhr",
+        "help": "Monatliche Beiträge an die Siedlungs- oder Vermietervereinigung (Sicherheit, Straßen, Straßenbeleuchtung) und deine Rechnung für die Müllabfuhr (z. B. LAWMA in Lagos). Wenn du die Servicegebühr jährlich zahlst, trag sie geteilt durch 12 ein."
+      },
+      "esusu": {
+        "label": "Ajo-/Esusu-Beitrag",
+        "help": "Deine monatliche Einzahlung in einen Ajo, Esusu oder Adashi – einen Sparzirkel, in den alle Mitglieder einzahlen und bei dem in jeder Runde ein Mitglied den ganzen Topf bekommt. Das ist eher Sparen als Ausgeben, also keine Pflichtausgabe. Trag es trotzdem hier ein, damit du weißt, wohin dein Geld geht."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Generator / USV (Betrieb)",
+        "help": "Benzin oder Diesel für einen Generator und Batteriepflege für die USV während der Stromabschaltungen (Load-Shedding), als Monatsbetrag. Die Anschaffung von Generator oder USV gehört nicht hierher (trag sie als jährliche Kosten ein)."
+      },
+      "committee": {
+        "label": "Committee / BC",
+        "help": "Deine monatliche Einzahlung in ein Committee (BC) – einen Sparzirkel, in den alle Mitglieder jeden Monat einzahlen und bei dem reihum ein Mitglied den ganzen Topf bekommt. Das ist eher Sparen als Ausgeben, also keine Pflichtausgabe. Trag es trotzdem hier ein, damit du weißt, wohin dein Geld geht."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Angehörigengebühr (Expats)",
+        "help": "Wenn du mit einem Iqama in Saudi-Arabien lebst: die staatliche Gebühr für jedes Familienmitglied, für das du bürgst (400 SAR im Monat pro Person). Sie wird meist bei der Verlängerung des Iqama für das ganze Jahr bezahlt. Trag sie als Monatsbetrag ein. Lass 0 stehen, wenn du saudischer Staatsbürger bist."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Krankenversicherungsbeitrag",
+        "help": "Was du jeden Monat für deine Krankenversicherung zahlst, inklusive des Betrags, der für einen Arbeitgebertarif vom Lohn abgezogen wird, oder eines Marketplace-Tarifs nach Steuergutschrift."
+      }
     }
   }
 }

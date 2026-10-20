@@ -103,7 +103,10 @@ export function sampleFor(profile, country, income = 0) {
     debts: s.debts.map((d) => ({ id: rid('d'), ...d, balance: m(d.balance), payment: m(d.payment), name: sampleName(d.name) })),
     subscriptions: s.subscriptions.map((x) => ({ id: rid('s'), ...sampleSub({ ...x, cost: m(x.cost) }) })),
     yearly: s.yearly.map((x) => ({ id: rid('y'), ...x, cost: m(x.cost), name: sampleName(x.name) })),
-    extras: (s.extras || []).map((x) => ({ id: rid('x'), ...x, amount: m(x.amount), name: sampleName(x.name) }))
+    extras: (s.extras || []).map((x) => ({ id: rid('x'), ...x, amount: m(x.amount), name: sampleName(x.name) })),
+    // The country's own must-pay bills, at the middle of their typical range
+    local: Object.fromEntries((C.extraFields || []).filter((f) => f.need && f.ranges?.[profile])
+      .map((f) => [f.key, Math.round((f.ranges[profile][0] + f.ranges[profile][1]) / 2)]))
   };
 }
 

@@ -9,8 +9,7 @@ These 9 messages changed in en.json after the snapshot was taken. hi.json follow
 so `npm run i18n:check` has no placeholder errors: `inputs.debts.aprCapped` ({max}),
 `charts.returns.*.label` ({pct}), `inputs.typical.approximate`, `dashboard.categories.basisIncomeApprox`,
 `page.hero.note` (13 currencies), `page.faq.a8`, `seo.faq.a8`, `seo.app.featureList[11]`.
-Not yet translated (new keys, for the next pass): `format.currencies.SAR/BRL/MXN/IDR/NGN`,
-`layout.locale.*`.
+These were translated later, with the phase 6 keys: `format.currencies.SAR/BRL/MXN/IDR/NGN`, `layout.locale.*`.
 
 ## Sentences built from pieces (please review in the running app)
 - **`rules.*.evidence`** + `plan.explain.evidence` / `evidenceOfThis` / `interest`: Hindi puts the verb
@@ -88,3 +87,15 @@ raise AC).
 (DPDP Act)" (official Hindi name of India's DPDP Act should be confirmed), "standard contractual
 clauses" kept in English in brackets. "As is" / "as available" → "जैसी है" / "जैसी उपलब्ध है".
 UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
+
+## Phase 6 additions
+- `inputs.custom.need` / `want` reuse the 50/30/20 labels exactly ("ज़रूरी बिल" / "शौक़ की चीज़ें"); for a single row the singular "शौक़ की चीज़" may read better.
+- `inputs.payFrequency.options.*`: "हर हफ़्ते", "हर 2 हफ़्ते", "महीने में 2 बार", "हर महीने" (short for the narrow dropdown); alternative "पाक्षिक" for every 2 weeks is too formal.
+- `inputs.payFrequency.fieldLabel.semimonthly`: "हर सैलरी के दिन हाथ में आने वाली सैलरी" repeats "सैलरी"; alternative "हर बार हाथ में आने वाली सैलरी".
+- `inputs.custom.add` "अपना खर्च जोड़ें" ("add your own expense") rather than a literal "custom"; alternative "दूसरा खर्च जोड़ें".
+- `countryFields.IN.chitFund.label`: "चिट फ़ंड / कमेटी / किटी" — "कमेटी" (North India), "किटी" (urban women's groups), "चिट फ़ंड" (South India / formal); "बीसी" is another North-Indian term.
+- `countryFields.IN.powerBackup`: "DG" kept as societies write it; "इन्वर्टर" and "UPS" used interchangeably in India.
+- Rotating savings groups (arisan, ajo/esusu, BC) explained as "बारी-बारी वाला बचत ग्रुप"; contribution → "किस्त".
+- Foreign proper nouns (Rundfunkbeitrag, condomínio, mutuelle, taxe foncière, iqama, IPL, iuran RT/RW, LAWMA, Medicare levy surcharge) kept in Latin script with a Hindi gloss.
+- `countryFields.SA.dependentFee.label` "प्रवासियों" for expats; alternative "विदेशी कर्मचारियों".
+- `format.currencies.BRL` "ब्राज़ीली रियाल" (alternative "ब्राज़ीलियाई रियल"); `IDR` "इंडोनेशियाई रुपिया".

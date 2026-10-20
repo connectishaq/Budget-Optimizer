@@ -5,7 +5,7 @@
 
 import { PROFILES } from './engine/profiles.js';
 import { CURRENCIES } from './utils/format.js';
-import { VALUE_FIELDS, ALLOCATION_PRESETS, BUCKETS } from './engine/calculate.js';
+import { VALUE_FIELDS, ALLOCATION_PRESETS, BUCKETS, isPayFrequency } from './engine/calculate.js';
 import { SUB_KINDS } from './engine/subscriptions.js';
 import { t } from './i18n/index.js';
 import { countryData, RETURN_KINDS } from './engine/countries.js';
@@ -39,7 +39,13 @@ export function defaultState() {
     country: 'US',
     currency: 'USD',
     period: 'monthly',
+    // How often pay arrives; values.income is always the monthly equivalent
+    payFrequency: 'monthly',
     values: {},
+    // Monthly amounts for the country's own bills (council tax…), by field key
+    local: {},
+    // Expenses the user adds by name: { id, name, amount (monthly), need }
+    custom: [],
     debts: [],
     subscriptions: [],
     // Costs that come once a year (festivals, school books…), amount per year
@@ -84,7 +90,15 @@ export function normalizeState(raw) {
   // Saved before countries existed: the currency tells us where (EUR is ambiguous -> GLOBAL)
   s.country = isCountry(raw.country) ? raw.country : countryForCurrency(s.currency);
   if (raw.period === 'annual') s.period = 'annual';
+  if (isPayFrequency(raw.payFrequency)) s.payFrequency = raw.payFrequency;
   if (isObj(raw.values)) for (const f of VALUE_FIELDS) if (raw.values[f] != null) s.values[f] = n(raw.values[f]);
+  // Kept for every country the household has used; only the current one counts
+  if (isObj(raw.local)) {
+    for (const [k, v] of Object.entries(raw.local).slice(0, 60)) if (/^[A-Za-z]\w{0,39}$/.test(k) && v != null) s.local[k] = n(v);
+  }
+  if (Array.isArray(raw.custom)) {
+    s.custom = raw.custom.slice(0, 30).filter(isObj).map((x) => ({ id: id(x.id, 'c'), name: str(x.name), amount: n(x.amount), need: x.need !== false }));
+  }
   if (Array.isArray(raw.debts)) {
     s.debts = raw.debts.slice(0, 20).filter(isObj).map((x) => ({
       id: id(x.id, 'd'), type: x.type === 'loan' ? 'loan' : 'card', name: str(x.name),
@@ -211,7 +225,8 @@ export function clearStorage() {
 /** True when the user has entered anything worth calculating. */
 export function hasData(s = state) {
   return Object.values(s.values).some((v) => v > 0) || s.debts.length > 0 || s.subscriptions.length > 0
-    || s.yearly.length > 0 || (s.extras || []).length > 0;
+    || s.yearly.length > 0 || (s.extras || []).length > 0
+    || Object.values(s.local || {}).some((v) => v > 0) || (s.custom || []).length > 0;
 }
 
 // ---------------- Theme ----------------

@@ -26,8 +26,8 @@ const fromB64Url = (b64) => {
 };
 
 function shareableState(s) {
-  const { profile, country, currency, period, values, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree } = s;
-  return { profile, country, currency, period, values, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree };
+  const { profile, country, currency, period, payFrequency, values, local, custom, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree } = s;
+  return { profile, country, currency, period, payFrequency, values, local, custom, debts, subscriptions, yearly, extras, plan, projection, goals, allocation, housingFree };
 }
 
 function createShareLink() {

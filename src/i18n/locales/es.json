@@ -459,7 +459,12 @@
       "PKR": "PKR — Rupia pakistaní",
       "AED": "AED — Dírham de los EAU",
       "CAD": "CAD — Dólar canadiense",
-      "AUD": "AUD — Dólar australiano"
+      "AUD": "AUD — Dólar australiano",
+      "SAR": "SAR — Riyal saudí",
+      "BRL": "BRL — Real brasileño",
+      "MXN": "MXN — Peso mexicano",
+      "IDR": "IDR — Rupia indonesia",
+      "NGN": "NGN — Naira nigeriana"
     },
     "lakh": "{amount} lakh",
     "crore": "{amount} crore",
@@ -645,7 +650,8 @@
       "thisDebt": "esta deuda",
       "thisSubscription": "esta suscripción",
       "thisCost": "este gasto",
-      "thisIncome": "este ingreso"
+      "thisIncome": "este ingreso",
+      "thisExpense": "este gasto"
     },
     "debts": {
       "addCard": "Añadir una tarjeta de crédito",
@@ -699,7 +705,8 @@
       "nothing": "normalmente nada",
       "range": "normalmente entre {min} y {max} al mes",
       "tip": "{help} Para {group}, esto es {range}{approx}.",
-      "higher": "Más de lo habitual para {group} (normalmente hasta {max})"
+      "higher": "Más de lo habitual para {group} (normalmente hasta {max})",
+      "approximate": " (una referencia aproximada, calculada a partir de tus ingresos porque aún no tenemos datos de tu país)"
     },
     "toast": {
       "removed": "Se ha quitado {name}",
@@ -709,12 +716,36 @@
         "debts": "Préstamo",
         "subscriptions": "Suscripción",
         "yearly": "Gasto",
-        "extras": "Ingreso extra"
+        "extras": "Ingreso extra",
+        "custom": "Gasto"
       }
     },
     "sample": {
       "goalHoliday": "Vacaciones en familia",
       "goalLaptop": "Portátil nuevo"
+    },
+    "payFrequency": {
+      "label": "Cada cuánto cobras",
+      "options": {
+        "weekly": "Semanal",
+        "biweekly": "Cada 2 semanas",
+        "semimonthly": "Quincenal",
+        "monthly": "Mensual"
+      },
+      "fieldLabel": {
+        "weekly": "Sueldo neto semanal",
+        "biweekly": "Sueldo neto cada 2 semanas",
+        "semimonthly": "Sueldo neto de cada quincena"
+      },
+      "perMonth": "Unos {amount} al mes."
+    },
+    "custom": {
+      "add": "Añadir otro gasto",
+      "amount": "Importe al mes",
+      "placeholder": "p. ej., comida para la mascota",
+      "type": "Tipo",
+      "need": "Factura obligatoria",
+      "want": "Capricho"
     }
   },
   "wizard": {
@@ -822,7 +853,8 @@
       "goals": "Cosas para las que estás ahorrando. Calculamos cuándo alcanzarás cada una según la parte del ahorro que destinas a metas.",
       "emergency": "Dinero apartado para imprevistos, como perder el trabajo o reparar el coche. Intenta tener de 3 a 6 meses de facturas básicas.",
       "debtFree": "Cuándo terminarías de pagar tus préstamos: ahora, y si destinas a ellos la parte del ahorro para deudas.",
-      "history": "Guarda una foto de tus números cada mes para ver si tus gastos bajan con el tiempo."
+      "history": "Guarda una foto de tus números cada mes para ver si tus gastos bajan con el tiempo.",
+      "customAmount": "Lo que cuesta en un mes normal. Elige «Factura obligatoria» si no puedes saltártelo o «Capricho» si podrías recortarlo."
     }
   },
   "months": {
@@ -1166,7 +1198,8 @@
         "leftOver": "Sobran",
         "plan": "+ Tu plan",
         "toSave": "Para ahorrar"
-      }
+      },
+      "note": "Gratis. Sin registro. Funciona en 13 monedas, incluidas las rupias en lakh y crore."
     },
     "common": {
       "seeExample": "Ver un ejemplo",
@@ -1463,7 +1496,8 @@
       "a6": "Una cuenta de ahorro segura ha pagado últimamente alrededor de un 4% al año. Invertir a largo plazo en una cartera amplia de acciones ha dado de media alrededor de un 8% al año en periodos largos, pero sube y baja. El crecimiento nunca está garantizado, así que prueba varias opciones y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
       "q7": "¿De cuánto debería ser mi fondo de emergencia?",
       "a7": "Una pauta habitual es de 3 a 6 meses de facturas obligatorias. Apunta a la parte alta si en tu hogar hay un solo sueldo, si tus ingresos cambian o si hay personas que dependen de ti. La herramienta muestra para cuánto tiempo tienes ahora y cuánto tardarás en llegar a cada nivel.",
-      "q8": "¿Puedo usar rupias y otras monedas?"
+      "q8": "¿Puedo usar rupias y otras monedas?",
+      "a8": "Sí. Elige tu país en la parte de arriba de la página y la calculadora usará su moneda, los importes habituales de un hogar y consejos locales. Puedes cambiar entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR y NGN, y los importes en rupias se muestran en lakh y crore. Para otros países, los importes habituales se calculan como porcentajes de tus ingresos."
     },
     "glossary": {
       "title": "Palabras de dinero, explicadas con sencillez",
@@ -1549,7 +1583,8 @@
       "a6": "Una cuenta de ahorro segura ha pagado últimamente alrededor de un 4% al año. Invertir a largo plazo en una cartera amplia de acciones ha dado de media alrededor de un 8% al año en periodos largos, pero sube y baja. El crecimiento nunca está garantizado, así que prueba varias opciones y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
       "q7": "¿De cuánto debería ser mi fondo de emergencia?",
       "a7": "Una pauta habitual es de 3 a 6 meses de facturas obligatorias. Apunta a la parte alta si en tu hogar hay un solo sueldo, si tus ingresos cambian o si hay personas que dependen de ti. La herramienta muestra para cuánto tiempo tienes ahora y cuánto tardarás en llegar a cada nivel.",
-      "q8": "¿Puedo usar rupias y otras monedas?"
+      "q8": "¿Puedo usar rupias y otras monedas?",
+      "a8": "Sí. Elige tu país en la parte de arriba de la página y la calculadora usará su moneda, los importes habituales de un hogar y consejos locales. Puedes cambiar entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR y NGN, y los importes en rupias se muestran en lakh y crore. Para otros países, los importes habituales se calculan como porcentajes de tus ingresos."
     }
   },
   "dashboard": {
@@ -1621,7 +1656,8 @@
       "basisSpend": "Parte de tu gasto total. Añade tus ingresos para comparar con hogares típicos.",
       "typical": "Típico: {pct} de los ingresos",
       "higher": "Más de lo típico (aprox. {pct})",
-      "nothingFor": "No has escrito nada en: {list}."
+      "nothingFor": "No has escrito nada en: {list}.",
+      "basisIncomeApprox": "Parte de tus ingresos, comparada con lo típico para el perfil «{profile}» (una referencia aproximada, porque aún no tenemos datos de tu país)."
     },
     "mobile": {
       "saveYear": "Podrías ahorrar cada año",
@@ -2000,6 +2036,12 @@
     "theme": {
       "toLight": "Cambiar a modo claro",
       "toDark": "Cambiar a modo oscuro"
+    },
+    "locale": {
+      "language": "Idioma",
+      "country": "País",
+      "otherCountry": "Otro país",
+      "toggle": "Idioma: {language}. País: {country}"
     }
   },
   "privacy": {
@@ -2329,6 +2371,144 @@
     "mail": {
       "subject": "Optimizador de Presupuesto: {topic}",
       "body": "{message}\n\n—\n{name}\nTema: {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "Refrigeración centralizada (chiller)",
+        "help": "Si el aire acondicionado de tu edificio lo suministra una empresa de refrigeración centralizada (por ejemplo, Empower o Emicool), su factura mensual. Es aparte de DEWA, ADDC o SEWA. Déjalo en 0 si la refrigeración va incluida en el alquiler o si usas tus propios aparatos de aire acondicionado."
+      },
+      "housingFee": {
+        "label": "Tasa municipal de vivienda",
+        "help": "En Dubái, los inquilinos pagan una tasa de vivienda del 5% del alquiler anual, que se suma a la factura de DEWA en cuotas mensuales. Otros emiratos cobran tasas parecidas (en Abu Dabi se cobra con la factura de ADDC). Pon lo que pagas cada mes."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Seguro médico privado",
+        "help": "La prima mensual de tu cobertura hospitalaria y/o complementaria (extras), después del descuento del Gobierno. Es opcional, pero mucha gente tiene cobertura hospitalaria para no pagar el recargo de Medicare (Medicare levy surcharge)."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Cuota del edificio (condomínio)",
+        "help": "Lo que pagas cada mes de condomínio por el edificio o la urbanización cerrada, si lo pagas aparte del alquiler."
+      },
+      "planoSaude": {
+        "label": "Seguro médico (plano de saúde)",
+        "help": "La factura mensual de tu plan de salud, con los copagos que tengas. Si tu empresa lo paga entero, déjalo vacío."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Tasa de radiotelevisión (Rundfunkbeitrag)",
+        "help": "La tasa que paga cada hogar (18,36 € al mes en 2026; normalmente se cobra cada tres meses: 55,08 €)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Gastos de comunidad",
+        "help": "La cuota mensual de la comunidad de propietarios de tu edificio. Si vives de alquiler, normalmente va incluida en el alquiler; en ese caso, déjalo vacío."
+      },
+      "seguroMedico": {
+        "label": "Seguro médico privado",
+        "help": "La cuota mensual de tu seguro médico privado (por ejemplo, Sanitas, Adeslas o DKV), si tienes uno."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Seguro médico complementario (mutuelle)",
+        "help": "Lo que pagas al mes por tu mutuelle (complémentaire santé). Si el plan de tu empresa se descuenta de la nómina, déjalo vacío."
+      },
+      "taxeFonciere": {
+        "label": "Impuesto sobre la propiedad (taxe foncière)",
+        "help": "Solo propietarios: tu taxe foncière anual expresada como importe mensual. Si vives de alquiler, déjalo vacío."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Impuesto municipal (council tax)",
+        "help": "Lo que pagas al mes de council tax. La mayoría de los ayuntamientos lo cobran en 10 plazos; aquí repártelo en 12 meses. Si vives solo, normalmente tienes un 25% de descuento."
+      },
+      "tvLicence": {
+        "label": "Licencia de televisión (TV licence)",
+        "help": "Necesaria para ver la televisión en directo o usar BBC iPlayer. 180 £ al año desde abril de 2026, unas 15 £ al mes."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Agua potable (garrafas galon)",
+        "help": "Agua potable embotellada (recargas de garrafas galon de 19 litros en un depósito o de una marca como Aqua), como importe mensual. El agua del grifo (PDAM) va en la casilla de agua y gas."
+      },
+      "estateFees": {
+        "label": "Cuotas del barrio o del edificio (IPL, iuran RT/RW)",
+        "help": "Cuotas mensuales de tu barrio o edificio: iuran RT/RW, seguridad, recogida de basura o los gastos de servicio del apartamento (IPL), si no van incluidos en el alquiler."
+      },
+      "arisan": {
+        "label": "Aportación al arisan",
+        "help": "Lo que pagas cada mes a un arisan, un grupo de ahorro rotativo en el que todos aportan y, en cada ronda, un miembro se lleva el bote entero. Funciona más como ahorro que como gasto, así que no es una factura obligatoria, pero apúntalo aquí para saber adónde va tu dinero."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Mantenimiento de la comunidad",
+        "help": "La cuota mensual de mantenimiento que cobra tu comunidad de vecinos o asociación de apartamentos (seguridad, ascensores, zonas comunes, bombas de agua). Déjalo en 0 si ya va incluida en el alquiler."
+      },
+      "powerBackup": {
+        "label": "Energía de respaldo (inversor o generador)",
+        "help": "El generador diésel de respaldo que cobra tu comunidad, o el mantenimiento de la batería del inversor y del SAI (UPS), como importe mensual. Sáltatelo si no tienes respaldo."
+      },
+      "chitFund": {
+        "label": "Chit fund / kitty",
+        "help": "Lo que aportas cada mes a un chit fund, kitty u otro grupo de ahorro rotativo. Cada miembro paga todos los meses y se lleva el bote entero una vez. Funciona como un ahorro, así que puedes pausarlo si vas justo de dinero, pero apúntalo aquí para saber adónde va tu dinero."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Cuota de mantenimiento",
+        "help": "La cuota mensual de mantenimiento de tu edificio o fraccionamiento, si no va incluida en la renta."
+      },
+      "gastosMedicos": {
+        "label": "Seguro de gastos médicos mayores",
+        "help": "La prima de tu seguro de gastos médicos mayores como importe mensual, si lo pagas tú."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "Combustible del generador / inversor",
+        "help": "Gasolina o diésel para tu generador (o para cargar un inversor) cuando se va la luz de la red, como importe mensual. No incluyas lo que cuesta comprar el generador, el inversor o las baterías (añádelo como gasto anual)."
+      },
+      "estateDues": {
+        "label": "Cuotas de la urbanización y basura",
+        "help": "Las cuotas mensuales de la urbanización o de la asociación de propietarios (seguridad, calles, alumbrado) y la factura de recogida de basura (por ejemplo, LAWMA en Lagos). Si la cuota de servicio se paga una vez al año, pon esa cantidad dividida entre 12."
+      },
+      "esusu": {
+        "label": "Aportación al ajo / esusu",
+        "help": "Lo que pagas cada mes a un ajo, esusu o adashi, un grupo de ahorro rotativo en el que todos aportan y, en cada ronda, un miembro se lleva el bote entero. Funciona más como ahorro que como gasto, así que no es una factura obligatoria, pero apúntalo aquí para saber adónde va tu dinero."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Gastos de generador / UPS",
+        "help": "Gasolina o diésel para el generador, más la recarga de las baterías del UPS, durante los cortes programados de luz (load-shedding), como importe mensual. No incluyas lo que cuesta comprar el generador o el UPS (añádelo como gasto anual)."
+      },
+      "committee": {
+        "label": "Pago del comité / BC",
+        "help": "Lo que pagas cada mes a un comité (BC), un grupo de ahorro rotativo en el que todos aportan cada mes y, en cada turno, un miembro se lleva el bote entero. Funciona más como ahorro que como gasto, así que no es una factura obligatoria, pero apúntalo aquí para saber adónde va tu dinero."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Tasa por dependientes (expatriados)",
+        "help": "Si vives en Arabia Saudí con un iqama, la tasa del Gobierno por cada familiar a tu cargo (400 SAR al mes por persona), que normalmente se paga por todo el año al renovar el iqama. Ponla como importe mensual. Déjalo en 0 si tienes la ciudadanía saudí."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Prima del seguro médico",
+        "help": "Lo que pagas cada mes por el seguro médico, incluido lo que te descuentan de la nómina por el plan de tu empresa, o por un plan del Marketplace después de cualquier crédito fiscal."
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 # Spanish (es): translation notes
 
-Translated from the frozen English snapshot `en-snapshot-p1.json` (1,507 messages). The 4 keys added to
-en.json after that snapshot (`layout.locale.*`) are not translated yet; they get the next pass.
+Translated from the frozen English snapshot `en-snapshot-p1.json` (1,507 messages); keys added since then were
+translated in later passes.
 
 ## Register and variety
 - Informal **tú** throughout, as is usual for consumer apps. No *vosotros* forms. The contact FAQ uses
@@ -92,3 +92,18 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - "Google Ads Settings" is kept as the link text, followed by "(Configuración de anuncios de Google)".
 - `updated_html` dates: "19 de octubre de 2026"; the `datetime` attribute is unchanged.
 - "Standard contractual clauses" = "cláusulas contractuales tipo" (official EU Spanish term).
+
+## Phase 6 additions
+- `inputs.payFrequency.options.semimonthly` = "Quincenal" (twice a month); natural in Mexico, where *quincena* is the usual pay period. In Spain "quincenal" is also understood but monthly pay is the norm.
+- `inputs.payFrequency.options.biweekly` = "Cada 2 semanas"; Mexico also says "catorcenal" (paid every *catorcena*), which could replace it for a Mexico-only build.
+- `inputs.payFrequency.fieldLabel.*` follow "Sueldo neto mensual": "Sueldo neto semanal", "Sueldo neto cada 2 semanas", "Sueldo neto de cada quincena" (MX alt.: "salario neto").
+- `inputs.custom.add` = "Añadir otro gasto" (not "personalizado", which sounded technical); MX alt.: "Agregar otro gasto".
+- `inputs.custom.need` / `want` = "Factura obligatoria" / "Capricho", singular of the existing 50/30/20 labels.
+- `inputs.custom.placeholder` "p. ej., comida para la mascota"; Mexico would also say "alimento para mascota".
+- `countryFields.ES.comunidad` label is just "Gastos de comunidad" (the Spanish term itself); `MX.mantenimiento` = "Cuota de mantenimiento", `MX.gastosMedicos` = "Seguro de gastos médicos mayores" (local terms used directly, MX help says "renta" and "fraccionamiento").
+- Other countries' fields use "alquiler" (Spain form; MX: renta) and "nómina" for payslip (MX: recibo de nómina / talón de pago).
+- `countryFields.IN.powerBackup`: "SAI (UPS)"; Spain says SAI, Mexico/Pakistan field says UPS / "no-break" (MX colloquial).
+- `countryFields.NG.estateDues`: "urbanización" (Spain) for a gated estate; Mexico would say "fraccionamiento" or "privada".
+- Long labels that may wrap above an input: "Cuotas del barrio o del edificio (IPL, iuran RT/RW)", "Impuesto sobre la propiedad (taxe foncière)", "Tasa de radiotelevisión (Rundfunkbeitrag)", "Seguro médico complementario (mutuelle)".
+- `GB.councilTax` / `GB.tvLicence` keep the English name in brackets after a Spanish gloss; `ID.galon` "garrafas galon" keeps the Indonesian word.
+- Currency names: "Riyal saudí", "Real brasileño", "Peso mexicano", "Rupia indonesia", "Naira nigeriana" (naira is feminine in RAE usage).

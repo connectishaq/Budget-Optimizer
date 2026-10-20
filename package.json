@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "i18n:check": "node scripts/i18n-check.mjs",
-    "benchmarks:review": "node scripts/review-benchmarks.mjs"
+    "benchmarks:review": "node scripts/review-benchmarks.mjs",
+    "i18n:missing": "node scripts/i18n-missing.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

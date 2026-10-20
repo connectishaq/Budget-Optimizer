@@ -459,7 +459,12 @@
       "PKR": "PKR — Rupia paquistanesa",
       "AED": "AED — Dirham dos Emirados",
       "CAD": "CAD — Dólar canadense",
-      "AUD": "AUD — Dólar australiano"
+      "AUD": "AUD — Dólar australiano",
+      "SAR": "SAR — Rial saudita",
+      "BRL": "BRL — Real brasileiro",
+      "MXN": "MXN — Peso mexicano",
+      "IDR": "IDR — Rupia indonésia",
+      "NGN": "NGN — Naira nigeriana"
     },
     "lakh": "{amount} lakh",
     "crore": "{amount} crore",
@@ -645,7 +650,8 @@
       "thisDebt": "esta dívida",
       "thisSubscription": "esta assinatura",
       "thisCost": "este gasto",
-      "thisIncome": "esta renda"
+      "thisIncome": "esta renda",
+      "thisExpense": "este gasto"
     },
     "debts": {
       "addCard": "Adicionar cartão de crédito",
@@ -699,7 +705,8 @@
       "nothing": "geralmente nada",
       "range": "geralmente de {min} a {max} por mês",
       "tip": "{help} Para {group}, isso é {range}{approx}.",
-      "higher": "Acima do comum para {group} (geralmente até {max})"
+      "higher": "Acima do comum para {group} (geralmente até {max})",
+      "approximate": " (uma estimativa aproximada, calculada a partir da sua renda, porque ainda não temos dados do seu país)"
     },
     "toast": {
       "removed": "{name} removido",
@@ -709,12 +716,36 @@
         "debts": "Empréstimo",
         "subscriptions": "Assinatura",
         "yearly": "Gasto",
-        "extras": "Renda extra"
+        "extras": "Renda extra",
+        "custom": "Gasto"
       }
     },
     "sample": {
       "goalHoliday": "Férias em família",
       "goalLaptop": "Notebook novo"
+    },
+    "payFrequency": {
+      "label": "Com que frequência você recebe",
+      "options": {
+        "weekly": "Semanal",
+        "biweekly": "A cada 2 semanas",
+        "semimonthly": "2x por mês",
+        "monthly": "Mensal"
+      },
+      "fieldLabel": {
+        "weekly": "Salário líquido semanal",
+        "biweekly": "Salário líquido a cada 2 semanas",
+        "semimonthly": "Salário líquido por pagamento"
+      },
+      "perMonth": "Cerca de {amount} por mês."
+    },
+    "custom": {
+      "add": "Adicionar outro gasto",
+      "amount": "Valor por mês",
+      "placeholder": "ex.: Ração do pet",
+      "type": "Tipo",
+      "need": "Conta obrigatória",
+      "want": "Não essencial"
     }
   },
   "wizard": {
@@ -822,7 +853,8 @@
       "goals": "Coisas para as quais você está guardando. Calculamos quando você vai alcançar cada uma usando a parte das economias que você dá às metas.",
       "emergency": "Dinheiro guardado para imprevistos, como perder o emprego ou consertar o carro. Tente juntar de 3 a 6 meses de contas essenciais.",
       "debtFree": "Quando seus empréstimos estariam totalmente quitados: hoje, e se você usar a parte das economias destinada às dívidas.",
-      "history": "Salve um retrato do mês todo mês para ver se seus gastos estão caindo com o tempo."
+      "history": "Salve um retrato do mês todo mês para ver se seus gastos estão caindo com o tempo.",
+      "customAmount": "Quanto custa em um mês normal. Escolha “Conta obrigatória” se não dá para deixar de pagar, ou “Não essencial” se dá para cortar."
     }
   },
   "months": {
@@ -1166,7 +1198,8 @@
         "leftOver": "Sobra",
         "plan": "+ Seu plano",
         "toSave": "Para guardar"
-      }
+      },
+      "note": "Grátis. Sem cadastro. Funciona em 13 moedas, incluindo rupias em lakh e crore."
     },
     "common": {
       "seeExample": "Ver um exemplo",
@@ -1463,7 +1496,8 @@
       "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
       "q7": "De quanto deve ser minha reserva de emergência?",
       "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
-      "q8": "Posso usar rupias e outras moedas?"
+      "q8": "Posso usar rupias e outras moedas?",
+      "a8": "Sim. Escolha seu país no topo da página e a calculadora usa a moeda, os valores típicos das famílias e dicas locais de lá. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR e NGN, e valores em rupias aparecem em lakh e crore. Para outros países, os valores típicos são calculados como partes da sua renda."
     },
     "glossary": {
       "title": "Termos de dinheiro, explicados de forma simples",
@@ -1549,7 +1583,8 @@
       "a6": "Uma aplicação segura tem rendido recentemente cerca de 4% ao ano. Investir a longo prazo numa carteira ampla de ações rendeu em média cerca de 8% ao ano em períodos longos, mas sobe e desce. O rendimento nunca é garantido, então teste algumas opções e ative \"Mostrar em dinheiro de hoje\" para considerar a alta dos preços.",
       "q7": "De quanto deve ser minha reserva de emergência?",
       "a7": "Uma referência comum é de 3 a 6 meses de contas obrigatórias. Mire no valor mais alto se a sua família tem uma só renda, ganhos que variam ou pessoas que dependem de você. A ferramenta mostra quanto tempo você já tem coberto e quanto tempo leva para chegar a cada nível.",
-      "q8": "Posso usar rupias e outras moedas?"
+      "q8": "Posso usar rupias e outras moedas?",
+      "a8": "Sim. Escolha seu país no topo da página e a calculadora usa a moeda, os valores típicos das famílias e dicas locais de lá. Você pode alternar entre USD, GBP, EUR, INR, PKR, AED, SAR, CAD, AUD, BRL, MXN, IDR e NGN, e valores em rupias aparecem em lakh e crore. Para outros países, os valores típicos são calculados como partes da sua renda."
     }
   },
   "dashboard": {
@@ -1621,7 +1656,8 @@
       "basisSpend": "Parte do seu gasto total. Adicione sua renda para comparar com famílias típicas.",
       "typical": "Típico: {pct} da renda",
       "higher": "Acima do típico (cerca de {pct})",
-      "nothingFor": "Nada informado para: {list}."
+      "nothingFor": "Nada informado para: {list}.",
+      "basisIncomeApprox": "Parte da sua renda, comparada com o perfil típico: {profile} (uma estimativa aproximada, já que ainda não temos dados do seu país)."
     },
     "mobile": {
       "saveYear": "Você poderia economizar por ano",
@@ -2000,6 +2036,12 @@
     "theme": {
       "toLight": "Mudar para o modo claro",
       "toDark": "Mudar para o modo escuro"
+    },
+    "locale": {
+      "language": "Idioma",
+      "country": "País",
+      "otherCountry": "Outro país",
+      "toggle": "Idioma: {language}. País: {country}"
     }
   },
   "privacy": {
@@ -2329,6 +2371,144 @@
     "mail": {
       "subject": "Otimizador de Orçamento: {topic}",
       "body": "{message}\n\n—\n{name}\nAssunto: {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "Conta de refrigeração (chiller)",
+        "help": "Se o ar-condicionado do seu prédio vem de uma empresa de refrigeração distrital (como Empower ou Emicool), a conta mensal dela. É separada da DEWA, ADDC ou SEWA. Deixe 0 se a refrigeração já está incluída no aluguel ou se você usa seus próprios aparelhos de ar-condicionado."
+      },
+      "housingFee": {
+        "label": "Taxa municipal de moradia",
+        "help": "Em Dubai, quem aluga paga uma taxa de moradia de 5% do aluguel anual, cobrada na conta da DEWA em parcelas mensais. Outros emirados cobram taxas parecidas (em Abu Dhabi, ela vem na conta da ADDC). Informe quanto você paga por mês."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Plano de saúde privado",
+        "help": "A mensalidade da sua cobertura hospitalar e/ou extras, já descontado o reembolso do governo. É opcional, mas muita gente tem cobertura hospitalar para evitar a sobretaxa do Medicare (Medicare levy surcharge)."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Condomínio",
+        "help": "A taxa mensal de condomínio do prédio ou do condomínio fechado, se você paga separado do aluguel."
+      },
+      "planoSaude": {
+        "label": "Plano de saúde",
+        "help": "A mensalidade do seu plano de saúde, incluindo coparticipações. Se a empresa paga tudo, deixe em branco."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Taxa de rádio e TV (Rundfunkbeitrag)",
+        "help": "A taxa que toda residência paga (€18,36 por mês em 2026, normalmente cobrada a cada três meses, no valor de €55,08)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Condomínio (comunidad)",
+        "help": "Taxa mensal da associação de proprietários do seu prédio. Para quem aluga, ela costuma vir incluída no aluguel; nesse caso, deixe em branco."
+      },
+      "seguroMedico": {
+        "label": "Plano de saúde privado",
+        "help": "Mensalidade do seu plano de saúde privado (ex.: Sanitas, Adeslas, DKV), se você tiver."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Plano de saúde complementar (mutuelle)",
+        "help": "Sua mutuelle (complémentaire santé) mensal. Se o plano da empresa é descontado do seu contracheque, deixe em branco."
+      },
+      "taxeFonciere": {
+        "label": "Imposto predial (taxe foncière)",
+        "help": "Só para proprietários: sua taxe foncière anual, informada como valor mensal. Quem aluga deixa em branco."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Council tax (imposto municipal)",
+        "help": "Sua conta mensal de council tax. A maioria das prefeituras cobra em 10 parcelas; aqui, divida o valor por 12 meses. Quem mora sozinho costuma ter 25% de desconto."
+      },
+      "tvLicence": {
+        "label": "Licença de TV (TV licence)",
+        "help": "Necessária para assistir TV ao vivo ou usar o BBC iPlayer. £180 por ano a partir de abril de 2026, cerca de £15 por mês."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Água potável (galões)",
+        "help": "Água potável engarrafada — recargas de galão de 19 litros num depósito ou de uma marca como a Aqua — como valor mensal. A água encanada (PDAM) vai no campo de água e gás."
+      },
+      "estateFees": {
+        "label": "Taxas do bairro ou prédio (IPL, iuran RT/RW)",
+        "help": "Taxas mensais do seu bairro ou prédio: iuran RT/RW, segurança, coleta de lixo ou a taxa de serviço do apartamento (IPL), se não estiver incluída no aluguel."
+      },
+      "arisan": {
+        "label": "Contribuição de arisan",
+        "help": "Seu pagamento mensal em um arisan — um grupo de poupança rotativa em que todos contribuem e, a cada rodada, um membro fica com o valor total. Funciona mais como poupança do que como gasto, então não é uma conta obrigatória, mas registre aqui para saber para onde vai o dinheiro."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Taxa do condomínio (society)",
+        "help": "A taxa mensal de manutenção cobrada pela sua housing society ou associação do prédio (segurança, elevadores, áreas comuns, bombas d’água). Deixe 0 se já estiver incluída no aluguel."
+      },
+      "powerBackup": {
+        "label": "Energia reserva (inversor ou gerador)",
+        "help": "Gerador a diesel cobrado pela sua society, ou manutenção da bateria do inversor e do nobreak, como valor mensal. Pule se você não tem energia reserva."
+      },
+      "chitFund": {
+        "label": "Chit fund / kitty",
+        "help": "Sua contribuição mensal para um chit fund, kitty ou outro grupo de poupança rotativa. Cada membro contribui todo mês e recebe o valor total uma vez. Funciona como poupança, então dá para pausar se o dinheiro estiver curto, mas registre aqui para saber para onde vai o dinheiro."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Condomínio (mantenimiento)",
+        "help": "Taxa mensal de manutenção do prédio ou condomínio fechado (cuota de mantenimiento), se não estiver incluída no aluguel."
+      },
+      "gastosMedicos": {
+        "label": "Seguro saúde (gastos médicos mayores)",
+        "help": "O valor do seu seguro de gastos médicos maiores, informado como valor mensal, se você mesmo paga."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "Combustível do gerador / inversor",
+        "help": "Gasolina ou diesel para o gerador (ou para carregar o inversor) quando falta energia da rede, como valor mensal. Não inclua o preço do gerador, do inversor ou das baterias (adicione esses como gastos anuais)."
+      },
+      "estateDues": {
+        "label": "Taxas do condomínio e lixo",
+        "help": "Taxas mensais do condomínio ou da associação de moradores (segurança, ruas, iluminação) e a conta de coleta de lixo (por exemplo, LAWMA em Lagos). Se a taxa de serviço é paga por ano, informe o valor dividido por 12."
+      },
+      "esusu": {
+        "label": "Contribuição de ajo / esusu",
+        "help": "Seu pagamento mensal em um ajo, esusu ou adashi — um grupo de poupança rotativa em que todos contribuem e, a cada rodada, um membro fica com o valor total. Funciona mais como poupança do que como gasto, então não é uma conta obrigatória, mas registre aqui para saber para onde vai o dinheiro."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Custo do gerador / nobreak",
+        "help": "Gasolina ou diesel para o gerador, mais a reposição das baterias do nobreak (UPS), durante os cortes de energia (load-shedding) — como valor mensal. Não inclua o preço do gerador ou do nobreak (adicione isso como gasto anual)."
+      },
+      "committee": {
+        "label": "Committee / BC",
+        "help": "Seu pagamento mensal em um committee (BC) — um grupo de poupança rotativa em que todos contribuem todo mês e, a cada vez, um membro fica com o valor total. Funciona mais como poupança do que como gasto, então não é uma conta obrigatória, mas registre aqui para saber para onde vai o dinheiro."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Taxa de dependentes (expatriados)",
+        "help": "Se você mora na Arábia Saudita com iqama, a taxa do governo por cada familiar que você patrocina (SAR 400 por mês por pessoa), normalmente paga pelo ano inteiro na renovação do iqama. Informe como valor mensal. Deixe 0 se você é cidadão saudita."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Mensalidade do plano de saúde",
+        "help": "Quanto você paga por mês pelo plano de saúde, incluindo o valor descontado do salário para o plano da empresa ou um plano do Marketplace depois de qualquer crédito fiscal."
+      }
     }
   }
 }

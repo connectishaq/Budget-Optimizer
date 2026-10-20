@@ -82,6 +82,8 @@ async function applyCountry(code, { defaults = true } = {}) {
     s.country = code;
     if (defaults) {
       if (C.currency) s.currency = C.currency;
+      // Income stays the same per month; the box then shows it per local pay
+      if (C.payFrequency) s.payFrequency = C.payFrequency;
       if (C.inflation != null) s.projection.inflation = C.inflation;
       s.projection.rate = returnOptions(code)[pick >= 0 ? pick : 2].value;
     }
@@ -134,7 +136,14 @@ async function boot() {
   initReset();
   syncPlanControls(getState());
 
+  let shownCountry = getState().country;
   subscribe((reason) => {
+    // A loaded month, backup or share link can bring another country
+    if (getState().country !== shownCountry) {
+      shownCountry = getState().country;
+      setFormatRegion(shownCountry);
+      storeCountry(shownCountry);
+    }
     if (reason === 'replace' || reason === 'import' || reason === 'sample' || reason === 'reset' || reason === 'country') {
       syncInputs();
       syncPlanControls(getState());
@@ -148,7 +157,7 @@ async function boot() {
     // Back to this month's saved numbers if there are any, otherwise a blank form
     if (loadThisMonth()) return;
     const st = getState();
-    replaceState({ ...defaultState(), profile: st.profile, currency: st.currency, period: st.period }, 'reset');
+    replaceState({ ...defaultState(), profile: st.profile, country: st.country, currency: st.currency, period: st.period, payFrequency: st.payFrequency }, 'reset');
   });
 
   setText($('year'), String(new Date().getFullYear()));

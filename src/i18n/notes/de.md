@@ -1,8 +1,7 @@
 # German (de-DE) translation notes
 
-Source: frozen English snapshot `en-snapshot-p1.json` (1,507 messages). Four keys added to en.json since then
-(`layout.locale.language`, `layout.locale.country`, `layout.locale.otherCountry`, `layout.locale.toggle`) are not
-translated yet; they are for the next pass.
+Source: frozen English snapshot `en-snapshot-p1.json` (1,507 messages); keys added to en.json since then were
+translated in later passes.
 
 ## Form of address
 - **"du"** throughout (lowercase), including the privacy policy and terms, so the site has one voice.
@@ -95,3 +94,20 @@ reviewed**. A German lawyer should check them before launch, in particular:
   may want to name the competent German supervisory authority (Landesdatenschutzbehörde) instead;
 - the German legal terms used: "berechtigtes Interesse", "Standardvertragsklauseln", "Gewährleistung", "Haftungsbeschränkung";
 - German sites usually also need an Impressum, which the English source doesn't have.
+
+## Phase 6 additions
+- The four `layout.locale.*` keys mentioned at the top are now translated ("Sprache", "Land", "Anderes Land").
+- `inputs.payFrequency.options.semimonthly`: "2× im Monat" to fit the narrow dropdown; "Zweimal monatlich" if there is room.
+- `inputs.payFrequency.label`: "Wie oft du Geld bekommst" (more neutral than "Gehalt", covers wages and benefits).
+- `inputs.custom.need` / `want`: singular forms "Pflichtausgabe" / "Extra" of the existing 50/30/20 terms; `help.text.customAmount` quotes them.
+- `inputs.typical.approximate` and `dashboard.categories.basisIncomeApprox`: "grober Richtwert" for "rough guide"; alternative "grobe Schätzung".
+- `page.hero.note`: "Ohne Anmeldung" for "No sign-up"; "Keine Registrierung" is a common alternative. Note: the older `page.*` feature list still says "Acht Währungen …" from the English source of that time.
+- Rotating savings groups (Arisan, Chit Fund/Kitty, Ajo/Esusu, Committee/BC) are all "Sparzirkel", matching `help.text.other`.
+- `countryFields.*` "Building fee" for BR/ES/MX → "Hausgeld" (German term for owners' service charge); "Nebenkosten" would be the tenant's view.
+- `countryFields.MX.gastosMedicos.label`: shortened to "Private Krankenvers. (gastos médicos mayores)"; still long, may wrap.
+- `countryFields.IN.societyMaintenance.label`: "Society-Instandhaltung" keeps the Indian term "society"; alternative "Instandhaltung Wohnanlage".
+- `countryFields.AE.chillerFee.label`: "Fernkälte" is the technical German term for district cooling; may be unfamiliar to many readers.
+- UPS → "USV" (German abbreviation); "Load-Shedding" kept in English in brackets after "Stromabschaltungen".
+- `countryFields.GB.*`: "Council Tax" and "TV Licence" kept as proper nouns, explained in the help text.
+- `countryFields.SA.dependentFee.help`: "saudischer Staatsbürger" is the generic masculine; neutral alternative "wenn du die saudische Staatsbürgerschaft hast".
+- `format.currencies.NGN`: "Nigerianischer Naira" (masculine, per Duden); "Naira" is sometimes used as feminine.

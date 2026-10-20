@@ -634,7 +634,8 @@
       "thisDebt": "this debt",
       "thisSubscription": "this subscription",
       "thisCost": "this cost",
-      "thisIncome": "this income"
+      "thisIncome": "this income",
+      "thisExpense": "this expense"
     },
     "debts": {
       "addCard": "Add a credit card",
@@ -698,12 +699,36 @@
         "debts": "Loan",
         "subscriptions": "Subscription",
         "yearly": "Cost",
-        "extras": "Extra income"
+        "extras": "Extra income",
+        "custom": "Expense"
       }
     },
     "sample": {
       "goalHoliday": "Family holiday",
       "goalLaptop": "New laptop"
+    },
+    "payFrequency": {
+      "label": "How often you’re paid",
+      "options": {
+        "weekly": "Weekly",
+        "biweekly": "Every 2 weeks",
+        "semimonthly": "Twice a month",
+        "monthly": "Monthly"
+      },
+      "fieldLabel": {
+        "weekly": "Weekly take-home pay",
+        "biweekly": "Take-home pay every 2 weeks",
+        "semimonthly": "Take-home pay each payday"
+      },
+      "perMonth": "About {amount} a month."
+    },
+    "custom": {
+      "add": "Add custom expense",
+      "amount": "Amount a month",
+      "placeholder": "e.g. Pet food",
+      "type": "Type",
+      "need": "Must-pay bill",
+      "want": "Nice-to-have"
     }
   },
   "wizard": {
@@ -811,7 +836,8 @@
       "goals": "Things you’re saving for. We work out when you’ll reach each one using the share of savings you give to goals.",
       "emergency": "Money kept aside for surprises like losing your job or a car repair. Aim for 3 to 6 months of essential bills.",
       "debtFree": "When your loans would be fully paid off: now, and if you put your debt share of savings towards them.",
-      "history": "Save a snapshot each month to see whether your spending is going down over time."
+      "history": "Save a snapshot each month to see whether your spending is going down over time.",
+      "customAmount": "What it costs in a normal month. Choose “Must-pay bill” if you can’t skip it, or “Nice-to-have” if you could cut it."
     }
   },
   "months": {
@@ -2297,6 +2323,144 @@
     "mail": {
       "subject": "Budget Optimizer: {topic}",
       "body": "{message}\n\n—\n{name}\nTopic: {topic}"
+    }
+  },
+  "countryFields": {
+    "AE": {
+      "chillerFee": {
+        "label": "District cooling (chiller) bill",
+        "help": "If your building’s air-conditioning comes from a district cooling company (for example Empower or Emicool), its monthly bill. This is separate from DEWA, ADDC or SEWA. Leave at 0 if cooling is included in your rent or comes from your own AC units."
+      },
+      "housingFee": {
+        "label": "Municipality housing fee",
+        "help": "In Dubai, renters pay a housing fee of 5% of the yearly rent, added to the DEWA bill in monthly instalments. Other emirates charge similar fees (Abu Dhabi’s is collected with the ADDC bill). Enter what you pay each month."
+      }
+    },
+    "AU": {
+      "privateHealth": {
+        "label": "Private health insurance",
+        "help": "Your monthly hospital and/or extras cover premium after the government rebate. Optional, but many people hold hospital cover to avoid the Medicare levy surcharge."
+      }
+    },
+    "BR": {
+      "condominio": {
+        "label": "Building fee (condomínio)",
+        "help": "Your monthly condomínio fee for the building or gated community, if you pay it separately from rent."
+      },
+      "planoSaude": {
+        "label": "Health plan (plano de saúde)",
+        "help": "Your monthly health-plan bill, including any co-payments. If your employer pays it in full, leave this empty."
+      }
+    },
+    "DE": {
+      "rundfunkbeitrag": {
+        "label": "Broadcast fee (Rundfunkbeitrag)",
+        "help": "The licence fee every household pays (€18.36 a month in 2026, usually billed every three months as €55.08)."
+      }
+    },
+    "ES": {
+      "comunidad": {
+        "label": "Community fees (comunidad)",
+        "help": "Monthly fee to your building’s owners’ association. Tenants usually have it included in the rent; leave it empty if so."
+      },
+      "seguroMedico": {
+        "label": "Private health insurance",
+        "help": "Monthly premium for private health cover (e.g. Sanitas, Adeslas, DKV), if you have it."
+      }
+    },
+    "FR": {
+      "mutuelle": {
+        "label": "Top-up health insurance (mutuelle)",
+        "help": "Your monthly mutuelle (complémentaire santé). If your employer’s plan is taken from your payslip, leave this empty."
+      },
+      "taxeFonciere": {
+        "label": "Property tax (taxe foncière)",
+        "help": "Owners only: your yearly taxe foncière shown as a monthly amount. Tenants leave this empty."
+      }
+    },
+    "GB": {
+      "councilTax": {
+        "label": "Council tax",
+        "help": "Your monthly council tax bill. Most councils bill in 10 instalments; spread it over 12 months here. Living alone usually gets 25% off."
+      },
+      "tvLicence": {
+        "label": "TV licence",
+        "help": "Needed to watch live TV or use BBC iPlayer. £180 a year from April 2026, about £15 a month."
+      }
+    },
+    "ID": {
+      "galon": {
+        "label": "Drinking water (galon refills)",
+        "help": "Bottled drinking water — 19-litre galon refills from a depot or a brand like Aqua — as a monthly amount. Tap (PDAM) water goes in the water and gas box."
+      },
+      "estateFees": {
+        "label": "Neighbourhood or building fees (IPL, iuran RT/RW)",
+        "help": "Monthly fees for your neighbourhood or building: iuran RT/RW, security, rubbish collection, or the apartment service charge (IPL) if it is not included in your rent."
+      },
+      "arisan": {
+        "label": "Arisan contribution",
+        "help": "Your monthly payment into an arisan — a rotating savings group where every member pays in and one member wins the whole pot each round. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes."
+      }
+    },
+    "IN": {
+      "societyMaintenance": {
+        "label": "Society maintenance",
+        "help": "The monthly maintenance charge your housing society or apartment association collects (security, lifts, common areas, water pumps). Leave at 0 if it is already included in your rent."
+      },
+      "powerBackup": {
+        "label": "Power backup (inverter or DG charges)",
+        "help": "Diesel generator backup charged by your society, or inverter battery and UPS upkeep, as a monthly amount. Skip it if you have no backup."
+      },
+      "chitFund": {
+        "label": "Chit fund / kitty payment",
+        "help": "Your monthly contribution to a chit fund, kitty or other rotating savings group. Each member pays in every month and takes the whole pot once. It works like saving, so it can be paused if money is tight, but count it here so you know where the money goes."
+      }
+    },
+    "MX": {
+      "mantenimiento": {
+        "label": "Building maintenance fee (mantenimiento)",
+        "help": "Monthly maintenance fee for your building or gated community (cuota de mantenimiento), if it is not included in the rent."
+      },
+      "gastosMedicos": {
+        "label": "Private medical insurance (gastos médicos mayores)",
+        "help": "Your major-medical insurance premium shown as a monthly amount, if you pay for it yourself."
+      }
+    },
+    "NG": {
+      "generatorFuel": {
+        "label": "Generator / inverter fuel",
+        "help": "Petrol or diesel for your generator (or for charging an inverter) when grid power is off, as a monthly amount. Don’t include the cost of buying the generator, inverter or batteries (add those as yearly costs)."
+      },
+      "estateDues": {
+        "label": "Estate dues and waste bill",
+        "help": "Monthly estate or landlord association dues (security, roads, street lights) and your waste collection bill (for example LAWMA in Lagos). If your service charge is paid yearly, enter it divided by 12."
+      },
+      "esusu": {
+        "label": "Ajo / esusu contribution",
+        "help": "Your monthly payment into an ajo, esusu or adashi — a rotating savings group where every member pays in and one member takes the whole pot each round. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes."
+      }
+    },
+    "PK": {
+      "generatorFuel": {
+        "label": "Generator / UPS running costs",
+        "help": "Petrol or diesel for a generator, plus UPS battery top-ups, during load-shedding — as a monthly amount. Don’t include the cost of buying the generator or UPS itself (add that as a yearly cost)."
+      },
+      "committee": {
+        "label": "Committee / BC payment",
+        "help": "Your monthly payment into a committee (BC) — a rotating savings group where every member pays in each month and one member takes the whole pot each turn. It works like saving rather than spending, so it is not an essential bill, but count it here so you know where the money goes."
+      }
+    },
+    "SA": {
+      "dependentFee": {
+        "label": "Dependent fee (expats)",
+        "help": "If you live in Saudi Arabia on an iqama, the government fee for each family member you sponsor (SAR 400 a month per person), usually paid for the whole year when the iqama is renewed. Enter it as a monthly amount. Leave at 0 if you are a Saudi citizen."
+      }
+    },
+    "US": {
+      "healthPremium": {
+        "label": "Health insurance premium",
+        "help": "What you pay each month for health insurance, including the amount taken from your paycheck for an employer plan or a Marketplace plan after any tax credit."
+      }
     }
   }
 }

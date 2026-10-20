@@ -6,10 +6,11 @@
 import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
 import { countryData } from '../engine/countries.js';
+import { PAY_FREQUENCIES, toMonthly, fromMonthly, localFields, CUSTOM_CATEGORY } from '../engine/calculate.js';
 import { CURRENCIES, parseAmount, decimalSeparator, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast } from './dom.js';
 import { helpBtn, HELP, nextHelpId } from './help.js';
-import { t } from '../i18n/index.js';
+import { t, has } from '../i18n/index.js';
 import { SUB_KINDS, subKind } from '../engine/subscriptions.js';
 import { withSign } from '../utils/format.js';
 
@@ -80,22 +81,51 @@ export const YEARLY_PRESET_KEYS = ['festivals', 'weddings', 'schoolBooks', 'carS
 /** The suggestion names in the active language. */
 export const yearlyPresets = () => YEARLY_PRESET_KEYS.map((k) => t(`inputs.presets.yearly.${k}`));
 
+/** The income box's label for a pay frequency (monthly keeps the original wording). */
+const incomeLabel = (freq) => (freq === 'monthly' ? t('inputs.fields.income.label') : t(`inputs.payFrequency.fieldLabel.${freq}`));
+
+/** Income as shown in its box: one pay, to the cent. */
+const incomeShown = (s) => (s.values.income ? String(Math.round(fromMonthly(s.values.income, s.payFrequency) * 100) / 100) : '');
+
+/** One of the country's own bills as a field: label and help in the active language. */
+function localField(f, country) {
+  const k = `countryFields.${country}.${f.key}`;
+  return {
+    key: f.key, local: true,
+    label: has(`${k}.label`) ? t(`${k}.label`) : f.label,
+    tip: has(`${k}.help`) ? t(`${k}.help`) : f.help || ''
+  };
+}
+
 // ---------------- Markup builders ----------------
 function moneyField(f) {
   const id = `f-${f.key}`;
+  const pay = f.key === 'income';
+  const freq = getState().payFrequency;
+  const label = pay ? incomeLabel(freq) : f.label;
+  const box = `
+    <div class="relative${pay ? ' min-w-0 flex-1' : ''}">
+      <span class="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
+      <input id="${id}" ${f.local ? `data-local="${f.key}"` : `data-field="${f.key}"`} type="text" inputmode="decimal" autocomplete="off" placeholder="0"
+        class="input ps-12 ${f.balance ? '' : 'pe-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}${pay ? ` ${id}-month` : ''}">
+      ${f.balance ? '' : `<span class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400"${pay ? ` data-pay-suffix${freq === 'monthly' ? '' : ' hidden'}` : ''}>${esc(t('inputs.fields.perMonth'))}</span>`}
+    </div>`;
+  // Pay frequency sits beside the income box, styled like the other dropdowns
+  const freqSelect = pay ? `
+    <div class="w-36 shrink-0">
+      <select id="payFrequency" class="input select" aria-label="${esc(t('inputs.payFrequency.label'))}">
+        ${Object.keys(PAY_FREQUENCIES).map((k) => `<option value="${k}" ${k === freq ? 'selected' : ''}>${esc(t(`inputs.payFrequency.options.${k}`))}</option>`).join('')}
+      </select>
+    </div>` : '';
   return `
   <div>
     <div class="mb-1.5 flex items-center gap-2">
-      <label for="${id}" class="label">${esc(f.label)}</label>
-      ${helpBtn(f.key, f.label, HELP[f.key], `tip-${f.key}`)}
+      <label for="${id}" class="label">${esc(label)}</label>
+      ${helpBtn(f.key, label, f.local ? f.tip : HELP[f.key], `tip-${f.key}`)}
     </div>
-    <div class="relative">
-      <span class="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-sm text-slate-500 dark:text-slate-400" data-symbol></span>
-      <input id="${id}" data-field="${f.key}" type="text" inputmode="decimal" autocomplete="off" placeholder="0"
-        class="input ps-12 ${f.balance ? '' : 'pe-16'} font-semibold" aria-describedby="${id}-msg${f.help ? ` ${id}-help` : ''}">
-      ${f.balance ? '' : `<span class="pointer-events-none absolute end-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 dark:text-slate-400">${esc(t('inputs.fields.perMonth'))}</span>`}
-    </div>
+    ${pay ? `<div class="flex gap-2">${box}${freqSelect}</div>` : box}
     ${f.help ? `<p id="${id}-help" class="mt-1 text-xs muted">${esc(f.help)}</p>` : ''}
+    ${pay ? `<p id="${id}-month" class="mt-1 text-xs muted empty:hidden"></p>` : ''}
     <p id="${id}-msg" class="mt-1 text-xs font-medium empty:hidden" aria-live="polite"></p>
   </div>`;
 }
@@ -134,7 +164,15 @@ function groupCard(g, index, collapsed) {
          <button type="button" class="btn btn-ghost mt-3" data-add="sub">${icon('plus', 'icon-sm')}${esc(t('inputs.subs.add'))}</button>
          <div id="subSummary" hidden class="mt-4 rounded-lg bg-slate-50 p-4 text-sm dark:bg-slate-950"></div>`;
   } else {
-    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}</div>${g.id === 'housing' ? housingQuestion() : ''}`;
+    // data-local-group: the country's own bills for this group, filled by renderLocalFields
+    const localBox = g.id === 'income' || g.id === 'savings' ? '' : `<div class="contents" data-local-group="${g.id}"></div>`;
+    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}${localBox}</div>${g.id === 'housing' ? housingQuestion() : ''}`;
+    if (g.id === CUSTOM_CATEGORY) {
+      body += `<div class="mt-4">
+         <div id="customRows" class="mb-3 space-y-3 empty:hidden"></div>
+         <button type="button" class="btn btn-ghost" data-add="custom">${icon('plus', 'icon-sm')}${esc(t('inputs.custom.add'))}</button>
+       </div>`;
+    }
   }
 
   return `
@@ -260,6 +298,48 @@ function extraRow(x) {
   </div>`;
 }
 
+function customRow(x) {
+  return `
+  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
+    <div class="flex items-end gap-2">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+        <div class="min-w-0">
+          <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
+          <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="custom" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="${esc(t('inputs.custom.placeholder'))}">
+        </div>
+        ${numInput('custom', x, 'amount', t('inputs.custom.amount'), 'customAmount')}
+      </div>
+      <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="custom" data-id="${x.id}" aria-label="${esc(t('inputs.rows.remove', { name: x.name || t('inputs.rows.thisExpense') }))}">${icon('trash')}</button>
+    </div>
+    <div class="mt-3">
+      <label for="r-${x.id}-need" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.custom.type'))}</label>
+      <select id="r-${x.id}-need" class="input select" data-list="custom" data-id="${x.id}" data-key="need">
+        <option value="need" ${x.need !== false ? 'selected' : ''}>${esc(t('inputs.custom.need'))}</option>
+        <option value="want" ${x.need === false ? 'selected' : ''}>${esc(t('inputs.custom.want'))}</option>
+      </select>
+    </div>
+  </div>`;
+}
+
+/**
+ * Puts the country's own bills into their groups. Rebuilt only when the
+ * country (or its data, which may arrive later) changes.
+ */
+function renderLocalFields() {
+  const s = getState();
+  const fields = localFields(s.country);
+  const sig = `${s.country}:${fields.map((f) => f.key).join('|')}`;
+  document.querySelectorAll('[data-local-group]').forEach((box) => {
+    if (box.__sig === sig) return;
+    box.__sig = sig;
+    box.innerHTML = fields.filter((f) => f.group === box.dataset.localGroup).map((f) => moneyField(localField(f, s.country))).join('');
+    box.querySelectorAll('[data-local]').forEach((el) => {
+      const v = s.local[el.dataset.local];
+      el.value = v ? String(v) : '';
+    });
+  });
+}
+
 /** Tap-to-add chips for the names not on a list yet. */
 function renderChips(boxId, labelId, presets, rows, list, force) {
   const have = new Set(rows.map((r) => r.name.trim().toLowerCase()));
@@ -298,6 +378,12 @@ function renderRows(force = false) {
     extraBox.innerHTML = s.extras.length ? s.extras.map(extraRow).join('') : `<p class="text-sm muted">${esc(t('inputs.chips.empty'))}</p>`;
   }
   renderChips('extraChips', 'extraChipsLabel', extraPresets(), s.extras, 'extra', force);
+  const customBox = $('customRows');
+  const cSig = listSignature(s.custom);
+  if (force || customBox.__sig !== cSig) {
+    customBox.__sig = cSig;
+    customBox.innerHTML = s.custom.map(customRow).join('');
+  }
   const sSig = listSignature(s.subscriptions);
   if (force || subBox.__sig !== sSig) {
     subBox.__sig = sSig;
@@ -310,11 +396,18 @@ function renderRows(force = false) {
 export function syncInputs() {
   const s = getState();
   errors.clear();
+  renderLocalFields();
   document.querySelectorAll('[data-field]').forEach((el) => {
     const v = s.values[el.dataset.field];
+    el.value = el.dataset.field === 'income' ? incomeShown(s) : v ? String(v) : '';
+    el.removeAttribute('aria-invalid');
+  });
+  document.querySelectorAll('[data-local]').forEach((el) => {
+    const v = s.local[el.dataset.local];
     el.value = v ? String(v) : '';
     el.removeAttribute('aria-invalid');
   });
+  $('payFrequency').value = s.payFrequency;
   renderRows(true);
   $('profile').value = s.profile;
   $('currency').value = s.currency;
@@ -340,7 +433,11 @@ export function renderInputs(state, result, view) {
     else if (g.list === 'extras') txt = state.extras.length ? t('inputs.subtitle.added', { amount: `${withSign('+', view.m(extrasMonthly))}${view.per}`, count: state.extras.length }) : t('inputs.subtitle.optional');
     else if (g.list === 'yearly') txt = state.yearly.length ? t('inputs.subtitle.added', { amount: `${view.m(yearlyMonthly)}${view.per}`, count: state.yearly.length }) : t('inputs.subtitle.optional');
     else if (g.list === 'subscriptions') txt = state.subscriptions.length ? t('inputs.subtitle.added', { amount: `${view.m(subsTotal)}${view.per}`, count: state.subscriptions.length }) : t('inputs.subtitle.optional');
-    else txt = `${view.m(subtotal(g.fields.map((f) => f.key)))}${view.per}`;
+    else {
+      // The category total also holds the country's own bills (and custom expenses)
+      const cat = result.totals.categories.find((c) => c.key === g.id);
+      txt = `${view.m(cat ? cat.amount : subtotal(g.fields.map((f) => f.key)))}${view.per}`;
+    }
     setText(el, txt);
 
     if (!g.fields) continue;
@@ -370,6 +467,35 @@ export function renderInputs(state, result, view) {
       } else {
         setText(msg, '');
       }
+    }
+  }
+
+  renderLocalFields();
+  // Income box: label, "a month" and the monthly equivalent follow the pay frequency
+  const freq = state.payFrequency;
+  setText(document.querySelector('label[for="f-income"]'), incomeLabel(freq));
+  const suffix = document.querySelector('[data-pay-suffix]');
+  if (suffix) suffix.hidden = freq !== 'monthly';
+  setText($('f-income-month'), freq !== 'monthly' && values.income > 0 ? t('inputs.payFrequency.perMonth', { amount: view.raw(values.income) }) : '');
+
+  // The country's own bills: typical range in the "?" and "higher than typical"
+  for (const lf of localFields(state.country)) {
+    const f = localField(lf, state.country);
+    const input = $(`f-${f.key}`);
+    if (!input) continue;
+    const range = lf.ranges?.[state.profile] || null;
+    const rangeTxt = !range ? '' : range[1] === 0 ? t('inputs.typical.nothing') : t('inputs.typical.range', { min: nice(range[0]), max: nice(range[1]) });
+    setText($(`tip-${f.key}`), range ? t('inputs.typical.tip', { help: f.tip, group: who.group, range: rangeTxt, approx: '' }) : f.tip);
+    const msg = $(`f-${f.key}-msg`);
+    const err = errors.get(input.id);
+    if (err) {
+      setText(msg, err);
+      setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
+    } else if (range && range[1] > 0 && values[f.key] > range[1]) {
+      setText(msg, t('inputs.typical.higher', { group: who.group, max: nice(range[1]) }));
+      setAttr(msg, 'class', 'mt-1 text-xs font-medium text-amber-700 dark:text-amber-400');
+    } else {
+      setText(msg, '');
     }
   }
 
@@ -435,11 +561,16 @@ function onFieldInput(e) {
   const el = e.target;
   // Checkboxes and selects are handled once, on 'change'
   if (e.type === 'input' && el.matches('input[type="checkbox"], select')) return;
-  if (el.dataset.field) {
+  if (el.dataset.field || el.dataset.local) {
     const { value, error } = parseAmount(el.value, { decimal: decimalSeparator(getState().currency) });
     error ? errors.set(el.id, error) : errors.delete(el.id);
     el.setAttribute('aria-invalid', error ? 'true' : 'false');
-    setState((s) => { s.values[el.dataset.field] = value; s.ui.sample = false; }, { reason: 'input' });
+    setState((s) => {
+      // Income is typed per pay and kept per month
+      if (el.dataset.local) s.local[el.dataset.local] = value;
+      else s.values[el.dataset.field] = el.dataset.field === 'income' ? toMonthly(value, s.payFrequency) : value;
+      s.ui.sample = false;
+    }, { reason: 'input' });
     return;
   }
   if (el.dataset.list) {
@@ -449,6 +580,7 @@ function onFieldInput(e) {
     else if (key === 'rarely') v = el.checked;
     else if (key === 'type') v = el.value === 'loan' ? 'loan' : 'card';
     else if (key === 'kind') v = SUB_KINDS[el.value] ? el.value : '';
+    else if (key === 'need') v = el.value !== 'want';
     else {
       const r = parseAmount(el.value, { decimal: decimalSeparator(getState().currency) });
       // Rates far above what's normal in the country are almost always typos
@@ -460,7 +592,7 @@ function onFieldInput(e) {
       else if (aprCapped) showRowMsg(el, t('inputs.debts.aprCapped', { max: aprMax }), 'note');
       else showRowMsg(el, '');
     }
-    const instant = key === 'rarely' || key === 'type' || key === 'kind';
+    const instant = key === 'rarely' || key === 'type' || key === 'kind' || key === 'need';
     setState((s) => {
       const row = s[list].find((x) => x.id === id);
       if (row) row[key] = v;
@@ -499,9 +631,11 @@ export function initInputs() {
     const add = e.target.closest('[data-add]');
     if (add) {
       const kind = add.dataset.add;
-      const LIST = { sub: 'subscriptions', yearly: 'yearly', extra: 'extras' };
+      const LIST = { sub: 'subscriptions', yearly: 'yearly', extra: 'extras', custom: 'custom' };
       const row = kind === 'sub'
         ? { id: newId('s'), name: '', cost: 0, rarely: false, kind: '' }
+        : kind === 'custom'
+          ? { id: newId('c'), name: '', amount: 0, need: true }
         : kind === 'yearly'
           ? { id: newId('y'), name: add.dataset.name || '', cost: 0 }
           : kind === 'extra'
@@ -509,7 +643,7 @@ export function initInputs() {
             : { id: newId('d'), type: kind, name: '', balance: 0, apr: countryData(getState().country).defaults[kind === 'card' ? 'cardApr' : 'loanApr'], payment: 0 };
       setState((st) => { st[LIST[kind] || 'debts'].push(row); });
       // A suggestion already has its name, so jump straight to the amount
-      const amountKey = kind === 'extra' ? 'amount' : 'cost';
+      const amountKey = kind === 'extra' || kind === 'custom' ? 'amount' : 'cost';
       requestAnimationFrame(() => document.querySelector(row.name ? `#r-${row.id}-${amountKey}` : `[data-row="${row.id}"] input`)?.focus());
       return;
     }
@@ -524,6 +658,16 @@ export function initInputs() {
         action: { label: t('inputs.toast.undo'), onClick: () => setState((x) => { x[list].splice(idx, 0, removed); }) }
       });
     }
+  });
+
+  // Changing how often pay arrives keeps the amount typed in the box (one pay)
+  $('payFrequency').addEventListener('change', (e) => {
+    const next = PAY_FREQUENCIES[e.target.value] ? e.target.value : 'monthly';
+    setState((st) => {
+      st.values.income = toMonthly(fromMonthly(st.values.income || 0, st.payFrequency), next);
+      st.payFrequency = next;
+      st.ui.sample = false;
+    });
   });
 
   // Settings card
@@ -555,6 +699,8 @@ export function loadSample() {
     subscriptions: sample.subscriptions,
     yearly: sample.yearly,
     extras: sample.extras,
+    local: sample.local,
+    custom: [],
     housingFree: null,
     plan: { committed: {}, pct: {}, sort: st.plan.sort },
     goals: st.goals.length ? st.goals : [

@@ -45,7 +45,8 @@ export function monthLabel(key, { long = false, monthOnly = false } = {}) {
 }
 
 // ---------------- Entries ----------------
-const INPUT_KEYS = ['values', 'extras', 'debts', 'subscriptions', 'yearly', 'goals', 'housingFree'];
+// country: the local bills in `local` belong to it; payFrequency: how income is shown
+const INPUT_KEYS = ['country', 'payFrequency', 'values', 'local', 'custom', 'extras', 'debts', 'subscriptions', 'yearly', 'goals', 'housingFree'];
 
 /** Everything about one month: all inputs, the plan, and the results at the time. */
 export function makeEntry(state, result = computeBudget(state), now = new Date(), month = monthKey(now)) {
@@ -112,6 +113,9 @@ export function normalizeEntry(raw) {
     const s = normalizeState({ ...raw.inputs, currency, profile });
     entry.inputs = Object.fromEntries(INPUT_KEYS.map((k) => [k, s[k]]));
     entry.inputs.plan = { committed: s.plan.committed, pct: s.plan.pct };
+    // Months saved before these existed keep whatever the form uses now
+    if (raw.inputs.country == null) delete entry.inputs.country;
+    if (raw.inputs.payFrequency == null) delete entry.inputs.payFrequency;
   }
   return entry;
 }
