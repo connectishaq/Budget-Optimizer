@@ -14,7 +14,8 @@ npm run preview  # serve ./dist locally to check the production build
 npm run i18n:check          # missing/unused translation keys, placeholder and plural errors
 npm run i18n:missing -- de  # the English messages a language still lacks, ready to translate
 npm run i18n:notes          # rebuild TRANSLATION_NOTES.md from src/i18n/notes/
-npm run articles:check      # the per-country articles: keys, markup, length, title/description
+npm run articles:check      # country articles and money guides: keys, markup, length, links, FAQ
+npm run seo:check           # after a build: one H1, heading order, unique titles, alt text
 npm run benchmarks:review   # rebuild REVIEW_BENCHMARKS.md (country numbers marked "verify")
 ```
 
@@ -67,7 +68,8 @@ src/engine/rules.js     savings rule dictionary, plus each country's own ideas (
 src/data/countries/     one JSON file per country + GLOBAL (see SCHEMA.md)
 src/i18n/               t() helper, language/country picker, message files (locales/), per-country
                         articles (articles/), translator notes (notes/), locale-pages.js (the /xx-yy/ pages)
-scripts/                i18n and article checks, benchmark review, pre-rendering of the /xx-yy/ pages
+scripts/                i18n, article/guide and SEO checks, benchmark review, pre-rendering of the
+                        /xx-yy/ pages, building the guides
 src/engine/calculate.js pure math: totals, rules, health score, 50/30/20, projection, debt, goals
 src/engine/history.js   pure history maths: month entries, migration, comparison, streaks, alerts, backups
 src/ui/*.js             inputs, plan cards, dashboard, charts (svg-chart.js lines, svg-bar-chart.js bars), goals, months (history panel),
@@ -106,6 +108,15 @@ translation file stays in `src/i18n/locales/`. To switch it back on, add its cod
 4. Add the banner sentence to `TEXT` in `src/i18n/suggest.js`.
 5. For a pre-rendered page, add `{ path: '<code>-<cc>', lang, country }` to `LOCALE_PAGES` and write
    `src/i18n/articles/<code>-<cc>.json` (`npm run articles:check`).
+
+### Money guides
+The guides at `/guides/` (and `/ur-pk/guides/` in Urdu) are built from
+`src/i18n/guides/<lang>/<slug>.json` by `scripts/build-guides.mjs`, inside the site's article
+layout. The list and order are in `src/i18n/guide-langs.js` (`GUIDE_SLUGS`, and `GUIDE_BASES` for
+the languages that have guides). To add a guide, write its English file (see an existing one for
+the fields), add its slug to `GUIDE_SLUGS`, and run `npm run articles:check`, which checks word
+count (1,000–1,500), headings, tags, links, FAQ and related guides. A translation only needs the
+same file in `src/i18n/guides/<lang>/`; guides without one simply aren't built in that language.
 
 ### Add a country
 1. Add `src/data/countries/<CC>.json` following `src/data/countries/SCHEMA.md` (start from a

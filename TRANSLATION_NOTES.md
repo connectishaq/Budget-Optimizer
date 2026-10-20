@@ -117,6 +117,21 @@ verbatim where the policy refers to it.
 - `pk-protected-slab`: "protected status" → «الشريحة المحمية» / «هذه الميزة».
 - `ca-home-energy-rebates` title "rebates" → «دعم تحسينات طاقة المنزل»; «المبالغ المستردّة» is closer to "rebate" but less clear.
 
+#### About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use «مُحسِّن الميزانية»; align if the brand decision changes.
+- Nav and footer both use «من نحن» for "About" / "About us"; «عن الموقع» is an alternative for the nav.
+- `about.sections.why.p1` / `how.item4_html` use «فوائد» for interest; Islamic-finance wording would be «أرباح» / «رسوم» (see regional table).
+- `about.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
+- `about.sections.how.item1_html` utilities as «الخدمات» (could be «فواتير الخدمات» or «الكهرباء والماء»).
+
+#### Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the note above about keeping US figures is superseded (plain «250»، «46,000»، Celsius first).
+- `leak1.fix1_html` «مشترك كهرباء بمفتاح» for a switched power strip; «توصيلة كهرباء بمفتاح» is a Gulf colloquial alternative.
+- `leak1.fix2_html` «ارفع حرارة التكييف» (set the AC warmer) for "air conditioning up"; could be misread as "turn the AC up (colder)" — check.
+- `leak4.fix4_html` "excess (deductible)" rendered once as «مبلغ التحمّل» without a second synonym.
+- `leak5.body_html` «رصيد 3,000 بأي عملة» and «60 شهريًا» read bare without a currency name, like the English; «فائدة» kept (Islamic banks would say «ربح»).
+- `wealth.p1_html` «حساب ادخار يمنح عائدًا» for "savings account that pays interest" (avoids «فائدة» for Gulf readers); «حسابك البنكي اليومي» for everyday bank account (alt. «حسابك الجاري»).
+
 ### German (de)
 
 Source: frozen English snapshot `en-snapshot-p1.json` (1,507 messages); keys added to en.json since then were
@@ -244,6 +259,12 @@ reviewed**. A German lawyer should check them before launch, in particular:
 - `sa-bnpl`: "buy now, pay later" → „Jetzt kaufen, später zahlen“; "BNPL"/"Ratenkauf" are alternatives.
 - `de-jobticket`: uses the official name "Deutschlandticket Job"; check the 63 € price is still current at launch.
 - `fr-prime-transport`: "transit pass" → "Zeitkarte" (covers monthly and yearly passes).
+
+#### About page
+- Nav "About" and footer "About us" are both "Über uns" (no natural shorter distinction in German).
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while other pages' SEO titles use "Haushaltsbudget-Optimierer"; please align.
+- "Utilities" = "Nebenkosten", "transport" = "Mobilität"; "money leaks" = "Geldlecks" (slightly figurative).
+- how.item3 reorders the sentence so „Wie kommen wir darauf?“ comes first; "Editorial standards" = "Redaktionelle Grundsätze".
 
 ### Spanish (es)
 
@@ -375,6 +396,22 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `sa-6000-kwh.why`: "villas" = "chalés" (Spain; MX: "casas grandes" / "residencias").
 - Possibly long titles for cards: `ae-salik-nol.title`, `id-krl-tj.title`, `in-lpg-subsidy.title`, `sa-bnpl.title`.
 
+#### About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use the translated brand "Optimizador de Presupuesto"; align if the brand decision changes.
+- Nav "Acerca de" vs footer "Sobre nosotros" (English "About" / "About us"); either could be used in both places.
+- `about.sections.standards.p1` "información general" for "general education" (literal "educación general" reads like schooling).
+- `about.sections.how.item1_html` "suministros" for utilities; Mexico would say "servicios".
+- `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
+
+#### Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (figures now plain: "3,000", "46,000", Celsius first).
+- `leak1.fix1_html` "regletas con interruptor" for switched power strips; MX alt.: "multicontactos con apagador".
+- `leak1.fix4` "calentador de agua o termo" (Spain); MX would say "boiler" / "calentador".
+- `leak4.fix3` "dispositivos de telepeaje" for toll tags (MX: "TAG").
+- `leak4.fix4_html` "franquicia (deducible)" gives both the Spain and Latin American term, mirroring the English "excess (deductible)".
+- `leak5.body_html` "un saldo de 3,000 en cualquier moneda" and "60 al mes" read a little bare without a currency; the English is the same.
+- `wealth.p1_html` "la cuenta que usas a diario" for "everyday bank account" (Spain would also say "cuenta corriente", MX "cuenta de débito").
+
 ### French (fr)
 
 #### General choices
@@ -462,6 +499,12 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Ride-hailing = « VTC »; Indian autos/cabs = « rickshaw ou taxi »; ojek and galon kept; Indonesian « tokens » (prepaid electricity codes) kept as « tokens ».
 - Currency amounts rewritten in French order (« 6,30 AED », « 1 444,70 Rp », « 500 SAR », « 63 € »), numbers unchanged. Times as « 6 h », « 20 h », « de 0 h à 8 h ».
 - Possibly long titles: ae-salik-nol (« Passez moins de portiques Salik et prenez la carte Nol pour vos trajets »), in-lpg-subsidy, pk-solar-ups, gb-council-tax-discount.
+
+#### About page
+- Nav "About" = « À propos »; footer "About us" = « Qui sommes-nous » (common French site label, not a literal "about us").
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while older pages' SEO titles use « Optimiseur de budget familial »; pick one.
+- "Utilities" in how.item1 = « énergie et eau »; "Your privacy" = « Vos données personnelles » (more natural than « Votre vie privée »).
+- "plug the leaks" = « colmater les fuites »; "Editorial standards" = « Règles éditoriales » (alternative: « Charte éditoriale »).
 
 ### Hindi (hi)
 
@@ -577,6 +620,21 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - `us-open-enrollment` tip 2 "you are both covered" → "पति-पत्नी दोनों" (assumes a couple; alternative "आप दोनों").
 - `ca-phone-flanker`: "retention department" kept as "retention विभाग".
 - Possibly long card titles: `ae-rent-cheques.title`, `gb-council-tax-discount.title`, `id-krl-tj.title`, `sa-rent-instalments.title`.
+
+#### About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use "बजट ऑप्टिमाइज़र"; align if the brand decision changes.
+- Nav and footer both use "हमारे बारे में" (English "About" / "About us").
+- `about.toc.standards` "संपादकीय मानक" (editorial standards) is formal; "हमारे नियम" would be plainer.
+- `about.sections.how.item1_html` utilities written as "बिजली-पानी जैसे बिल".
+- `about.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
+
+#### Neutral home article
+- `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).
+- `leak1.fix1_html` "स्विच वाले एक्सटेंशन बोर्ड" for switched power strips (what Indians call them); alternative "पावर स्ट्रिप".
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; "AC उतना ही ज़्यादा कर दें" means a warmer AC setting and could be misread as more cooling.
+- `leak4.fix4_html` "ज़्यादा डिडक्टिबल (excess)"; insurance excess is not a common idea for Indian car/home policies.
+- `leak5.body_html` "किसी भी करेंसी में 3,000" and "हर महीने लगभग 60" read bare without a currency word, like the English.
+- `wealth.p2_html` "(किसी भी करेंसी में)"; "मुद्रा" is the formal alternative to "करेंसी".
 
 ### Indonesian (id)
 
@@ -708,6 +766,12 @@ Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approxim
 - `pk-protected-slab`: "units" is kept in quotes because that is the word printed on Pakistani bills.
 - Long titles that may wrap on small cards: `ae-dewa-slab.title`, `ae-salik-nol.title`, `id-krl-tj.title`.
 
+#### About page
+- Nav "About" = "Tentang"; footer "About us" = "Tentang kami".
+- `about.seo.*` keep the English brand "Household Budget Optimizer", consistent with the other id SEO titles.
+- "Utilities" = "listrik dan air"; "plug the leaks" = "menambal kebocoran"; "Who runs it" = "Siapa pengelolanya".
+- "shares of your own income" = "persentase dari pendapatan Anda" (porsi would be more literal).
+
 ### Portuguese (pt)
 
 Target: Brazilian Portuguese (pt-BR), informal-polite "você" form throughout, as usual for Brazilian consumer apps.
@@ -806,6 +870,12 @@ numbers (e.g. 1 milhão), so it uses the same text as `other` everywhere.
 - "villas" (`sa-6000-kwh`) → "casas grandes (villas)"; "split units" → "splits".
 - "Default Market Offer" (Australia) kept in English.
 
+#### About page
+- Nav "About" = "Sobre"; footer "About us" = "Quem somos" (usual Brazilian site label).
+- `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while other pages' SEO titles use "Otimizador de Orçamento Doméstico"; body text uses "Otimizador de Orçamento" (as `layout.brand`).
+- "Utilities" = "contas de consumo"; "groceries" = "mercado"; "plug the leaks" = "tapar os vazamentos".
+- "Avise a gente" (tell us) is informal on purpose; "Entre em contato" would be more neutral.
+
 ### Urdu (ur)
 
 Pakistani Urdu, written in Nastaliq/Arabic script and shown right-to-left. I used English loan words that people in Pakistan actually say (بل، بجٹ، بونس، سبسکرپشن، کریڈٹ کارڈ، پرسنل لون، ہوم لون، اسکور، بیک اپ، ڈیوائس، سیٹنگز). The tone uses the polite "آپ" form throughout. Numbers, `{placeholders}`, currency codes, brand names and URLs are unchanged. Western digits are kept as in the English.
@@ -871,6 +941,21 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - `sa-6000-kwh`: "halalas" → "ہللہ"; "majlis" → "مجلس".
 - `sa-bnpl` title quotes "ابھی خریدیں، بعد میں ادا کریں" for buy-now-pay-later; "BNPL" is not widely known in Pakistan.
 - Longer than English: `ae-salik-nol.title`, `id-galon-depot.title`, `sa-rent-instalments.title` may wrap on small cards.
+
+#### About page
+- `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use "بجٹ آپٹیمائزر"; align if the brand decision changes.
+- Nav and footer both use "ہمارے بارے میں" (English "About" / "About us").
+- `about.toc.standards` "ادارتی اصول" (editorial standards) is formal; "ہمارے اصول" would be plainer.
+- `about.table.sourceCount` uses "ذریعہ / ذرائع" for sources; "سورس" is a common loan word alternative.
+- `about.sections.how.item1_html` utilities as "بجلی، گیس اور پانی".
+
+#### Neutral home article
+- `page.guide.*` no longer uses $ or °F first; the guide note above about keeping $ amounts is superseded (plain "250"، "46,000"، Celsius first).
+- `leak1.fix1_html` "سوئچ والے ایکسٹینشن بورڈ" for switched power strips (everyday Pakistani term).
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
+- `leak4.fix4_html` "زیادہ ایکسیس (ڈیڈکٹیبل)": rare concept in Pakistan, kept as loan words.
+- `leak5.body_html` "کسی بھی کرنسی میں 3,000" and "تقریباً 60 ماہانہ" read bare without a currency word, like the English.
+- `wealth.p1_html` "منافع دینے والے سیونگز اکاؤنٹ" (profit, as Pakistani banks say) for "pays interest".
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 
@@ -1212,3 +1297,121 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - Wealth: Rs 10,000 a month at 12% a year (monthly compounding) = about Rs 23 lakh in 10 years (2,300,387) and about Rs 99 lakh in 20 years (9,892,554); 12% sits near PK.json returns.balanced (12.5%). Text adds that returns aren't guaranteed and inflation erodes value.
 - Wealth: National Savings, bank savings, mutual funds and committee (BC) named generically as places to send savings; no rates given.
 - Phrase: "“آج کے پیسوں میں دکھائیں”" must match the calculator toggle label in ur.json.
+
+## Money guides (/guides/, /ur-pk/guides/)
+
+### 50-30-20-rule
+
+- Origin (Elizabeth Warren and Amelia Warren Tyagi, "All Your Worth") checked on 2026-10-20 against Bankrate and InCharge, now listed as sources. They give the book's year as 2005 or 2006, so the guide gives no year.
+- Example incomes (PKR 150,000, INR 60,000, USD 4,000, GBP 2,500, AED 12,000) are illustrative round numbers, labelled as not typical salaries.
+- Variations (60/20/20, 70/20/10, 50/20/30) are presented as common adjustments, not cited rules.
+- FAQ says pre-deducted pension contributions may count toward the 20%: a common interpretation, not an official definition.
+
+### cut-electricity-bill
+
+- Pakistan "protected" definition (~200 units/month consistently for the past 6 months) is taken from NEPRA's QESCO FY2023-24 determination; confirm it is still current against the latest NEPRA/Gazette notification (Feb 2026 rationalisation added fixed charges for protected consumers).
+- "Going over in a single month can cost you that status for months afterwards" follows the six-month rule and the PK.json localTip; exact loss period not checked in the official text.
+- AC setpoint "around 24–26°C (75–79°F)" is phrased as a general utility suggestion, not cited; AE.json localTip says 24°C or higher.
+- Ofgem cap "updated every three months" and "limits unit rate and standing charge, not total bill" checked on ofgem.gov.uk (Oct 2026).
+- Germany: kept generic (default Grundversorgung often dearer than new-customer tariffs); no ct/kWh figures used, unlike DE.json.
+- Nigeria: band supply hours deliberately not quantified (NG.json says 20 h/day for Band A; not re-verified with NERC).
+- Example "1,500-watt heater for 4 hours ≈ 6 units" is arithmetic, not a statistic.
+
+### emergency-fund
+
+- "Three to six months of essential costs" is phrased as a general planner guideline, not a cited statistic.
+- CFPB attribution ("think about the unexpected costs you have had before"; "even a small amount" gives security) was checked against the cited CFPB page on 2026-10-20; the CFPB page itself gives no month or amount target.
+- Committee/chit savings groups described generically; local names and rules vary by country.
+- Prepaid cards/mobile wallets: availability and deposit protection differ by country; wording kept general ("properly regulated").
+
+### family-grocery-budget
+
+- Fridge temperature "about 5°C (41°F) or below" is a general food-safety guideline (UK guidance says below 5°C; US guidance says 40°F/4°C or below); worded as approximate, no source cited.
+- "best before" = quality vs "use by" = safety is how UK/EU labels work; other countries label differently, so the text tells readers to check local rules.
+- Local shopping tips (bazaar/sabzi mandi near closing, reduced stickers, pre-Ramadan/Eid promotions) are general observations, not sourced figures.
+- "Set a first target about a tenth lower than your average" is a suggested rule of thumb, not a researched figure.
+- Related slugs subscription-audit / 50-30-20-rule / emergency-fund / stop-impulse-spending assume those guides exist as listed in the brief.
+
+### first-salary-budget
+
+- No specific statistics used; "3–6 months" emergency fund and "a tenth or a fifth" savings share are phrased as common planner guidelines, not facts.
+- "spaces" feature in banking apps is described generically; naming varies by bank (pots, spaces, vaults, goals).
+- Claim that many landlords/providers will agree to move a due date is general and varies by country and provider.
+- Keyword "budget on first salary" appears in intro and SEO description; H1 uses "Budget on Your First Salary".
+
+### irregular-income
+
+- "Many planners suggest three to six months of essential costs" for an emergency fund is phrased as a general guideline; no source cited.
+- "Half to your buffer" split is given as an example only, not a recommendation backed by a source.
+- Tax advice is kept general ("check your country's tax authority"); no country-specific tax rules are stated.
+- Mention of government support is generic; availability varies by country.
+
+### pay-off-credit-card-debt
+
+- "Your card statement in many countries shows how long it would take to repay with minimum payments": true for e.g. US (CARD Act disclosure) and UK; hedged with "many countries", not cited.
+- Worked example figures (balances, 18/22/30% rates, 800/month) are illustrative and labelled as made-up; snowball month-2 payoff of Card A checked by hand (1,000 + ~15 interest - 605 = ~410; cleared in month 2).
+- Credit score FAQ answers are hedged ("generally", "varies by country"); scoring rules differ (e.g. no single score system in Pakistan/UAE vs US/UK).
+- "Many planners suggest a small starter buffer" is a general guideline, not a sourced figure; sources empty.
+
+### stop-impulse-spending
+
+- 24-hour and 30-day waiting rules are presented as common habits ("many people use"), not research findings; no statistics used.
+- Returns: guide says "many shops allow returns within a set period" and points to local consumer rules; no country-specific cooling-off periods stated.
+- "Paying in cash helps many people" (FAQ) is phrased as a general observation, not a cited finding.
+
+### student-budget
+
+- No specific statistics used; 50/30/20 is presented as a rough starting point only.
+- Student work-hour limits: stated generally ("many universities and student visa rules limit working hours"); exact limits vary by country and visa, so no numbers given.
+- Student loan repayment: deliberately not detailed because rules differ by country; readers are pointed to the official loan provider.
+- "Share family plans where the rules allow" — some services restrict family plans to one household; wording kept cautious.
+
+### subscription-audit
+
+- "Both major phone app stores have a Subscriptions page in account settings": general knowledge (Apple App Store, Google Play), not cited; wording kept generic.
+- Chargeback/dispute rules after cancellation vary by country; phrased as "ask your bank", no specific rights claimed.
+- Worked example uses no amounts on purpose (currency-neutral); no statistics used, sources empty.
+
+### Urdu: 50-30-20-rule
+
+- "Needs" rendered as "لازمی خرچ" (not the site's "لازمی بل") because rent, groceries and fees are not all bills; "Wants" = "شوق کی چیزیں" as on the site.
+- Pakistan example written as "Rs 150,000 (ڈیڑھ لاکھ)"; other currencies keep their codes.
+- "worked examples" → "حل شدہ مثالیں" (school-textbook phrase); "عملی مثالیں" is an alternative.
+- "Festivals" rendered as "عید".
+- Author names and book title All Your Worth kept in Latin script.
+
+### Urdu: cut-electricity-bill
+
+- "protected" kept in Latin script as on bills/news (as in ur.md); "محفوظ صارف" is an alternative.
+- Grid power → "واپڈا کی بجلی" in the backup section, as in ur.md; elsewhere "گرڈ".
+- "immersion heaters" → "راڈ والے ہیٹر"; "geyser element" → "گیزر کا بجلی والا راڈ".
+- Battery care "topped up" → "پانی پورا رکھیں" (lead-acid UPS batteries); not true for sealed/lithium batteries.
+- "draughts" → "درزوں سے آتی ہوا"; "tumble dryers" → "کپڑے سکھانے کی مشین".
+- Foreign terms kept in Latin: DISCO, DISCOM, DEWA, DisCo, NERC, NEPRA, Ofgem price cap, Grundversorgung, kWh; "band" glossed as بینڈ (band).
+- UK terms (standard variable tariff, standing charge, Direct Debit, time-of-use) transliterated; meaningless to most Pakistani readers but kept per the English.
+
+### Urdu: emergency-fund
+
+- "Festivals" rendered as "عید"; "festival money" as "عیدی" (Pakistan-specific; English is broader).
+- "credit union" kept as loan word "کریڈٹ یونین"; uncommon in Pakistan.
+- "pays a little interest" → "تھوڑا منافع" (as Pakistani banks say), matching ur.md.
+- "gig" work kept as "گِگ"; may be unfamiliar to some readers.
+- Consumer Financial Protection Bureau kept in Latin script inside Urdu text.
+
+### Urdu: first-salary-budget
+
+- "payslip" → "سیلری سلپ"; "pay rise" → "انکریمنٹ" (everyday Pakistani office terms).
+- "gross" / net kept as "گراس" / "نیٹ" loan words.
+- "Lifestyle creep" → "آہستہ آہستہ بڑھتا رہن سہن"; no common Urdu term.
+- "buy now, pay later" → "ابھی خریدیں، بعد میں ادا کریں", as in ur.md.
+- "spaces" banking feature kept as "اسپیسز" in quotes; few Pakistani bank apps use this name.
+- "impulse spending" → "بلا سوچے خرچ"; check against whatever title the stop-impulse-spending Urdu guide uses.
+
+### Urdu: student-budget
+
+- "term" rendered as "سمسٹر" (how Pakistani universities work); schools/colleges with annual terms may say "ٹرم".
+- "bursaries" folded into "وظیفہ"; "grant" kept as "گرانٹ".
+- "toiletries" → "صابن شیمپو جیسی چیزیں" (no neat Urdu equivalent).
+- "festivals" → "عید".
+- "overdrafts" kept as "اوور ڈرافٹ"; rare for students in Pakistan.
+- City names written in Urdu script (لاہور، دہلی، لندن...).

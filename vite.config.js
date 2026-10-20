@@ -6,10 +6,11 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { prerenderLocales, alternateLinks, sitemapXml, fillFigures } from './scripts/prerender-locales.mjs';
 import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
+import { buildGuides, guideSitemapPages } from './scripts/build-guides.mjs';
 import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about'];
+const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about', 'guides'];
 
 /**
  * Injects site-specific values (domain, AdSense, contact email) into index.html
@@ -80,13 +81,17 @@ function siteConfig(env) {
       // One static page per language + country, same design (/en-gb/, /ar-ae/…)
       const locales = prerenderLocales({ root: __dirname, outDir, siteUrl, figures });
       console.log(`✓ ${locales.length} language/country pages: /${locales.join('/, /')}/`);
+      // Money guides (/guides/…, /ur-pk/guides/…), built from src/i18n/guides
+      const guides = buildGuides({ root: __dirname, outDir, siteUrl });
+      console.log(`✓ ${guides.length} guide pages`);
       if (siteUrl) {
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/__SITE_URL__/g, siteUrl));
         fs.writeFileSync(sitemap, sitemapXml(siteUrl, today, [
           { path: 'contact', priority: '0.5' },
           { path: 'about', priority: '0.5' },
           { path: 'privacy-policy', priority: '0.3' },
-          { path: 'terms-of-use', priority: '0.3' }
+          { path: 'terms-of-use', priority: '0.3' },
+          ...guideSitemapPages(__dirname)
         ]));
       } else {
         // Without a domain a sitemap would be invalid, so drop it and the robots.txt reference.

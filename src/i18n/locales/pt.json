@@ -1978,9 +1978,9 @@
       "skipToContent": "Pular para o conteúdo",
       "nav": {
         "calculator": "Calculadora",
-        "moneyTips": "Dicas de dinheiro",
         "contact": "Contato",
-        "about": "Sobre"
+        "about": "Sobre",
+        "guides": "Guias"
       },
       "navLabel": "Principal"
     },
@@ -3066,5 +3066,30 @@
       "ldName": "Sobre o Household Budget Optimizer",
       "ldDescription": "Por que esta calculadora de orçamento doméstico grátis e privada existe, como ela funciona, de onde vêm os números e os padrões que seguimos."
     }
+  },
+  "guides": {
+    "index": {
+      "title": "Guias de dinheiro",
+      "lead": "Guias simples e práticos sobre orçamento, poupança e como sair das dívidas. Grátis, sem cadastro e feitos para famílias de qualquer lugar.",
+      "seoTitle": "Guias de dinheiro: orçamento, poupança e dívidas",
+      "seoDescription": "Guias grátis e em linguagem simples sobre orçamento, reserva de emergência, a regra 50/30/20, como reduzir contas e quitar o cartão de crédito.",
+      "breadcrumb": "Guias"
+    },
+    "readTime": {
+      "one": "Guia · {count} minuto de leitura",
+      "many": "Guia · {count} minutos de leitura",
+      "other": "Guia · {count} minutos de leitura"
+    },
+    "onThisPage": "Nesta página",
+    "faqTitle": "Perguntas frequentes",
+    "related": "Guias relacionados",
+    "sources": "Fontes",
+    "readGuide": "Ler o guia",
+    "cta": {
+      "title": "Veja com os seus próprios números",
+      "text": "Adicione suas contas à calculadora grátis e receba ideias de economia com a conta por trás de cada uma. Nada do que você digita sai do seu dispositivo.",
+      "button": "Experimente a calculadora"
+    },
+    "disclaimer": "Este guia é apenas informativo. Não é aconselhamento financeiro, tributário ou jurídico. Os valores são exemplos ou referências gerais; confira o que se aplica a você."
   }
 }

@@ -1904,9 +1904,9 @@
       "skipToContent": "Langsung ke konten",
       "nav": {
         "calculator": "Kalkulator",
-        "moneyTips": "Tips keuangan",
         "contact": "Kontak",
-        "about": "Tentang"
+        "about": "Tentang",
+        "guides": "Panduan"
       },
       "navLabel": "Utama"
     },
@@ -2990,5 +2990,28 @@
       "ldName": "Tentang Household Budget Optimizer",
       "ldDescription": "Mengapa kalkulator anggaran rumah tangga yang gratis dan pribadi ini ada, cara kerjanya, dari mana angkanya, dan standar yang kami pegang."
     }
+  },
+  "guides": {
+    "index": {
+      "title": "Panduan keuangan",
+      "lead": "Panduan sederhana dan praktis untuk menyusun anggaran, menabung, dan melunasi utang. Gratis, tanpa daftar, dan ditulis untuk rumah tangga di mana saja.",
+      "seoTitle": "Panduan keuangan: anggaran, tabungan & utang",
+      "seoDescription": "Panduan gratis dengan bahasa sederhana tentang anggaran, dana darurat, aturan 50/30/20, menghemat tagihan, dan melunasi utang kartu kredit.",
+      "breadcrumb": "Panduan"
+    },
+    "readTime": {
+      "other": "Panduan · {count} menit baca"
+    },
+    "onThisPage": "Di halaman ini",
+    "faqTitle": "Pertanyaan yang Sering Diajukan",
+    "related": "Panduan terkait",
+    "sources": "Sumber",
+    "readGuide": "Baca panduan",
+    "cta": {
+      "title": "Lihat dengan angka Anda sendiri",
+      "text": "Masukkan tagihan Anda ke kalkulator gratis dan dapatkan ide hemat beserta hitungan di balik setiap ide. Apa pun yang Anda ketik tidak keluar dari perangkat Anda.",
+      "button": "Coba kalkulatornya"
+    },
+    "disclaimer": "Panduan ini hanya untuk edukasi umum, bukan nasihat keuangan, pajak, atau hukum. Angka-angka adalah contoh atau patokan umum; periksa apa yang berlaku untuk Anda."
   }
 }

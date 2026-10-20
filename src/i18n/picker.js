@@ -6,6 +6,7 @@
 import { t, dirOf, LANGUAGES, isLive, getLanguage, storeLanguage, setLanguage, translateDom, detectLanguage, getStoredLanguage } from './index.js';
 import { ALL_COUNTRIES, GLOBAL, flagOf, flagsDrawn, countryName, storeCountry, initialCountry } from './countries.js';
 import { hrefFor } from './locale-pages.js';
+import { GUIDE_BASES } from './guide-langs.js';
 
 const SCROLL_KEY = 'hbo:scroll';
 
@@ -47,6 +48,9 @@ export async function startI18n() {
     // Arabic-script font, only for right-to-left languages
     if (dirOf(lang) === 'rtl') await import('../fonts/arabic.css');
     if (lang !== 'en') translateDom(document);
+    // Guide links go to the guides in this language when it has them (Urdu: /ur-pk/guides/)
+    const guides = lang !== 'en' && GUIDE_BASES[lang];
+    if (guides) document.querySelectorAll('a[href^="/guides/"]').forEach((el) => el.setAttribute('href', `${guides}${el.getAttribute('href').slice('/guides/'.length)}`));
   } finally {
     // The inline head script hides the page while a non-English page is translated
     document.documentElement.classList.remove('i18n-pending');
@@ -134,7 +138,9 @@ export function initLocalePicker({ country = initialCountry(), onCountry } = {})
     // On a language/country page, go to the page for the new language (the
     // same country where there is one; see hrefFor)
     if (pageLanguage()) {
-      location.href = hrefFor(langSel.value, document.documentElement.getAttribute('data-page-country'));
+      // A guide goes to the same guide in that language when there is one
+      const alts = JSON.parse(document.documentElement.getAttribute('data-alternates') || '{}');
+      location.href = alts[langSel.value] || hrefFor(langSel.value, document.documentElement.getAttribute('data-page-country'));
       return;
     }
     reloadInPlace();

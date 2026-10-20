@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
+import { GUIDE_BASES } from '../src/i18n/guide-langs.js';
 
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -26,6 +27,44 @@ function lookup(obj, key) {
     cur = cur[part];
   }
   return isPlural(cur) ? cur.other : cur;
+}
+
+/** t(key) for one language, with English filling any gap. Throws on unknown keys. */
+export function makeT(messages, en, where) {
+  return (key) => {
+    const v = lookup(messages, key) ?? lookup(en, key);
+    if (v == null) throw new Error(`${where}: no message for ${key}`);
+    return v;
+  };
+}
+
+/** Translates static markup the way the browser does (data-i18n, -html, -attr). */
+export function applyMessages(doc, t) {
+  for (const el of doc.querySelectorAll('[data-i18n]')) el.set_content(esc(fill(t(el.getAttribute('data-i18n')), el.getAttribute('data-i18n-vars'))));
+  for (const el of doc.querySelectorAll('[data-i18n-html]')) el.set_content(t(el.getAttribute('data-i18n-html')));
+  for (const el of doc.querySelectorAll('[data-i18n-attr]')) {
+    for (const pair of el.getAttribute('data-i18n-attr').split(';')) {
+      const [a, key] = pair.split(':').map((x) => x.trim());
+      if (a && key) el.setAttribute(a, t(key));
+    }
+  }
+}
+
+/**
+ * Keeps links on a language page: home ("/") and its sections ("/#app") go to
+ * that page, guides go to the guides in that language when there are any, and
+ * the privacy, terms, about and contact pages open in that language (?lang=).
+ */
+export function localizeLinks(doc, { home, lang, guidesBase }) {
+  for (const a of doc.querySelectorAll('a[href]')) {
+    const href = a.getAttribute('href');
+    if (href === '/') a.setAttribute('href', home);
+    else if (href.startsWith('/#')) a.setAttribute('href', `${home}${href.slice(1)}`);
+    else if (guidesBase && href.startsWith('/guides/')) a.setAttribute('href', `${guidesBase}${href.slice('/guides/'.length)}`);
+    else if (/^\/(privacy-policy|terms-of-use|contact|about)\//.test(href)) {
+      a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${lang}`);
+    }
+  }
 }
 
 /** hreflang links for every page, plus x-default (the home page). */
@@ -47,14 +86,21 @@ export function sitemapXml(siteUrl, today, extraPages = []) {
     <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>${withAlts ? `\n${alts}` : ''}
+    <priority>${priority}</priority>${withAlts ? `\n${withAlts === true ? alts : withAlts}` : ''}
   </url>`;
+  // Extra pages can list their own language versions: { alternates: { en: '/guides/x/' }, hreflang: { en: 'en' } }
+  const ownAlts = (x) => (x.alternates && Object.keys(x.alternates).length > 1
+    ? [
+      ...Object.entries(x.alternates).map(([l, href]) => `    <xhtml:link rel="alternate" hreflang="${x.hreflang[l]}" href="${siteUrl}${href}"/>`),
+      ...(x.alternates.en ? [`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${x.alternates.en}"/>`] : [])
+    ].join('\n')
+    : false);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${[
     url(`${siteUrl}/`, '1.0', 'monthly', true),
     ...LOCALE_PAGES.map((p) => url(`${siteUrl}/${p.path}/`, '0.9', 'monthly', true)),
-    ...extraPages.map((x) => url(`${siteUrl}/${x.path}/`, x.priority, 'yearly', false))
+    ...extraPages.map((x) => url(`${siteUrl}/${x.path}/`, x.priority, x.changefreq || 'yearly', ownAlts(x)))
   ].join('\n')}
 </urlset>
 `;
@@ -122,24 +168,13 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
     const articleFile = path.join(root, 'src/i18n/articles', `${page.path}.json`);
     const article = fs.existsSync(articleFile) ? readJson(articleFile) : null;
     if (!article && page.path !== 'en-us') throw new Error(`Missing article for /${page.path}/ (${articleFile})`);
-    const t = (key) => {
-      const v = lookup(messages, key) ?? lookup(en, key);
-      if (v == null) throw new Error(`/${page.path}/: no message for ${key}`);
-      return v;
-    };
+    const t = makeT(messages, en, `/${page.path}/`);
     const country = readJson(path.join(root, 'src/data/countries', `${page.country}.json`));
     const pageUrl = siteUrl ? `${siteUrl}/${page.path}/` : '';
     const doc = parse(home, { comment: true });
 
     // ---- Words: the same keys the browser would translate
-    for (const el of doc.querySelectorAll('[data-i18n]')) el.set_content(esc(fill(t(el.getAttribute('data-i18n')), el.getAttribute('data-i18n-vars'))));
-    for (const el of doc.querySelectorAll('[data-i18n-html]')) el.set_content(t(el.getAttribute('data-i18n-html')));
-    for (const el of doc.querySelectorAll('[data-i18n-attr]')) {
-      for (const pair of el.getAttribute('data-i18n-attr').split(';')) {
-        const [a, key] = pair.split(':').map((s) => s.trim());
-        if (a && key) el.setAttribute(a, t(key));
-      }
-    }
+    applyMessages(doc, t);
 
     // ---- The country's article. Its elements lose their data-i18n keys so the
     // browser doesn't swap them back to the general article.
@@ -166,16 +201,8 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
     // ---- The country's example budget, so the figures aren't 0 before scripts run
     if (figures?.[`${page.lang}-${page.country}`]) fillFigures(doc, figures[`${page.lang}-${page.country}`]);
 
-    // ---- Links stay on this page ("/#app" -> "#app", home -> /de-de/), and the
-    // privacy policy, terms and contact pages open in this page's language
-    for (const a of doc.querySelectorAll('a[href]')) {
-      const href = a.getAttribute('href');
-      if (href === '/') a.setAttribute('href', `/${page.path}/`);
-      else if (href.startsWith('/#')) a.setAttribute('href', href.slice(1));
-      else if (/^\/(privacy-policy|terms-of-use|contact|about)\//.test(href)) {
-        a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${page.lang}`);
-      }
-    }
+    // ---- Links stay on this page and in its language (see localizeLinks)
+    localizeLinks(doc, { home: `/${page.path}/`, lang: page.lang, guidesBase: page.lang === 'en' ? null : GUIDE_BASES[page.lang] });
 
     // ---- The page's language, direction and country (read by the inline head script and main.js)
     const html = doc.querySelector('html');

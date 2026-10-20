@@ -12,7 +12,8 @@ const NAMES = { ar: 'Arabic', de: 'German', es: 'Spanish', fr: 'French', hi: 'Hi
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'src/i18n/notes');
 const files = fs.readdirSync(dir).filter((f) => f.endsWith('.md')).sort();
-const langs = files.filter((f) => !f.startsWith('article-'));
+const langs = files.filter((f) => !f.startsWith('article-') && !f.startsWith('guide-'));
+const guideNotes = files.filter((f) => f.startsWith('guide-'));
 const articles = files.filter((f) => f.startsWith('article-'));
 
 // Each file's own headings move down two levels under its section
@@ -35,7 +36,13 @@ const out = [
   }),
   '## Country articles ("5 Hidden Household Expense Leaks")',
   '',
-  ...articles.flatMap((f) => [`### /${path.basename(f, '.md').slice('article-'.length)}/`, '', body(f), ''])
+  ...articles.flatMap((f) => [`### /${path.basename(f, '.md').slice('article-'.length)}/`, '', body(f), '']),
+  '## Money guides (/guides/, /ur-pk/guides/)',
+  '',
+  ...guideNotes.flatMap((f) => {
+    const name = path.basename(f, '.md').slice('guide-'.length);
+    return [`### ${name.startsWith('ur-') ? `Urdu: ${name.slice(3)}` : name}`, '', body(f), ''];
+  })
 ].join('\n');
 
 fs.writeFileSync(path.join(root, 'TRANSLATION_NOTES.md'), `${out.trim()}\n`);

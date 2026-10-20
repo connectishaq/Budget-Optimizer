@@ -1,0 +1,71 @@
+{
+  "slug": "cut-electricity-bill",
+  "keyword": "reduce electricity bill",
+  "seo": {
+    "title": "How to Reduce Your Electricity Bill: Practical Steps",
+    "description": "Simple ways to reduce your electricity bill: find what uses the most power, stay in lower slabs, plan for load-shedding and check your tariff."
+  },
+  "h1": "How to reduce your electricity bill without living in the dark",
+  "summary": "Find out what really uses your power, keep out of expensive slabs, run backup power cheaply during load-shedding, and check you are on a fair tariff.",
+  "readMinutes": 7,
+  "intro_html": "<p>An electricity bill can feel like something that just happens to you. It arrives, it is higher than last month, and you pay it. But most of the bill comes from a few big appliances and a few habits, and those are things you can change.</p><p>This guide walks you through it step by step: read your bill, find the biggest users, cut waste, and then look at the parts that depend on where you live, such as slab tariffs, load-shedding and switching to a cheaper energy deal. You do not need to do everything. Pick the two or three steps that fit your home.</p>",
+  "sections": [
+    {
+      "h2": "Start with your bill, not with the light bulbs",
+      "body_html": "<p>Before you change anything, look at your last few bills. You are looking for two things:</p><ul><li><strong>How many units you used.</strong> A unit is one kilowatt-hour (kWh). This number matters more than the money total, because prices change but units show what your home actually used.</li><li><strong>How the price is worked out.</strong> Some bills charge the same rate for every unit. Others charge more per unit as you use more (slabs or tiers). Many also add a fixed monthly charge, taxes and fuel or price adjustments.</li></ul><p>Write down the units for each month you can find. You will usually see a pattern: a summer peak in hot countries from the air conditioner, or a winter peak in cold ones from heating and hot water. That peak is where most of your savings are.</p><h3>Read your own meter</h3><p>Take a meter reading on the same day each week for a month. It takes a minute and shows you, in real time, whether a change you made is working. It also helps you spot a bill that has been estimated rather than read.</p>"
+    },
+    {
+      "h2": "Find the appliances that use the most power",
+      "body_html": "<p>The rule of thumb is simple: things that <strong>heat</strong>, <strong>cool</strong> or <strong>run all day</strong> use the most electricity. In most homes that means:</p><ul><li>Air conditioners and electric heaters</li><li>Electric water heaters (geysers or immersion heaters)</li><li>Fridges and freezers, especially old ones</li><li>Irons, kettles, ovens, tumble dryers and water pumps</li></ul><p>Phone chargers, LED lights and a Wi-Fi router are small by comparison. They are still worth switching off, but they will not fix a big bill on their own.</p><p>Every appliance has a power rating in watts on a label or in the manual. Multiply the watts by the hours you use it each day and divide by 1,000 to get units per day. A 1,500-watt heater running for 4 hours uses about 6 units a day. Doing this for your three or four biggest appliances usually shows exactly where the money goes.</p>"
+    },
+    {
+      "h2": "Everyday habits that cut waste",
+      "body_html": "<h3>Cooling and heating</h3><ul><li>Set the air conditioner a little warmer. Many utilities suggest around 24–26°C (75–79°F) for comfort and lower bills. Use a fan with it so the room feels cooler.</li><li>Close curtains in the hottest hours, cool only the rooms you use, and keep AC filters clean.</li><li>In cold weather, heat the room you are in, not the whole house, and stop draughts around doors and windows.</li></ul><h3>Hot water</h3><ul><li>Use a timer so the water heater runs only before the times you need hot water.</li><li>Turn the thermostat down a little.</li></ul><h3>Kitchen and laundry</h3><ul><li>Boil only the water you need, and keep lids on pans.</li><li>Keep the fridge door shut and defrost the freezer if ice builds up.</li><li>Wash clothes in full loads and at lower temperatures, and dry them in the air when the weather allows.</li><li>Iron in one session a week instead of a few items every day.</li></ul><p>When an old bulb or appliance dies, replace it with an efficient one: compare the yearly units on the energy label, not just the price.</p>"
+    },
+    {
+      "h2": "Slab tariffs: stay below the next step",
+      "body_html": "<p>In many countries, including Pakistan, India and the UAE, the price per unit goes up as your monthly use goes up. That means the last units you use in a month can be the most expensive ones. Cutting a little at the end of the month can save more than you would expect.</p><ul><li>Find the slab limits on your bill or on your utility’s website.</li><li>Read your meter around the middle of the billing month. If you are close to the next slab, cut back on the AC, heater or iron for the rest of the month.</li><li>Spread heavy use across the year where you can, for example by heating water with gas in winter rather than electricity.</li></ul><h3>Pakistan: the protected category</h3><p>In Pakistan, NEPRA’s tariff orders describe <strong>protected</strong> residential consumers as homes using around 200 units a month consistently over the past six months. They pay lower rates. Going over in a single month can cost you that status for months afterwards, so in winter it can help to switch off the electric geyser element and keep a close eye on the meter. Check your DISCO’s current tariff, because the rules and rates are updated from time to time.</p><h3>India and the UAE</h3><p>In India, each state electricity commission sets its own slabs, so check your DISCOM’s tariff. In Dubai, DEWA also charges more per unit in higher slabs, which is why the summer AC months cost far more. Comparing your monthly units with the slab limits printed on the bill is the quickest way to see how close you are.</p>"
+    },
+    {
+      "h2": "Load-shedding: make backup power cheaper",
+      "body_html": "<p>Where power cuts are common, as in parts of Pakistan, Nigeria and India, a big share of the real electricity cost is not on the bill at all. It is fuel for a generator and the cost of UPS or inverter batteries.</p><ul><li><strong>Put only essentials on backup.</strong> Fans, lights, the router and perhaps the fridge. Keep the AC, iron, water pump and kettle for when the grid is on.</li><li><strong>Look after the batteries.</strong> Keep them topped up and ventilated, and replace weak ones. A tired battery wastes grid power while charging and runs out fast.</li><li><strong>Use the generator less.</strong> Generator fuel is one of the most expensive ways to make electricity. Service it regularly and switch it off once the inverter is charged.</li><li><strong>Consider solar for backup.</strong> A few solar panels with a battery and a hybrid inverter can cover the essentials during cuts and charge from the sun instead of the grid. It costs money upfront, so get several quotes, check warranties, and compare the cost with what you spend on fuel in a year.</li></ul><h3>Nigeria: meters and bands</h3><p>Estimated bills and paying for a supply band you do not actually receive both push the bill up. Ask your DisCo about a prepaid meter, keep a simple diary of your supply hours for a week, and raise a complaint with the DisCo, and then NERC, if the hours do not match your band.</p>"
+    },
+    {
+      "h2": "Check you are on a fair tariff",
+      "body_html": "<p>In countries with an open energy market, such as the UK and Germany, you can choose your supplier and tariff. Many households never do, and stay on a default rate.</p><h3>United Kingdom</h3><p>Most homes on a standard variable tariff pay rates limited by the <a href=\"https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap\">Ofgem price cap</a>. The cap limits the unit rate and standing charge, not your total bill, and Ofgem updates it every three months. A fixed deal or a time-of-use tariff with cheaper overnight rates is sometimes lower. Paying by Direct Debit and sending regular meter readings also help.</p><h3>Germany</h3><p>Households still on the local supplier’s default tariff (Grundversorgung) often pay more than new-customer tariffs. Find your yearly kWh on your last statement, compare tariffs, and set a reminder to compare again before the first year ends.</p><h3>Everywhere else</h3><p>Even where you cannot switch supplier, check that you are on the right customer category, that your meter is read rather than estimated, and that there are no late-payment charges you could avoid.</p><p>Once you know your monthly electricity cost, add it to the <a href=\"/#app\">calculator</a> to see how it fits in your whole budget.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What uses the most electricity in a typical home?",
+      "a": "Appliances that heat or cool, such as air conditioners, electric heaters and water heaters, usually use the most. Fridges and freezers matter too because they run all day."
+    },
+    {
+      "q": "Does switching appliances off at the wall really save money?",
+      "a": "It helps a little, because many devices draw some power on standby. The bigger savings usually come from using the air conditioner, heater and water heater less."
+    },
+    {
+      "q": "Is a solar system worth it just for load-shedding?",
+      "a": "It depends on how long your power cuts are and how much you spend on generator fuel. Compare the upfront cost with a year of fuel and battery costs, and get several quotes before you decide."
+    },
+    {
+      "q": "Why did my bill jump when I used only a little more power?",
+      "a": "On slab tariffs the price per unit rises as you use more, and in some places crossing a limit changes the rate for the whole month or later months. Check the slab limits on your bill."
+    }
+  ],
+  "related": [
+    "subscription-audit",
+    "family-grocery-budget",
+    "emergency-fund"
+  ],
+  "sources": [
+    {
+      "title": "Ofgem: Energy price cap",
+      "url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap"
+    },
+    {
+      "title": "NEPRA: QESCO tariff determination FY 2023-24 (definition of protected consumers)",
+      "url": "https://nepra.org.pk/tariff/Tariff/DISCOs/QESCO/2023/TRF-571%20QESCO%20FY%202023-24%2014-07-2023%2018193-99.PDF"
+    }
+  ]
+}

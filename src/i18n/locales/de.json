@@ -1941,9 +1941,9 @@
       "skipToContent": "Zum Inhalt springen",
       "nav": {
         "calculator": "Rechner",
-        "moneyTips": "Spartipps",
         "contact": "Kontakt",
-        "about": "Über uns"
+        "about": "Über uns",
+        "guides": "Ratgeber"
       },
       "navLabel": "Hauptmenü"
     },
@@ -3028,5 +3028,29 @@
       "ldName": "Über Household Budget Optimizer",
       "ldDescription": "Warum es diesen kostenlosen, privaten Haushaltsbudget-Rechner gibt, wie er funktioniert, woher seine Zahlen kommen und nach welchen Grundsätzen wir arbeiten."
     }
+  },
+  "guides": {
+    "index": {
+      "title": "Geld-Ratgeber",
+      "lead": "Einfache, praktische Ratgeber zu Haushaltsbudget, Sparen und Schuldenabbau. Kostenlos, ohne Anmeldung und für Haushalte überall geschrieben.",
+      "seoTitle": "Geld-Ratgeber: Budget, Sparen, Schulden | Budget Optimizer",
+      "seoDescription": "Kostenlose Ratgeber in einfacher Sprache zu Budget, Notgroschen, der 50/30/20-Regel, niedrigeren Rechnungen und dem Abbau von Kreditkartenschulden.",
+      "breadcrumb": "Ratgeber"
+    },
+    "readTime": {
+      "one": "Ratgeber · {count} Minute Lesezeit",
+      "other": "Ratgeber · {count} Minuten Lesezeit"
+    },
+    "onThisPage": "Auf dieser Seite",
+    "faqTitle": "Häufige Fragen",
+    "related": "Ähnliche Ratgeber",
+    "sources": "Quellen",
+    "readGuide": "Ratgeber lesen",
+    "cta": {
+      "title": "Probier es mit deinen eigenen Zahlen",
+      "text": "Trag deine Rechnungen in den kostenlosen Rechner ein und erhalte Sparideen mit der Rechnung hinter jeder einzelnen. Nichts, was du eingibst, verlässt dein Gerät.",
+      "button": "Rechner ausprobieren"
+    },
+    "disclaimer": "Dieser Ratgeber dient nur der allgemeinen Information. Er ist keine Finanz-, Steuer- oder Rechtsberatung. Die Zahlen sind Beispiele oder allgemeine Richtwerte; prüf, was für dich gilt."
   }
 }

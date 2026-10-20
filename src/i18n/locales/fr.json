@@ -1978,9 +1978,9 @@
       "skipToContent": "Aller au contenu",
       "nav": {
         "calculator": "Calculateur",
-        "moneyTips": "Conseils",
         "contact": "Contact",
-        "about": "À propos"
+        "about": "À propos",
+        "guides": "Guides"
       },
       "navLabel": "Principal"
     },
@@ -3066,5 +3066,30 @@
       "ldName": "À propos de Household Budget Optimizer",
       "ldDescription": "Pourquoi ce calculateur de budget familial gratuit et confidentiel existe, comment il fonctionne, d’où viennent ses chiffres et les règles qui l’encadrent."
     }
+  },
+  "guides": {
+    "index": {
+      "title": "Guides d’argent",
+      "lead": "Des guides simples et pratiques pour faire son budget, épargner et rembourser ses dettes. Gratuits, sans inscription, et écrits pour tous les foyers.",
+      "seoTitle": "Guides d’argent : budget, épargne, dettes | Budget Optimizer",
+      "seoDescription": "Guides gratuits et clairs sur le budget, l’épargne de précaution, la règle 50/30/20, la baisse des factures et le remboursement d’une carte de crédit.",
+      "breadcrumb": "Guides"
+    },
+    "readTime": {
+      "one": "Guide · {count} minute de lecture",
+      "many": "Guide · {count} minutes de lecture",
+      "other": "Guide · {count} minutes de lecture"
+    },
+    "onThisPage": "Sur cette page",
+    "faqTitle": "Questions fréquentes",
+    "related": "Guides associés",
+    "sources": "Sources",
+    "readGuide": "Lire le guide",
+    "cta": {
+      "title": "Faites le calcul avec vos propres chiffres",
+      "text": "Ajoutez vos factures au calculateur gratuit et obtenez des idées d’économies, avec le calcul derrière chacune. Rien de ce que vous saisissez ne quitte votre appareil.",
+      "button": "Essayer le calculateur"
+    },
+    "disclaimer": "Ce guide est fourni à titre informatif uniquement. Il ne constitue pas un conseil financier, fiscal ou juridique. Les chiffres sont des exemples ou des repères généraux ; vérifiez ce qui s’applique à votre situation."
   }
 }

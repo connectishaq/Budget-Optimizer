@@ -1,4 +1,4 @@
-// npm run articles:check
+// npm run articles:check   (also checks the money guides: scripts/guides-check.mjs)
 // Checks the per-country articles in src/i18n/articles/<page>.json against the
 // English article (page.guide in en.json): same keys, the same markup in
 // "_html" messages (number badges, no new tags), a sensible length, and a
@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LOCALE_PAGES } from '../src/i18n/locale-pages.js';
+import { checkGuides } from './guides-check.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'src/i18n/articles');
@@ -52,6 +53,11 @@ for (const page of LOCALE_PAGES.filter((p) => p.path !== 'en-us')) {
 }
 
 console.log(`articles check (English reference: ${words(Object.values(ref).join(' '))} words)\n${report.join('\n')}`);
+// The money guides (src/i18n/guides) are checked here too
+const guides = checkGuides(root);
+errors.push(...guides.errors);
+console.log(`\nguides check\n${guides.report.join('\n')}`);
+
 if (errors.length) {
   console.log(`\nErrors:\n${errors.map((e) => `- ${e}`).join('\n')}`);
   process.exit(1);

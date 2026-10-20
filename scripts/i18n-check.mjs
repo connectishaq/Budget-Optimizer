@@ -63,8 +63,8 @@ const warnings = [];
 const used = new Set();
 const namespaces = new Set(Object.keys(en).map((k) => k.split('.')[0]));
 const dynamicPrefixes = new Set();
-// vite.config.js builds some markup too (the About page's country table)
-const jsFiles = [...walk(path.join(root, 'src'), ['.js']), path.join(root, 'vite.config.js')];
+// vite.config.js and the guide builder make some markup too (About table, guide pages)
+const jsFiles = [...walk(path.join(root, 'src'), ['.js']), path.join(root, 'vite.config.js'), path.join(root, 'scripts', 'build-guides.mjs')];
 for (const f of jsFiles) {
   const src = read(f);
   for (const m of src.matchAll(/\bt\(\s*(['"])([\w.-]+)\1/g)) used.add(m[2]);

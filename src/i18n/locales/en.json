@@ -1930,9 +1930,9 @@
       "skipToContent": "Skip to content",
       "nav": {
         "calculator": "Calculator",
-        "moneyTips": "Money tips",
         "contact": "Contact",
-        "about": "About"
+        "about": "About",
+        "guides": "Guides"
       },
       "navLabel": "Main"
     },
@@ -3017,5 +3017,29 @@
       "ldName": "About Household Budget Optimizer",
       "ldDescription": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it."
     }
+  },
+  "guides": {
+    "index": {
+      "title": "Money guides",
+      "lead": "Plain, practical guides to budgeting, saving and paying off debt. Free, with no sign-up, and written for households everywhere.",
+      "seoTitle": "Money guides: budgeting, saving and debt | Budget Optimizer",
+      "seoDescription": "Free, plain-language guides to budgeting, emergency funds, the 50/30/20 rule, cutting bills and paying off credit card debt.",
+      "breadcrumb": "Guides"
+    },
+    "readTime": {
+      "one": "Guide · {count} minute read",
+      "other": "Guide · {count} minute read"
+    },
+    "onThisPage": "On this page",
+    "faqTitle": "Frequently asked questions",
+    "related": "Related guides",
+    "sources": "Sources",
+    "readGuide": "Read the guide",
+    "cta": {
+      "title": "See it with your own numbers",
+      "text": "Add your bills to the free calculator and get savings ideas with the sum behind each one. Nothing you type leaves your device.",
+      "button": "Try the calculator"
+    },
+    "disclaimer": "This guide is for general education only. It is not financial, tax or legal advice. Figures are examples or general guidelines; check what applies to you."
   }
 }
