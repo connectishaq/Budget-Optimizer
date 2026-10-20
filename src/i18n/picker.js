@@ -15,12 +15,19 @@ export const pageLanguage = () => {
   return LANGUAGES[l] ? l : null;
 };
 
+/** ?lang=xx on links from a language/country page (to the privacy policy…), or null. */
+export const urlLanguage = (search = location.search) => {
+  const l = new URLSearchParams(search).get('lang');
+  return LANGUAGES[l] ? l : null;
+};
+
 /**
  * Language for this page view: a language/country page's own language, else
- * the saved choice, else the browser's (saved on first visit).
+ * ?lang= for this visit, else the saved choice, else the browser's (saved on
+ * first visit).
  */
 export function chooseLanguage() {
-  const page = pageLanguage();
+  const page = pageLanguage() || urlLanguage();
   if (page) return page;
   const stored = getStoredLanguage();
   if (stored) return stored;
@@ -72,7 +79,12 @@ function fillCountries(select, current) {
 /** Reloads keeping the scroll position, so a language/country switch feels in place. */
 function reloadInPlace() {
   try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch { /* ignore */ }
-  location.reload();
+  // A ?lang= from the link would override the new choice, so drop it
+  const url = new URL(location.href);
+  if (url.searchParams.has('lang')) {
+    url.searchParams.delete('lang');
+    location.replace(url.href);
+  } else location.reload();
 }
 
 export function restoreScroll() {

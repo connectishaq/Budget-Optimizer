@@ -2021,7 +2021,8 @@
         "contact": "Fale conosco",
         "privacy": "Política de Privacidade",
         "terms": "Termos de Uso",
-        "label": "Empresa"
+        "label": "Empresa",
+        "choices": "Opções de privacidade"
       },
       "disclaimer": {
         "title": "Aviso financeiro",

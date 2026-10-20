@@ -135,6 +135,17 @@ export function prerenderLocales({ root, outDir, siteUrl }) {
       }
     }
 
+    // ---- Links stay on this page ("/#app" -> "#app", home -> /de-de/), and the
+    // privacy policy, terms and contact pages open in this page's language
+    for (const a of doc.querySelectorAll('a[href]')) {
+      const href = a.getAttribute('href');
+      if (href === '/') a.setAttribute('href', `/${page.path}/`);
+      else if (href.startsWith('/#')) a.setAttribute('href', href.slice(1));
+      else if (/^\/(privacy-policy|terms-of-use|contact)\//.test(href)) {
+        a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${page.lang}`);
+      }
+    }
+
     // ---- The page's language, direction and country (read by the inline head script and main.js)
     const html = doc.querySelector('html');
     html.setAttribute('lang', bcp47(page.path));

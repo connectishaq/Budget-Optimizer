@@ -1973,7 +1973,8 @@
         "contact": "Contact us",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use",
-        "label": "Company"
+        "label": "Company",
+        "choices": "Privacy choices"
       },
       "disclaimer": {
         "title": "Financial disclaimer",

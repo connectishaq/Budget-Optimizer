@@ -21,7 +21,9 @@
       var d = document.documentElement, t = null;
       // Non-English visitors: hide the page until it's translated (max 2s), and set direction early
       var L = ['en', 'es', 'hi', 'ar', 'ur', 'fr', 'pt', 'id', 'de'], l = null;
-      try { l = localStorage.getItem('hbo:lang'); } catch (e) {}
+      // ?lang=xx (links from a language/country page) wins for this visit, without being saved
+      var q = (/[?&]lang=([a-z]{2})(?:&|$)/.exec(location.search) || [])[1];
+      try { l = L.indexOf(q) > -1 ? q : localStorage.getItem('hbo:lang'); } catch (e) { l = q; }
       if (L.indexOf(l) < 0) {
         l = 'en';
         var ls = navigator.languages || [navigator.language];

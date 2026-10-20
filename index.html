@@ -29,7 +29,9 @@
       // (Language/country pages such as /de-de/ are built already translated, so they skip this.)
       var L = ['en', 'es', 'hi', 'ar', 'ur', 'fr', 'pt', 'id', 'de'], l = null;
       var prebuilt = d.hasAttribute('data-page-lang');
-      try { l = localStorage.getItem('hbo:lang'); } catch (e) {}
+      // ?lang=xx (links from a language/country page) wins for this visit, without being saved
+      var q = (/[?&]lang=([a-z]{2})(?:&|$)/.exec(location.search) || [])[1];
+      try { l = L.indexOf(q) > -1 ? q : localStorage.getItem('hbo:lang'); } catch (e) { l = q; }
       if (L.indexOf(l) < 0) {
         l = 'en';
         var ls = navigator.languages || [navigator.language];
@@ -82,6 +84,17 @@
     ]
   }
   </script>
+
+  <!-- ===================== CONSENT (CMP) SLOT =====================
+       AdSense requires a Google-certified consent management platform (CMP) for
+       visitors in the EEA, the UK and Switzerland.
+       - Google's own CMP: in AdSense open Privacy & messaging > European regulations
+         and publish the message. Nothing to paste here.
+       - Another certified CMP (IAB TCF v2.2): set VITE_CMP_SRC in .env; src/ads.js
+         loads it before AdSense. If your CMP also gives you an inline "stub" script,
+         paste it directly below this comment.
+       Consent Mode v2 defaults (personalised ads denied in those regions until the
+       visitor agrees) are set in src/ads.js before any Google script loads. -->
 </head>
 
 <body class="pb-28 lg:pb-0">

@@ -2021,7 +2021,8 @@
         "contact": "Nous contacter",
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d’utilisation",
-        "label": "Société"
+        "label": "Société",
+        "choices": "Choix de confidentialité"
       },
       "disclaimer": {
         "title": "Avertissement financier",

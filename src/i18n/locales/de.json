@@ -1984,7 +1984,8 @@
         "contact": "Kontakt",
         "privacy": "Datenschutzerklärung",
         "terms": "Nutzungsbedingungen",
-        "label": "Unternehmen"
+        "label": "Unternehmen",
+        "choices": "Datenschutz-Einstellungen"
       },
       "disclaimer": {
         "title": "Finanzieller Haftungsausschluss",
