@@ -1180,9 +1180,7 @@
       "navLabel": "Principal",
       "brand": "Otimizador de Orçamento",
       "nav": {
-        "calculator": "Calculadora",
-        "tips": "Dicas de dinheiro",
-        "glossary": "Glossário"
+        "calculator": "Calculadora"
       }
     },
     "hero": {

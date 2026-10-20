@@ -27,8 +27,8 @@ These were translated later, with the phase 6 keys: `format.currencies.SAR/BRL/M
   "{tips} पर चलकर…", which needs the oblique plural.
 - **`plan.costPayback`** reads "…लागत वसूल होने का समय: {time}।" so that `format.duration.now`
   ("तुरंत") and `plan.longTime` ("लंबा समय") both fit.
-- **`page.banners.sample_html`**: the profile name is inserted inside the span; "…परिवार के लिए" vs
-  "…का परिवार के लिए" can read slightly off depending on the profile name.
+- **`page.banners.sample_html`** (fixed): now "यह एक उदाहरण बजट है (प्रोफ़ाइल: {name})।", so every profile name
+  stays in its plain form (no more "…का परिवार के लिए").
 - **`page.growth.extra_html`** + `charts.afterYears`: "आपके पास इतना अतिरिक्त पैसा होगा {N साल बाद}".
 
 ## Plurals
@@ -91,7 +91,7 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 ## Phase 6 additions
 - `inputs.custom.need` / `want` reuse the 50/30/20 labels exactly ("ज़रूरी बिल" / "शौक़ की चीज़ें"); for a single row the singular "शौक़ की चीज़" may read better.
 - `inputs.payFrequency.options.*`: "हर हफ़्ते", "हर 2 हफ़्ते", "महीने में 2 बार", "हर महीने" (short for the narrow dropdown); alternative "पाक्षिक" for every 2 weeks is too formal.
-- `inputs.payFrequency.fieldLabel.semimonthly`: "हर सैलरी के दिन हाथ में आने वाली सैलरी" repeats "सैलरी"; alternative "हर बार हाथ में आने वाली सैलरी".
+- `inputs.payFrequency.fieldLabel.semimonthly` (fixed): now "हर बार हाथ में आने वाली सैलरी" (no repeated "सैलरी").
 - `inputs.custom.add` "अपना खर्च जोड़ें" ("add your own expense") rather than a literal "custom"; alternative "दूसरा खर्च जोड़ें".
 - `countryFields.IN.chitFund.label`: "चिट फ़ंड / कमेटी / किटी" — "कमेटी" (North India), "किटी" (urban women's groups), "चिट फ़ंड" (South India / formal); "बीसी" is another North-Indian term.
 - `countryFields.IN.powerBackup`: "DG" kept as societies write it; "इन्वर्टर" and "UPS" used interchangeably in India.
@@ -123,7 +123,18 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 ## Neutral home article
 - `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).
 - `leak1.fix1_html` "स्विच वाले एक्सटेंशन बोर्ड" for switched power strips (what Indians call them); alternative "पावर स्ट्रिप".
-- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; "AC उतना ही ज़्यादा कर दें" means a warmer AC setting and could be misread as more cooling.
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; (fixed) `fix2_html` now says "AC का तापमान उतना ही बढ़ा दें" (raise the AC temperature = less cooling).
 - `leak4.fix4_html` "ज़्यादा डिडक्टिबल (excess)"; insurance excess is not a common idea for Indian car/home policies.
 - `leak5.body_html` "किसी भी करेंसी में 3,000" and "हर महीने लगभग 60" read bare without a currency word, like the English.
 - `wealth.p2_html` "(किसी भी करेंसी में)"; "मुद्रा" is the formal alternative to "करेंसी".
+
+## Review pass (2026-10-20)
+- `page.guide.leak1.fix2_html`: "हीटर … कम या AC उतना ही ज़्यादा कर दें" → "हीटर का तापमान … घटा दें या AC का तापमान उतना ही बढ़ा दें" (raise the AC setting, not more cooling).
+- `page.banners.sample_html`: reworded so the inserted profile name is not followed by "के लिए" ("…का परिवार के लिए" was ungrammatical).
+- `inputs.payFrequency.fieldLabel.semimonthly`: "हर सैलरी के दिन हाथ में आने वाली सैलरी" → "हर बार हाथ में आने वाली सैलरी".
+- Spelling made consistent with the rest of the file: "आंकड़े/आंकड़ों/आंकड़ा" → "आँकड़…" (11 messages, mostly `about.*`, `guides.cta.title`, `guides.disclaimer`).
+- "गलत/गलती" → "ग़लत/ग़लती" (`notFound.lead`, `about.sections.standards.p2_html`).
+- "ख़ाली" → "खाली" (`localTips.ae-dewa-slab.tips.1`, `localTips.sa-6000-kwh.tips.2`); "तारीख़ों" → "तारीखों" (`localTips.sa-bnpl.tips.2`).
+- "खरीदना" → "ख़रीदना" (`rules.effort.purchase`, `plan.effort.purchase`).
+- Checked and already consistent: इमरजेंसी फ़ंड, ज़रूरी बिल, शौक़ की चीज़ें, हाथ में आने वाली सैलरी, सब्सक्रिप्शन; no stray $/°F-first; numbers match English.
+- Left for a native reviewer: brand in `about.seo.*` (Latin "Household Budget Optimizer", kept as requested) vs "घरेलू बजट ऑप्टिमाइज़र" elsewhere; gendered slashes ("भरता/भरती"); regional word choices above; "0 महीना" with plural `one`; legal text.

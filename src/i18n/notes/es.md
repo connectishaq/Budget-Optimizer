@@ -22,15 +22,12 @@ translated in later passes.
 | franquicia (insurance excess/deductible) | deducible | rules.insuranceRequote, page.guide.leak4 |
 | abono (transport pass) | pase / tarjeta mensual | rules.transitPass |
 | telepeaje | TAG / tag de peaje (MX: "TAG", "IAVE") | rules.transitPass |
-| canguro (babysitter) | niñera | help.text.school, help.text.homeHelp |
 | nevera | refrigerador / refri | page.guide.leak3 |
 | bombilla | foco | rules, page.guide |
-| alcachofa de ducha | regadera | rules.utilitiesTuneup |
 | marca blanca | marca propia / marca de la tienda | rules.groceriesPlan, guide |
 | VTC | apps de transporte (Uber, DiDi) | help.text.transit |
 | sueldo neto | salario neto | inputs, help |
 | TAE | CAT (Mexico uses CAT / tasa anual) | inputs.debts.apr, glossary |
-| pillarte por sorpresa (colloquial, Spain) | tomarte por sorpresa | wizard.billPages.yearly.sub |
 
 ## Decisions worth reviewing
 - **Product name**: "Household Budget Optimizer & Savings Simulator" is translated as
@@ -61,7 +58,7 @@ translated in later passes.
 - **dashboard.categories.basisIncome**: "a typical {profile}" became "lo típico para el perfil «{profile}»"
   because the profile names don't fit after an article.
 - **Percent spacing**: kept "{pct}%" without a space (RAE prefers "15 %"), to match the app's number formatting.
-- **Numbers in the money-tips article and glossary** (`page.guide.*`, `page.glossary.apr`, `lakhCrore`) keep the
+- (fixed, see Review pass) **Numbers in the money-tips article and glossary** (`page.guide.*`, `page.glossary.apr`, `lakhCrore`) keep the
   English figures and separators as written ("$3,000", "100,000", "$46,000"). Mexico reads these naturally;
   Spain would write "3.000 $" / "100.000". °F/°C order was swapped to put Celsius first (values unchanged).
 - **charts.on / off** are a state label for the inflation toggle: "Activado" / "Desactivado".
@@ -136,10 +133,20 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
 
 ## Neutral home article
-- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (figures now plain: "3,000", "46,000", Celsius first).
+- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (Celsius first; figure grouping fixed in the review pass below).
 - `leak1.fix1_html` "regletas con interruptor" for switched power strips; MX alt.: "multicontactos con apagador".
 - `leak1.fix4` "calentador de agua o termo" (Spain); MX would say "boiler" / "calentador".
 - `leak4.fix3` "dispositivos de telepeaje" for toll tags (MX: "TAG").
 - `leak4.fix4_html` "franquicia (deducible)" gives both the Spain and Latin American term, mirroring the English "excess (deductible)".
 - `leak5.body_html` "un saldo de 3,000 en cualquier moneda" and "60 al mes" read a little bare without a currency; the English is the same.
 - `wealth.p1_html` "la cuenta que usas a diario" for "everyday bank account" (Spain would also say "cuenta corriente", MX "cuenta de débito").
+
+## Review pass (2026-10-20)
+- AC direction: `rules.utilitiesEfficiency.tips.night` now says heating a few degrees lower or AC a few degrees higher; `.evidence` says "usar menos" instead of the ambiguous "bajar ... el aire"; `page.guide.leak1.fix2_html` "sube la temperatura del aire acondicionado" (was "sube el aire acondicionado", which reads as more cooling).
+- Must-pay bills: "facturas básicas" → "facturas obligatorias" in `calc.health.emergency.none/under3/under6/done` and `help.text.emergency`, matching the rest of the file.
+- Store brand: `rules.groceriesPlan.tips.storeBrand` "marca de la tienda" → "marca blanca", as in its title and the guide.
+- Wrong fact: `seo.app.featureList.11` said "Ocho monedas"; English says 13 → "13 monedas".
+- Quotes: straight/curly quotes → «» in `rules.electricitySlab.tips.units`, `localTips.br-bandeira-chuveiro.tips.1`, `localTips.es-revolving.tips.1`, `localTips.mx-meses-sin-intereses.title`, `localTips.mx-tarifa-dac.tips.1`.
+- Number grouping: "3,000", "46,000", "147,000", "100,000", "30,000", "10,000,000" (comma thousands read as decimals in Spain) and "1.300", "1.444,70", "3.500", "6.000" (period thousands read as decimals in Mexico) now use the RAE neutral form: no separator for 4 digits, non-breaking space from 5 digits ("46 000", "10 000 000"). Keys: `page.guide.leak5.body_html`, `page.guide.wealth.p2_html`, `page.glossary.apr` / `lakhCrore`, `localTips.id-va-power.why`, `localTips.id-krl-tj.why`, `localTips.sa-6000-kwh.*`. The es-es ("2.400 €") and es-mx ("$1,200") articles keep their country formats.
+- Neutral wording: "pillarte por sorpresa" → "tomarte por sorpresa"; "alcachofa de ducha" → "cabezal de ducha" (×2); "canguro" → "niñera" in `help.text.school` / `help.text.homeHelp` (in Mexico "canguro" only means kangaroo).
+- Left for a native reviewer: the other Spain-leaning words in the table above (coche, móvil, alquiler, piso, casero, ordenador, nevera, bombilla, franquicia, TAE, "Bonus"), decimal commas in country amounts ("18,36 €", "6,30 AED"), historyEngine singular/plural agreement, and the brand decision.

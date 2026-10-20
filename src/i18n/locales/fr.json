@@ -1180,9 +1180,7 @@
       "navLabel": "Principal",
       "brand": "Budget Optimizer",
       "nav": {
-        "calculator": "Calculateur",
-        "tips": "Conseils",
-        "glossary": "Lexique"
+        "calculator": "Calculateur"
       }
     },
     "hero": {

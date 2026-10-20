@@ -127,10 +127,18 @@ verbatim where the policy refers to it.
 #### Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the note above about keeping US figures is superseded (plain «250»، «46,000»، Celsius first).
 - `leak1.fix1_html` «مشترك كهرباء بمفتاح» for a switched power strip; «توصيلة كهرباء بمفتاح» is a Gulf colloquial alternative.
-- `leak1.fix2_html` «ارفع حرارة التكييف» (set the AC warmer) for "air conditioning up"; could be misread as "turn the AC up (colder)" — check.
+- (fixed) `leak1.fix2_html` now «اضبط المكيّف على درجة حرارة أعلى» (set the AC warmer) for "air conditioning up"; see Review pass.
 - `leak4.fix4_html` "excess (deductible)" rendered once as «مبلغ التحمّل» without a second synonym.
 - `leak5.body_html` «رصيد 3,000 بأي عملة» and «60 شهريًا» read bare without a currency name, like the English; «فائدة» kept (Islamic banks would say «ربح»).
 - `wealth.p1_html` «حساب ادخار يمنح عائدًا» for "savings account that pays interest" (avoids «فائدة» for Gulf readers); «حسابك البنكي اليومي» for everyday bank account (alt. «حسابك الجاري»).
+
+#### Review pass (2026-10-20)
+- `page.guide.leak1.fix2_html`: «ارفع حرارة التكييف» → «اضبط المكيّف على درجة حرارة أعلى» (raise the AC setting = less cooling, not colder).
+- `rules.utilitiesEfficiency.tips.night`: «اخفض التدفئة أو المكيّف بضع درجات» read as "make the AC colder"; now heating lower / AC set a few degrees warmer.
+- `calc.health.emergency.under3/under6/done/none`, `help.text.emergency`: "essential bills" «الفواتير الأساسية» → «الفواتير التي لا بد منها», the term used for must-pay bills everywhere else (5 messages).
+- `ar-sa` `guide.intro1_html`: colloquial «أونلاين» → «عبر الإنترنت» (MSA, as in the rest of the file).
+- Checked, no change needed: digits/separators (Western digits, comma thousands, °C first with °F only in brackets), emergency fund, take-home pay, nice-to-haves, subscriptions, Latin words (all brand, code or local names).
+- Left for a native reviewer: brand in `about.seo.*` still Latin «Household Budget Optimizer» (kept as requested) vs «مُحسِّن ميزانية الأسرة» on other pages; `{months} شهر` / `{years} سنة` with small numbers (needs plural messages in code); «درجة الصحة المالية» vs «درجة صحة الميزانية» follows the English "health score" / "budget health score" split; Islamic-finance wording (فائدة/ربح) and the regional alternatives above.
 
 ### German (de)
 
@@ -290,15 +298,12 @@ translated in later passes.
 | franquicia (insurance excess/deductible) | deducible | rules.insuranceRequote, page.guide.leak4 |
 | abono (transport pass) | pase / tarjeta mensual | rules.transitPass |
 | telepeaje | TAG / tag de peaje (MX: "TAG", "IAVE") | rules.transitPass |
-| canguro (babysitter) | niñera | help.text.school, help.text.homeHelp |
 | nevera | refrigerador / refri | page.guide.leak3 |
 | bombilla | foco | rules, page.guide |
-| alcachofa de ducha | regadera | rules.utilitiesTuneup |
 | marca blanca | marca propia / marca de la tienda | rules.groceriesPlan, guide |
 | VTC | apps de transporte (Uber, DiDi) | help.text.transit |
 | sueldo neto | salario neto | inputs, help |
 | TAE | CAT (Mexico uses CAT / tasa anual) | inputs.debts.apr, glossary |
-| pillarte por sorpresa (colloquial, Spain) | tomarte por sorpresa | wizard.billPages.yearly.sub |
 
 #### Decisions worth reviewing
 - **Product name**: "Household Budget Optimizer & Savings Simulator" is translated as
@@ -329,7 +334,7 @@ translated in later passes.
 - **dashboard.categories.basisIncome**: "a typical {profile}" became "lo típico para el perfil «{profile}»"
   because the profile names don't fit after an article.
 - **Percent spacing**: kept "{pct}%" without a space (RAE prefers "15 %"), to match the app's number formatting.
-- **Numbers in the money-tips article and glossary** (`page.guide.*`, `page.glossary.apr`, `lakhCrore`) keep the
+- (fixed, see Review pass) **Numbers in the money-tips article and glossary** (`page.guide.*`, `page.glossary.apr`, `lakhCrore`) keep the
   English figures and separators as written ("$3,000", "100,000", "$46,000"). Mexico reads these naturally;
   Spain would write "3.000 $" / "100.000". °F/°C order was swapped to put Celsius first (values unchanged).
 - **charts.on / off** are a state label for the inflation toggle: "Activado" / "Desactivado".
@@ -404,13 +409,23 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
 
 #### Neutral home article
-- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (figures now plain: "3,000", "46,000", Celsius first).
+- `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (Celsius first; figure grouping fixed in the review pass below).
 - `leak1.fix1_html` "regletas con interruptor" for switched power strips; MX alt.: "multicontactos con apagador".
 - `leak1.fix4` "calentador de agua o termo" (Spain); MX would say "boiler" / "calentador".
 - `leak4.fix3` "dispositivos de telepeaje" for toll tags (MX: "TAG").
 - `leak4.fix4_html` "franquicia (deducible)" gives both the Spain and Latin American term, mirroring the English "excess (deductible)".
 - `leak5.body_html` "un saldo de 3,000 en cualquier moneda" and "60 al mes" read a little bare without a currency; the English is the same.
 - `wealth.p1_html` "la cuenta que usas a diario" for "everyday bank account" (Spain would also say "cuenta corriente", MX "cuenta de débito").
+
+#### Review pass (2026-10-20)
+- AC direction: `rules.utilitiesEfficiency.tips.night` now says heating a few degrees lower or AC a few degrees higher; `.evidence` says "usar menos" instead of the ambiguous "bajar ... el aire"; `page.guide.leak1.fix2_html` "sube la temperatura del aire acondicionado" (was "sube el aire acondicionado", which reads as more cooling).
+- Must-pay bills: "facturas básicas" → "facturas obligatorias" in `calc.health.emergency.none/under3/under6/done` and `help.text.emergency`, matching the rest of the file.
+- Store brand: `rules.groceriesPlan.tips.storeBrand` "marca de la tienda" → "marca blanca", as in its title and the guide.
+- Wrong fact: `seo.app.featureList.11` said "Ocho monedas"; English says 13 → "13 monedas".
+- Quotes: straight/curly quotes → «» in `rules.electricitySlab.tips.units`, `localTips.br-bandeira-chuveiro.tips.1`, `localTips.es-revolving.tips.1`, `localTips.mx-meses-sin-intereses.title`, `localTips.mx-tarifa-dac.tips.1`.
+- Number grouping: "3,000", "46,000", "147,000", "100,000", "30,000", "10,000,000" (comma thousands read as decimals in Spain) and "1.300", "1.444,70", "3.500", "6.000" (period thousands read as decimals in Mexico) now use the RAE neutral form: no separator for 4 digits, non-breaking space from 5 digits ("46 000", "10 000 000"). Keys: `page.guide.leak5.body_html`, `page.guide.wealth.p2_html`, `page.glossary.apr` / `lakhCrore`, `localTips.id-va-power.why`, `localTips.id-krl-tj.why`, `localTips.sa-6000-kwh.*`. The es-es ("2.400 €") and es-mx ("$1,200") articles keep their country formats.
+- Neutral wording: "pillarte por sorpresa" → "tomarte por sorpresa"; "alcachofa de ducha" → "cabezal de ducha" (×2); "canguro" → "niñera" in `help.text.school` / `help.text.homeHelp` (in Mexico "canguro" only means kangaroo).
+- Left for a native reviewer: the other Spain-leaning words in the table above (coche, móvil, alquiler, piso, casero, ordenador, nevera, bombilla, franquicia, TAE, "Bonus"), decimal commas in country amounts ("18,36 €", "6,30 AED"), historyEngine singular/plural agreement, and the brand decision.
 
 ### French (fr)
 
@@ -535,8 +550,8 @@ These were translated later, with the phase 6 keys: `format.currencies.SAR/BRL/M
   "{tips} पर चलकर…", which needs the oblique plural.
 - **`plan.costPayback`** reads "…लागत वसूल होने का समय: {time}।" so that `format.duration.now`
   ("तुरंत") and `plan.longTime` ("लंबा समय") both fit.
-- **`page.banners.sample_html`**: the profile name is inserted inside the span; "…परिवार के लिए" vs
-  "…का परिवार के लिए" can read slightly off depending on the profile name.
+- **`page.banners.sample_html`** (fixed): now "यह एक उदाहरण बजट है (प्रोफ़ाइल: {name})।", so every profile name
+  stays in its plain form (no more "…का परिवार के लिए").
 - **`page.growth.extra_html`** + `charts.afterYears`: "आपके पास इतना अतिरिक्त पैसा होगा {N साल बाद}".
 
 #### Plurals
@@ -599,7 +614,7 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 #### Phase 6 additions
 - `inputs.custom.need` / `want` reuse the 50/30/20 labels exactly ("ज़रूरी बिल" / "शौक़ की चीज़ें"); for a single row the singular "शौक़ की चीज़" may read better.
 - `inputs.payFrequency.options.*`: "हर हफ़्ते", "हर 2 हफ़्ते", "महीने में 2 बार", "हर महीने" (short for the narrow dropdown); alternative "पाक्षिक" for every 2 weeks is too formal.
-- `inputs.payFrequency.fieldLabel.semimonthly`: "हर सैलरी के दिन हाथ में आने वाली सैलरी" repeats "सैलरी"; alternative "हर बार हाथ में आने वाली सैलरी".
+- `inputs.payFrequency.fieldLabel.semimonthly` (fixed): now "हर बार हाथ में आने वाली सैलरी" (no repeated "सैलरी").
 - `inputs.custom.add` "अपना खर्च जोड़ें" ("add your own expense") rather than a literal "custom"; alternative "दूसरा खर्च जोड़ें".
 - `countryFields.IN.chitFund.label`: "चिट फ़ंड / कमेटी / किटी" — "कमेटी" (North India), "किटी" (urban women's groups), "चिट फ़ंड" (South India / formal); "बीसी" is another North-Indian term.
 - `countryFields.IN.powerBackup`: "DG" kept as societies write it; "इन्वर्टर" and "UPS" used interchangeably in India.
@@ -631,10 +646,21 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 #### Neutral home article
 - `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).
 - `leak1.fix1_html` "स्विच वाले एक्सटेंशन बोर्ड" for switched power strips (what Indians call them); alternative "पावर स्ट्रिप".
-- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; "AC उतना ही ज़्यादा कर दें" means a warmer AC setting and could be misread as more cooling.
+- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "हीटर / AC", since central heating is rare in India; (fixed) `fix2_html` now says "AC का तापमान उतना ही बढ़ा दें" (raise the AC temperature = less cooling).
 - `leak4.fix4_html` "ज़्यादा डिडक्टिबल (excess)"; insurance excess is not a common idea for Indian car/home policies.
 - `leak5.body_html` "किसी भी करेंसी में 3,000" and "हर महीने लगभग 60" read bare without a currency word, like the English.
 - `wealth.p2_html` "(किसी भी करेंसी में)"; "मुद्रा" is the formal alternative to "करेंसी".
+
+#### Review pass (2026-10-20)
+- `page.guide.leak1.fix2_html`: "हीटर … कम या AC उतना ही ज़्यादा कर दें" → "हीटर का तापमान … घटा दें या AC का तापमान उतना ही बढ़ा दें" (raise the AC setting, not more cooling).
+- `page.banners.sample_html`: reworded so the inserted profile name is not followed by "के लिए" ("…का परिवार के लिए" was ungrammatical).
+- `inputs.payFrequency.fieldLabel.semimonthly`: "हर सैलरी के दिन हाथ में आने वाली सैलरी" → "हर बार हाथ में आने वाली सैलरी".
+- Spelling made consistent with the rest of the file: "आंकड़े/आंकड़ों/आंकड़ा" → "आँकड़…" (11 messages, mostly `about.*`, `guides.cta.title`, `guides.disclaimer`).
+- "गलत/गलती" → "ग़लत/ग़लती" (`notFound.lead`, `about.sections.standards.p2_html`).
+- "ख़ाली" → "खाली" (`localTips.ae-dewa-slab.tips.1`, `localTips.sa-6000-kwh.tips.2`); "तारीख़ों" → "तारीखों" (`localTips.sa-bnpl.tips.2`).
+- "खरीदना" → "ख़रीदना" (`rules.effort.purchase`, `plan.effort.purchase`).
+- Checked and already consistent: इमरजेंसी फ़ंड, ज़रूरी बिल, शौक़ की चीज़ें, हाथ में आने वाली सैलरी, सब्सक्रिप्शन; no stray $/°F-first; numbers match English.
+- Left for a native reviewer: brand in `about.seo.*` (Latin "Household Budget Optimizer", kept as requested) vs "घरेलू बजट ऑप्टिमाइज़र" elsewhere; gendered slashes ("भरता/भरती"); regional word choices above; "0 महीना" with plural `one`; legal text.
 
 ### Indonesian (id)
 
@@ -888,7 +914,7 @@ Pakistani Urdu, written in Nastaliq/Arabic script and shown right-to-left. I use
 - `profiles.*.group` is in the oblique plural (e.g. "شہر کے کرایہ داروں") because it is always followed by "کے" ("{group} کے عام خرچ"، "{group} کے لیے").
 - `payday.dayOfMonth` is "مہینے کی {day}{suffix}". Every `payday.ordinal.*` is " تاریخ", so the result reads "مہینے کی 5 تاریخ". Urdu has no st/nd/rd/th suffixes.
 - `historyEngine.alerts.*` is phrased as "{label} میں … اضافہ/کمی", so it works for any label regardless of gender or number. The Singular and Plural variants are therefore identical.
-- `page.banners.sample_html` and `dashboard.categories.basisIncome` insert the profile name as it is (direct case, e.g. "…گھرانہ کے لیے"). A purist would use the oblique form ("گھرانے"), but that can't be done with a placeholder. It's acceptable but slightly unnatural.
+- (fixed) `page.banners.sample_html` and `dashboard.categories.basisIncome` insert the profile name as it is (direct case, e.g. "…گھرانہ کے لیے"). A purist would use the oblique form ("گھرانے"), but that can't be done with a placeholder. It's acceptable but slightly unnatural.
 - `inputs.housing.no` and `inputs.subs.rarely` use "دیتا/دیتی" and "کرتا/کرتی" to cover both genders, because first-person verbs in Urdu are gendered.
 - `dashboard.split.ofIncome_html`: the tag order is fixed (`{pct}` first, then the text), so it reads "{pct} آمدنی کا". This is understandable but terse.
 - `page.growth.extra_html`: the text now comes after the `<span id="fvYears">` (the span itself is unchanged) so the Urdu word order works.
@@ -952,10 +978,20 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 #### Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the guide note above about keeping $ amounts is superseded (plain "250"، "46,000"، Celsius first).
 - `leak1.fix1_html` "سوئچ والے ایکسٹینشن بورڈ" for switched power strips (everyday Pakistani term).
-- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
+- (fixed) `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
 - `leak4.fix4_html` "زیادہ ایکسیس (ڈیڈکٹیبل)": rare concept in Pakistan, kept as loan words.
 - `leak5.body_html` "کسی بھی کرنسی میں 3,000" and "تقریباً 60 ماہانہ" read bare without a currency word, like the English.
 - `wealth.p1_html` "منافع دینے والے سیونگز اکاؤنٹ" (profit, as Pakistani banks say) for "pays interest".
+
+#### Review pass (2026-10-20)
+- AC direction: `rules.utilitiesEfficiency.tips.night` told users to lower the AC temperature (more cooling); now "heater a few degrees lower, AC a few degrees higher". `page.guide.leak1.fix2_html` now says the AC temperature is raised ("درجہ حرارت اتنا ہی بڑھا دیں").
+- AC term: ur.json used "AC" 19 times and "اے سی" 5 times; the 5 (`page.guide.leak1.body_html`, `leak1.fix2_html`, `wealth.p3`, `countryFields.AE.chillerFee.help`) now use "AC". (The guides keep "اے سی", consistent within each guide.)
+- Must-pay bills: `calc.health.emergency.*` and `help.text.emergency` said "ضروری بلوں"; now "لازمی بلوں" like `goals.emergency.*` and the FAQ.
+- "Example budget": "مثالی بجٹ" reads as "ideal budget"; now "نمونے کا بجٹ" in `inputs.toast.sampleLoaded`, `months.toast.sampleNotSaved`, `months.status.sample`, `page.wizard.justLooking_html`, `page.banners.sample_html`; `seo.ogImageAlt` "نمونے کا ایک مہینہ".
+- Profile-name grammar: `page.banners.sample_html`, `inputs.toast.sampleLoaded` and `dashboard.categories.basisIncome`/`basisIncomeApprox` reworded so `{profile}` stands alone (after a colon or in brackets) instead of before "کے لیے"/"کے مقابلے میں"; `page.banners.sampleTip_html` (static text) uses the oblique "گھرانے والی مثال".
+- English left by mistake, now Urdu (Latin kept in brackets where it is the local term): co-payment (`countryFields.BR.planoSaude.help`), retention → "ریٹینشن", rebates → "رعایتیں (rebates)" (`ca-home-energy-rebates`), money-market → "منی مارکیٹ فنڈ", off-peak → "آف پیک", energy ombudsman → "توانائی کے قومی محتسب (ombudsman)", ride-hailing → "آن لائن ٹیکسی", extras → "ایکسٹراز" (`au-health-cover-review`, as in `countryFields.AU.privateHealth.help`), "ہیٹ" → "ہیٹنگ" (`ca-home-energy-rebates.tips.2`).
+- Guides: first-salary-budget used "بلا سوچے خرچ" for impulse spending, now "بے سوچے خریداری" as in the stop-impulse-spending guide and the site; "غیر منصوبہ" → "غیر منصوبہ بند" (stop-impulse-spending ×4, family-grocery-budget ×1); family-grocery-budget "ضرورتوں والے حصے" → "لازمی خرچ والے حصے" (as in the 50/30/20 guide).
+- Open questions for a native reviewer are collected in REVIEW_URDU.md at the repo root.
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 
@@ -1405,7 +1441,7 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - "Lifestyle creep" → "آہستہ آہستہ بڑھتا رہن سہن"; no common Urdu term.
 - "buy now, pay later" → "ابھی خریدیں، بعد میں ادا کریں", as in ur.md.
 - "spaces" banking feature kept as "اسپیسز" in quotes; few Pakistani bank apps use this name.
-- "impulse spending" → "بلا سوچے خرچ"; check against whatever title the stop-impulse-spending Urdu guide uses.
+- (fixed) "impulse spending" now "بے سوچے خریداری", matching the stop-impulse-spending Urdu guide and the site.
 
 ### Urdu: student-budget
 

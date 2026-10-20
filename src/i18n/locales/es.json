@@ -39,9 +39,9 @@
       "noun": "luz y gas",
       "title": "Pequeños hábitos para ahorrar energía",
       "why": "Lo mostramos porque tu gasto en luz y gas ({amount}) supera lo habitual para {group} ({threshold}).",
-      "evidence": "Bajar la calefacción o el aire por la noche, apagar los aparatos en espera y usar bombillas LED suele reducir",
+      "evidence": "Usar menos la calefacción o el aire acondicionado por la noche, apagar los aparatos en espera y usar bombillas LED suele reducir",
       "tips": {
-        "night": "Baja unos grados la calefacción o el aire acondicionado por la noche y cuando no estés en casa.",
+        "night": "Pon la calefacción unos grados más baja, o el aire acondicionado unos grados más alto, por la noche y cuando no estés en casa.",
         "standby": "Apaga del enchufe las teles y los cargadores.",
         "led": "Cambia las bombillas viejas por LED."
       }
@@ -65,7 +65,7 @@
       "why": "Lo mostramos porque tu factura de luz ({amount}) supera lo habitual para {group} ({threshold}).",
       "evidence": "Cada unidad cuesta más al pasar de tramo, así que mantener el consumo justo por debajo del siguiente suele reducir",
       "tips": {
-        "units": "Busca las “unidades consumidas” en tu factura. El precio por unidad sube en cada tramo, así que intenta quedarte justo por debajo del siguiente.",
+        "units": "Busca las «unidades consumidas» en tu factura. El precio por unidad sube en cada tramo, así que intenta quedarte justo por debajo del siguiente.",
         "ac": "Pon el aire acondicionado a 26 °C con un ventilador de techo encendido, y usa el temporizador o el modo eco por la noche.",
         "peak": "Usa la plancha, la lavadora y la bomba de agua fuera de las horas punta."
       }
@@ -75,9 +75,9 @@
       "noun": "luz y gas",
       "title": "Ajustes rápidos para ahorrar energía",
       "why": "Lo mostramos porque tu gasto en luz y gas ({amount}) está cerca de lo habitual. Aun así, algunos pequeños cambios ayudan.",
-      "evidence": "Cambios rápidos como lavar la ropa en frío y usar una alcachofa de ducha de bajo consumo suelen reducir",
+      "evidence": "Cambios rápidos como lavar la ropa en frío y usar una cabezal de ducha de bajo consumo suelen reducir",
       "tips": {
-        "shower": "Pon una alcachofa de ducha que ahorre agua.",
+        "shower": "Pon un cabezal de ducha que ahorre agua.",
         "cold": "Lava la ropa en frío y pon la lavadora solo cuando esté llena.",
         "heater": "Baja un poco la temperatura del calentador de agua."
       }
@@ -166,7 +166,7 @@
       "tips": {
         "plan": "Planifica las comidas de la semana antes de ir a comprar y cíñete a la lista.",
         "localBulk": "Compra los básicos del mes (harina, arroz, aceite, lentejas, azúcar) una vez al mes y al por mayor en un mercado mayorista.",
-        "storeBrand": "Compra la marca de la tienda para lo básico, como arroz, harina y aceite.",
+        "storeBrand": "Compra marca blanca para lo básico, como arroz, harina y aceite.",
         "bigPacks": "Compra en formato grande lo que siempre usas.",
         "freeze": "Cocina de más y congela raciones para otro día."
       }
@@ -400,10 +400,10 @@
       },
       "emergency": {
         "noBills": "Añade tus facturas para que podamos comprobarlo.",
-        "none": "No tienes ahorros apartados para emergencias. Intenta llegar a {target} (3 meses de facturas básicas).",
-        "under3": "Tus ahorros de emergencia cubren {months} meses de facturas básicas. Primero intenta llegar a 3 meses ({target}).",
-        "under6": "Tus ahorros de emergencia cubren {months} meses de facturas básicas. Siguiente meta: 6 meses ({target}).",
-        "done": "Tienes ahorrados 6 meses o más de facturas básicas. Excelente."
+        "none": "No tienes ahorros apartados para emergencias. Intenta llegar a {target} (3 meses de facturas obligatorias).",
+        "under3": "Tus ahorros de emergencia cubren {months} meses de facturas obligatorias. Primero intenta llegar a 3 meses ({target}).",
+        "under6": "Tus ahorros de emergencia cubren {months} meses de facturas obligatorias. Siguiente meta: 6 meses ({target}).",
+        "done": "Tienes ahorrados 6 meses o más de facturas obligatorias. Excelente."
       },
       "wants": {
         "share": "Comer fuera, las compras y las suscripciones se llevan el {pct} de tus ingresos.",
@@ -788,7 +788,7 @@
       "yearly": {
         "name": "Gastos anuales",
         "title": "¿Tienes gastos grandes una vez al año?",
-        "sub": "Fiestas, libros del colegio, reparaciones del coche… Si los repartes a lo largo del año, dejan de pillarte por sorpresa. Sáltalo si no tienes."
+        "sub": "Fiestas, libros del colegio, reparaciones del coche… Si los repartes a lo largo del año, dejan de tomarte por sorpresa. Sáltalo si no tienes."
       }
     }
   },
@@ -809,12 +809,12 @@
       "transit": "Billetes de autobús y tren, viajes en taxi o VTC y peajes en un mes.",
       "carIns": "Seguro del coche al mes. Si lo pagas una vez al año, divide el coste anual entre 12.",
       "carLoan": "La cuota mensual del préstamo o del renting de tu coche.",
-      "school": "Colegio, clases, guardería o canguro al mes.",
+      "school": "Colegio, clases, guardería o niñera al mes.",
       "groceries": "Comida y productos para la casa que compras en tiendas y mercados.",
       "dining": "Restaurantes, cafeterías, comida para llevar y a domicilio.",
       "misc": "Compras que no tenías planeadas: ropa, aparatos, regalos, pedidos online y caprichos.",
       "medical": "Visitas al médico, pruebas y medicinas en un mes normal. Si cambia mucho, usa una media aproximada.",
-      "homeHelp": "Sueldos de una persona que te ayuda en casa: limpieza, cocina, chófer, vigilante o canguro.",
+      "homeHelp": "Sueldos de una persona que te ayuda en casa: limpieza, cocina, chófer, vigilante o niñera.",
       "familySupport": "Dinero que envías habitualmente a tus padres u otros familiares.",
       "giving": "Donativos benéficos y religiosos, como el zakat, el diezmo u ofrendas en tu mezquita, iglesia o templo, como cantidad mensual.",
       "other": "Cualquier gasto mensual habitual que no encaje en las casillas de arriba, como comida para mascotas, el pago de un comité de ahorro o clases particulares.",
@@ -851,7 +851,7 @@
       "inflation": "Los precios suben con el tiempo, así que el mismo dinero compra menos en el futuro. Esto muestra las cantidades futuras en dinero de hoy.",
       "allocation": "Es el dinero que te queda cada mes después de tus facturas y tu plan. Elige cómo repartirlo entre tu fondo de emergencia, tus deudas y tus metas.",
       "goals": "Cosas para las que estás ahorrando. Calculamos cuándo alcanzarás cada una según la parte del ahorro que destinas a metas.",
-      "emergency": "Dinero apartado para imprevistos, como perder el trabajo o reparar el coche. Intenta tener de 3 a 6 meses de facturas básicas.",
+      "emergency": "Dinero apartado para imprevistos, como perder el trabajo o reparar el coche. Intenta tener de 3 a 6 meses de facturas obligatorias.",
       "debtFree": "Cuándo terminarías de pagar tus préstamos: ahora, y si destinas a ellos la parte del ahorro para deudas.",
       "history": "Guarda una foto de tus números cada mes para ver si tus gastos bajan con el tiempo.",
       "customAmount": "Lo que cuesta en un mes normal. Elige «Factura obligatoria» si no puedes saltártelo o «Capricho» si podrías recortarlo."
@@ -1180,9 +1180,7 @@
       "navLabel": "Principal",
       "brand": "Optimizador de Presupuesto",
       "nav": {
-        "calculator": "Calculadora",
-        "tips": "Consejos de dinero",
-        "glossary": "Glosario"
+        "calculator": "Calculadora"
       }
     },
     "hero": {
@@ -1437,7 +1435,7 @@
         "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma y suministros poco eficientes",
         "body_html": "Cada televisor, videoconsola, cafetera y cargador de móvil que se queda enchufado consume un poco de electricidad día y noche. Este «consumo fantasma», también llamado consumo en espera, puede suponer <strong>entre un 5 y un 10% de la factura de luz de un hogar típico</strong>. Si a eso le sumas la calefacción o el aire acondicionado funcionando en una casa vacía, y bombillas antiguas que aún quedan en las lámparas, tu factura de luz carga con mucho peso muerto.",
         "fix1_html": "<strong>Usa regletas con interruptor</strong> en la zona de la tele y en la oficina de casa para que los aparatos que no se usan se apaguen del todo.",
-        "fix2_html": "<strong>Baja la calefacción o sube el aire acondicionado 4–6 °C (7–10 °F)</strong> mientras duermes o estás fuera. Un temporizador o un termostato inteligente puede hacerlo por ti.",
+        "fix2_html": "<strong>Baja la calefacción o sube la temperatura del aire acondicionado 4–6 °C (7–10 °F)</strong> mientras duermes o estás fuera. Un temporizador o un termostato inteligente puede hacerlo por ti.",
         "fix3_html": "<strong>Cambia las bombillas que te queden por LED</strong>, que gastan hasta un 75% menos de energía y duran muchas veces más.",
         "fix4": "Lava la ropa en frío y pon el calentador de agua o termo a unos 50 °C (120 °F)."
       },
@@ -1467,7 +1465,7 @@
       },
       "leak5": {
         "title_html": "<span class=\"num-badge\">5</span>Compras por impulso y deudas con interés alto",
-        "body_html": "El café de cada día, el pedido online a medianoche, la compra porque «estaba de oferta»: las compras por impulso son la fuga más difícil de ver porque nunca llegan en una sola factura. Comprar con un clic y tener la tarjeta guardada eliminan esa pequeña pausa que normalmente frenaría una compra no planeada. Cuando esas compras se quedan en una tarjeta de crédito con un interés alto (la TAE), la fuga crece: un saldo de 3,000 en cualquier moneda al 24% anual cuesta unos <strong>60 al mes solo en intereses</strong>.",
+        "body_html": "El café de cada día, el pedido online a medianoche, la compra porque «estaba de oferta»: las compras por impulso son la fuga más difícil de ver porque nunca llegan en una sola factura. Comprar con un clic y tener la tarjeta guardada eliminan esa pequeña pausa que normalmente frenaría una compra no planeada. Cuando esas compras se quedan en una tarjeta de crédito con un interés alto (la TAE), la fuga crece: un saldo de 3000 en cualquier moneda al 24% anual cuesta unos <strong>60 al mes solo en intereses</strong>.",
         "fix1_html": "<strong>Aplica la regla de las 24 horas:</strong> espera un día entero antes de cualquier compra que no sea imprescindible. La mayoría de los antojos se pasan.",
         "fix2": "Borra los datos de tarjeta guardados en las webs de compras y desactiva las notificaciones de las tiendas.",
         "fix3_html": "<strong>Paga primero la deuda con el interés más alto</strong>: paga el mínimo en todo y destina cada cantidad extra a la deuda con el tipo de interés más alto.",
@@ -1476,7 +1474,7 @@
       "wealth": {
         "title": "Convierte las fugas tapadas en patrimonio real",
         "p1_html": "Tapar fugas solo sirve si el dinero va a algún sitio útil. El paso más potente es <strong>automatizar el ahorro de inmediato</strong>. La misma semana en que reduzcas una factura, programa una transferencia automática por esa misma cantidad a una cuenta de ahorro que dé intereses, a tu fondo de emergencia o a un fondo de inversión de bajo coste. Si el dinero nunca llega a la cuenta que usas a diario, no puede volver a escaparse.",
-        "p2_html": "Las cifras pequeñas se hacen grandes con el tiempo. Destinar 250 al mes (en cualquier moneda) a una inversión que rinda de media un 8% al año se convierte en unos <strong>46,000 en diez años</strong> y en más de <strong>147,000 en veinte</strong>. El crecimiento nunca está garantizado. Usa la calculadora de arriba para probar con tus propios números, añade solo las ideas que encajen con tu vida y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
+        "p2_html": "Las cifras pequeñas se hacen grandes con el tiempo. Destinar 250 al mes (en cualquier moneda) a una inversión que rinda de media un 8% al año se convierte en unos <strong>46 000 en diez años</strong> y en más de <strong>147 000 en veinte</strong>. El crecimiento nunca está garantizado. Usa la calculadora de arriba para probar con tus propios números, añade solo las ideas que encajen con tu vida y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
         "p3": "Empieza con una fuga esta semana. Revisa tus suscripciones esta noche, mira mañana cómo tienes la calefacción o el aire acondicionado y planifica el fin de semana las comidas de la semana que viene. Cada cambio lleva minutos, y el ahorro se repite cada mes."
       }
     },
@@ -1511,7 +1509,7 @@
       },
       "apr": {
         "term": "Tipo de interés (TAE)",
-        "definition": "El coste anual de pedir prestado, en porcentaje. Con una TAE del 30%, deber 100,000 durante un año entero suma unos 30,000 en intereses."
+        "definition": "El coste anual de pedir prestado, en porcentaje. Con una TAE del 30%, deber 100 000 durante un año entero suma unos 30 000 en intereses."
       },
       "compound": {
         "term": "Interés compuesto",
@@ -1531,7 +1529,7 @@
       },
       "lakhCrore": {
         "term": "Lakh y crore",
-        "definition": "Formas de contar cantidades grandes en Pakistán e India. 1 lakh = 100,000. 1 crore = 100 lakh = 10,000,000."
+        "definition": "Formas de contar cantidades grandes en Pakistán e India. 1 lakh = 100 000. 1 crore = 100 lakh = 10 000 000."
       }
     },
     "mobileBar": {
@@ -1565,7 +1563,7 @@
         "Gastos anuales repartidos en cantidades mensuales",
         "Revisión del fondo de emergencia",
         "Fecha en que estarás libre de deudas",
-        "Ocho monedas, con formato en lakh y crore"
+        "13 monedas, con formato en lakh y crore"
       ]
     },
     "faq": {
@@ -2600,7 +2598,7 @@
       "why": "La ducha eléctrica es uno de los aparatos que más consumen en los hogares brasileños, y los meses de bandera roja (bandeira vermelha) añaden un recargo a cada kWh.",
       "evidence": "Ducharse menos tiempo y con la posición de verano suele reducir",
       "tips": {
-        "1": "Pon la ducha en la posición \"verão\" (verano) y limita las duchas a 5–8 minutos.",
+        "1": "Pon la ducha en la posición «verão» (verano) y limita las duchas a 5–8 minutos.",
         "2": "Mira la bandeira en tu factura y usa menos el aire acondicionado y la secadora en los meses de bandera roja.",
         "3": "Pregunta a tu distribuidora si tienes derecho al descuento de la Tarifa Social."
       }
@@ -2684,7 +2682,7 @@
       "why": "Las tarjetas revolving cobran alrededor de un 22–24% TAE, y unas cuotas fijas bajas pueden tenerte endeudado durante años.",
       "evidence": "Liquidar el revolving con un préstamo más barato evita",
       "tips": {
-        "1": "Cambia la tarjeta de \"pago aplazado\" a pagar el saldo completo cada mes.",
+        "1": "Cambia la tarjeta de «pago aplazado» a pagar el saldo completo cada mes.",
         "2": "Pide a tu banco un préstamo personal (alrededor del 7% de media) para liquidar la tarjeta.",
         "3": "Si tu tarjeta cobraba mucho más que la media del mercado cuando la contrataste, pregunta a una asociación de consumidores (OCU, Asufin) si puede ser usuraria."
       }
@@ -2765,7 +2763,7 @@
       "label": "Luz",
       "noun": "luz",
       "title": "Revisa tu potencia de PLN y cómo compras los tokens",
-      "why": "Todos los hogares a partir de 1.300 VA pagan lo mismo, 1.444,70 Rp por kWh, así que el ahorro viene de gastar menos kWh, sobre todo en aire acondicionado y calentadores de agua.",
+      "why": "Todos los hogares a partir de 1300 VA pagan lo mismo, 1444,70 Rp por kWh, así que el ahorro viene de gastar menos kWh, sobre todo en aire acondicionado y calentadores de agua.",
       "evidence": "Usar menos el aire acondicionado y el calentador de agua suele reducir",
       "tips": {
         "1": "Pon el aire acondicionado a 25–26 °C con temporizador y cierra las puertas de la habitación que enfrías.",
@@ -2777,7 +2775,7 @@
       "label": "Billetes y peajes",
       "noun": "billetes y peajes",
       "title": "Combina KRL, TransJakarta y MRT en lugar de ir en ojek cada día",
-      "why": "TransJakarta cuesta 3.500 Rp por viaje y los billetes de KRL empiezan en unos pocos miles de rupias, mucho menos que las apps de transporte para la misma distancia.",
+      "why": "TransJakarta cuesta 3500 Rp por viaje y los billetes de KRL empiezan en unos pocos miles de rupias, mucho menos que las apps de transporte para la misma distancia.",
       "evidence": "Usar KRL, TransJakarta o MRT en los trayectos habituales suele reducir",
       "tips": {
         "1": "Usa el ojek solo para el primer y el último kilómetro hasta la estación.",
@@ -2836,7 +2834,7 @@
     "mx-meses-sin-intereses": {
       "label": "Compras y extras",
       "noun": "compras y extras",
-      "title": "Cuida tus \"meses sin intereses\"",
+      "title": "Cuida tus «meses sin intereses»",
       "why": "Las compras a meses sin intereses parecen gratis, pero varias a la vez comprometen tus próximas quincenas y llevan a pagar solo el mínimo de la tarjeta, donde el interés ronda el 55% anual.",
       "evidence": "Contratar menos compras nuevas a meses suele reducir",
       "tips": {
@@ -2852,7 +2850,7 @@
       "why": "La CFE pasa a los hogares de alto consumo a la tarifa DAC, sin subsidio, según el consumo de 12 meses, y salir de ella exige un año de consumo más bajo. Además, cada bloque por encima del consumo básico cuesta más por kWh.",
       "evidence": "Mantenerse por debajo del límite de la DAC suele reducir",
       "tips": {
-        "1": "Revisa la línea \"Tarifa\" y los bloques de kWh en tu recibo de la CFE.",
+        "1": "Revisa la línea «Tarifa» y los bloques de kWh en tu recibo de la CFE.",
         "2": "Usa el aire acondicionado a 25–26 °C y cambia los refrigeradores y minisplits de más de 10 años por modelos eficientes.",
         "3": "Plancha, lava y usa la bomba de agua fuera de las horas de más calor."
       }
@@ -2956,11 +2954,11 @@
     "sa-6000-kwh": {
       "label": "Luz",
       "noun": "luz",
-      "title": "No pases de 6.000 kWh en los meses de verano",
-      "why": "Los hogares pagan 18 halalas por kWh hasta 6.000 kWh al mes y 30 halalas a partir de ahí, así que en los meses de más calor cada unidad sale mucho más cara en los chalés grandes.",
-      "evidence": "Mantener el consumo de verano por debajo de 6.000 kWh suele reducir",
+      "title": "No pases de 6000 kWh en los meses de verano",
+      "why": "Los hogares pagan 18 halalas por kWh hasta 6000 kWh al mes y 30 halalas a partir de ahí, así que en los meses de más calor cada unidad sale mucho más cara en los chalés grandes.",
+      "evidence": "Mantener el consumo de verano por debajo de 6000 kWh suele reducir",
       "tips": {
-        "1": "Mira tus kWh mensuales en la app de SEC; intenta que los meses de más consumo no pasen de 6.000.",
+        "1": "Mira tus kWh mensuales en la app de SEC; intenta que los meses de más consumo no pasen de 6000.",
         "2": "Pon los splits a 24 °C y apaga el aire acondicionado en las habitaciones vacías y en el majlis.",
         "3": "Da sombra a las ventanas que miran al oeste y revisa los aires acondicionados antes del verano."
       }

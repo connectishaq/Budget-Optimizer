@@ -10,7 +10,7 @@ Pakistani Urdu, written in Nastaliq/Arabic script and shown right-to-left. I use
 - `profiles.*.group` is in the oblique plural (e.g. "شہر کے کرایہ داروں") because it is always followed by "کے" ("{group} کے عام خرچ"، "{group} کے لیے").
 - `payday.dayOfMonth` is "مہینے کی {day}{suffix}". Every `payday.ordinal.*` is " تاریخ", so the result reads "مہینے کی 5 تاریخ". Urdu has no st/nd/rd/th suffixes.
 - `historyEngine.alerts.*` is phrased as "{label} میں … اضافہ/کمی", so it works for any label regardless of gender or number. The Singular and Plural variants are therefore identical.
-- `page.banners.sample_html` and `dashboard.categories.basisIncome` insert the profile name as it is (direct case, e.g. "…گھرانہ کے لیے"). A purist would use the oblique form ("گھرانے"), but that can't be done with a placeholder. It's acceptable but slightly unnatural.
+- (fixed) `page.banners.sample_html` and `dashboard.categories.basisIncome` insert the profile name as it is (direct case, e.g. "…گھرانہ کے لیے"). A purist would use the oblique form ("گھرانے"), but that can't be done with a placeholder. It's acceptable but slightly unnatural.
 - `inputs.housing.no` and `inputs.subs.rarely` use "دیتا/دیتی" and "کرتا/کرتی" to cover both genders, because first-person verbs in Urdu are gendered.
 - `dashboard.split.ofIncome_html`: the tag order is fixed (`{pct}` first, then the text), so it reads "{pct} آمدنی کا". This is understandable but terse.
 - `page.growth.extra_html`: the text now comes after the `<span id="fvYears">` (the span itself is unchanged) so the Urdu word order works.
@@ -74,7 +74,17 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 ## Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the guide note above about keeping $ amounts is superseded (plain "250"، "46,000"، Celsius first).
 - `leak1.fix1_html` "سوئچ والے ایکسٹینشن بورڈ" for switched power strips (everyday Pakistani term).
-- `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
+- (fixed) `leak1.fix2_html` / `wealth.p3` render "heating / air conditioning" as "ہیٹر / اے سی"; "اے سی اتنا ہی زیادہ کر دیں" means raise the AC temperature — could be misread as more cooling.
 - `leak4.fix4_html` "زیادہ ایکسیس (ڈیڈکٹیبل)": rare concept in Pakistan, kept as loan words.
 - `leak5.body_html` "کسی بھی کرنسی میں 3,000" and "تقریباً 60 ماہانہ" read bare without a currency word, like the English.
 - `wealth.p1_html` "منافع دینے والے سیونگز اکاؤنٹ" (profit, as Pakistani banks say) for "pays interest".
+
+## Review pass (2026-10-20)
+- AC direction: `rules.utilitiesEfficiency.tips.night` told users to lower the AC temperature (more cooling); now "heater a few degrees lower, AC a few degrees higher". `page.guide.leak1.fix2_html` now says the AC temperature is raised ("درجہ حرارت اتنا ہی بڑھا دیں").
+- AC term: ur.json used "AC" 19 times and "اے سی" 5 times; the 5 (`page.guide.leak1.body_html`, `leak1.fix2_html`, `wealth.p3`, `countryFields.AE.chillerFee.help`) now use "AC". (The guides keep "اے سی", consistent within each guide.)
+- Must-pay bills: `calc.health.emergency.*` and `help.text.emergency` said "ضروری بلوں"; now "لازمی بلوں" like `goals.emergency.*` and the FAQ.
+- "Example budget": "مثالی بجٹ" reads as "ideal budget"; now "نمونے کا بجٹ" in `inputs.toast.sampleLoaded`, `months.toast.sampleNotSaved`, `months.status.sample`, `page.wizard.justLooking_html`, `page.banners.sample_html`; `seo.ogImageAlt` "نمونے کا ایک مہینہ".
+- Profile-name grammar: `page.banners.sample_html`, `inputs.toast.sampleLoaded` and `dashboard.categories.basisIncome`/`basisIncomeApprox` reworded so `{profile}` stands alone (after a colon or in brackets) instead of before "کے لیے"/"کے مقابلے میں"; `page.banners.sampleTip_html` (static text) uses the oblique "گھرانے والی مثال".
+- English left by mistake, now Urdu (Latin kept in brackets where it is the local term): co-payment (`countryFields.BR.planoSaude.help`), retention → "ریٹینشن", rebates → "رعایتیں (rebates)" (`ca-home-energy-rebates`), money-market → "منی مارکیٹ فنڈ", off-peak → "آف پیک", energy ombudsman → "توانائی کے قومی محتسب (ombudsman)", ride-hailing → "آن لائن ٹیکسی", extras → "ایکسٹراز" (`au-health-cover-review`, as in `countryFields.AU.privateHealth.help`), "ہیٹ" → "ہیٹنگ" (`ca-home-energy-rebates.tips.2`).
+- Guides: first-salary-budget used "بلا سوچے خرچ" for impulse spending, now "بے سوچے خریداری" as in the stop-impulse-spending guide and the site; "غیر منصوبہ" → "غیر منصوبہ بند" (stop-impulse-spending ×4, family-grocery-budget ×1); family-grocery-budget "ضرورتوں والے حصے" → "لازمی خرچ والے حصے" (as in the 50/30/20 guide).
+- Open questions for a native reviewer are collected in REVIEW_URDU.md at the repo root.

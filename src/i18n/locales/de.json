@@ -1151,9 +1151,7 @@
       "navLabel": "Hauptmenü",
       "brand": "Budget Optimizer",
       "nav": {
-        "calculator": "Rechner",
-        "tips": "Spartipps",
-        "glossary": "Begriffe"
+        "calculator": "Rechner"
       }
     },
     "hero": {

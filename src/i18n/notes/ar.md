@@ -119,7 +119,15 @@ verbatim where the policy refers to it.
 ## Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the note above about keeping US figures is superseded (plain «250»، «46,000»، Celsius first).
 - `leak1.fix1_html` «مشترك كهرباء بمفتاح» for a switched power strip; «توصيلة كهرباء بمفتاح» is a Gulf colloquial alternative.
-- `leak1.fix2_html` «ارفع حرارة التكييف» (set the AC warmer) for "air conditioning up"; could be misread as "turn the AC up (colder)" — check.
+- (fixed) `leak1.fix2_html` now «اضبط المكيّف على درجة حرارة أعلى» (set the AC warmer) for "air conditioning up"; see Review pass.
 - `leak4.fix4_html` "excess (deductible)" rendered once as «مبلغ التحمّل» without a second synonym.
 - `leak5.body_html` «رصيد 3,000 بأي عملة» and «60 شهريًا» read bare without a currency name, like the English; «فائدة» kept (Islamic banks would say «ربح»).
 - `wealth.p1_html` «حساب ادخار يمنح عائدًا» for "savings account that pays interest" (avoids «فائدة» for Gulf readers); «حسابك البنكي اليومي» for everyday bank account (alt. «حسابك الجاري»).
+
+## Review pass (2026-10-20)
+- `page.guide.leak1.fix2_html`: «ارفع حرارة التكييف» → «اضبط المكيّف على درجة حرارة أعلى» (raise the AC setting = less cooling, not colder).
+- `rules.utilitiesEfficiency.tips.night`: «اخفض التدفئة أو المكيّف بضع درجات» read as "make the AC colder"; now heating lower / AC set a few degrees warmer.
+- `calc.health.emergency.under3/under6/done/none`, `help.text.emergency`: "essential bills" «الفواتير الأساسية» → «الفواتير التي لا بد منها», the term used for must-pay bills everywhere else (5 messages).
+- `ar-sa` `guide.intro1_html`: colloquial «أونلاين» → «عبر الإنترنت» (MSA, as in the rest of the file).
+- Checked, no change needed: digits/separators (Western digits, comma thousands, °C first with °F only in brackets), emergency fund, take-home pay, nice-to-haves, subscriptions, Latin words (all brand, code or local names).
+- Left for a native reviewer: brand in `about.seo.*` still Latin «Household Budget Optimizer» (kept as requested) vs «مُحسِّن ميزانية الأسرة» on other pages; `{months} شهر` / `{years} سنة` with small numbers (needs plural messages in code); «درجة الصحة المالية» vs «درجة صحة الميزانية» follows the English "health score" / "budget health score" split; Islamic-finance wording (فائدة/ربح) and the regional alternatives above.

@@ -1122,9 +1122,7 @@
       "navLabel": "Utama",
       "brand": "Budget Optimizer",
       "nav": {
-        "calculator": "Kalkulator",
-        "tips": "Tips keuangan",
-        "glossary": "Daftar istilah"
+        "calculator": "Kalkulator"
       }
     },
     "hero": {
