@@ -1,6 +1,7 @@
 // Builds the money guides from src/i18n/guides/<lang>/<slug>.json, in the
 // site's article style, using the built /guides/ page as the template (header,
-// footer, styles and scripts). Called by vite.config.js after the build.
+// footer, styles and scripts). Called by vite.config.js after the build, and by
+// the dev server for each guide address.
 //
 // English: /guides/ and /guides/<slug>/. Other live languages listed in
 // src/i18n/guide-langs.js (Urdu: /ur-pk/guides/…) get the same pages, built
@@ -164,20 +165,27 @@ function setHead(doc, { title, description, lang, siteUrl, path: pagePath, alter
 
 /** Writes every guide page into outDir. Returns the paths written. */
 export function buildGuides({ root, outDir, siteUrl }) {
-  const templateFile = path.join(outDir, 'guides', 'index.html');
-  const template = fs.readFileSync(templateFile, 'utf8');
+  const template = fs.readFileSync(path.join(outDir, 'guides', 'index.html'), 'utf8');
+  const pages = renderGuides({ root, template, siteUrl });
+  for (const [pagePath, html] of pages) {
+    const dir = path.join(outDir, ...pagePath.split('/').filter(Boolean));
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
+  }
+  return [...pages.keys()];
+}
+
+/**
+ * Every guide page as HTML, keyed by path ("/guides/", "/ur-pk/guides/x/"),
+ * from the /guides/ page as template (built, or the dev server's version).
+ */
+export function renderGuides({ root, template, siteUrl }) {
   const en = readJson(path.join(root, 'src/i18n/locales/en.json'));
   const all = Object.fromEntries(Object.keys(GUIDE_BASES).map((l) => [l, loadGuides(root, l)]));
   const today = new Date().toISOString().slice(0, 10);
   const org = { '@type': 'Organization', name: 'Household Budget Optimizer' };
-  const written = [];
-
-  const write = (pagePath, doc) => {
-    const dir = path.join(outDir, ...pagePath.split('/').filter(Boolean));
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), doc.toString());
-    written.push(pagePath);
-  };
+  const written = new Map();
+  const write = (pagePath, doc) => written.set(pagePath, doc.toString());
 
   for (const [lang, base] of Object.entries(GUIDE_BASES)) {
     const guides = all[lang];

@@ -6,7 +6,8 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { prerenderLocales, alternateLinks, sitemapXml, fillFigures } from './scripts/prerender-locales.mjs';
 import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
-import { buildGuides, guideSitemapPages } from './scripts/build-guides.mjs';
+import { buildGuides, renderGuides, guideSitemapPages } from './scripts/build-guides.mjs';
+import { GUIDE_BASES } from './src/i18n/guide-langs.js';
 import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -29,6 +30,27 @@ function siteConfig(env) {
     configResolved(config) {
       outDir = path.resolve(config.root, config.build.outDir);
       isBuild = config.command === 'build' && !process.env.VITEST;
+    },
+    configureServer(server) {
+      // The guides are made after the build (closeBundle), so the dev server
+      // renders them on request from the same code: /guides/, /guides/<slug>/,
+      // /ur-pk/guides/…
+      const bases = Object.values(GUIDE_BASES).map((b) => b.slice(0, -1));
+      server.middlewares.use(async (req, res, next) => {
+        const url = (req.url || '').split(/[?#]/)[0].replace(/index\.html$/, '');
+        if (req.method !== 'GET' || !bases.some((b) => url === b || url.startsWith(`${b}/`))) return next();
+        try {
+          const raw = fs.readFileSync(path.resolve(__dirname, 'guides/index.html'), 'utf8');
+          const template = await server.transformIndexHtml('/guides/index.html', raw, req.originalUrl);
+          const pagePath = url.endsWith('/') ? url : `${url}/`;
+          const html = renderGuides({ root: __dirname, template, siteUrl }).get(pagePath);
+          if (!html) return next();
+          res.setHeader('Content-Type', 'text/html; charset=utf-8');
+          res.end(html);
+        } catch (err) {
+          next(err);
+        }
+      });
     },
     transformIndexHtml(html, ctx) {
       // "/privacy-policy/index.html" -> "/privacy-policy/"; the home page is "/"
