@@ -1514,7 +1514,7 @@
       "colBill": "Posten",
       "colAim": "Jetzt → Ziel",
       "total": "Ausgaben gesamt",
-      "note": "Kreditraten, Versicherungen, Schulgebühren und jährliche Kosten bleiben, wie sie sind. Diese Grenzen sind ein Anfang: Verschiebe Geld zwischen ihnen so, wie es zu deinem Haushalt passt."
+      "bigger": "Größere Änderungen, um die Lücke zu schließen"
     }
   },
   "seo": {
@@ -1613,7 +1613,7 @@
     },
     "over": {
       "fixed_html": "<strong class=\"font-semibold\">Du gibst mehr aus, als du verdienst</strong>, und zwar {gap}{per}. Die Ideen in deinem Plan würden das beheben und {left}{per} übrig lassen.",
-      "stillShort_html": "<strong class=\"font-semibold\">Du gibst mehr aus, als du verdienst</strong>, und zwar {gap}{per}. Die Ideen in deinem Plan verringern die Lücke auf {left}{per}. Schalte mehr Ideen ein oder schau dir Wohnen und Kredite an."
+      "stillShort_html": "<strong class=\"font-semibold\">Du gibst mehr aus, als du verdienst</strong>, und zwar {gap}{per}. Die Ideen in deinem Plan verringern die Lücke auf {left}{per}. Schalte mehr Ideen ein und sieh dir unten den Plan an, der zu deinem Einkommen passt."
     },
     "split": {
       "needs": "Pflichtausgaben",
@@ -1644,20 +1644,58 @@
     },
     "balance": {
       "intro": {
-        "over": "Deine Rechnungen betragen {spend}{per}, also {gap} mehr, als du verdienst. Diese Grenzen bringen deine Ausgaben unter dein Einkommen und sollen {pct} % davon zum Sparen übrig lassen.",
+        "over": "Deine Rechnungen betragen {spend}{per}, also {gap} mehr, als du verdienst. Hier siehst du, wie weit realistische Kürzungen dich bringen, mit dem Ziel, weniger auszugeben, als du verdienst, und {pct} % zu sparen.",
         "low": "Du gibst {spend}{per} von deinen {income} Einkommen aus, also bleibt kaum etwas zum Sparen. Diese Grenzen sollen {pct} % deines Einkommens zum Sparen übrig lassen."
       },
       "reason": {
-        "typical": "Höher als üblich: senken",
-        "want": "Nicht nötig: vorerst kürzen",
-        "trim": "Kleine Kürzung",
-        "big": "Größere Änderung: einplanen"
+        "times": "{times}× so viel wie üblich für {group} ({range}).",
+        "over": "Über dem üblichen Bereich von {range} für {group}.",
+        "check": "Bitte prüf, ob dieser Betrag stimmt.",
+        "want": "Nicht nötig, darum kann es stärker sinken als andere Rechnungen.",
+        "trim": "Notwendig, darum nur eine kleine, realistische Kürzung.",
+        "big": "Die Miete kostet {pct} % deines Einkommens. Das ist eine größere Änderung: Plane sie für das Ende deines Mietvertrags."
+      },
+      "how": "So geht’s:",
+      "tips": {
+        "dining": "Gönn dir einen Abend pro Woche mit Essen zum Mitnehmen, koch am Wochenende auf Vorrat und bezahl Essen gehen mit einem festen Wochenbetrag in bar.",
+        "misc": "Warte 24 Stunden vor jedem Kauf, der nicht nötig ist, lösche gespeicherte Kartendaten aus Shopping-Apps und melde dich von Rabatt-Newslettern ab.",
+        "other": "Schau dir an, woraus dieser Betrag besteht, und streich oder verschieb, was ein paar Monate warten kann.",
+        "groceries": "Plan die Mahlzeiten der Woche, kauf einmal pro Woche mit Einkaufsliste ein, nimm Grundnahrungsmittel in Großpackungen und als Eigenmarke, und verbrauch Reste, bevor du Neues kaufst.",
+        "electricity": "Stell die Klimaanlage auf 24–26 °C, schalte Geräte ganz aus statt auf Stand-by, nutze LED-Lampen und lass Waschmaschine und Trockner nur voll beladen laufen.",
+        "electricityLocal": "Bleib mit deinen monatlichen Einheiten unter der nächsten Tarifstufe: Klimaanlage auf 26 °C und eine Stunde weniger am Tag, LED-Lampen, und schalte Wasserpumpe und Geyser aus, wenn du sie nicht brauchst.",
+        "waterGas": "Repariere tropfende Wasserhähne und Toiletten, dusch kürzer heiß, wasch nur volle Ladungen und koch mit Deckel und Schnellkochtopf.",
+        "waterGasLocal": "Stell den Geyser niedriger oder auf eine Zeitschaltuhr, repariere Lecks, koch mit Schnellkochtopf und Deckel, und prüf die Rechnung auf geschätzte oder falsche Zählerstände.",
+        "internet": "Wechsle zu einem günstigeren Tarif, kündige Anschlüsse oder Extras, die niemand nutzt, und frag deinen Anbieter nach dem aktuellen Angebot für Bestandskunden.",
+        "fuel": "Bündle Erledigungen in einer Fahrt, bilde Fahrgemeinschaften zur Arbeit oder Schule, halte den Reifendruck richtig und fahr gleichmäßig.",
+        "fuelLocal": "Bündle Erledigungen in einer Fahrt, teil Fahrten zur Arbeit oder Schule, halte den Reifendruck richtig und den Motor gut eingestellt, und nimm für kurze Strecken Motorrad oder Rikscha.",
+        "transit": "Kauf eine Monatskarte statt Einzeltickets, teil Fahrten und geh kurze Strecken zu Fuß oder fahr Rad.",
+        "homeHelp": "Vereinbare für ein paar Monate weniger Stunden oder Tage pro Woche, oder teil dir eine Haushaltshilfe mit Nachbarn.",
+        "homeHelpLocal": "Vereinbare für ein paar Monate weniger Tage pro Woche oder eine Aufgabe weniger (zum Beispiel den Koch nur fürs Abendessen), oder teil dir eine Haushaltshilfe mit Nachbarn.",
+        "familySupport": "Sprich mit deiner Familie und vereinbart für ein paar Monate einen kleineren, festen Betrag, bis dein eigenes Budget wieder ausgeglichen ist.",
+        "carIns": "Vergleiche Angebote vor der Verlängerung und frag nach einem Schadenfreiheitsrabatt. Behalte den gesetzlich vorgeschriebenen Schutz.",
+        "homeIns": "Vergleiche Angebote vor der Verlängerung und prüf, ob du für Schutz zahlst, den du nicht brauchst.",
+        "rent": "Such vor der Vertragsverlängerung eine günstigere Wohnung oder jemanden, der mit dir wohnt, oder bitte deinen Vermieter um eine niedrigere Miete gegen einen längeren Mietvertrag.",
+        "subscriptions": "Kündige alles, was du im letzten Monat nicht genutzt hast, und behalte nur einen Streamingdienst gleichzeitig. Wechsle alle paar Monate.",
+        "generatorFuel": "Lass den Generator nur für das Nötigste laufen, nutze die USV für Licht und Ventilatoren und lass ihn warten, damit er weniger Sprit verbraucht.",
+        "committee": "Ein Committee ist Sparen, keine Ausgabe. Wenn die Rate gerade zu hoch ist, steig nach dieser Runde in ein kleineres ein.",
+        "customNeed": "Frag nach einer günstigeren Option oder zahl ein paar Monate lang einen kleineren Betrag.",
+        "customWant": "Das ist nicht nötig: Schränk es ein paar Monate lang ein."
       },
       "result": {
         "reached": "Mit diesen Grenzen gibst du {spend}{per} aus und hast {save} zum Sparen übrig.",
-        "under": "Mit diesen Grenzen gibst du {spend}{per} aus und hast noch {save} übrig. Um 10 % zu sparen, bräuchtest du etwa {more}{per} mehr Einkommen oder eine größere Änderung, etwa eine günstigere Wohnung oder einen abbezahlten Kredit.",
-        "short": "Selbst mit diesen Grenzen fehlen dir {short}{per}. Um unter dein Einkommen zu kommen und zusätzlich 10 % zu sparen, bräuchtest du etwa {more}{per} mehr Einkommen oder eine größere Änderung, etwa eine günstigere Wohnung, ein günstigeres Auto oder einen abbezahlten Kredit."
-      }
+        "under": "Mit diesen Grenzen gibst du {spend}{per} aus und hast noch {save} übrig. Mit den größeren Änderungen unten kannst du 10 % sparen.",
+        "short": "Selbst mit diesen Grenzen fehlen dir {short}{per}. Rechnungen kürzen allein reicht also nicht. Die größeren Änderungen unten können die Lücke schließen."
+      },
+      "bigger": {
+        "housing": "Wohnen: Die Miete beträgt {amount}{per}, also {pct} % deines Einkommens. In etwas Günstigeres umziehen, mit anderen teilen oder ein Zimmer untervermieten ist die größte einzelne Änderung.",
+        "loans": "Kredite: {amount}{per} gehen in Kreditraten. Bitte deinen Kreditgeber, die Laufzeit zu verlängern, damit die Rate sinkt, zahl zuerst den Kredit mit dem höchsten Zins ab und nimm vorerst keine neuen Kredite auf.",
+        "car": "Auto: Mit Sprit, Versicherung und einem eventuellen Kredit kostet es etwa {amount}{per}. Wenn du ohne auskommst oder auf ein günstigeres, sparsameres umsteigst, wird jeden Monat Geld frei.",
+        "school": "Schulgeld: {amount}{per}. Frag die Schule nach Ratenzahlung, Geschwisterrabatt oder einem Stipendium.",
+        "yearly": "Jährliche Kosten: Du legst dafür {amount}{per} zurück. Verschieb oder verkleinere die, die ein Jahr warten können.",
+        "income": "Mehr verdienen: Etwa {amount}{per} mehr würden die Lücke schließen und 10 % zum Sparen übrig lassen. Mehr Stunden, Überstunden, ein Nebenjob, Freelancing oder Nachhilfe helfen."
+      },
+      "kept": "Unverändert: {list}.",
+      "startingPoint": "Diese Grenzen sind ein Ausgangspunkt: Verschieb Geld zwischen ihnen so, wie es zu deinem Haushalt passt."
     }
   },
   "common": {

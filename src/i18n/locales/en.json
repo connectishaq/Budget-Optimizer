@@ -1503,7 +1503,7 @@
       "colBill": "Bill",
       "colAim": "Now → aim for",
       "total": "Total spending",
-      "note": "Loan payments, insurance, school fees and once-a-year costs stay as they are. These limits are a starting point: move money between them in whatever way suits your household."
+      "bigger": "Bigger changes to close the gap"
     }
   },
   "seo": {
@@ -1602,7 +1602,7 @@
     },
     "over": {
       "fixed_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan would fix this and leave {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan bring the gap down to {left}{per}. Switch on more ideas, or look at housing and loans."
+      "stillShort_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan bring the gap down to {left}{per}. Switch on more ideas, and see the plan below that fits your income."
     },
     "split": {
       "needs": "Must-pay bills",
@@ -1633,20 +1633,58 @@
     },
     "balance": {
       "intro": {
-        "over": "Your bills come to {spend}{per}, {gap} more than you earn. These limits bring your spending under your income and aim to leave {pct}% of it to save.",
+        "over": "Your bills come to {spend}{per}, {gap} more than you earn. Here is how far realistic cuts can take you, aiming to spend less than you earn and keep {pct}% of it to save.",
         "low": "You spend {spend}{per} of your {income} income, so very little is left to save. These limits aim to leave {pct}% of your income to save."
       },
       "reason": {
-        "typical": "Higher than typical: bring it down",
-        "want": "Nice-to-have: cut back for now",
-        "trim": "Small trim",
-        "big": "Bigger change: worth planning for"
+        "times": "{times}× the typical amount for {group} ({range}).",
+        "over": "Above the typical {range} for {group}.",
+        "check": "Please check this amount is right.",
+        "want": "A nice-to-have, so it can drop more than other bills.",
+        "trim": "A need, so only a small, realistic trim.",
+        "big": "Rent takes {pct}% of your income. This is a bigger change: plan it for when your lease ends."
+      },
+      "how": "How:",
+      "tips": {
+        "dining": "Pick one takeaway night a week, cook in batches at the weekend, and pay for eating out from a fixed weekly amount in cash.",
+        "misc": "Wait 24 hours before any buy that isn’t essential, delete saved cards from shopping apps, and unsubscribe from sale emails.",
+        "other": "Go through what makes up this amount, and drop or delay what can wait a few months.",
+        "groceries": "Plan the week’s meals, shop once a week with a list, buy staples in bulk and store brands, and use up leftovers before buying more.",
+        "electricity": "Set the AC to 24–26°C, switch devices off at the wall, use LED bulbs, and only run the washing machine and dryer with full loads.",
+        "electricityLocal": "Keep your monthly units under the next tariff slab: run the AC at 26°C and an hour less a day, use LED bulbs, and switch off the water motor and geyser when they aren’t needed.",
+        "waterGas": "Fix leaking taps and toilets, take shorter hot showers, wash full loads, and cook with lids on and a pressure cooker.",
+        "waterGasLocal": "Turn the geyser down or put it on a timer, fix leaks, cook with a pressure cooker and lids on, and check the bill for an estimated or wrong reading.",
+        "internet": "Move to a cheaper package, drop lines or add-ons nobody uses, and ask your provider for its current offer for existing customers.",
+        "fuel": "Combine errands into one trip, carpool to work or school, keep the tyres pumped, and drive at a steady speed.",
+        "fuelLocal": "Combine errands into one trip, share rides to work or school, keep the tyres pumped and the engine tuned, and use a motorbike or rickshaw for short trips.",
+        "transit": "Buy a monthly pass instead of single tickets, share rides, and walk or cycle short trips.",
+        "homeHelp": "Agree fewer hours or days a week for a few months, or share a helper with a neighbour.",
+        "homeHelpLocal": "Agree fewer days a week or one task less (for example the cook for dinner only) for a few months, or share a helper with a neighbour.",
+        "familySupport": "Talk to your family and agree a smaller, steady amount for a few months, until your own budget is back in balance.",
+        "carIns": "Compare quotes before renewal and ask about a no-claims discount. Keep the cover the law requires.",
+        "homeIns": "Compare quotes before renewal, and check you aren’t paying for cover you don’t need.",
+        "rent": "Look for a cheaper home or a flatmate before your lease renews, or ask your landlord for a lower rent in return for a longer lease.",
+        "subscriptions": "Cancel anything you haven’t used in the last month, and keep one streaming service at a time, switching every few months.",
+        "generatorFuel": "Run the generator only for essential loads, use the UPS for lights and fans, and get it serviced so it uses less fuel.",
+        "committee": "A committee is saving, not spending, but if the payment is too big right now, join a smaller one when this round ends.",
+        "customNeed": "Ask for a cheaper option, or pay a smaller amount for a few months.",
+        "customWant": "This is a nice-to-have: cut back on it for a few months."
       },
       "result": {
         "reached": "With these limits you’d spend {spend}{per} and have {save} left to save.",
-        "under": "With these limits you’d spend {spend}{per} and still have {save} left. To save 10%, you’d need about {more}{per} more income, or a bigger change such as cheaper housing or paying off a loan.",
-        "short": "Even with these limits you’d be {short}{per} short. To get under your income and also save 10%, you’d need about {more}{per} more income, or a bigger change such as cheaper housing, a cheaper car or paying off a loan."
-      }
+        "under": "With these limits you’d spend {spend}{per} and still have {save} left. The bigger changes below would take you to saving 10%.",
+        "short": "Even with these limits you’d be {short}{per} short, so cutting bills alone isn’t enough. The bigger changes below can close the gap."
+      },
+      "bigger": {
+        "housing": "Housing: rent is {amount}{per}, {pct}% of your income. Moving somewhere cheaper, sharing, or renting out a room is the biggest single change.",
+        "loans": "Loans: {amount}{per} goes to loan payments. Ask your lender to stretch the loan over a longer term to lower the payment, pay off the highest-interest one first, and take no new loans for now.",
+        "car": "Car: with fuel, insurance and any loan it costs about {amount}{per}. If you could manage without it, or switch to a cheaper, more fuel-efficient one, that frees money every month.",
+        "school": "School fees: {amount}{per}. Ask the school about paying in instalments, a sibling discount or a scholarship.",
+        "yearly": "Once-a-year costs: you set aside {amount}{per} for them. Postpone or scale down the ones that can wait a year.",
+        "income": "Earn more: about {amount}{per} more would cover the gap and leave 10% to save. Extra hours, overtime, a side job, freelancing or tutoring all help."
+      },
+      "kept": "Left as they are: {list}.",
+      "startingPoint": "These limits are a starting point: move money between them in whatever way suits your household."
     }
   },
   "common": {

@@ -1543,7 +1543,7 @@
       "colBill": "Conta",
       "colAim": "Agora → meta",
       "total": "Gasto total",
-      "note": "Parcelas de empréstimos, seguros, mensalidades escolares e custos anuais continuam como estão. Estes limites são um ponto de partida: mova dinheiro entre eles como for melhor para a sua casa."
+      "bigger": "Mudanças maiores para fechar a diferença"
     }
   },
   "seo": {
@@ -1644,7 +1644,7 @@
     },
     "over": {
       "fixed_html": "<strong class=\"font-semibold\">Você gasta mais do que ganha</strong>: {gap}{per} a mais. As ideias do seu plano resolveriam isso e deixariam uma sobra de {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">Você gasta mais do que ganha</strong>: {gap}{per} a mais. As ideias do seu plano reduzem a diferença para {left}{per}. Ative mais ideias ou olhe para moradia e empréstimos."
+      "stillShort_html": "<strong class=\"font-semibold\">Você gasta mais do que ganha</strong>: {gap}{per} a mais. As ideias do seu plano reduzem a diferença para {left}{per}. Ative mais ideias e veja abaixo o plano que cabe na sua renda."
     },
     "split": {
       "needs": "Contas obrigatórias",
@@ -1675,20 +1675,58 @@
     },
     "balance": {
       "intro": {
-        "over": "Suas contas somam {spend}{per}, {gap} a mais do que você ganha. Estes limites colocam seus gastos abaixo da sua renda e buscam deixar {pct}% dela para guardar.",
+        "over": "Suas contas somam {spend}{per}, {gap} a mais do que você ganha. Veja até onde cortes realistas podem levar você, com a meta de gastar menos do que ganha e guardar {pct}%.",
         "low": "Você gasta {spend}{per} da sua renda de {income}, então sobra muito pouco para guardar. Estes limites buscam deixar {pct}% da sua renda para guardar."
       },
       "reason": {
-        "typical": "Acima do normal: reduza",
-        "want": "Não essencial: corte por enquanto",
-        "trim": "Pequeno corte",
-        "big": "Mudança maior: vale planejar"
+        "times": "{times}× o valor comum para {group} ({range}).",
+        "over": "Acima da faixa comum de {range} para {group}.",
+        "check": "Confira se este valor está certo.",
+        "want": "Não é essencial, então pode cair mais do que as outras contas.",
+        "trim": "É essencial, então só um corte pequeno e realista.",
+        "big": "O aluguel leva {pct}% da sua renda. Esta é uma mudança maior: planeje para quando o contrato terminar."
+      },
+      "how": "Como:",
+      "tips": {
+        "dining": "Escolha uma noite de delivery por semana, cozinhe em quantidade no fim de semana e pague as refeições fora com um valor fixo semanal em dinheiro.",
+        "misc": "Espere 24 horas antes de qualquer compra que não seja essencial, remova os cartões salvos dos apps de compras e cancele os e-mails de promoção.",
+        "other": "Veja o que compõe este valor e corte ou adie o que pode esperar alguns meses.",
+        "groceries": "Planeje as refeições da semana, vá ao mercado uma vez por semana com lista, compre o básico em quantidade e de marca própria, e use as sobras antes de comprar mais.",
+        "electricity": "Deixe o ar-condicionado entre 24 e 26 °C, desligue os aparelhos da tomada, use lâmpadas LED e só ligue a máquina de lavar e a secadora com carga cheia.",
+        "electricityLocal": "Mantenha o consumo do mês abaixo da próxima faixa de tarifa: use o ar-condicionado a 26 °C e uma hora a menos por dia, use lâmpadas LED e desligue a bomba d’água e o aquecedor de água quando não forem necessários.",
+        "waterGas": "Conserte torneiras e descargas vazando, tome banhos quentes mais curtos, lave com carga cheia e cozinhe com tampa e panela de pressão.",
+        "waterGasLocal": "Baixe o aquecedor de água ou use um timer, conserte vazamentos, cozinhe com panela de pressão e tampa, e confira se a conta não veio com leitura estimada ou errada.",
+        "internet": "Mude para um plano mais barato, cancele linhas ou extras que ninguém usa e peça à operadora a oferta atual para quem já é cliente.",
+        "fuel": "Junte as tarefas numa só saída, divida carona para o trabalho ou a escola, mantenha os pneus calibrados e dirija em velocidade constante.",
+        "fuelLocal": "Junte as tarefas numa só saída, divida carona para o trabalho ou a escola, mantenha os pneus calibrados e o motor regulado, e use moto ou riquixá para trajetos curtos.",
+        "transit": "Compre um passe mensal em vez de passagens avulsas, divida corridas e faça trajetos curtos a pé ou de bicicleta.",
+        "homeHelp": "Combine menos horas ou dias por semana por alguns meses, ou divida a ajuda doméstica com um vizinho.",
+        "homeHelpLocal": "Combine menos dias por semana ou uma tarefa a menos (por exemplo, a cozinheira só para o jantar) por alguns meses, ou divida a ajuda doméstica com um vizinho.",
+        "familySupport": "Converse com sua família e combinem um valor menor e fixo por alguns meses, até seu próprio orçamento voltar ao equilíbrio.",
+        "carIns": "Compare cotações antes da renovação e pergunte sobre o bônus por não ter sinistros. Mantenha a cobertura que a lei exige.",
+        "homeIns": "Compare cotações antes da renovação e confira se você não está pagando por uma cobertura de que não precisa.",
+        "rent": "Procure uma casa mais barata ou alguém para dividir antes de renovar o contrato, ou peça ao proprietário um aluguel menor em troca de um contrato mais longo.",
+        "subscriptions": "Cancele tudo o que você não usou no último mês e mantenha um streaming por vez, trocando a cada poucos meses.",
+        "generatorFuel": "Ligue o gerador só para o essencial, use o nobreak para luzes e ventiladores e faça a manutenção para ele gastar menos combustível.",
+        "committee": "Um committee é poupança, não gasto, mas se a parcela está pesada agora, entre em um menor quando esta rodada terminar.",
+        "customNeed": "Peça uma opção mais barata ou pague um valor menor por alguns meses.",
+        "customWant": "Não é essencial: reduza por alguns meses."
       },
       "result": {
         "reached": "Com estes limites você gastaria {spend}{per} e sobrariam {save} para guardar.",
-        "under": "Com estes limites você gastaria {spend}{per} e ainda sobrariam {save}. Para guardar 10%, você precisaria de cerca de {more}{per} a mais de renda, ou uma mudança maior, como moradia mais barata ou quitar um empréstimo.",
-        "short": "Mesmo com estes limites faltariam {short}{per}. Para ficar abaixo da sua renda e ainda guardar 10%, você precisaria de cerca de {more}{per} a mais de renda, ou uma mudança maior, como moradia mais barata, um carro mais barato ou quitar um empréstimo."
-      }
+        "under": "Com estes limites você gastaria {spend}{per} e ainda sobrariam {save}. As mudanças maiores abaixo levariam você a guardar 10%.",
+        "short": "Mesmo com estes limites faltariam {short}{per}, então cortar contas não basta. As mudanças maiores abaixo podem fechar a diferença."
+      },
+      "bigger": {
+        "housing": "Moradia: o aluguel é {amount}{per}, {pct}% da sua renda. Mudar para um lugar mais barato, dividir a casa ou alugar um quarto é a maior mudança que você pode fazer.",
+        "loans": "Empréstimos: {amount}{per} vão para parcelas. Peça ao banco para alongar o prazo e baixar a parcela, quite primeiro o de juros mais altos e não faça novos empréstimos por enquanto.",
+        "car": "Carro: com combustível, seguro e eventual financiamento, ele custa cerca de {amount}{per}. Se você conseguir ficar sem ele, ou trocar por um mais barato e econômico, sobra dinheiro todo mês.",
+        "school": "Mensalidade escolar: {amount}{per}. Pergunte à escola sobre parcelamento, desconto para irmãos ou bolsa.",
+        "yearly": "Gastos anuais: você separa {amount}{per} para eles. Adie ou reduza os que podem esperar um ano.",
+        "income": "Ganhar mais: cerca de {amount}{per} a mais cobriria a diferença e deixaria 10% para guardar. Mais horas, hora extra, um bico, trabalhos como freelancer ou aulas particulares ajudam."
+      },
+      "kept": "Sem mudança: {list}.",
+      "startingPoint": "Estes limites são um ponto de partida: mova dinheiro entre eles do jeito que funcionar para sua casa."
     }
   },
   "common": {

@@ -6,7 +6,7 @@ import { hasData } from '../state.js';
 import { PROFILES, benchmarkFor } from '../engine/profiles.js';
 import { pct } from '../utils/format.js';
 import { $, esc, icon, setText, setHTML, setAttr, setMoney, animateNumber } from './dom.js';
-import { t, has } from '../i18n/index.js';
+import { t, has, getLanguage } from '../i18n/index.js';
 import { withSign } from '../utils/format.js';
 import { canSave } from '../engine/calculate.js';
 
@@ -218,28 +218,60 @@ function balanceLabel(line, state) {
   return line.customName || t('calc.otherCosts');
 }
 
+/** Why this bill is in the plan, from the household's own numbers. */
+function balanceReason(l, state, view, income) {
+  const group = PROFILES[state.profile].group;
+  if (l.reason === 'big') return t('dashboard.balance.reason.big', { pct: Math.round((l.now / income) * 100) });
+  if (l.times != null) {
+    const range = `${view.m(l.range[0])}–${view.m(l.range[1])}`;
+    const text = l.times >= 2
+      ? t('dashboard.balance.reason.times', { times: Math.round(l.times * 10) / 10, group, range })
+      : t('dashboard.balance.reason.over', { group, range });
+    return l.check ? `${text} ${t('dashboard.balance.reason.check')}` : text;
+  }
+  return t(`dashboard.balance.reason.${l.reason === 'want' ? 'want' : 'trim'}`);
+}
+
+/** Names of the bills the plan leaves alone: field labels or category names. */
+function keptLabel(k) {
+  if (k.field) return t(`inputs.fields.${k.field}.label`);
+  if (k.id === 'debt') return t('calc.categories.debt');
+  if (k.id === 'yearly') return t('calc.categories.yearly');
+  return t('subs.kinds.tools.label');
+}
+
 /** "A plan that fits your income": a spending limit for each bill, when spending leaves under 10% to save. */
 function renderBalance(state, result, view) {
   const b = result.balance;
   $('balance').hidden = !b;
   if (!b) return;
   const { income } = result.totals;
-  const pct = 10;
   // Now → aim for, pointing the way the text reads
   const arrow = document.dir === 'rtl' ? '←' : '→';
   setText($('balanceIntro'), b.spend > income
-    ? t('dashboard.balance.intro.over', { spend: view.m(b.spend), gap: view.m(b.spend - income), per: view.per, pct })
-    : t('dashboard.balance.intro.low', { spend: view.m(b.spend), income: view.m(income), per: view.per, pct }));
-  setHTML($('balanceRows'), b.lines.map((l) => `<li class="flex items-start justify-between gap-3 py-3">
-      <div class="min-w-0"><p class="font-medium text-slate-900 dark:text-white">${esc(balanceLabel(l, state))}</p><p class="text-xs muted">${esc(t(`dashboard.balance.reason.${l.reason}`))}</p></div>
-      <div class="shrink-0 text-end tabular-nums"><p><span class="muted">${esc(view.m(l.now))}</span> ${arrow} <strong class="font-semibold text-slate-900 dark:text-white">${esc(view.s(l.aim))}</strong></p><p class="text-xs text-emerald-700 dark:text-emerald-400">${esc(withSign('−', view.s(l.cut)))}</p></div>
+    ? t('dashboard.balance.intro.over', { spend: view.m(b.spend), gap: view.m(b.spend - income), per: view.per, pct: 10 })
+    : t('dashboard.balance.intro.low', { spend: view.m(b.spend), income: view.m(income), per: view.per, pct: 10 }));
+  setHTML($('balanceRows'), b.lines.map((l) => `<li class="py-4">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0"><p class="font-medium text-slate-900 dark:text-white">${esc(balanceLabel(l, state))}</p><p class="mt-0.5 text-xs ${l.check ? 'text-amber-700 dark:text-amber-400' : 'muted'}">${esc(balanceReason(l, state, view, income))}</p></div>
+        <div class="shrink-0 text-end tabular-nums"><p><span class="muted">${esc(view.m(l.now))}</span> ${arrow} <strong class="font-semibold text-slate-900 dark:text-white">${esc(view.s(l.aim))}</strong></p><p class="text-xs text-emerald-700 dark:text-emerald-400">${esc(withSign('−', view.s(l.cut)))}</p></div>
+      </div>
+      <p class="mt-2 text-sm text-slate-700 dark:text-slate-300"><span class="font-semibold">${esc(t('dashboard.balance.how'))}</span> ${esc(t(`dashboard.balance.tips.${l.tip}`))}</p>
     </li>`).join(''));
   setText($('balanceTotal'), `${view.m(b.spend)} ${arrow} ${view.s(b.newSpend)}`);
-  const vars = { spend: view.s(b.newSpend), save: view.s(Math.max(0, b.toSave)), short: view.s(Math.max(0, -b.toSave)), more: view.s(b.incomeNeeded), per: view.per };
+  const vars = { spend: view.s(b.newSpend), save: view.s(Math.max(0, b.toSave)), short: view.s(Math.max(0, -b.toSave)), per: view.per };
   setText($('balanceResult'), t(`dashboard.balance.result.${b.outcome}`, vars));
   $('balanceResult').className = `mt-4 rounded-xl px-4 py-3 text-sm ${b.outcome === 'reached'
     ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
     : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`;
+  // Bigger changes, only for what this household has
+  $('balanceBigger').hidden = !b.bigger.length;
+  setHTML($('balanceBiggerList'), b.bigger.map((c) => `<li class="flex gap-2"><span class="text-slate-400" aria-hidden="true">•</span><span>${esc(t(`dashboard.balance.bigger.${c.key}`, {
+    amount: view.s(c.amount), per: view.per, pct: c.share != null ? Math.round(c.share * 100) : ''
+  }))}</span></li>`).join(''));
+  const kept = b.kept.map(keptLabel);
+  const list = kept.length ? new Intl.ListFormat(getLanguage(), { type: 'conjunction' }).format(kept) : '';
+  setText($('balanceNote'), [kept.length ? t('dashboard.balance.kept', { list }) : '', t('dashboard.balance.startingPoint')].filter(Boolean).join(' '));
 }
 
 function renderMobileBar(state, result, view) {
