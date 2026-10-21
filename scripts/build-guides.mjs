@@ -19,6 +19,8 @@ import { makeT, applyMessages, localizeLinks } from './prerender-locales.mjs';
 const RTL = new Set(['ar', 'ur']);
 const HREFLANG = { en: 'en', ur: 'ur-PK' };
 const HOME = { en: '/', ur: '/ur-pk/' };
+// The country of a language's guides (Urdu: Pakistan), so the picker shows it to new visitors
+const COUNTRY = { ur: 'PK' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const plural = (msg, count) => (typeof msg === 'object' ? msg.other : msg).replace('{count}', String(count));
@@ -159,6 +161,7 @@ function setHead(doc, { title, description, lang, siteUrl, path: pagePath, alter
   html.setAttribute('lang', HREFLANG[lang]);
   if (RTL.has(lang)) html.setAttribute('dir', 'rtl'); else html.removeAttribute('dir');
   html.setAttribute('data-page-lang', lang);
+  if (COUNTRY[lang]) html.setAttribute('data-page-country', COUNTRY[lang]);
   // The language picker goes to the same guide in another language when there is one
   html.setAttribute('data-alternates', JSON.stringify(alternates));
 }
