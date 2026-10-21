@@ -834,7 +834,7 @@
       "summary": "Un aperçu de votre argent en une ligne, à partir des chiffres saisis.",
       "spendNow": "Le total de toutes les dépenses mensuelles que vous avez saisies.",
       "spendCould": "Vos dépenses après les changements ajoutés à votre plan.",
-      "saveMonth": "L’argent libéré chaque mois par les changements de votre plan. Les intérêts évités sur vos dettes ne sont pas comptés ici.",
+      "saveMonth": "Ce qui vous reste chaque mois après vos factures, plus ce que les idées activées vous feraient économiser. Les intérêts de dette évités ne sont pas comptés ici.",
       "saveYear": "Vos économies mensuelles × 12.",
       "top3": "Les trois plus grosses économies trouvées, la plus facile en premier. Un bon point de départ.",
       "health": "Une note de 0 à 100 qui vérifie cinq points : épargne, logement, dettes, épargne de précaution et petits plaisirs. Plus elle est haute, mieux c’est.",
@@ -1289,7 +1289,7 @@
     },
     "summary": {
       "label": "Résumé",
-      "saveMonth": "Ce que vous pourriez économiser en plus chaque mois",
+      "saveMonth": "Ce que vous pourriez économiser chaque mois",
       "perYear_html": "<span id=\"sumAnnual\">0</span> par an",
       "spendNow": "Ce que vous dépensez aujourd’hui",
       "couldSpend": "Ce que vous pourriez dépenser",
@@ -1658,8 +1658,13 @@
       "basisIncomeApprox": "Part de vos revenus, comparée à un profil type « {profile} » (une estimation, car nous n’avons pas encore de chiffres pour votre pays)."
     },
     "mobile": {
-      "saveYear": "Vous pourriez économiser en plus chaque année",
-      "saveMonth": "Vous pourriez économiser en plus chaque mois"
+      "saveYear": "Vous pourriez économiser chaque année",
+      "saveMonth": "Vous pourriez économiser chaque mois"
+    },
+    "headline": {
+      "save": "Ce que vous pourriez économiser chaque mois",
+      "extra": "Ce que vous pourriez économiser en plus chaque mois",
+      "short": "Ce qui vous manque chaque mois"
     }
   },
   "common": {
@@ -1940,12 +1945,21 @@
     },
     "summary": {
       "empty": "Ajoutez des idées à votre plan (et vos revenus) pour voir comment votre épargne pourrait grandir.",
+      "short": "Pour l’instant, vous dépensez plus que vous ne gagnez : il ne reste donc rien à faire fructifier. Activez des idées ou réduisez quelques factures jusqu’à dépenser moins que vos revenus.",
       "main": "Si vous épargnez {monthly} chaque mois pendant {years} avec un rendement de {rate} % par an, vous pourriez avoir environ {nominal}. Comme les prix augmentent, cela équivaudrait à environ {real} aujourd’hui.",
       "asYouAre": "Si vous continuez comme maintenant, vous auriez environ {amount}."
     },
     "ariaLabel": "Graphique en courbes. {summary}",
     "year": "Année {n}",
-    "now": "Aujourd’hui"
+    "now": "Aujourd’hui",
+    "legend": {
+      "alt": "Si vous épargnez aussi le supplément :",
+      "only": "Si vous épargnez l’argent qui reste :"
+    },
+    "side": {
+      "extra_html": "Argent supplémentaire que vous auriez <span id=\"fvYears\"></span>",
+      "total_html": "Votre épargne <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Chiffres effacés. Vos objectifs et vos mois enregistrés sont conservés.",

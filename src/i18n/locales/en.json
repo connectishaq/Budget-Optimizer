@@ -817,7 +817,7 @@
       "summary": "A one-line overview of your money, based on the numbers you entered.",
       "spendNow": "All the monthly bills you entered, added up.",
       "spendCould": "Your bills after the changes you added to your plan.",
-      "saveMonth": "The money freed up each month by the changes in your plan. Interest you avoid on debt isn’t counted here.",
+      "saveMonth": "What’s left each month after your bills, plus what the ideas you switch on would save. Interest you avoid on debt isn’t counted here.",
       "saveYear": "Your monthly savings × 12.",
       "top3": "The three biggest savings we found, with the easiest one at the top. A good place to start.",
       "health": "A score from 0 to 100 that checks five things: saving, housing, debt, emergency fund and nice-to-haves. Higher is better.",
@@ -1249,7 +1249,7 @@
     },
     "summary": {
       "label": "Summary",
-      "saveMonth": "Extra you could save each month",
+      "saveMonth": "Money you could save each month",
       "perYear_html": "<span id=\"sumAnnual\">0</span> a year",
       "spendNow": "What you spend now",
       "couldSpend": "What you could spend",
@@ -1616,8 +1616,13 @@
       "nothingFor": "Nothing entered for: {list}."
     },
     "mobile": {
-      "saveYear": "Extra you could save each year",
-      "saveMonth": "Extra you could save each month"
+      "saveYear": "You could save each year",
+      "saveMonth": "You could save each month"
+    },
+    "headline": {
+      "save": "Money you could save each month",
+      "extra": "Extra you could save each month",
+      "short": "You’re short each month"
     }
   },
   "common": {
@@ -1892,12 +1897,21 @@
     },
     "summary": {
       "empty": "Add ideas to your plan (and your income) to see how your savings could grow.",
+      "short": "Right now you spend more than you earn, so nothing is left to grow yet. Switch on ideas or lower a few bills until your spending is below your income.",
       "main": "If you put {monthly} into savings every month for {years} and it grows {rate}% a year, you could have about {nominal}. Because prices rise, that would feel like about {real} does today.",
       "asYouAre": "If you keep going as you are, you’d have about {amount}."
     },
     "ariaLabel": "Line chart. {summary}",
     "year": "Year {n}",
-    "now": "Now"
+    "now": "Now",
+    "legend": {
+      "alt": "If you also save the extra money:",
+      "only": "If you save your leftover money:"
+    },
+    "side": {
+      "extra_html": "Extra money you’d have <span id=\"fvYears\"></span>",
+      "total_html": "Your savings <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Numbers cleared. Your goals and saved months are kept.",

@@ -74,3 +74,7 @@ Strings added or changed after this list was first written. They were written by
 - `layout.footer.tips.heading`: now "گائیڈز", the same word as the header link. `layout.footer.ctaTips`: "گائیڈز پڑھیں" (Read the guides).
 - `page.summary.saveMonth`: "ہر مہینے آپ مزید کتنا بچا سکتے ہیں" (Extra you could save each month). `dashboard.mobile.saveMonth` / `saveYear`: "آپ ہر مہینے/سال اتنا مزید بچا سکتے ہیں". Does "مزید" make it clear this is on top of what is already left over?
 - `dashboard.summary.noTipsLeft`: "بلوں کے بعد {left} پہلے ہی بچ جاتے ہیں۔ مزید بچت کے لیے نیچے چند تجاویز آن کریں۔" ({left} is already left over after your bills. Switch on a few ideas below to save even more.)
+- `dashboard.headline.short`: "ہر مہینے آپ کو اتنی کمی ہے" (You're short each month), shown above the amount when spending is more than income.
+- `help.text.saveMonth`: "بلوں کے بعد ہر مہینے جو رقم بچتی ہے، اور جو تجاویز آپ آن کریں ان سے ہونے والی بچت۔ قرض پر بچنے والا سود اس میں شامل نہیں۔"
+- `charts.legend.only`: "اگر آپ بچی ہوئی رقم بچت میں ڈالیں:" and `charts.side.total_html`: "{n} سال بعد آپ کی بچت" (Your savings after n years).
+- `charts.summary.short`: "اس وقت آپ کا خرچ آمدنی سے زیادہ ہے، اس لیے بڑھنے کے لیے ابھی کچھ نہیں بچتا۔ تجاویز آن کریں یا کچھ بل کم کریں تاکہ خرچ آمدنی سے کم ہو جائے۔"

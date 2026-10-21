@@ -834,7 +834,7 @@
       "summary": "Um resumo de uma linha do seu dinheiro, com base nos números que você informou.",
       "spendNow": "Todas as contas mensais que você informou, somadas.",
       "spendCould": "Suas contas depois das mudanças que você adicionou ao seu plano.",
-      "saveMonth": "O dinheiro liberado todo mês pelas mudanças do seu plano. Juros evitados em dívidas não entram aqui.",
+      "saveMonth": "O que sobra por mês depois das contas, mais o que as ideias que você ativar economizariam. Os juros de dívidas que você evita não entram aqui.",
       "saveYear": "Sua economia mensal × 12.",
       "top3": "As três maiores economias que encontramos, com a mais fácil no topo. Um bom lugar para começar.",
       "health": "Uma nota de 0 a 100 que avalia cinco coisas: economia, moradia, dívidas, reserva de emergência e gastos não essenciais. Quanto maior, melhor.",
@@ -1289,7 +1289,7 @@
     },
     "summary": {
       "label": "Resumo",
-      "saveMonth": "Quanto você poderia economizar a mais por mês",
+      "saveMonth": "Dinheiro que você poderia economizar por mês",
       "perYear_html": "<span id=\"sumAnnual\">0</span> por ano",
       "spendNow": "Quanto você gasta hoje",
       "couldSpend": "Quanto você poderia gastar",
@@ -1658,8 +1658,13 @@
       "basisIncomeApprox": "Parte da sua renda, comparada com o perfil típico: {profile} (uma estimativa aproximada, já que ainda não temos dados do seu país)."
     },
     "mobile": {
-      "saveYear": "Você poderia economizar a mais por ano",
-      "saveMonth": "Você poderia economizar a mais por mês"
+      "saveYear": "Você poderia economizar por ano",
+      "saveMonth": "Você poderia economizar por mês"
+    },
+    "headline": {
+      "save": "Dinheiro que você poderia economizar por mês",
+      "extra": "Quanto você poderia economizar a mais por mês",
+      "short": "Quanto falta por mês"
     }
   },
   "common": {
@@ -1940,12 +1945,21 @@
     },
     "summary": {
       "empty": "Adicione ideias ao seu plano (e sua renda) para ver como suas economias podem crescer.",
+      "short": "Agora você gasta mais do que ganha, então ainda não sobra nada para crescer. Ative ideias ou reduza algumas contas até gastar menos do que ganha.",
       "main": "Se você guardar {monthly} todo mês por {years} e o dinheiro render {rate}% ao ano, poderá ter cerca de {nominal}. Como os preços sobem, isso valeria o que cerca de {real} vale hoje.",
       "asYouAre": "Se continuar como está, você teria cerca de {amount}."
     },
     "ariaLabel": "Gráfico de linhas. {summary}",
     "year": "Ano {n}",
-    "now": "Agora"
+    "now": "Agora",
+    "legend": {
+      "alt": "Se você também guardar o dinheiro extra:",
+      "only": "Se você guardar o dinheiro que sobra:"
+    },
+    "side": {
+      "extra_html": "Dinheiro extra que você teria <span id=\"fvYears\"></span>",
+      "total_html": "Suas economias <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Números apagados. Suas metas e meses salvos foram mantidos.",

@@ -30,6 +30,10 @@ let growth = null;
 
 function tooltip(i) {
   const alt = series.alt[i];
+  if (!series.cur.length) {
+    return `<p class="mb-1.5 font-semibold text-slate-300">${i === 0 ? t('charts.tip.today') : t('charts.tip.after', { count: i })}</p>
+    <p class="flex items-center gap-2"><span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>${esc(nice(alt))}</p>`;
+  }
   const cur = series.cur[i];
   const diff = alt - cur;
   return `<p class="mb-1.5 font-semibold text-slate-300">${i === 0 ? t('charts.tip.today') : t('charts.tip.after', { count: i })}</p>
@@ -39,13 +43,13 @@ function tooltip(i) {
 }
 
 let series = { alt: [], cur: [] };
-function draw(d) {
+function draw(d, single) {
   const pick = (s) => (d.showReal ? s.real : s.nominal);
-  series = { alt: pick(d.alt), cur: pick(d.cur) };
+  series = { alt: pick(d.alt), cur: single ? [] : pick(d.cur) };
   growth.update({
     series: [
       { values: series.alt, width: 2.5, line: 'stroke-emerald-700 dark:stroke-emerald-400', dot: 'fill-emerald-700 dark:fill-emerald-400', area: 'fill-emerald-700/[0.07] dark:fill-emerald-400/10' },
-      { values: series.cur, dashed: true, line: 'stroke-slate-500 dark:stroke-slate-400', dot: 'fill-slate-500 dark:fill-slate-400' }
+      ...(single ? [] : [{ values: series.cur, dashed: true, line: 'stroke-slate-500 dark:stroke-slate-400', dot: 'fill-slate-500 dark:fill-slate-400' }])
     ]
   });
 }
@@ -73,9 +77,14 @@ export function renderProjection(state, result, view) {
   const fvAlt = pick(d.alt).at(-1);
   const fvCur = pick(d.cur).at(-1);
   const tag = (n) => view.tag(view.rawS(n), n);
+  // No ideas switched on: both lines would be the same, so show one line and its total
+  const single = d.altMonthly - d.curMonthly < 0.5;
+  setText($('fvAltLabel'), single ? t('charts.legend.only') : t('charts.legend.alt'));
+  $('fvCurItem').hidden = single;
   setHTML($('fvAlt'), tag(fvAlt));
   setHTML($('fvCur'), tag(fvCur));
-  setHTML($('fvDiff'), withSign('+', tag(fvAlt - fvCur)));
+  setHTML($('fvLabel'), single ? t('charts.side.total_html') : t('charts.side.extra_html'));
+  setHTML($('fvDiff'), single ? tag(fvAlt) : withSign('+', tag(fvAlt - fvCur)));
   setText($('fvYears'), t('charts.afterYears', { count: d.years }));
 
   const yearsTxt = t('charts.years', { count: d.years });
@@ -83,7 +92,8 @@ export function renderProjection(state, result, view) {
   const realAlt = d.alt.real.at(-1);
   let summary;
   if (d.altMonthly <= 0) {
-    summary = t('charts.summary.empty');
+    // With an income entered, nothing to grow means spending is above income
+    summary = t(state.values.income > 0 ? 'charts.summary.short' : 'charts.summary.empty');
   } else {
     summary = t('charts.summary.main', { monthly: view.rawS(d.altMonthly), years: yearsTxt, rate: Math.round(d.rate * 100), nominal: view.rawS(nominalAlt), real: view.rawS(realAlt) });
     if (nominalAlt - d.cur.nominal.at(-1) > 0.5) summary += ` ${t('charts.summary.asYouAre', { amount: view.rawS(d.cur.nominal.at(-1)) })}`;
@@ -94,7 +104,7 @@ export function renderProjection(state, result, view) {
   // Accessible year-by-year table
   setHTML($('projectionTable'), pick(d.cur).map((c, i) => i === 0 ? '' : `<tr><th scope="row" class="px-3 py-1.5 text-start font-medium">${t('charts.year', { n: i })}</th><td class="px-3 py-1.5 text-end">${view.rawS(c)}</td><td class="px-3 py-1.5 text-end">${view.rawS(pick(d.alt)[i])}</td></tr>`).join(''));
 
-  draw(d);
+  draw(d, single);
 }
 
 /** The growth-rate options for the country, filled again when the language or country changes. */

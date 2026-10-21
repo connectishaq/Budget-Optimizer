@@ -422,7 +422,7 @@
             <!-- ===== Summary: green savings panel + receipt ===== -->
             <section id="summary" aria-label="Summary" data-i18n-attr="aria-label:page.summary.label" class="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start">
               <div class="on-dark rounded-2xl bg-emerald-900 p-6 text-white sm:p-8 dark:bg-emerald-950 dark:ring-1 dark:ring-emerald-900">
-                <p class="flex items-center gap-1.5 text-sm font-medium text-emerald-100"><span data-i18n="page.summary.saveMonth">Extra you could save each month</span> <span data-help="saveMonth" data-help-label="Extra you could save each month"></span></p>
+                <p class="flex items-center gap-1.5 text-sm font-medium text-emerald-100"><span id="sumLabel" data-i18n="page.summary.saveMonth">Money you could save each month</span> <span data-help="saveMonth" data-help-label="Money you could save each month"></span></p>
                 <p id="sumMonthly" class="mt-1 whitespace-nowrap text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">0</p>
                 <p class="mt-1 text-sm text-emerald-100" data-i18n-html="page.summary.perYear_html"><span id="sumAnnual">0</span> a year</p>
                 <p id="plainSummary" class="mt-5 max-w-xl text-lg leading-relaxed text-white/95" aria-live="polite"></p>
@@ -560,8 +560,8 @@
                   <h3 id="projTitle" class="h-section" data-i18n="page.growth.title">How your savings could grow</h3>
                   <p class="mt-1 text-sm muted" data-i18n="page.growth.intro">This assumes you put your leftover money into savings every month and it grows at the rate you pick.</p>
                   <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm" aria-label="Chart key" data-i18n-attr="aria-label:page.common.chartKey">
-                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-emerald-700 dark:border-emerald-400"></span><span class="muted" data-i18n="page.growth.alt">If you also save the extra money:</span> <strong id="fvAlt" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
-                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-dashed border-slate-500"></span><span class="muted" data-i18n="page.growth.cur">If you keep going as you are:</span> <strong id="fvCur" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
+                    <li class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-emerald-700 dark:border-emerald-400"></span><span id="fvAltLabel" class="muted" data-i18n="page.growth.alt">If you also save the extra money:</span> <strong id="fvAlt" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
+                    <li id="fvCurItem" class="flex items-center gap-2"><span class="inline-block w-5 border-t-2 border-dashed border-slate-500"></span><span class="muted" data-i18n="page.growth.cur">If you keep going as you are:</span> <strong id="fvCur" class="font-semibold tabular-nums text-slate-900 dark:text-white">0</strong></li>
                   </ul>
                   <div id="chartBox" class="relative mt-4 h-64 touch-pan-y select-none sm:h-72">
                     <svg id="growthChart" class="block h-full w-full" role="img" aria-label="Savings growth chart"></svg>
@@ -572,7 +572,7 @@
 
                 <div class="space-y-5 rounded-xl bg-slate-50 p-5 dark:bg-slate-800/50">
                   <div>
-                    <p class="text-sm muted" data-i18n-html="page.growth.extra_html">Extra money you’d have <span id="fvYears"></span></p>
+                    <p id="fvLabel" class="text-sm muted" data-i18n-html="page.growth.extra_html">Extra money you’d have <span id="fvYears"></span></p>
                     <p id="fvDiff" class="mt-0.5 text-3xl font-semibold tracking-tight tabular-nums text-emerald-700 dark:text-emerald-400">0</p>
                   </div>
                   <div>
@@ -960,7 +960,7 @@
   <div id="mobileBar" class="fixed inset-x-0 bottom-0 z-40 translate-y-[150%] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-transform duration-300 lg:hidden" aria-hidden="true">
     <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-2.5 shadow-lg dark:border-slate-700 dark:bg-slate-900">
       <p class="min-w-0">
-        <span id="mbLabel" class="block text-xs muted" data-i18n="dashboard.mobile.saveMonth">Extra you could save each month</span>
+        <span id="mbLabel" class="block text-xs muted" data-i18n="dashboard.mobile.saveMonth">You could save each month</span>
         <span class="block truncate font-semibold tabular-nums"><span id="mbAmount" class="text-lg text-emerald-700 dark:text-emerald-400">0</span><span id="mbPer" class="text-xs font-normal muted" data-i18n="common.per.month">/month</span></span>
       </p>
       <a href="#plan" class="btn btn-primary shrink-0" data-i18n="page.mobileBar.seeIdeas">See ideas</a>

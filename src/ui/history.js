@@ -10,6 +10,7 @@ import { getHistory, importMonths, markBackup } from '../history-store.js';
 import { $, esc, toast, confirmDialog, choiceDialog } from './dom.js';
 import { t } from '../i18n/index.js';
 import { dateLocale } from '../utils/format.js';
+import { canSave } from '../engine/calculate.js';
 
 let latest = null; // { state, result, view } from the most recent render
 
@@ -138,8 +139,8 @@ function buildPrintPlan() {
     <h1 style="font-size:20pt;font-weight:800;margin:0">${esc(t('backup.print.title'))}</h1>
     <p style="color:#475569;margin:4px 0 14px">${esc(PROFILES[state.profile].name)} · ${state.currency} · ${date}</p>
     <table style="margin-bottom:14px"><tbody>
-      <tr><th>${esc(t('backup.print.spendNow'))}</th><td class="num">${t('backup.print.perMonth', { amount: view.raw(result.totals.spend) })}</td><th>${esc(t('backup.print.couldSave'))}</th><td class="num"><strong>${view.rawS(result.savings)}</strong></td></tr>
-      <tr><th>${esc(t('backup.print.couldSpend'))}</th><td class="num">${t('backup.print.perMonth', { amount: view.rawS(result.optimized) })}</td><th>${esc(t('backup.print.perYear'))}</th><td class="num"><strong>${view.rawS(result.savings * 12)}</strong></td></tr>
+      <tr><th>${esc(t('backup.print.spendNow'))}</th><td class="num">${t('backup.print.perMonth', { amount: view.raw(result.totals.spend) })}</td><th>${esc(t('backup.print.couldSave'))}</th><td class="num"><strong>${view.raw(Math.max(0, canSave(result)))}</strong></td></tr>
+      <tr><th>${esc(t('backup.print.couldSpend'))}</th><td class="num">${t('backup.print.perMonth', { amount: view.rawS(result.optimized) })}</td><th>${esc(t('backup.print.perYear'))}</th><td class="num"><strong>${view.raw(Math.max(0, canSave(result)) * 12)}</strong></td></tr>
       ${result.health ? `<tr><th>${esc(t('backup.print.healthScore'))}</th><td class="num">${result.health.score}/100 (${result.health.label})</td><th></th><td></td></tr>` : ''}
     </tbody></table>
     <h2 style="font-size:13pt;margin:10px 0 6px">${esc(t('backup.print.changes', { count: committed.length }))}</h2>

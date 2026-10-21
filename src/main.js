@@ -3,7 +3,7 @@
 
 import './styles.css';
 import { loadState, getState, setState, subscribe, onSaved, storeTheme, replaceState, defaultState, hasData, returnOptions } from './state.js';
-import { computeBudget } from './engine/calculate.js';
+import { computeBudget, canSave } from './engine/calculate.js';
 import { initInputs, renderInputs, syncInputs } from './ui/inputs.js';
 import { initPlan, renderPlan, syncPlanControls } from './ui/plan.js';
 import { renderDashboard } from './ui/dashboard.js';
@@ -46,10 +46,11 @@ function render() {
   const cs = $('countrySelect');
   if (cs && cs.value !== state.country) cs.value = state.country;
 
-  if (lastSavings !== null && Math.round(result.savings) !== Math.round(lastSavings)) {
-    announce(t('app.announceSavings', { amount: view.rawS(result.savings) }));
+  const saving = canSave(result);
+  if (lastSavings !== null && saving >= 0 && Math.round(saving) !== Math.round(lastSavings)) {
+    announce(t('app.announceSavings', { amount: view.raw(saving) }));
   }
-  lastSavings = result.savings;
+  lastSavings = saving;
 }
 
 const renderSoon = debounce(render, 150);

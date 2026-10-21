@@ -824,7 +824,7 @@
       "summary": "Ein kurzer Überblick über deine Finanzen, basierend auf deinen Zahlen.",
       "spendNow": "Alle monatlichen Rechnungen, die du eingegeben hast, zusammengerechnet.",
       "spendCould": "Deine Rechnungen nach den Änderungen, die du in deinen Plan aufgenommen hast.",
-      "saveMonth": "Das Geld, das die Änderungen in deinem Plan jeden Monat freimachen. Zinsen, die du bei Schulden vermeidest, zählen hier nicht mit.",
+      "saveMonth": "Was dir jeden Monat nach deinen Rechnungen bleibt, plus was die eingeschalteten Ideen sparen würden. Vermiedene Schuldzinsen sind hier nicht eingerechnet.",
       "saveYear": "Deine monatliche Ersparnis × 12.",
       "top3": "Die drei größten Sparmöglichkeiten, die wir gefunden haben, die einfachste oben. Ein guter Startpunkt.",
       "health": "Eine Punktzahl von 0 bis 100, die fünf Dinge prüft: Sparen, Wohnen, Schulden, Notgroschen und Extras. Höher ist besser.",
@@ -1260,7 +1260,7 @@
     },
     "summary": {
       "label": "Überblick",
-      "saveMonth": "Was du monatlich zusätzlich sparen könntest",
+      "saveMonth": "Geld, das du jeden Monat sparen könntest",
       "perYear_html": "<span id=\"sumAnnual\">0</span> im Jahr",
       "spendNow": "Was du jetzt ausgibst",
       "couldSpend": "Was du ausgeben könntest",
@@ -1627,8 +1627,13 @@
       "basisIncomeApprox": "Anteil an deinem Einkommen, verglichen mit einem typischen Haushalt „{profile}“ (ein grober Richtwert, weil wir für dein Land noch keine Zahlen haben)."
     },
     "mobile": {
-      "saveYear": "Du könntest jährlich zusätzlich sparen",
-      "saveMonth": "Du könntest monatlich zusätzlich sparen"
+      "saveYear": "Du könntest jährlich sparen",
+      "saveMonth": "Du könntest monatlich sparen"
+    },
+    "headline": {
+      "save": "Geld, das du jeden Monat sparen könntest",
+      "extra": "Was du monatlich zusätzlich sparen könntest",
+      "short": "Dir fehlen jeden Monat"
     }
   },
   "common": {
@@ -1903,12 +1908,21 @@
     },
     "summary": {
       "empty": "Nimm Ideen in deinen Plan auf (und trag dein Einkommen ein), um zu sehen, wie deine Ersparnisse wachsen könnten.",
+      "short": "Im Moment gibst du mehr aus, als du verdienst, also bleibt noch nichts zum Wachsen übrig. Schalte Ideen ein oder senke ein paar Rechnungen, bis deine Ausgaben unter deinem Einkommen liegen.",
       "main": "Wenn du {years} lang jeden Monat {monthly} sparst und das Geld um {rate} % im Jahr wächst, könntest du etwa {nominal} haben. Weil die Preise steigen, würde sich das heute wie etwa {real} anfühlen.",
       "asYouAre": "Wenn du so weitermachst wie bisher, hättest du etwa {amount}."
     },
     "ariaLabel": "Liniendiagramm. {summary}",
     "year": "Jahr {n}",
-    "now": "Jetzt"
+    "now": "Jetzt",
+    "legend": {
+      "alt": "Wenn du auch das zusätzliche Geld sparst:",
+      "only": "Wenn du dein übriges Geld sparst:"
+    },
+    "side": {
+      "extra_html": "Zusätzliches Geld, das du <span id=\"fvYears\"></span> hättest",
+      "total_html": "Deine Ersparnisse <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Zahlen gelöscht. Deine Ziele und gespeicherten Monate bleiben erhalten.",

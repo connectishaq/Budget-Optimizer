@@ -8,6 +8,7 @@ import { pct } from '../utils/format.js';
 import { $, esc, icon, setText, setHTML, setAttr, setMoney, animateNumber } from './dom.js';
 import { t } from '../i18n/index.js';
 import { withSign } from '../utils/format.js';
+import { canSave } from '../engine/calculate.js';
 
 // Validated categorical palette (needs / wants / savings); legend text carries identity too
 const SPLIT_COLORS = { needs: '#475569', wants: '#d97706', savings: '#047857' };
@@ -37,15 +38,26 @@ export function plainSummary(result, view) {
   return `${t(`dashboard.summary.earnSpend.${per}`, { income: view.m(income), spend: view.m(spend) })} ${save}`;
 }
 
+/** The headline label: money you could save, extra from ideas (no income yet), or how much you're short. */
+function canSaveLabel(result) {
+  const amount = canSave(result);
+  if (!(result.totals.income > 0)) return t('dashboard.headline.extra');
+  return amount < 0 ? t('dashboard.headline.short') : t('dashboard.headline.save');
+}
+
 function renderSummary(result, view) {
   const { totals, savings, optimized } = result;
+  // The headline is what's left after bills plus the ideas' savings (the receipt's
+  // "Left with your plan"), so a budget that already works never shows a bare 0
+  const headline = Math.abs(canSave(result));
+  setText($('sumLabel'), canSaveLabel(result));
   animateNumber($('sumCurrent'), totals.spend * view.f, (n) => view.raw(n));
   animateNumber($('sumOptimized'), optimized * view.f, (n) => view.rawS(n));
-  animateNumber($('sumMonthly'), savings, (n) => view.rawS(n));
+  animateNumber($('sumMonthly'), headline, (n) => view.raw(n));
   setAttr($('sumCurrent'), 'title', view.full(totals.spend * view.f));
   setAttr($('sumOptimized'), 'title', view.full(optimized * view.f));
-  setAttr($('sumMonthly'), 'title', view.full(savings));
-  setMoney($('sumAnnual'), view.rawS(savings * 12), view.full(savings * 12));
+  setAttr($('sumMonthly'), 'title', view.full(headline));
+  setMoney($('sumAnnual'), view.raw(headline * 12), view.full(headline * 12));
   const per = view.f === 12 ? 'year' : 'month';
   setText($('sumOptimizedSub'), totals.spend > 0 && savings > 0 ? t(`dashboard.optimizedSub.less.${per}`, { pct: pct(savings / totals.spend, 1) }) : t(`dashboard.optimizedSub.plain.${per}`));
   $('optBar').style.width = `${totals.spend > 0 ? Math.max(2, (optimized / totals.spend) * 100) : 100}%`;
@@ -74,7 +86,7 @@ function renderReceipt(result, view) {
   $('rcLeft').className = `tabular-nums ${left < 0 && income > 0 ? 'font-semibold text-rose-700 dark:text-rose-400' : ''}`;
   put('rcPlan', withSign('+', view.s(result.savings)), withSign('+', view.full(result.savings * view.f)));
   const total = left + result.savings;
-  put('rcTotal', income > 0 ? withSign(total < 0 ? '−' : '', view.s(Math.abs(total))) : '–', income > 0 ? view.full(total * view.f) : '');
+  put('rcTotal', income > 0 ? withSign(total < 0 ? '−' : '', view.m(Math.abs(total))) : '–', income > 0 ? view.full(total * view.f) : '');
   setText($('rcNote'), income > 0
     ? (total >= 0 ? t('dashboard.receipt.noteLeft') : t('dashboard.receipt.noteShort'))
     : t('dashboard.receipt.noteNoIncome'));
@@ -197,11 +209,12 @@ function renderCategories(state, result, view) {
 
 function renderMobileBar(state, result, view) {
   const bar = $('mobileBar');
-  const show = result.savings > 0 && state.ui.mode === 'results';
+  const amount = canSave(result);
+  const show = amount > 0 && state.ui.mode === 'results';
   bar.classList.toggle('translate-y-[150%]', !show);
   bar.setAttribute('aria-hidden', String(!show));
   bar.querySelectorAll('a').forEach((a) => (a.tabIndex = show ? 0 : -1));
-  setMoney($('mbAmount'), view.s(result.savings), view.full(result.savings * view.f));
+  setMoney($('mbAmount'), view.m(amount), view.full(amount * view.f));
   setText($('mbPer'), view.per);
   setText($('mbLabel'), view.f === 12 ? t('dashboard.mobile.saveYear') : t('dashboard.mobile.saveMonth'));
 }

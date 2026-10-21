@@ -834,7 +834,7 @@
       "summary": "Un resumen en una línea de tu dinero, basado en los números que has escrito.",
       "spendNow": "Todas las facturas mensuales que has escrito, sumadas.",
       "spendCould": "Tus facturas después de los cambios que has añadido a tu plan.",
-      "saveMonth": "El dinero que liberan cada mes los cambios de tu plan. Los intereses que evitas en las deudas no se cuentan aquí.",
+      "saveMonth": "Lo que te queda cada mes después de tus facturas, más lo que ahorrarían las ideas que actives. Aquí no se cuentan los intereses de deudas que te evitas.",
       "saveYear": "Tu ahorro mensual × 12.",
       "top3": "Los tres mayores ahorros que hemos encontrado, con el más fácil arriba. Un buen sitio para empezar.",
       "health": "Una puntuación de 0 a 100 que revisa cinco cosas: ahorro, vivienda, deudas, fondo de emergencia y caprichos. Cuanto más alta, mejor.",
@@ -1289,7 +1289,7 @@
     },
     "summary": {
       "label": "Resumen",
-      "saveMonth": "Lo que podrías ahorrar de más cada mes",
+      "saveMonth": "Dinero que podrías ahorrar cada mes",
       "perYear_html": "<span id=\"sumAnnual\">0</span> al año",
       "spendNow": "Lo que gastas ahora",
       "couldSpend": "Lo que podrías gastar",
@@ -1658,8 +1658,13 @@
       "basisIncomeApprox": "Parte de tus ingresos, comparada con lo típico para el perfil «{profile}» (una referencia aproximada, porque aún no tenemos datos de tu país)."
     },
     "mobile": {
-      "saveYear": "Podrías ahorrar de más cada año",
-      "saveMonth": "Podrías ahorrar de más cada mes"
+      "saveYear": "Podrías ahorrar cada año",
+      "saveMonth": "Podrías ahorrar cada mes"
+    },
+    "headline": {
+      "save": "Dinero que podrías ahorrar cada mes",
+      "extra": "Lo que podrías ahorrar de más cada mes",
+      "short": "Te falta cada mes"
     }
   },
   "common": {
@@ -1940,12 +1945,21 @@
     },
     "summary": {
       "empty": "Añade ideas a tu plan (y tus ingresos) para ver cómo podrían crecer tus ahorros.",
+      "short": "Ahora mismo gastas más de lo que ganas, así que todavía no queda nada que pueda crecer. Activa ideas o baja algunas facturas hasta que tus gastos queden por debajo de tus ingresos.",
       "main": "Si ahorras {monthly} cada mes durante {years} y crece un {rate}% al año, podrías tener unos {nominal}. Como los precios suben, eso equivaldría a unos {real} de hoy.",
       "asYouAre": "Si sigues como ahora, tendrías unos {amount}."
     },
     "ariaLabel": "Gráfico de líneas. {summary}",
     "year": "Año {n}",
-    "now": "Ahora"
+    "now": "Ahora",
+    "legend": {
+      "alt": "Si además ahorras el dinero extra:",
+      "only": "Si ahorras el dinero que te sobra:"
+    },
+    "side": {
+      "extra_html": "Dinero extra que tendrías <span id=\"fvYears\"></span>",
+      "total_html": "Tus ahorros <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Números borrados. Tus metas y meses guardados se mantienen.",

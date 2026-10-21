@@ -4,7 +4,7 @@ import {
   debtFreeComparison, goalTimeline, emergencyFundStatus, healthScore,
   fiftyThirtyTwenty, paybackMonths, housingStatus,
   rebalanceAllocation, effectiveAllocation, splitSavings, ALLOCATION_PRESETS,
-  fieldAfterPlan, paydayPlan
+  fieldAfterPlan, paydayPlan, canSave
 } from './calculate.js';
 import { RULES } from './rules.js';
 import { paydayIcs, nextPayday } from '../utils/ics.js';
@@ -86,6 +86,18 @@ describe('evaluatePlan', () => {
     const r = computeBudget(s);
     expect(r.savings).toBe(0);
     expect(r.optimized).toBe(r.totals.spend);
+  });
+
+  it('what you could save counts the money left after bills, not only the ideas', () => {
+    const off = computeBudget(base({ values: { income: 6000, misc: 400 }, plan: { committed: { 'impulse-24h': false }, pct: {} } }));
+    expect(canSave(off)).toBeCloseTo(6000 - off.totals.spend, 5);
+    const on = computeBudget(base({ values: { income: 6000, misc: 400 } }));
+    expect(canSave(on)).toBeCloseTo(6000 - on.totals.spend + on.savings, 5);
+    // No income: only the ideas' savings are known
+    const noIncome = computeBudget(base({ values: { misc: 400 } }));
+    expect(canSave(noIncome)).toBe(noIncome.savings);
+    // Spending more than income: negative (short each month)
+    expect(canSave(computeBudget(base({ values: { income: 200, misc: 400 } })))).toBeLessThan(0);
   });
 
   it('custom % is clamped to 0..2x default', () => {

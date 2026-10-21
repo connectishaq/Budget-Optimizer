@@ -814,7 +814,7 @@
       "summary": "Ringkasan keuangan Anda dalam satu baris, berdasarkan angka yang Anda isi.",
       "spendNow": "Semua tagihan bulanan yang Anda isi, dijumlahkan.",
       "spendCould": "Tagihan Anda setelah perubahan yang Anda masukkan ke rencana.",
-      "saveMonth": "Uang yang bisa dihemat tiap bulan dari perubahan dalam rencana Anda. Bunga utang yang terhindar tidak dihitung di sini.",
+      "saveMonth": "Sisa uang Anda tiap bulan setelah tagihan, ditambah penghematan dari ide yang Anda nyalakan. Bunga utang yang Anda hindari tidak dihitung di sini.",
       "saveYear": "Penghematan bulanan Anda × 12.",
       "top3": "Tiga penghematan terbesar yang kami temukan, dengan yang paling mudah di atas. Tempat yang baik untuk memulai.",
       "health": "Skor 0 sampai 100 yang memeriksa lima hal: menabung, tempat tinggal, utang, dana darurat, dan keinginan. Makin tinggi makin baik.",
@@ -1231,7 +1231,7 @@
     },
     "summary": {
       "label": "Ringkasan",
-      "saveMonth": "Tambahan yang bisa Anda hemat tiap bulan",
+      "saveMonth": "Uang yang bisa Anda hemat tiap bulan",
       "perYear_html": "<span id=\"sumAnnual\">0</span> per tahun",
       "spendNow": "Pengeluaran Anda sekarang",
       "couldSpend": "Pengeluaran yang bisa Anda capai",
@@ -1596,8 +1596,13 @@
       "basisIncomeApprox": "Porsi dari penghasilan Anda, dibandingkan dengan {profile} pada umumnya (perkiraan kasar, karena kami belum punya data untuk negara Anda)."
     },
     "mobile": {
-      "saveYear": "Tambahan yang bisa Anda hemat tiap tahun",
-      "saveMonth": "Tambahan yang bisa Anda hemat tiap bulan"
+      "saveYear": "Anda bisa menghemat tiap tahun",
+      "saveMonth": "Anda bisa menghemat tiap bulan"
+    },
+    "headline": {
+      "save": "Uang yang bisa Anda hemat tiap bulan",
+      "extra": "Tambahan yang bisa Anda hemat tiap bulan",
+      "short": "Kekurangan Anda tiap bulan"
     }
   },
   "common": {
@@ -1866,12 +1871,21 @@
     },
     "summary": {
       "empty": "Masukkan ide ke rencana Anda (dan isi penghasilan) untuk melihat bagaimana tabungan Anda bisa bertumbuh.",
+      "short": "Saat ini pengeluaran Anda lebih besar dari penghasilan, jadi belum ada yang tersisa untuk berkembang. Nyalakan ide atau kurangi beberapa tagihan sampai pengeluaran Anda di bawah penghasilan.",
       "main": "Jika Anda menabung {monthly} setiap bulan selama {years} dan tumbuh {rate}% per tahun, Anda bisa punya sekitar {nominal}. Karena harga naik, nilainya setara dengan sekitar {real} hari ini.",
       "asYouAre": "Jika Anda terus seperti sekarang, Anda akan punya sekitar {amount}."
     },
     "ariaLabel": "Grafik garis. {summary}",
     "year": "Tahun ke-{n}",
-    "now": "Sekarang"
+    "now": "Sekarang",
+    "legend": {
+      "alt": "Jika Anda juga menabung uang tambahan:",
+      "only": "Jika Anda menabung sisa uang Anda:"
+    },
+    "side": {
+      "extra_html": "Uang tambahan yang akan Anda miliki <span id=\"fvYears\"></span>",
+      "total_html": "Tabungan Anda <span id=\"fvYears\"></span>"
+    }
   },
   "reset": {
     "cleared": "Angka dikosongkan. Target dan bulan tersimpan Anda tetap ada.",

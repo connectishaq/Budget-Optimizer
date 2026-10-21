@@ -484,6 +484,16 @@ export function emergencyFundStatus(essentials, fund, monthly) {
 }
 
 /** One call that produces everything the dashboard renders. */
+/**
+ * What the household could save each month: what is left after bills plus
+ * what the switched-on ideas free up. Without an income only the ideas' part
+ * is known. Negative when spending is more than income.
+ */
+export function canSave(result) {
+  const { income, spend } = result.totals;
+  return income > 0 ? income - spend + result.savings : result.savings;
+}
+
 export function computeBudget(state, fmt = plainFmt) {
   const totals = computeTotals(state);
   const plan = evaluatePlan(state, totals, fmt);
