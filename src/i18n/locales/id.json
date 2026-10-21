@@ -1120,7 +1120,6 @@
     "skipLink": "Langsung ke kalkulator",
     "header": {
       "navLabel": "Utama",
-      "brand": "Budget Optimizer",
       "nav": {
         "calculator": "Kalkulator"
       }
@@ -1483,15 +1482,15 @@
     }
   },
   "seo": {
-    "title": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan | Kalkulator Gratis dan Pribadi",
+    "title": "Kalkulator anggaran rumah tangga dan perencana tabungan | SpendMath",
     "description": "Alat anggaran rumah tangga yang gratis dan sederhana: isi tagihan langkah demi langkah, lihat ke mana uang Anda pergi, dapatkan ide mudah untuk berhemat, dan lihat tabungan Anda bertumbuh. 100% pribadi, berjalan di browser Anda.",
-    "ogTitle": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+    "ogTitle": "SpendMath: Kalkulator anggaran rumah tangga dan perencana tabungan",
     "ogDescription": "Isi tagihan Anda, dapatkan ide sederhana untuk berhemat, dan lihat berapa yang bisa Anda tabung. Pribadi, gratis, dan instan.",
-    "twitterTitle": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+    "twitterTitle": "SpendMath: Kalkulator anggaran rumah tangga dan perencana tabungan",
     "twitterDescription": "Ketahui ke mana uang Anda pergi dan berapa yang bisa Anda tabung. Alat 100% pribadi yang berjalan di browser.",
-    "ogImageAlt": "Pengoptimal Anggaran Rumah Tangga: contoh satu bulan berisi penghasilan, tagihan, dan uang untuk ditabung",
+    "ogImageAlt": "SpendMath: kalkulator anggaran gratis. Temukan kebocoran uang Anda. Pribadi, tanpa daftar, dalam mata uang Anda sendiri.",
     "app": {
-      "name": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan",
+      "name": "SpendMath",
       "description": "Alat anggaran rumah tangga yang pribadi dan berjalan di browser, yang memandu Anda mengisi tagihan, menyarankan cara mudah untuk berhemat, memberi skor kesehatan anggaran, merencanakan target dan pelunasan utang, serta menunjukkan bagaimana tabungan bisa bertumbuh.",
       "featureList": [
         "Pengisian terpandu langkah demi langkah",
@@ -1910,7 +1909,7 @@
       "menu": "Menu",
       "navLabel": "Utama"
     },
-    "brand": "Budget Optimizer",
+    "brand": "SpendMath",
     "footer": {
       "title": "Footer situs",
       "privacyBadge": "Angka Anda tidak pernah keluar dari perangkat ini",
@@ -1961,7 +1960,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Risiko investasi.</strong> Proyeksi bersifat hipotetis, mengasumsikan imbal hasil tetap yang dimajemukkan setiap bulan, dan tidak memperhitungkan pajak serta biaya. Nilai investasi bisa turun, dan kinerja masa lalu tidak menjamin hasil di masa depan.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Konsultasikan dengan profesional.</strong> Sebelum mengambil keputusan keuangan penting, bicarakan dengan perencana keuangan, akuntan, atau konsultan pajak yang berkualifikasi dan berizin."
       },
-      "copyright": "Pengoptimal Anggaran Rumah Tangga & Simulator Tabungan. Dibuat untuk rumah tangga, bukan untuk bank.",
+      "copyright": "SpendMath. Dibuat untuk rumah tangga, bukan untuk bank.",
       "backToTop": "Kembali ke atas"
     },
     "theme": {
@@ -1999,7 +1998,7 @@
       "contact": "Kontak"
     },
     "title": "Kebijakan Privasi",
-    "lead": "Household Budget Optimizer dibuat agar urusan uang Anda tetap menjadi urusan Anda. Angka anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami.",
+    "lead": "SpendMath dibuat agar urusan uang Anda tetap menjadi urusan Anda. Angka anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami.",
     "sections": {
       "summary": {
         "title": "Versi singkat",
@@ -2011,7 +2010,7 @@
       },
       "who": {
         "title": "Siapa kami",
-        "p1_html": "Kebijakan ini berlaku untuk situs web dan kalkulator Household Budget Optimizer &amp; Savings Simulator (“situs”, “kami”). Kami bertanggung jawab atas informasi pribadi yang dijelaskan di sini. Anda bisa menghubungi kami kapan saja melalui <a href=\"/contact/?topic=privacy\">formulir kontak</a> kami."
+        "p1_html": "Kebijakan ini berlaku untuk situs web dan kalkulator SpendMath (“situs”, “kami”). Kami bertanggung jawab atas informasi pribadi yang dijelaskan di sini. Anda bisa menghubungi kami kapan saja melalui <a href=\"/contact/?topic=privacy\">formulir kontak</a> kami."
       },
       "budgetData": {
         "title": "Angka anggaran Anda tidak pernah dikirim ke kami",
@@ -2095,12 +2094,12 @@
     },
     "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
     "seo": {
-      "title": "Kebijakan Privasi | Household Budget Optimizer",
+      "title": "Kebijakan Privasi | SpendMath",
       "description": "Anggaran Anda tetap di browser Anda: tanpa akun, tidak ada yang disimpan di server kami. Apa yang kami simpan di perangkat Anda, bagaimana iklan Google memakai cookie, dan hak-hak Anda.",
-      "ogTitle": "Kebijakan Privasi | Household Budget Optimizer",
+      "ogTitle": "Kebijakan Privasi | SpendMath",
       "ogDescription": "Angka anggaran Anda tidak pernah keluar dari browser Anda. Apa yang kami simpan, bagaimana iklan memakai cookie, dan hak-hak Anda.",
       "ldName": "Kebijakan Privasi",
-      "ldDescription": "Cara Household Budget Optimizer menangani data Anda: angka anggaran tetap di browser Anda, apa yang disimpan di perangkat Anda, cookie iklan, dan hak privasi Anda."
+      "ldDescription": "Cara SpendMath menangani data Anda: angka anggaran tetap di browser Anda, apa yang disimpan di perangkat Anda, cookie iklan, dan hak privasi Anda."
     }
   },
   "terms": {
@@ -2127,7 +2126,7 @@
       "contact": "Kontak"
     },
     "title": "Ketentuan Penggunaan",
-    "lead": "Ketentuan ini menjelaskan apa yang bisa Anda harapkan dari Household Budget Optimizer dan apa yang kami minta dari Anda. Kami membuatnya singkat dan dengan bahasa yang sederhana.",
+    "lead": "Ketentuan ini menjelaskan apa yang bisa Anda harapkan dari SpendMath dan apa yang kami minta dari Anda. Kami membuatnya singkat dan dengan bahasa yang sederhana.",
     "sections": {
       "summary": {
         "title": "Versi singkat",
@@ -2138,7 +2137,7 @@
       },
       "agreement": {
         "title": "1. Menyetujui ketentuan ini",
-        "p1_html": "Dengan menggunakan situs web dan kalkulator Household Budget Optimizer &amp; Savings Simulator (“situs”, “kami”), Anda menyetujui ketentuan ini dan <a href=\"/privacy-policy/\">Kebijakan Privasi</a> kami. Jika Anda tidak setuju, mohon jangan gunakan situs ini."
+        "p1_html": "Dengan menggunakan situs web dan kalkulator SpendMath (“situs”, “kami”), Anda menyetujui ketentuan ini dan <a href=\"/privacy-policy/\">Kebijakan Privasi</a> kami. Jika Anda tidak setuju, mohon jangan gunakan situs ini."
       },
       "service": {
         "title": "2. Apa alat ini",
@@ -2204,12 +2203,12 @@
     },
     "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
     "seo": {
-      "title": "Ketentuan Penggunaan | Household Budget Optimizer",
+      "title": "Ketentuan Penggunaan | SpendMath",
       "description": "Aturan penggunaan kalkulator anggaran rumah tangga gratis kami. Hasilnya adalah perkiraan untuk perencanaan, bukan nasihat keuangan. Mencakup akurasi, penggunaan yang wajar, dan tanggung jawab.",
-      "ogTitle": "Ketentuan Penggunaan | Household Budget Optimizer",
+      "ogTitle": "Ketentuan Penggunaan | SpendMath",
       "ogDescription": "Gratis dipakai, hanya perkiraan, bukan nasihat keuangan. Ketentuan dengan bahasa sederhana untuk kalkulator anggaran kami.",
       "ldName": "Ketentuan Penggunaan",
-      "ldDescription": "Ketentuan penggunaan kalkulator gratis Household Budget Optimizer: hanya perkiraan, bukan nasihat keuangan, penggunaan yang dapat diterima, dan batas tanggung jawab."
+      "ldDescription": "Ketentuan penggunaan kalkulator gratis SpendMath: hanya perkiraan, bukan nasihat keuangan, penggunaan yang dapat diterima, dan batas tanggung jawab."
     }
   },
   "contact": {
@@ -2269,12 +2268,12 @@
       }
     },
     "seo": {
-      "title": "Hubungi Kami | Household Budget Optimizer",
+      "title": "Hubungi Kami | SpendMath",
       "description": "Ada pertanyaan, laporan bug, atau ide untuk kalkulator anggaran gratis ini? Kirim pesan dan kami biasanya membalas dalam 2 hari kerja. Kami tidak bisa memberi nasihat keuangan.",
-      "ogTitle": "Hubungi Kami | Household Budget Optimizer",
+      "ogTitle": "Hubungi Kami | SpendMath",
       "ogDescription": "Menemukan bug, punya ide, atau pertanyaan tentang perhitungan? Kirim pesan kepada kami.",
       "ldName": "Hubungi Kami",
-      "ldDescription": "Kirim pertanyaan, laporan bug, dan ide tentang kalkulator Household Budget Optimizer."
+      "ldDescription": "Kirim pertanyaan, laporan bug, dan ide tentang kalkulator SpendMath."
     },
     "emailAlt": "Lebih suka email? Tulis ke {email}.",
     "errors": {
@@ -2300,7 +2299,7 @@
       "failedTextWithEmail": "Periksa koneksi Anda dan coba lagi, atau kirim email ke {email}. Pesan Anda masih ada di formulir."
     },
     "mail": {
-      "subject": "Budget Optimizer: {topic}",
+      "subject": "SpendMath: {topic}",
       "body": "{message}\n\n—\n{name}\nTopik: {topic}"
     },
     "unavailable": {
@@ -2937,7 +2936,7 @@
       "privacy": "Privasi Anda",
       "standards": "Standar editorial"
     },
-    "title": "Tentang Budget Optimizer",
+    "title": "Tentang SpendMath",
     "lead": "Kalkulator anggaran rumah tangga yang gratis dan pribadi, untuk membantu keluarga melihat ke mana uang mereka pergi dan menemukan cara sederhana agar lebih banyak yang tersisa.",
     "sections": {
       "why": {
@@ -2947,7 +2946,7 @@
       },
       "who": {
         "title": "Siapa pengelolanya",
-        "p1": "Budget Optimizer adalah proyek independen yang dibuat dan dirawat oleh tim kecil yang ingin membuat keuangan rumah tangga lebih mudah dipahami."
+        "p1": "SpendMath adalah proyek independen yang dibuat dan dirawat oleh tim kecil yang ingin membuat keuangan rumah tangga lebih mudah dipahami."
       },
       "how": {
         "title": "Cara kerja kalkulator",
@@ -2983,11 +2982,11 @@
       }
     },
     "seo": {
-      "title": "Tentang | Household Budget Optimizer",
+      "title": "Tentang | SpendMath",
       "description": "Mengapa kalkulator anggaran rumah tangga yang gratis dan pribadi ini ada, cara kerjanya, dari mana angkanya, dan standar yang kami pegang.",
-      "ogTitle": "Tentang | Household Budget Optimizer",
+      "ogTitle": "Tentang | SpendMath",
       "ogDescription": "Kalkulator gratis dan pribadi yang membantu rumah tangga menemukan dan menambal kebocoran uang. Cara kerjanya dan dari mana angkanya.",
-      "ldName": "Tentang Household Budget Optimizer",
+      "ldName": "Tentang SpendMath",
       "ldDescription": "Mengapa kalkulator anggaran rumah tangga yang gratis dan pribadi ini ada, cara kerjanya, dari mana angkanya, dan standar yang kami pegang."
     }
   },
@@ -2995,7 +2994,7 @@
     "index": {
       "title": "Panduan keuangan",
       "lead": "Panduan sederhana dan praktis untuk menyusun anggaran, menabung, dan melunasi utang. Gratis, tanpa daftar, dan ditulis untuk rumah tangga di mana saja.",
-      "seoTitle": "Panduan keuangan: anggaran, tabungan & utang",
+      "seoTitle": "Panduan keuangan: anggaran, tabungan & utang | SpendMath",
       "seoDescription": "Panduan gratis dengan bahasa sederhana tentang anggaran, dana darurat, aturan 50/30/20, menghemat tagihan, dan melunasi utang kartu kredit.",
       "breadcrumb": "Panduan"
     },

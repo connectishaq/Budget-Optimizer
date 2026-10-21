@@ -1,6 +1,6 @@
-# Household Budget Optimizer & Savings Simulator
+# SpendMath
 
-A fast, private, static budgeting tool. All calculations run in the browser; nothing is sent to a server.
+A household budget calculator and savings planner: a fast, private, static budgeting tool. All calculations run in the browser; nothing is sent to a server.
 
 ## Run it
 
@@ -25,7 +25,7 @@ Copy `.env.example` to `.env`, fill it in, then run `npm run build`:
 
 | Variable | Purpose |
 | --- | --- |
-| `SITE_URL` | Your live domain, e.g. `https://www.example.com`. Adds the canonical tag, the hreflang links between the language/country pages, `og:url` and the social share image (`og-image.png`), writes `sitemap.xml` (with every page's alternates) and the `Sitemap:` line in `robots.txt`. Without it these are skipped (the build warns you). |
+| `SITE_URL` | Your live domain, e.g. `https://www.example.com`. Adds the canonical tag, the hreflang links between the language/country pages, `og:url`, and makes the social share image (`og-image.png`) an absolute URL; writes `sitemap.xml` (with every page's alternates) and the `Sitemap:` line in `robots.txt`. Without it these are skipped (the build warns you). |
 | `VITE_ADSENSE_CLIENT` | Your AdSense publisher ID (`ca-pub-…`). Leave empty and all ad slots stay hidden. |
 | `VITE_ADSENSE_SLOT_TOP` / `_SIDEBAR` / `_INARTICLE` / `_BOTTOM` | Optional ad-unit IDs for each slot. |
 | `VITE_CMP_SRC` | Optional. Script URL of a Google-certified consent tool (IAB TCF v2.2) for visitors in the EEA, UK and Switzerland. Leave empty if you use Google's own consent message (see below). |
@@ -76,7 +76,8 @@ src/ui/*.js             inputs, plan cards, dashboard, charts (svg-chart.js line
                         history (backup, share, print), reset (start over)
 src/ads.js              AdSense loader (idle-time, env-configured, consent defaults)
 src/styles.css          Tailwind v4 + small component layer, lite mode, print stylesheet
-public/                 favicon, iPhone bookmark icon, social share image, robots.txt
+public/                 favicons (.ico, .svg), iPhone bookmark icon, app icons (192, 512), social share image, robots.txt
+public/brand/           SpendMath logos (header uses logo-horizontal.svg and logo-horizontal-dark.svg)
 ```
 
 ## Languages and countries

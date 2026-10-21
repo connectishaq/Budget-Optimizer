@@ -140,7 +140,7 @@ ${related ? `
 const ldBlock = (o) => `<script type="application/ld+json">\n  ${JSON.stringify(o, null, 2).replace(/</g, '\\u003c').replace(/\n/g, '\n  ')}\n  </script>`;
 
 /** Head tags for a guide page or index: title, description, social, canonical/hreflang, JSON-LD. */
-function setHead(doc, { title, description, lang, siteUrl, path: pagePath, alternates, ld, type = 'website' }) {
+function setHead(doc, { title, description, imageAlt, lang, siteUrl, path: pagePath, alternates, ld, type = 'website' }) {
   const head = doc.querySelector('head');
   const set = (sel, value) => { const el = head.querySelector(sel); if (el) el.setAttribute('content', value); };
   head.querySelector('title').set_content(esc(title));
@@ -148,6 +148,7 @@ function setHead(doc, { title, description, lang, siteUrl, path: pagePath, alter
   set('meta[property="og:title"]', title);
   set('meta[property="og:description"]', description);
   set('meta[property="og:type"]', type);
+  set('meta[property="og:image:alt"]', imageAlt);
   for (const el of head.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang], meta[property="og:url"], script[type="application/ld+json"]')) el.remove();
   const tags = [];
   if (siteUrl) {
@@ -186,7 +187,7 @@ export function renderGuides({ root, template, siteUrl }) {
   const en = readJson(path.join(root, 'src/i18n/locales/en.json'));
   const all = Object.fromEntries(Object.keys(GUIDE_BASES).map((l) => [l, loadGuides(root, l)]));
   const today = new Date().toISOString().slice(0, 10);
-  const org = { '@type': 'Organization', name: 'Household Budget Optimizer' };
+  const org = { '@type': 'Organization', name: 'SpendMath' };
   const written = new Map();
   const write = (pagePath, doc) => written.set(pagePath, doc.toString());
 
@@ -213,7 +214,7 @@ export function renderGuides({ root, template, siteUrl }) {
     const indexAlts = Object.fromEntries(Object.entries(GUIDE_BASES).filter(([l]) => all[l].size).map(([l, b]) => [l, b]));
     const index = page(indexMain(t, lang, guides));
     setHead(index, {
-      title: t('guides.index.seoTitle'), description: t('guides.index.seoDescription'), lang, siteUrl, path: base, alternates: indexAlts,
+      title: t('guides.index.seoTitle'), description: t('guides.index.seoDescription'), imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: base, alternates: indexAlts,
       ld: [
         { '@context': 'https://schema.org', '@type': 'CollectionPage', name: t('guides.index.title'), description: t('guides.index.seoDescription'), inLanguage: HREFLANG[lang] },
         crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb') }])
@@ -226,7 +227,7 @@ export function renderGuides({ root, template, siteUrl }) {
       const pagePath = `${base}${g.slug}/`;
       const doc = page(articleMain(t, lang, g, guides));
       setHead(doc, {
-        title: g.seo.title, description: g.seo.description, lang, siteUrl, path: pagePath, alternates: versions(all, g.slug), type: 'article',
+        title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: pagePath, alternates: versions(all, g.slug), type: 'article',
         ld: [
           {
             '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.seo.description, inLanguage: HREFLANG[lang],

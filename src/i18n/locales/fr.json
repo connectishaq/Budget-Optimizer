@@ -1178,7 +1178,6 @@
     "skipLink": "Aller au calculateur",
     "header": {
       "navLabel": "Principal",
-      "brand": "Budget Optimizer",
       "nav": {
         "calculator": "Calculateur"
       }
@@ -1541,15 +1540,15 @@
     }
   },
   "seo": {
-    "title": "Optimiseur de budget familial et simulateur d’épargne | Calculateur gratuit et confidentiel",
+    "title": "Calculateur de budget familial et planificateur d’épargne | SpendMath",
     "description": "Outil de budget familial simple et gratuit : saisissez vos dépenses étape par étape, voyez où va votre argent, recevez des idées faciles pour dépenser moins et regardez votre épargne grandir. 100 % confidentiel, fonctionne dans votre navigateur.",
-    "ogTitle": "Optimiseur de budget familial et simulateur d’épargne",
+    "ogTitle": "SpendMath: Calculateur de budget familial et planificateur d’épargne",
     "ogDescription": "Saisissez vos dépenses, recevez des idées simples pour dépenser moins et voyez combien vous pourriez économiser. Confidentiel, gratuit et instantané.",
-    "twitterTitle": "Optimiseur de budget familial et simulateur d’épargne",
+    "twitterTitle": "SpendMath: Calculateur de budget familial et planificateur d’épargne",
     "twitterDescription": "Découvrez où va votre argent et combien vous pourriez économiser. Un outil 100 % confidentiel, dans votre navigateur.",
-    "ogImageAlt": "Optimiseur de budget familial : exemple de mois avec revenus, dépenses et argent à épargner",
+    "ogImageAlt": "SpendMath : calculateur de budget gratuit. Trouvez vos fuites d’argent. Confidentiel, sans inscription, dans votre devise.",
     "app": {
-      "name": "Optimiseur de budget familial et simulateur d’épargne",
+      "name": "SpendMath",
       "description": "Un outil de budget familial confidentiel, dans votre navigateur, qui vous guide dans vos dépenses, propose des moyens simples de dépenser moins, note la santé de votre budget, planifie vos objectifs et le remboursement de vos dettes, et montre comment votre épargne pourrait grandir.",
       "featureList": [
         "Configuration guidée étape par étape",
@@ -1984,7 +1983,7 @@
       "menu": "Menu",
       "navLabel": "Principal"
     },
-    "brand": "Budget Optimizer",
+    "brand": "SpendMath",
     "footer": {
       "title": "Pied de page du site",
       "privacyBadge": "Vos chiffres ne quittent jamais cet appareil",
@@ -2035,7 +2034,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Risque lié aux investissements.</strong> Les projections sont hypothétiques, supposent un rendement constant capitalisé chaque mois et excluent impôts et frais. Les investissements peuvent perdre de la valeur, et les performances passées ne préjugent pas des performances futures.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consultez un professionnel.</strong> Avant de prendre une décision financière importante, adressez-vous à un conseiller financier, un expert-comptable ou un conseiller fiscal qualifié et agréé."
       },
-      "copyright": "Optimiseur de budget familial et simulateur d’épargne. Conçu pour les foyers, pas pour les banques.",
+      "copyright": "SpendMath. Conçu pour les foyers, pas pour les banques.",
       "backToTop": "Retour en haut"
     },
     "theme": {
@@ -2073,7 +2072,7 @@
       "contact": "Contact"
     },
     "title": "Politique de confidentialité",
-    "lead": "L’Optimiseur de budget familial est conçu pour que votre argent reste votre affaire. Les chiffres de votre budget sont calculés dans votre propre navigateur et ne nous sont jamais envoyés.",
+    "lead": "SpendMath est conçu pour que votre argent reste votre affaire. Les chiffres de votre budget sont calculés dans votre propre navigateur et ne nous sont jamais envoyés.",
     "sections": {
       "summary": {
         "title": "En bref",
@@ -2085,7 +2084,7 @@
       },
       "who": {
         "title": "Qui sommes-nous",
-        "p1_html": "Cette politique couvre le site et le calculateur Optimiseur de budget familial &amp; simulateur d’épargne (« le site », « nous »). Nous sommes responsables des données personnelles décrites ici. Vous pouvez nous joindre à tout moment via notre <a href=\"/contact/?topic=privacy\">formulaire de contact</a>."
+        "p1_html": "Cette politique couvre le site et le calculateur SpendMath (« le site », « nous »). Nous sommes responsables des données personnelles décrites ici. Vous pouvez nous joindre à tout moment via notre <a href=\"/contact/?topic=privacy\">formulaire de contact</a>."
       },
       "budgetData": {
         "title": "Les chiffres de votre budget ne nous sont jamais envoyés",
@@ -2169,12 +2168,12 @@
     },
     "updated_html": "Dernière mise à jour : <time datetime=\"2026-10-19\">19 octobre 2026</time>",
     "seo": {
-      "title": "Politique de confidentialité | Optimiseur de budget familial",
+      "title": "Politique de confidentialité | SpendMath",
       "description": "Votre budget reste dans votre navigateur : pas de compte, rien n’est stocké sur nos serveurs. Ce que nous gardons sur votre appareil, comment les publicités Google utilisent les cookies, et vos droits.",
-      "ogTitle": "Politique de confidentialité | Optimiseur de budget familial",
+      "ogTitle": "Politique de confidentialité | SpendMath",
       "ogDescription": "Les chiffres de votre budget ne quittent jamais votre navigateur. Ce que nous stockons, comment les publicités utilisent les cookies, et vos droits.",
       "ldName": "Politique de confidentialité",
-      "ldDescription": "Comment l’Optimiseur de budget familial traite vos données : les chiffres du budget restent dans votre navigateur, ce qui est stocké sur votre appareil, les cookies publicitaires et vos droits."
+      "ldDescription": "Comment SpendMath traite vos données : les chiffres du budget restent dans votre navigateur, ce qui est stocké sur votre appareil, les cookies publicitaires et vos droits."
     }
   },
   "terms": {
@@ -2201,7 +2200,7 @@
       "contact": "Contact"
     },
     "title": "Conditions d’utilisation",
-    "lead": "Ces conditions expliquent ce que vous pouvez attendre de l’Optimiseur de budget familial et ce que nous vous demandons. Nous les avons voulues courtes et rédigées simplement.",
+    "lead": "Ces conditions expliquent ce que vous pouvez attendre de SpendMath et ce que nous vous demandons. Nous les avons voulues courtes et rédigées simplement.",
     "sections": {
       "summary": {
         "title": "En bref",
@@ -2212,7 +2211,7 @@
       },
       "agreement": {
         "title": "1. Acceptation des conditions",
-        "p1_html": "En utilisant le site et le calculateur Optimiseur de budget familial &amp; simulateur d’épargne (« le site », « nous »), vous acceptez ces conditions ainsi que notre <a href=\"/privacy-policy/\">Politique de confidentialité</a>. Si vous ne les acceptez pas, n’utilisez pas le site."
+        "p1_html": "En utilisant le site et le calculateur SpendMath (« le site », « nous »), vous acceptez ces conditions ainsi que notre <a href=\"/privacy-policy/\">Politique de confidentialité</a>. Si vous ne les acceptez pas, n’utilisez pas le site."
       },
       "service": {
         "title": "2. Ce qu’est l’outil",
@@ -2278,12 +2277,12 @@
     },
     "updated_html": "Dernière mise à jour : <time datetime=\"2026-10-19\">19 octobre 2026</time>",
     "seo": {
-      "title": "Conditions d’utilisation | Optimiseur de budget familial",
+      "title": "Conditions d’utilisation | SpendMath",
       "description": "Les règles d’utilisation de notre calculateur de budget familial gratuit. Les résultats sont des estimations pour planifier, pas des conseils financiers. Exactitude, utilisation loyale et responsabilité.",
-      "ogTitle": "Conditions d’utilisation | Optimiseur de budget familial",
+      "ogTitle": "Conditions d’utilisation | SpendMath",
       "ogDescription": "Gratuit, estimations uniquement, pas de conseil financier. Les conditions de notre calculateur de budget, en langage simple.",
       "ldName": "Conditions d’utilisation",
-      "ldDescription": "Les conditions d’utilisation du calculateur gratuit Optimiseur de budget familial : estimations uniquement, pas de conseil financier, utilisation acceptable et limitation de responsabilité."
+      "ldDescription": "Les conditions d’utilisation du calculateur gratuit SpendMath : estimations uniquement, pas de conseil financier, utilisation acceptable et limitation de responsabilité."
     }
   },
   "contact": {
@@ -2343,12 +2342,12 @@
       }
     },
     "seo": {
-      "title": "Nous contacter | Optimiseur de budget familial",
+      "title": "Nous contacter | SpendMath",
       "description": "Des questions, des bugs à signaler ou des idées pour le calculateur de budget gratuit ? Envoyez-nous un message : nous répondons généralement sous 2 jours ouvrés. Nous ne pouvons pas donner de conseils financiers.",
-      "ogTitle": "Nous contacter | Optimiseur de budget familial",
+      "ogTitle": "Nous contacter | SpendMath",
       "ogDescription": "Un bug, une idée ou une question sur un calcul ? Envoyez-nous un message.",
       "ldName": "Nous contacter",
-      "ldDescription": "Envoyez vos questions, signalements de bugs et idées sur le calculateur Optimiseur de budget familial."
+      "ldDescription": "Envoyez vos questions, signalements de bugs et idées sur le calculateur SpendMath."
     },
     "emailAlt": "Vous préférez l’e-mail ? Écrivez à {email}.",
     "errors": {
@@ -2374,7 +2373,7 @@
       "failedTextWithEmail": "Vérifiez votre connexion et réessayez, ou écrivez-nous à {email}. Votre message est toujours dans le formulaire."
     },
     "mail": {
-      "subject": "Budget Optimizer : {topic}",
+      "subject": "SpendMath : {topic}",
       "body": "{message}\n\n—\n{name}\nSujet : {topic}"
     },
     "unavailable": {
@@ -3011,7 +3010,7 @@
       "privacy": "Vos données personnelles",
       "standards": "Règles éditoriales"
     },
-    "title": "À propos de Budget Optimizer",
+    "title": "À propos de SpendMath",
     "lead": "Un calculateur de budget familial gratuit et confidentiel, qui aide les familles à voir où va leur argent et à trouver des moyens simples d’en garder davantage.",
     "sections": {
       "why": {
@@ -3021,7 +3020,7 @@
       },
       "who": {
         "title": "Qui le gère",
-        "p1": "Budget Optimizer est un projet indépendant, créé et entretenu par une petite équipe qui veut rendre l’argent du foyer plus simple à comprendre."
+        "p1": "SpendMath est un projet indépendant, créé et entretenu par une petite équipe qui veut rendre l’argent du foyer plus simple à comprendre."
       },
       "how": {
         "title": "Comment fonctionne le calculateur",
@@ -3059,11 +3058,11 @@
       }
     },
     "seo": {
-      "title": "À propos | Household Budget Optimizer",
+      "title": "À propos | SpendMath",
       "description": "Pourquoi ce calculateur de budget familial gratuit et confidentiel existe, comment il fonctionne, d’où viennent ses chiffres et les règles qui l’encadrent.",
-      "ogTitle": "À propos | Household Budget Optimizer",
+      "ogTitle": "À propos | SpendMath",
       "ogDescription": "Un calculateur gratuit et confidentiel qui aide les foyers à repérer et colmater les fuites d’argent. Son fonctionnement et l’origine de ses chiffres.",
-      "ldName": "À propos de Household Budget Optimizer",
+      "ldName": "À propos de SpendMath",
       "ldDescription": "Pourquoi ce calculateur de budget familial gratuit et confidentiel existe, comment il fonctionne, d’où viennent ses chiffres et les règles qui l’encadrent."
     }
   },
@@ -3071,7 +3070,7 @@
     "index": {
       "title": "Guides d’argent",
       "lead": "Des guides simples et pratiques pour faire son budget, épargner et rembourser ses dettes. Gratuits, sans inscription, et écrits pour tous les foyers.",
-      "seoTitle": "Guides d’argent : budget, épargne, dettes | Budget Optimizer",
+      "seoTitle": "Guides d’argent : budget, épargne, dettes | SpendMath",
       "seoDescription": "Guides gratuits et clairs sur le budget, l’épargne de précaution, la règle 50/30/20, la baisse des factures et le remboursement d’une carte de crédit.",
       "breadcrumb": "Guides"
     },

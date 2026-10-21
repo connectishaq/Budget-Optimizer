@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Household Budget Optimizer &amp; Savings Simulator | Free, Private Calculator</title>
+  <title>Household Budget Calculator &amp; Savings Planner | SpendMath</title>
   <meta name="description" content="Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0f172a">
   <meta name="color-scheme" content="light dark">
   <!--SITE_URL_TAGS-->
+  <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Household Budget Optimizer">
-  <meta property="og:title" content="Household Budget Optimizer & Savings Simulator">
+  <meta property="og:site_name" content="SpendMath">
+  <meta property="og:title" content="SpendMath: Household Budget Calculator & Savings Planner">
   <meta property="og:description" content="Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Household Budget Optimizer & Savings Simulator">
+  <meta name="twitter:title" content="SpendMath: Household Budget Calculator & Savings Planner">
   <meta name="twitter:description" content="Find out where your money goes and how much you could save. A 100% private, in-browser tool.">
 
   <!-- Theme, lite mode and ad flag are set before first paint to avoid flashes and layout shift -->
@@ -58,11 +59,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Household Budget Optimizer & Savings Simulator",
+    "name": "SpendMath",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any (web browser)",
     "browserRequirements": "Requires JavaScript",
     "isAccessibleForFree": true,
+    "publisher": { "@type": "Organization", "name": "SpendMath" },
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A private, in-browser household budget tool that guides you through your bills, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow.",
     "featureList": ["Step-by-step guided setup", "Plain-language savings ideas", "Budget health score", "How your money is split (50/30/20)", "Savings growth projection in today's money", "Goal planner", "Payday checklist with calendar reminder", "Weekly spending limit", "Once-a-year costs spread into monthly amounts", "Emergency fund check", "Debt-free date", "13 currencies with lakh and crore display"]
@@ -175,8 +177,8 @@
   <!-- ===================== HEADER ===================== -->
   <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
     <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6" aria-label="Main" data-i18n-attr="aria-label:page.header.navLabel">
-      <a href="#top" class="flex min-h-11 items-center gap-2 font-semibold text-slate-900 dark:text-white">
-        <img src="/favicon.svg" alt="" width="24" height="24" class="h-6 w-6"><span data-i18n="page.header.brand">Budget Optimizer</span>
+      <a href="#top" class="flex min-h-11 shrink-0 items-center">
+        <img src="/brand/logo-horizontal.svg" alt="SpendMath" width="510" height="96" class="h-7 w-auto sm:h-8 dark:hidden"><img src="/brand/logo-horizontal-dark.svg" alt="SpendMath" width="510" height="96" class="hidden h-7 w-auto sm:h-8 dark:block">
       </a>
       <div class="flex items-center gap-1 text-sm">
         <a href="#app" class="hidden min-h-11 items-center rounded-lg px-3 text-slate-600 hover:text-slate-900 sm:flex dark:text-slate-400 dark:hover:text-white" data-i18n="page.header.nav.calculator">Calculator</a>

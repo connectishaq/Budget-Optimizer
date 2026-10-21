@@ -115,6 +115,7 @@ function jsonLd(t, page, currency, pageUrl) {
     operatingSystem: 'Any (web browser)',
     browserRequirements: 'Requires JavaScript',
     isAccessibleForFree: true,
+    publisher: { '@type': 'Organization', name: 'SpendMath' },
     inLanguage: bcp47(page.path),
     offers: { '@type': 'Offer', price: '0', priceCurrency: currency },
     description: t('seo.app.description'),

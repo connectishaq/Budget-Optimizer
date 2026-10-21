@@ -90,7 +90,7 @@ async function send(form) {
   body.append('subject', subject); // Web3Forms
   body.append('_subject', subject); // Formspree
   body.append('_replyto', data.email);
-  body.append('from_name', 'Budget Optimizer contact form');
+  body.append('from_name', 'SpendMath contact form');
   if (ACCESS_KEY) body.append('access_key', ACCESS_KEY);
 
   const ctrl = new AbortController();

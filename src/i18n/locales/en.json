@@ -1138,7 +1138,6 @@
     "skipLink": "Skip to the calculator",
     "header": {
       "navLabel": "Main",
-      "brand": "Budget Optimizer",
       "nav": {
         "calculator": "Calculator"
       }
@@ -1501,15 +1500,15 @@
     }
   },
   "seo": {
-    "title": "Household Budget Optimizer & Savings Simulator | Free, Private Calculator",
+    "title": "Household Budget Calculator & Savings Planner | SpendMath",
     "description": "Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.",
-    "ogTitle": "Household Budget Optimizer & Savings Simulator",
+    "ogTitle": "SpendMath: Household Budget Calculator & Savings Planner",
     "ogDescription": "Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.",
-    "twitterTitle": "Household Budget Optimizer & Savings Simulator",
+    "twitterTitle": "SpendMath: Household Budget Calculator & Savings Planner",
     "twitterDescription": "Find out where your money goes and how much you could save. A 100% private, in-browser tool.",
-    "ogImageAlt": "Household Budget Optimizer: an example month showing income, bills and money to save",
+    "ogImageAlt": "SpendMath: free budget calculator. Find your money leaks. Private, no sign-up, in your own currency.",
     "app": {
-      "name": "Household Budget Optimizer & Savings Simulator",
+      "name": "SpendMath",
       "description": "A private, in-browser household budget tool that guides you through your bills, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow.",
       "featureList": [
         "Step-by-step guided setup",
@@ -1936,7 +1935,7 @@
       "menu": "Menu",
       "navLabel": "Main"
     },
-    "brand": "Budget Optimizer",
+    "brand": "SpendMath",
     "footer": {
       "title": "Site footer",
       "privacyBadge": "Your numbers never leave this device",
@@ -1987,7 +1986,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Investment risk.</strong> Projections are hypothetical, assume a constant return compounded monthly, and exclude taxes and fees. Investments can lose value, and past performance does not guarantee future results.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consult a professional.</strong> Before making significant financial decisions, speak with a qualified, licensed financial adviser, accountant or tax professional."
       },
-      "copyright": "Household Budget Optimizer & Savings Simulator. Made for households, not banks.",
+      "copyright": "SpendMath. Made for households, not banks.",
       "backToTop": "Back to top"
     },
     "theme": {
@@ -2025,7 +2024,7 @@
       "contact": "Contact"
     },
     "title": "Privacy Policy",
-    "lead": "The Household Budget Optimizer is built so that your money stays your business. Your budget numbers are worked out in your own browser and are never sent to us.",
+    "lead": "SpendMath is built so that your money stays your business. Your budget numbers are worked out in your own browser and are never sent to us.",
     "sections": {
       "summary": {
         "title": "The short version",
@@ -2037,7 +2036,7 @@
       },
       "who": {
         "title": "Who we are",
-        "p1_html": "This policy covers the Household Budget Optimizer &amp; Savings Simulator website and calculator (“the site”, “we”, “us”). We are responsible for the personal information described here. You can reach us any time through our <a href=\"/contact/?topic=privacy\">contact form</a>."
+        "p1_html": "This policy covers the SpendMath website and calculator (“the site”, “we”, “us”). We are responsible for the personal information described here. You can reach us any time through our <a href=\"/contact/?topic=privacy\">contact form</a>."
       },
       "budgetData": {
         "title": "Your budget numbers are never sent to us",
@@ -2121,12 +2120,12 @@
     },
     "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
     "seo": {
-      "title": "Privacy Policy | Household Budget Optimizer",
+      "title": "Privacy Policy | SpendMath",
       "description": "Your budget stays in your browser: no accounts, nothing stored on our servers. What we keep on your device, how Google ads use cookies, and your rights.",
-      "ogTitle": "Privacy Policy | Household Budget Optimizer",
+      "ogTitle": "Privacy Policy | SpendMath",
       "ogDescription": "Your budget numbers never leave your browser. What we store, how ads use cookies, and your rights.",
       "ldName": "Privacy Policy",
-      "ldDescription": "How the Household Budget Optimizer handles your data: budget numbers stay in your browser, what is stored on your device, advertising cookies and your privacy rights."
+      "ldDescription": "How SpendMath handles your data: budget numbers stay in your browser, what is stored on your device, advertising cookies and your privacy rights."
     }
   },
   "terms": {
@@ -2153,7 +2152,7 @@
       "contact": "Contact"
     },
     "title": "Terms of Use",
-    "lead": "These terms explain what you can expect from the Household Budget Optimizer and what we ask of you. We’ve kept them short and in plain English.",
+    "lead": "These terms explain what you can expect from SpendMath and what we ask of you. We’ve kept them short and in plain English.",
     "sections": {
       "summary": {
         "title": "The short version",
@@ -2164,7 +2163,7 @@
       },
       "agreement": {
         "title": "1. Agreeing to these terms",
-        "p1_html": "By using the Household Budget Optimizer &amp; Savings Simulator website and calculator (“the site”, “we”, “us”), you agree to these terms and to our <a href=\"/privacy-policy/\">Privacy Policy</a>. If you don’t agree, please don’t use the site."
+        "p1_html": "By using the SpendMath website and calculator (“the site”, “we”, “us”), you agree to these terms and to our <a href=\"/privacy-policy/\">Privacy Policy</a>. If you don’t agree, please don’t use the site."
       },
       "service": {
         "title": "2. What the tool is",
@@ -2230,12 +2229,12 @@
     },
     "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
     "seo": {
-      "title": "Terms of Use | Household Budget Optimizer",
+      "title": "Terms of Use | SpendMath",
       "description": "The rules for using our free household budget calculator. Results are estimates for planning, not financial advice. Covers accuracy, fair use and liability.",
-      "ogTitle": "Terms of Use | Household Budget Optimizer",
+      "ogTitle": "Terms of Use | SpendMath",
       "ogDescription": "Free to use, estimates only, not financial advice. The plain-English terms for our budget calculator.",
       "ldName": "Terms of Use",
-      "ldDescription": "The terms for using the free Household Budget Optimizer calculator: estimates only, not financial advice, acceptable use and limits of liability."
+      "ldDescription": "The terms for using the free SpendMath calculator: estimates only, not financial advice, acceptable use and limits of liability."
     }
   },
   "contact": {
@@ -2295,12 +2294,12 @@
       }
     },
     "seo": {
-      "title": "Contact Us | Household Budget Optimizer",
+      "title": "Contact Us | SpendMath",
       "description": "Questions, bug reports or ideas for the free budget calculator? Send us a message and we usually reply within 2 working days. We can’t give financial advice.",
-      "ogTitle": "Contact Us | Household Budget Optimizer",
+      "ogTitle": "Contact Us | SpendMath",
       "ogDescription": "Found a bug, have an idea or a question about a calculation? Send us a message.",
       "ldName": "Contact Us",
-      "ldDescription": "Send questions, bug reports and ideas about the Household Budget Optimizer calculator."
+      "ldDescription": "Send questions, bug reports and ideas about the SpendMath calculator."
     },
     "emailAlt": "Prefer email? Write to {email}.",
     "errors": {
@@ -2326,7 +2325,7 @@
       "failedTextWithEmail": "Please check your connection and try again, or email us at {email}. Your message is still in the form."
     },
     "mail": {
-      "subject": "Budget Optimizer: {topic}",
+      "subject": "SpendMath: {topic}",
       "body": "{message}\n\n—\n{name}\nTopic: {topic}"
     },
     "unavailable": {
@@ -2963,7 +2962,7 @@
       "privacy": "Your privacy",
       "standards": "Editorial standards"
     },
-    "title": "About Budget Optimizer",
+    "title": "About SpendMath",
     "lead": "A free, private household budget calculator that helps families see where their money goes and find simple ways to keep more of it.",
     "sections": {
       "why": {
@@ -2973,7 +2972,7 @@
       },
       "who": {
         "title": "Who runs it",
-        "p1": "Budget Optimizer is an independent project, built and looked after by a small team who want household money to be simpler to understand."
+        "p1": "SpendMath is an independent project, built and looked after by a small team who want household money to be simpler to understand."
       },
       "how": {
         "title": "How the calculator works",
@@ -3010,11 +3009,11 @@
       }
     },
     "seo": {
-      "title": "About | Household Budget Optimizer",
+      "title": "About | SpendMath",
       "description": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it.",
-      "ogTitle": "About | Household Budget Optimizer",
+      "ogTitle": "About | SpendMath",
       "ogDescription": "A free, private calculator that helps households find and plug money leaks. How it works and where the numbers come from.",
-      "ldName": "About Household Budget Optimizer",
+      "ldName": "About SpendMath",
       "ldDescription": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it."
     }
   },
@@ -3022,7 +3021,7 @@
     "index": {
       "title": "Money guides",
       "lead": "Plain, practical guides to budgeting, saving and paying off debt. Free, with no sign-up, and written for households everywhere.",
-      "seoTitle": "Money guides: budgeting, saving and debt | Budget Optimizer",
+      "seoTitle": "Money guides: budgeting, saving and debt | SpendMath",
       "seoDescription": "Free, plain-language guides to budgeting, emergency funds, the 50/30/20 rule, cutting bills and paying off credit card debt.",
       "breadcrumb": "Guides"
     },

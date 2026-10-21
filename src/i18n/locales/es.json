@@ -1178,7 +1178,6 @@
     "skipLink": "Saltar a la calculadora",
     "header": {
       "navLabel": "Principal",
-      "brand": "Optimizador de Presupuesto",
       "nav": {
         "calculator": "Calculadora"
       }
@@ -1541,15 +1540,15 @@
     }
   },
   "seo": {
-    "title": "Optimizador de presupuesto familiar y simulador de ahorro | Calculadora gratis y privada",
+    "title": "Calculadora de presupuesto familiar y planificador de ahorro | SpendMath",
     "description": "Herramienta de presupuesto familiar gratis y sencilla: escribe tus facturas paso a paso, mira en qué se va tu dinero, recibe ideas fáciles para gastar menos y observa cómo crecen tus ahorros. 100% privada, funciona en tu navegador.",
-    "ogTitle": "Optimizador de presupuesto familiar y simulador de ahorro",
+    "ogTitle": "SpendMath: Calculadora de presupuesto familiar y planificador de ahorro",
     "ogDescription": "Escribe tus facturas, recibe ideas sencillas para gastar menos y descubre cuánto podrías ahorrar. Privado, gratis e instantáneo.",
-    "twitterTitle": "Optimizador de presupuesto familiar y simulador de ahorro",
+    "twitterTitle": "SpendMath: Calculadora de presupuesto familiar y planificador de ahorro",
     "twitterDescription": "Descubre en qué se va tu dinero y cuánto podrías ahorrar. Una herramienta 100% privada que funciona en tu navegador.",
-    "ogImageAlt": "Optimizador de presupuesto familiar: un mes de ejemplo con ingresos, facturas y dinero para ahorrar",
+    "ogImageAlt": "SpendMath: calculadora de presupuesto gratis. Encuentra tus fugas de dinero. Privada, sin registro y en tu propia moneda.",
     "app": {
-      "name": "Optimizador de presupuesto familiar y simulador de ahorro",
+      "name": "SpendMath",
       "description": "Una herramienta de presupuesto familiar privada que funciona en tu navegador: te guía por tus facturas, sugiere formas sencillas de gastar menos, puntúa la salud de tu presupuesto, planifica metas y el pago de deudas, y muestra cómo podrían crecer tus ahorros.",
       "featureList": [
         "Configuración guiada paso a paso",
@@ -1984,7 +1983,7 @@
       "menu": "Menú",
       "navLabel": "Principal"
     },
-    "brand": "Optimizador de Presupuesto",
+    "brand": "SpendMath",
     "footer": {
       "title": "Pie de página del sitio",
       "privacyBadge": "Tus números nunca salen de este dispositivo",
@@ -2035,7 +2034,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Riesgo de inversión.</strong> Las proyecciones son hipotéticas, suponen una rentabilidad constante con capitalización mensual y no incluyen impuestos ni comisiones. Las inversiones pueden perder valor, y la rentabilidad pasada no garantiza resultados futuros.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consulta a un profesional.</strong> Antes de tomar decisiones financieras importantes, habla con un asesor financiero, contable o asesor fiscal cualificado y autorizado."
       },
-      "copyright": "Optimizador de presupuesto familiar y simulador de ahorro. Hecho para los hogares, no para los bancos.",
+      "copyright": "SpendMath. Hecho para los hogares, no para los bancos.",
       "backToTop": "Volver arriba"
     },
     "theme": {
@@ -2073,7 +2072,7 @@
       "contact": "Contacto"
     },
     "title": "Política de privacidad",
-    "lead": "El Optimizador de presupuesto familiar está hecho para que tu dinero siga siendo asunto tuyo. Tus números del presupuesto se calculan en tu propio navegador y nunca se nos envían.",
+    "lead": "SpendMath está hecho para que tu dinero siga siendo asunto tuyo. Tus números del presupuesto se calculan en tu propio navegador y nunca se nos envían.",
     "sections": {
       "summary": {
         "title": "La versión corta",
@@ -2085,7 +2084,7 @@
       },
       "who": {
         "title": "Quiénes somos",
-        "p1_html": "Esta política se aplica al sitio web y la calculadora Optimizador de presupuesto familiar y simulador de ahorro («el sitio», «nosotros»). Somos responsables de los datos personales que se describen aquí. Puedes ponerte en contacto con nosotros en cualquier momento a través de nuestro <a href=\"/contact/?topic=privacy\">formulario de contacto</a>."
+        "p1_html": "Esta política se aplica al sitio web y la calculadora SpendMath («el sitio», «nosotros»). Somos responsables de los datos personales que se describen aquí. Puedes ponerte en contacto con nosotros en cualquier momento a través de nuestro <a href=\"/contact/?topic=privacy\">formulario de contacto</a>."
       },
       "budgetData": {
         "title": "Tus números del presupuesto nunca se nos envían",
@@ -2169,12 +2168,12 @@
     },
     "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
     "seo": {
-      "title": "Política de privacidad | Optimizador de presupuesto familiar",
+      "title": "Política de privacidad | SpendMath",
       "description": "Tu presupuesto se queda en tu navegador: sin cuentas y sin nada guardado en nuestros servidores. Qué guardamos en tu dispositivo, cómo usan cookies los anuncios de Google y cuáles son tus derechos.",
-      "ogTitle": "Política de privacidad | Optimizador de presupuesto familiar",
+      "ogTitle": "Política de privacidad | SpendMath",
       "ogDescription": "Tus números del presupuesto nunca salen de tu navegador. Qué guardamos, cómo usan cookies los anuncios y cuáles son tus derechos.",
       "ldName": "Política de privacidad",
-      "ldDescription": "Cómo trata tus datos el Optimizador de presupuesto familiar: los números del presupuesto se quedan en tu navegador, qué se guarda en tu dispositivo, las cookies publicitarias y tus derechos de privacidad."
+      "ldDescription": "Cómo trata tus datos SpendMath: los números del presupuesto se quedan en tu navegador, qué se guarda en tu dispositivo, las cookies publicitarias y tus derechos de privacidad."
     }
   },
   "terms": {
@@ -2201,7 +2200,7 @@
       "contact": "Contacto"
     },
     "title": "Condiciones de uso",
-    "lead": "Estas condiciones explican qué puedes esperar del Optimizador de presupuesto familiar y qué te pedimos a ti. Las hemos escrito de forma breve y en lenguaje sencillo.",
+    "lead": "Estas condiciones explican qué puedes esperar de SpendMath y qué te pedimos a ti. Las hemos escrito de forma breve y en lenguaje sencillo.",
     "sections": {
       "summary": {
         "title": "La versión corta",
@@ -2212,7 +2211,7 @@
       },
       "agreement": {
         "title": "1. Aceptación de estas condiciones",
-        "p1_html": "Al usar el sitio web y la calculadora Optimizador de presupuesto familiar y simulador de ahorro («el sitio», «nosotros»), aceptas estas condiciones y nuestra <a href=\"/privacy-policy/\">Política de privacidad</a>. Si no estás de acuerdo, no uses el sitio."
+        "p1_html": "Al usar el sitio web y la calculadora SpendMath («el sitio», «nosotros»), aceptas estas condiciones y nuestra <a href=\"/privacy-policy/\">Política de privacidad</a>. Si no estás de acuerdo, no uses el sitio."
       },
       "service": {
         "title": "2. Qué es la herramienta",
@@ -2278,12 +2277,12 @@
     },
     "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
     "seo": {
-      "title": "Condiciones de uso | Optimizador de presupuesto familiar",
+      "title": "Condiciones de uso | SpendMath",
       "description": "Las normas para usar nuestra calculadora gratuita de presupuesto familiar. Los resultados son estimaciones para planificar, no asesoramiento financiero. Incluye exactitud, uso razonable y responsabilidad.",
-      "ogTitle": "Condiciones de uso | Optimizador de presupuesto familiar",
+      "ogTitle": "Condiciones de uso | SpendMath",
       "ogDescription": "De uso gratuito, solo estimaciones, no es asesoramiento financiero. Las condiciones de nuestra calculadora de presupuesto, en lenguaje sencillo.",
       "ldName": "Condiciones de uso",
-      "ldDescription": "Las condiciones para usar la calculadora gratuita Optimizador de presupuesto familiar: solo estimaciones, no es asesoramiento financiero, uso aceptable y límites de responsabilidad."
+      "ldDescription": "Las condiciones para usar la calculadora gratuita SpendMath: solo estimaciones, no es asesoramiento financiero, uso aceptable y límites de responsabilidad."
     }
   },
   "contact": {
@@ -2343,12 +2342,12 @@
       }
     },
     "seo": {
-      "title": "Contacto | Optimizador de presupuesto familiar",
+      "title": "Contacto | SpendMath",
       "description": "¿Tienes preguntas, errores que comunicar o ideas para la calculadora de presupuesto gratuita? Envíanos un mensaje; solemos responder en 2 días laborables. No podemos dar asesoramiento financiero.",
-      "ogTitle": "Contacto | Optimizador de presupuesto familiar",
+      "ogTitle": "Contacto | SpendMath",
       "ogDescription": "¿Has encontrado un error, tienes una idea o una pregunta sobre un cálculo? Envíanos un mensaje.",
       "ldName": "Contacto",
-      "ldDescription": "Envía preguntas, errores e ideas sobre la calculadora Optimizador de presupuesto familiar."
+      "ldDescription": "Envía preguntas, errores e ideas sobre la calculadora SpendMath."
     },
     "emailAlt": "¿Prefieres el correo electrónico? Escribe a {email}.",
     "errors": {
@@ -2374,7 +2373,7 @@
       "failedTextWithEmail": "Comprueba tu conexión y vuelve a intentarlo, o escríbenos a {email}. Tu mensaje sigue en el formulario."
     },
     "mail": {
-      "subject": "Optimizador de Presupuesto: {topic}",
+      "subject": "SpendMath: {topic}",
       "body": "{message}\n\n—\n{name}\nTema: {topic}"
     },
     "unavailable": {
@@ -3011,7 +3010,7 @@
       "privacy": "Tu privacidad",
       "standards": "Criterios editoriales"
     },
-    "title": "Acerca del Optimizador de Presupuesto",
+    "title": "Acerca de SpendMath",
     "lead": "Una calculadora de presupuesto familiar gratuita y privada que ayuda a las familias a ver en qué se va su dinero y a encontrar formas sencillas de conservar más.",
     "sections": {
       "why": {
@@ -3021,7 +3020,7 @@
       },
       "who": {
         "title": "Quién la gestiona",
-        "p1": "Optimizador de Presupuesto es un proyecto independiente, creado y mantenido por un pequeño equipo que quiere que el dinero de casa sea más fácil de entender."
+        "p1": "SpendMath es un proyecto independiente, creado y mantenido por un pequeño equipo que quiere que el dinero de casa sea más fácil de entender."
       },
       "how": {
         "title": "Cómo funciona la calculadora",
@@ -3059,11 +3058,11 @@
       }
     },
     "seo": {
-      "title": "Acerca de | Household Budget Optimizer",
+      "title": "Acerca de | SpendMath",
       "description": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían.",
-      "ogTitle": "Acerca de | Household Budget Optimizer",
+      "ogTitle": "Acerca de | SpendMath",
       "ogDescription": "Una calculadora gratuita y privada que ayuda a los hogares a encontrar y tapar fugas de dinero. Cómo funciona y de dónde salen las cifras.",
-      "ldName": "Acerca de Household Budget Optimizer",
+      "ldName": "Acerca de SpendMath",
       "ldDescription": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían."
     }
   },
@@ -3071,7 +3070,7 @@
     "index": {
       "title": "Guías de dinero",
       "lead": "Guías claras y prácticas para hacer un presupuesto, ahorrar y salir de deudas. Gratis, sin registro y pensadas para hogares de todo el mundo.",
-      "seoTitle": "Guías de dinero: presupuesto, ahorro y deudas",
+      "seoTitle": "Guías de dinero: presupuesto, ahorro y deudas | SpendMath",
       "seoDescription": "Guías gratis y en lenguaje sencillo sobre presupuesto, fondo de emergencia, la regla 50/30/20, bajar facturas y pagar la tarjeta de crédito.",
       "breadcrumb": "Guías"
     },

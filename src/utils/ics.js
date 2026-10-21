@@ -46,7 +46,7 @@ export function paydayIcs({ day, title, lines, now = new Date() }) {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Household Budget Optimizer//Payday reminder//EN',
+    'PRODID:-//SpendMath//Payday reminder//EN',
     'CALSCALE:GREGORIAN',
     'BEGIN:VEVENT',
     `UID:payday-${now.getTime()}@budget-optimizer`,

@@ -1149,7 +1149,6 @@
     "skipLink": "Zum Rechner springen",
     "header": {
       "navLabel": "Hauptmenü",
-      "brand": "Budget Optimizer",
       "nav": {
         "calculator": "Rechner"
       }
@@ -1512,15 +1511,15 @@
     }
   },
   "seo": {
-    "title": "Haushaltsbudget-Optimierer & Sparrechner | Kostenlos und privat",
+    "title": "Haushaltsbudget-Rechner & Sparplaner | SpendMath",
     "description": "Kostenloses, einfaches Haushaltsbudget-Tool: Trag deine Rechnungen Schritt für Schritt ein, sieh, wohin dein Geld geht, erhalte einfache Spartipps und verfolge, wie deine Ersparnisse wachsen. 100 % privat, läuft in deinem Browser.",
-    "ogTitle": "Haushaltsbudget-Optimierer & Sparrechner",
+    "ogTitle": "SpendMath: Haushaltsbudget-Rechner & Sparplaner",
     "ogDescription": "Trag deine Rechnungen ein, erhalte einfache Spartipps und sieh, wie viel du sparen könntest. Privat, kostenlos und sofort.",
-    "twitterTitle": "Haushaltsbudget-Optimierer & Sparrechner",
+    "twitterTitle": "SpendMath: Haushaltsbudget-Rechner & Sparplaner",
     "twitterDescription": "Finde heraus, wohin dein Geld geht und wie viel du sparen könntest. Ein 100 % privates Tool direkt im Browser.",
-    "ogImageAlt": "Haushaltsbudget-Optimierer: ein Beispielmonat mit Einkommen, Rechnungen und Geld zum Sparen",
+    "ogImageAlt": "SpendMath: kostenloser Budgetrechner. Finde deine Geldlecks. Privat, ohne Anmeldung, in deiner Währung.",
     "app": {
-      "name": "Haushaltsbudget-Optimierer & Sparrechner",
+      "name": "SpendMath",
       "description": "Ein privates Haushaltsbudget-Tool im Browser, das dich durch deine Rechnungen führt, einfache Spartipps gibt, die Gesundheit deines Budgets bewertet, Ziele und Schuldentilgung plant und zeigt, wie Ersparnisse wachsen könnten.",
       "featureList": [
         "Geführte Einrichtung Schritt für Schritt",
@@ -1947,7 +1946,7 @@
       "menu": "Menü",
       "navLabel": "Hauptmenü"
     },
-    "brand": "Budget Optimizer",
+    "brand": "SpendMath",
     "footer": {
       "title": "Fußzeile",
       "privacyBadge": "Deine Zahlen verlassen nie dieses Gerät",
@@ -1998,7 +1997,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Anlagerisiko.</strong> Prognosen sind hypothetisch, gehen von einer konstanten, monatlich verzinsten Rendite aus und berücksichtigen keine Steuern und Gebühren. Anlagen können an Wert verlieren, und vergangene Wertentwicklung garantiert keine künftigen Ergebnisse.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Hol dir fachlichen Rat.</strong> Sprich vor wichtigen finanziellen Entscheidungen mit einer qualifizierten, zugelassenen Finanzberatung, einer Steuerberaterin oder einem Steuerberater."
       },
-      "copyright": "Haushaltsbudget-Optimierer & Sparrechner. Gemacht für Haushalte, nicht für Banken.",
+      "copyright": "SpendMath. Gemacht für Haushalte, nicht für Banken.",
       "backToTop": "Nach oben"
     },
     "theme": {
@@ -2036,7 +2035,7 @@
       "contact": "Kontakt"
     },
     "title": "Datenschutzerklärung",
-    "lead": "Der Haushaltsbudget-Optimierer ist so gebaut, dass deine Finanzen deine Sache bleiben. Deine Budgetzahlen werden in deinem eigenen Browser berechnet und nie an uns gesendet.",
+    "lead": "SpendMath ist so gebaut, dass deine Finanzen deine Sache bleiben. Deine Budgetzahlen werden in deinem eigenen Browser berechnet und nie an uns gesendet.",
     "sections": {
       "summary": {
         "title": "Die Kurzfassung",
@@ -2048,7 +2047,7 @@
       },
       "who": {
         "title": "Wer wir sind",
-        "p1_html": "Diese Erklärung gilt für die Website und den Rechner Haushaltsbudget-Optimierer &amp; Sparrechner („die Website“, „wir“, „uns“). Wir sind für die hier beschriebenen personenbezogenen Daten verantwortlich. Du erreichst uns jederzeit über unser <a href=\"/contact/?topic=privacy\">Kontaktformular</a>."
+        "p1_html": "Diese Erklärung gilt für die Website und den Rechner SpendMath („die Website“, „wir“, „uns“). Wir sind für die hier beschriebenen personenbezogenen Daten verantwortlich. Du erreichst uns jederzeit über unser <a href=\"/contact/?topic=privacy\">Kontaktformular</a>."
       },
       "budgetData": {
         "title": "Deine Budgetzahlen werden nie an uns gesendet",
@@ -2132,12 +2131,12 @@
     },
     "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-10-19\">19. Oktober 2026</time>",
     "seo": {
-      "title": "Datenschutzerklärung | Haushaltsbudget-Optimierer",
+      "title": "Datenschutzerklärung | SpendMath",
       "description": "Dein Budget bleibt in deinem Browser: keine Konten, nichts auf unseren Servern. Was wir auf deinem Gerät speichern, wie Google-Werbung Cookies nutzt und welche Rechte du hast.",
-      "ogTitle": "Datenschutzerklärung | Haushaltsbudget-Optimierer",
+      "ogTitle": "Datenschutzerklärung | SpendMath",
       "ogDescription": "Deine Budgetzahlen verlassen nie deinen Browser. Was wir speichern, wie Werbung Cookies nutzt und welche Rechte du hast.",
       "ldName": "Datenschutzerklärung",
-      "ldDescription": "Wie der Haushaltsbudget-Optimierer mit deinen Daten umgeht: Budgetzahlen bleiben in deinem Browser, was auf deinem Gerät gespeichert wird, Werbe-Cookies und deine Datenschutzrechte."
+      "ldDescription": "Wie SpendMath mit deinen Daten umgeht: Budgetzahlen bleiben in deinem Browser, was auf deinem Gerät gespeichert wird, Werbe-Cookies und deine Datenschutzrechte."
     }
   },
   "terms": {
@@ -2164,7 +2163,7 @@
       "contact": "Kontakt"
     },
     "title": "Nutzungsbedingungen",
-    "lead": "Diese Bedingungen erklären, was du vom Haushaltsbudget-Optimierer erwarten kannst und worum wir dich bitten. Wir haben sie kurz und verständlich gehalten.",
+    "lead": "Diese Bedingungen erklären, was du von SpendMath erwarten kannst und worum wir dich bitten. Wir haben sie kurz und verständlich gehalten.",
     "sections": {
       "summary": {
         "title": "Die Kurzfassung",
@@ -2175,7 +2174,7 @@
       },
       "agreement": {
         "title": "1. Zustimmung zu diesen Bedingungen",
-        "p1_html": "Mit der Nutzung der Website und des Rechners Haushaltsbudget-Optimierer &amp; Sparrechner („die Website“, „wir“, „uns“) stimmst du diesen Bedingungen und unserer <a href=\"/privacy-policy/\">Datenschutzerklärung</a> zu. Wenn du nicht zustimmst, nutze die Website bitte nicht."
+        "p1_html": "Mit der Nutzung der Website und des Rechners SpendMath („die Website“, „wir“, „uns“) stimmst du diesen Bedingungen und unserer <a href=\"/privacy-policy/\">Datenschutzerklärung</a> zu. Wenn du nicht zustimmst, nutze die Website bitte nicht."
       },
       "service": {
         "title": "2. Was das Tool ist",
@@ -2241,12 +2240,12 @@
     },
     "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-10-19\">19. Oktober 2026</time>",
     "seo": {
-      "title": "Nutzungsbedingungen | Haushaltsbudget-Optimierer",
+      "title": "Nutzungsbedingungen | SpendMath",
       "description": "Die Regeln für die Nutzung unseres kostenlosen Haushaltsbudget-Rechners. Ergebnisse sind Schätzungen zur Planung, keine Finanzberatung. Mit Genauigkeit, fairer Nutzung und Haftung.",
-      "ogTitle": "Nutzungsbedingungen | Haushaltsbudget-Optimierer",
+      "ogTitle": "Nutzungsbedingungen | SpendMath",
       "ogDescription": "Kostenlos nutzbar, nur Schätzungen, keine Finanzberatung. Die verständlichen Bedingungen für unseren Budgetrechner.",
       "ldName": "Nutzungsbedingungen",
-      "ldDescription": "Die Bedingungen für die Nutzung des kostenlosen Rechners Haushaltsbudget-Optimierer: nur Schätzungen, keine Finanzberatung, zulässige Nutzung und Haftungsbeschränkungen."
+      "ldDescription": "Die Bedingungen für die Nutzung des kostenlosen Rechners SpendMath: nur Schätzungen, keine Finanzberatung, zulässige Nutzung und Haftungsbeschränkungen."
     }
   },
   "contact": {
@@ -2306,12 +2305,12 @@
       }
     },
     "seo": {
-      "title": "Kontakt | Haushaltsbudget-Optimierer",
+      "title": "Kontakt | SpendMath",
       "description": "Fragen, Fehlermeldungen oder Ideen zum kostenlosen Budgetrechner? Schreib uns eine Nachricht – wir antworten meist innerhalb von 2 Werktagen. Eine Finanzberatung können wir nicht geben.",
-      "ogTitle": "Kontakt | Haushaltsbudget-Optimierer",
+      "ogTitle": "Kontakt | SpendMath",
       "ogDescription": "Einen Fehler gefunden, eine Idee oder eine Frage zu einer Berechnung? Schreib uns eine Nachricht.",
       "ldName": "Kontakt",
-      "ldDescription": "Sende Fragen, Fehlermeldungen und Ideen zum Rechner Haushaltsbudget-Optimierer."
+      "ldDescription": "Sende Fragen, Fehlermeldungen und Ideen zum Rechner SpendMath."
     },
     "emailAlt": "Lieber per E-Mail? Schreib an {email}.",
     "errors": {
@@ -2337,7 +2336,7 @@
       "failedTextWithEmail": "Bitte prüf deine Verbindung und versuch es noch einmal oder schreib uns an {email}. Deine Nachricht ist noch im Formular."
     },
     "mail": {
-      "subject": "Budget Optimizer: {topic}",
+      "subject": "SpendMath: {topic}",
       "body": "{message}\n\n—\n{name}\nThema: {topic}"
     },
     "unavailable": {
@@ -2974,7 +2973,7 @@
       "privacy": "Deine Privatsphäre",
       "standards": "Redaktionelle Grundsätze"
     },
-    "title": "Über Budget Optimizer",
+    "title": "Über SpendMath",
     "lead": "Ein kostenloser, privater Haushaltsrechner, der Familien zeigt, wohin ihr Geld fließt, und einfache Wege findet, mehr davon zu behalten.",
     "sections": {
       "why": {
@@ -2984,7 +2983,7 @@
       },
       "who": {
         "title": "Wer dahintersteht",
-        "p1": "Budget Optimizer ist ein unabhängiges Projekt. Ein kleines Team baut und pflegt es, weil es Haushaltsfinanzen leichter verständlich machen möchte."
+        "p1": "SpendMath ist ein unabhängiges Projekt. Ein kleines Team baut und pflegt es, weil es Haushaltsfinanzen leichter verständlich machen möchte."
       },
       "how": {
         "title": "So funktioniert der Rechner",
@@ -3021,11 +3020,11 @@
       }
     },
     "seo": {
-      "title": "Über uns | Household Budget Optimizer",
+      "title": "Über uns | SpendMath",
       "description": "Warum es diesen kostenlosen, privaten Haushaltsbudget-Rechner gibt, wie er funktioniert, woher seine Zahlen kommen und nach welchen Grundsätzen wir arbeiten.",
-      "ogTitle": "Über uns | Household Budget Optimizer",
+      "ogTitle": "Über uns | SpendMath",
       "ogDescription": "Ein kostenloser, privater Rechner, der Haushalten hilft, Geldlecks zu finden und zu stopfen. So funktioniert er und daher kommen die Zahlen.",
-      "ldName": "Über Household Budget Optimizer",
+      "ldName": "Über SpendMath",
       "ldDescription": "Warum es diesen kostenlosen, privaten Haushaltsbudget-Rechner gibt, wie er funktioniert, woher seine Zahlen kommen und nach welchen Grundsätzen wir arbeiten."
     }
   },
@@ -3033,7 +3032,7 @@
     "index": {
       "title": "Geld-Ratgeber",
       "lead": "Einfache, praktische Ratgeber zu Haushaltsbudget, Sparen und Schuldenabbau. Kostenlos, ohne Anmeldung und für Haushalte überall geschrieben.",
-      "seoTitle": "Geld-Ratgeber: Budget, Sparen, Schulden | Budget Optimizer",
+      "seoTitle": "Geld-Ratgeber: Budget, Sparen, Schulden | SpendMath",
       "seoDescription": "Kostenlose Ratgeber in einfacher Sprache zu Budget, Notgroschen, der 50/30/20-Regel, niedrigeren Rechnungen und dem Abbau von Kreditkartenschulden.",
       "breadcrumb": "Ratgeber"
     },

@@ -1178,7 +1178,6 @@
     "skipLink": "Pular para a calculadora",
     "header": {
       "navLabel": "Principal",
-      "brand": "Otimizador de Orçamento",
       "nav": {
         "calculator": "Calculadora"
       }
@@ -1541,15 +1540,15 @@
     }
   },
   "seo": {
-    "title": "Otimizador de Orçamento Doméstico e Simulador de Economia | Calculadora grátis e privada",
+    "title": "Calculadora de orçamento familiar e planejador de poupança | SpendMath",
     "description": "Ferramenta de orçamento doméstico grátis e simples: informe suas contas passo a passo, veja para onde vai seu dinheiro, receba ideias fáceis para gastar menos e acompanhe suas economias crescerem. 100% privada, funciona no seu navegador.",
-    "ogTitle": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+    "ogTitle": "SpendMath: Calculadora de orçamento familiar e planejador de poupança",
     "ogDescription": "Informe suas contas, receba ideias simples para gastar menos e veja quanto você poderia economizar. Privado, grátis e na hora.",
-    "twitterTitle": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+    "twitterTitle": "SpendMath: Calculadora de orçamento familiar e planejador de poupança",
     "twitterDescription": "Descubra para onde vai seu dinheiro e quanto você poderia economizar. Uma ferramenta 100% privada, que funciona no navegador.",
-    "ogImageAlt": "Otimizador de Orçamento Doméstico: um mês de exemplo mostrando renda, contas e dinheiro para guardar",
+    "ogImageAlt": "SpendMath: calculadora de orçamento grátis. Encontre seus vazamentos de dinheiro. Privada, sem cadastro, na sua moeda.",
     "app": {
-      "name": "Otimizador de Orçamento Doméstico e Simulador de Economia",
+      "name": "SpendMath",
       "description": "Uma ferramenta de orçamento doméstico privada, que funciona no navegador, guia você pelas suas contas, sugere jeitos simples de gastar menos, dá uma nota à saúde do seu orçamento, planeja metas e a quitação de dívidas e mostra como suas economias podem crescer.",
       "featureList": [
         "Configuração guiada passo a passo",
@@ -1984,7 +1983,7 @@
       "menu": "Menu",
       "navLabel": "Principal"
     },
-    "brand": "Otimizador de Orçamento",
+    "brand": "SpendMath",
     "footer": {
       "title": "Rodapé do site",
       "privacyBadge": "Seus números nunca saem deste dispositivo",
@@ -2035,7 +2034,7 @@
         "investment_html": "<strong class=\"font-semibold text-emerald-50\">Risco de investimento.</strong> As projeções são hipotéticas, supõem um rendimento constante capitalizado mensalmente e não incluem impostos nem taxas. Investimentos podem perder valor, e rentabilidade passada não garante rentabilidade futura.",
         "professional_html": "<strong class=\"font-semibold text-emerald-50\">Consulte um profissional.</strong> Antes de tomar decisões financeiras importantes, fale com um consultor financeiro, contador ou especialista em impostos qualificado e habilitado."
       },
-      "copyright": "Otimizador de Orçamento Doméstico e Simulador de Economia. Feito para famílias, não para bancos.",
+      "copyright": "SpendMath. Feito para famílias, não para bancos.",
       "backToTop": "Voltar ao topo"
     },
     "theme": {
@@ -2073,7 +2072,7 @@
       "contact": "Contato"
     },
     "title": "Política de Privacidade",
-    "lead": "O Otimizador de Orçamento Doméstico foi feito para que o seu dinheiro continue sendo assunto só seu. Os números do seu orçamento são calculados no seu próprio navegador e nunca são enviados para nós.",
+    "lead": "O SpendMath foi feito para que o seu dinheiro continue sendo assunto só seu. Os números do seu orçamento são calculados no seu próprio navegador e nunca são enviados para nós.",
     "sections": {
       "summary": {
         "title": "Resumo",
@@ -2085,7 +2084,7 @@
       },
       "who": {
         "title": "Quem somos",
-        "p1_html": "Esta política abrange o site e a calculadora Otimizador de Orçamento Doméstico &amp; Simulador de Economia (“o site”, “nós”). Somos responsáveis pelas informações pessoais descritas aqui. Você pode falar conosco a qualquer momento pelo nosso <a href=\"/contact/?topic=privacy\">formulário de contato</a>."
+        "p1_html": "Esta política abrange o site e a calculadora SpendMath (“o site”, “nós”). Somos responsáveis pelas informações pessoais descritas aqui. Você pode falar conosco a qualquer momento pelo nosso <a href=\"/contact/?topic=privacy\">formulário de contato</a>."
       },
       "budgetData": {
         "title": "Os números do seu orçamento nunca são enviados para nós",
@@ -2169,12 +2168,12 @@
     },
     "updated_html": "Última atualização: <time datetime=\"2026-10-19\">19 de outubro de 2026</time>",
     "seo": {
-      "title": "Política de Privacidade | Otimizador de Orçamento Doméstico",
+      "title": "Política de Privacidade | SpendMath",
       "description": "Seu orçamento fica no seu navegador: sem contas, nada guardado nos nossos servidores. O que guardamos no seu dispositivo, como os anúncios do Google usam cookies e quais são seus direitos.",
-      "ogTitle": "Política de Privacidade | Otimizador de Orçamento Doméstico",
+      "ogTitle": "Política de Privacidade | SpendMath",
       "ogDescription": "Os números do seu orçamento nunca saem do seu navegador. O que guardamos, como os anúncios usam cookies e quais são seus direitos.",
       "ldName": "Política de Privacidade",
-      "ldDescription": "Como o Otimizador de Orçamento Doméstico trata seus dados: os números do orçamento ficam no seu navegador, o que fica guardado no seu dispositivo, cookies de publicidade e seus direitos de privacidade."
+      "ldDescription": "Como o SpendMath trata seus dados: os números do orçamento ficam no seu navegador, o que fica guardado no seu dispositivo, cookies de publicidade e seus direitos de privacidade."
     }
   },
   "terms": {
@@ -2201,7 +2200,7 @@
       "contact": "Contato"
     },
     "title": "Termos de Uso",
-    "lead": "Estes termos explicam o que você pode esperar do Otimizador de Orçamento Doméstico e o que pedimos de você. Nós os deixamos curtos e em linguagem simples.",
+    "lead": "Estes termos explicam o que você pode esperar do SpendMath e o que pedimos de você. Nós os deixamos curtos e em linguagem simples.",
     "sections": {
       "summary": {
         "title": "Resumo",
@@ -2212,7 +2211,7 @@
       },
       "agreement": {
         "title": "1. Aceitação destes termos",
-        "p1_html": "Ao usar o site e a calculadora Otimizador de Orçamento Doméstico &amp; Simulador de Economia (“o site”, “nós”), você concorda com estes termos e com a nossa <a href=\"/privacy-policy/\">Política de Privacidade</a>. Se não concordar, não use o site."
+        "p1_html": "Ao usar o site e a calculadora SpendMath (“o site”, “nós”), você concorda com estes termos e com a nossa <a href=\"/privacy-policy/\">Política de Privacidade</a>. Se não concordar, não use o site."
       },
       "service": {
         "title": "2. O que é a ferramenta",
@@ -2278,12 +2277,12 @@
     },
     "updated_html": "Última atualização: <time datetime=\"2026-10-19\">19 de outubro de 2026</time>",
     "seo": {
-      "title": "Termos de Uso | Otimizador de Orçamento Doméstico",
+      "title": "Termos de Uso | SpendMath",
       "description": "As regras para usar nossa calculadora gratuita de orçamento doméstico. Os resultados são estimativas para planejamento, não aconselhamento financeiro. Inclui precisão, uso adequado e responsabilidade.",
-      "ogTitle": "Termos de Uso | Otimizador de Orçamento Doméstico",
+      "ogTitle": "Termos de Uso | SpendMath",
       "ogDescription": "Uso gratuito, apenas estimativas, não é aconselhamento financeiro. Os termos em linguagem simples da nossa calculadora de orçamento.",
       "ldName": "Termos de Uso",
-      "ldDescription": "Os termos para usar a calculadora gratuita Otimizador de Orçamento Doméstico: apenas estimativas, não é aconselhamento financeiro, uso aceitável e limites de responsabilidade."
+      "ldDescription": "Os termos para usar a calculadora gratuita SpendMath: apenas estimativas, não é aconselhamento financeiro, uso aceitável e limites de responsabilidade."
     }
   },
   "contact": {
@@ -2343,12 +2342,12 @@
       }
     },
     "seo": {
-      "title": "Fale conosco | Otimizador de Orçamento Doméstico",
+      "title": "Fale conosco | SpendMath",
       "description": "Dúvidas, relatos de erros ou ideias para a calculadora de orçamento grátis? Envie uma mensagem; costumamos responder em até 2 dias úteis. Não podemos dar aconselhamento financeiro.",
-      "ogTitle": "Fale conosco | Otimizador de Orçamento Doméstico",
+      "ogTitle": "Fale conosco | SpendMath",
       "ogDescription": "Encontrou um erro, tem uma ideia ou uma dúvida sobre um cálculo? Envie uma mensagem.",
       "ldName": "Fale conosco",
-      "ldDescription": "Envie dúvidas, relatos de erros e ideias sobre a calculadora Otimizador de Orçamento Doméstico."
+      "ldDescription": "Envie dúvidas, relatos de erros e ideias sobre a calculadora SpendMath."
     },
     "emailAlt": "Prefere e-mail? Escreva para {email}.",
     "errors": {
@@ -2374,7 +2373,7 @@
       "failedTextWithEmail": "Confira sua conexão e tente novamente, ou envie um e-mail para {email}. Sua mensagem continua no formulário."
     },
     "mail": {
-      "subject": "Otimizador de Orçamento: {topic}",
+      "subject": "SpendMath: {topic}",
       "body": "{message}\n\n—\n{name}\nAssunto: {topic}"
     },
     "unavailable": {
@@ -3011,7 +3010,7 @@
       "privacy": "Sua privacidade",
       "standards": "Padrões editoriais"
     },
-    "title": "Sobre o Otimizador de Orçamento",
+    "title": "Sobre o SpendMath",
     "lead": "Uma calculadora de orçamento doméstico grátis e privada, que ajuda as famílias a ver para onde vai o dinheiro e a encontrar jeitos simples de guardar mais.",
     "sections": {
       "why": {
@@ -3021,7 +3020,7 @@
       },
       "who": {
         "title": "Quem está por trás",
-        "p1": "O Otimizador de Orçamento é um projeto independente, criado e mantido por uma equipe pequena que quer deixar o dinheiro da casa mais fácil de entender."
+        "p1": "O SpendMath é um projeto independente, criado e mantido por uma equipe pequena que quer deixar o dinheiro da casa mais fácil de entender."
       },
       "how": {
         "title": "Como a calculadora funciona",
@@ -3059,11 +3058,11 @@
       }
     },
     "seo": {
-      "title": "Sobre | Household Budget Optimizer",
+      "title": "Sobre | SpendMath",
       "description": "Por que esta calculadora de orçamento doméstico grátis e privada existe, como ela funciona, de onde vêm os números e os padrões que seguimos.",
-      "ogTitle": "Sobre | Household Budget Optimizer",
+      "ogTitle": "Sobre | SpendMath",
       "ogDescription": "Uma calculadora grátis e privada que ajuda as famílias a encontrar e tapar os vazamentos de dinheiro. Como funciona e de onde vêm os números.",
-      "ldName": "Sobre o Household Budget Optimizer",
+      "ldName": "Sobre o SpendMath",
       "ldDescription": "Por que esta calculadora de orçamento doméstico grátis e privada existe, como ela funciona, de onde vêm os números e os padrões que seguimos."
     }
   },
@@ -3071,7 +3070,7 @@
     "index": {
       "title": "Guias de dinheiro",
       "lead": "Guias simples e práticos sobre orçamento, poupança e como sair das dívidas. Grátis, sem cadastro e feitos para famílias de qualquer lugar.",
-      "seoTitle": "Guias de dinheiro: orçamento, poupança e dívidas",
+      "seoTitle": "Guias de dinheiro: orçamento, poupança e dívidas | SpendMath",
       "seoDescription": "Guias grátis e em linguagem simples sobre orçamento, reserva de emergência, a regra 50/30/20, como reduzir contas e quitar o cartão de crédito.",
       "breadcrumb": "Guias"
     },

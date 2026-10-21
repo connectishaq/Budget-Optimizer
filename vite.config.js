@@ -57,19 +57,17 @@ function siteConfig(env) {
       const pagePath = (ctx?.path || '/').replace(/index\.html$/, '');
       const pageUrl = `${siteUrl}${pagePath}`;
       // Social networks need an absolute image URL, so the share image needs the domain too
-      const urlTags = siteUrl
-        ? [
-          `<link rel="canonical" href="${pageUrl}">`,
-          `<meta property="og:url" content="${pageUrl}">`,
-          `<meta property="og:image" content="${siteUrl}/og-image.png">`,
-          '<meta property="og:image:width" content="1200">',
-          '<meta property="og:image:height" content="630">',
-          '<meta property="og:image:alt" content="Household Budget Optimizer: an example month showing income, bills and money to save">',
-          `<meta name="twitter:image" content="${siteUrl}/og-image.png">`,
-          // The home page lists every language/country page (the locale pages get the same set)
-          ...(pagePath === '/' ? [alternateLinks(siteUrl)] : [])
-        ].join('\n  ')
-        : '';
+      // The share image (1200x630) is on every page; its URL becomes absolute once SITE_URL is set
+      const urlTags = [
+        ...(siteUrl ? [`<link rel="canonical" href="${pageUrl}">`, `<meta property="og:url" content="${pageUrl}">`] : []),
+        `<meta property="og:image" content="${siteUrl}/og-image.png">`,
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta property="og:image:alt" content="SpendMath: free budget calculator. Find your money leaks. Private, no sign-up, in your own currency.">',
+        `<meta name="twitter:image" content="${siteUrl}/og-image.png">`,
+        // The home page lists every language/country page (the locale pages get the same set)
+        ...(siteUrl && pagePath === '/' ? [alternateLinks(siteUrl)] : [])
+      ].join('\n  ');
       const contact = contactEmail
         ? `<a href="mailto:${contactEmail}" class="font-semibold text-indigo-300 underline-offset-2 hover:underline">${contactEmail}</a>`
         : 'the contact details listed by the site owner';

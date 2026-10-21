@@ -8,7 +8,7 @@ Each item gives the key or file, the current Urdu, the English, and the question
 
 ## Calculator (inputs and wizard)
 
-- **Brand name**, `page.header.brand`, `layout.brand`, `seo.title`: "بجٹ آپٹیمائزر" / "گھریلو بجٹ آپٹیمائزر اور بچت سمیولیٹر" (English: Budget Optimizer / Household Budget Optimizer & Savings Simulator). Should the brand be written in Urdu letters or kept in Latin script? `about.seo.*` keeps it in Latin on purpose in every language, so it is mixed today.
+- **Brand name**: decided. The site is now called "SpendMath", written in Latin letters and never translated, in every language.
 - `inputs.fields.groceries.label`: "راشن" (Groceries). Is "راشن" right for all your readers, or is "سودا سلف" or "گروسری" more natural in cities?
 - `inputs.payFrequency.options.biweekly` / `semimonthly`: "ہر 2 ہفتے" / "مہینے میں 2 بار" (Every 2 weeks / Twice a month). Are these clear to people who are paid this way? Would "پندرہ روزہ" be better? They also need to fit a narrow dropdown.
 - `inputs.payFrequency.fieldLabel.semimonthly`: "ہر تنخواہ والے دن ہاتھ میں آنے والی رقم" (Take-home pay each payday). Can it be shorter? It may wrap onto two lines.
