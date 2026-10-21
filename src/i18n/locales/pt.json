@@ -1290,7 +1290,7 @@
     },
     "summary": {
       "label": "Resumo",
-      "saveMonth": "Dinheiro que você poderia economizar por mês",
+      "saveMonth": "Quanto você poderia economizar a mais por mês",
       "perYear_html": "<span id=\"sumAnnual\">0</span> por ano",
       "spendNow": "Quanto você gasta hoje",
       "couldSpend": "Quanto você poderia gastar",
@@ -1602,6 +1602,7 @@
         "year": "Seguindo {tips}, você poderia economizar {amount} a mais todo ano."
       },
       "noTips": "Ative algumas ideias abaixo para ver quanto você poderia economizar.",
+      "noTipsLeft": "Depois das contas, já sobram {left}. Ative algumas ideias abaixo para economizar ainda mais.",
       "spendOnly": {
         "month": "Você gasta {spend} por mês com as contas que informou.",
         "year": "Você gasta {spend} por ano com as contas que informou."
@@ -1658,8 +1659,8 @@
       "basisIncomeApprox": "Parte da sua renda, comparada com o perfil típico: {profile} (uma estimativa aproximada, já que ainda não temos dados do seu país)."
     },
     "mobile": {
-      "saveYear": "Você poderia economizar por ano",
-      "saveMonth": "Você poderia economizar por mês"
+      "saveYear": "Você poderia economizar a mais por ano",
+      "saveMonth": "Você poderia economizar a mais por mês"
     }
   },
   "common": {
@@ -1980,6 +1981,7 @@
         "about": "Sobre",
         "guides": "Guias"
       },
+      "menu": "Menu",
       "navLabel": "Principal"
     },
     "brand": "Otimizador de Orçamento",
@@ -1989,7 +1991,7 @@
       "headline": "Encontre o dinheiro escondido no seu mês.",
       "intro": "Adicione suas contas, ative algumas ideias fáceis e veja quanto você poderia economizar este mês, este ano e ao longo do tempo. Leva cerca de dois minutos.",
       "cta": "Abrir a calculadora",
-      "ctaTips": "Ler as dicas de dinheiro",
+      "ctaTips": "Ler os guias",
       "receipt": {
         "subtitle": "O que você paga · o que você recebe",
         "signUp": "Cadastro necessário",
@@ -2011,7 +2013,7 @@
         "glossary": "Termos de dinheiro explicados"
       },
       "tips": {
-        "heading": "Dicas de dinheiro",
+        "heading": "Guias",
         "utilities": "Reduza as contas da casa",
         "subscriptions": "Controle as assinaturas",
         "food": "Gaste menos com comida",

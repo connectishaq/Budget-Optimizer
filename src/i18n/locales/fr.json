@@ -1290,7 +1290,7 @@
     },
     "summary": {
       "label": "Résumé",
-      "saveMonth": "Ce que vous pourriez économiser chaque mois",
+      "saveMonth": "Ce que vous pourriez économiser en plus chaque mois",
       "perYear_html": "<span id=\"sumAnnual\">0</span> par an",
       "spendNow": "Ce que vous dépensez aujourd’hui",
       "couldSpend": "Ce que vous pourriez dépenser",
@@ -1602,6 +1602,7 @@
         "year": "En suivant {tips}, vous pourriez économiser {amount} de plus chaque année."
       },
       "noTips": "Activez quelques idées ci-dessous pour voir combien vous pourriez économiser.",
+      "noTipsLeft": "Après vos factures, il vous reste déjà {left}. Activez quelques idées ci-dessous pour économiser encore plus.",
       "spendOnly": {
         "month": "Vous dépensez {spend} par mois pour les dépenses saisies.",
         "year": "Vous dépensez {spend} par an pour les dépenses saisies."
@@ -1658,8 +1659,8 @@
       "basisIncomeApprox": "Part de vos revenus, comparée à un profil type « {profile} » (une estimation, car nous n’avons pas encore de chiffres pour votre pays)."
     },
     "mobile": {
-      "saveYear": "Vous pourriez économiser chaque année",
-      "saveMonth": "Vous pourriez économiser chaque mois"
+      "saveYear": "Vous pourriez économiser en plus chaque année",
+      "saveMonth": "Vous pourriez économiser en plus chaque mois"
     }
   },
   "common": {
@@ -1980,6 +1981,7 @@
         "about": "À propos",
         "guides": "Guides"
       },
+      "menu": "Menu",
       "navLabel": "Principal"
     },
     "brand": "Budget Optimizer",
@@ -1989,7 +1991,7 @@
       "headline": "Trouvez l’argent caché dans votre mois.",
       "intro": "Ajoutez vos dépenses, activez quelques idées faciles et voyez ce que vous pourriez économiser ce mois-ci, cette année et dans la durée. Cela prend environ deux minutes.",
       "cta": "Lancer le calculateur",
-      "ctaTips": "Lire les conseils",
+      "ctaTips": "Lire les guides",
       "receipt": {
         "subtitle": "Ce que vous payez · ce que vous obtenez",
         "signUp": "Inscription requise",
@@ -2011,7 +2013,7 @@
         "glossary": "Les mots de l’argent expliqués"
       },
       "tips": {
-        "heading": "Conseils",
+        "heading": "Guides",
         "utilities": "Réduire les factures d’énergie",
         "subscriptions": "Freiner l’accumulation d’abonnements",
         "food": "Dépenser moins pour manger",

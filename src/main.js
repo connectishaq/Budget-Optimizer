@@ -18,6 +18,7 @@ import { initReset } from './ui/reset.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { setFormatRegion } from './utils/format.js';
 import { initAds } from './ads.js';
+import { initNavMenu } from './nav-menu.js';
 import { t } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
 import { initLanguageSuggestion } from './i18n/suggest.js';
@@ -124,6 +125,7 @@ async function boot() {
   startMonths(restored);
 
   initTheme();
+  initNavMenu();
   initLocalePicker({ country: getState().country, onCountry: (c) => applyCountry(c) });
   initLanguageSuggestion();
   initSavedIndicator();

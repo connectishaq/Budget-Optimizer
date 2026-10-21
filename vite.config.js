@@ -78,6 +78,7 @@ function siteConfig(env) {
       return html
         .replace('<!--SITE_HEADER-->', () => partial('header'))
         .replace('<!--SITE_FOOTER-->', () => partial('footer'))
+        .replace('<!--NAV_MENU-->', () => partial('nav-menu'))
         .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
         .replace('<!--COUNTRY_SOURCES-->', () => countrySourcesHtml())
         .replace('<!--SITE_URL_TAGS-->', urlTags)

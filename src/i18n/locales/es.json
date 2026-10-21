@@ -1290,7 +1290,7 @@
     },
     "summary": {
       "label": "Resumen",
-      "saveMonth": "Dinero que podrías ahorrar cada mes",
+      "saveMonth": "Lo que podrías ahorrar de más cada mes",
       "perYear_html": "<span id=\"sumAnnual\">0</span> al año",
       "spendNow": "Lo que gastas ahora",
       "couldSpend": "Lo que podrías gastar",
@@ -1602,6 +1602,7 @@
         "year": "Si sigues {tips}, podrías ahorrar {amount} más cada año."
       },
       "noTips": "Activa algunas de las ideas de abajo para ver cuánto podrías ahorrar.",
+      "noTipsLeft": "Después de tus facturas ya te quedan {left}. Activa algunas ideas de abajo para ahorrar aún más.",
       "spendOnly": {
         "month": "Gastas {spend} al mes en las facturas que has escrito.",
         "year": "Gastas {spend} al año en las facturas que has escrito."
@@ -1658,8 +1659,8 @@
       "basisIncomeApprox": "Parte de tus ingresos, comparada con lo típico para el perfil «{profile}» (una referencia aproximada, porque aún no tenemos datos de tu país)."
     },
     "mobile": {
-      "saveYear": "Podrías ahorrar cada año",
-      "saveMonth": "Podrías ahorrar cada mes"
+      "saveYear": "Podrías ahorrar de más cada año",
+      "saveMonth": "Podrías ahorrar de más cada mes"
     }
   },
   "common": {
@@ -1980,6 +1981,7 @@
         "about": "Acerca de",
         "guides": "Guías"
       },
+      "menu": "Menú",
       "navLabel": "Principal"
     },
     "brand": "Optimizador de Presupuesto",
@@ -1989,7 +1991,7 @@
       "headline": "Encuentra el dinero que se esconde en tu mes.",
       "intro": "Añade tus facturas, activa algunas ideas fáciles y mira cuánto podrías ahorrar este mes, este año y con el tiempo. Se tarda unos dos minutos.",
       "cta": "Empezar la calculadora",
-      "ctaTips": "Leer los consejos de dinero",
+      "ctaTips": "Leer las guías",
       "receipt": {
         "subtitle": "Lo que pagas · lo que recibes",
         "signUp": "Registro necesario",
@@ -2011,7 +2013,7 @@
         "glossary": "Palabras de dinero explicadas"
       },
       "tips": {
-        "heading": "Consejos de dinero",
+        "heading": "Guías",
         "utilities": "Reduce las facturas de suministros",
         "subscriptions": "Frena las suscripciones que se acumulan",
         "food": "Gasta menos en comida",

@@ -66,3 +66,11 @@ Guides with no notes file (read in this pass):
 - **irregular-income**: "بکری" (sales) in "ہر بکری کا ایک چھوٹا حصہ". Without diacritics it can be misread as "goat". Use "فروخت" or "سیل" instead? Also, is "جمع کرنے والا ڈبہ" (a holding "bucket" for income) a natural metaphor?
 
 The /ur-pk/ article (`src/i18n/articles/ur-pk.json`): the wording looks fine. Its notes file (`src/i18n/notes/article-ur-pk.md`) lists facts to confirm (the protected 200-unit rule, how often petrol prices are revised, card interest rates). Those are facts for the site owner to check, not wording questions. The one wording point: the quote "“آج کے پیسوں میں دکھائیں”" must stay identical to the calculator toggle if either one changes.
+
+## New since the first review (21 October 2026)
+
+Strings added or changed after this list was first written. They were written by Claude, not checked by a native speaker:
+- `layout.header.menu`: "مینو" (the menu button on phones).
+- `layout.footer.tips.heading`: now "گائیڈز", the same word as the header link. `layout.footer.ctaTips`: "گائیڈز پڑھیں" (Read the guides).
+- `page.summary.saveMonth`: "ہر مہینے آپ مزید کتنا بچا سکتے ہیں" (Extra you could save each month). `dashboard.mobile.saveMonth` / `saveYear`: "آپ ہر مہینے/سال اتنا مزید بچا سکتے ہیں". Does "مزید" make it clear this is on top of what is already left over?
+- `dashboard.summary.noTipsLeft`: "بلوں کے بعد {left} پہلے ہی بچ جاتے ہیں۔ مزید بچت کے لیے نیچے چند تجاویز آن کریں۔" ({left} is already left over after your bills. Switch on a few ideas below to save even more.)

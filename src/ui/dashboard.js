@@ -28,9 +28,10 @@ export function plainSummary(result, view) {
   const allEasy = n > 0 && committed.every((p) => p.effort === 'Easy');
   const tips = t(allEasy ? 'dashboard.summary.easyTips' : 'dashboard.summary.tips', { count: n });
   const per = view.f === 12 ? 'year' : 'month';
+  // With no ideas switched on, the big number is 0, so say what is already left over
   const save = n
     ? t(`dashboard.summary.save.${per}`, { tips, amount: view.s(result.savings) })
-    : t('dashboard.summary.noTips');
+    : income > spend ? t('dashboard.summary.noTipsLeft', { left: view.m(income - spend) }) : t('dashboard.summary.noTips');
   if (!(income > 0)) return `${t(`dashboard.summary.spendOnly.${per}`, { spend: view.m(spend) })} ${save}`;
   if (spend > income) return `${t(`dashboard.summary.overspend.${per}`, { income: view.m(income), spend: view.m(spend), gap: view.m(spend - income) })} ${save}`;
   return `${t(`dashboard.summary.earnSpend.${per}`, { income: view.m(income), spend: view.m(spend) })} ${save}`;

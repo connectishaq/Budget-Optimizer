@@ -1261,7 +1261,7 @@
     },
     "summary": {
       "label": "Überblick",
-      "saveMonth": "Geld, das du jeden Monat sparen könntest",
+      "saveMonth": "Was du monatlich zusätzlich sparen könntest",
       "perYear_html": "<span id=\"sumAnnual\">0</span> im Jahr",
       "spendNow": "Was du jetzt ausgibst",
       "couldSpend": "Was du ausgeben könntest",
@@ -1571,6 +1571,7 @@
         "year": "Wenn du {tips} befolgst, könntest du jedes Jahr zusätzlich {amount} sparen."
       },
       "noTips": "Schalte unten ein paar Ideen ein, um zu sehen, wie viel du sparen könntest.",
+      "noTipsLeft": "Nach deinen Rechnungen bleiben dir schon {left}. Schalte unten ein paar Ideen ein, um noch mehr zu sparen.",
       "spendOnly": {
         "month": "Du gibst {spend} im Monat für die eingetragenen Rechnungen aus.",
         "year": "Du gibst {spend} im Jahr für die eingetragenen Rechnungen aus."
@@ -1627,8 +1628,8 @@
       "basisIncomeApprox": "Anteil an deinem Einkommen, verglichen mit einem typischen Haushalt „{profile}“ (ein grober Richtwert, weil wir für dein Land noch keine Zahlen haben)."
     },
     "mobile": {
-      "saveYear": "Du könntest jährlich sparen",
-      "saveMonth": "Du könntest monatlich sparen"
+      "saveYear": "Du könntest jährlich zusätzlich sparen",
+      "saveMonth": "Du könntest monatlich zusätzlich sparen"
     }
   },
   "common": {
@@ -1943,6 +1944,7 @@
         "about": "Über uns",
         "guides": "Ratgeber"
       },
+      "menu": "Menü",
       "navLabel": "Hauptmenü"
     },
     "brand": "Budget Optimizer",
@@ -1952,7 +1954,7 @@
       "headline": "Finde das Geld, das sich in deinem Monat versteckt.",
       "intro": "Trag deine Rechnungen ein, schalte ein paar einfache Ideen ein und sieh, was du diesen Monat, dieses Jahr und auf lange Sicht sparen könntest. Es dauert etwa zwei Minuten.",
       "cta": "Rechner starten",
-      "ctaTips": "Spartipps lesen",
+      "ctaTips": "Ratgeber lesen",
       "receipt": {
         "subtitle": "Was du zahlst · was du bekommst",
         "signUp": "Anmeldung nötig",
@@ -1974,7 +1976,7 @@
         "glossary": "Geldbegriffe erklärt"
       },
       "tips": {
-        "heading": "Spartipps",
+        "heading": "Ratgeber",
         "utilities": "Nebenkosten senken",
         "subscriptions": "Abo-Falle stoppen",
         "food": "Weniger fürs Essen ausgeben",

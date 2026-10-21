@@ -6,6 +6,7 @@ import { t } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
 import { getStoredCountry } from './i18n/countries.js';
 import { setFormatRegion } from './utils/format.js';
+import { initNavMenu } from './nav-menu.js';
 
 const THEME_KEY = 'hbo:theme';
 
@@ -31,6 +32,7 @@ function initTheme() {
 setFormatRegion(getStoredCountry());
 export const pageReady = startI18n().then(() => {
   initTheme();
+  initNavMenu();
   initLocalePicker();
   restoreScroll();
 });

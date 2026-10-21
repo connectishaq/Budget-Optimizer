@@ -1250,7 +1250,7 @@
     },
     "summary": {
       "label": "Summary",
-      "saveMonth": "Money you could save each month",
+      "saveMonth": "Extra you could save each month",
       "perYear_html": "<span id=\"sumAnnual\">0</span> a year",
       "spendNow": "What you spend now",
       "couldSpend": "What you could spend",
@@ -1560,6 +1560,7 @@
         "year": "By following {tips}, you could save an extra {amount} every year."
       },
       "noTips": "Switch on a few ideas below to see how much you could save.",
+      "noTipsLeft": "{left} is already left over after your bills. Switch on a few ideas below to save even more.",
       "spendOnly": {
         "month": "You spend {spend} a month on the bills you entered.",
         "year": "You spend {spend} a year on the bills you entered."
@@ -1616,8 +1617,8 @@
       "nothingFor": "Nothing entered for: {list}."
     },
     "mobile": {
-      "saveYear": "You could save each year",
-      "saveMonth": "You could save each month"
+      "saveYear": "Extra you could save each year",
+      "saveMonth": "Extra you could save each month"
     }
   },
   "common": {
@@ -1932,6 +1933,7 @@
         "about": "About",
         "guides": "Guides"
       },
+      "menu": "Menu",
       "navLabel": "Main"
     },
     "brand": "Budget Optimizer",
@@ -1941,7 +1943,7 @@
       "headline": "Find the money hiding in your month.",
       "intro": "Add your bills, switch on a few easy ideas and see what you could save this month, this year and over time. It takes about two minutes.",
       "cta": "Start the calculator",
-      "ctaTips": "Read the money tips",
+      "ctaTips": "Read the guides",
       "receipt": {
         "subtitle": "What you pay · what you get",
         "signUp": "Sign-up needed",
@@ -1963,7 +1965,7 @@
         "glossary": "Money words explained"
       },
       "tips": {
-        "heading": "Money tips",
+        "heading": "Guides",
         "utilities": "Cut utility bills",
         "subscriptions": "Stop subscription creep",
         "food": "Spend less on food",

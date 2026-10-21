@@ -115,6 +115,12 @@ const go = (patch) => setState((s) => { Object.assign(s.ui, patch); }, { reason:
 
 function next() {
   const { step, sub } = getState().ui;
+  // A box with a typing error ("abc", "-500") would count as 0, so stop on it first
+  const invalid = $('wizard').querySelector('[aria-invalid="true"]');
+  if (invalid) {
+    invalid.focus();
+    return;
+  }
   if (step === 1 && !(getState().values.income > 0) && $('wizNote').hidden) {
     // Gentle nudge once; pressing Next again continues without income.
     $('wizNote').hidden = false;

@@ -1232,7 +1232,7 @@
     },
     "summary": {
       "label": "Ringkasan",
-      "saveMonth": "Uang yang bisa Anda hemat tiap bulan",
+      "saveMonth": "Tambahan yang bisa Anda hemat tiap bulan",
       "perYear_html": "<span id=\"sumAnnual\">0</span> per tahun",
       "spendNow": "Pengeluaran Anda sekarang",
       "couldSpend": "Pengeluaran yang bisa Anda capai",
@@ -1540,6 +1540,7 @@
         "year": "Dengan mengikuti {tips}, Anda bisa menghemat tambahan {amount} setiap tahun."
       },
       "noTips": "Nyalakan beberapa ide di bawah untuk melihat berapa yang bisa Anda hemat.",
+      "noTipsLeft": "Setelah tagihan, sudah tersisa {left}. Nyalakan beberapa ide di bawah untuk menghemat lebih banyak lagi.",
       "spendOnly": {
         "month": "Anda mengeluarkan {spend} per bulan untuk tagihan yang Anda isi.",
         "year": "Anda mengeluarkan {spend} per tahun untuk tagihan yang Anda isi."
@@ -1596,8 +1597,8 @@
       "basisIncomeApprox": "Porsi dari penghasilan Anda, dibandingkan dengan {profile} pada umumnya (perkiraan kasar, karena kami belum punya data untuk negara Anda)."
     },
     "mobile": {
-      "saveYear": "Anda bisa menghemat tiap tahun",
-      "saveMonth": "Anda bisa menghemat tiap bulan"
+      "saveYear": "Tambahan yang bisa Anda hemat tiap tahun",
+      "saveMonth": "Tambahan yang bisa Anda hemat tiap bulan"
     }
   },
   "common": {
@@ -1906,6 +1907,7 @@
         "about": "Tentang",
         "guides": "Panduan"
       },
+      "menu": "Menu",
       "navLabel": "Utama"
     },
     "brand": "Budget Optimizer",
@@ -1915,7 +1917,7 @@
       "headline": "Temukan uang yang tersembunyi di bulan Anda.",
       "intro": "Isi tagihan Anda, nyalakan beberapa ide mudah, dan lihat berapa yang bisa Anda hemat bulan ini, tahun ini, dan seterusnya. Hanya butuh sekitar dua menit.",
       "cta": "Mulai kalkulator",
-      "ctaTips": "Baca tips keuangan",
+      "ctaTips": "Baca panduan",
       "receipt": {
         "subtitle": "Yang Anda bayar · yang Anda dapat",
         "signUp": "Perlu daftar",
@@ -1937,7 +1939,7 @@
         "glossary": "Istilah keuangan dijelaskan"
       },
       "tips": {
-        "heading": "Tips keuangan",
+        "heading": "Panduan",
         "utilities": "Pangkas tagihan utilitas",
         "subscriptions": "Hentikan langganan yang terus bertambah",
         "food": "Hemat biaya makan",
