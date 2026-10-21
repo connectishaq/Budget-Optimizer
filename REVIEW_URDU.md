@@ -78,3 +78,4 @@ Strings added or changed after this list was first written. They were written by
 - `help.text.saveMonth`: "بلوں کے بعد ہر مہینے جو رقم بچتی ہے، اور جو تجاویز آپ آن کریں ان سے ہونے والی بچت۔ قرض پر بچنے والا سود اس میں شامل نہیں۔"
 - `charts.legend.only`: "اگر آپ بچی ہوئی رقم بچت میں ڈالیں:" and `charts.side.total_html`: "{n} سال بعد آپ کی بچت" (Your savings after n years).
 - `charts.summary.short`: "اس وقت آپ کا خرچ آمدنی سے زیادہ ہے، اس لیے بڑھنے کے لیے ابھی کچھ نہیں بچتا۔ تجاویز آن کریں یا کچھ بل کم کریں تاکہ خرچ آمدنی سے کم ہو جائے۔"
+- New card "A plan that fits your income" (`page.balance.*`, `dashboard.balance.*`): title "آپ کی آمدنی کے اندر رہنے کا پلان", column "ابھی ← ہدف", reasons "عام سے زیادہ: اسے کم کریں" / "ضروری نہیں: فی الحال کم کریں" / "تھوڑی سی کمی" / "بڑی تبدیلی: اس کی منصوبہ بندی کریں", plus the intro, result and note sentences. Please read the whole card on /ur-pk/ with a budget that spends more than its income.

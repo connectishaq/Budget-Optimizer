@@ -7,6 +7,7 @@ import { countryData } from './countries.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
 import { t } from '../i18n/index.js';
 import { oneDecimal } from '../utils/format.js';
+import { balancePlan, SAVE_TARGET } from './balance.js';
 
 export const EXPENSE_FIELDS = [
   'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
@@ -526,6 +527,10 @@ export function computeBudget(state, fmt = plainFmt) {
   const allocation = { ...eff, needed, monthly, amounts: splitSavings(monthly, eff.shares) };
 
   const payday = paydayPlan(totals, plan, optimized);
+  // When even the switched-on ideas leave less than 10% to save, spending limits that fit the income
+  const balance = totals.income > 0 && totals.income - optimized < totals.income * SAVE_TARGET
+    ? balancePlan(totals, state.country, state.profile)
+    : null;
 
-  return { totals, plan, savings, interestAvoided, optimized, housing, health, split, allocation, payday };
+  return { totals, plan, savings, interestAvoided, optimized, housing, health, split, allocation, payday, balance };
 }

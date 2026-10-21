@@ -1497,6 +1497,13 @@
     "dialog": {
       "gotIt": "Got it",
       "cancel": "Cancel"
+    },
+    "balance": {
+      "title": "A plan that fits your income",
+      "colBill": "Bill",
+      "colAim": "Now → aim for",
+      "total": "Total spending",
+      "note": "Loan payments, insurance, school fees and once-a-year costs stay as they are. These limits are a starting point: move money between them in whatever way suits your household."
     }
   },
   "seo": {
@@ -1623,6 +1630,23 @@
       "save": "Money you could save each month",
       "extra": "Extra you could save each month",
       "short": "You’re short each month"
+    },
+    "balance": {
+      "intro": {
+        "over": "Your bills come to {spend}{per}, {gap} more than you earn. These limits bring your spending under your income and aim to leave {pct}% of it to save.",
+        "low": "You spend {spend}{per} of your {income} income, so very little is left to save. These limits aim to leave {pct}% of your income to save."
+      },
+      "reason": {
+        "typical": "Higher than typical: bring it down",
+        "want": "Nice-to-have: cut back for now",
+        "trim": "Small trim",
+        "big": "Bigger change: worth planning for"
+      },
+      "result": {
+        "reached": "With these limits you’d spend {spend}{per} and have {save} left to save.",
+        "under": "With these limits you’d spend {spend}{per} and still have {save} left. To save 10%, you’d need about {more}{per} more income, or a bigger change such as cheaper housing or paying off a loan.",
+        "short": "Even with these limits you’d be {short}{per} short. To get under your income and also save 10%, you’d need about {more}{per} more income, or a bigger change such as cheaper housing, a cheaper car or paying off a loan."
+      }
     }
   },
   "common": {

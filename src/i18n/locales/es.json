@@ -1537,6 +1537,13 @@
     "dialog": {
       "gotIt": "Entendido",
       "cancel": "Cancelar"
+    },
+    "balance": {
+      "title": "Un plan que cabe en tus ingresos",
+      "colBill": "Gasto",
+      "colAim": "Ahora → objetivo",
+      "total": "Gasto total",
+      "note": "Las cuotas de préstamos, los seguros, las cuotas escolares y los gastos anuales se quedan como están. Estos límites son un punto de partida: mueve dinero entre ellos como mejor le venga a tu hogar."
     }
   },
   "seo": {
@@ -1665,6 +1672,23 @@
       "save": "Dinero que podrías ahorrar cada mes",
       "extra": "Lo que podrías ahorrar de más cada mes",
       "short": "Te falta cada mes"
+    },
+    "balance": {
+      "intro": {
+        "over": "Tus gastos suman {spend}{per}, {gap} más de lo que ganas. Estos límites dejan tu gasto por debajo de tus ingresos y buscan que te quede un {pct}% para ahorrar.",
+        "low": "Gastas {spend}{per} de tus {income} de ingresos, así que te queda muy poco para ahorrar. Estos límites buscan que te quede un {pct}% de tus ingresos para ahorrar."
+      },
+      "reason": {
+        "typical": "Más alto de lo habitual: bájalo",
+        "want": "No imprescindible: recórtalo por ahora",
+        "trim": "Pequeño recorte",
+        "big": "Cambio mayor: vale la pena planearlo"
+      },
+      "result": {
+        "reached": "Con estos límites gastarías {spend}{per} y te quedarían {save} para ahorrar.",
+        "under": "Con estos límites gastarías {spend}{per} y aún te quedarían {save}. Para ahorrar un 10% necesitarías unos {more}{per} más de ingresos, o un cambio mayor, como una vivienda más barata o terminar de pagar un préstamo.",
+        "short": "Incluso con estos límites te faltarían {short}{per}. Para quedar por debajo de tus ingresos y además ahorrar un 10%, necesitarías unos {more}{per} más de ingresos, o un cambio mayor, como una vivienda más barata, un coche más barato o terminar de pagar un préstamo."
+      }
     }
   },
   "common": {

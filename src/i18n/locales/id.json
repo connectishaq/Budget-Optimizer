@@ -1479,6 +1479,13 @@
     "dialog": {
       "gotIt": "Mengerti",
       "cancel": "Batal"
+    },
+    "balance": {
+      "title": "Rencana yang sesuai penghasilan Anda",
+      "colBill": "Tagihan",
+      "colAim": "Sekarang → target",
+      "total": "Total pengeluaran",
+      "note": "Cicilan pinjaman, asuransi, biaya sekolah, dan biaya tahunan tetap seperti semula. Batas ini hanya titik awal: pindahkan uang di antaranya sesuai kebutuhan rumah tangga Anda."
     }
   },
   "seo": {
@@ -1603,6 +1610,23 @@
       "save": "Uang yang bisa Anda hemat tiap bulan",
       "extra": "Tambahan yang bisa Anda hemat tiap bulan",
       "short": "Kekurangan Anda tiap bulan"
+    },
+    "balance": {
+      "intro": {
+        "over": "Tagihan Anda {spend}{per}, {gap} lebih besar dari penghasilan. Batas ini membuat pengeluaran Anda di bawah penghasilan dan berusaha menyisakan {pct}% untuk ditabung.",
+        "low": "Anda membelanjakan {spend}{per} dari penghasilan {income}, jadi hanya sedikit yang tersisa untuk ditabung. Batas ini berusaha menyisakan {pct}% penghasilan untuk ditabung."
+      },
+      "reason": {
+        "typical": "Lebih tinggi dari biasanya: turunkan",
+        "want": "Tidak wajib: kurangi dulu",
+        "trim": "Sedikit dipangkas",
+        "big": "Perubahan besar: perlu direncanakan"
+      },
+      "result": {
+        "reached": "Dengan batas ini Anda akan membelanjakan {spend}{per} dan masih ada {save} untuk ditabung.",
+        "under": "Dengan batas ini Anda akan membelanjakan {spend}{per} dan masih tersisa {save}. Untuk menabung 10%, Anda perlu sekitar {more}{per} penghasilan tambahan, atau perubahan besar seperti tempat tinggal lebih murah atau melunasi pinjaman.",
+        "short": "Bahkan dengan batas ini Anda masih kurang {short}{per}. Agar pengeluaran di bawah penghasilan dan tetap menabung 10%, Anda perlu sekitar {more}{per} penghasilan tambahan, atau perubahan besar seperti tempat tinggal lebih murah, mobil lebih murah, atau melunasi pinjaman."
+      }
     }
   },
   "common": {

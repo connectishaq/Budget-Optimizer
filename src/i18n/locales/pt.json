@@ -1537,6 +1537,13 @@
     "dialog": {
       "gotIt": "Entendi",
       "cancel": "Cancelar"
+    },
+    "balance": {
+      "title": "Um plano que cabe na sua renda",
+      "colBill": "Conta",
+      "colAim": "Agora → meta",
+      "total": "Gasto total",
+      "note": "Parcelas de empréstimos, seguros, mensalidades escolares e custos anuais continuam como estão. Estes limites são um ponto de partida: mova dinheiro entre eles como for melhor para a sua casa."
     }
   },
   "seo": {
@@ -1665,6 +1672,23 @@
       "save": "Dinheiro que você poderia economizar por mês",
       "extra": "Quanto você poderia economizar a mais por mês",
       "short": "Quanto falta por mês"
+    },
+    "balance": {
+      "intro": {
+        "over": "Suas contas somam {spend}{per}, {gap} a mais do que você ganha. Estes limites colocam seus gastos abaixo da sua renda e buscam deixar {pct}% dela para guardar.",
+        "low": "Você gasta {spend}{per} da sua renda de {income}, então sobra muito pouco para guardar. Estes limites buscam deixar {pct}% da sua renda para guardar."
+      },
+      "reason": {
+        "typical": "Acima do normal: reduza",
+        "want": "Não essencial: corte por enquanto",
+        "trim": "Pequeno corte",
+        "big": "Mudança maior: vale planejar"
+      },
+      "result": {
+        "reached": "Com estes limites você gastaria {spend}{per} e sobrariam {save} para guardar.",
+        "under": "Com estes limites você gastaria {spend}{per} e ainda sobrariam {save}. Para guardar 10%, você precisaria de cerca de {more}{per} a mais de renda, ou uma mudança maior, como moradia mais barata ou quitar um empréstimo.",
+        "short": "Mesmo com estes limites faltariam {short}{per}. Para ficar abaixo da sua renda e ainda guardar 10%, você precisaria de cerca de {more}{per} a mais de renda, ou uma mudança maior, como moradia mais barata, um carro mais barato ou quitar um empréstimo."
+      }
     }
   },
   "common": {

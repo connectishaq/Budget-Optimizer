@@ -1508,6 +1508,13 @@
     "dialog": {
       "gotIt": "Verstanden",
       "cancel": "Abbrechen"
+    },
+    "balance": {
+      "title": "Ein Plan, der zu deinem Einkommen passt",
+      "colBill": "Posten",
+      "colAim": "Jetzt → Ziel",
+      "total": "Ausgaben gesamt",
+      "note": "Kreditraten, Versicherungen, Schulgebühren und jährliche Kosten bleiben, wie sie sind. Diese Grenzen sind ein Anfang: Verschiebe Geld zwischen ihnen so, wie es zu deinem Haushalt passt."
     }
   },
   "seo": {
@@ -1634,6 +1641,23 @@
       "save": "Geld, das du jeden Monat sparen könntest",
       "extra": "Was du monatlich zusätzlich sparen könntest",
       "short": "Dir fehlen jeden Monat"
+    },
+    "balance": {
+      "intro": {
+        "over": "Deine Rechnungen betragen {spend}{per}, also {gap} mehr, als du verdienst. Diese Grenzen bringen deine Ausgaben unter dein Einkommen und sollen {pct} % davon zum Sparen übrig lassen.",
+        "low": "Du gibst {spend}{per} von deinen {income} Einkommen aus, also bleibt kaum etwas zum Sparen. Diese Grenzen sollen {pct} % deines Einkommens zum Sparen übrig lassen."
+      },
+      "reason": {
+        "typical": "Höher als üblich: senken",
+        "want": "Nicht nötig: vorerst kürzen",
+        "trim": "Kleine Kürzung",
+        "big": "Größere Änderung: einplanen"
+      },
+      "result": {
+        "reached": "Mit diesen Grenzen gibst du {spend}{per} aus und hast {save} zum Sparen übrig.",
+        "under": "Mit diesen Grenzen gibst du {spend}{per} aus und hast noch {save} übrig. Um 10 % zu sparen, bräuchtest du etwa {more}{per} mehr Einkommen oder eine größere Änderung, etwa eine günstigere Wohnung oder einen abbezahlten Kredit.",
+        "short": "Selbst mit diesen Grenzen fehlen dir {short}{per}. Um unter dein Einkommen zu kommen und zusätzlich 10 % zu sparen, bräuchtest du etwa {more}{per} mehr Einkommen oder eine größere Änderung, etwa eine günstigere Wohnung, ein günstigeres Auto oder einen abbezahlten Kredit."
+      }
     }
   },
   "common": {

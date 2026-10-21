@@ -6,7 +6,7 @@ import { hasData } from '../state.js';
 import { PROFILES, benchmarkFor } from '../engine/profiles.js';
 import { pct } from '../utils/format.js';
 import { $, esc, icon, setText, setHTML, setAttr, setMoney, animateNumber } from './dom.js';
-import { t } from '../i18n/index.js';
+import { t, has } from '../i18n/index.js';
 import { withSign } from '../utils/format.js';
 import { canSave } from '../engine/calculate.js';
 
@@ -207,6 +207,41 @@ function renderCategories(state, result, view) {
   setText($('categoryEmpty'), unused.length ? t('dashboard.categories.nothingFor', { list: unused.map((c) => c.label).join(', ') }) : '');
 }
 
+/** A line's name: an input field, the country's own bill, subscriptions or a custom expense. */
+function balanceLabel(line, state) {
+  if (line.field) return t(`inputs.fields.${line.field}.label`);
+  if (line.local) {
+    const k = `countryFields.${state.country}.${line.local}.label`;
+    return has(k) ? t(k) : line.localLabel;
+  }
+  if (line.id === 'subscriptions') return t('calc.categories.subscriptions');
+  return line.customName || t('calc.otherCosts');
+}
+
+/** "A plan that fits your income": a spending limit for each bill, when spending leaves under 10% to save. */
+function renderBalance(state, result, view) {
+  const b = result.balance;
+  $('balance').hidden = !b;
+  if (!b) return;
+  const { income } = result.totals;
+  const pct = 10;
+  // Now → aim for, pointing the way the text reads
+  const arrow = document.dir === 'rtl' ? '←' : '→';
+  setText($('balanceIntro'), b.spend > income
+    ? t('dashboard.balance.intro.over', { spend: view.m(b.spend), gap: view.m(b.spend - income), per: view.per, pct })
+    : t('dashboard.balance.intro.low', { spend: view.m(b.spend), income: view.m(income), per: view.per, pct }));
+  setHTML($('balanceRows'), b.lines.map((l) => `<li class="flex items-start justify-between gap-3 py-3">
+      <div class="min-w-0"><p class="font-medium text-slate-900 dark:text-white">${esc(balanceLabel(l, state))}</p><p class="text-xs muted">${esc(t(`dashboard.balance.reason.${l.reason}`))}</p></div>
+      <div class="shrink-0 text-end tabular-nums"><p><span class="muted">${esc(view.m(l.now))}</span> ${arrow} <strong class="font-semibold text-slate-900 dark:text-white">${esc(view.s(l.aim))}</strong></p><p class="text-xs text-emerald-700 dark:text-emerald-400">${esc(withSign('−', view.s(l.cut)))}</p></div>
+    </li>`).join(''));
+  setText($('balanceTotal'), `${view.m(b.spend)} ${arrow} ${view.s(b.newSpend)}`);
+  const vars = { spend: view.s(b.newSpend), save: view.s(Math.max(0, b.toSave)), short: view.s(Math.max(0, -b.toSave)), more: view.s(b.incomeNeeded), per: view.per };
+  setText($('balanceResult'), t(`dashboard.balance.result.${b.outcome}`, vars));
+  $('balanceResult').className = `mt-4 rounded-xl px-4 py-3 text-sm ${b.outcome === 'reached'
+    ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
+    : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`;
+}
+
 function renderMobileBar(state, result, view) {
   const bar = $('mobileBar');
   const amount = canSave(result);
@@ -225,5 +260,6 @@ export function renderDashboard(state, result, view) {
   renderHealth(result);
   renderSplit(result, view);
   renderCategories(state, result, view);
+  renderBalance(state, result, view);
   renderMobileBar(state, result, view);
 }

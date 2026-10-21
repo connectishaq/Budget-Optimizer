@@ -463,6 +463,21 @@
               </div>
             </section>
 
+            <!-- ===== A plan that fits your income (only when spending leaves less than 10% to save) ===== -->
+            <section id="balance" hidden aria-labelledby="balanceTitle" class="panel">
+              <h3 id="balanceTitle" class="h-section" data-i18n="page.balance.title">A plan that fits your income</h3>
+              <p id="balanceIntro" class="mt-1 text-sm muted"></p>
+              <div class="mt-5 flex justify-between gap-3 border-b border-slate-200 pb-2 text-xs font-medium muted dark:border-slate-800">
+                <span data-i18n="page.balance.colBill">Bill</span><span data-i18n="page.balance.colAim">Now → aim for</span>
+              </div>
+              <ul id="balanceRows" class="divide-y divide-slate-100 dark:divide-slate-800"></ul>
+              <div class="flex justify-between gap-3 border-t border-slate-200 pt-3 font-semibold text-slate-900 dark:border-slate-800 dark:text-white">
+                <span data-i18n="page.balance.total">Total spending</span><span id="balanceTotal" class="text-end tabular-nums"></span>
+              </div>
+              <p id="balanceResult" class="mt-4 rounded-xl px-4 py-3 text-sm"></p>
+              <p class="mt-3 text-xs muted" data-i18n="page.balance.note">Loan payments, insurance, school fees and once-a-year costs stay as they are. These limits are a starting point: move money between them in whatever way suits your household.</p>
+            </section>
+
             <!-- ===== Ideas ===== -->
             <section id="plan" aria-labelledby="planTitle" class="panel">
               <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">

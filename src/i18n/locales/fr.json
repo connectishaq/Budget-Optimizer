@@ -1537,6 +1537,13 @@
     "dialog": {
       "gotIt": "Compris",
       "cancel": "Annuler"
+    },
+    "balance": {
+      "title": "Un plan qui tient dans vos revenus",
+      "colBill": "Dépense",
+      "colAim": "Aujourd’hui → objectif",
+      "total": "Total des dépenses",
+      "note": "Les remboursements de prêts, les assurances, les frais de scolarité et les dépenses annuelles restent inchangés. Ces limites sont un point de départ : répartissez l’argent entre elles comme cela convient à votre foyer."
     }
   },
   "seo": {
@@ -1665,6 +1672,23 @@
       "save": "Ce que vous pourriez économiser chaque mois",
       "extra": "Ce que vous pourriez économiser en plus chaque mois",
       "short": "Ce qui vous manque chaque mois"
+    },
+    "balance": {
+      "intro": {
+        "over": "Vos factures atteignent {spend}{per}, soit {gap} de plus que vos revenus. Ces limites ramènent vos dépenses sous vos revenus et visent à vous laisser {pct} % à épargner.",
+        "low": "Vous dépensez {spend}{per} sur vos {income} de revenus : il reste très peu à épargner. Ces limites visent à vous laisser {pct} % de vos revenus à épargner."
+      },
+      "reason": {
+        "typical": "Plus élevé que la normale : à réduire",
+        "want": "Pas indispensable : à réduire pour l’instant",
+        "trim": "Petite baisse",
+        "big": "Changement plus important : à prévoir"
+      },
+      "result": {
+        "reached": "Avec ces limites, vous dépenseriez {spend}{per} et il vous resterait {save} à épargner.",
+        "under": "Avec ces limites, vous dépenseriez {spend}{per} et il vous resterait encore {save}. Pour épargner 10 %, il faudrait environ {more}{per} de revenus en plus, ou un changement plus important comme un logement moins cher ou un prêt remboursé.",
+        "short": "Même avec ces limites, il vous manquerait {short}{per}. Pour passer sous vos revenus et épargner aussi 10 %, il faudrait environ {more}{per} de revenus en plus, ou un changement plus important comme un logement moins cher, une voiture moins chère ou un prêt remboursé."
+      }
     }
   },
   "common": {
