@@ -1843,7 +1843,11 @@
       "namePlaceholder": "p. ej., vacaciones",
       "remove": "Quitar la meta {name}",
       "target": "Cuánto necesitas",
-      "saved": "Ahorrado hasta ahora"
+      "saved": "Ahorrado hasta ahora",
+      "moveUp": "Subir {name}",
+      "moveDown": "Bajar {name}",
+      "orderHint": "Se ahorra para las metas en este orden, la de arriba primero. Usa las flechas para cambiarlo.",
+      "moved": "{name} ahora es la número {n}"
     },
     "status": {
       "needTarget": "Escribe cuánto necesitas.",

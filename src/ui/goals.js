@@ -6,7 +6,7 @@ import { getState, setState } from '../state.js';
 import { goalTimeline, emergencyFundStatus, debtFreeComparison, ALLOCATION_PRESETS, BUCKETS, rebalanceAllocation } from '../engine/calculate.js';
 import { parseAmount, decimalSeparator, duration, monthsFromNow, pct, oneDecimal } from '../utils/format.js';
 import { newId } from '../engine/profiles.js';
-import { $, icon, esc, setText, setHTML, setAttr, toast } from './dom.js';
+import { $, icon, esc, setText, setHTML, setAttr, toast, announce } from './dom.js';
 import { t, getLanguage } from '../i18n/index.js';
 
 // Translated where they're read (keys: goals.bucket.* and goals.why.*)
@@ -68,16 +68,20 @@ function addGoal(name = '') {
   requestAnimationFrame(() => document.querySelector(`#g-${g.id}-${name ? 'target' : 'name'}`)?.focus());
 }
 
-function goalRow(g) {
+function goalRow(g, i, all) {
+  const name = esc(g.name || t('goals.untitled'));
+  // Goals are funded from the top, so the arrows set which one comes first
+  const move = (dir, disabled) => `<button type="button" class="btn-icon shrink-0 disabled:opacity-30" data-move-goal="${g.id}" data-dir="${dir}" ${disabled ? 'disabled' : ''}
+    aria-label="${t(dir < 0 ? 'goals.row.moveUp' : 'goals.row.moveDown', { name })}">${icon(dir < 0 ? 'arrow-up' : 'arrow-down', 'icon-sm')}</button>`;
   return `
   <li class="rounded-xl border border-slate-200 p-3 dark:border-slate-800" data-goal="${g.id}">
-    <div class="flex items-end gap-2">
-      <div class="min-w-0 flex-1">
-        <label for="g-${g.id}-name" class="mb-1 block text-xs font-medium muted">${t('goals.row.name')}</label>
-        <input id="g-${g.id}-name" type="text" class="input" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="${t('goals.row.namePlaceholder')}">
-      </div>
+    <div class="flex items-center gap-2">
+      <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-slate-100 text-sm font-semibold tabular-nums text-slate-700 dark:bg-slate-800 dark:text-slate-200" aria-hidden="true">${i + 1}</span>
+      <label for="g-${g.id}-name" class="min-w-0 flex-1 text-xs font-medium muted">${t('goals.row.name')}</label>
+      ${all.length > 1 ? `<span class="flex shrink-0">${move(-1, i === 0)}${move(1, i === all.length - 1)}</span>` : ''}
       <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove-goal="${g.id}" aria-label="${t('goals.row.remove', { name: esc(g.name) })}">${icon('trash')}</button>
     </div>
+    <input id="g-${g.id}-name" type="text" class="input mt-1" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="${t('goals.row.namePlaceholder')}">
     <div class="mt-2 grid grid-cols-2 gap-2">
       <div><label for="g-${g.id}-target" class="mb-1 block text-xs font-medium muted">${t('goals.row.target')}</label>
         <input id="g-${g.id}-target" type="text" inputmode="decimal" class="input font-semibold" data-goal-id="${g.id}" data-key="target" value="${g.target || ''}" placeholder="0" aria-describedby="g-${g.id}-target-msg">
@@ -101,6 +105,8 @@ function renderGoalPlanner(state, result, view) {
     list.__sig = sig;
     list.innerHTML = state.goals.map(goalRow).join('');
   }
+  $('goalOrderHint').hidden = state.goals.length < 2;
+  setText($('goalOrderHint'), t('goals.row.orderHint'));
   $('goalEmpty').hidden = state.goals.length > 0;
   renderGoalChips(state);
   const monthly = result.allocation.amounts.goals;
@@ -269,6 +275,22 @@ export function initGoals() {
     setState((s) => { const g = s.goals.find((x) => x.id === id); if (g) g[key] = v; }, { reason: 'input' });
   });
   box.addEventListener('click', (e) => {
+    const mv = e.target.closest('[data-move-goal]');
+    if (mv) {
+      const id = mv.dataset.moveGoal;
+      const dir = Number(mv.dataset.dir);
+      const from = getState().goals.findIndex((g) => g.id === id);
+      const to = from + dir;
+      if (from < 0 || to < 0 || to >= getState().goals.length) return;
+      setState((s) => { const [g] = s.goals.splice(from, 1); s.goals.splice(to, 0, g); });
+      const g = getState().goals[to];
+      announce(t('goals.row.moved', { name: g.name || t('goals.untitled'), n: to + 1 }));
+      // The list is rebuilt; keep focus on the same arrow (or the other one at the ends)
+      const sel = (d) => `[data-move-goal="${id}"][data-dir="${d}"]`;
+      const btn = box.querySelector(sel(dir));
+      (btn && !btn.disabled ? btn : box.querySelector(sel(-dir)))?.focus();
+      return;
+    }
     const rm = e.target.closest('[data-remove-goal]');
     if (!rm) return;
     const st = getState();

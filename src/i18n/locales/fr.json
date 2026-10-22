@@ -1843,7 +1843,11 @@
       "namePlaceholder": "ex. : vacances",
       "remove": "Supprimer l’objectif {name}",
       "target": "Montant nécessaire",
-      "saved": "Déjà épargné"
+      "saved": "Déjà épargné",
+      "moveUp": "Monter {name}",
+      "moveDown": "Descendre {name}",
+      "orderHint": "Vous épargnez pour vos objectifs dans cet ordre, celui du haut d’abord. Utilisez les flèches pour le changer.",
+      "moved": "{name} est maintenant en position {n}"
     },
     "status": {
       "needTarget": "Indiquez le montant nécessaire.",

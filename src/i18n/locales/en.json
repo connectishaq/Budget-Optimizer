@@ -1800,7 +1800,11 @@
       "namePlaceholder": "e.g. Holiday",
       "remove": "Remove goal {name}",
       "target": "How much you need",
-      "saved": "Saved so far"
+      "saved": "Saved so far",
+      "moveUp": "Move {name} up",
+      "moveDown": "Move {name} down",
+      "orderHint": "Goals are saved for in this order, top first. Use the arrows to change it.",
+      "moved": "{name} is now number {n}"
     },
     "status": {
       "needTarget": "Type how much you need.",

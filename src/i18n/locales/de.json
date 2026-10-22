@@ -1811,7 +1811,11 @@
       "namePlaceholder": "z. B. Urlaub",
       "remove": "Ziel {name} entfernen",
       "target": "Wie viel du brauchst",
-      "saved": "Bisher gespart"
+      "saved": "Bisher gespart",
+      "moveUp": "{name} nach oben",
+      "moveDown": "{name} nach unten",
+      "orderHint": "Für die Ziele wird in dieser Reihenfolge gespart, das oberste zuerst. Ändere sie mit den Pfeilen.",
+      "moved": "{name} ist jetzt auf Platz {n}"
     },
     "status": {
       "needTarget": "Gib ein, wie viel du brauchst.",

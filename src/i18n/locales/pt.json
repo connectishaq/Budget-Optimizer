@@ -1843,7 +1843,11 @@
       "namePlaceholder": "ex.: Férias",
       "remove": "Remover meta {name}",
       "target": "Quanto você precisa",
-      "saved": "Guardado até agora"
+      "saved": "Guardado até agora",
+      "moveUp": "Subir {name}",
+      "moveDown": "Descer {name}",
+      "orderHint": "Você guarda para as metas nesta ordem, a de cima primeiro. Use as setas para mudar.",
+      "moved": "{name} agora é a número {n}"
     },
     "status": {
       "needTarget": "Digite quanto você precisa.",
