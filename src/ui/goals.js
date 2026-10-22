@@ -71,11 +71,12 @@ function addGoal(name = '') {
 function goalRow(g, i, all) {
   const name = esc(g.name || t('goals.untitled'));
   return `
-  <li class="rounded-xl border border-slate-200 p-3 dark:border-slate-800" data-goal="${g.id}">
+  <li class="flex rounded-xl border border-slate-200 dark:border-slate-800" data-goal="${g.id}">
+    ${all.length > 1 ? `<button type="button" class="flex w-9 shrink-0 cursor-grab touch-none items-center justify-center rounded-s-xl border-e border-slate-100 text-slate-400 hover:bg-slate-50 hover:text-slate-700 focus-visible:outline-2 focus-visible:outline-emerald-700 active:cursor-grabbing dark:border-slate-800 dark:hover:bg-slate-800/60 dark:hover:text-slate-200" data-drag-goal="${g.id}" aria-label="${t('goals.row.drag', { name })}" aria-describedby="goalOrderHint">${icon('grip')}</button>` : ''}
+    <div class="min-w-0 flex-1 p-3">
     <div class="flex items-center gap-2">
       <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-slate-100 text-sm font-semibold tabular-nums text-slate-700 dark:bg-slate-800 dark:text-slate-200" aria-hidden="true">${i + 1}</span>
       <label for="g-${g.id}-name" class="min-w-0 flex-1 text-xs font-medium muted">${t('goals.row.name')}</label>
-      ${all.length > 1 ? `<button type="button" class="btn-icon shrink-0 cursor-grab touch-none active:cursor-grabbing" data-drag-goal="${g.id}" aria-label="${t('goals.row.drag', { name })}" aria-describedby="goalOrderHint">${icon('grip')}</button>` : ''}
       <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove-goal="${g.id}" aria-label="${t('goals.row.remove', { name: esc(g.name) })}">${icon('trash')}</button>
     </div>
     <input id="g-${g.id}-name" type="text" class="input mt-1" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="${t('goals.row.namePlaceholder')}">
@@ -90,6 +91,7 @@ function goalRow(g, i, all) {
     <div class="mt-3">
       <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"><div class="h-full rounded-full bg-emerald-500 transition-all" data-goal-bar style="width:0%"></div></div>
       <p class="mt-1.5 text-xs muted" data-goal-status></p>
+    </div>
     </div>
   </li>`;
 }
@@ -255,13 +257,17 @@ function initGoalDrag(box) {
 
   const follow = (y) => {
     const { li } = drag;
-    // Pass the middle of a neighbour and the two swap places
-    const prev = li.previousElementSibling;
-    const next = li.nextElementSibling;
     const mid = (el) => { const r = el.getBoundingClientRect(); return r.top + window.scrollY + r.height / 2; };
     const top = drag.startTop + (y - drag.startY);
-    if (prev && top < mid(prev)) box.insertBefore(li, prev);
-    else if (next && top + li.offsetHeight > mid(next)) box.insertBefore(next, li);
+    // Pass the middle of a neighbour and the two swap places (several at once on a
+    // quick flick). The neighbour moves, never the dragged goal, so it keeps the pointer
+    for (let guard = box.children.length; guard > 0; guard--) {
+      const prev = li.previousElementSibling;
+      const next = li.nextElementSibling;
+      if (prev && top < mid(prev)) box.insertBefore(prev, li.nextElementSibling);
+      else if (next && top + li.offsetHeight > mid(next)) box.insertBefore(next, li);
+      else break;
+    }
     // Shift it from where it now sits in the list, so it stays under the pointer
     const natural = li.getBoundingClientRect().top + window.scrollY - drag.shift;
     drag.shift = top - natural;
@@ -292,7 +298,8 @@ function initGoalDrag(box) {
     document.body.classList.add('goal-dragging');
     raf = requestAnimationFrame(autoScroll);
   });
-  box.addEventListener('pointermove', (e) => {
+  // Followed on the whole window, so the pointer can leave the list while dragging
+  window.addEventListener('pointermove', (e) => {
     if (!drag) return;
     drag.clientY = e.clientY;
     follow(pageY(e));
@@ -307,8 +314,8 @@ function initGoalDrag(box) {
     document.body.classList.remove('goal-dragging');
     saveOrder(box, [...box.children].map((x) => x.dataset.goal), id);
   };
-  box.addEventListener('pointerup', end);
-  box.addEventListener('pointercancel', end);
+  window.addEventListener('pointerup', end);
+  window.addEventListener('pointercancel', end);
 
   box.addEventListener('keydown', (e) => {
     const h = e.target.closest('[data-drag-goal]');
