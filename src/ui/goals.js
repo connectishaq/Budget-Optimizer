@@ -70,15 +70,12 @@ function addGoal(name = '') {
 
 function goalRow(g, i, all) {
   const name = esc(g.name || t('goals.untitled'));
-  // Goals are funded from the top, so the arrows set which one comes first
-  const move = (dir, disabled) => `<button type="button" class="btn-icon shrink-0 disabled:opacity-30" data-move-goal="${g.id}" data-dir="${dir}" ${disabled ? 'disabled' : ''}
-    aria-label="${t(dir < 0 ? 'goals.row.moveUp' : 'goals.row.moveDown', { name })}">${icon(dir < 0 ? 'arrow-up' : 'arrow-down', 'icon-sm')}</button>`;
   return `
   <li class="rounded-xl border border-slate-200 p-3 dark:border-slate-800" data-goal="${g.id}">
     <div class="flex items-center gap-2">
       <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-slate-100 text-sm font-semibold tabular-nums text-slate-700 dark:bg-slate-800 dark:text-slate-200" aria-hidden="true">${i + 1}</span>
       <label for="g-${g.id}-name" class="min-w-0 flex-1 text-xs font-medium muted">${t('goals.row.name')}</label>
-      ${all.length > 1 ? `<span class="flex shrink-0">${move(-1, i === 0)}${move(1, i === all.length - 1)}</span>` : ''}
+      ${all.length > 1 ? `<button type="button" class="btn-icon shrink-0 cursor-grab touch-none active:cursor-grabbing" data-drag-goal="${g.id}" aria-label="${t('goals.row.drag', { name })}" aria-describedby="goalOrderHint">${icon('grip')}</button>` : ''}
       <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove-goal="${g.id}" aria-label="${t('goals.row.remove', { name: esc(g.name) })}">${icon('trash')}</button>
     </div>
     <input id="g-${g.id}-name" type="text" class="input mt-1" maxlength="60" data-goal-id="${g.id}" data-key="name" value="${esc(g.name)}" placeholder="${t('goals.row.namePlaceholder')}">
@@ -235,6 +232,97 @@ export function renderGoals(state, result, view) {
   renderDebt(state, result, view);
 }
 
+/** Saves a new order of goal ids, tells screen readers and keeps focus on the moved goal's handle. */
+function saveOrder(box, ids, movedId) {
+  const st = getState();
+  if (ids.join('|') === st.goals.map((g) => g.id).join('|')) return;
+  setState((s) => { s.goals = ids.map((id) => s.goals.find((g) => g.id === id)).filter(Boolean); });
+  const n = getState().goals.findIndex((g) => g.id === movedId);
+  const g = getState().goals[n];
+  announce(t('goals.row.moved', { name: g.name || t('goals.untitled'), n: n + 1 }));
+  box.querySelector(`[data-drag-goal="${movedId}"]`)?.focus();
+}
+
+/**
+ * Drag a goal by its handle (mouse, finger or pen) to change the order; the
+ * others move out of the way as it passes their middle. The handle also takes
+ * the up and down arrow keys.
+ */
+function initGoalDrag(box) {
+  let drag = null;
+  const pageY = (e) => e.clientY + window.scrollY;
+  let raf = 0;
+
+  const follow = (y) => {
+    const { li } = drag;
+    // Pass the middle of a neighbour and the two swap places
+    const prev = li.previousElementSibling;
+    const next = li.nextElementSibling;
+    const mid = (el) => { const r = el.getBoundingClientRect(); return r.top + window.scrollY + r.height / 2; };
+    const top = drag.startTop + (y - drag.startY);
+    if (prev && top < mid(prev)) box.insertBefore(li, prev);
+    else if (next && top + li.offsetHeight > mid(next)) box.insertBefore(next, li);
+    // Shift it from where it now sits in the list, so it stays under the pointer
+    const natural = li.getBoundingClientRect().top + window.scrollY - drag.shift;
+    drag.shift = top - natural;
+    li.style.transform = `translateY(${drag.shift}px)`;
+  };
+
+  // Near the top or bottom of the screen, scroll so long lists can be reordered on phones
+  const autoScroll = () => {
+    if (!drag) return;
+    const edge = 70;
+    const dy = drag.clientY < edge ? -12 : drag.clientY > window.innerHeight - edge ? 12 : 0;
+    if (dy) {
+      window.scrollBy(0, dy);
+      follow(drag.clientY + window.scrollY);
+    }
+    raf = requestAnimationFrame(autoScroll);
+  };
+
+  box.addEventListener('pointerdown', (e) => {
+    const h = e.target.closest('[data-drag-goal]');
+    if (!h || e.button > 0) return;
+    e.preventDefault();
+    const li = h.closest('[data-goal]');
+    h.setPointerCapture(e.pointerId);
+    const y = pageY(e);
+    drag = { h, li, id: h.dataset.dragGoal, startY: y, clientY: e.clientY, startTop: li.getBoundingClientRect().top + window.scrollY, shift: 0 };
+    li.classList.add('dragging');
+    document.body.classList.add('goal-dragging');
+    raf = requestAnimationFrame(autoScroll);
+  });
+  box.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    drag.clientY = e.clientY;
+    follow(pageY(e));
+  });
+  const end = () => {
+    if (!drag) return;
+    cancelAnimationFrame(raf);
+    const { li, id } = drag;
+    drag = null;
+    li.style.transform = '';
+    li.classList.remove('dragging');
+    document.body.classList.remove('goal-dragging');
+    saveOrder(box, [...box.children].map((x) => x.dataset.goal), id);
+  };
+  box.addEventListener('pointerup', end);
+  box.addEventListener('pointercancel', end);
+
+  box.addEventListener('keydown', (e) => {
+    const h = e.target.closest('[data-drag-goal]');
+    if (!h || (e.key !== 'ArrowUp' && e.key !== 'ArrowDown')) return;
+    e.preventDefault();
+    const ids = getState().goals.map((g) => g.id);
+    const from = ids.indexOf(h.dataset.dragGoal);
+    const to = from + (e.key === 'ArrowUp' ? -1 : 1);
+    if (from < 0 || to < 0 || to >= ids.length) return;
+    ids.splice(to, 0, ...ids.splice(from, 1));
+    saveOrder(box, ids, h.dataset.dragGoal);
+  });
+}
+
 export function initGoals() {
   setHTML($('allocPresets'), Object.entries(ALLOCATION_PRESETS).map(([key, p]) =>
     `<button type="button" class="btn btn-secondary px-3" data-preset="${key}" aria-pressed="false">${esc(p.label)}</button>`).join(''));
@@ -275,22 +363,6 @@ export function initGoals() {
     setState((s) => { const g = s.goals.find((x) => x.id === id); if (g) g[key] = v; }, { reason: 'input' });
   });
   box.addEventListener('click', (e) => {
-    const mv = e.target.closest('[data-move-goal]');
-    if (mv) {
-      const id = mv.dataset.moveGoal;
-      const dir = Number(mv.dataset.dir);
-      const from = getState().goals.findIndex((g) => g.id === id);
-      const to = from + dir;
-      if (from < 0 || to < 0 || to >= getState().goals.length) return;
-      setState((s) => { const [g] = s.goals.splice(from, 1); s.goals.splice(to, 0, g); });
-      const g = getState().goals[to];
-      announce(t('goals.row.moved', { name: g.name || t('goals.untitled'), n: to + 1 }));
-      // The list is rebuilt; keep focus on the same arrow (or the other one at the ends)
-      const sel = (d) => `[data-move-goal="${id}"][data-dir="${d}"]`;
-      const btn = box.querySelector(sel(dir));
-      (btn && !btn.disabled ? btn : box.querySelector(sel(-dir)))?.focus();
-      return;
-    }
     const rm = e.target.closest('[data-remove-goal]');
     if (!rm) return;
     const st = getState();
@@ -299,6 +371,7 @@ export function initGoals() {
     setState((s) => { s.goals.splice(idx, 1); });
     toast(t('goals.removed', { name: removed.name || t('goals.untitled') }), { action: { label: t('common.undo'), onClick: () => setState((s) => { s.goals.splice(idx, 0, removed); }) } });
   });
+  initGoalDrag(box);
   $('addGoal').addEventListener('click', () => addGoal());
   $('goalChips').addEventListener('click', (e) => {
     const b = e.target.closest('[data-goal-preset]');

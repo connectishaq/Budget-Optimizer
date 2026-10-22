@@ -1779,10 +1779,9 @@
       "remove": "Hapus target {name}",
       "target": "Jumlah yang dibutuhkan",
       "saved": "Sudah terkumpul",
-      "moveUp": "Naikkan {name}",
-      "moveDown": "Turunkan {name}",
-      "orderHint": "Tujuan ditabung sesuai urutan ini, yang paling atas lebih dulu. Gunakan panah untuk mengubahnya.",
-      "moved": "{name} sekarang nomor {n}"
+      "orderHint": "Tujuan ditabung sesuai urutan ini, yang paling atas lebih dulu. Seret tujuan lewat pegangannya untuk mengubahnya.",
+      "moved": "{name} sekarang nomor {n}",
+      "drag": "Seret untuk mengubah urutan {name}, atau gunakan tombol panah atas dan bawah"
     },
     "status": {
       "needTarget": "Ketik jumlah yang Anda butuhkan.",

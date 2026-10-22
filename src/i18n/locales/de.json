@@ -1812,10 +1812,9 @@
       "remove": "Ziel {name} entfernen",
       "target": "Wie viel du brauchst",
       "saved": "Bisher gespart",
-      "moveUp": "{name} nach oben",
-      "moveDown": "{name} nach unten",
-      "orderHint": "Für die Ziele wird in dieser Reihenfolge gespart, das oberste zuerst. Ändere sie mit den Pfeilen.",
-      "moved": "{name} ist jetzt auf Platz {n}"
+      "orderHint": "Für die Ziele wird in dieser Reihenfolge gespart, das oberste zuerst. Zieh ein Ziel am Griff, um sie zu ändern.",
+      "moved": "{name} ist jetzt auf Platz {n}",
+      "drag": "Ziehen, um die Reihenfolge von {name} zu ändern, oder die Pfeiltasten nach oben und unten nutzen"
     },
     "status": {
       "needTarget": "Gib ein, wie viel du brauchst.",

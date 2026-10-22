@@ -161,6 +161,10 @@ details.in-wizard > div { border: 0; padding: 0; }
    "share of your savings" line until the results show that split */
 #goalPlanner.in-wizard-goals { padding: 0; }
 #goalPlanner.in-wizard-goals #goalBasis { display: none; }
+/* A goal being dragged lifts above the others */
+#goalList > li.dragging { position: relative; z-index: 10; background: var(--color-white); box-shadow: 0 12px 28px -8px rgb(15 23 42 / 0.3); }
+.dark #goalList > li.dragging { background: var(--color-slate-900); }
+body.goal-dragging { user-select: none; cursor: grabbing; }
 
 /* First paint before JS: new visitors see the steps, returning visitors their results */
 html.returning #wizard { display: none; }

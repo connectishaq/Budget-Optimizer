@@ -1801,10 +1801,9 @@
       "remove": "Remove goal {name}",
       "target": "How much you need",
       "saved": "Saved so far",
-      "moveUp": "Move {name} up",
-      "moveDown": "Move {name} down",
-      "orderHint": "Goals are saved for in this order, top first. Use the arrows to change it.",
-      "moved": "{name} is now number {n}"
+      "orderHint": "Goals are saved for in this order, top first. Drag a goal by its handle to change it.",
+      "moved": "{name} is now number {n}",
+      "drag": "Drag to change the order of {name}, or use the up and down arrow keys"
     },
     "status": {
       "needTarget": "Type how much you need.",

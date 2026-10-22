@@ -1844,10 +1844,9 @@
       "remove": "Quitar la meta {name}",
       "target": "Cuánto necesitas",
       "saved": "Ahorrado hasta ahora",
-      "moveUp": "Subir {name}",
-      "moveDown": "Bajar {name}",
-      "orderHint": "Se ahorra para las metas en este orden, la de arriba primero. Usa las flechas para cambiarlo.",
-      "moved": "{name} ahora es la número {n}"
+      "orderHint": "Se ahorra para las metas en este orden, la de arriba primero. Arrastra una meta por su asa para cambiarlo.",
+      "moved": "{name} ahora es la número {n}",
+      "drag": "Arrastra para cambiar el orden de {name}, o usa las flechas arriba y abajo del teclado"
     },
     "status": {
       "needTarget": "Escribe cuánto necesitas.",
