@@ -173,7 +173,7 @@ function groupCard(g, index, collapsed) {
   } else {
     // data-local-group: the country's own bills for this group, filled by renderLocalFields
     const localBox = g.id === 'income' || g.id === 'savings' ? '' : `<div class="contents" data-local-group="${g.id}"></div>`;
-    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-1' : ''}">${g.fields.map(moneyField).join('')}${localBox}</div>${g.id === 'housing' ? housingQuestion() : ''}`;
+    body = `<div class="grid grid-cols-1 gap-4 ${g.fields.length > 1 ? '@xl:grid-cols-2' : ''}">${g.fields.map(moneyField).join('')}${localBox}</div>${g.id === 'housing' ? housingQuestion() : ''}`;
     if (g.id === CUSTOM_CATEGORY) {
       body += `<div class="mt-4">
          <div id="customRows" class="mb-3 space-y-3 empty:hidden"></div>
@@ -192,7 +192,7 @@ function groupCard(g, index, collapsed) {
       </span>
       ${icon('chevron-down', 'chev text-slate-500')}
     </summary>
-    <div class="border-t border-slate-100 px-4 pb-5 pt-4 dark:border-slate-800">
+    <div class="@container border-t border-slate-100 px-4 pb-5 pt-4 dark:border-slate-800">
       ${g.blurb ? `<p class="mb-4 text-sm muted group-blurb">${esc(g.blurb)}</p>` : ''}
       ${body}
     </div>
@@ -219,22 +219,24 @@ function showRowMsg(el, text, tone) {
 
 function debtRow(d) {
   return `
-  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${d.id}">
+  <div class="@container rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${d.id}">
     <div class="flex items-end gap-2">
-      <div class="min-w-0 flex-1">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 @sm:grid-cols-[1fr_8rem]">
+      <div class="min-w-0">
         <label for="r-${d.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.debts.name'))}</label>
         <input id="r-${d.id}-name" type="text" class="input" maxlength="60" data-list="debts" data-id="${d.id}" data-key="name" value="${esc(d.name)}" placeholder="${esc(d.type === 'card' ? t('inputs.debts.placeholderCard') : t('inputs.debts.placeholderLoan'))}">
       </div>
-      <div class="w-32 shrink-0">
+      <div class="min-w-0">
         <label for="r-${d.id}-type" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.debts.type'))}</label>
         <select id="r-${d.id}-type" class="input select" data-list="debts" data-id="${d.id}" data-key="type">
           <option value="card" ${d.type === 'card' ? 'selected' : ''}>${esc(t('inputs.debts.typeCard'))}</option>
           <option value="loan" ${d.type === 'loan' ? 'selected' : ''}>${esc(t('inputs.debts.typeLoan'))}</option>
         </select>
       </div>
+      </div>
       <button type="button" class="btn-icon shrink-0 hover:text-rose-600" data-remove="debts" data-id="${d.id}" aria-label="${esc(t('inputs.rows.remove', { name: d.name || t('inputs.rows.thisDebt') }))}">${icon('trash')}</button>
     </div>
-    <div class="mt-3 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
+    <div class="mt-3 grid grid-cols-1 gap-3">
       ${numInput('debts', d, 'balance', t('inputs.debts.balance'), 'debtBalance')}
       ${numInput('debts', d, 'apr', t('inputs.debts.apr'), 'debtApr')}
       ${numInput('debts', d, 'payment', t('inputs.debts.payment'), 'debtPayment')}
@@ -245,8 +247,8 @@ function debtRow(d) {
 function subRow(s) {
   const kind = subKind(s);
   return `
-  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${s.id}">
-    <div class="grid grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+  <div class="@container rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${s.id}">
+    <div class="grid grid-cols-1 gap-3">
       <div class="min-w-0">
         <label for="r-${s.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.subs.service'))}</label>
         <input id="r-${s.id}-name" type="text" class="input" maxlength="60" data-list="subscriptions" data-id="${s.id}" data-key="name" value="${esc(s.name)}" placeholder="${esc(t('inputs.subs.placeholder'))}">
@@ -275,9 +277,9 @@ function subRow(s) {
 
 function yearlyRow(y) {
   return `
-  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${y.id}">
+  <div class="@container rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${y.id}">
     <div class="flex items-end gap-2">
-      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3">
         <div class="min-w-0">
           <label for="r-${y.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
           <input id="r-${y.id}-name" type="text" class="input" maxlength="60" data-list="yearly" data-id="${y.id}" data-key="name" value="${esc(y.name)}" placeholder="${esc(t('inputs.yearly.placeholder'))}">
@@ -292,9 +294,9 @@ function yearlyRow(y) {
 
 function extraRow(x) {
   return `
-  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
+  <div class="@container rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
     <div class="flex items-end gap-2">
-      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3">
         <div class="min-w-0">
           <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
           <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="extras" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="${esc(t('inputs.extras.placeholder'))}">
@@ -309,9 +311,9 @@ function extraRow(x) {
 
 function customRow(x) {
   return `
-  <div class="rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
+  <div class="@container rounded-lg border border-slate-200 p-3 dark:border-slate-800" data-row="${x.id}">
     <div class="flex items-end gap-2">
-      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-[2fr_1fr]">
+      <div class="grid min-w-0 flex-1 grid-cols-1 gap-3">
         <div class="min-w-0">
           <label for="r-${x.id}-name" class="mb-1 block text-xs font-medium muted">${esc(t('inputs.rows.whatIsIt'))}</label>
           <input id="r-${x.id}-name" type="text" class="input" maxlength="60" data-list="custom" data-id="${x.id}" data-key="name" value="${esc(x.name)}" placeholder="${esc(t('inputs.custom.placeholder'))}">
