@@ -156,6 +156,10 @@ details.in-wizard > div { border: 0; padding: 0; }
 #settingsCard.in-wizard-settings { border: 0; background: transparent; padding: 0; margin: 0; }
 #settingsCard.in-wizard-settings .wiz-only { display: block; }
 #settingsCard.in-wizard-settings .wiz-hide { display: none; }
+/* The goal planner, borrowed for the "Your goals" step: no indent, and no
+   "share of your savings" line until the results show that split */
+#goalPlanner.in-wizard-goals { padding: 0; }
+#goalPlanner.in-wizard-goals #goalBasis { display: none; }
 
 /* First paint before JS: new visitors see the steps, returning visitors their results */
 html.returning #wizard { display: none; }

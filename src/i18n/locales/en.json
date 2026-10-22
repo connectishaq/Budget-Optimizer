@@ -495,7 +495,7 @@
       },
       "housing": {
         "title": "Housing",
-        "blurb": "Rent or mortgage, and home insurance."
+        "blurb": "Rent or mortgage, maintenance charges and home insurance."
       },
       "utilities": {
         "title": "Bills & utilities",
@@ -537,6 +537,9 @@
       },
       "rent": {
         "label": "Rent or mortgage"
+      },
+      "maintenance": {
+        "label": "Maintenance and service charges"
       },
       "homeIns": {
         "label": "Home or renter's insurance"
@@ -750,6 +753,10 @@
       "3": {
         "title": "Any loans or subscriptions?",
         "sub": "This step is optional. Skip it if you have none."
+      },
+      "4": {
+        "title": "What are you saving for?",
+        "sub": "Add the things you’d like to save for, and we’ll show when you could reach each one. This step is optional."
       }
     },
     "billPages": {
@@ -784,6 +791,7 @@
       "period": "Show every amount per month or per year. Your numbers stay the same; only the display changes.",
       "income": "The money that reaches your bank account each month after tax. Use your take-home pay, not your salary before tax.",
       "rent": "What you pay each month to rent your home, or your mortgage payment if you’re buying it.",
+      "maintenance": "Monthly maintenance for your apartment, building or housing society (service charges, HOA, strata or condo fees). If you pay once a year, divide by 12. Leave empty if you don’t pay any.",
       "homeIns": "Insurance that pays out if your home or belongings are damaged or stolen. Leave empty if you don’t have it.",
       "electricity": "Your average monthly electricity bill. If it changes with the seasons, use a rough average.",
       "waterGas": "Your monthly water and gas bills added together.",
@@ -1066,6 +1074,7 @@
       "perYear": "That’s this much a year",
       "healthScore": "Budget health score",
       "changes": "Changes in my plan ({count})",
+      "limit": "{label}: spend at most {amount} a month",
       "cols": {
         "change": "Change",
         "effort": "Effort",
@@ -1084,6 +1093,7 @@
   "historyEngine": {
     "fields": {
       "rent": "Rent or mortgage",
+      "maintenance": "Maintenance",
       "homeIns": "Home insurance",
       "electricity": "Electricity",
       "waterGas": "Water and gas",
@@ -1191,7 +1201,8 @@
         "income_html": "<span class=\"dot\">1</span>Your income",
         "bills_html": "<span class=\"dot\">2</span>Your bills",
         "loans_html": "<span class=\"dot\">3</span>Loans &amp; subscriptions",
-        "results_html": "<span class=\"dot\">4</span>Your results"
+        "goals_html": "<span class=\"dot\">4</span>Your goals",
+        "results_html": "<span class=\"dot\">5</span>Your results"
       },
       "startOver": "Start over",
       "skip": "Skip to results",
@@ -1270,7 +1281,10 @@
         "savings": "Biggest savings",
         "easy": "Easiest first"
       },
-      "empty": "Your bills already look good. None are higher than typical for this household type."
+      "empty": "Your bills already look good. None are higher than typical for this household type.",
+      "limits": {
+        "bigger": "Bigger changes to close the gap"
+      }
     },
     "payday": {
       "title": "Your payday plan",
@@ -1497,13 +1511,6 @@
     "dialog": {
       "gotIt": "Got it",
       "cancel": "Cancel"
-    },
-    "balance": {
-      "title": "A plan that fits your income",
-      "colBill": "Bill",
-      "colAim": "Now → aim for",
-      "total": "Total spending",
-      "bigger": "Bigger changes to close the gap"
     }
   },
   "seo": {
@@ -1601,8 +1608,8 @@
       "noteNoIncome": "Add your income to see what’s left over."
     },
     "over": {
-      "fixed_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan would fix this and leave {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. The ideas in your plan bring the gap down to {left}{per}. Switch on more ideas, and see the plan below that fits your income."
+      "fixed_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. Your plan would fix this and leave {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">You spend more than you earn</strong>, by {gap}{per}. Your plan brings the gap down to {left}{per}. See “Ways to spend less” for more ideas, spending limits and bigger changes."
     },
     "split": {
       "needs": "Must-pay bills",
@@ -1630,61 +1637,6 @@
       "save": "Money you could save each month",
       "extra": "Extra you could save each month",
       "short": "You’re short each month"
-    },
-    "balance": {
-      "intro": {
-        "over": "Your bills come to {spend}{per}, {gap} more than you earn. Here is how far realistic cuts can take you, aiming to spend less than you earn and keep {pct}% of it to save.",
-        "low": "You spend {spend}{per} of your {income} income, so very little is left to save. These limits aim to leave {pct}% of your income to save."
-      },
-      "reason": {
-        "times": "{times}× the typical amount for {group} ({range}).",
-        "over": "Above the typical {range} for {group}.",
-        "check": "Please check this amount is right.",
-        "want": "A nice-to-have, so it can drop more than other bills.",
-        "trim": "A need, so only a small, realistic trim.",
-        "big": "Rent takes {pct}% of your income. This is a bigger change: plan it for when your lease ends."
-      },
-      "how": "How:",
-      "tips": {
-        "dining": "Pick one takeaway night a week, cook in batches at the weekend, and pay for eating out from a fixed weekly amount in cash.",
-        "misc": "Wait 24 hours before any buy that isn’t essential, delete saved cards from shopping apps, and unsubscribe from sale emails.",
-        "other": "Go through what makes up this amount, and drop or delay what can wait a few months.",
-        "groceries": "Plan the week’s meals, shop once a week with a list, buy staples in bulk and store brands, and use up leftovers before buying more.",
-        "electricity": "Set the AC to 24–26°C, switch devices off at the wall, use LED bulbs, and only run the washing machine and dryer with full loads.",
-        "electricityLocal": "Keep your monthly units under the next tariff slab: run the AC at 26°C and an hour less a day, use LED bulbs, and switch off the water motor and geyser when they aren’t needed.",
-        "waterGas": "Fix leaking taps and toilets, take shorter hot showers, wash full loads, and cook with lids on and a pressure cooker.",
-        "waterGasLocal": "Turn the geyser down or put it on a timer, fix leaks, cook with a pressure cooker and lids on, and check the bill for an estimated or wrong reading.",
-        "internet": "Move to a cheaper package, drop lines or add-ons nobody uses, and ask your provider for its current offer for existing customers.",
-        "fuel": "Combine errands into one trip, carpool to work or school, keep the tyres pumped, and drive at a steady speed.",
-        "fuelLocal": "Combine errands into one trip, share rides to work or school, keep the tyres pumped and the engine tuned, and use a motorbike or rickshaw for short trips.",
-        "transit": "Buy a monthly pass instead of single tickets, share rides, and walk or cycle short trips.",
-        "homeHelp": "Agree fewer hours or days a week for a few months, or share a helper with a neighbour.",
-        "homeHelpLocal": "Agree fewer days a week or one task less (for example the cook for dinner only) for a few months, or share a helper with a neighbour.",
-        "familySupport": "Talk to your family and agree a smaller, steady amount for a few months, until your own budget is back in balance.",
-        "carIns": "Compare quotes before renewal and ask about a no-claims discount. Keep the cover the law requires.",
-        "homeIns": "Compare quotes before renewal, and check you aren’t paying for cover you don’t need.",
-        "rent": "Look for a cheaper home or a flatmate before your lease renews, or ask your landlord for a lower rent in return for a longer lease.",
-        "subscriptions": "Cancel anything you haven’t used in the last month, and keep one streaming service at a time, switching every few months.",
-        "generatorFuel": "Run the generator only for essential loads, use the UPS for lights and fans, and get it serviced so it uses less fuel.",
-        "committee": "A committee is saving, not spending, but if the payment is too big right now, join a smaller one when this round ends.",
-        "customNeed": "Ask for a cheaper option, or pay a smaller amount for a few months.",
-        "customWant": "This is a nice-to-have: cut back on it for a few months."
-      },
-      "result": {
-        "reached": "With these limits you’d spend {spend}{per} and have {save} left to save.",
-        "under": "With these limits you’d spend {spend}{per} and still have {save} left. The bigger changes below would take you to saving 10%.",
-        "short": "Even with these limits you’d be {short}{per} short, so cutting bills alone isn’t enough. The bigger changes below can close the gap."
-      },
-      "bigger": {
-        "housing": "Housing: rent is {amount}{per}, {pct}% of your income. Moving somewhere cheaper, sharing, or renting out a room is the biggest single change.",
-        "loans": "Loans: {amount}{per} goes to loan payments. Ask your lender to stretch the loan over a longer term to lower the payment, pay off the highest-interest one first, and take no new loans for now.",
-        "car": "Car: with fuel, insurance and any loan it costs about {amount}{per}. If you could manage without it, or switch to a cheaper, more fuel-efficient one, that frees money every month.",
-        "school": "School fees: {amount}{per}. Ask the school about paying in instalments, a sibling discount or a scholarship.",
-        "yearly": "Once-a-year costs: you set aside {amount}{per} for them. Postpone or scale down the ones that can wait a year.",
-        "income": "Earn more: about {amount}{per} more would cover the gap and leave 10% to save. Extra hours, overtime, a side job, freelancing or tutoring all help."
-      },
-      "kept": "Left as they are: {list}.",
-      "startingPoint": "These limits are a starting point: move money between them in whatever way suits your household."
     }
   },
   "common": {
@@ -1750,7 +1702,76 @@
       "one": "Show {count} more idea",
       "other": "Show {count} more ideas"
     },
-    "count": "{done} of {total} added to your plan"
+    "count": "{done} of {total} added to your plan",
+    "fit": {
+      "title": "Goal: spend at most {amount}{per}",
+      "text": "That leaves {pct}% of your {income} income to save. Your plan cuts {done} of the {needed} this needs.",
+      "reached": "Goal reached",
+      "toGo": "{amount}{per} to go",
+      "steps": "Now {now}{per} → with your plan {plan}{per}"
+    },
+    "limits": {
+      "reason": {
+        "times": "{times}× the typical amount for {group} ({range}).",
+        "over": "Above the typical {range} for {group}.",
+        "check": "Please check this amount is right.",
+        "want": "A nice-to-have, so it can drop more than other bills.",
+        "trim": "A need, so only a small, realistic trim.",
+        "big": "Rent takes {pct}% of your income. This is a bigger change: plan it for when your lease ends."
+      },
+      "tips": {
+        "dining": "Pick one takeaway night a week, cook in batches at the weekend, and pay for eating out from a fixed weekly amount in cash.",
+        "misc": "Wait 24 hours before any buy that isn’t essential, delete saved cards from shopping apps, and unsubscribe from sale emails.",
+        "other": "Go through what makes up this amount, and drop or delay what can wait a few months.",
+        "groceries": "Plan the week’s meals, shop once a week with a list, buy staples in bulk and store brands, and use up leftovers before buying more.",
+        "electricity": "Set the AC to 24–26°C, switch devices off at the wall, use LED bulbs, and only run the washing machine and dryer with full loads.",
+        "electricityLocal": "Keep your monthly units under the next tariff slab: run the AC at 26°C and an hour less a day, use LED bulbs, and switch off the water motor and geyser when they aren’t needed.",
+        "waterGas": "Fix leaking taps and toilets, take shorter hot showers, wash full loads, and cook with lids on and a pressure cooker.",
+        "waterGasLocal": "Turn the geyser down or put it on a timer, fix leaks, cook with a pressure cooker and lids on, and check the bill for an estimated or wrong reading.",
+        "internet": "Move to a cheaper package, drop lines or add-ons nobody uses, and ask your provider for its current offer for existing customers.",
+        "fuel": "Combine errands into one trip, carpool to work or school, keep the tyres pumped, and drive at a steady speed.",
+        "fuelLocal": "Combine errands into one trip, share rides to work or school, keep the tyres pumped and the engine tuned, and use a motorbike or rickshaw for short trips.",
+        "transit": "Buy a monthly pass instead of single tickets, share rides, and walk or cycle short trips.",
+        "homeHelp": "Agree fewer hours or days a week for a few months, or share a helper with a neighbour.",
+        "homeHelpLocal": "Agree fewer days a week or one task less (for example the cook for dinner only) for a few months, or share a helper with a neighbour.",
+        "familySupport": "Talk to your family and agree a smaller, steady amount for a few months, until your own budget is back in balance.",
+        "carIns": "Compare quotes before renewal and ask about a no-claims discount. Keep the cover the law requires.",
+        "homeIns": "Compare quotes before renewal, and check you aren’t paying for cover you don’t need.",
+        "rent": "Look for a cheaper home or a flatmate before your lease renews, or ask your landlord for a lower rent in return for a longer lease.",
+        "subscriptions": "Cancel anything you haven’t used in the last month, and keep one streaming service at a time, switching every few months.",
+        "generatorFuel": "Run the generator only for essential loads, use the UPS for lights and fans, and get it serviced so it uses less fuel.",
+        "committee": "A committee is saving, not spending, but if the payment is too big right now, join a smaller one when this round ends.",
+        "customNeed": "Ask for a cheaper option, or pay a smaller amount for a few months.",
+        "customWant": "This is a nice-to-have: cut back on it for a few months."
+      },
+      "result": {
+        "none": "Switch on the changes you’ll stick to, and they count in your results.",
+        "reached": "With this plan you’d spend {spend}{per} and have {save} left to save.",
+        "under": "With this plan you’d spend {spend}{per} and still have {save} left. The bigger changes below would take you to saving {pct}%.",
+        "short": "Even with this plan you’d be {short}{per} short, so cutting bills alone isn’t enough. The bigger changes below can close the gap."
+      },
+      "bigger": {
+        "housing": "Housing: rent is {amount}{per}, {pct}% of your income. Moving somewhere cheaper, sharing, or renting out a room is the biggest single change.",
+        "loans": "Loans: {amount}{per} goes to loan payments. Ask your lender to stretch the loan over a longer term to lower the payment, pay off the highest-interest one first, and take no new loans for now.",
+        "car": "Car: with fuel, insurance and any loan it costs about {amount}{per}. If you could manage without it, or switch to a cheaper, more fuel-efficient one, that frees money every month.",
+        "school": "School fees: {amount}{per}. Ask the school about paying in instalments, a sibling discount or a scholarship.",
+        "yearly": "Once-a-year costs: you set aside {amount}{per} for them. Postpone or scale down the ones that can wait a year.",
+        "income": "Earn more: about {amount}{per} more would cover the gap and leave 10% to save. Extra hours, overtime, a side job, freelancing or tutoring all help."
+      },
+      "kept": "Left as they are: {list}.",
+      "startingPoint": "These amounts are a starting point: move money between bills in whatever way suits your household."
+    },
+    "bills": {
+      "intro": "Your bills are more than your income can carry, so here is what to cut, bill by bill, biggest saving first. Open Details to see why and how. Switch off anything you can’t do; only what’s on counts in your results.",
+      "more": "More bills to cut",
+      "limitPart": "Spending limit: keep it to {amount}{per}",
+      "parts": "What makes up this saving",
+      "showMore": {
+        "one": "Show {count} more bill",
+        "other": "Show {count} more bills"
+      },
+      "showFewer": "Show fewer bills"
+    }
   },
   "goals": {
     "bucket": {
@@ -1850,7 +1871,15 @@
       "emergencyNoneNeedsShare": "Nothing saved yet. 3 months needs a share of your savings."
     },
     "removed": "Goal \"{name}\" removed",
-    "untitled": "Untitled"
+    "untitled": "Untitled",
+    "presets": {
+      "holiday": "Holiday",
+      "homeDeposit": "Home deposit",
+      "car": "Car",
+      "wedding": "Wedding",
+      "education": "Children’s education",
+      "gadget": "New phone or laptop"
+    }
   },
   "payday": {
     "list": {

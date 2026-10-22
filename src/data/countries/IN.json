@@ -1193,6 +1193,7 @@
       "effort": "Easy"
     }
   ],
+  "hideFields": ["maintenance"],
   "hideRules": [
     "smart-thermostat"
   ],

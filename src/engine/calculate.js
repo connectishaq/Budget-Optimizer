@@ -7,10 +7,12 @@ import { countryData } from './countries.js';
 import { SUB_KINDS, subKind } from './subscriptions.js';
 import { t } from '../i18n/index.js';
 import { oneDecimal } from '../utils/format.js';
-import { balancePlan, SAVE_TARGET } from './balance.js';
+import { balancePlan, settleBalance, billRows, fieldAfterPlan, SAVE_TARGET } from './balance.js';
+
+export { fieldAfterPlan };
 
 export const EXPENSE_FIELDS = [
-  'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
+  'rent', 'maintenance', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit',
   'carIns', 'carLoan', 'school', 'groceries', 'dining', 'misc',
   'medical', 'homeHelp', 'familySupport', 'giving', 'other'
 ];
@@ -32,8 +34,15 @@ export const fromMonthly = (monthly, freq) => monthly / (PAY_FREQUENCIES[freq] ?
  */
 export const localFields = (country) => countryData(country).extraFields || [];
 
+/**
+ * General input fields the country leaves out (`hideFields` in its data file),
+ * because one of its own bills already covers them (India's "society
+ * maintenance" replaces the general "maintenance").
+ */
+export const hiddenFields = (country) => countryData(country).hideFields || [];
+
 export const CATEGORY_DEFS = [
-  { key: 'housing', get label() { return t('calc.categories.housing'); }, fields: ['rent', 'homeIns'] },
+  { key: 'housing', get label() { return t('calc.categories.housing'); }, fields: ['rent', 'maintenance', 'homeIns'] },
   { key: 'utilities', get label() { return t('calc.categories.utilities'); }, fields: ['electricity', 'waterGas', 'internet'] },
   { key: 'transport', get label() { return t('calc.categories.transport'); }, fields: ['fuel', 'transit', 'carIns', 'carLoan'] },
   { key: 'family', get label() { return t('calc.categories.family'); }, fields: ['school', 'groceries', 'dining', 'misc'] },
@@ -48,7 +57,7 @@ export const CUSTOM_CATEGORY = 'care';
 
 // 50/30/20 classification. Minimum loan payments and the monthly set-aside
 // for once-a-year costs count as must-pay bills.
-const NEEDS_FIELDS = ['rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns', 'carLoan', 'school', 'groceries',
+const NEEDS_FIELDS = ['rent', 'maintenance', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns', 'carLoan', 'school', 'groceries',
   'medical', 'homeHelp', 'familySupport', 'giving'];
 const WANTS_FIELDS = ['dining', 'misc', 'other'];
 // Day-to-day spending that becomes the weekly allowance in the payday plan
@@ -63,6 +72,7 @@ const plainFmt = (n) => String(Math.round(n));
 export function cleanInputs(state) {
   const values = {};
   for (const f of VALUE_FIELDS) values[f] = num(state.values?.[f]);
+  for (const f of hiddenFields(state.country)) values[f] = 0;
   const debts = (state.debts || []).map((d) => ({
     ...d,
     type: d.type === 'loan' ? 'loan' : 'card',
@@ -335,17 +345,6 @@ export function effectiveAllocation(alloc, needed) {
   return { shares, inactive, unassigned: false };
 }
 
-/**
- * What a bill would be after the committed ideas in the plan. Each committed
- * cash idea on that bill cuts its share of whatever is left, the same way
- * evaluatePlan stacks them.
- */
-export function fieldAfterPlan(plan, values, field) {
-  return plan
-    .filter((p) => p.committed && p.kind === 'cash' && p.rule.pools.includes(field))
-    .reduce((left, p) => left * (1 - p.pct), values[field] || 0);
-}
-
 /** Names of the rows, with any unnamed ones gathered under one label so counts stay right. */
 function rowNames(rows, unnamedLabel) {
   const names = rows.map((r) => (r.name || '').trim()).filter(Boolean);
@@ -355,12 +354,15 @@ function rowNames(rows, unnamedLabel) {
 /**
  * The three things to do on payday: set aside money for once-a-year costs,
  * move what's left to savings first, and keep a weekly allowance for
- * eating out and shopping. Null without income.
+ * eating out and shopping. Null without income. `limits` are the spending
+ * limit lines (with their switches) when the plan has them.
  */
-export function paydayPlan(totals, plan, optimized) {
+export function paydayPlan(totals, plan, optimized, limits = []) {
   if (!(totals.income > 0)) return null;
   const left = totals.income - optimized;
-  const funMonthly = sum(ALLOWANCE_FIELDS.map((f) => fieldAfterPlan(plan, totals.values, f)));
+  // A switched-on spending limit sets the allowance; otherwise what the ideas leave
+  const after = (f) => limits.find((l) => l.committed && l.field === f)?.aim ?? fieldAfterPlan(plan, totals.values, f);
+  const funMonthly = sum(ALLOWANCE_FIELDS.map(after));
   return {
     yearlyMonthly: totals.yearlyMonthly,
     yearlyTotal: totals.yearlyTotal,
@@ -500,8 +502,17 @@ export function computeBudget(state, fmt = plainFmt) {
   const plan = evaluatePlan(state, totals, fmt);
   const committed = plan.filter((p) => p.committed);
   // Only cash changes lower monthly spending. Avoided interest is shown separately.
-  const savings = sum(committed.filter((p) => p.kind === 'cash').map((p) => p.monthly));
+  const ideaSavings = sum(committed.filter((p) => p.kind === 'cash').map((p) => p.monthly));
   const interestAvoided = sum(committed.filter((p) => p.kind === 'interest').map((p) => p.monthly));
+  // When the switched-on ideas still leave less than 10% to save: spending
+  // limits that fit the income, on top of the ideas. Switched-on limits count
+  // in the plan's savings like ideas do.
+  const balance = totals.income > 0 && totals.income - (totals.spend - ideaSavings) < totals.income * SAVE_TARGET
+    ? balancePlan(totals, state.country, state.profile, plan)
+    : null;
+  if (balance) settleBalance(balance, totals, state.plan?.committed);
+  const limitSavings = balance ? balance.cut : 0;
+  const savings = ideaSavings + limitSavings;
   const optimized = Math.max(0, totals.spend - savings);
   const housing = housingStatus(totals.values.rent, state.housingFree);
   const health = healthScore({
@@ -526,11 +537,10 @@ export function computeBudget(state, fmt = plainFmt) {
   const eff = effectiveAllocation(state.allocation || ALLOCATION_PRESETS.even, needed);
   const allocation = { ...eff, needed, monthly, amounts: splitSavings(monthly, eff.shares) };
 
-  const payday = paydayPlan(totals, plan, optimized);
-  // When even the switched-on ideas leave less than 10% to save, spending limits that fit the income
-  const balance = totals.income > 0 && totals.income - optimized < totals.income * SAVE_TARGET
-    ? balancePlan(totals, state.country, state.profile)
-    : null;
+  const payday = paydayPlan(totals, plan, optimized, balance?.lines);
 
-  return { totals, plan, savings, interestAvoided, optimized, housing, health, split, allocation, payday, balance };
+  // Bill by bill (ideas and limits together) whenever the limits are needed
+  const bills = balance ? billRows(totals, plan, balance) : null;
+
+  return { totals, plan, savings, ideaSavings, limitSavings, interestAvoided, optimized, housing, health, split, allocation, payday, balance, bills };
 }

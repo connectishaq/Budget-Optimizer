@@ -46,6 +46,28 @@ function renderAllocation(state, result, view) {
 // ---------------- Goal planner ----------------
 const goalSig = (goals) => goals.map((g) => g.id).join('|');
 
+/** One-tap goal suggestions (goals.presets.<key>), hidden once a goal has that name. */
+export const GOAL_PRESET_KEYS = ['holiday', 'homeDeposit', 'car', 'wedding', 'education', 'gadget'];
+
+function renderGoalChips(state) {
+  const have = new Set(state.goals.map((g) => g.name.trim().toLowerCase()));
+  const names = GOAL_PRESET_KEYS.map((k) => t(`goals.presets.${k}`)).filter((n) => !have.has(n.toLowerCase()));
+  const box = $('goalChips');
+  const sig = `${getLanguage()}:${names.join('|')}`;
+  if (box.__sig === sig) return;
+  box.__sig = sig;
+  box.innerHTML = names.map((name) => `<button type="button" class="suggest" data-goal-preset="${esc(name)}">${icon('plus', 'icon-sm')}${esc(name)}</button>`).join('');
+  box.hidden = !names.length;
+  $('goalChipsLabel').hidden = !names.length;
+}
+
+/** Adds a goal and puts the cursor where the next thing to type is. */
+function addGoal(name = '') {
+  const g = { id: newId('g'), name, target: 0, saved: 0 };
+  setState((s) => { s.goals.push(g); });
+  requestAnimationFrame(() => document.querySelector(`#g-${g.id}-${name ? 'target' : 'name'}`)?.focus());
+}
+
 function goalRow(g) {
   return `
   <li class="rounded-xl border border-slate-200 p-3 dark:border-slate-800" data-goal="${g.id}">
@@ -80,6 +102,7 @@ function renderGoalPlanner(state, result, view) {
     list.innerHTML = state.goals.map(goalRow).join('');
   }
   $('goalEmpty').hidden = state.goals.length > 0;
+  renderGoalChips(state);
   const monthly = result.allocation.amounts.goals;
   const timeline = goalTimeline(state.goals, monthly);
   for (const g of timeline) {
@@ -254,9 +277,9 @@ export function initGoals() {
     setState((s) => { s.goals.splice(idx, 1); });
     toast(t('goals.removed', { name: removed.name || t('goals.untitled') }), { action: { label: t('common.undo'), onClick: () => setState((s) => { s.goals.splice(idx, 0, removed); }) } });
   });
-  $('addGoal').addEventListener('click', () => {
-    const g = { id: newId('g'), name: '', target: 0, saved: 0 };
-    setState((s) => { s.goals.push(g); });
-    requestAnimationFrame(() => document.querySelector(`[data-goal="${g.id}"] input`)?.focus());
+  $('addGoal').addEventListener('click', () => addGoal());
+  $('goalChips').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-goal-preset]');
+    if (b) addGoal(b.dataset.goalPreset);
   });
 }

@@ -18,12 +18,16 @@ const BILL_PAGES = [
   { group: 'yearly', custom: true }
 ];
 
-// Titles and subtitles live in wizard.steps.<n>.
+// Titles and subtitles live in wizard.steps.<n>. Step 4 borrows the goal
+// planner from "Plan ahead"; step 5 is the results.
 const STEPS = {
   1: { groups: ['income', 'extras'], settings: true },
   2: {},
-  3: { groups: ['debt', 'subs', 'savings'] }
+  3: { groups: ['debt', 'subs', 'savings'] },
+  4: { groups: [], goals: true }
 };
+const TOTAL = 5;
+const LAST = 4; // the last step with inputs
 
 let placed = ''; // signature of the current layout, so DOM moves happen only on change
 
@@ -40,6 +44,8 @@ function restoreGroups() {
     el.querySelector('summary').removeAttribute('tabindex');
     box.append(el);
   }
+  $('goalSlot').append($('goalPlanner'));
+  $('goalPlanner').classList.remove('in-wizard-goals');
 }
 
 function placeWizard(step, sub) {
@@ -57,13 +63,16 @@ function placeWizard(step, sub) {
     $('settingsCard').classList.add('in-wizard-settings');
     body.append($('settingsCard'));
   }
+  if (STEPS[step].goals) {
+    $('goalPlanner').classList.add('in-wizard-goals');
+    body.append($('goalPlanner'));
+  }
 }
 
-/** Progress through the four steps; step 2 fills in as each bill page is done. */
+/** Progress through the five steps; step 2 fills in as each bill page is done. */
 function progress(step, sub) {
-  if (step === 1) return 0.25;
-  if (step === 2) return 0.25 + 0.25 * ((sub + 1) / BILL_PAGES.length);
-  return 0.75;
+  if (step === 2) return 0.2 + 0.2 * ((sub + 1) / BILL_PAGES.length);
+  return step / TOTAL;
 }
 
 export function renderFlow(state) {
@@ -78,7 +87,7 @@ export function renderFlow(state) {
 
   if (wizard) {
     placeWizard(step, sub);
-    setText($('wizStepLabel'), t('wizard.stepOf', { step, total: 4 }));
+    setText($('wizStepLabel'), t('wizard.stepOf', { step, total: TOTAL }));
     setText($('wizSubStep'), step === 2 ? t('wizard.billsProgress', { name: t(`wizard.billPages.${BILL_PAGES[sub].group}.name`), n: sub + 1, total: BILL_PAGES.length }) : '');
     const page = step === 2 ? BILL_PAGES[sub] : {};
     const base = page.custom ? `wizard.billPages.${page.group}` : `wizard.steps.${step}`;
@@ -87,7 +96,7 @@ export function renderFlow(state) {
     const p = progress(step, sub);
     $('wizBar').style.width = `${p * 100}%`;
     setAttr($('wizProgress'), 'aria-valuenow', String(Math.round(p * 100)));
-    setAttr($('wizProgress'), 'aria-valuetext', t('wizard.stepOf', { step, total: 4 }));
+    setAttr($('wizProgress'), 'aria-valuetext', t('wizard.stepOf', { step, total: TOTAL }));
     document.querySelectorAll('#wizSteps [data-step]').forEach((li) => {
       const n = Number(li.dataset.step);
       li.dataset.state = n < step ? 'done' : n === step ? 'current' : 'todo';
@@ -95,7 +104,7 @@ export function renderFlow(state) {
       li.querySelector('.dot').textContent = n < step ? '✓' : String(n);
     });
     $('wizBack').hidden = step === 1;
-    setText($('wizNext'), step === 3 ? t('wizard.seeResults') : t('wizard.next'));
+    setText($('wizNext'), step === LAST ? t('wizard.seeResults') : t('wizard.next'));
     $('wizNote').hidden = true;
     if (!first) {
       $('wizard').scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -129,6 +138,7 @@ function next() {
   if (step === 1) go({ step: 2, sub: 0 });
   else if (step === 2 && sub < BILL_PAGES.length - 1) go({ sub: sub + 1 });
   else if (step === 2) go({ step: 3 });
+  else if (step < LAST) go({ step: step + 1 });
   else go({ mode: 'results' });
 }
 
@@ -137,6 +147,7 @@ function back() {
   if (step === 2 && sub > 0) go({ sub: sub - 1 });
   else if (step === 2) go({ step: 1 });
   else if (step === 3) go({ step: 2, sub: BILL_PAGES.length - 1 });
+  else if (step > 3) go({ step: step - 1 });
 }
 
 /** Highlights the results section currently on screen in the sticky section bar. */

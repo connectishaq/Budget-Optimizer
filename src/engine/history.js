@@ -172,7 +172,7 @@ export function oldestToDrop(months, month) {
 // ---------------- Comparing ----------------
 // Field -> message key (translated where the label is read)
 const FIELD_LABEL = Object.fromEntries([
-  'rent', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns',
+  'rent', 'maintenance', 'homeIns', 'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns',
   'carLoan', 'school', 'groceries', 'dining', 'misc', 'medical', 'homeHelp',
   'familySupport', 'giving', 'other'
 ].map((k) => [k, `historyEngine.fields.${k}`]));

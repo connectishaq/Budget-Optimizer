@@ -493,7 +493,7 @@
       },
       "housing": {
         "title": "Tempat tinggal",
-        "blurb": "Sewa atau cicilan KPR, dan asuransi rumah."
+        "blurb": "Sewa atau cicilan KPR, biaya pemeliharaan, dan asuransi rumah."
       },
       "utilities": {
         "title": "Tagihan & utilitas",
@@ -535,6 +535,9 @@
       },
       "rent": {
         "label": "Sewa atau cicilan KPR"
+      },
+      "maintenance": {
+        "label": "Biaya pemeliharaan dan layanan"
       },
       "homeIns": {
         "label": "Asuransi rumah atau penyewa"
@@ -747,6 +750,10 @@
       "3": {
         "title": "Ada pinjaman atau langganan?",
         "sub": "Langkah ini opsional. Lewati jika tidak ada."
+      },
+      "4": {
+        "title": "Anda menabung untuk apa?",
+        "sub": "Tambahkan hal-hal yang ingin Anda tabung, dan kami akan menunjukkan kapan Anda bisa mencapai masing-masing. Langkah ini opsional."
       }
     },
     "billPages": {
@@ -781,6 +788,7 @@
       "period": "Tampilkan semua angka per bulan atau per tahun. Angka Anda tetap sama; hanya tampilannya yang berubah.",
       "income": "Uang yang masuk ke rekening Anda tiap bulan setelah pajak. Pakai gaji bersih, bukan gaji kotor sebelum pajak.",
       "rent": "Yang Anda bayar tiap bulan untuk menyewa rumah, atau cicilan KPR jika Anda sedang membelinya.",
+      "maintenance": "Biaya pemeliharaan bulanan apartemen, gedung, atau perumahan Anda (service charge, IPL). Jika dibayar setahun sekali, bagi 12. Kosongkan jika tidak ada.",
       "homeIns": "Asuransi yang membayar jika rumah atau barang Anda rusak atau dicuri. Biarkan kosong jika tidak punya.",
       "electricity": "Rata-rata tagihan listrik bulanan Anda. Jika berubah-ubah menurut musim, pakai perkiraan rata-rata.",
       "waterGas": "Tagihan air dan gas bulanan Anda, dijumlahkan.",
@@ -1052,6 +1060,7 @@
       "perYear": "Sebanyak ini per tahun",
       "healthScore": "Skor kesehatan anggaran",
       "changes": "Perubahan dalam rencana saya ({count})",
+      "limit": "{label}: belanja paling banyak {amount} sebulan",
       "cols": {
         "change": "Perubahan",
         "effort": "Usaha",
@@ -1070,6 +1079,7 @@
   "historyEngine": {
     "fields": {
       "rent": "Sewa atau cicilan KPR",
+      "maintenance": "Pemeliharaan",
       "homeIns": "Asuransi rumah",
       "electricity": "Listrik",
       "waterGas": "Air dan gas",
@@ -1173,7 +1183,8 @@
         "income_html": "<span class=\"dot\">1</span>Penghasilan Anda",
         "bills_html": "<span class=\"dot\">2</span>Tagihan Anda",
         "loans_html": "<span class=\"dot\">3</span>Pinjaman &amp; langganan",
-        "results_html": "<span class=\"dot\">4</span>Hasil Anda"
+        "goals_html": "<span class=\"dot\">4</span>Tujuan Anda",
+        "results_html": "<span class=\"dot\">5</span>Hasil Anda"
       },
       "startOver": "Mulai dari awal",
       "skip": "Langsung ke hasil",
@@ -1252,7 +1263,10 @@
         "savings": "Hemat terbesar",
         "easy": "Termudah dulu"
       },
-      "empty": "Tagihan Anda sudah terlihat baik. Tidak ada yang lebih tinggi dari yang umum untuk jenis rumah tangga ini."
+      "empty": "Tagihan Anda sudah terlihat baik. Tidak ada yang lebih tinggi dari yang umum untuk jenis rumah tangga ini.",
+      "limits": {
+        "bigger": "Perubahan lebih besar untuk menutup selisih"
+      }
     },
     "payday": {
       "title": "Rencana gajian Anda",
@@ -1479,13 +1493,6 @@
     "dialog": {
       "gotIt": "Mengerti",
       "cancel": "Batal"
-    },
-    "balance": {
-      "title": "Rencana yang sesuai penghasilan Anda",
-      "colBill": "Tagihan",
-      "colAim": "Sekarang → target",
-      "total": "Total pengeluaran",
-      "bigger": "Perubahan lebih besar untuk menutup selisih"
     }
   },
   "seo": {
@@ -1581,8 +1588,8 @@
       "noteNoIncome": "Isi penghasilan Anda untuk melihat sisanya."
     },
     "over": {
-      "fixed_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Ide-ide dalam rencana Anda akan mengatasinya dan menyisakan {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Ide-ide dalam rencana Anda memperkecil selisihnya menjadi {left}{per}. Nyalakan lebih banyak ide, dan lihat rencana di bawah yang sesuai dengan penghasilan Anda."
+      "fixed_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Rencana Anda akan mengatasinya dan menyisakan {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">Pengeluaran Anda lebih besar dari penghasilan</strong>, selisih {gap}{per}. Rencana Anda memperkecil selisihnya menjadi {left}{per}. Lihat “Cara untuk berhemat” untuk ide lain, batas belanja, dan perubahan yang lebih besar."
     },
     "split": {
       "needs": "Tagihan wajib",
@@ -1610,61 +1617,6 @@
       "save": "Uang yang bisa Anda hemat tiap bulan",
       "extra": "Tambahan yang bisa Anda hemat tiap bulan",
       "short": "Kekurangan Anda tiap bulan"
-    },
-    "balance": {
-      "intro": {
-        "over": "Tagihan Anda {spend}{per}, {gap} lebih besar dari penghasilan. Berikut seberapa jauh pemangkasan yang realistis bisa membawa Anda, dengan target pengeluaran di bawah penghasilan dan menabung {pct}%.",
-        "low": "Anda membelanjakan {spend}{per} dari penghasilan {income}, jadi hanya sedikit yang tersisa untuk ditabung. Batas ini berusaha menyisakan {pct}% penghasilan untuk ditabung."
-      },
-      "reason": {
-        "times": "{times}× jumlah yang umum untuk {group} ({range}).",
-        "over": "Di atas kisaran umum {range} untuk {group}.",
-        "check": "Mohon periksa apakah jumlah ini sudah benar.",
-        "want": "Tidak wajib, jadi bisa dikurangi lebih banyak dari tagihan lain.",
-        "trim": "Kebutuhan, jadi hanya dipangkas sedikit secara realistis.",
-        "big": "Sewa memakan {pct}% penghasilan Anda. Ini perubahan yang lebih besar: rencanakan untuk saat masa sewa Anda berakhir."
-      },
-      "how": "Caranya:",
-      "tips": {
-        "dining": "Pilih satu malam pesan antar per minggu, masak dalam jumlah banyak di akhir pekan, dan bayar makan di luar dari uang tunai mingguan yang sudah ditetapkan.",
-        "misc": "Tunggu 24 jam sebelum membeli barang yang tidak penting, hapus data kartu yang tersimpan di aplikasi belanja, dan berhenti berlangganan email promo.",
-        "other": "Periksa apa saja yang membentuk jumlah ini, lalu hapus atau tunda yang bisa menunggu beberapa bulan.",
-        "groceries": "Rencanakan menu seminggu, belanja seminggu sekali dengan daftar, beli bahan pokok dalam jumlah besar dan merek toko, dan habiskan sisa makanan sebelum membeli lagi.",
-        "electricity": "Setel AC di 24–26°C, cabut steker perangkat, pakai lampu LED, dan nyalakan mesin cuci serta pengering hanya saat muatan penuh.",
-        "electricityLocal": "Jaga pemakaian bulanan tetap di bawah golongan tarif berikutnya: setel AC di 26°C dan nyalakan satu jam lebih singkat per hari, pakai lampu LED, dan matikan pompa air serta pemanas air (geyser) saat tidak dipakai.",
-        "waterGas": "Perbaiki keran dan toilet yang bocor, mandi air panas lebih singkat, cuci dengan muatan penuh, dan masak dengan tutup panci serta panci presto.",
-        "waterGasLocal": "Kecilkan pemanas air (geyser) atau pasang timer, perbaiki kebocoran, masak dengan panci presto dan tutup panci, dan periksa apakah tagihan memakai angka meter taksiran atau yang salah.",
-        "internet": "Pindah ke paket lebih murah, hentikan nomor atau layanan tambahan yang tidak dipakai, dan tanyakan ke penyedia Anda penawaran terbaru untuk pelanggan lama.",
-        "fuel": "Gabungkan urusan dalam satu perjalanan, berbagi kendaraan ke kantor atau sekolah, jaga tekanan ban, dan berkendara dengan kecepatan stabil.",
-        "fuelLocal": "Gabungkan urusan dalam satu perjalanan, berbagi kendaraan ke kantor atau sekolah, jaga tekanan ban dan servis mesin, dan pakai motor atau rickshaw untuk jarak dekat.",
-        "transit": "Beli kartu langganan bulanan alih-alih tiket satuan, berbagi tumpangan, dan jalan kaki atau bersepeda untuk jarak dekat.",
-        "homeHelp": "Sepakati jam atau hari kerja yang lebih sedikit per minggu selama beberapa bulan, atau berbagi ART dengan tetangga.",
-        "homeHelpLocal": "Sepakati hari kerja yang lebih sedikit per minggu atau satu tugas lebih sedikit (misalnya juru masak hanya untuk makan malam) selama beberapa bulan, atau berbagi ART dengan tetangga.",
-        "familySupport": "Bicarakan dengan keluarga dan sepakati jumlah yang lebih kecil dan tetap selama beberapa bulan, sampai anggaran Anda sendiri kembali seimbang.",
-        "carIns": "Bandingkan penawaran sebelum perpanjangan dan tanyakan diskon bebas klaim. Tetap pertahankan perlindungan yang diwajibkan hukum.",
-        "homeIns": "Bandingkan penawaran sebelum perpanjangan, dan pastikan Anda tidak membayar perlindungan yang tidak dibutuhkan.",
-        "rent": "Cari tempat tinggal lebih murah atau teman berbagi sebelum masa sewa diperpanjang, atau minta pemilik menurunkan sewa dengan imbalan kontrak yang lebih panjang.",
-        "subscriptions": "Batalkan semua yang tidak Anda pakai sebulan terakhir, dan pakai satu layanan streaming dalam satu waktu, ganti setiap beberapa bulan.",
-        "generatorFuel": "Nyalakan genset hanya untuk kebutuhan penting, pakai UPS untuk lampu dan kipas, dan servis genset agar lebih hemat BBM.",
-        "committee": "Committee adalah tabungan, bukan pengeluaran, tetapi jika setorannya terlalu besar saat ini, ikut committee yang lebih kecil setelah putaran ini selesai.",
-        "customNeed": "Minta pilihan yang lebih murah, atau bayar jumlah yang lebih kecil selama beberapa bulan.",
-        "customWant": "Ini tidak wajib: kurangi selama beberapa bulan."
-      },
-      "result": {
-        "reached": "Dengan batas ini Anda akan membelanjakan {spend}{per} dan masih ada {save} untuk ditabung.",
-        "under": "Dengan batas ini Anda akan membelanjakan {spend}{per} dan masih tersisa {save}. Perubahan lebih besar di bawah bisa membuat Anda menabung 10%.",
-        "short": "Bahkan dengan batas ini Anda masih kurang {short}{per}, jadi memangkas tagihan saja tidak cukup. Perubahan lebih besar di bawah bisa menutup selisihnya."
-      },
-      "bigger": {
-        "housing": "Tempat tinggal: sewa {amount}{per}, {pct}% dari penghasilan Anda. Pindah ke tempat yang lebih murah, berbagi tempat, atau menyewakan satu kamar adalah perubahan tunggal terbesar.",
-        "loans": "Pinjaman: {amount}{per} untuk cicilan pinjaman. Minta pemberi pinjaman memperpanjang tenor agar cicilan turun, lunasi dulu pinjaman dengan bunga tertinggi, dan jangan ambil pinjaman baru untuk sementara.",
-        "car": "Mobil: dengan bensin, asuransi, dan cicilan (jika ada), biayanya sekitar {amount}{per}. Jika Anda bisa tanpa mobil, atau beralih ke mobil yang lebih murah dan irit, ada uang yang tersisa setiap bulan.",
-        "school": "Biaya sekolah: {amount}{per}. Tanyakan ke sekolah soal cicilan, diskon saudara kandung, atau beasiswa.",
-        "yearly": "Biaya tahunan: Anda menyisihkan {amount}{per} untuk itu. Tunda atau kurangi yang bisa menunggu setahun.",
-        "income": "Tambah penghasilan: sekitar {amount}{per} lagi akan menutup selisih dan menyisakan 10% untuk ditabung. Tambahan jam kerja, lembur, kerja sampingan, freelance, atau les privat semuanya membantu."
-      },
-      "kept": "Tetap seperti semula: {list}.",
-      "startingPoint": "Batas ini hanyalah titik awal: pindahkan uang di antaranya sesuai kebutuhan rumah tangga Anda."
     }
   },
   "common": {
@@ -1729,7 +1681,75 @@
     "showMore": {
       "other": "Tampilkan {count} ide lagi"
     },
-    "count": "{done} dari {total} dimasukkan ke rencana Anda"
+    "count": "{done} dari {total} dimasukkan ke rencana Anda",
+    "fit": {
+      "title": "Target: belanja paling banyak {amount}{per}",
+      "text": "Dengan begitu {pct}% dari penghasilan {income} tersisa untuk ditabung. Rencana Anda memangkas {done} dari {needed} yang diperlukan.",
+      "reached": "Target tercapai",
+      "toGo": "Kurang {amount}{per}",
+      "steps": "Sekarang {now}{per} → dengan rencana Anda {plan}{per}"
+    },
+    "limits": {
+      "reason": {
+        "times": "{times}× jumlah yang umum untuk {group} ({range}).",
+        "over": "Di atas kisaran umum {range} untuk {group}.",
+        "check": "Mohon periksa apakah jumlah ini sudah benar.",
+        "want": "Tidak wajib, jadi bisa dikurangi lebih banyak dari tagihan lain.",
+        "trim": "Kebutuhan, jadi hanya dipangkas sedikit secara realistis.",
+        "big": "Sewa memakan {pct}% penghasilan Anda. Ini perubahan yang lebih besar: rencanakan untuk saat masa sewa Anda berakhir."
+      },
+      "tips": {
+        "dining": "Pilih satu malam pesan antar per minggu, masak dalam jumlah banyak di akhir pekan, dan bayar makan di luar dari uang tunai mingguan yang sudah ditetapkan.",
+        "misc": "Tunggu 24 jam sebelum membeli barang yang tidak penting, hapus data kartu yang tersimpan di aplikasi belanja, dan berhenti berlangganan email promo.",
+        "other": "Periksa apa saja yang membentuk jumlah ini, lalu hapus atau tunda yang bisa menunggu beberapa bulan.",
+        "groceries": "Rencanakan menu seminggu, belanja seminggu sekali dengan daftar, beli bahan pokok dalam jumlah besar dan merek toko, dan habiskan sisa makanan sebelum membeli lagi.",
+        "electricity": "Setel AC di 24–26°C, cabut steker perangkat, pakai lampu LED, dan nyalakan mesin cuci serta pengering hanya saat muatan penuh.",
+        "electricityLocal": "Jaga pemakaian bulanan tetap di bawah golongan tarif berikutnya: setel AC di 26°C dan nyalakan satu jam lebih singkat per hari, pakai lampu LED, dan matikan pompa air serta pemanas air (geyser) saat tidak dipakai.",
+        "waterGas": "Perbaiki keran dan toilet yang bocor, mandi air panas lebih singkat, cuci dengan muatan penuh, dan masak dengan tutup panci serta panci presto.",
+        "waterGasLocal": "Kecilkan pemanas air (geyser) atau pasang timer, perbaiki kebocoran, masak dengan panci presto dan tutup panci, dan periksa apakah tagihan memakai angka meter taksiran atau yang salah.",
+        "internet": "Pindah ke paket lebih murah, hentikan nomor atau layanan tambahan yang tidak dipakai, dan tanyakan ke penyedia Anda penawaran terbaru untuk pelanggan lama.",
+        "fuel": "Gabungkan urusan dalam satu perjalanan, berbagi kendaraan ke kantor atau sekolah, jaga tekanan ban, dan berkendara dengan kecepatan stabil.",
+        "fuelLocal": "Gabungkan urusan dalam satu perjalanan, berbagi kendaraan ke kantor atau sekolah, jaga tekanan ban dan servis mesin, dan pakai motor atau rickshaw untuk jarak dekat.",
+        "transit": "Beli kartu langganan bulanan alih-alih tiket satuan, berbagi tumpangan, dan jalan kaki atau bersepeda untuk jarak dekat.",
+        "homeHelp": "Sepakati jam atau hari kerja yang lebih sedikit per minggu selama beberapa bulan, atau berbagi ART dengan tetangga.",
+        "homeHelpLocal": "Sepakati hari kerja yang lebih sedikit per minggu atau satu tugas lebih sedikit (misalnya juru masak hanya untuk makan malam) selama beberapa bulan, atau berbagi ART dengan tetangga.",
+        "familySupport": "Bicarakan dengan keluarga dan sepakati jumlah yang lebih kecil dan tetap selama beberapa bulan, sampai anggaran Anda sendiri kembali seimbang.",
+        "carIns": "Bandingkan penawaran sebelum perpanjangan dan tanyakan diskon bebas klaim. Tetap pertahankan perlindungan yang diwajibkan hukum.",
+        "homeIns": "Bandingkan penawaran sebelum perpanjangan, dan pastikan Anda tidak membayar perlindungan yang tidak dibutuhkan.",
+        "rent": "Cari tempat tinggal lebih murah atau teman berbagi sebelum masa sewa diperpanjang, atau minta pemilik menurunkan sewa dengan imbalan kontrak yang lebih panjang.",
+        "subscriptions": "Batalkan semua yang tidak Anda pakai sebulan terakhir, dan pakai satu layanan streaming dalam satu waktu, ganti setiap beberapa bulan.",
+        "generatorFuel": "Nyalakan genset hanya untuk kebutuhan penting, pakai UPS untuk lampu dan kipas, dan servis genset agar lebih hemat BBM.",
+        "committee": "Committee adalah tabungan, bukan pengeluaran, tetapi jika setorannya terlalu besar saat ini, ikut committee yang lebih kecil setelah putaran ini selesai.",
+        "customNeed": "Minta pilihan yang lebih murah, atau bayar jumlah yang lebih kecil selama beberapa bulan.",
+        "customWant": "Ini tidak wajib: kurangi selama beberapa bulan."
+      },
+      "result": {
+        "none": "Nyalakan perubahan yang akan Anda patuhi, maka perubahan itu dihitung dalam hasil Anda.",
+        "reached": "Dengan rencana ini Anda akan membelanjakan {spend}{per} dan masih ada {save} untuk ditabung.",
+        "under": "Dengan rencana ini Anda akan membelanjakan {spend}{per} dan masih tersisa {save}. Perubahan besar di bawah akan membawa Anda menabung {pct}%.",
+        "short": "Bahkan dengan rencana ini Anda masih kurang {short}{per}, jadi memangkas tagihan saja tidak cukup. Perubahan besar di bawah dapat menutup selisihnya."
+      },
+      "bigger": {
+        "housing": "Tempat tinggal: sewa {amount}{per}, {pct}% dari penghasilan Anda. Pindah ke tempat yang lebih murah, berbagi tempat, atau menyewakan satu kamar adalah perubahan tunggal terbesar.",
+        "loans": "Pinjaman: {amount}{per} untuk cicilan pinjaman. Minta pemberi pinjaman memperpanjang tenor agar cicilan turun, lunasi dulu pinjaman dengan bunga tertinggi, dan jangan ambil pinjaman baru untuk sementara.",
+        "car": "Mobil: dengan bensin, asuransi, dan cicilan (jika ada), biayanya sekitar {amount}{per}. Jika Anda bisa tanpa mobil, atau beralih ke mobil yang lebih murah dan irit, ada uang yang tersisa setiap bulan.",
+        "school": "Biaya sekolah: {amount}{per}. Tanyakan ke sekolah soal cicilan, diskon saudara kandung, atau beasiswa.",
+        "yearly": "Biaya tahunan: Anda menyisihkan {amount}{per} untuk itu. Tunda atau kurangi yang bisa menunggu setahun.",
+        "income": "Tambah penghasilan: sekitar {amount}{per} lagi akan menutup selisih dan menyisakan 10% untuk ditabung. Tambahan jam kerja, lembur, kerja sampingan, freelance, atau les privat semuanya membantu."
+      },
+      "kept": "Tetap seperti semula: {list}.",
+      "startingPoint": "Jumlah ini hanyalah titik awal: pindahkan uang antartagihan sesuai kebutuhan rumah tangga Anda."
+    },
+    "bills": {
+      "intro": "Tagihan Anda lebih besar dari yang sanggup ditanggung penghasilan, jadi berikut yang perlu dipangkas, tagihan demi tagihan, mulai dari penghematan terbesar. Buka Rincian untuk melihat alasan dan caranya. Matikan yang tidak bisa Anda lakukan; hanya yang menyala yang dihitung.",
+      "more": "Tagihan lain yang bisa dipangkas",
+      "limitPart": "Batas belanja: maksimal {amount}{per}",
+      "parts": "Asal penghematan ini",
+      "showMore": {
+        "other": "Tampilkan {count} tagihan lagi"
+      },
+      "showFewer": "Tampilkan lebih sedikit tagihan"
+    }
   },
   "goals": {
     "bucket": {
@@ -1828,7 +1848,15 @@
       "emergencyNoneNeedsShare": "Belum ada yang ditabung. Untuk 3 bulan, sisihkan sebagian tabungan Anda."
     },
     "removed": "Target \"{name}\" dihapus",
-    "untitled": "Tanpa judul"
+    "untitled": "Tanpa judul",
+    "presets": {
+      "holiday": "Liburan",
+      "homeDeposit": "Uang muka rumah",
+      "car": "Mobil",
+      "wedding": "Pernikahan",
+      "education": "Pendidikan anak",
+      "gadget": "Ponsel atau laptop baru"
+    }
   },
   "payday": {
     "list": {

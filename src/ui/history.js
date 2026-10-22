@@ -11,6 +11,7 @@ import { $, esc, toast, confirmDialog, choiceDialog } from './dom.js';
 import { t } from '../i18n/index.js';
 import { dateLocale } from '../utils/format.js';
 import { canSave } from '../engine/calculate.js';
+import { limitLabel } from './plan.js';
 
 let latest = null; // { state, result, view } from the most recent render
 
@@ -134,6 +135,7 @@ function buildPrintPlan() {
   if (!latest) return;
   const { state, result, view } = latest;
   const committed = result.plan.filter((p) => p.committed).sort((a, b) => b.monthly - a.monthly);
+  const limits = (result.balance?.lines || []).filter((l) => l.committed);
   const date = new Date().toLocaleDateString(dateLocale(), { year: 'numeric', month: 'long', day: 'numeric' });
   $('printPlan').innerHTML = `
     <h1 style="font-size:20pt;font-weight:800;margin:0">${esc(t('backup.print.title'))}</h1>
@@ -143,9 +145,10 @@ function buildPrintPlan() {
       <tr><th>${esc(t('backup.print.couldSpend'))}</th><td class="num">${t('backup.print.perMonth', { amount: view.rawS(result.optimized) })}</td><th>${esc(t('backup.print.perYear'))}</th><td class="num"><strong>${view.raw(Math.max(0, canSave(result)) * 12)}</strong></td></tr>
       ${result.health ? `<tr><th>${esc(t('backup.print.healthScore'))}</th><td class="num">${result.health.score}/100 (${result.health.label})</td><th></th><td></td></tr>` : ''}
     </tbody></table>
-    <h2 style="font-size:13pt;margin:10px 0 6px">${esc(t('backup.print.changes', { count: committed.length }))}</h2>
-    ${committed.length ? `<table><thead><tr><th>${esc(t('backup.print.cols.change'))}</th><th>${esc(t('backup.print.cols.effort'))}</th><th class="num">${esc(t('backup.print.cols.cost'))}</th><th class="num">${esc(t('backup.print.cols.monthly'))}</th><th class="num">${esc(t('backup.print.cols.yearly'))}</th></tr></thead><tbody>
+    <h2 style="font-size:13pt;margin:10px 0 6px">${esc(t('backup.print.changes', { count: committed.length + limits.length }))}</h2>
+    ${committed.length + limits.length ? `<table><thead><tr><th>${esc(t('backup.print.cols.change'))}</th><th>${esc(t('backup.print.cols.effort'))}</th><th class="num">${esc(t('backup.print.cols.cost'))}</th><th class="num">${esc(t('backup.print.cols.monthly'))}</th><th class="num">${esc(t('backup.print.cols.yearly'))}</th></tr></thead><tbody>
       ${committed.map((p) => `<tr><td><strong>${esc(p.label)}: ${esc(p.title)}</strong><br><span style="color:#475569;font-size:9.5pt">${esc(p.tips[0] || '')}${p.kind === 'interest' ? ` ${esc(t('backup.print.interestNote'))}` : ''}</span></td><td>${EFFORT_LABEL[p.effort]}</td><td class="num">${p.upfront > 0 ? view.raw(p.upfront) : esc(t('backup.print.nothing'))}</td><td class="num">${view.rawS(p.monthly)}</td><td class="num">${view.rawS(p.annual)}</td></tr>`).join('')}
+      ${limits.map((l) => `<tr><td><strong>${esc(t('backup.print.limit', { label: limitLabel(l, state.country), amount: view.rawS(l.aim) }))}</strong><br><span style="color:#475569;font-size:9.5pt">${esc(t(`plan.limits.tips.${l.tip}`))}</span></td><td>–</td><td class="num">${esc(t('backup.print.nothing'))}</td><td class="num">${view.rawS(l.cut)}</td><td class="num">${view.rawS(l.cut * 12)}</td></tr>`).join('')}
     </tbody></table>` : `<p>${esc(t('backup.print.emptyPlan'))}</p>`}
     ${state.goals.length ? `<h2 style="font-size:13pt;margin:14px 0 6px">${esc(t('backup.print.goals'))}</h2><ul>${state.goals.map((g) => `<li>${esc(g.name || t('backup.print.defaultGoal'))}: ${view.raw(g.target)}</li>`).join('')}</ul>` : ''}
     <p style="color:#64748b;font-size:8.5pt;margin-top:18px">${esc(t('backup.print.disclaimer'))}</p>`;

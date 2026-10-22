@@ -10,7 +10,7 @@ import { t } from '../i18n/index.js';
 
 // Field keys with a help text (help.text.<key> in the message files).
 const HELP_KEYS = [
-  'profile', 'currency', 'period', 'income', 'rent', 'homeIns',
+  'profile', 'currency', 'period', 'income', 'rent', 'maintenance', 'homeIns',
   'electricity', 'waterGas', 'internet', 'fuel', 'transit', 'carIns',
   'carLoan', 'school', 'groceries', 'dining', 'misc', 'medical',
   'homeHelp', 'familySupport', 'giving', 'other', 'extraAmount', 'yearlyCost',

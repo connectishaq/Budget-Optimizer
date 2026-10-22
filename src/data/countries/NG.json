@@ -1208,6 +1208,7 @@
       "effort": "Medium"
     }
   ],
+  "hideFields": ["maintenance"],
   "hideRules": [
     "smart-thermostat"
   ],

@@ -6,7 +6,7 @@
 import { getState, setState, replaceState } from '../state.js';
 import { PROFILES, typicalRange, sampleFor, newId, benchmarkFor } from '../engine/profiles.js';
 import { countryData } from '../engine/countries.js';
-import { PAY_FREQUENCIES, toMonthly, fromMonthly, localFields, CUSTOM_CATEGORY } from '../engine/calculate.js';
+import { PAY_FREQUENCIES, toMonthly, fromMonthly, localFields, hiddenFields, CUSTOM_CATEGORY } from '../engine/calculate.js';
 import { CURRENCIES, parseAmount, decimalSeparator, moneyNice } from '../utils/format.js';
 import { $, icon, esc, setText, setAttr, toast } from './dom.js';
 import { helpBtn, HELP, nextHelpId } from './help.js';
@@ -35,6 +35,7 @@ export const GROUPS = [
   group('extras', 'gift', { list: 'extras', blurb: true }),
   group('housing', 'home', { blurb: true, fields: [
     field('rent', 'key'),
+    field('maintenance', 'building'),
     field('homeIns', 'umbrella')
   ] }),
   group('utilities', 'bolt', { blurb: true, fields: [
@@ -124,7 +125,7 @@ function moneyField(f) {
       </select>
     </div>` : '';
   return `
-  <div>
+  <div data-field-wrap="${f.key}">
     <div class="mb-1.5 flex items-center gap-2">
       <label for="${id}" class="label">${esc(label)}</label>
       ${helpBtn(f.key, label, f.local ? f.tip : HELP[f.key], `tip-${f.key}`)}
@@ -450,6 +451,9 @@ export function renderInputs(state, result, view) {
 
     if (!g.fields) continue;
     for (const f of g.fields) {
+      // A general box the country's own bill replaces (e.g. India's society maintenance)
+      const wrap = document.querySelector(`[data-field-wrap="${f.key}"]`);
+      if (wrap) wrap.hidden = hiddenFields(state.country).includes(f.key);
       if (f.balance) {
         // Totals like the emergency fund have no typical range, only errors
         const err = errors.get(`f-${f.key}`);
@@ -458,9 +462,10 @@ export function renderInputs(state, result, view) {
         if (err) setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
         continue;
       }
+      // Fields without benchmarks yet (maintenance) only get their help text
       const range = typicalRange(state.profile, f.key, state.country, result.totals.income);
-      const rangeTxt = range[1] === 0 ? t('inputs.typical.nothing') : t('inputs.typical.range', { min: nice(range[0]), max: nice(range[1]) });
-      setText($(`tip-${f.key}`), t('inputs.typical.tip', { help: HELP[f.key], group: who.group, range: rangeTxt, approx: B.approximate ? t('inputs.typical.approximate') : '' }));
+      const rangeTxt = !range ? '' : range[1] === 0 ? t('inputs.typical.nothing') : t('inputs.typical.range', { min: nice(range[0]), max: nice(range[1]) });
+      setText($(`tip-${f.key}`), range ? t('inputs.typical.tip', { help: HELP[f.key], group: who.group, range: rangeTxt, approx: B.approximate ? t('inputs.typical.approximate') : '' }) : HELP[f.key]);
 
       // Inline status: validation error wins, otherwise "higher than typical"
       const input = $(`f-${f.key}`);
@@ -469,7 +474,7 @@ export function renderInputs(state, result, view) {
       if (err) {
         setText(msg, err);
         setAttr(msg, 'class', 'mt-1 text-xs font-medium text-rose-700 dark:text-rose-400');
-      } else if (f.key !== 'income' && range[1] > 0 && values[f.key] > range[1]) {
+      } else if (f.key !== 'income' && range && range[1] > 0 && values[f.key] > range[1]) {
         setText(msg, t('inputs.typical.higher', { group: who.group, max: nice(range[1]) }));
         setAttr(msg, 'class', 'mt-1 text-xs font-medium text-amber-700 dark:text-amber-400');
       } else {

@@ -511,7 +511,7 @@
       },
       "housing": {
         "title": "Vivienda",
-        "blurb": "Alquiler o hipoteca, y seguro de hogar."
+        "blurb": "Alquiler o hipoteca, mantenimiento y seguro de hogar."
       },
       "utilities": {
         "title": "Facturas y suministros",
@@ -553,6 +553,9 @@
       },
       "rent": {
         "label": "Alquiler o hipoteca"
+      },
+      "maintenance": {
+        "label": "Mantenimiento y cuotas de servicio"
       },
       "homeIns": {
         "label": "Seguro de hogar o de inquilino"
@@ -767,6 +770,10 @@
       "3": {
         "title": "¿Tienes préstamos o suscripciones?",
         "sub": "Este paso es opcional. Sáltalo si no tienes."
+      },
+      "4": {
+        "title": "¿Para qué estás ahorrando?",
+        "sub": "Añade las cosas para las que quieres ahorrar y te mostraremos cuándo podrías alcanzar cada una. Este paso es opcional."
       }
     },
     "billPages": {
@@ -801,6 +808,7 @@
       "period": "Muestra todas las cantidades al mes o al año. Tus números no cambian; solo cambia cómo se ven.",
       "income": "El dinero que llega a tu cuenta cada mes después de impuestos. Usa tu sueldo neto, no el bruto.",
       "rent": "Lo que pagas cada mes de alquiler, o la cuota de la hipoteca si estás comprando tu vivienda.",
+      "maintenance": "Lo que pagas cada mes de mantenimiento por tu piso, edificio o urbanización (cuotas de servicio, comunidad, HOA). Si lo pagas una vez al año, divídelo entre 12. Déjalo vacío si no pagas nada.",
       "homeIns": "Seguro que paga si tu casa o tus cosas sufren daños o te las roban. Déjalo vacío si no tienes.",
       "electricity": "Tu factura media de luz al mes. Si cambia según la estación, usa una media aproximada.",
       "waterGas": "Tus facturas mensuales de agua y gas sumadas.",
@@ -1102,6 +1110,7 @@
       "perYear": "Esto es lo que supone al año",
       "healthScore": "Puntuación de salud del presupuesto",
       "changes": "Cambios en mi plan ({count})",
+      "limit": "{label}: gastar como mucho {amount} al mes",
       "cols": {
         "change": "Cambio",
         "effort": "Esfuerzo",
@@ -1120,6 +1129,7 @@
   "historyEngine": {
     "fields": {
       "rent": "Alquiler o hipoteca",
+      "maintenance": "Mantenimiento",
       "homeIns": "Seguro de hogar",
       "electricity": "Luz",
       "waterGas": "Agua y gas",
@@ -1231,7 +1241,8 @@
         "income_html": "<span class=\"dot\">1</span>Tus ingresos",
         "bills_html": "<span class=\"dot\">2</span>Tus facturas",
         "loans_html": "<span class=\"dot\">3</span>Préstamos y suscripciones",
-        "results_html": "<span class=\"dot\">4</span>Tus resultados"
+        "goals_html": "<span class=\"dot\">4</span>Tus metas",
+        "results_html": "<span class=\"dot\">5</span>Tus resultados"
       },
       "startOver": "Empezar de nuevo",
       "skip": "Ir a los resultados",
@@ -1310,7 +1321,10 @@
         "savings": "Mayor ahorro",
         "easy": "Más fáciles primero"
       },
-      "empty": "Tus facturas ya tienen buena pinta. Ninguna supera lo típico para este tipo de hogar."
+      "empty": "Tus facturas ya tienen buena pinta. Ninguna supera lo típico para este tipo de hogar.",
+      "limits": {
+        "bigger": "Cambios mayores para cerrar la diferencia"
+      }
     },
     "payday": {
       "title": "Tu plan para el día de cobro",
@@ -1537,13 +1551,6 @@
     "dialog": {
       "gotIt": "Entendido",
       "cancel": "Cancelar"
-    },
-    "balance": {
-      "title": "Un plan que cabe en tus ingresos",
-      "colBill": "Gasto",
-      "colAim": "Ahora → objetivo",
-      "total": "Gasto total",
-      "bigger": "Cambios mayores para cerrar la diferencia"
     }
   },
   "seo": {
@@ -1643,8 +1650,8 @@
       "noteNoIncome": "Añade tus ingresos para ver lo que te sobra."
     },
     "over": {
-      "fixed_html": "<strong class=\"font-semibold\">Gastas más de lo que ganas</strong>: {gap}{per} más. Las ideas de tu plan lo solucionarían y te sobrarían {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">Gastas más de lo que ganas</strong>: {gap}{per} más. Las ideas de tu plan reducen la diferencia a {left}{per}. Activa más ideas y mira abajo el plan que encaja con tus ingresos."
+      "fixed_html": "<strong class=\"font-semibold\">Gastas más de lo que ganas</strong>: {gap}{per} más. Tu plan lo solucionaría y te sobrarían {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">Gastas más de lo que ganas</strong>: {gap}{per} más. Tu plan reduce la diferencia a {left}{per}. Mira «Formas de gastar menos» para más ideas, límites de gasto y cambios mayores."
     },
     "split": {
       "needs": "Facturas obligatorias",
@@ -1672,61 +1679,6 @@
       "save": "Dinero que podrías ahorrar cada mes",
       "extra": "Lo que podrías ahorrar de más cada mes",
       "short": "Te falta cada mes"
-    },
-    "balance": {
-      "intro": {
-        "over": "Tus gastos suman {spend}{per}, {gap} más de lo que ganas. Aquí ves hasta dónde te pueden llevar unos recortes realistas, con el objetivo de gastar menos de lo que ganas y ahorrar un {pct}%.",
-        "low": "Gastas {spend}{per} de tus {income} de ingresos, así que te queda muy poco para ahorrar. Estos límites buscan que te quede un {pct}% de tus ingresos para ahorrar."
-      },
-      "reason": {
-        "times": "{times}× lo habitual para {group} ({range}).",
-        "over": "Por encima de lo habitual para {group} ({range}).",
-        "check": "Comprueba que esta cantidad es correcta.",
-        "want": "No es imprescindible, así que puede bajar más que otras facturas.",
-        "trim": "Es necesario, así que solo un recorte pequeño y realista.",
-        "big": "El alquiler se lleva el {pct}% de tus ingresos. Es un cambio mayor: planéalo para cuando termine tu contrato."
-      },
-      "how": "Cómo:",
-      "tips": {
-        "dining": "Elige una sola noche de comida para llevar a la semana, cocina por tandas el fin de semana y paga las comidas fuera con una cantidad fija semanal en efectivo.",
-        "misc": "Espera 24 horas antes de cualquier compra que no sea imprescindible, borra las tarjetas guardadas en las apps de compras y date de baja de los correos de ofertas.",
-        "other": "Revisa qué compone esta cantidad y quita o aplaza lo que pueda esperar unos meses.",
-        "groceries": "Planifica las comidas de la semana, compra una vez a la semana con lista, compra lo básico al por mayor y en marca blanca, y aprovecha las sobras antes de comprar más.",
-        "electricity": "Pon el aire acondicionado a 24–26 °C, apaga los aparatos desde el enchufe, usa bombillas LED y pon la lavadora y la secadora solo con carga completa.",
-        "electricityLocal": "Mantén tus unidades del mes por debajo del siguiente tramo de precio: pon el aire a 26 °C y úsalo una hora menos al día, usa bombillas LED y apaga la bomba de agua y el termo cuando no los necesites.",
-        "waterGas": "Arregla grifos y cisternas que gotean, date duchas calientes más cortas, lava con carga completa y cocina con tapa y en olla a presión.",
-        "waterGasLocal": "Baja la temperatura del termo o ponle un temporizador, arregla las fugas, cocina en olla a presión y con tapa, y revisa que la factura no tenga una lectura estimada o errónea.",
-        "internet": "Cámbiate a una tarifa más barata, quita líneas o extras que nadie usa y pide a tu compañía su oferta actual para clientes.",
-        "fuel": "Junta los recados en un solo viaje, comparte coche para ir al trabajo o al colegio, mantén los neumáticos bien inflados y conduce a velocidad constante.",
-        "fuelLocal": "Junta los recados en un solo viaje, comparte coche para ir al trabajo o al colegio, mantén los neumáticos inflados y el motor a punto, y usa moto o mototaxi para los trayectos cortos.",
-        "transit": "Saca un abono mensual en vez de billetes sueltos, comparte viajes y haz a pie o en bici los trayectos cortos.",
-        "homeHelp": "Acuerda menos horas o días a la semana durante unos meses, o comparte la ayuda con un vecino.",
-        "homeHelpLocal": "Acuerda menos días a la semana o una tarea menos (por ejemplo, que la cocinera solo haga la cena) durante unos meses, o comparte la ayuda con un vecino.",
-        "familySupport": "Habla con tu familia y acuerda con ellos una cantidad más pequeña y fija durante unos meses, hasta que tu presupuesto vuelva a cuadrar.",
-        "carIns": "Compara presupuestos antes de renovar y pregunta por el descuento por no tener siniestros. Mantén la cobertura que exige la ley.",
-        "homeIns": "Compara presupuestos antes de renovar y comprueba que no pagas por coberturas que no necesitas.",
-        "rent": "Busca una vivienda más barata o alguien con quien compartir piso antes de renovar, o pide al casero un alquiler más bajo a cambio de un contrato más largo.",
-        "subscriptions": "Cancela lo que no hayas usado el último mes y quédate con un solo servicio de streaming a la vez, cambiando cada pocos meses.",
-        "generatorFuel": "Usa el generador solo para lo imprescindible, usa el UPS para luces y ventiladores, y hazle el mantenimiento para que gaste menos combustible.",
-        "committee": "Un comité es ahorro, no gasto, pero si la cuota es demasiado alta ahora, únete a uno más pequeño cuando termine esta ronda.",
-        "customNeed": "Pide una opción más barata o paga una cantidad menor durante unos meses.",
-        "customWant": "No es imprescindible: redúcelo durante unos meses."
-      },
-      "result": {
-        "reached": "Con estos límites gastarías {spend}{per} y te quedarían {save} para ahorrar.",
-        "under": "Con estos límites gastarías {spend}{per} y aún te quedarían {save}. Los cambios mayores de abajo te llevarían a ahorrar un 10%.",
-        "short": "Incluso con estos límites te faltarían {short}{per}, así que recortar facturas no basta. Los cambios mayores de abajo pueden cerrar la diferencia."
-      },
-      "bigger": {
-        "housing": "Vivienda: el alquiler es de {amount}{per}, el {pct}% de tus ingresos. Mudarte a un sitio más barato, compartir piso o alquilar una habitación es el mayor cambio que puedes hacer.",
-        "loans": "Préstamos: {amount}{per} se van en cuotas de préstamos. Pide a tu banco alargar el plazo para bajar la cuota, paga primero el de interés más alto y no pidas préstamos nuevos por ahora.",
-        "car": "Coche: con gasolina, seguro y préstamo, si lo hay, te cuesta unos {amount}{per}. Si pudieras arreglarte sin él, o cambiar a uno más barato y que gaste menos, liberarías dinero cada mes.",
-        "school": "Colegio: {amount}{per}. Pregunta en el colegio por pagar a plazos, un descuento por hermanos o una beca.",
-        "yearly": "Gastos anuales: apartas {amount}{per} para ellos. Aplaza o reduce los que puedan esperar un año.",
-        "income": "Gana más: unos {amount}{per} más cubrirían la diferencia y te dejarían un 10% para ahorrar. Más horas, horas extra, un trabajo extra, trabajos como freelance o dar clases particulares, todo ayuda."
-      },
-      "kept": "Se quedan como están: {list}.",
-      "startingPoint": "Estos límites son un punto de partida: mueve dinero entre ellos como mejor le venga a tu hogar."
     }
   },
   "common": {
@@ -1793,7 +1745,76 @@
       "many": "Mostrar {count} de ideas más",
       "other": "Mostrar {count} ideas más"
     },
-    "count": "{done} de {total} añadidas a tu plan"
+    "count": "{done} de {total} añadidas a tu plan",
+    "fit": {
+      "title": "Meta: gastar como mucho {amount}{per}",
+      "text": "Así te queda el {pct}% de tus ingresos de {income} para ahorrar. Tu plan recorta {done} de los {needed} necesarios.",
+      "reached": "Meta alcanzada",
+      "toGo": "Faltan {amount}{per}",
+      "steps": "Ahora {now}{per} → con tu plan {plan}{per}"
+    },
+    "limits": {
+      "reason": {
+        "times": "{times}× lo habitual para {group} ({range}).",
+        "over": "Por encima de lo habitual para {group} ({range}).",
+        "check": "Comprueba que esta cantidad es correcta.",
+        "want": "No es imprescindible, así que puede bajar más que otras facturas.",
+        "trim": "Es necesario, así que solo un recorte pequeño y realista.",
+        "big": "El alquiler se lleva el {pct}% de tus ingresos. Es un cambio mayor: planéalo para cuando termine tu contrato."
+      },
+      "tips": {
+        "dining": "Elige una sola noche de comida para llevar a la semana, cocina por tandas el fin de semana y paga las comidas fuera con una cantidad fija semanal en efectivo.",
+        "misc": "Espera 24 horas antes de cualquier compra que no sea imprescindible, borra las tarjetas guardadas en las apps de compras y date de baja de los correos de ofertas.",
+        "other": "Revisa qué compone esta cantidad y quita o aplaza lo que pueda esperar unos meses.",
+        "groceries": "Planifica las comidas de la semana, compra una vez a la semana con lista, compra lo básico al por mayor y en marca blanca, y aprovecha las sobras antes de comprar más.",
+        "electricity": "Pon el aire acondicionado a 24–26 °C, apaga los aparatos desde el enchufe, usa bombillas LED y pon la lavadora y la secadora solo con carga completa.",
+        "electricityLocal": "Mantén tus unidades del mes por debajo del siguiente tramo de precio: pon el aire a 26 °C y úsalo una hora menos al día, usa bombillas LED y apaga la bomba de agua y el termo cuando no los necesites.",
+        "waterGas": "Arregla grifos y cisternas que gotean, date duchas calientes más cortas, lava con carga completa y cocina con tapa y en olla a presión.",
+        "waterGasLocal": "Baja la temperatura del termo o ponle un temporizador, arregla las fugas, cocina en olla a presión y con tapa, y revisa que la factura no tenga una lectura estimada o errónea.",
+        "internet": "Cámbiate a una tarifa más barata, quita líneas o extras que nadie usa y pide a tu compañía su oferta actual para clientes.",
+        "fuel": "Junta los recados en un solo viaje, comparte coche para ir al trabajo o al colegio, mantén los neumáticos bien inflados y conduce a velocidad constante.",
+        "fuelLocal": "Junta los recados en un solo viaje, comparte coche para ir al trabajo o al colegio, mantén los neumáticos inflados y el motor a punto, y usa moto o mototaxi para los trayectos cortos.",
+        "transit": "Saca un abono mensual en vez de billetes sueltos, comparte viajes y haz a pie o en bici los trayectos cortos.",
+        "homeHelp": "Acuerda menos horas o días a la semana durante unos meses, o comparte la ayuda con un vecino.",
+        "homeHelpLocal": "Acuerda menos días a la semana o una tarea menos (por ejemplo, que la cocinera solo haga la cena) durante unos meses, o comparte la ayuda con un vecino.",
+        "familySupport": "Habla con tu familia y acuerda con ellos una cantidad más pequeña y fija durante unos meses, hasta que tu presupuesto vuelva a cuadrar.",
+        "carIns": "Compara presupuestos antes de renovar y pregunta por el descuento por no tener siniestros. Mantén la cobertura que exige la ley.",
+        "homeIns": "Compara presupuestos antes de renovar y comprueba que no pagas por coberturas que no necesitas.",
+        "rent": "Busca una vivienda más barata o alguien con quien compartir piso antes de renovar, o pide al casero un alquiler más bajo a cambio de un contrato más largo.",
+        "subscriptions": "Cancela lo que no hayas usado el último mes y quédate con un solo servicio de streaming a la vez, cambiando cada pocos meses.",
+        "generatorFuel": "Usa el generador solo para lo imprescindible, usa el UPS para luces y ventiladores, y hazle el mantenimiento para que gaste menos combustible.",
+        "committee": "Un comité es ahorro, no gasto, pero si la cuota es demasiado alta ahora, únete a uno más pequeño cuando termine esta ronda.",
+        "customNeed": "Pide una opción más barata o paga una cantidad menor durante unos meses.",
+        "customWant": "No es imprescindible: redúcelo durante unos meses."
+      },
+      "result": {
+        "none": "Activa los cambios que vayas a cumplir y contarán en tus resultados.",
+        "reached": "Con este plan gastarías {spend}{per} y te quedarían {save} para ahorrar.",
+        "under": "Con este plan gastarías {spend}{per} y aún te quedarían {save}. Los cambios mayores de abajo te llevarían a ahorrar el {pct}%.",
+        "short": "Incluso con este plan te faltarían {short}{per}, así que recortar facturas no basta. Los cambios mayores de abajo pueden cerrar la diferencia."
+      },
+      "bigger": {
+        "housing": "Vivienda: el alquiler es de {amount}{per}, el {pct}% de tus ingresos. Mudarte a un sitio más barato, compartir piso o alquilar una habitación es el mayor cambio que puedes hacer.",
+        "loans": "Préstamos: {amount}{per} se van en cuotas de préstamos. Pide a tu banco alargar el plazo para bajar la cuota, paga primero el de interés más alto y no pidas préstamos nuevos por ahora.",
+        "car": "Coche: con gasolina, seguro y préstamo, si lo hay, te cuesta unos {amount}{per}. Si pudieras arreglarte sin él, o cambiar a uno más barato y que gaste menos, liberarías dinero cada mes.",
+        "school": "Colegio: {amount}{per}. Pregunta en el colegio por pagar a plazos, un descuento por hermanos o una beca.",
+        "yearly": "Gastos anuales: apartas {amount}{per} para ellos. Aplaza o reduce los que puedan esperar un año.",
+        "income": "Gana más: unos {amount}{per} más cubrirían la diferencia y te dejarían un 10% para ahorrar. Más horas, horas extra, un trabajo extra, trabajos como freelance o dar clases particulares, todo ayuda."
+      },
+      "kept": "Se quedan como están: {list}.",
+      "startingPoint": "Estas cantidades son un punto de partida: mueve dinero entre facturas como mejor le vaya a tu hogar."
+    },
+    "bills": {
+      "intro": "Tus facturas superan lo que tus ingresos pueden cubrir, así que aquí tienes cuánto recortar en cada una, empezando por el mayor ahorro. Abre Detalles para ver por qué y cómo. Desactiva lo que no puedas hacer; solo cuenta lo activado.",
+      "more": "Más facturas que recortar",
+      "limitPart": "Límite de gasto: déjala en {amount}{per}",
+      "parts": "De dónde sale este ahorro",
+      "showMore": {
+        "one": "Mostrar {count} factura más",
+        "other": "Mostrar {count} facturas más"
+      },
+      "showFewer": "Mostrar menos facturas"
+    }
   },
   "goals": {
     "bucket": {
@@ -1894,7 +1915,15 @@
       "emergencyNoneNeedsShare": "Aún no has ahorrado nada. Para 3 meses hace falta una parte de tu ahorro."
     },
     "removed": "Se ha quitado la meta «{name}»",
-    "untitled": "Sin título"
+    "untitled": "Sin título",
+    "presets": {
+      "holiday": "Vacaciones",
+      "homeDeposit": "Entrada de una casa",
+      "car": "Coche",
+      "wedding": "Boda",
+      "education": "Estudios de los hijos",
+      "gadget": "Teléfono o portátil nuevo"
+    }
   },
   "payday": {
     "list": {

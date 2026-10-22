@@ -3,13 +3,22 @@
 // the slider. Rows are keyed and updated in place, so sliders keep focus.
 // The three biggest savings (easiest first) form "Top 3 things to do first";
 // everything else sits under "More ideas".
+//
+// When the switched-on ideas still leave less than 10% of income to save, the
+// rows become bills instead: each bill's ideas and its spending limit (worked
+// out on what the ideas leave) as one saving, biggest first. A bar at the top
+// shows how close the whole plan gets to fitting the income.
 
 import { setState } from '../state.js';
 import { EFFORT_ORDER } from '../engine/rules.js';
-import { duration, pctWords } from '../utils/format.js';
+import { SAVE_TARGET, limitKey } from '../engine/balance.js';
+import { PROFILES } from '../engine/profiles.js';
+import { duration, pctWords, withSign } from '../utils/format.js';
 import { $, icon, esc, setText, setHTML, setAttr } from './dom.js';
 import { helpBtn } from './help.js';
-import { t, getLanguage } from '../i18n/index.js';
+import { t, has, getLanguage } from '../i18n/index.js';
+import { GROUPS } from './inputs.js';
+import { localFields } from '../engine/calculate.js';
 
 const rows = new Map(); // rule id -> element
 const EFFORT_PILL = {
@@ -188,11 +197,197 @@ export function topThree(plan) {
     .sort((a, b) => EFFORT_ORDER[a.effort] - EFFORT_ORDER[b.effort] || b.monthly - a.monthly);
 }
 
-function place(container, items) {
-  items.forEach((item, idx) => {
-    const el = rows.get(item.id);
+/** Puts exactly these elements in the container, in this order. */
+function place(container, els) {
+  els.forEach((el, idx) => {
     if (container.children[idx] !== el) container.insertBefore(el, container.children[idx] || null);
   });
+  while (container.children.length > els.length) container.lastElementChild.remove();
+}
+
+// ---------------- Fitting the income ----------------
+/** Goal bar: spend at most 90% of income; how much of the cut that needs the plan covers. */
+function renderFit(result, view) {
+  const { income, spend } = result.totals;
+  const target = income * (1 - SAVE_TARGET);
+  const box = $('planFit');
+  box.hidden = !(income > 0 && spend > target);
+  if (box.hidden) return;
+  const needed = spend - target;
+  const done = Math.min(needed, result.savings);
+  const reached = result.optimized <= target + 0.5;
+  const pct = Math.round(SAVE_TARGET * 100);
+  setText($('planFitTitle'), t('plan.fit.title', { amount: view.m(target), per: view.per }));
+  setText($('planFitText'), t('plan.fit.text', { income: view.m(income), pct, done: view.s(done), needed: view.m(needed) }));
+  setText($('planFitStatus'), reached ? t('plan.fit.reached') : t('plan.fit.toGo', { amount: view.s(result.optimized - target), per: view.per }));
+  setText($('planFitSteps'), t('plan.fit.steps', { now: view.m(spend), plan: view.s(result.optimized), per: view.per }));
+  $('planFitStatus').className = `text-sm font-semibold tabular-nums ${reached ? 'text-emerald-700 dark:text-emerald-400' : 'text-amber-700 dark:text-amber-400'}`;
+  box.className = `mt-5 rounded-xl border px-4 py-4 ${reached
+    ? 'border-emerald-200 bg-emerald-50/60 dark:border-emerald-900 dark:bg-emerald-950/40'
+    : 'border-amber-200 bg-amber-50/60 dark:border-amber-900 dark:bg-amber-950/40'}`;
+  $('planFitBar').style.width = `${Math.max(2, (done / needed) * 100)}%`;
+  $('planFitBar').className = `h-full rounded-full transition-all duration-300 ${reached ? 'bg-emerald-600' : 'bg-amber-500'}`;
+}
+
+/** A limit's name: an input field, the country's own bill, subscriptions or a custom expense. */
+export function limitLabel(line, country) {
+  if (line.field) return t(`inputs.fields.${line.field}.label`);
+  if (line.local) {
+    const k = `countryFields.${country}.${line.local}.label`;
+    return has(k) ? t(k) : line.localLabel;
+  }
+  if (line.id === 'subscriptions') return t('calc.categories.subscriptions');
+  return line.customName || t('calc.otherCosts');
+}
+
+/** Why this bill has a limit, from the household's own numbers. */
+function limitReason(l, state, view, income) {
+  const group = PROFILES[state.profile].group;
+  if (l.reason === 'big') return t('plan.limits.reason.big', { pct: Math.round((l.entered / income) * 100) });
+  if (l.times != null) {
+    const range = `${view.m(l.range[0])}–${view.m(l.range[1])}`;
+    const text = l.times >= 2
+      ? t('plan.limits.reason.times', { times: Math.round(l.times * 10) / 10, group, range })
+      : t('plan.limits.reason.over', { group, range });
+    return l.check ? `${text} ${t('plan.limits.reason.check')}` : text;
+  }
+  return t(`plan.limits.reason.${l.reason === 'want' ? 'want' : 'trim'}`);
+}
+
+/** Names of the bills the limits leave alone: field labels or category names. */
+function keptLabel(k) {
+  if (k.field) return t(`inputs.fields.${k.field}.label`);
+  if (k.id === 'debt') return t('calc.categories.debt');
+  if (k.id === 'yearly') return t('calc.categories.yearly');
+  return t('subs.kinds.tools.label');
+}
+
+// ---------------- Bill by bill ----------------
+// When the ideas alone don't fit the income, each row is one bill: the ideas
+// that work on it and its spending limit, as one number. Details shows why,
+// what to do, and each part with its own switch.
+
+const billEls = new Map(); // row id -> element
+let lastBills = [];
+
+const FIELD_ICON = Object.fromEntries(GROUPS.flatMap((g) => (g.fields || []).map((f) => [f.key, f.icon])));
+
+function billLabel(row, state) {
+  if (row.line) return limitLabel(row.line, state.country);
+  if (row.key === 'subscriptions') return t('calc.categories.subscriptions');
+  if (has(`inputs.fields.${row.key}.label`)) return t(`inputs.fields.${row.key}.label`);
+  const local = localFields(state.country).find((f) => f.key === row.key);
+  const k = `countryFields.${state.country}.${row.key}.label`;
+  return has(k) ? t(k) : local?.label || row.key;
+}
+
+const switchHtml = (attrs, on, label, withText) => `
+  <button type="button" role="switch" class="switch-btn ${withText ? '-mt-2.5 flex-col items-center gap-0' : 'shrink-0'}" ${attrs} aria-checked="${on}" aria-label="${esc(label)}">
+    <span class="switch" aria-hidden="true"></span>
+    ${withText ? `<span class="text-[11px] font-medium ${on ? 'text-emerald-800 dark:text-emerald-300' : 'text-slate-500 dark:text-slate-400'}">${esc(on ? t('plan.added') : t('plan.notAdded'))}</span>` : ''}
+  </button>`;
+
+function billHtml(row, state, view, income) {
+  const label = billLabel(row, state);
+  const on = row.committed;
+  const isOpen = open.has(row.id);
+  const amount = on ? row.monthly : row.potential;
+  const arrow = document.dir === 'rtl' ? '←' : '→';
+  const l = row.line;
+  // Under the name: why this bill (its limit's reason, or the main idea); the
+  // now → after line below already says how far
+  const sub = l ? limitReason(l, state, view, income) : row.ideas[0]?.title || '';
+  const why = row.ideas.find((p) => p.committed)?.why || row.ideas[0]?.why || '';
+  const tips = [...new Set([...(l ? [t(`plan.limits.tips.${l.tip}`)] : []), ...row.ideas.flatMap((p) => p.tips.slice(0, 2))])].slice(0, 5);
+  const parts = [
+    ...row.ideas.map((p) => ({ attrs: `data-part="idea" data-id="${esc(p.id)}"`, on: p.committed, name: `${p.label}: ${p.title}`, amount: p.monthly })),
+    ...(l ? [{ attrs: `data-part="limit" data-id="${esc(row.key)}"`, on: l.committed, name: t('plan.bills.limitPart', { amount: view.s(l.aim), per: view.per }), amount: l.cut }] : [])
+  ];
+  const after = on ? row.after : row.entered - row.potential;
+  return `
+    <div class="flex items-start gap-3">
+      ${switchHtml(`data-bill-switch="${esc(row.key)}"`, on, t('plan.addToPlan', { label }), true)}
+      <div class="min-w-0 flex-1">
+        <h5 class="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">${icon(FIELD_ICON[row.key] || (row.key === 'subscriptions' ? 'repeat' : 'list-check'), 'icon-sm text-slate-400')}${esc(label)}</h5>
+        <p class="text-sm ${l?.check ? 'font-medium text-amber-800 dark:text-amber-300' : 'text-slate-700 dark:text-slate-300'}">${esc(sub)}</p>
+        <p class="mt-1.5 text-xs tabular-nums muted">${esc(view.m(row.entered))} ${arrow} <strong class="font-semibold text-slate-900 dark:text-white">${esc(view.s(after))}</strong>${view.per}</p>
+      </div>
+      <div class="shrink-0 text-end">
+        <p class="whitespace-nowrap font-semibold tabular-nums ${on ? 'text-emerald-700 dark:text-emerald-400' : 'text-slate-500 dark:text-slate-400'}">${view.tag(view.s(amount), amount * view.f)}<span class="text-xs font-normal muted">${view.per}</span></p>
+        <button type="button" class="-me-1 inline-flex min-h-11 items-center gap-1 px-1 text-sm link" data-bill-toggle="${esc(row.key)}" aria-expanded="${isOpen}" aria-controls="bd-${esc(row.key)}">
+          ${t('plan.details')} ${icon('chevron-down', 'icon-sm chev')}
+        </button>
+      </div>
+    </div>
+    <div id="bd-${esc(row.key)}" ${isOpen ? '' : 'hidden'} class="mt-3 space-y-4 rounded-xl bg-slate-50 p-4 text-sm sm:ms-14 dark:bg-slate-800/50">
+      ${why ? `<p class="muted">${esc(why)}</p>` : ''}
+      <dl class="divide-y divide-slate-100 border-y border-slate-100 dark:divide-slate-800 dark:border-slate-800">
+        <div class="flex justify-between gap-3 py-2"><dt class="muted">${t('plan.youSpend')}</dt><dd class="tabular-nums">${view.tag(view.m(row.entered), row.entered * view.f)}${view.per}</dd></div>
+        <div class="flex justify-between gap-3 py-2"><dt class="muted">${t('plan.youCouldSpend')}</dt><dd class="tabular-nums">${view.tag(view.s(after), after * view.f)}${view.per}</dd></div>
+        <div class="flex flex-wrap justify-between gap-x-3 py-2"><dt class="font-medium text-slate-900 dark:text-white">${t('plan.youSave')}</dt>
+          <dd class="tabular-nums"><span class="font-semibold">${view.tag(view.s(amount), amount * view.f)}${view.per}</span> <span class="muted">${esc(view.f === 12 ? t('plan.perMonthParen', { amount: view.rawS(amount) }) : t('plan.perYearParen', { amount: view.rawS(amount * 12) }))}</span></dd></div>
+      </dl>
+      ${tips.length ? `<div>
+        <p class="font-medium text-slate-900 dark:text-white">${t('plan.whatToDo')}</p>
+        <ul class="mt-1 list-disc space-y-1 ps-5 text-slate-700 dark:text-slate-300">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      </div>` : ''}
+      <div>
+        <p class="font-medium text-slate-900 dark:text-white">${t('plan.bills.parts')}</p>
+        <ul class="mt-2 space-y-2">${parts.map((p) => `
+          <li class="flex items-center gap-3">
+            ${switchHtml(p.attrs, p.on, p.name, false)}
+            <span class="min-w-0 flex-1 text-slate-700 dark:text-slate-300">${esc(p.name)}</span>
+            <span class="shrink-0 tabular-nums ${p.on ? 'font-medium text-emerald-700 dark:text-emerald-400' : 'muted'}">${esc(withSign('−', view.s(p.amount)))}${view.per}</span>
+          </li>`).join('')}</ul>
+      </div>
+    </div>`;
+}
+
+/** The focused control inside the plan rows, so it can get focus back after a rebuild. */
+function focusedControl() {
+  const a = document.activeElement;
+  if (!a?.closest?.('#plan')) return null;
+  for (const k of ['billSwitch', 'billToggle', 'part']) if (a.dataset?.[k] != null) return `[data-${k.replace(/[A-Z]/g, (c) => `-${c.toLowerCase()}`)}="${CSS.escape(a.dataset[k])}"]${k === 'part' ? `[data-id="${CSS.escape(a.dataset.id)}"]` : ''}`;
+  return null;
+}
+
+/** One element per bill row, rebuilt in place (so its position and the open state stay). */
+function billElements(bills, state, view, income) {
+  const live = new Set(bills.map((b) => b.id));
+  for (const [id, el] of billEls) if (!live.has(id)) { el.remove(); billEls.delete(id); }
+  return bills.map((row) => {
+    let el = billEls.get(row.id);
+    if (!el) {
+      el = document.createElement('article');
+      el.className = 'py-4';
+      el.id = `plan-${row.id.replace(':', '-')}`;
+      billEls.set(row.id, el);
+    }
+    el.innerHTML = billHtml(row, state, view, income);
+    return el;
+  });
+}
+
+/** Where the plan leaves the month, bigger changes and what's left alone (bill-by-bill mode). */
+function renderLimits(result, view) {
+  const b = result.balance;
+  $('planLimits').hidden = !b;
+  if (!b) return;
+  const pct = Math.round(SAVE_TARGET * 100);
+  const anyOn = (result.bills || []).some((r) => r.committed);
+  const res = { spend: view.s(b.newSpend), save: view.s(Math.max(0, b.toSave)), short: view.s(Math.max(0, -b.toSave)), per: view.per, pct };
+  setText($('limitsResult'), anyOn ? t(`plan.limits.result.${b.outcome}`, res) : t('plan.limits.result.none'));
+  $('limitsResult').className = `rounded-xl px-4 py-3 text-sm ${b.outcome === 'reached'
+    ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
+    : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`;
+  // Bigger changes, only for what this household has
+  $('limitsBigger').hidden = !b.bigger.length;
+  setHTML($('limitsBiggerList'), b.bigger.map((c) => `<li class="flex gap-2"><span class="text-slate-400" aria-hidden="true">•</span><span>${esc(t(`plan.limits.bigger.${c.key}`, {
+    amount: view.s(c.amount), per: view.per, pct: c.share != null ? Math.round(c.share * 100) : ''
+  }))}</span></li>`).join(''));
+  const kept = b.kept.map(keptLabel);
+  const list = kept.length ? new Intl.ListFormat(getLanguage(), { type: 'conjunction' }).format(kept) : '';
+  setText($('limitsNote'), [kept.length ? t('plan.limits.kept', { list }) : '', t('plan.limits.startingPoint')].filter(Boolean).join(' '));
 }
 
 export function renderPlan(state, result, view) {
@@ -211,35 +406,95 @@ export function renderPlan(state, result, view) {
     updateRow(el, item, view);
   }
 
-  const top = topThree(result.plan);
-  const topIds = new Set(top.map((t) => t.id));
-  const rest = result.plan.filter((p) => !topIds.has(p.id)).sort((a, b) =>
-    state.plan.sort === 'easy'
-      ? EFFORT_ORDER[a.effort] - EFFORT_ORDER[b.effort] || b.monthly - a.monthly
-      : b.monthly - a.monthly);
+  const bills = result.bills;
+  lastBills = bills || [];
+  const focus = focusedControl();
+  let top;
+  let rest;
+  let count;
+  if (bills) {
+    // Bill by bill, biggest saving first; ideas that save interest keep their own rows
+    const others = result.plan.filter((p) => p.kind !== 'cash');
+    const els = billElements(bills, state, view, result.totals.income);
+    const all = [
+      ...bills.map((b, i) => ({ el: els[i], amount: b.potential })),
+      ...others.map((p) => ({ el: rows.get(p.id), amount: p.monthly }))
+    ].sort((a, b) => b.amount - a.amount).map((x) => x.el);
+    top = all.slice(0, 3);
+    rest = all.slice(3);
+    count = { done: bills.filter((b) => b.committed).length + others.filter((p) => p.committed).length, total: bills.length + others.length };
+  } else {
+    for (const el of billEls.values()) el.remove();
+    billEls.clear();
+    const topItems = topThree(result.plan);
+    const topIds = new Set(topItems.map((x) => x.id));
+    top = topItems.map((p) => rows.get(p.id));
+    rest = result.plan.filter((p) => !topIds.has(p.id)).sort((a, b) =>
+      state.plan.sort === 'easy'
+        ? EFFORT_ORDER[a.effort] - EFFORT_ORDER[b.effort] || b.monthly - a.monthly
+        : b.monthly - a.monthly).map((p) => rows.get(p.id));
+    count = { done: result.plan.filter((i) => i.committed).length, total: result.plan.length };
+  }
 
   place($('planTop'), top);
   place($('planList'), rest);
+  if (focus) document.querySelector(`#plan ${focus}`)?.focus();
   // Keep the list short: only the first few "More ideas" until asked
-  rest.forEach((item, i) => { rows.get(item.id).hidden = !showAllMore && i >= MORE_VISIBLE; });
+  rest.forEach((el, i) => { el.hidden = !showAllMore && i >= MORE_VISIBLE; });
+  top.forEach((el) => { el.hidden = false; });
   const hiddenCount = Math.max(0, rest.length - MORE_VISIBLE);
   const more = $('planShowMore');
   more.hidden = hiddenCount === 0;
-  setText(more, showAllMore ? t('plan.showFewer') : t('plan.showMore', { count: hiddenCount }));
+  const words = bills ? 'plan.bills' : 'plan';
+  setText(more, showAllMore ? t(`${words}.showFewer`) : t(`${words}.showMore`, { count: hiddenCount }));
   setAttr(more, 'aria-expanded', String(showAllMore));
-  for (const item of top) rows.get(item.id).hidden = false;
 
-  const committed = result.plan.filter((i) => i.committed).length;
-  setText($('planCount'), result.plan.length ? t('plan.count', { done: committed, total: result.plan.length }) : '');
-  $('planEmpty').hidden = result.plan.length > 0;
+  // The page's own text (in the HTML) for ideas; the bill-by-bill text beside it
+  $('planIntro').hidden = !!bills;
+  $('planBillsIntro').hidden = !bills;
+  setText($('planBillsIntro'), t('plan.bills.intro'));
+  $('planMoreTitle').hidden = !!bills;
+  $('planMoreBills').hidden = !bills;
+  setText($('planMoreBills'), t('plan.bills.more'));
+  $('planSortWrap').hidden = !!bills;
+  setText($('planCount'), count.total ? t('plan.count', count) : '');
+  $('planEmpty').hidden = count.total > 0;
   $('planTop').hidden = top.length === 0;
   $('planTop').previousElementSibling.hidden = top.length === 0;
   $('planMoreWrap').hidden = rest.length === 0;
+
+  renderFit(result, view);
+  renderLimits(result, view);
 }
 
 export function initPlan() {
   const sort = $('planSort');
   sort.addEventListener('change', () => setState((s) => { s.plan.sort = sort.value; }));
+  // Bill rows: the row's switch turns all its parts on or off together
+  $('plan').addEventListener('click', (e) => {
+    const sw = e.target.closest('[data-bill-switch]');
+    const part = e.target.closest('[data-part]');
+    const tog = e.target.closest('[data-bill-toggle]');
+    if (sw) {
+      const row = lastBills.find((b) => b.key === sw.dataset.billSwitch);
+      if (!row) return;
+      const on = !row.committed;
+      setState((s) => {
+        for (const p of row.ideas) s.plan.committed[p.id] = on;
+        if (row.line) s.plan.committed[limitKey(row.line)] = on;
+      });
+    } else if (part) {
+      const on = part.getAttribute('aria-checked') !== 'true';
+      const key = part.dataset.part === 'limit' ? limitKey({ id: part.dataset.id }) : part.dataset.id;
+      setState((s) => { s.plan.committed[key] = on; });
+    } else if (tog) {
+      const id = `bill:${tog.dataset.billToggle}`;
+      open.has(id) ? open.delete(id) : open.add(id);
+      const isOpen = open.has(id);
+      setAttr(tog, 'aria-expanded', String(isOpen));
+      $(`bd-${tog.dataset.billToggle}`).hidden = !isOpen;
+    }
+  });
   $('planShowMore').addEventListener('click', () => {
     showAllMore = !showAllMore;
     setState(() => {}, { reason: 'change', persist: false });

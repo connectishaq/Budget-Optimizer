@@ -63,7 +63,7 @@ export function defaultState() {
     // Payday plan: which day pay arrives ('last' = last day of the month) and
     // the steps ticked off; ticks only count for the month they were made in
     payday: { day: 1, month: '', done: {} },
-    // mode: 'wizard' (guided steps) | 'results'; step 1–3 and sub-page inside step 2
+    // mode: 'wizard' (guided steps) | 'results'; step 1–4 and sub-page inside step 2
     ui: { collapsed: {}, sample: false, mode: 'wizard', step: 1, sub: 0, showAll: false }
   };
 }
@@ -158,7 +158,7 @@ export function normalizeState(raw) {
   if (isObj(raw.ui)) {
     s.ui.sample = !!raw.ui.sample;
     s.ui.mode = raw.ui.mode === 'results' ? 'results' : 'wizard';
-    s.ui.step = Math.round(n(raw.ui.step, 1, 3)) || 1;
+    s.ui.step = Math.round(n(raw.ui.step, 1, 4)) || 1;
     s.ui.sub = Math.round(n(raw.ui.sub, 0, 5));
     s.ui.showAll = !!raw.ui.showAll;
   }

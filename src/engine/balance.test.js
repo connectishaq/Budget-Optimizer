@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll } from 'vitest';
-import { computeTotals } from './calculate.js';
-import { balancePlan, SAVE_TARGET } from './balance.js';
+import { computeTotals, computeBudget, fieldAfterPlan } from './calculate.js';
+import { balancePlan, settleBalance, SAVE_TARGET } from './balance.js';
 import { loadCountry } from './countries.js';
 
 beforeAll(() => Promise.all(['US', 'PK'].map(loadCountry)));
@@ -9,7 +9,12 @@ const state = (values, over = {}) => ({
   profile: 'youngpro', country: 'PK', currency: 'PKR', values,
   debts: [], subscriptions: [], yearly: [], extras: [], custom: [], local: {}, ...over
 });
-const plan = (s) => balancePlan(computeTotals(s), s.country, s.profile);
+// Limits on their own (no ideas switched on), with every switch at its default
+const plan = (s) => {
+  const totals = computeTotals(s);
+  const b = balancePlan(totals, s.country, s.profile);
+  return b && settleBalance(b, totals, s.plan?.committed);
+};
 const line = (p, id) => p.lines.find((l) => l.id === id);
 const bigger = (p) => p.bigger.map((b) => b.key);
 
@@ -73,6 +78,26 @@ describe('balancePlan: a plan that fits your income', () => {
     for (const id of ['carLoan', 'school', 'medical', 'giving']) expect(line(p, id)).toBeUndefined();
   });
 
+  it('leaves rent switched off until the household chooses to move', () => {
+    // Rent far above the typical top: a limit is suggested, but not counted yet
+    const p = plan(state({ income: 100000, rent: 150000, groceries: 20000, dining: 5000 }));
+    const rent = line(p, 'rent');
+    expect(rent.big).toBe(true);
+    expect(rent.committed).toBe(false);
+    expect(p.cut).toBeCloseTo(p.lines.filter((l) => l.committed).reduce((a, l) => a + l.cut, 0), 5);
+    // The rent line already says "move somewhere cheaper", so no separate housing change
+    expect(bigger(p)).not.toContain('housing');
+    // Switched on, it counts
+    const on = plan(state({ income: 100000, rent: 150000, groceries: 20000, dining: 5000 }, { plan: { committed: { 'limit:rent': true } } }));
+    expect(on.cut).toBeCloseTo(p.cut + rent.cut, 5);
+  });
+
+  it('never cuts maintenance charges', () => {
+    const p = plan(state({ income: 100000, rent: 60000, maintenance: 15000, groceries: 30000, dining: 20000 }));
+    expect(line(p, 'maintenance')).toBeUndefined();
+    expect(p.kept.map((k) => k.field || k.id)).toContain('maintenance');
+  });
+
   it('says how much income is still missing when cuts are not enough', () => {
     const p = plan(state({ income: 50000, rent: 60000, carLoan: 30000, groceries: 30000 }));
     expect(p.outcome).toBe('short');
@@ -80,5 +105,81 @@ describe('balancePlan: a plan that fits your income', () => {
     // With that much more income the target would be met
     expect(p.newSpend).toBeCloseTo((50000 + p.incomeNeeded) * (1 - SAVE_TARGET), 0);
     expect(p.bigger.at(-1)).toEqual({ key: 'income', amount: p.incomeNeeded });
+  });
+});
+
+describe('spending limits in the plan', () => {
+  const s = state({ income: 150000, dining: 40000, misc: 30000, groceries: 50000, electricity: 20000, rent: 60000 });
+
+  it('start from what the ideas leave, so no saving is counted twice', () => {
+    const r = computeBudget(s);
+    // "Wait 24 hours before you buy" already trims shopping; the limit starts there
+    const misc = line(r.balance, 'misc');
+    expect(misc.entered).toBe(30000);
+    expect(misc.now).toBeCloseTo(fieldAfterPlan(r.plan, r.totals.values, 'misc'), 5);
+    expect(misc.now).toBeLessThan(30000);
+    expect(r.balance.spend).toBeCloseTo(r.totals.spend - r.ideaSavings, 5);
+    // The plan's savings are the ideas plus the switched-on limits
+    expect(r.savings).toBeCloseTo(r.ideaSavings + r.limitSavings, 5);
+    expect(r.limitSavings).toBeCloseTo(r.balance.cut, 5);
+    expect(r.optimized).toBeCloseTo(r.totals.spend - r.savings, 5);
+    expect(r.balance.outcome).toBe('reached');
+    expect(r.optimized).toBeCloseTo(150000 * (1 - SAVE_TARGET), 0);
+  });
+
+  it('can be switched off one by one', () => {
+    const all = computeBudget(s);
+    const off = computeBudget({ ...s, plan: { committed: { 'limit:dining': false }, pct: {} } });
+    expect(line(off.balance, 'dining').committed).toBe(false);
+    expect(off.limitSavings).toBeCloseTo(all.limitSavings - line(all.balance, 'dining').cut, 5);
+    expect(off.balance.outcome).not.toBe('reached');
+  });
+
+  it('set the weekly allowance in the payday plan', () => {
+    const r = computeBudget(s);
+    const fun = line(r.balance, 'dining').aim + line(r.balance, 'misc').aim;
+    expect(r.payday.funMonthly).toBeCloseTo(fun, 5);
+  });
+
+  it('are not needed when the ideas already leave 10% to save', () => {
+    const r = computeBudget(state({ income: 200000, rent: 60000, groceries: 40000 }));
+    expect(r.balance).toBeNull();
+    expect(r.limitSavings).toBe(0);
+  });
+});
+
+describe('the plan bill by bill', () => {
+  const s = state({ income: 200000, rent: 80000, electricity: 25000, waterGas: 15000, fuel: 20000, groceries: 50000, dining: 20000, misc: 20000, familySupport: 40000, homeHelp: 20000, other: 20000 },
+    { subscriptions: [{ id: 's1', name: 'Netflix', cost: 20000 }] });
+
+  it('adds up to the same savings as the ideas and limits together', () => {
+    const r = computeBudget(s);
+    expect(r.bills.length).toBeGreaterThan(0);
+    expect(r.bills.reduce((a, b) => a + b.monthly, 0)).toBeCloseTo(r.savings, 5);
+    // Biggest first, and each bill shows once
+    const pot = r.bills.map((b) => b.potential);
+    expect(pot).toEqual([...pot].sort((a, b) => b - a));
+    expect(new Set(r.bills.map((b) => b.key)).size).toBe(r.bills.length);
+  });
+
+  it('puts an idea and the limit for the same bill in one row', () => {
+    const r = computeBudget(s);
+    const misc = r.bills.find((b) => b.key === 'misc');
+    expect(misc.ideas.map((p) => p.id)).toContain('impulse-24h');
+    expect(misc.line).not.toBeNull();
+    expect(misc.after).toBeCloseTo(misc.line.aim, 5);
+    expect(misc.monthly).toBeCloseTo(20000 - misc.line.aim, 5);
+  });
+
+  it('counts nothing for a bill whose parts are all switched off', () => {
+    const r = computeBudget({ ...s, plan: { committed: { 'impulse-24h': false, 'limit:misc': false }, pct: {} } });
+    const misc = r.bills.find((b) => b.key === 'misc');
+    expect(misc.committed).toBe(false);
+    expect(misc.monthly).toBeCloseTo(0, 5);
+    expect(misc.potential).toBeGreaterThan(0);
+  });
+
+  it('is only used when the ideas alone do not fit the income', () => {
+    expect(computeBudget(state({ income: 200000, rent: 60000, groceries: 40000 })).bills).toBeNull();
   });
 });

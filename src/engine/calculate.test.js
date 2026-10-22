@@ -96,8 +96,9 @@ describe('evaluatePlan', () => {
     // No income: only the ideas' savings are known
     const noIncome = computeBudget(base({ values: { misc: 400 } }));
     expect(canSave(noIncome)).toBe(noIncome.savings);
-    // Spending more than income: negative (short each month)
-    expect(canSave(computeBudget(base({ values: { income: 200, misc: 400 } })))).toBeLessThan(0);
+    // Spending more than income: negative (short each month). Medical costs are
+    // never cut, so no idea or spending limit can close the gap
+    expect(canSave(computeBudget(base({ values: { income: 200, medical: 400 } })))).toBeLessThan(0);
   });
 
   it('custom % is clamped to 0..2x default', () => {
@@ -292,7 +293,7 @@ describe('savings split', () => {
 
   it('shares out nothing while bills cost more than income', () => {
     const s = {
-      ...base({ profile: 'single', values: { income: 2000, rent: 1500, dining: 900, groceries: 400 } }),
+      ...base({ profile: 'single', values: { income: 2000, rent: 1500, medical: 600, dining: 900, groceries: 400 } }),
       goals: [{ id: 'g', name: 'Car', target: 6000, saved: 0 }]
     };
     const r = computeBudget(s);
@@ -618,5 +619,20 @@ describe('the complete example budget', () => {
     for (const currency of ['USD', 'PKR', 'INR']) {
       for (const p of ['single', 'youngpro']) expect(sampleFor(p, currency).extras.length).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('maintenance charges', () => {
+  it('count as a must-pay housing bill', () => {
+    const t = computeTotals(base({ values: { income: 5000, rent: 1500, maintenance: 200 } }));
+    expect(t.categories.find((c) => c.key === 'housing').amount).toBe(1700);
+    expect(t.needs).toBe(1700);
+  });
+
+  it('are left out where the country asks for its own (India: society maintenance)', async () => {
+    await loadCountry('IN');
+    const t = computeTotals(base({ country: 'IN', currency: 'INR', values: { income: 80000, rent: 20000, maintenance: 3000 } }));
+    expect(t.values.maintenance).toBe(0);
+    expect(t.spend).toBe(20000);
   });
 });

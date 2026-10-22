@@ -1160,6 +1160,7 @@
       "effort": "Easy"
     }
   ],
+  "hideFields": ["maintenance"],
   "hideRules": [
     "electricity-slab"
   ],

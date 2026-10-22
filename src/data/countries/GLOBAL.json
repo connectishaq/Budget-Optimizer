@@ -858,6 +858,7 @@
       "values": {
         "income": 1,
         "rent": 0.2917,
+        "maintenance": 0.0139,
         "homeIns": 0.0222,
         "electricity": 0.0229,
         "waterGas": 0.0118,

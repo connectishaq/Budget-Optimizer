@@ -511,7 +511,7 @@
       },
       "housing": {
         "title": "Logement",
-        "blurb": "Loyer ou crédit immobilier, et assurance habitation."
+        "blurb": "Loyer ou crédit immobilier, charges et assurance habitation."
       },
       "utilities": {
         "title": "Factures et charges",
@@ -553,6 +553,9 @@
       },
       "rent": {
         "label": "Loyer ou crédit immobilier"
+      },
+      "maintenance": {
+        "label": "Charges de copropriété et d’entretien"
       },
       "homeIns": {
         "label": "Assurance habitation"
@@ -767,6 +770,10 @@
       "3": {
         "title": "Des crédits ou des abonnements ?",
         "sub": "Cette étape est facultative. Passez-la si vous n’en avez pas."
+      },
+      "4": {
+        "title": "Pour quoi épargnez-vous ?",
+        "sub": "Ajoutez ce pour quoi vous voulez épargner, et nous vous montrerons quand vous pourriez atteindre chaque objectif. Cette étape est facultative."
       }
     },
     "billPages": {
@@ -801,6 +808,7 @@
       "period": "Affiche chaque montant par mois ou par an. Vos chiffres ne changent pas, seul l’affichage change.",
       "income": "L’argent qui arrive sur votre compte bancaire chaque mois, après impôts. Utilisez votre salaire net, pas votre salaire brut.",
       "rent": "Ce que vous payez chaque mois pour louer votre logement, ou votre mensualité de crédit si vous l’achetez.",
+      "maintenance": "Les charges mensuelles de votre appartement, immeuble ou résidence (charges de copropriété, frais de service). Si vous payez une fois par an, divisez par 12. Laissez vide si vous n’en payez pas.",
       "homeIns": "L’assurance qui vous indemnise si votre logement ou vos affaires sont endommagés ou volés. Laissez vide si vous n’en avez pas.",
       "electricity": "Votre facture d’électricité mensuelle moyenne. Si elle varie selon les saisons, mettez une moyenne approximative.",
       "waterGas": "Vos factures mensuelles d’eau et de gaz additionnées.",
@@ -1102,6 +1110,7 @@
       "perYear": "Soit, sur un an",
       "healthScore": "Note santé du budget",
       "changes": "Changements de mon plan ({count})",
+      "limit": "{label} : dépenser au plus {amount} par mois",
       "cols": {
         "change": "Changement",
         "effort": "Effort",
@@ -1120,6 +1129,7 @@
   "historyEngine": {
     "fields": {
       "rent": "Loyer ou crédit immobilier",
+      "maintenance": "Charges",
       "homeIns": "Assurance habitation",
       "electricity": "Électricité",
       "waterGas": "Eau et gaz",
@@ -1231,7 +1241,8 @@
         "income_html": "<span class=\"dot\">1</span>Vos revenus",
         "bills_html": "<span class=\"dot\">2</span>Vos dépenses",
         "loans_html": "<span class=\"dot\">3</span>Crédits &amp; abonnements",
-        "results_html": "<span class=\"dot\">4</span>Vos résultats"
+        "goals_html": "<span class=\"dot\">4</span>Vos objectifs",
+        "results_html": "<span class=\"dot\">5</span>Vos résultats"
       },
       "startOver": "Recommencer",
       "skip": "Aller aux résultats",
@@ -1310,7 +1321,10 @@
         "savings": "Plus grosses économies",
         "easy": "Plus faciles d’abord"
       },
-      "empty": "Vos dépenses sont déjà raisonnables. Aucune ne dépasse le niveau habituel pour ce type de foyer."
+      "empty": "Vos dépenses sont déjà raisonnables. Aucune ne dépasse le niveau habituel pour ce type de foyer.",
+      "limits": {
+        "bigger": "Des changements plus importants pour combler l’écart"
+      }
     },
     "payday": {
       "title": "Votre plan du jour de paie",
@@ -1537,13 +1551,6 @@
     "dialog": {
       "gotIt": "Compris",
       "cancel": "Annuler"
-    },
-    "balance": {
-      "title": "Un plan qui tient dans vos revenus",
-      "colBill": "Dépense",
-      "colAim": "Aujourd’hui → objectif",
-      "total": "Total des dépenses",
-      "bigger": "Des changements plus importants pour combler l’écart"
     }
   },
   "seo": {
@@ -1643,8 +1650,8 @@
       "noteNoIncome": "Ajoutez vos revenus pour voir ce qu’il reste."
     },
     "over": {
-      "fixed_html": "<strong class=\"font-semibold\">Vous dépensez plus que vous ne gagnez</strong>, de {gap}{per}. Les idées de votre plan régleraient ce problème et laisseraient {left}{per}.",
-      "stillShort_html": "<strong class=\"font-semibold\">Vous dépensez plus que vous ne gagnez</strong>, de {gap}{per}. Les idées de votre plan réduisent l’écart à {left}{per}. Activez plus d’idées, et regardez ci-dessous le plan adapté à vos revenus."
+      "fixed_html": "<strong class=\"font-semibold\">Vous dépensez plus que vous ne gagnez</strong>, de {gap}{per}. Votre plan réglerait ce problème et laisserait {left}{per}.",
+      "stillShort_html": "<strong class=\"font-semibold\">Vous dépensez plus que vous ne gagnez</strong>, de {gap}{per}. Votre plan réduit l’écart à {left}{per}. Consultez « Comment dépenser moins » pour plus d’idées, des limites de dépenses et des changements plus importants."
     },
     "split": {
       "needs": "Dépenses obligatoires",
@@ -1672,61 +1679,6 @@
       "save": "Ce que vous pourriez économiser chaque mois",
       "extra": "Ce que vous pourriez économiser en plus chaque mois",
       "short": "Ce qui vous manque chaque mois"
-    },
-    "balance": {
-      "intro": {
-        "over": "Vos factures atteignent {spend}{per}, soit {gap} de plus que vos revenus. Voici jusqu’où des économies réalistes peuvent vous mener, avec pour objectif de dépenser moins que vous ne gagnez et d’épargner {pct} %.",
-        "low": "Vous dépensez {spend}{per} sur vos {income} de revenus : il reste très peu à épargner. Ces limites visent à vous laisser {pct} % de vos revenus à épargner."
-      },
-      "reason": {
-        "times": "{times}× le montant habituel pour {group} ({range}).",
-        "over": "Au-dessus de la fourchette habituelle ({range}) pour {group}.",
-        "check": "Vérifiez que ce montant est correct.",
-        "want": "Pas indispensable : peut baisser plus que les autres factures.",
-        "trim": "Dépense essentielle : seulement une petite baisse réaliste.",
-        "big": "Le loyer représente {pct} % de vos revenus. C’est un changement plus important : prévoyez-le pour la fin de votre bail."
-      },
-      "how": "Comment :",
-      "tips": {
-        "dining": "Gardez un seul soir de plats à emporter par semaine, cuisinez en grande quantité le week-end, et payez vos sorties au restaurant avec un montant fixe en espèces chaque semaine.",
-        "misc": "Attendez 24 heures avant tout achat non essentiel, supprimez les cartes enregistrées dans les applis d’achat, et désabonnez-vous des e-mails de promotions.",
-        "other": "Passez en revue ce qui compose ce montant, et supprimez ou reportez ce qui peut attendre quelques mois.",
-        "groceries": "Prévoyez les repas de la semaine, faites les courses une fois par semaine avec une liste, achetez les produits de base en gros et en marque de distributeur, et finissez les restes avant de racheter.",
-        "electricity": "Réglez la clim entre 24 et 26 °C, éteignez les appareils à la prise, utilisez des ampoules LED, et ne lancez le lave-linge et le sèche-linge qu’à pleine charge.",
-        "electricityLocal": "Gardez votre consommation mensuelle sous la tranche suivante : réglez la clim sur 26 °C et utilisez-la une heure de moins par jour, utilisez des ampoules LED, et éteignez la pompe à eau et le chauffe-eau quand vous n’en avez pas besoin.",
-        "waterGas": "Réparez les robinets et toilettes qui fuient, prenez des douches chaudes plus courtes, lavez à pleine charge, et cuisinez avec un couvercle et un autocuiseur.",
-        "waterGasLocal": "Baissez le chauffe-eau ou mettez-le sur minuterie, réparez les fuites, cuisinez avec un autocuiseur et un couvercle, et vérifiez que la facture n’est pas basée sur un relevé estimé ou erroné.",
-        "internet": "Passez à une offre moins chère, supprimez les lignes ou options que personne n’utilise, et demandez à votre opérateur son offre actuelle pour les clients existants.",
-        "fuel": "Regroupez vos courses en un seul trajet, covoiturez pour le travail ou l’école, gardez les pneus bien gonflés, et roulez à vitesse régulière.",
-        "fuelLocal": "Regroupez vos courses en un seul trajet, partagez les trajets pour le travail ou l’école, gardez les pneus gonflés et le moteur bien réglé, et prenez une moto ou un rickshaw pour les petits trajets.",
-        "transit": "Prenez un abonnement mensuel plutôt que des billets à l’unité, partagez les trajets, et faites les petits trajets à pied ou à vélo.",
-        "homeHelp": "Convenez de moins d’heures ou de jours par semaine pendant quelques mois, ou partagez une aide à domicile avec un voisin.",
-        "homeHelpLocal": "Convenez de moins de jours par semaine ou d’une tâche en moins (par exemple le cuisinier pour le dîner seulement) pendant quelques mois, ou partagez une aide à domicile avec un voisin.",
-        "familySupport": "Parlez à votre famille et convenez d’un montant plus petit et régulier pendant quelques mois, le temps que votre propre budget retrouve l’équilibre.",
-        "carIns": "Comparez les devis avant le renouvellement et demandez un bonus pour absence de sinistre. Gardez la couverture obligatoire.",
-        "homeIns": "Comparez les devis avant le renouvellement, et vérifiez que vous ne payez pas pour une couverture inutile.",
-        "rent": "Cherchez un logement moins cher ou un colocataire avant le renouvellement du bail, ou demandez à votre propriétaire un loyer plus bas en échange d’un bail plus long.",
-        "subscriptions": "Résiliez tout ce que vous n’avez pas utilisé le mois dernier, et gardez un seul service de streaming à la fois, en changeant tous les quelques mois.",
-        "generatorFuel": "Faites tourner le groupe électrogène seulement pour l’essentiel, utilisez l’onduleur pour les lampes et les ventilateurs, et faites-le entretenir pour qu’il consomme moins.",
-        "committee": "Un committee, c’est de l’épargne, pas une dépense. Mais si le versement est trop lourd en ce moment, rejoignez-en un plus petit à la fin de ce tour.",
-        "customNeed": "Demandez une option moins chère, ou payez un montant plus petit pendant quelques mois.",
-        "customWant": "Ce n’est pas indispensable : réduisez-le pendant quelques mois."
-      },
-      "result": {
-        "reached": "Avec ces limites, vous dépenseriez {spend}{per} et il vous resterait {save} à épargner.",
-        "under": "Avec ces limites, vous dépenseriez {spend}{per} et il vous resterait encore {save}. Les changements plus importants ci-dessous vous permettraient d’épargner 10 %.",
-        "short": "Même avec ces limites, il vous manquerait {short}{per} : réduire les factures ne suffit donc pas. Les changements plus importants ci-dessous peuvent combler l’écart."
-      },
-      "bigger": {
-        "housing": "Logement : le loyer est de {amount}{per}, soit {pct} % de vos revenus. Déménager dans moins cher, partager le logement ou louer une chambre est le changement le plus important.",
-        "loans": "Crédits : {amount}{per} partent en remboursements. Demandez à votre prêteur d’allonger la durée du prêt pour baisser la mensualité, remboursez d’abord celui au taux le plus élevé, et ne prenez pas de nouveau crédit pour l’instant.",
-        "car": "Voiture : carburant, assurance et éventuel prêt compris, elle coûte environ {amount}{per}. Si vous pouviez vous en passer, ou passer à un modèle moins cher et plus sobre, vous libéreriez de l’argent chaque mois.",
-        "school": "Frais de scolarité : {amount}{per}. Demandez à l’école un paiement échelonné, une réduction pour frères et sœurs ou une bourse.",
-        "yearly": "Dépenses annuelles : vous mettez {amount}{per} de côté pour elles. Reportez ou réduisez celles qui peuvent attendre un an.",
-        "income": "Gagner plus : environ {amount}{per} de plus couvrirait l’écart et laisserait 10 % à épargner. Des heures en plus, des heures supplémentaires, un petit boulot, des missions en freelance ou des cours particuliers : tout aide."
-      },
-      "kept": "Sans changement : {list}.",
-      "startingPoint": "Ces limites sont un point de départ : répartissez l’argent entre elles comme cela convient à votre foyer."
     }
   },
   "common": {
@@ -1793,7 +1745,76 @@
       "many": "Afficher {count} autres idées",
       "other": "Afficher {count} autres idées"
     },
-    "count": "{done} sur {total} ajoutées à votre plan"
+    "count": "{done} sur {total} ajoutées à votre plan",
+    "fit": {
+      "title": "Objectif : dépenser au plus {amount}{per}",
+      "text": "Il vous resterait ainsi {pct} % de vos revenus de {income} à épargner. Votre plan réduit {done} sur les {needed} nécessaires.",
+      "reached": "Objectif atteint",
+      "toGo": "Encore {amount}{per}",
+      "steps": "Aujourd’hui {now}{per} → avec votre plan {plan}{per}"
+    },
+    "limits": {
+      "reason": {
+        "times": "{times}× le montant habituel pour {group} ({range}).",
+        "over": "Au-dessus de la fourchette habituelle ({range}) pour {group}.",
+        "check": "Vérifiez que ce montant est correct.",
+        "want": "Pas indispensable : peut baisser plus que les autres factures.",
+        "trim": "Dépense essentielle : seulement une petite baisse réaliste.",
+        "big": "Le loyer représente {pct} % de vos revenus. C’est un changement plus important : prévoyez-le pour la fin de votre bail."
+      },
+      "tips": {
+        "dining": "Gardez un seul soir de plats à emporter par semaine, cuisinez en grande quantité le week-end, et payez vos sorties au restaurant avec un montant fixe en espèces chaque semaine.",
+        "misc": "Attendez 24 heures avant tout achat non essentiel, supprimez les cartes enregistrées dans les applis d’achat, et désabonnez-vous des e-mails de promotions.",
+        "other": "Passez en revue ce qui compose ce montant, et supprimez ou reportez ce qui peut attendre quelques mois.",
+        "groceries": "Prévoyez les repas de la semaine, faites les courses une fois par semaine avec une liste, achetez les produits de base en gros et en marque de distributeur, et finissez les restes avant de racheter.",
+        "electricity": "Réglez la clim entre 24 et 26 °C, éteignez les appareils à la prise, utilisez des ampoules LED, et ne lancez le lave-linge et le sèche-linge qu’à pleine charge.",
+        "electricityLocal": "Gardez votre consommation mensuelle sous la tranche suivante : réglez la clim sur 26 °C et utilisez-la une heure de moins par jour, utilisez des ampoules LED, et éteignez la pompe à eau et le chauffe-eau quand vous n’en avez pas besoin.",
+        "waterGas": "Réparez les robinets et toilettes qui fuient, prenez des douches chaudes plus courtes, lavez à pleine charge, et cuisinez avec un couvercle et un autocuiseur.",
+        "waterGasLocal": "Baissez le chauffe-eau ou mettez-le sur minuterie, réparez les fuites, cuisinez avec un autocuiseur et un couvercle, et vérifiez que la facture n’est pas basée sur un relevé estimé ou erroné.",
+        "internet": "Passez à une offre moins chère, supprimez les lignes ou options que personne n’utilise, et demandez à votre opérateur son offre actuelle pour les clients existants.",
+        "fuel": "Regroupez vos courses en un seul trajet, covoiturez pour le travail ou l’école, gardez les pneus bien gonflés, et roulez à vitesse régulière.",
+        "fuelLocal": "Regroupez vos courses en un seul trajet, partagez les trajets pour le travail ou l’école, gardez les pneus gonflés et le moteur bien réglé, et prenez une moto ou un rickshaw pour les petits trajets.",
+        "transit": "Prenez un abonnement mensuel plutôt que des billets à l’unité, partagez les trajets, et faites les petits trajets à pied ou à vélo.",
+        "homeHelp": "Convenez de moins d’heures ou de jours par semaine pendant quelques mois, ou partagez une aide à domicile avec un voisin.",
+        "homeHelpLocal": "Convenez de moins de jours par semaine ou d’une tâche en moins (par exemple le cuisinier pour le dîner seulement) pendant quelques mois, ou partagez une aide à domicile avec un voisin.",
+        "familySupport": "Parlez à votre famille et convenez d’un montant plus petit et régulier pendant quelques mois, le temps que votre propre budget retrouve l’équilibre.",
+        "carIns": "Comparez les devis avant le renouvellement et demandez un bonus pour absence de sinistre. Gardez la couverture obligatoire.",
+        "homeIns": "Comparez les devis avant le renouvellement, et vérifiez que vous ne payez pas pour une couverture inutile.",
+        "rent": "Cherchez un logement moins cher ou un colocataire avant le renouvellement du bail, ou demandez à votre propriétaire un loyer plus bas en échange d’un bail plus long.",
+        "subscriptions": "Résiliez tout ce que vous n’avez pas utilisé le mois dernier, et gardez un seul service de streaming à la fois, en changeant tous les quelques mois.",
+        "generatorFuel": "Faites tourner le groupe électrogène seulement pour l’essentiel, utilisez l’onduleur pour les lampes et les ventilateurs, et faites-le entretenir pour qu’il consomme moins.",
+        "committee": "Un committee, c’est de l’épargne, pas une dépense. Mais si le versement est trop lourd en ce moment, rejoignez-en un plus petit à la fin de ce tour.",
+        "customNeed": "Demandez une option moins chère, ou payez un montant plus petit pendant quelques mois.",
+        "customWant": "Ce n’est pas indispensable : réduisez-le pendant quelques mois."
+      },
+      "result": {
+        "none": "Activez les changements que vous tiendrez, et ils compteront dans vos résultats.",
+        "reached": "Avec ce plan, vous dépenseriez {spend}{per} et il vous resterait {save} à épargner.",
+        "under": "Avec ce plan, vous dépenseriez {spend}{per} et il vous resterait encore {save}. Les changements plus importants ci-dessous vous permettraient d’épargner {pct} %.",
+        "short": "Même avec ce plan, il vous manquerait {short}{per} : réduire les dépenses ne suffit pas. Les changements plus importants ci-dessous peuvent combler l’écart."
+      },
+      "bigger": {
+        "housing": "Logement : le loyer est de {amount}{per}, soit {pct} % de vos revenus. Déménager dans moins cher, partager le logement ou louer une chambre est le changement le plus important.",
+        "loans": "Crédits : {amount}{per} partent en remboursements. Demandez à votre prêteur d’allonger la durée du prêt pour baisser la mensualité, remboursez d’abord celui au taux le plus élevé, et ne prenez pas de nouveau crédit pour l’instant.",
+        "car": "Voiture : carburant, assurance et éventuel prêt compris, elle coûte environ {amount}{per}. Si vous pouviez vous en passer, ou passer à un modèle moins cher et plus sobre, vous libéreriez de l’argent chaque mois.",
+        "school": "Frais de scolarité : {amount}{per}. Demandez à l’école un paiement échelonné, une réduction pour frères et sœurs ou une bourse.",
+        "yearly": "Dépenses annuelles : vous mettez {amount}{per} de côté pour elles. Reportez ou réduisez celles qui peuvent attendre un an.",
+        "income": "Gagner plus : environ {amount}{per} de plus couvrirait l’écart et laisserait 10 % à épargner. Des heures en plus, des heures supplémentaires, un petit boulot, des missions en freelance ou des cours particuliers : tout aide."
+      },
+      "kept": "Sans changement : {list}.",
+      "startingPoint": "Ces montants sont un point de départ : répartissez l’argent entre les postes comme cela convient à votre foyer."
+    },
+    "bills": {
+      "intro": "Vos dépenses dépassent ce que vos revenus peuvent supporter : voici ce qu’il faut réduire, poste par poste, en commençant par la plus grosse économie. Ouvrez Détails pour voir pourquoi et comment. Désactivez ce que vous ne pouvez pas faire ; seul ce qui est activé compte.",
+      "more": "Autres postes à réduire",
+      "limitPart": "Limite de dépense : {amount}{per} au plus",
+      "parts": "D’où vient cette économie",
+      "showMore": {
+        "one": "Afficher {count} poste de plus",
+        "other": "Afficher {count} postes de plus"
+      },
+      "showFewer": "Afficher moins de postes"
+    }
   },
   "goals": {
     "bucket": {
@@ -1894,7 +1915,15 @@
       "emergencyNoneNeedsShare": "Rien d’épargné pour l’instant. Pour 3 mois, il faut y consacrer une part de votre épargne."
     },
     "removed": "Objectif « {name} » supprimé",
-    "untitled": "Sans titre"
+    "untitled": "Sans titre",
+    "presets": {
+      "holiday": "Vacances",
+      "homeDeposit": "Apport pour un logement",
+      "car": "Voiture",
+      "wedding": "Mariage",
+      "education": "Études des enfants",
+      "gadget": "Nouveau téléphone ou ordinateur"
+    }
   },
   "payday": {
     "list": {

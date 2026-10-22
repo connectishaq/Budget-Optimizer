@@ -42,6 +42,7 @@ Never present an estimate as a fact: if it isn't from a source you cite, mark it
     { "id": "gb-energy-switch", "pool": "electricity", "title": "…", "why": "…", "tips": ["…", "…", "…"], "pct": 0.1,
       "effort": "Easy", "upfront": 0, "profiles": ["single"] }
   ],
+  "hideFields": ["maintenance"],    // general input fields this country's own bills replace (see "hideFields" below)
   "hideRules": [],                  // ids of existing rules that don't apply here (see src/engine/rules.js RULES ids)
   "sources": [ { "title": "…", "url": "https://…", "usedFor": "rent, groceries" } ],
   "lastReviewed": "2026-10-19"
@@ -55,6 +56,13 @@ bill when `need` is true (otherwise a nice-to-have), and are available to saving
 `ctx.v.<key>`. `label` and `help` here are the English source: the page shows
 `countryFields.<CODE>.<key>.label/help` from the message files (copy new ones into `en.json`, then
 translate). Example budgets fill must-pay ones at the middle of their range.
+
+### hideFields — general boxes the country's own bills replace
+The general **Maintenance and service charges** box (`maintenance`, in Housing) is for apartment,
+society, building or HOA fees. Where an `extraFields` bill already asks for exactly that (India's
+`societyMaintenance`, Brazil's `condominio`…), list `"maintenance"` here so the household isn't asked
+twice; a hidden field always counts as 0. There are no typical ranges for `maintenance` yet, so it
+shows no "typical" hint and is never cut by the plan.
 
 ### localTips — the country's own savings ideas
 Each becomes a savings card like the built-in rules (src/engine/rules.js `localRules`), shown when
