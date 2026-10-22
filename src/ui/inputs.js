@@ -186,8 +186,10 @@ function groupCard(g, index, collapsed) {
   <details class="group-card card" data-group="${g.id}" ${collapsed ? '' : 'open'}>
     <summary>
       <span class="grp-num w-5 shrink-0 text-sm tabular-nums text-slate-400">${index + 1}</span>
-      <span class="min-w-0 flex-1 font-semibold text-slate-900 dark:text-white">${esc(g.title)}</span>
-      <span class="text-sm tabular-nums muted" data-sub="${g.id}"></span>
+      <span class="min-w-0 flex-1">
+        <span class="block font-semibold text-slate-900 dark:text-white">${esc(g.title)}</span>
+        <span class="block text-sm tabular-nums muted empty:hidden" data-sub="${g.id}"></span>
+      </span>
       ${icon('chevron-down', 'chev text-slate-500')}
     </summary>
     <div class="border-t border-slate-100 px-4 pb-5 pt-4 dark:border-slate-800">
