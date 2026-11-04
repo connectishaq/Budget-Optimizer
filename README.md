@@ -134,3 +134,4 @@ same file in `src/i18n/guides/<lang>/`; guides without one simply aren't built i
 Everything stays in the browser. The current month saves itself (keyed `YYYY-MM`) a moment after each change, replacing that month's entry; "Save this month" does the same and confirms it. Each month keeps every input, the plan choices, the totals, the health score and the 50/30/20 split, so any month can be compared or opened again. Up to 60 months are kept, and the page asks before the oldest one would be removed. Snapshots saved by older versions move into history automatically as "totals only" months.
 
 Backups (`budget-backup-YYYY-MM.json`) hold every month plus the settings. Opening one shows what it contains and offers Merge (the more recently saved copy of a month wins) or Replace. Older backup files still open.
+
