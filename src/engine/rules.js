@@ -21,6 +21,8 @@
 //   upfront              key into the benchmark `costs`, or fn(ctx) in local currency
 //   tips(ctx)            three short action steps, most useful first
 //   flag(ctx)            optional warning line
+//   guide                optional money guide slug (src/i18n/guide-langs.js) linked
+//                        from the card's details as "Read the guide"
 //
 // ctx = { v, profile, P, B, C, country, currency, income, debts, subs, fmt }
 //   v: monthly inputs · P: PROFILES[profile] (name, group) · B: benchmarks for
@@ -85,6 +87,7 @@ export const RULES = [
   // ---------------- Utilities ----------------
   {
     id: 'utilities-efficiency', category: 'Utilities', icon: 'bolt', kind: 'cash',
+    guide: 'cut-electricity-bill',
     get label() { return t('rules.utilitiesEfficiency.label'); },
     get noun() { return t('rules.utilitiesEfficiency.noun'); },
     pools: ['electricity', 'waterGas'],
@@ -97,6 +100,7 @@ export const RULES = [
   },
   {
     id: 'smart-thermostat', category: 'Utilities', icon: 'thermometer', kind: 'cash',
+    guide: 'cut-electricity-bill',
     get label() { return t('rules.smartThermostat.label'); },
     get noun() { return t('rules.smartThermostat.noun'); },
     pools: ['electricity', 'waterGas'],
@@ -109,6 +113,7 @@ export const RULES = [
   },
   {
     id: 'electricity-slab', category: 'Utilities', icon: 'bolt', kind: 'cash',
+    guide: 'cut-electricity-bill',
     get label() { return t('rules.electricitySlab.label'); },
     get noun() { return t('rules.electricitySlab.noun'); },
     pools: ['electricity'],
@@ -125,6 +130,7 @@ export const RULES = [
   },
   {
     id: 'utilities-tuneup', category: 'Utilities', icon: 'lightbulb', kind: 'cash',
+    guide: 'cut-electricity-bill',
     get label() { return t('rules.utilitiesTuneup.label'); },
     get noun() { return t('rules.utilitiesTuneup.noun'); },
     pools: ['electricity', 'waterGas'],
@@ -215,6 +221,7 @@ export const RULES = [
   // ---------------- Family & Lifestyle ----------------
   {
     id: 'groceries-plan', category: 'Groceries', icon: 'cart', kind: 'cash',
+    guide: 'family-grocery-budget',
     get label() { return t('rules.groceriesPlan.label'); },
     get noun() { return t('rules.groceriesPlan.noun'); },
     pools: ['groceries'],
@@ -233,6 +240,7 @@ export const RULES = [
   },
   {
     id: 'dining-swap', category: 'Eating out', icon: 'utensils', kind: 'cash',
+    guide: 'family-grocery-budget',
     get label() { return t('rules.diningSwap.label'); },
     get noun() { return t('rules.diningSwap.noun'); },
     pools: ['dining'],
@@ -245,6 +253,7 @@ export const RULES = [
   },
   {
     id: 'impulse-24h', category: 'Shopping', icon: 'hourglass', kind: 'cash',
+    guide: 'stop-impulse-spending',
     get label() { return t('rules.impulse24h.label'); },
     get noun() { return t('rules.impulse24h.noun'); },
     pools: ['misc'],
@@ -287,6 +296,7 @@ export const RULES = [
   // ---------------- Subscriptions ----------------
   {
     id: 'subs-cancel-unused', category: 'Subscriptions', icon: 'repeat', kind: 'cash',
+    guide: 'subscription-audit',
     get label() { return t('rules.subsCancelUnused.label'); },
     get noun() { return t('rules.subsCancelUnused.noun'); },
     pools: ['subsRarely'],
@@ -302,6 +312,7 @@ export const RULES = [
   },
   {
     id: 'subs-rotate', category: 'Subscriptions', icon: 'tv', kind: 'cash',
+    guide: 'subscription-audit',
     get label() { return t('rules.subsRotate.label'); },
     get noun() { return t('rules.subsRotate.noun'); },
     pools: ['subsStreaming'],
@@ -314,6 +325,7 @@ export const RULES = [
   },
   {
     id: 'subs-tools-yearly', category: 'Subscriptions', icon: 'laptop', kind: 'cash',
+    guide: 'subscription-audit',
     get label() { return t('rules.subsToolsYearly.label'); },
     get noun() { return t('rules.subsToolsYearly.noun'); },
     pools: ['subsTools'],
@@ -332,6 +344,7 @@ export const RULES = [
   // ---------------- Debt ----------------
   {
     id: 'debt-avalanche', category: 'Debt', icon: 'card', kind: 'interest',
+    guide: 'pay-off-credit-card-debt',
     get label() { return t('rules.debtAvalanche.label'); },
     get noun() { return t('rules.debtAvalanche.noun'); },
     pools: ['cardInterest'],

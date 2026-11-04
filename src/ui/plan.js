@@ -19,6 +19,7 @@ import { helpBtn } from './help.js';
 import { t, has, getLanguage } from '../i18n/index.js';
 import { GROUPS } from './inputs.js';
 import { localFields } from '../engine/calculate.js';
+import { GUIDE_BASES } from '../i18n/guide-langs.js';
 
 const rows = new Map(); // rule id -> element
 const EFFORT_PILL = {
@@ -32,6 +33,22 @@ let rowsLang = null; // language the rows were built in; rebuilt when it changes
 const open = new Set(); // ids whose details are expanded
 const MORE_VISIBLE = 4; // "More ideas" rows shown before "Show N more"
 let showAllMore = false;
+// The money guide an idea links to (rule.guide), named with the footer's guide links
+const GUIDE_NAMES = {
+  'cut-electricity-bill': 'layout.footer.tips.utilities',
+  'subscription-audit': 'layout.footer.tips.subscriptions',
+  'family-grocery-budget': 'layout.footer.tips.food',
+  'stop-impulse-spending': 'layout.footer.tips.impulse',
+  'pay-off-credit-card-debt': 'layout.footer.tips.debt'
+};
+
+/** "Read the guide: …" under an idea's (or a bill's) steps, in this language's guides when there are any. */
+function guideLink(item) {
+  const slug = item?.rule?.guide;
+  if (!GUIDE_NAMES[slug]) return '';
+  const base = GUIDE_BASES[getLanguage()] || GUIDE_BASES.en;
+  return `<p class="mt-2"><a class="link" href="${base}${slug}/">${esc(t('plan.readGuide', { name: t(GUIDE_NAMES[slug]) }))}</a></p>`;
+}
 
 /** The "How did we get this?" paragraph, in plain words with the real sums. */
 export function explain(item, view) {
@@ -88,6 +105,7 @@ function createRow(item) {
       <div>
         <p class="font-medium text-slate-900 dark:text-white">${t('plan.whatToDo')}</p>
         <ul class="mt-1 list-disc space-y-1 ps-5 text-slate-700 dark:text-slate-300" data-ref="tips"></ul>
+        ${guideLink(item)}
       </div>
 
       <div>
@@ -330,6 +348,7 @@ function billHtml(row, state, view, income) {
       ${tips.length ? `<div>
         <p class="font-medium text-slate-900 dark:text-white">${t('plan.whatToDo')}</p>
         <ul class="mt-1 list-disc space-y-1 ps-5 text-slate-700 dark:text-slate-300">${tips.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+        ${guideLink(row.ideas.find((p) => GUIDE_NAMES[p.rule?.guide]))}
       </div>` : ''}
       <div>
         <p class="font-medium text-slate-900 dark:text-white">${t('plan.bills.parts')}</p>

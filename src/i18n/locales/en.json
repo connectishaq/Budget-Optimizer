@@ -1514,7 +1514,7 @@
     }
   },
   "seo": {
-    "title": "Household Budget Calculator & Savings Planner | SpendMath",
+    "title": "Free Household Budget Calculator & Savings Planner | SpendMath",
     "description": "Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.",
     "ogTitle": "SpendMath: Household Budget Calculator & Savings Planner",
     "ogDescription": "Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.",
@@ -1671,6 +1671,7 @@
     "youCouldSpend": "You could spend",
     "youSave": "You save",
     "whatToDo": "What to do",
+    "readGuide": "Read the guide: {name}",
     "howDidWeGetThis": "How did we get this?",
     "howMuchCut": "How much do you think you can cut?",
     "keepSuggestion": "Not sure? Keep our suggestion.",
@@ -2034,6 +2035,7 @@
   "layout": {
     "header": {
       "skipToContent": "Skip to content",
+      "homeLink": "SpendMath home",
       "nav": {
         "calculator": "Calculator",
         "contact": "Contact",
@@ -2076,7 +2078,10 @@
         "utilities": "Cut utility bills",
         "subscriptions": "Stop subscription creep",
         "food": "Spend less on food",
-        "impulse": "Beat impulse spending"
+        "impulse": "Beat impulse spending",
+        "emergency": "Build an emergency fund",
+        "rule503020": "Use the 50/30/20 rule",
+        "debt": "Pay off credit card debt"
       },
       "legal": {
         "heading": "Help & legal",
@@ -2228,9 +2233,9 @@
     },
     "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
     "seo": {
-      "title": "Privacy Policy | SpendMath",
+      "title": "Privacy Policy: Your Data, Cookies & Rights | SpendMath",
       "description": "Your budget stays in your browser: no accounts, nothing stored on our servers. What we keep on your device, how Google ads use cookies, and your rights.",
-      "ogTitle": "Privacy Policy | SpendMath",
+      "ogTitle": "Privacy Policy: Your Data, Cookies & Rights | SpendMath",
       "ogDescription": "Your budget numbers never leave your browser. What we store, how ads use cookies, and your rights.",
       "ldName": "Privacy Policy",
       "ldDescription": "How SpendMath handles your data: budget numbers stay in your browser, what is stored on your device, advertising cookies and your privacy rights."
@@ -2337,9 +2342,9 @@
     },
     "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
     "seo": {
-      "title": "Terms of Use | SpendMath",
+      "title": "Terms of Use: Estimates, Not Financial Advice | SpendMath",
       "description": "The rules for using our free household budget calculator. Results are estimates for planning, not financial advice. Covers accuracy, fair use and liability.",
-      "ogTitle": "Terms of Use | SpendMath",
+      "ogTitle": "Terms of Use: Estimates, Not Financial Advice | SpendMath",
       "ogDescription": "Free to use, estimates only, not financial advice. The plain-English terms for our budget calculator.",
       "ldName": "Terms of Use",
       "ldDescription": "The terms for using the free SpendMath calculator: estimates only, not financial advice, acceptable use and limits of liability."
@@ -2402,9 +2407,9 @@
       }
     },
     "seo": {
-      "title": "Contact Us | SpendMath",
+      "title": "Contact Us: Questions, Bug Reports & Ideas | SpendMath",
       "description": "Questions, bug reports or ideas for the free budget calculator? Send us a message and we usually reply within 2 working days. We can’t give financial advice.",
-      "ogTitle": "Contact Us | SpendMath",
+      "ogTitle": "Contact Us: Questions, Bug Reports & Ideas | SpendMath",
       "ogDescription": "Found a bug, have an idea or a question about a calculation? Send us a message.",
       "ldName": "Contact Us",
       "ldDescription": "Send questions, bug reports and ideas about the SpendMath calculator."

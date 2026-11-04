@@ -1651,6 +1651,7 @@
     "youCouldSpend": "Bisa menjadi",
     "youSave": "Anda hemat",
     "whatToDo": "Yang perlu dilakukan",
+    "readGuide": "Baca panduan: {name}",
     "howDidWeGetThis": "Dari mana angka ini?",
     "howMuchCut": "Menurut Anda, berapa yang bisa dipangkas?",
     "keepSuggestion": "Ragu? Pakai saran kami.",
@@ -2007,6 +2008,7 @@
   "layout": {
     "header": {
       "skipToContent": "Langsung ke konten",
+      "homeLink": "Beranda SpendMath",
       "nav": {
         "calculator": "Kalkulator",
         "contact": "Kontak",
@@ -2049,7 +2051,10 @@
         "utilities": "Pangkas tagihan utilitas",
         "subscriptions": "Hentikan langganan yang terus bertambah",
         "food": "Hemat biaya makan",
-        "impulse": "Atasi belanja impulsif"
+        "impulse": "Atasi belanja impulsif",
+        "emergency": "Bangun dana darurat",
+        "rule503020": "Terapkan aturan 50/30/20",
+        "debt": "Lunasi utang kartu kredit"
       },
       "legal": {
         "heading": "Bantuan & hukum",

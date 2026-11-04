@@ -636,3 +636,17 @@ describe('maintenance charges', () => {
     expect(t.spend).toBe(20000);
   });
 });
+
+describe('ideas link to money guides', () => {
+  it('every rule.guide is a real guide with a footer name for the link', async () => {
+    const { GUIDE_SLUGS } = await import('../i18n/guide-langs.js');
+    const en = (await import('../i18n/locales/en.json')).default;
+    const named = { 'cut-electricity-bill': 'utilities', 'subscription-audit': 'subscriptions', 'family-grocery-budget': 'food', 'stop-impulse-spending': 'impulse', 'pay-off-credit-card-debt': 'debt' };
+    const linked = RULES.filter((r) => r.guide);
+    expect(linked.length).toBeGreaterThan(0);
+    for (const r of linked) {
+      expect(GUIDE_SLUGS).toContain(r.guide);
+      expect(en.layout.footer.tips[named[r.guide]]).toBeTruthy();
+    }
+  });
+});

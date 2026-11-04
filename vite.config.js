@@ -9,6 +9,7 @@ import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
 import { buildGuides, renderGuides, guideSitemapPages } from './scripts/build-guides.mjs';
 import { GUIDE_BASES } from './src/i18n/guide-langs.js';
 import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
+import { sourceRel } from './scripts/official-sources.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about', 'guides'];
@@ -90,6 +91,7 @@ function siteConfig(env) {
     async closeBundle() {
       const robots = path.join(outDir, 'robots.txt');
       const sitemap = path.join(outDir, 'sitemap.xml');
+      const llms = path.join(outDir, 'llms.txt');
       if (!isBuild || !fs.existsSync(robots)) return; // dev server / tests: nothing to finalise
       const today = new Date().toISOString().slice(0, 10);
       // Real example figures in the static HTML: the home page (US example, as
@@ -105,6 +107,8 @@ function siteConfig(env) {
       // Money guides (/guides/…, /ur-pk/guides/…), built from src/i18n/guides
       const guides = buildGuides({ root: __dirname, outDir, siteUrl });
       console.log(`✓ ${guides.length} guide pages`);
+      // llms.txt (llmstxt.org): absolute links with SITE_URL, else site-relative ones
+      if (fs.existsSync(llms)) fs.writeFileSync(llms, fs.readFileSync(llms, 'utf8').replace(/__SITE_URL__/g, siteUrl));
       if (siteUrl) {
         fs.writeFileSync(robots, fs.readFileSync(robots, 'utf8').replace(/__SITE_URL__/g, siteUrl));
         fs.writeFileSync(sitemap, sitemapXml(siteUrl, today, [
@@ -180,7 +184,8 @@ function countrySourcesHtml() {
   const count = (n) => `<span data-i18n="about.table.sourceCount" data-i18n-vars='{"count":${n}}'>${n === 1 ? '1 source' : `${n} sources`}</span>`;
   const rows = files.map((c) => `<tr><td>${name(c)}</td><td>${esc(c.currency || '')}</td><td>${date(c.lastReviewed)}</td><td>${c.sources.length}</td></tr>`).join('\n              ');
   const lists = files.filter((c) => c.sources.length).map((c) => {
-    const items = c.sources.map((s) => `<li><a href="${esc(s.url)}" rel="noopener nofollow" target="_blank">${esc(s.title)}</a></li>`).join('');
+    // Official sources (government, central banks, statistics offices) are followed; others stay nofollow
+    const items = c.sources.map((s) => `<li><a href="${esc(s.url)}" rel="${sourceRel(s.url)}" target="_blank">${esc(s.title)}</a></li>`).join('');
     return `<details class="faq"><summary><span>${name(c)} · ${count(c.sources.length)}</span></summary><ul class="mt-0 pb-4 pe-4 ps-9 text-sm">${items}</ul></details>`;
   }).join('\n          ');
   return `<div class="table-wrap">

@@ -2,12 +2,14 @@
   "slug": "subscription-audit",
   "keyword": "subscription audit",
   "seo": {
-    "title": "Subscription Audit: Find and Cancel What You Don't Use",
+    "title": "Subscription Audit: How to Find and Cancel What You Don't Use",
     "description": "A simple subscription audit: find every recurring charge, decide what to keep, cancel the rest and stop new ones from creeping back in."
   },
   "h1": "Subscription audit: find and cancel what you don't use",
   "summary": "A step-by-step way to list every recurring charge in your household, decide what is worth keeping, and cancel the rest without stress.",
   "readMinutes": 6,
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
   "intro_html": "<p>Subscriptions are easy to start and easy to forget. A streaming service here, extra cloud storage there, a fitness app you tried in January, a free trial that quietly turned into a paid plan. Each one feels small, so nobody looks at the total.</p><p>A <strong>subscription audit</strong> is simply sitting down once, finding every recurring charge, and asking: \"Do we still use this?\" It takes about an hour, it does not mean giving up the things you enjoy, and the money you free up comes back every single month. Here is how to do it, step by step.</p>",
   "sections": [
     {
@@ -53,6 +55,6 @@
       "a": "Search your email for the name shown on your statement, and check your phone's app store and your mobile bill. If you still cannot identify it, contact your bank or card provider and ask them about it."
     }
   ],
-  "related": ["stop-impulse-spending", "50-30-20-rule", "emergency-fund"],
+  "related": ["stop-impulse-spending", "cut-electricity-bill", "50-30-20-rule"],
   "sources": []
 }

@@ -12,6 +12,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
 import { GUIDE_BASES } from '../src/i18n/guide-langs.js';
+import { publisher } from './structured-data.mjs';
 
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -67,10 +68,15 @@ export function localizeLinks(doc, { home, lang, guidesBase }) {
   }
 }
 
-/** hreflang links for every page, plus x-default (the home page). */
+/**
+ * hreflang links for every page: the home page as generic English ("en", so it
+ * lists itself), every language/country page, and x-default (the home page).
+ * The same set goes on all of them and in the sitemap.
+ */
 export function alternateLinks(siteUrl) {
   if (!siteUrl) return '';
   return [
+    `<link rel="alternate" hreflang="en" href="${siteUrl}/">`,
     ...LOCALE_PAGES.map((p) => `<link rel="alternate" hreflang="${bcp47(p.path)}" href="${siteUrl}/${p.path}/">`),
     `<link rel="alternate" hreflang="x-default" href="${siteUrl}/">`
   ].join('\n  ');
@@ -79,6 +85,7 @@ export function alternateLinks(siteUrl) {
 /** The sitemap: the home page and every locale page, each listing all alternates. */
 export function sitemapXml(siteUrl, today, extraPages = []) {
   const alts = [
+    `    <xhtml:link rel="alternate" hreflang="en" href="${siteUrl}/"/>`,
     ...LOCALE_PAGES.map((p) => `    <xhtml:link rel="alternate" hreflang="${bcp47(p.path)}" href="${siteUrl}/${p.path}/"/>`),
     `    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}/"/>`
   ].join('\n');
@@ -106,7 +113,7 @@ ${[
 `;
 }
 
-function jsonLd(t, page, currency, pageUrl) {
+function jsonLd(t, page, currency, pageUrl, siteUrl) {
   const app = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -115,7 +122,7 @@ function jsonLd(t, page, currency, pageUrl) {
     operatingSystem: 'Any (web browser)',
     browserRequirements: 'Requires JavaScript',
     isAccessibleForFree: true,
-    publisher: { '@type': 'Organization', name: 'SpendMath' },
+    publisher: publisher(siteUrl),
     inLanguage: bcp47(page.path),
     offers: { '@type': 'Offer', price: '0', priceCurrency: currency },
     description: t('seo.app.description'),
@@ -230,7 +237,7 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
     for (const el of head.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang], meta[property="og:url"], script[type="application/ld+json"]')) el.remove();
     const tags = [];
     if (pageUrl) tags.push(`<link rel="canonical" href="${pageUrl}">`, `<meta property="og:url" content="${pageUrl}">`, alternateLinks(siteUrl));
-    tags.push(jsonLd(t, page, country.currency, pageUrl));
+    tags.push(jsonLd(t, page, country.currency, pageUrl, siteUrl));
     head.insertAdjacentHTML('beforeend', `  ${tags.join('\n  ')}\n`);
 
     const dir = path.join(outDir, page.path);

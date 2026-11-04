@@ -1713,6 +1713,7 @@
     "youCouldSpend": "Vous pourriez dépenser",
     "youSave": "Vous économisez",
     "whatToDo": "Que faire",
+    "readGuide": "Lire le guide : {name}",
     "howDidWeGetThis": "Comment avons-nous calculé ?",
     "howMuchCut": "De combien pensez-vous pouvoir réduire ?",
     "keepSuggestion": "Vous hésitez ? Gardez notre suggestion.",
@@ -2082,6 +2083,7 @@
   "layout": {
     "header": {
       "skipToContent": "Aller au contenu",
+      "homeLink": "Accueil SpendMath",
       "nav": {
         "calculator": "Calculateur",
         "contact": "Contact",
@@ -2124,7 +2126,10 @@
         "utilities": "Réduire les factures d’énergie",
         "subscriptions": "Freiner l’accumulation d’abonnements",
         "food": "Dépenser moins pour manger",
-        "impulse": "Vaincre les achats impulsifs"
+        "impulse": "Vaincre les achats impulsifs",
+        "emergency": "Constituer une épargne de précaution",
+        "rule503020": "Appliquer la règle 50/30/20",
+        "debt": "Rembourser sa carte de crédit"
       },
       "legal": {
         "heading": "Aide et mentions légales",

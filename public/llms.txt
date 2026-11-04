@@ -1,0 +1,39 @@
+# SpendMath
+
+> SpendMath is a free, private household budget calculator and savings planner. You enter your income and bills step by step, and it shows where your money goes, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow. Every calculation runs in the browser: nothing you type is sent to a server, and there is no sign-up.
+
+- It works in 13 currencies with typical household amounts and local tips per country, and shows rupee amounts in lakh and crore.
+- It is available in English, Urdu, Hindi, Arabic and Spanish, with a page per language and country (for example /en-gb/, /ur-pk/, /ar-ae/).
+- The figures are estimates for planning, not financial advice.
+
+## Calculator
+
+- [Household budget calculator](__SITE_URL__/): the calculator itself, with an FAQ on how the savings estimates and the budget health score are worked out
+- [Budget calculator for Pakistan (Urdu)](__SITE_URL__/ur-pk/): the same calculator in Urdu with Pakistani amounts
+
+## Guides
+
+- [Money guides](__SITE_URL__/guides/): all plain-language guides to budgeting, saving and debt
+- [How much should you have in an emergency fund?](__SITE_URL__/guides/emergency-fund/): working out a target and building one step by step
+- [The 50/30/20 rule explained](__SITE_URL__/guides/50-30-20-rule/): splitting take-home pay into needs, wants and savings, with worked examples
+- [How to pay off credit card debt faster](__SITE_URL__/guides/pay-off-credit-card-debt/): the avalanche and snowball methods with a worked example
+- [How to make a budget on your first salary](__SITE_URL__/guides/first-salary-budget/): a first budget that lasts the whole month
+- [Student budget](__SITE_URL__/guides/student-budget/): managing money on a grant, allowance or part-time job
+- [How to reduce your electricity bill](__SITE_URL__/guides/cut-electricity-bill/): what uses power, price slabs, backup power and tariffs
+- [How to stop impulse spending](__SITE_URL__/guides/stop-impulse-spending/): habits that put a pause between wanting and paying
+- [Subscription audit](__SITE_URL__/guides/subscription-audit/): listing recurring charges and cancelling what you don't use
+- [Grocery budget for your family](__SITE_URL__/guides/family-grocery-budget/): setting a food budget you can keep
+- [Saving on irregular income](__SITE_URL__/guides/irregular-income/): covering the basics and building a buffer when pay changes
+
+## About and methodology
+
+- [About SpendMath](__SITE_URL__/about/): why the tool exists, who runs it and its editorial standards
+- [How the calculator works](__SITE_URL__/about/#how): how bills are compared with typical households and how each savings idea is worked out
+- [Where the numbers come from](__SITE_URL__/about/#numbers): the sources behind each country's typical amounts, with the date each was last reviewed
+- [Privacy policy](__SITE_URL__/privacy-policy/): budget numbers stay in your browser; what is stored on your device and how ads use cookies
+
+## Optional
+
+- [Terms of use](__SITE_URL__/terms-of-use/): estimates only, not financial advice
+- [Contact](__SITE_URL__/contact/): questions, bug reports and ideas
+- [Sitemap](__SITE_URL__/sitemap.xml): every page, with its language versions

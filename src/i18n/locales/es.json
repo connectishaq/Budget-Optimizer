@@ -1713,6 +1713,7 @@
     "youCouldSpend": "Podrías gastar",
     "youSave": "Ahorras",
     "whatToDo": "Qué hacer",
+    "readGuide": "Lee la guía: {name}",
     "howDidWeGetThis": "¿Cómo lo hemos calculado?",
     "howMuchCut": "¿Cuánto crees que puedes recortar?",
     "keepSuggestion": "¿No lo tienes claro? Mantén nuestra sugerencia.",
@@ -2082,6 +2083,7 @@
   "layout": {
     "header": {
       "skipToContent": "Saltar al contenido",
+      "homeLink": "Inicio de SpendMath",
       "nav": {
         "calculator": "Calculadora",
         "contact": "Contacto",
@@ -2124,7 +2126,10 @@
         "utilities": "Reduce las facturas de suministros",
         "subscriptions": "Frena las suscripciones que se acumulan",
         "food": "Gasta menos en comida",
-        "impulse": "Vence las compras por impulso"
+        "impulse": "Vence las compras por impulso",
+        "emergency": "Crea un fondo de emergencia",
+        "rule503020": "Usa la regla 50/30/20",
+        "debt": "Paga la deuda de la tarjeta de crédito"
       },
       "legal": {
         "heading": "Ayuda y aviso legal",

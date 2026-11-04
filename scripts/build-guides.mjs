@@ -15,6 +15,8 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { GUIDE_BASES, GUIDE_SLUGS } from '../src/i18n/guide-langs.js';
 import { makeT, applyMessages, localizeLinks } from './prerender-locales.mjs';
+import { publisher, author, breadcrumbList } from './structured-data.mjs';
+import { sourceRel } from './official-sources.mjs';
 
 const RTL = new Set(['ar', 'ur']);
 const HREFLANG = { en: 'en', ur: 'ur-PK' };
@@ -49,7 +51,7 @@ function styleBody(html) {
   for (const el of doc.querySelectorAll('ol')) el.setAttribute('class', 'mb-4 list-decimal space-y-1.5 ps-5');
   for (const el of doc.querySelectorAll('a')) {
     el.setAttribute('class', 'link');
-    if (/^https?:/.test(el.getAttribute('href') || '')) el.setAttribute('rel', 'noopener nofollow');
+    if (/^https?:/.test(el.getAttribute('href') || '')) el.setAttribute('rel', sourceRel(el.getAttribute('href')));
   }
   return doc.querySelector('div').innerHTML;
 }
@@ -91,7 +93,7 @@ function articleMain(t, lang, g, guides) {
   const toc = [...g.sections.map((s, i) => `<li><a href="#s${i + 1}" class="${TOC_LINK}">${esc(s.h2)}</a></li>`), `<li><a href="#faq" class="${TOC_LINK}">${esc(t('guides.faqTitle'))}</a></li>`].join('');
   const faq = g.faq.map((f) => `<details class="faq"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`).join('\n            ');
   const related = g.related.filter((s) => guides.has(s)).map((s) => `<li><a href="${base}${s}/" class="link">${esc(guides.get(s).h1)}</a></li>`).join('');
-  const sources = (g.sources || []).map((s) => `<li><a href="${esc(s.url)}" class="link" rel="noopener nofollow" target="_blank">${esc(s.title)}</a></li>`).join('');
+  const sources = (g.sources || []).map((s) => `<li><a href="${esc(s.url)}" class="link" rel="${sourceRel(s.url)}" target="_blank">${esc(s.title)}</a></li>`).join('');
   return `${breadcrumb(t, lang, [{ name: t('about.breadcrumb.home'), href: home }, { name: t('guides.index.breadcrumb'), href: base }, { name: g.h1 }])}
     <div class="mt-4 grid gap-10 lg:grid-cols-12">
       <aside class="hidden lg:col-span-3 lg:block">
@@ -186,8 +188,6 @@ export function buildGuides({ root, outDir, siteUrl }) {
 export function renderGuides({ root, template, siteUrl }) {
   const en = readJson(path.join(root, 'src/i18n/locales/en.json'));
   const all = Object.fromEntries(Object.keys(GUIDE_BASES).map((l) => [l, loadGuides(root, l)]));
-  const today = new Date().toISOString().slice(0, 10);
-  const org = { '@type': 'Organization', name: 'SpendMath' };
   const written = new Map();
   const write = (pagePath, doc) => written.set(pagePath, doc.toString());
 
@@ -204,11 +204,7 @@ export function renderGuides({ root, template, siteUrl }) {
       doc.querySelector('main').set_content(`\n    ${main}\n  `);
       return doc;
     };
-    const crumbs = (items) => ({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, ...(it.href && siteUrl ? { item: `${siteUrl}${it.href}` } : {}) }))
-    });
+    const crumbs = (items) => breadcrumbList(siteUrl, items);
 
     // Index
     const indexAlts = Object.fromEntries(Object.entries(GUIDE_BASES).filter(([l]) => all[l].size).map(([l, b]) => [l, b]));
@@ -216,8 +212,11 @@ export function renderGuides({ root, template, siteUrl }) {
     setHead(index, {
       title: t('guides.index.seoTitle'), description: t('guides.index.seoDescription'), imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: base, alternates: indexAlts,
       ld: [
-        { '@context': 'https://schema.org', '@type': 'CollectionPage', name: t('guides.index.title'), description: t('guides.index.seoDescription'), inLanguage: HREFLANG[lang] },
-        crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb') }])
+        {
+          '@context': 'https://schema.org', '@type': 'CollectionPage', name: t('guides.index.title'), description: t('guides.index.seoDescription'), inLanguage: HREFLANG[lang],
+          ...(siteUrl ? { url: `${siteUrl}${base}` } : {}), publisher: publisher(siteUrl)
+        },
+        crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb'), href: base }])
       ]
     });
     write(base, index);
@@ -231,11 +230,11 @@ export function renderGuides({ root, template, siteUrl }) {
         ld: [
           {
             '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.seo.description, inLanguage: HREFLANG[lang],
-            dateModified: today, author: org, publisher: org,
-            ...(siteUrl ? { mainEntityOfPage: `${siteUrl}${pagePath}`, image: `${siteUrl}/og-image.png` } : {})
+            datePublished: g.datePublished, dateModified: g.dateModified, author: author(siteUrl), publisher: publisher(siteUrl),
+            ...(siteUrl ? { url: `${siteUrl}${pagePath}`, mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}${pagePath}` }, image: `${siteUrl}/og-image.png` } : {})
           },
           { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: HREFLANG[lang], mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
-          crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb'), href: base }, { name: g.h1 }])
+          crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb'), href: base }, { name: g.h1, href: pagePath }])
         ]
       });
       write(pagePath, doc);

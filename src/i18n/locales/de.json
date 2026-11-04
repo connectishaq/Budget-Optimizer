@@ -1682,6 +1682,7 @@
     "youCouldSpend": "Du könntest ausgeben",
     "youSave": "Du sparst",
     "whatToDo": "Was du tun kannst",
+    "readGuide": "Ratgeber lesen: {name}",
     "howDidWeGetThis": "Wie kommen wir darauf?",
     "howMuchCut": "Wie viel kannst du deiner Meinung nach einsparen?",
     "keepSuggestion": "Unsicher? Behalte unseren Vorschlag.",
@@ -2045,6 +2046,7 @@
   "layout": {
     "header": {
       "skipToContent": "Zum Inhalt springen",
+      "homeLink": "SpendMath-Startseite",
       "nav": {
         "calculator": "Rechner",
         "contact": "Kontakt",
@@ -2087,7 +2089,10 @@
         "utilities": "Nebenkosten senken",
         "subscriptions": "Abo-Falle stoppen",
         "food": "Weniger fürs Essen ausgeben",
-        "impulse": "Spontankäufe besiegen"
+        "impulse": "Spontankäufe besiegen",
+        "emergency": "Notgroschen aufbauen",
+        "rule503020": "Die 50/30/20-Regel nutzen",
+        "debt": "Kreditkartenschulden abbezahlen"
       },
       "legal": {
         "heading": "Hilfe & Rechtliches",

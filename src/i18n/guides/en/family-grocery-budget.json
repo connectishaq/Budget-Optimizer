@@ -8,6 +8,8 @@
   "h1": "How to set a grocery budget for your family (and stick to it)",
   "summary": "A simple way to work out what your family really spends on food, set a monthly grocery budget you can keep, and spend less without eating worse.",
   "readMinutes": 6,
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
   "intro_html": "<p>Food is one of the few bills every family pays every single week. It is also one of the easiest to let slip. A few extra snacks here, a forgotten bag of vegetables there, one more takeaway on a busy night, and the month's food money is gone before the month is.</p><p>The good news is that groceries are also one of the most flexible parts of a budget. Unlike rent or school fees, you decide what goes in the basket every time you shop. This guide shows you how to find your real number, set a grocery budget for your family that fits your income, and save money without going hungry or eating badly.</p>",
   "sections": [
     {
@@ -57,6 +59,6 @@
       "a": "It is clearer to keep takeaway, restaurants and food delivery in a separate line. That way you can see how much goes on convenience and decide if you want to change it."
     }
   ],
-  "related": ["50-30-20-rule", "stop-impulse-spending", "emergency-fund"],
+  "related": ["cut-electricity-bill", "stop-impulse-spending", "50-30-20-rule"],
   "sources": []
 }

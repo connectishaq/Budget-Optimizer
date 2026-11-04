@@ -15,7 +15,9 @@ npm run i18n:check          # missing/unused translation keys, placeholder and p
 npm run i18n:missing -- de  # the English messages a language still lacks, ready to translate
 npm run i18n:notes          # rebuild TRANSLATION_NOTES.md from src/i18n/notes/
 npm run articles:check      # country articles and money guides: keys, markup, length, links, FAQ
-npm run seo:check           # after a build: one H1, heading order, unique titles, alt text
+npm run seo:check           # after a build: one H1, heading order, unique titles, title ≠ H1, link text, alt text
+npm run jsonld:check        # after a build: JSON-LD valid for Google rich results (run by npm run build)
+npm run hreflang:check      # after a build: canonical + hreflang self-links, reciprocity, sitemap (run by npm run build)
 npm run benchmarks:review   # rebuild REVIEW_BENCHMARKS.md (country numbers marked "verify")
 ```
 

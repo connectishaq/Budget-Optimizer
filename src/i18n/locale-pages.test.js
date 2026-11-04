@@ -33,9 +33,10 @@ describe('language/country pages', () => {
     expect(hrefFor('de', 'DE')).toBe('/'); // German is switched off: no page
   });
 
-  it('list every page plus x-default in hreflang and the sitemap', () => {
+  it('list every page plus the home page (en) and x-default in hreflang and the sitemap', () => {
     const links = alternateLinks('https://x.test');
-    expect(links.match(/hreflang=/g)).toHaveLength(LOCALE_PAGES.length + 1);
+    expect(links.match(/hreflang=/g)).toHaveLength(LOCALE_PAGES.length + 2);
+    expect(links).toContain('hreflang="en" href="https://x.test/"');
     expect(links).toContain('hreflang="x-default" href="https://x.test/"');
     expect(alternateLinks('')).toBe('');
     const xml = sitemapXml('https://x.test', '2026-10-20', [{ path: 'contact', priority: '0.5' }]);

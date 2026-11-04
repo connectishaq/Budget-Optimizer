@@ -1,7 +1,8 @@
 // Checks the money guides in src/i18n/guides/<lang>/<slug>.json (run by
 // `npm run articles:check`). English: 1,000–1,500 words, one H1 and no H1/H2
 // inside the body, allowed tags only, 3+ FAQ entries, 2–3 related guides that
-// exist, title/description lengths. Translations: the same structure as the
+// exist, title/description lengths, datePublished/dateModified (YYYY-MM-DD).
+// Translations: the same structure as the
 // English. When dist/ exists, every built guide page must carry FAQPage and
 // Article JSON-LD matching its FAQ. Returns { errors, report }.
 
@@ -37,6 +38,10 @@ export function checkGuides(root) {
       const en = lang === 'en' ? g : load('en', slug);
 
       if (g.slug !== slug) errors.push(`${id}: slug is "${g.slug}"`);
+      // Article JSON-LD dates: set by hand when a guide is published or changed
+      const isDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d || '') && !Number.isNaN(Date.parse(d));
+      if (!isDate(g.datePublished) || !isDate(g.dateModified)) errors.push(`${id}: datePublished and dateModified must be YYYY-MM-DD dates`);
+      else if (g.dateModified < g.datePublished) errors.push(`${id}: dateModified is before datePublished`);
       for (const k of ['h1', 'summary', 'intro_html']) if (typeof g[k] !== 'string' || !g[k].trim()) errors.push(`${id}: ${k} missing`);
       if (!g.seo?.title || g.seo.title.length > 70) errors.push(`${id}: seo.title must be 1–70 characters (is ${g.seo?.title?.length || 0})`);
       if (!g.seo?.description || g.seo.description.length > 160) errors.push(`${id}: seo.description must be 1–160 characters (is ${g.seo?.description?.length || 0})`);

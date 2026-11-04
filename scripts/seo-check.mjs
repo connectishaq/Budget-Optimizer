@@ -1,7 +1,8 @@
 // npm run seo:check   (after npm run build)
 // Checks every built page in dist/: exactly one H1, headings that don't skip
-// a level, a title and meta description that no other page uses, and alt
-// text on every image. Exit code 1 on errors.
+// a level, a title and meta description that no other page uses, a title that
+// isn't just the H1, readable text on every link, and alt text on every
+// image. Exit code 1 on errors.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -47,12 +48,22 @@ for (const f of files) {
   const left = body.text.match(/\{[a-zA-Z]\w*\}/g);
   if (left) errors.push(`${rel}: unfilled placeholder(s) in the page text: ${[...new Set(left)].join(', ')}`);
 
+  // Every link needs readable text: its own text, an aria-label or an image's alt text
+  for (const a of doc.querySelectorAll('a[href]')) {
+    const text = a.text.replace(/\s+/g, ' ').trim();
+    const alt = a.querySelectorAll('img').map((i) => i.getAttribute('alt') || '').join('').trim();
+    if (!text && !(a.getAttribute('aria-label') || '').trim()) errors.push(`${rel}: link to ${a.getAttribute('href')} has no text or aria-label${alt ? ` (only image alt "${alt}")` : ''}`);
+  }
+
   for (const img of doc.querySelectorAll('img')) {
     if (!img.hasAttribute('alt')) errors.push(`${rel}: <img src="${img.getAttribute('src')}"> has no alt attribute`);
   }
 
   if (noindex) continue; // not shown in search results (404 page)
   const title = doc.querySelector('title')?.text.trim();
+  // The title and the H1 should say the same thing in slightly different words
+  const plain = (s) => (s || '').replace(/&amp;/g, '&').replace(/\s*\|\s*SpendMath\s*$/, '').replace(/\s+/g, ' ').trim().toLowerCase();
+  if (h1.length === 1 && plain(title) === plain(h1[0].text)) errors.push(`${rel}: <title> is the same as the H1 ("${h1[0].text.trim()}")`);
   const description = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim();
   for (const [kind, value] of [['title', title], ['description', description]]) {
     if (!value) { errors.push(`${rel}: no ${kind}`); continue; }
