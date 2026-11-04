@@ -37,16 +37,16 @@ be sent from here yet" instead of the form and the build prints a warning. Pick 
 
 - *Formspree:* sign up at formspree.io and confirm your email address. Choose **New form**, give it
   a name and copy its endpoint (it looks like `https://formspree.io/f/abcdwxyz`).
-  Netlify variables: `VITE_CONTACT_FORM_ENDPOINT` = that endpoint.
+  Build variables: `VITE_CONTACT_FORM_ENDPOINT` = that endpoint.
 - *Web3Forms:* on web3forms.com enter the email address that should receive messages and press
-  **Create Access Key**; the key arrives by email. Netlify variables:
+  **Create Access Key**; the key arrives by email. Build variables:
   `VITE_CONTACT_FORM_ENDPOINT` = `https://api.web3forms.com/submit` and
   `VITE_CONTACT_FORM_KEY` = your access key (it's meant to be public).
 
 Optionally also set `VITE_CONTACT_EMAIL` (shown under the form as a second way to write to you).
-In Netlify: **Site configuration → Environment variables → Add a variable** for each one, then
-**Deploys → Trigger deploy → Deploy site**. `VITE_` values are read when the site is built, so a new
-deploy is needed after every change. Send yourself a test message afterwards. The form already
+In Cloudflare: **Workers & Pages → spendmath → Settings → Build variables** and add each one (as a
+build variable, not a runtime variable), then push a commit to `main` so the site is rebuilt.
+`VITE_` values are read when the site is built, so a new build is needed after every change. Send yourself a test message afterwards. The form already
 has a hidden spam trap, checks the fields, can't be sent twice, and shows clear sent / failed /
 offline messages.
 
