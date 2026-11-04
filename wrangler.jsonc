@@ -1,0 +1,21 @@
+{
+  "name": "spendmath",
+  "compatibility_date": "2026-10-01",
+  // Only redirects www/http to https://spendmath.com; everything else is the static site
+  "main": "worker/index.js",
+  "assets": {
+    // Built by `npm run build`
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Missing addresses get dist/404.html with a 404 status
+    "not_found_handling": "404-page",
+    // Default trailing-slash handling ("auto-trailing-slash"): /about -> /about/
+    "html_handling": "auto-trailing-slash",
+    // The Worker sees every request first so it can redirect www and http
+    "run_worker_first": true
+  },
+  "routes": [
+    { "pattern": "spendmath.com", "custom_domain": true },
+    { "pattern": "www.spendmath.com", "custom_domain": true }
+  ]
+}
