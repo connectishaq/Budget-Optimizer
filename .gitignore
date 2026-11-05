@@ -2,3 +2,5 @@ node_modules
 dist
 .env
 .env.local
+.vscode/
+demo-backup-6-months.json
