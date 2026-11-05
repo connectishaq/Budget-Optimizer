@@ -1,0 +1,91 @@
+{
+  "slug": "utility-bills-us",
+  "keyword": "utility bills",
+  "region": "US",
+  "regionalVersions": { "GB": "household-bills-uk" },
+  "seo": {
+    "title": "US Utility Costs per Month: Electricity, Gas, Water, Phone",
+    "description": "Average US electricity, gas, water, internet and phone bills per month for singles, couples and families of four, from EIA and BLS data, and how to save."
+  },
+  "h1": "Average utility bills per month in the US",
+  "summary": "What US households pay each month for electricity, natural gas, water, internet and phone, by household size, from official EIA and BLS figures, and how to lower each bill.",
+  "readMinutes": 9,
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "intro_html": "<p>After rent or a mortgage, utilities are one of the biggest monthly costs for most US households. They are also the bills that change the most: air conditioning in summer, heating in winter, a new phone plan, a rate increase from your power company.</p><p>This guide brings together the latest official figures from the U.S. Energy Information Administration (EIA) and the Bureau of Labor Statistics (BLS), shows them per month for a single person, a couple and a family of four, and explains how to lower each one.</p>",
+  "sections": [
+    {
+      "h2": "US utility bills at a glance",
+      "body_html": "<p>Average monthly spending by household size, worked out from the BLS Consumer Expenditure Surveys for 2025 (published October 2026). BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Utility (per month)</th><th>Single person</th><th>Two people</th><th>Four people</th></tr></thead><tbody><tr><th>Electricity</th><td>$105</td><td>$162</td><td>$201</td></tr><tr><th>Natural gas</th><td>$33</td><td>$47</td><td>$58</td></tr><tr><th>Water and other public services (incl. trash)</th><td>$48</td><td>$76</td><td>$94</td></tr><tr><th>Phone (mostly cell phone service)</th><td>$72</td><td>$128</td><td>$157</td></tr><tr><th>Internet (all households average)</th><td>$60</td><td>$60</td><td>$60</td></tr><tr><th>Total (sum of the rows)</th><td>$318</td><td>$473</td><td>$570</td></tr></tbody></table><p><strong>How we worked these out (all are our calculations from BLS figures):</strong> each row is the 2025 BLS annual average for that household size divided by 12 and rounded to the nearest dollar. Source: Table 1400 (size of consumer unit) for electricity, natural gas, water and other public services, and telephone services. Internet is \"computer information services\" from Table 2500, which BLS publishes for all households only, so the same $60 appears in each column. The averages include households that don't use a utility at all, for example homes without natural gas, so they can be lower than the bill for a home that has one. Fuel oil and propane are not included in the total.</p>"
+    },
+    {
+      "h2": "Electricity",
+      "body_html": "<p>According to the EIA, the average US residential electricity customer paid <strong>$150.68 a month in 2025</strong>, using 874 kWh at an average price of 17.23 cents per kWh. That was up from $142.26 a month in 2024. Prices have kept rising: the average residential price was 18.16 cents per kWh in August 2026, compared with 17.57 cents a year earlier.</p><p>Where you live makes a big difference. In 2025 the highest average monthly bills were in Hawaii ($207.89) and Connecticut ($206.46), and the lowest in New Mexico ($94.65) and Utah ($99.06).</p><p>The EIA figure ($150.68) is per electricity customer. The BLS figure in the table ($157 a month for all households in 2025, by our calculation) is spending per household from a different survey. They are close but not identical, which is normal for two different official sources.</p><p>For ways to bring this bill down, see our guide to <a href=\"/guides/cut-electricity-bill/\">cutting your electricity bill</a>.</p>"
+    },
+    {
+      "h2": "Natural gas and water",
+      "body_html": "<h3>Natural gas</h3><p>Not every home uses natural gas, and the bill depends heavily on the season. The EIA's average residential natural gas price was <strong>$15.34 per thousand cubic feet in 2025</strong>. Monthly prices per unit are much higher in summer because so little gas is used then, so don't judge a winter budget by a summer bill.</p><p>For homes that do use natural gas, the EIA's Residential Energy Consumption Survey (RECS) found average spending of <strong>$630 a year in 2020</strong>, about $53 a month by our calculation. That is the most recent RECS year, so prices have changed since. The BLS figures in the table are lower because they average in households that don't use gas.</p><h3>Water, sewer and trash</h3><p>BLS groups water with other public services such as sewer and trash collection. In 2025 the average household spent <strong>$883 a year</strong> on these, about $74 a month by our calculation, rising from $571 a year for a single person to $1,127 for a four-person household. Water rates are set locally, so your city or utility district's rates matter more than any national average.</p>"
+    },
+    {
+      "h2": "Internet and phone",
+      "body_html": "<p>In 2025 the average US household spent <strong>$1,472 a year on telephone services</strong>, about $123 a month by our calculation, and almost all of it ($1,390) was cell phone service. A single person spent $868 a year and a four-person household $1,878.</p><p>Internet sits in a different part of the BLS survey. The average household spent <strong>$720.47 a year</strong> on \"computer information services\" (internet) in 2025, about $60 a month by our calculation. There is no official national average price for a broadband plan, so treat this as average household spending, including households with no internet bill.</p><ul><li><strong>Compare plans every year.</strong> Prepaid and smaller carriers often cost less than the big plans for the same coverage.</li><li><strong>Check promotional rates.</strong> Internet prices often jump when an introductory deal ends; call before it does.</li><li><strong>Ask about low-income programs</strong> such as Lifeline if you are eligible.</li></ul>"
+    },
+    {
+      "h2": "Average bills vs a reasonable budget",
+      "body_html": "<p>An average is a reference point, not a target. Your utility costs depend on your climate, the size and age of your home, its insulation, local rates and your habits. Two households of the same size in different states can both have perfectly reasonable bills that are hundreds of dollars apart.</p><p>To set your budget, add up your actual bills for the last 12 months and divide by 12. Many power and gas companies offer budget billing, which spreads the cost evenly across the year so summer and winter don't surprise you. Then compare each line with the table. A bill well above the average for your household size is the first one to look at.</p><h3>Worked example</h3><p>A family of four in Ohio adds up a year of bills and gets an average of $565 a month: electricity $180, natural gas $70, water and trash $85, two cell phone lines and two teen lines $160, and internet $70. That is close to the $570 in our table. They switch two lines to a cheaper prepaid carrier, saving $40 a month, and ask their internet provider for a lower rate when the promotion ends, saving another $15. The $55 a month goes into a <a href=\"/guides/sinking-funds/\">sinking fund</a> for summer cooling bills. This is an illustrative example.</p><p>Enter your own bills in the <a href=\"/en-us/#app\">US budget calculator</a> to see them next to your income, groceries and other costs, in dollars.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the average electric bill per month in the US?",
+      "a": "According to the EIA, the average residential customer paid $150.68 a month for electricity in 2025, using 874 kWh at 17.23 cents per kWh. Bills ranged from $94.65 in New Mexico to $207.89 in Hawaii."
+    },
+    {
+      "q": "How much are utilities for a family of four in the US?",
+      "a": "BLS data for 2025 shows four-person households spent about $201 a month on electricity, $58 on natural gas, $94 on water and other public services and $157 on phone service, by our calculation. With average internet spending of $60, that's about $570 a month."
+    },
+    {
+      "q": "How much are utilities for one person?",
+      "a": "Single-person households spent about $105 a month on electricity, $33 on natural gas, $48 on water and other public services and $72 on phone service in 2025, by our calculation from BLS data, plus about $60 for internet on average."
+    },
+    {
+      "q": "Is internet counted as a utility?",
+      "a": "Many people budget for it as one, but BLS doesn't include it in \"utilities, fuels, and public services\". It records internet separately, at $720.47 a year for the average household in 2025."
+    },
+    {
+      "q": "What is budget billing?",
+      "a": "Many power and gas companies offer budget billing, which charges you a similar amount each month based on your average use, then settles the difference once a year. It makes seasonal bills easier to plan for."
+    }
+  ],
+  "related": [
+    "cut-electricity-bill",
+    "grocery-budget-us",
+    "sinking-funds"
+  ],
+  "sources": [
+    {
+      "title": "EIA: Annual Electric Power Industry Report (Form EIA-861), 2025 data, average monthly bill, residential",
+      "url": "https://www.eia.gov/electricity/data/eia861/"
+    },
+    {
+      "title": "EIA: Electric Power Monthly, Table 5.6.A, average price of electricity by state",
+      "url": "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a"
+    },
+    {
+      "title": "EIA: Natural gas prices, annual",
+      "url": "https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_nus_a.htm"
+    },
+    {
+      "title": "EIA: Residential Energy Consumption Survey 2020, Table CE2.6, household fuel expenditures (xlsx)",
+      "url": "https://www.eia.gov/consumption/residential/data/2020/c&e/xls/ce2.6.xlsx"
+    },
+    {
+      "title": "BLS: Consumer Expenditure Surveys 2025, Table 1400, size of consumer unit (xlsx)",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-size-2025.xlsx"
+    },
+    {
+      "title": "BLS: Consumer Expenditure Surveys 2025, Table 2500, all consumer units, detailed (xlsx)",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-all-detail-2025.xlsx"
+    }
+  ]
+}

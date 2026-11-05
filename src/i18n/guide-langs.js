@@ -20,5 +20,13 @@ export const GUIDE_SLUGS = [
   'subscription-audit',
   'pay-off-credit-card-debt',
   'family-grocery-budget',
-  'irregular-income'
+  'irregular-income',
+  'sinking-funds',
+  'zero-based-budgeting-vs-50-30-20',
+  'stop-living-paycheck-to-paycheck',
+  // Country guides (English, en-GB / en-US)
+  'grocery-budget-uk',
+  'grocery-budget-us',
+  'household-bills-uk',
+  'utility-bills-us'
 ];

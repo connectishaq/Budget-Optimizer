@@ -1,0 +1,87 @@
+{
+  "slug": "grocery-budget-uk",
+  "keyword": "groceries UK",
+  "region": "GB",
+  "regionalVersions": { "US": "grocery-budget-us" },
+  "seo": {
+    "title": "UK Food Shopping Costs: What Households Spend Each Week",
+    "description": "What UK households spend on food each week by household size, from ONS data, compared with the Minimum Income Standard, plus how to set your own budget."
+  },
+  "h1": "How much should a family spend on groceries in the UK?",
+  "summary": "Official ONS figures for what UK singles, couples and families of four spend on food, compared with a minimum healthy budget, and how to set your own number.",
+  "readMinutes": 8,
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "intro_html": "<p>\"How much should we spend on food?\" is one of the most common budgeting questions, and one of the hardest to answer from a gut feeling. Prices change, children eat more as they grow, and every household shops differently.</p><p>This guide gives you two official reference points: what UK households <strong>actually spend</strong> on food, from the Office for National Statistics (ONS), and what a household <strong>needs</strong> for a basic healthy diet, from the Minimum Income Standard. Then it shows you how to turn those numbers into a grocery budget that fits your family.</p>",
+  "sections": [
+    {
+      "h2": "UK grocery spending at a glance",
+      "body_html": "<p>The table shows average weekly spending on <strong>food and non-alcoholic drinks</strong> bought to eat at home, from the ONS <em>Family spending in the UK</em> survey for April 2024 to March 2025 (published June 2026). Next to it is the Minimum Income Standard (MIS) food budget for 2026, which is what members of the public agreed a household needs as a minimum.</p><table><thead><tr><th>Household</th><th>ONS average spend, per week (2024–25)</th><th>Per month (our calculation)</th><th>MIS minimum food budget, per week (April 2026)</th></tr></thead><tbody><tr><th>Single adult (working age)</th><td>£40.30</td><td>about £175</td><td>£79.71</td></tr><tr><th>Couple (two adults, working age)</th><td>£73.20</td><td>about £317</td><td>not published</td></tr><tr><th>Family of 4 (two adults, two children)</th><td>£98.30</td><td>about £426</td><td>£211.49</td></tr><tr><th>All UK households (average 2.3 people)</th><td>£73.70</td><td>about £319</td><td>–</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> weekly amount × 52 ÷ 12, rounded to the nearest pound. They are our calculation, not ONS figures. ONS figures are from Workbook 2, Table A23 (non-retired households) and Workbook 1, Table A1 (all households). The MIS family is a couple with one child aged 2–4 and one of primary school age.</p>"
+    },
+    {
+      "h2": "Average spending vs a reasonable budget",
+      "body_html": "<p>The two columns in the table measure different things, and the gap between them is striking.</p><ul><li><strong>The ONS figure is what households report spending.</strong> It comes from the Living Costs and Food Survey, where households record their spending in a diary. It includes households who are cutting back hard, those who eat out a lot, and everyone in between. It covers food bought to eat at home, not restaurants or takeaways, and it is for April 2024 to March 2025, so prices have moved since.</li><li><strong>The MIS figure is a minimum standard, not an average.</strong> It is a basket of food that groups of members of the public agreed is needed for a healthy diet and an acceptable standard of living, priced in April 2026. It applies to urban areas outside London, excludes alcohol, and excludes eating out, which MIS counts elsewhere in its budgets.</li></ul><p>So the MIS food budget for a family of four (£211.49 a week) is more than double the ONS average (£98.30). That does not mean the average family is going hungry, or that you must spend £211 a week. It means the two numbers answer different questions: \"what do people spend?\" and \"what would a minimum healthy diet cost?\"</p><h3>Which number should you use?</h3><p>Use them as a range, not a target. If you spend well below the ONS average, check you are not under-recording, or that money pressure isn't forcing cuts that hurt your diet. If you spend well above the MIS figure, there is likely room to save without eating worse. Most families will land somewhere between the two, depending on children's ages, dietary needs, where they live and how much they cook from scratch.</p>"
+    },
+    {
+      "h2": "What affects your grocery bill",
+      "body_html": "<ul><li><strong>Household size and children's ages.</strong> The ONS figures rise from £40.30 for a single adult to £98.30 for two adults with two children, and to £119.60 a week for two adults with three or more children.</li><li><strong>Food prices.</strong> ONS consumer price inflation for food and non-alcoholic drinks was 1.3% in the 12 months to September 2026. The MIS 2026 report notes food costs rose 2.9% in the 12 months to April 2026. Because the ONS survey covers 2024–25, today's prices are somewhat higher.</li><li><strong>Where you shop.</strong> Discount supermarkets and own-brand ranges usually cost less than premium brands for the same basics.</li><li><strong>Eating out.</strong> The ONS average household also spent £17.80 a week on restaurant and café meals in 2024–25. That is on top of the grocery figures above, and it is often the easiest place to save.</li><li><strong>Diet and health needs.</strong> Allergies, special diets and baby formula can add a lot to a weekly shop.</li></ul>"
+    },
+    {
+      "h2": "How to set your family's grocery budget",
+      "body_html": "<ol><li><strong>Find your real number.</strong> Add up four weeks of supermarket receipts, corner-shop trips and online orders. Keep takeaways separate.</li><li><strong>Compare it with the table.</strong> Find your household type and see where you sit between the ONS average and the MIS minimum.</li><li><strong>Set a weekly limit.</strong> If you're above both, try trimming about a tenth at first. Small cuts stick better than big ones.</li><li><strong>Plan meals and shop with a list.</strong> Our <a href=\"/guides/family-grocery-budget/\">family grocery budget guide</a> has practical steps for meal planning, unit prices and cutting food waste.</li><li><strong>Check after a month.</strong> Adjust the limit to something you can actually keep.</li></ol><h3>Worked example</h3><p>A family of four in Leeds tracks four weeks of food shopping and finds they spend £150 a week, about £650 a month (£150 × 52 ÷ 12). That is above the ONS average of £98.30 for their household type and below the MIS minimum of £211.49. Takeaways are separate, at £35 a week.</p><p>They decide to keep groceries roughly where they are, because two growing children and packed lunches are included, but to swap one takeaway night for a home-cooked meal. That saves about £20 a week, or roughly £87 a month, which goes into a <a href=\"/guides/sinking-funds/\">sinking fund</a> for Christmas. This is an illustrative example, not a recommendation for every family.</p><p>Put your own grocery figure into the <a href=\"/en-gb/#app\">UK budget calculator</a> to see it next to your other bills, in pounds.</p>"
+    },
+    {
+      "h2": "Ways UK families spend less on food",
+      "body_html": "<ul><li><strong>Try a lower brand tier</strong> for staples such as pasta, rice, tinned tomatoes, flour and cleaning products.</li><li><strong>Use loyalty prices only for planned items.</strong> Clubcard or Nectar prices help only if the item was on your list.</li><li><strong>Shop the reduced section</strong> late in the day for bread and meat you can freeze.</li><li><strong>Batch-cook and freeze.</strong> A big pot of chilli, curry or soup becomes several lunches.</li><li><strong>Waste less.</strong> Check the fridge before you shop, and plan one leftovers night a week.</li><li><strong>Check what help you can get.</strong> Families on low incomes may qualify for the Healthy Start scheme or free school meals; check GOV.UK.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does the average UK family of four spend on food?",
+      "a": "According to the ONS Family Spending survey for April 2024 to March 2025, two adults with two children spent an average of £98.30 a week on food and non-alcoholic drinks for the home, about £426 a month by our calculation."
+    },
+    {
+      "q": "How much does a single person in the UK spend on groceries?",
+      "a": "The ONS figure for a single non-retired adult was £40.30 a week in 2024–25, about £175 a month by our calculation. The Minimum Income Standard 2026 puts a single working-age adult's minimum food budget at £79.71 a week."
+    },
+    {
+      "q": "Why is the Minimum Income Standard higher than the ONS average?",
+      "a": "They measure different things. ONS records what households reported spending in 2024–25. MIS prices a healthy basket of food that members of the public agreed is a minimum, at April 2026 prices. They are not directly comparable."
+    },
+    {
+      "q": "Does the ONS grocery figure include takeaways and eating out?",
+      "a": "No. The food and non-alcoholic drinks figure covers food bought to eat at home. Restaurant and café meals are counted separately; the average UK household spent £17.80 a week on them in 2024–25."
+    },
+    {
+      "q": "What is a reasonable grocery budget for a UK family?",
+      "a": "There is no single right number. Use the ONS average and the MIS minimum for your household type as a range, start from what you really spend, and adjust for children's ages, diet and where you shop."
+    }
+  ],
+  "related": [
+    "family-grocery-budget",
+    "household-bills-uk",
+    "sinking-funds"
+  ],
+  "sources": [
+    {
+      "title": "ONS: Family spending in the UK, April 2024 to March 2025 (bulletin)",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/april2024tomarch2025"
+    },
+    {
+      "title": "ONS: Family spending workbook 1, detailed expenditure and trends (Table A1)",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends"
+    },
+    {
+      "title": "ONS: Family spending workbook 2, expenditure by income and household type (Table A23)",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook2expenditurebyincome"
+    },
+    {
+      "title": "Joseph Rowntree Foundation: A Minimum Income Standard for the United Kingdom in 2026 (Table 3)",
+      "url": "https://www.jrf.org.uk/income-savings-and-debt/a-minimum-income-standard-for-the-united-kingdom-in-2026"
+    },
+    {
+      "title": "ONS: Consumer price inflation, UK, September 2026",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/september2026"
+    }
+  ]
+}

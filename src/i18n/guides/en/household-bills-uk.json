@@ -1,0 +1,99 @@
+{
+  "slug": "household-bills-uk",
+  "keyword": "household bills UK",
+  "region": "GB",
+  "regionalVersions": { "US": "utility-bills-us" },
+  "seo": {
+    "title": "UK Household Bills in 2026: Energy, Water and Council Tax",
+    "description": "Average UK energy, water, council tax, broadband and phone bills per month for singles, couples and families, from Ofgem, Water UK, MHCLG and ONS data."
+  },
+  "h1": "Average household bills per month in the UK",
+  "summary": "What UK households pay each month for energy, water, council tax, broadband and phone, by household size, from official figures, and how to bring each bill down.",
+  "readMinutes": 9,
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "intro_html": "<p>Rent or mortgage is the biggest cost for most UK households, but the bills that come with a home add up fast: the energy bill, water, council tax, broadband and phone. Knowing what's typical helps you spot a bill that's out of line and set a realistic budget.</p><p>This guide brings together the latest official figures from Ofgem, Water UK, the Ministry of Housing, Communities and Local Government (MHCLG) and the Office for National Statistics (ONS). It shows them per month for a single person, a couple and a family of four, and explains how to lower each one.</p>",
+  "sections": [
+    {
+      "h2": "UK household bills at a glance",
+      "body_html": "<p>Monthly amounts in England, worked out from the latest official figures. Each row's source and period is explained below the table.</p><table><thead><tr><th>Bill (per month)</th><th>Single person</th><th>Couple</th><th>Family of 4</th></tr></thead><tbody><tr><th>Energy bill (gas and electricity)</th><td>£101–£144</td><td>£144</td><td>£144–£202</td></tr><tr><th>Water and sewerage</th><td>£53</td><td>£53</td><td>£53</td></tr><tr><th>Council tax</th><td>£117</td><td>£156</td><td>£156</td></tr><tr><th>Phone, broadband and other communication</th><td>£64</td><td>£100</td><td>£118</td></tr><tr><th>Total (our calculation)</th><td>£335–£378</td><td>£453</td><td>£471–£529</td></tr></tbody></table><p><strong>How we worked these out (all are our calculations from official figures):</strong></p><ul><li><strong>Energy:</strong> Ofgem's price cap for 1 October to 31 December 2026, paying by Direct Debit, at Ofgem's low, medium and high usage levels: about £101, £144 and £202 a month. Ofgem doesn't publish bills by household size, so we show the low-to-medium range for a single person and medium-to-high for a family as a rough guide only.</li><li><strong>Water:</strong> Water UK's average combined water and sewerage bill for England and Wales in 2026-27, £639 a year, divided by 12. It is an average for all households, not by household size.</li><li><strong>Council tax:</strong> MHCLG's average council tax per dwelling in England for 2026-27, £1,868 a year, divided by 12. For a single person we take off the 25% single person discount.</li><li><strong>Communication:</strong> ONS Family Spending, April 2024 to March 2025, average weekly spending on communication by household type (one non-retired adult £14.80, two non-retired adults £23.10, two adults with two children £27.20), × 52 ÷ 12.</li></ul>"
+    },
+    {
+      "h2": "Energy bills",
+      "body_html": "<p>Ofgem's price cap limits what suppliers can charge per unit of energy and per day for standing charges on default tariffs. It does not cap your total bill: the more you use, the more you pay.</p><p>For <strong>1 October to 31 December 2026</strong>, a household with typical use paying by Direct Debit pays about <strong>£1,723 a year</strong>, up £60 from £1,663 in July to September 2026. Ofgem's typical household uses 2,500 kWh of electricity and 9,500 kWh of gas a year. Ofgem updated these typical values from July 2026, so the headline figure can't be compared directly with older ones.</p><h3>Your monthly cost by usage</h3><p>Using Ofgem's average unit rates and standing charges for October to December 2026 (electricity 26.32p per kWh and 54.83p a day; gas 7.97p per kWh and 29.68p a day), we worked out the cost at Ofgem's three usage levels: units × unit rate, plus 365 days of standing charges, divided by 12.</p><ul><li><strong>Low use</strong> (1,600 kWh electricity, 6,000 kWh gas): about £100.65 a month.</li><li><strong>Medium use</strong> (2,500 kWh, 9,500 kWh): about £143.63 a month.</li><li><strong>High use</strong> (3,800 kWh, 14,000 kWh): about £202.04 a month.</li></ul><p>Rates vary by region and payment method. Your own annual usage is on your bill or in your supplier's app; use it in place of these levels. Our guide to <a href=\"/guides/cut-electricity-bill/\">cutting your electricity bill</a> has practical ways to use less.</p>"
+    },
+    {
+      "h2": "Water and council tax",
+      "body_html": "<h3>Water</h3><p>Water UK, the industry body, puts the average combined water and sewerage bill in England and Wales at <strong>£639 for 2026-27</strong>, about £53 a month, up £33 (5.4%) on 2025-26. Bills vary a lot by company; Southern Water's average is £759. If you are not on a water meter, your bill is based on your property's value. If you are, it depends on what you use, so a single person on a meter often pays less than the average. Ask your water company whether a meter would save you money, and whether you qualify for a social tariff if money is tight.</p><h3>Council tax</h3><p>In England for 2026-27, the average <strong>Band D</strong> council tax is <strong>£2,392</strong>, up 4.9%, and the average council tax <strong>per dwelling</strong> is <strong>£1,868</strong>, up 5.5% (MHCLG). The per-dwelling figure is lower because many homes are in bands below D.</p><ul><li>Over 12 months, £1,868 is about £156 a month. Most councils collect it in 10 monthly instalments unless you ask for 12, which makes each payment higher.</li><li>If you live alone, you get <strong>25% off</strong> with the single person discount. On the average bill, that's about £117 a month over 12 months.</li><li>Check your band on GOV.UK. Students, some carers and people on low incomes may get discounts or support.</li></ul><p>Wales and Scotland set their own council tax, and Northern Ireland uses domestic rates instead. See the <a href=\"https://www.gov.wales/council-tax-levels-april-2026-march-2027\">Welsh Government's council tax levels</a> and the <a href=\"https://www.gov.scot/publications/council-tax-datasets/\">Scottish Government's council tax datasets</a>.</p>"
+    },
+    {
+      "h2": "Broadband and phone",
+      "body_html": "<p>The ONS Family Spending survey for April 2024 to March 2025 found the average UK household spent <strong>£22.40 a week</strong> on communication, about £97 a month by our calculation. That includes mobile phone contracts (£8.70 a week), combined landline, broadband and TV packages (£8.70), and internet-only subscriptions (£2.70), plus postage and phone equipment.</p><p>By household type, weekly communication spending was £14.80 for one non-retired adult, £23.10 for two non-retired adults and £27.20 for two adults with two children.</p><ul><li><strong>Haggle at the end of your contract.</strong> Out-of-contract customers often pay more than new ones.</li><li><strong>Consider SIM-only</strong> if you own your handset.</li><li><strong>Ask about social tariffs</strong> for broadband and mobile if you receive Universal Credit or certain other benefits.</li></ul>"
+    },
+    {
+      "h2": "Average bills vs a reasonable budget",
+      "body_html": "<p>An average is a reference point, not a target. Your bills depend on the size and age of your home, its insulation, your council tax band, your water company and how you use energy. Two households of the same size can have very different, perfectly reasonable bills.</p><p>To set your own budget, start from your actual bills for the last 12 months. For bills that change with the seasons, such as energy, add up the year and divide by 12 so winter doesn't catch you out. Then compare each line with the table. If one bill is well above the average for your household type, that is the first one to look at.</p><h3>Worked example</h3><p>A couple in a two-bedroom flat in Bristol finds their bills come to £520 a month: energy £170, water £58, council tax £180 (Band C, paid over 12 months), and broadband and two mobiles £112. That's above the £453 in our table. They check their energy usage, which is high because of an old boiler, and move both phones to SIM-only deals, saving £30 a month. They put the saving in a <a href=\"/guides/sinking-funds/\">sinking fund</a> for the winter energy bills. This is an illustrative example.</p><p>Enter your own bills in the <a href=\"/en-gb/#app\">UK budget calculator</a> to see them next to your income, groceries and other costs, in pounds.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the average energy bill per month in the UK?",
+      "a": "Under Ofgem's price cap for October to December 2026, a household with typical use paying by Direct Debit pays about £1,723 a year, roughly £144 a month by our calculation. Low users pay less and high users more."
+    },
+    {
+      "q": "What is the average council tax per month in England?",
+      "a": "MHCLG puts the average council tax per dwelling in England at £1,868 for 2026-27, about £156 a month over 12 months. The average Band D bill is £2,392."
+    },
+    {
+      "q": "How much is the average water bill per month?",
+      "a": "Water UK puts the average combined water and sewerage bill in England and Wales at £639 for 2026-27, about £53 a month. Bills vary by water company and by whether you have a meter."
+    },
+    {
+      "q": "Do I get a discount on council tax if I live alone?",
+      "a": "Yes. If you are the only adult in your home, you get 25% off your council tax with the single person discount. Apply through your local council."
+    },
+    {
+      "q": "What bills should I budget for when renting or buying in the UK?",
+      "a": "Plan for energy, water, council tax, broadband, phone and, if you watch live TV or BBC iPlayer, a TV licence. Add contents or buildings insurance too."
+    }
+  ],
+  "related": [
+    "cut-electricity-bill",
+    "grocery-budget-uk",
+    "sinking-funds"
+  ],
+  "sources": [
+    {
+      "title": "Ofgem: Energy price cap from 1 October 2026 (press release)",
+      "url": "https://www.ofgem.gov.uk/press-release/energy-price-cap-will-rise-4-october-2026"
+    },
+    {
+      "title": "Ofgem: Energy price cap standing charges and unit rates by region",
+      "url": "https://www.ofgem.gov.uk/information-consumers/energy-advice-households/get-energy-price-cap-standing-charges-and-unit-rates-region"
+    },
+    {
+      "title": "Ofgem: Review of typical domestic consumption values, decision (2026)",
+      "url": "https://www.ofgem.gov.uk/sites/default/files/2026-05/Review%20of%20typical%20domestic%20consumption%20values%20decision.pdf"
+    },
+    {
+      "title": "Water UK: Annual average bill changes 2026-27",
+      "url": "https://www.water.org.uk/annual-average-bill-changes-2026-27"
+    },
+    {
+      "title": "Ofwat: Ofwat responds to water sector average bill figures",
+      "url": "https://www.ofwat.gov.uk/ofwat-responds-to-water-sector-average-bill-figures/"
+    },
+    {
+      "title": "MHCLG: Council Tax levels set by local authorities in England 2026 to 2027",
+      "url": "https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027"
+    },
+    {
+      "title": "GOV.UK: Council Tax, who has to pay (single person discount)",
+      "url": "https://www.gov.uk/council-tax/who-has-to-pay"
+    },
+    {
+      "title": "ONS: Family spending workbook 2, expenditure by household type (Table A23)",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook2expenditurebyincome"
+    }
+  ]
+}

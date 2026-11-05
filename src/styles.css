@@ -207,10 +207,13 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
   .legal .callout ul { @apply list-none ps-0; }
   .legal .callout li { @apply relative ps-6; }
   .legal .callout li::before { content: ""; @apply absolute start-0 top-[0.6em] h-2 w-2 rounded-full bg-emerald-600; }
-  .legal .table-wrap { @apply overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800; }
-  .legal table { @apply w-full min-w-[520px] border-collapse text-start text-sm; }
-  .legal th { @apply bg-slate-100 px-4 py-2.5 font-semibold text-slate-900 dark:bg-slate-800 dark:text-white; }
-  .legal td { @apply border-t border-slate-200 px-4 py-2.5 align-top dark:border-slate-800; }
+  /* Tables: legal pages, Methodology and the guides */
+  .legal .table-wrap, .prose-guide .table-wrap { @apply overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800; }
+  .prose-guide .table-wrap { @apply mb-6; }
+  .legal table, .prose-guide table { @apply w-full min-w-[520px] border-collapse text-start text-sm; }
+  .legal th, .prose-guide thead th { @apply bg-slate-100 px-4 py-2.5 font-semibold text-slate-900 dark:bg-slate-800 dark:text-white; }
+  .prose-guide tbody th { @apply border-t border-slate-200 px-4 py-2.5 text-start align-top font-semibold text-slate-900 dark:border-slate-800 dark:text-white; }
+  .legal td, .prose-guide td { @apply border-t border-slate-200 px-4 py-2.5 align-top dark:border-slate-800; }
 
   .field-msg { @apply mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400; }
   .hp { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }

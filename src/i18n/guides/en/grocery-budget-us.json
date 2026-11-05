@@ -1,0 +1,83 @@
+{
+  "slug": "grocery-budget-us",
+  "keyword": "groceries US",
+  "region": "US",
+  "regionalVersions": { "GB": "grocery-budget-uk" },
+  "seo": {
+    "title": "US Grocery Costs by Household Size: Averages and Budgets",
+    "description": "What US households spend on groceries by household size, from BLS 2025 data, how the USDA Food Plans set a budget, and how to choose a number for you."
+  },
+  "h1": "How much should a family spend on groceries in the US?",
+  "summary": "Official BLS figures for what US singles, couples and families of four spend on groceries, how the USDA Food Plans work, and how to set your own budget.",
+  "readMinutes": 8,
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "intro_html": "<p>Groceries are one of the biggest flexible costs in a US household budget, and one of the easiest to underestimate. A few extra trips to the store, a couple of delivery orders and the month's food money is gone.</p><p>This guide gives you official reference points: what US households <strong>actually spend</strong> on food at home, from the Bureau of Labor Statistics (BLS), and how the U.S. Department of Agriculture's <strong>Food Plans</strong> describe a reasonable food budget at four cost levels. Then it shows how to turn those into a number that fits your family.</p>",
+  "sections": [
+    {
+      "h2": "US grocery spending at a glance",
+      "body_html": "<p>The table shows average spending on <strong>food at home</strong> (groceries) and <strong>food away from home</strong> (restaurants, takeout and similar) by household size, from the BLS Consumer Expenditure Surveys for 2025, published in October 2026. BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Household</th><th>Groceries, per year (2025)</th><th>Groceries, per month (our calculation)</th><th>Eating out, per month (our calculation)</th></tr></thead><tbody><tr><th>Single person</th><td>$3,385</td><td>about $282</td><td>about $192</td></tr><tr><th>Two people (e.g. a couple)</th><td>$6,249</td><td>about $521</td><td>about $349</td></tr><tr><th>Four people (e.g. a family of 4)</th><td>$8,912</td><td>about $743</td><td>about $512</td></tr><tr><th>All households (average 2.4 people)</th><td>$6,491</td><td>about $541</td><td>about $345</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> the BLS annual average divided by 12, rounded to the nearest dollar. They are our calculation, not BLS figures. Source: BLS Consumer Expenditure Surveys 2025, Table 1400 (size of consumer unit). BLS groups households by size, not by age or family type, so \"four people\" may include different mixes of adults and children.</p>"
+    },
+    {
+      "h2": "Average spending vs a reasonable budget",
+      "body_html": "<p>An average tells you what households spend, not what you should spend. The BLS figures include households that are cutting back hard, households that buy mostly premium brands, and everyone in between.</p><h3>The USDA Food Plans: an official budget benchmark</h3><p>The USDA publishes the cost of four Food Plans every month: <strong>Thrifty, Low-Cost, Moderate-Cost and Liberal</strong>. Each plan prices a healthy diet at a different level of spending, for individuals by age and sex, and for example families. The Thrifty Food Plan is also the basis for maximum SNAP benefits.</p><p>Because these plans are built around a nutritious diet rather than what people happen to buy, they are a better guide to a <strong>reasonable budget</strong> than an average. You can pick the plan that matches your situation: Thrifty or Low-Cost for a tight budget, Moderate-Cost or Liberal if there is more room.The latest monthly figures are on the <a href=\"https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports\">USDA Food Plans: Cost of Food at Home</a> page. Look up your household members there and add their costs together, following the adjustments for household size explained in the report.</p><h3>Using both</h3><p>Compare your real spending with the BLS average for your household size and with the USDA plan that matches your goals. If you are far above both, there is probably room to save without eating worse. If you are far below the Thrifty plan, check whether money pressure is forcing cuts to a healthy diet, and whether you qualify for help such as SNAP or WIC.</p>"
+    },
+    {
+      "h2": "What affects your grocery bill",
+      "body_html": "<ul><li><strong>Household size.</strong> In the 2025 BLS data, grocery spending rises from $3,385 a year for a single person to $8,912 for a four-person household, and to $12,008 for households of five or more.</li><li><strong>Food prices.</strong> The BLS Consumer Price Index for food at home rose 1.8% over the 12 months to September 2026, so prices are a little higher than in the 2025 survey.</li><li><strong>Where you live.</strong> Grocery prices vary between regions, cities and rural areas.</li><li><strong>How you shop.</strong> Grocery delivery can add service fees, delivery fees and tips to every order. If you use it, compare the total with a pickup order or a trip to the store, and count those extras in your grocery budget so the true cost stays visible.</li><li><strong>Ages and diets.</strong> Teenagers usually eat more than young children. Allergies, special diets and baby formula add cost.</li><li><strong>Eating out.</strong> The average household spent $4,142 on food away from home in 2025, on top of $6,491 on groceries. Restaurants, takeout and delivery are often the easiest place to cut.</li></ul>"
+    },
+    {
+      "h2": "How to set your family's grocery budget",
+      "body_html": "<ol><li><strong>Find your real number.</strong> Add up four weeks of grocery store, warehouse club and online grocery orders. Keep restaurants, takeout and delivery apps separate.</li><li><strong>Compare it with the table</strong> and with the USDA plan that matches your household.</li><li><strong>Set a weekly limit.</strong> If you are above both benchmarks, trim about a tenth first. Small changes are easier to keep.</li><li><strong>Plan meals and shop with a list.</strong> Our <a href=\"/guides/family-grocery-budget/\">family grocery budget guide</a> covers meal planning, unit prices and cutting food waste.</li><li><strong>Review after a month</strong> and adjust the limit to something you can keep.</li></ol><h3>Worked example</h3><p>A family of four in Ohio tracks a month of grocery receipts and finds they spend $230 a week, about $997 a month ($230 × 52 ÷ 12). That is above the BLS average of about $743 a month for four-person households. Takeout adds another $60 a week.</p><p>They set a first target of $205 a week by meal planning, buying store brands for staples and doing one big shop instead of several small ones, and they cut takeout to $40 a week. Together that frees about $45 a week, roughly $195 a month, which they put towards their emergency fund. This is an illustrative example, not a recommendation for every family.</p><p>Add your grocery figure to the <a href=\"/en-us/#app\">US budget calculator</a> to see it alongside your other bills, in dollars.</p>"
+    },
+    {
+      "h2": "Ways US families spend less on groceries",
+      "body_html": "<ul><li><strong>Try store brands</strong> for staples such as cereal, canned goods, pasta, rice, milk and cleaning products.</li><li><strong>Compare unit prices</strong> on the shelf label, per ounce or per pound, not the package price.</li><li><strong>Use the weekly ad and digital coupons</strong> only for things already on your list.</li><li><strong>Buy in bulk carefully.</strong> Warehouse clubs save money on things you use up, and cost money on things that spoil.</li><li><strong>Cook once, eat twice.</strong> Make extra for lunches or freeze portions.</li><li><strong>Check what help you can get.</strong> SNAP, WIC and free or reduced-price school meals can make a big difference for eligible families.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does the average US family of four spend on groceries?",
+      "a": "In the BLS Consumer Expenditure Surveys for 2025, four-person households spent an average of $8,912 a year on food at home, about $743 a month by our calculation."
+    },
+    {
+      "q": "How much does a single person in the US spend on groceries?",
+      "a": "Single-person households spent an average of $3,385 on food at home in 2025, about $282 a month by our calculation, plus $2,308 a year on food away from home."
+    },
+    {
+      "q": "What are the USDA Food Plans?",
+      "a": "They are four monthly estimates of what a healthy diet costs at home, from Thrifty to Liberal, published by the USDA for individuals by age and sex. Check the latest report on the USDA website for current figures."
+    },
+    {
+      "q": "Do the BLS grocery figures include restaurants and takeout?",
+      "a": "No. Food at home covers groceries. Food away from home, which includes restaurants, takeout and delivery, is counted separately; the average household spent $4,142 on it in 2025."
+    },
+    {
+      "q": "What is a reasonable grocery budget for a US family?",
+      "a": "Start from what you really spend, then compare it with the BLS average for your household size and the USDA Food Plan that matches your budget, then adjust for ages, diet and where you live."
+    }
+  ],
+  "related": [
+    "family-grocery-budget",
+    "utility-bills-us",
+    "sinking-funds"
+  ],
+  "sources": [
+    {
+      "title": "BLS: Consumer Expenditure Surveys 2025, Table 1400, size of consumer unit (xlsx)",
+      "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-size-2025.xlsx"
+    },
+    {
+      "title": "BLS: Consumer Expenditures news release, 2025 data (October 2026)",
+      "url": "https://www.bls.gov/news.release/archives/cesan_10292026.htm"
+    },
+    {
+      "title": "USDA Food and Nutrition Service: USDA Food Plans, Cost of Food at Home monthly reports",
+      "url": "https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports"
+    },
+    {
+      "title": "BLS: Consumer Price Index news release (September 2026 data)",
+      "url": "https://www.bls.gov/news.release/cpi.nr0.htm"
+    }
+  ]
+}

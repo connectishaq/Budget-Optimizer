@@ -97,12 +97,9 @@ export function sitemapXml(siteUrl, today, extraPages = []) {
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>${withAlts ? `\n${withAlts === true ? alts : withAlts}` : ''}
   </url>`;
-  // Extra pages can list their own language versions: { alternates: { en: '/guides/x/' }, hreflang: { en: 'en' } }
-  const ownAlts = (x) => (x.alternates && Object.keys(x.alternates).length > 1
-    ? [
-      ...Object.entries(x.alternates).map(([l, href]) => `    <xhtml:link rel="alternate" hreflang="${x.hreflang[l]}" href="${siteUrl}${href}"/>`),
-      ...(x.alternates.en ? [`    <xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${x.alternates.en}"/>`] : [])
-    ].join('\n')
+  // Extra pages can list their own hreflang links: { hreflangs: { en: '/guides/x/', 'x-default': '/guides/x/' } }
+  const ownAlts = (x) => (x.hreflangs
+    ? Object.entries(x.hreflangs).map(([code, href]) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${siteUrl}${href}"/>`).join('\n')
     : false);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

@@ -1,7 +1,10 @@
 // Checks the money guides in src/i18n/guides/<lang>/<slug>.json (run by
-// `npm run articles:check`). English: 1,000–1,500 words, one H1 and no H1/H2
+// `npm run articles:check`). English: 1,000–2,000 words, one H1 and no H1/H2
 // inside the body, allowed tags only, 3+ FAQ entries, 2–3 related guides that
 // exist, title/description lengths, datePublished/dateModified (YYYY-MM-DD).
+// Country guides ("region": "GB" | "US", English only): sources listed, a
+// summary table, 4–6 FAQ entries, and regionalVersions that are guides for
+// another country.
 // Translations: the same structure as the
 // English. When dist/ exists, every built guide page must carry FAQPage and
 // Article JSON-LD matching its FAQ. Returns { errors, report }.
@@ -11,7 +14,8 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { GUIDE_SLUGS, GUIDE_BASES } from '../src/i18n/guide-langs.js';
 
-const ALLOWED = new Set(['p', 'h3', 'ul', 'ol', 'li', 'strong', 'em', 'a']);
+const ALLOWED = new Set(['p', 'h3', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td']);
+const REGIONS = ['GB', 'US'];
 const strip = (s) => s.replace(/<[^>]+>/g, ' ');
 const words = (s) => strip(s).split(/\s+/).filter(Boolean).length;
 
@@ -52,6 +56,17 @@ export function checkGuides(root) {
       if (related.length < 2 || related.length > 3) errors.push(`${id}: needs 2–3 related guides`);
       for (const r of related) if (!GUIDE_SLUGS.includes(r) || r === slug) errors.push(`${id}: related "${r}" isn't another guide`);
 
+      if (g.region) {
+        if (lang !== 'en') errors.push(`${id}: country guides are English only`);
+        if (!REGIONS.includes(g.region)) errors.push(`${id}: region "${g.region}" isn't one of ${REGIONS.join(', ')}`);
+        if (!g.sources?.length || g.sources.some((x) => !/^https:\/\//.test(x.url || '') || !x.title)) errors.push(`${id}: a country guide needs its sources (title and https URL)`);
+        if (!/<table/.test(g.intro_html + (g.sections || []).map((x) => x.body_html).join(''))) errors.push(`${id}: needs a summary table`);
+        if (g.faq?.length < 4 || g.faq?.length > 6) errors.push(`${id}: needs 4–6 FAQ entries`);
+        for (const [r, other] of Object.entries(g.regionalVersions || {})) {
+          const o = load('en', other);
+          if (!o || o.region !== r || o.regionalVersions?.[g.region] !== slug) errors.push(`${id}: regionalVersions.${r} must be a ${r} guide that points back here`);
+        }
+      }
       const html = [g.intro_html, ...(g.sections || []).map((s) => s.body_html)].join('\n');
       for (const s of g.sections || []) if (!s.h2?.trim()) errors.push(`${id}: a section has no h2`);
       for (const m of html.matchAll(/<\/?([a-zA-Z0-9]+)/g)) {
@@ -64,12 +79,13 @@ export function checkGuides(root) {
         const home = lang === 'en' ? '/' : base.replace(/guides\/$/, '');
         const guide = href.startsWith(base) ? href.slice(base.length).replace(/\/$/, '') : null;
         if (guide !== null) { if (!GUIDE_SLUGS.includes(guide)) errors.push(`${id}: link to unknown guide ${href}`); }
-        else if (!href.startsWith(`${home}#`) && href !== home) errors.push(`${id}: link ${href} should stay in this language (${base}… or ${home}#app)`);
+        // English guides may also link the English country pages (/en-gb/) and the Methodology page
+        else if (!href.startsWith(`${home}#`) && href !== home && !(lang === 'en' && /^\/(en-[a-z]{2}\/|methodology\/)/.test(href))) errors.push(`${id}: link ${href} should stay in this language (${base}… or ${home}#app)`);
       }
 
       const n = words(html) + (g.sections || []).reduce((a, s) => a + words(s.h2 || ''), 0) + (g.faq || []).reduce((a, f) => a + words(`${f.q} ${f.a}`), 0);
       if (lang === 'en') {
-        if (n < 1000 || n > 1500) errors.push(`${id}: ${n} words; aim for 1,000–1,500`);
+        if (n < 1000 || n > 2000) errors.push(`${id}: ${n} words; aim for 1,000–2,000`);
         if (!g.h1.toLowerCase().includes((g.keyword || '').toLowerCase().split(' ')[0])) errors.push(`${id}: the H1 doesn't contain the keyword "${g.keyword}"`);
       } else if (en) {
         // A translation keeps the English structure

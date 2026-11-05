@@ -24,7 +24,7 @@
     "howToPlug": "How to plug it",
     "leak1": {
       "title_html": "<span class=\"num-badge\">1</span>Standby Power and Energy Bills on Autopilot",
-      "body_html": "Every TV, games console, set-top box and phone charger left on standby draws a little electricity day and night. This \"phantom load\" can add up to <strong>around 5–10% of a home's electricity use</strong>. Add heating running while the house is empty, draughty doors and old bulbs, and your energy bills carry a lot of dead weight. Many homes also sit on a standard variable tariff, paying the Ofgem price cap rate without ever comparing it with a fixed deal.",
+      "body_html": "Every TV, games console, set-top box and phone charger left on standby draws a little electricity day and night. This \"phantom load\" can add up to <strong>around 5–10% of a home's electricity use</strong>. Add heating running while the house is empty, draughty doors and old bulbs, and your energy bills carry a lot of dead weight. Many homes also sit on a standard variable tariff, paying the Ofgem price cap rate without ever comparing it with a fixed deal. See what's typical in our guide to <a href=\"/guides/household-bills-uk/\">average household bills per month in the UK</a>.",
       "fix1_html": "<strong>Switch devices off at the wall</strong>, or use a smart plug or standby-saver extension lead for the TV corner and home office.",
       "fix2_html": "<strong>Turn the thermostat down by 1°C</strong> and set the heating to come on only when you're home. Smart thermostats such as Hive, Nest or tado can do this for you, and fitting draught strips and radiator reflectors costs little.",
       "fix3_html": "<strong>Compare fixed tariffs against the price cap</strong> before each cap change (January, April, July and October), pay by Direct Debit, and swap any remaining old bulbs for LEDs.",
@@ -40,7 +40,7 @@
     },
     "leak3": {
       "title_html": "<span class=\"num-badge\">3</span>Food Waste and the Takeaway Premium",
-      "body_html": "UK households throw away <strong>a surprising share of the food they buy</strong>, often bagged salad, bread and leftovers. Pre-cut veg, meal deals and small top-up shops at the corner shop all carry a convenience premium. Then there are takeaways and delivery apps: when a household spends more on Deliveroo and Just Eat than on the weekly shop, it's often paying several times more per meal for food it could make at home.",
+      "body_html": "UK households throw away <strong>a surprising share of the food they buy</strong>, often bagged salad, bread and leftovers. Pre-cut veg, meal deals and small top-up shops at the corner shop all carry a convenience premium. Then there are takeaways and delivery apps: when a household spends more on Deliveroo and Just Eat than on the weekly shop, it's often paying several times more per meal for food it could make at home. To check your own spending, see <a href=\"/guides/grocery-budget-uk/\">how much a family should spend on groceries in the UK</a>.",
       "fix1_html": "<strong>Plan meals around what's already in your fridge and freezer</strong> before writing a shopping list.",
       "fix2": "Try supermarket own brands for basics, or shop at Aldi or Lidl. They often cost noticeably less and many people can't taste the difference.",
       "fix3": "Do one big shop a week with a list, use your Clubcard or Nectar prices only on things you planned to buy, and have a \"leftovers night\" to clear the fridge.",

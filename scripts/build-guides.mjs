@@ -9,6 +9,11 @@
 // language. Each guide page has Article, FAQPage and breadcrumb JSON-LD, and
 // (when SITE_URL is set) canonical, og:url and hreflang links to its other
 // language versions.
+//
+// A guide written for one country ("region": "GB" or "US", English only) is
+// marked up as en-GB / en-US, links its calculator buttons to that country's
+// page (/en-gb/), and lists the same guide for the other country
+// ("regionalVersions") as its hreflang alternate.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -23,6 +28,8 @@ const HREFLANG = { en: 'en', ur: 'ur-PK' };
 const HOME = { en: '/', ur: '/ur-pk/' };
 // The country of a language's guides (Urdu: Pakistan), so the picker shows it to new visitors
 const COUNTRY = { ur: 'PK' };
+// Guides written for one country: their language tag and that country's calculator page
+const REGIONS = { GB: { hreflang: 'en-GB', home: '/en-gb/' }, US: { hreflang: 'en-US', home: '/en-us/' } };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const plural = (msg, count) => (typeof msg === 'object' ? msg.other : msg).replace('{count}', String(count));
@@ -46,9 +53,29 @@ function versions(all, slug) {
   return Object.fromEntries(Object.keys(GUIDE_BASES).filter((l) => all[l].has(slug)).map((l) => [l, `${GUIDE_BASES[l]}${slug}/`]));
 }
 
-// Body HTML from the content files, with the site's list and heading styles
+/**
+ * A guide page's hreflang links, { "en-GB": "/guides/x/", …, "x-default": … }: its
+ * language versions, or for a country guide the same guide for the other
+ * countries (x-default: the US version). Used in the page head and the sitemap.
+ */
+function hreflangs(all, g) {
+  if (g.region) {
+    const set = { [REGIONS[g.region].hreflang]: `${GUIDE_BASES.en}${g.slug}/` };
+    for (const [r, slug] of Object.entries(g.regionalVersions || {})) set[REGIONS[r].hreflang] = `${GUIDE_BASES.en}${slug}/`;
+    return { ...set, 'x-default': set['en-US'] || set[REGIONS[g.region].hreflang] };
+  }
+  return languageLinks(versions(all, g.slug));
+}
+
+/** { en: '/guides/', ur: '/ur-pk/guides/' } -> hreflang codes, with x-default the English version. */
+const languageLinks = (alts) => ({ ...Object.fromEntries(Object.entries(alts).map(([l, href]) => [HREFLANG[l], href])), 'x-default': alts.en });
+
+// Body HTML from the content files, with the site's list, heading and table styles
 function styleBody(html) {
   const doc = parse(`<div>${html}</div>`);
+  for (const el of doc.querySelectorAll('thead th')) { el.setAttribute('scope', 'col'); el.setAttribute('class', 'text-start'); }
+  for (const el of doc.querySelectorAll('tbody th')) el.setAttribute('scope', 'row');
+  for (const el of doc.querySelectorAll('table')) el.replaceWith(`<div class="table-wrap">${el.toString()}</div>`);
   for (const el of doc.querySelectorAll('h3')) el.setAttribute('class', 'mt-8 mb-2 text-lg font-semibold tracking-tight text-slate-900 dark:text-white');
   for (const el of doc.querySelectorAll('ul')) el.setAttribute('class', 'mb-4 list-disc space-y-1.5 ps-5');
   for (const el of doc.querySelectorAll('ol')) el.setAttribute('class', 'mb-4 list-decimal space-y-1.5 ps-5');
@@ -88,6 +115,8 @@ function indexMain(t, lang, guides) {
 function articleMain(t, lang, g, guides) {
   const base = GUIDE_BASES[lang];
   const home = HOME[lang];
+  // The calculator buttons open the guide's country page when it has one
+  const calc = `${g.region ? REGIONS[g.region].home : home}#app`;
   const sections = g.sections.map((s, i) => `
         <section id="s${i + 1}" aria-labelledby="s${i + 1}-title">
           <h2 id="s${i + 1}-title" class="${H2}">${esc(s.h2)}</h2>
@@ -103,7 +132,7 @@ function articleMain(t, lang, g, guides) {
         <nav class="lg:sticky lg:top-20" aria-labelledby="tocTitle">
           <p id="tocTitle" class="text-sm font-semibold text-slate-900 dark:text-white">${esc(t('guides.onThisPage'))}</p>
           <ol class="mt-3 space-y-0.5 text-sm">${toc}</ol>
-          <a href="${home}#app" class="btn btn-secondary mt-4 w-full">${esc(t('guides.cta.button'))}</a>
+          <a href="${calc}" class="btn btn-secondary mt-4 w-full">${esc(t('guides.cta.button'))}</a>
         </nav>
       </aside>
 
@@ -119,7 +148,7 @@ function articleMain(t, lang, g, guides) {
         <aside class="mt-12 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6 dark:border-emerald-900 dark:bg-emerald-950/40" aria-labelledby="ctaTitle">
           <p id="ctaTitle" class="text-lg font-semibold text-slate-900 dark:text-white">${esc(t('guides.cta.title'))}</p>
           <p>${esc(t('guides.cta.text'))}</p>
-          <a href="${home}#app" class="btn btn-primary px-5">${esc(t('guides.cta.button'))}</a>
+          <a href="${calc}" class="btn btn-primary px-5">${esc(t('guides.cta.button'))}</a>
         </aside>
 
         <section id="faq" aria-labelledby="faqTitle">
@@ -146,7 +175,7 @@ ${related ? `
 const ldBlock = (o) => `<script type="application/ld+json">\n  ${JSON.stringify(o, null, 2).replace(/</g, '\\u003c').replace(/\n/g, '\n  ')}\n  </script>`;
 
 /** Head tags for a guide page or index: title, description, social, canonical/hreflang, JSON-LD. */
-function setHead(doc, { title, description, imageAlt, lang, siteUrl, path: pagePath, alternates, ld, type = 'website' }) {
+function setHead(doc, { title, description, imageAlt, lang, htmlLang = HREFLANG[lang], country = COUNTRY[lang], siteUrl, path: pagePath, alternates, links, ld, type = 'website' }) {
   const head = doc.querySelector('head');
   const set = (sel, value) => { const el = head.querySelector(sel); if (el) el.setAttribute('content', value); };
   head.querySelector('title').set_content(esc(title));
@@ -159,16 +188,15 @@ function setHead(doc, { title, description, imageAlt, lang, siteUrl, path: pageP
   const tags = [];
   if (siteUrl) {
     tags.push(`<link rel="canonical" href="${siteUrl}${pagePath}">`, `<meta property="og:url" content="${siteUrl}${pagePath}">`);
-    for (const [l, href] of Object.entries(alternates)) tags.push(`<link rel="alternate" hreflang="${HREFLANG[l]}" href="${siteUrl}${href}">`);
-    if (alternates.en) tags.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}${alternates.en}">`);
+    for (const [code, href] of Object.entries(links)) tags.push(`<link rel="alternate" hreflang="${code}" href="${siteUrl}${href}">`);
   }
   tags.push(...ld.map(ldBlock));
   head.insertAdjacentHTML('beforeend', `  ${tags.join('\n  ')}\n`);
   const html = doc.querySelector('html');
-  html.setAttribute('lang', HREFLANG[lang]);
+  html.setAttribute('lang', htmlLang);
   if (RTL.has(lang)) html.setAttribute('dir', 'rtl'); else html.removeAttribute('dir');
   html.setAttribute('data-page-lang', lang);
-  if (COUNTRY[lang]) html.setAttribute('data-page-country', COUNTRY[lang]);
+  if (country) html.setAttribute('data-page-country', country);
   // The language picker goes to the same guide in another language when there is one
   html.setAttribute('data-alternates', JSON.stringify(alternates));
 }
@@ -214,7 +242,7 @@ export function renderGuides({ root, template, siteUrl }) {
     const indexAlts = Object.fromEntries(Object.entries(GUIDE_BASES).filter(([l]) => all[l].size).map(([l, b]) => [l, b]));
     const index = page(indexMain(t, lang, guides));
     setHead(index, {
-      title: t('guides.index.seoTitle'), description: t('guides.index.seoDescription'), imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: base, alternates: indexAlts,
+      title: t('guides.index.seoTitle'), description: t('guides.index.seoDescription'), imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: base, alternates: indexAlts, links: languageLinks(indexAlts),
       ld: [
         {
           '@context': 'https://schema.org', '@type': 'CollectionPage', name: t('guides.index.title'), description: t('guides.index.seoDescription'), inLanguage: HREFLANG[lang],
@@ -229,15 +257,17 @@ export function renderGuides({ root, template, siteUrl }) {
     for (const g of guides.values()) {
       const pagePath = `${base}${g.slug}/`;
       const doc = page(articleMain(t, lang, g, guides));
+      const pageLang = g.region ? REGIONS[g.region].hreflang : HREFLANG[lang];
       setHead(doc, {
-        title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, siteUrl, path: pagePath, alternates: versions(all, g.slug), type: 'article',
+        title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, htmlLang: pageLang, country: g.region || COUNTRY[lang], siteUrl, path: pagePath,
+        alternates: versions(all, g.slug), links: hreflangs(all, g), type: 'article',
         ld: [
           {
-            '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.seo.description, inLanguage: HREFLANG[lang],
+            '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.seo.description, inLanguage: pageLang,
             datePublished: g.datePublished, dateModified: g.dateModified, author: author(siteUrl), publisher: publisher(siteUrl),
             ...(siteUrl ? { url: `${siteUrl}${pagePath}`, mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}${pagePath}` }, image: `${siteUrl}/og-image.png` } : {})
           },
-          { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: HREFLANG[lang], mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+          { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: pageLang, mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
           crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb'), href: base }, { name: g.h1, href: pagePath }])
         ]
       });
@@ -253,8 +283,8 @@ export function guideSitemapPages(root) {
   const out = [];
   const indexAlts = Object.fromEntries(Object.entries(GUIDE_BASES).filter(([l]) => all[l].size));
   for (const [lang, base] of Object.entries(indexAlts)) {
-    out.push({ path: base.slice(1, -1), priority: '0.7', changefreq: 'monthly', alternates: indexAlts });
-    for (const slug of all[lang].keys()) out.push({ path: `${base}${slug}`.slice(1), priority: '0.7', changefreq: 'monthly', alternates: versions(all, slug) });
+    out.push({ path: base.slice(1, -1), priority: '0.7', changefreq: 'monthly', hreflangs: languageLinks(indexAlts) });
+    for (const [slug, g] of all[lang]) out.push({ path: `${base}${slug}`.slice(1), priority: '0.7', changefreq: 'monthly', hreflangs: hreflangs(all, g) });
   }
-  return out.map((p) => ({ ...p, hreflang: HREFLANG }));
+  return out;
 }
