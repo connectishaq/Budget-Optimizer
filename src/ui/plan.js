@@ -50,6 +50,12 @@ function guideLink(item) {
   return `<p class="mt-2"><a class="link" href="${base}${slug}/">${esc(t('plan.readGuide', { name: t(GUIDE_NAMES[slug]) }))}</a></p>`;
 }
 
+/** "Where the typical amounts come from" under the sum, opening the methodology page in this language. */
+function methodologyLink() {
+  const lang = getLanguage();
+  return `<p class="mt-2"><a class="link" href="/methodology/${lang === 'en' ? '' : `?lang=${lang}`}">${esc(t('plan.methodologyLink'))}</a></p>`;
+}
+
 /** The "How did we get this?" paragraph, in plain words with the real sums. */
 export function explain(item, view) {
   const P = Math.round(item.pct * 100);
@@ -111,6 +117,7 @@ function createRow(item) {
       <div>
         <p class="font-medium text-slate-900 dark:text-white">${t('plan.howDidWeGetThis')}</p>
         <p class="mt-1 leading-relaxed text-slate-700 dark:text-slate-300" data-ref="how"></p>
+        ${methodologyLink()}
       </div>
 
       <div>

@@ -12,7 +12,7 @@ import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
 import { sourceRel } from './scripts/official-sources.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about', 'guides'];
+const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about', 'methodology', 'guides'];
 
 /**
  * Injects site-specific values (domain, AdSense, contact email) into index.html
@@ -72,6 +72,9 @@ function siteConfig(env) {
       const contact = contactEmail
         ? `<a href="mailto:${contactEmail}" class="font-semibold text-indigo-300 underline-offset-2 hover:underline">${contactEmail}</a>`
         : 'the contact details listed by the site owner';
+      // The build date ("Last updated" on the About page)
+      const buildDate = new Date().toISOString().slice(0, 10);
+      const buildDateHtml = `<time datetime="${buildDate}">${new Date(`${buildDate}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>`;
       // Shared header and footer for the standalone pages (privacy, terms, contact)
       const partial = (name) => fs.readFileSync(path.resolve(__dirname, 'src/partials', `${name}.html`), 'utf8');
       return html
@@ -81,6 +84,8 @@ function siteConfig(env) {
         .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
         .replace('<!--COUNTRY_SOURCES-->', () => countrySourcesHtml())
         .replace('<!--FOOTER_COUNTRIES-->', () => footerCountriesHtml())
+        .replace('<!--BUILD_DATE-->', buildDateHtml)
+        .replace(/__BUILD_DATE__/g, buildDate)
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
@@ -115,6 +120,7 @@ function siteConfig(env) {
         fs.writeFileSync(sitemap, sitemapXml(siteUrl, today, [
           { path: 'contact', priority: '0.5' },
           { path: 'about', priority: '0.5' },
+          { path: 'methodology', priority: '0.5' },
           { path: 'privacy-policy', priority: '0.3' },
           { path: 'terms-of-use', priority: '0.3' },
           ...guideSitemapPages(__dirname)
@@ -181,10 +187,10 @@ function footerCountriesHtml() {
 }
 
 /**
- * About page, "Where the numbers come from": a table of every country file
+ * Methodology page, "Countries and review dates": a table of every country file
  * (currency, last reviewed, number of sources) and the source lists, read from
  * src/data/countries so it never goes out of date. English names and dates;
- * translateDom and src/about.js show them in the visitor's language.
+ * translateDom and src/methodology.js show them in the visitor's language.
  */
 function countrySourcesHtml() {
   const dir = path.resolve(__dirname, 'src/data/countries');
@@ -196,10 +202,10 @@ function countrySourcesHtml() {
     .map((c) => ({ ...c, sources: (c.sources || []).filter((src) => /^https?:\/\//.test(src.url || '')) }))
     .sort((a, b) => (a.code === 'GLOBAL') - (b.code === 'GLOBAL') || names.of(a.code === 'GLOBAL' ? 'US' : a.code).localeCompare(names.of(b.code === 'GLOBAL' ? 'US' : b.code)));
   const name = (c) => (c.code === 'GLOBAL'
-    ? '<span data-i18n="about.table.otherCountries">Other countries</span>'
+    ? '<span data-i18n="methodology.table.otherCountries">Other countries</span>'
     : `<span data-country-name="${c.code}">${esc(names.of(c.code))}</span>`);
   const date = (d) => `<time datetime="${esc(d)}">${esc(new Date(`${d}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }))}</time>`;
-  const count = (n) => `<span data-i18n="about.table.sourceCount" data-i18n-vars='{"count":${n}}'>${n === 1 ? '1 source' : `${n} sources`}</span>`;
+  const count = (n) => `<span data-i18n="methodology.table.sourceCount" data-i18n-vars='{"count":${n}}'>${n === 1 ? '1 source' : `${n} sources`}</span>`;
   const rows = files.map((c) => `<tr><td>${name(c)}</td><td>${esc(c.currency || '')}</td><td>${date(c.lastReviewed)}</td><td>${c.sources.length}</td></tr>`).join('\n              ');
   const lists = files.filter((c) => c.sources.length).map((c) => {
     // Official sources (government, central banks, statistics offices) are followed; others stay nofollow
@@ -208,13 +214,13 @@ function countrySourcesHtml() {
   }).join('\n          ');
   return `<div class="table-wrap">
             <table>
-              <thead><tr><th scope="col" class="text-start" data-i18n="about.table.country">Country</th><th scope="col" class="text-start" data-i18n="about.table.currency">Currency</th><th scope="col" class="text-start" data-i18n="about.table.reviewed">Last reviewed</th><th scope="col" class="text-start" data-i18n="about.table.sources">Sources</th></tr></thead>
+              <thead><tr><th scope="col" class="text-start" data-i18n="methodology.table.country">Country</th><th scope="col" class="text-start" data-i18n="methodology.table.currency">Currency</th><th scope="col" class="text-start" data-i18n="methodology.table.reviewed">Last reviewed</th><th scope="col" class="text-start" data-i18n="methodology.table.sources">Sources</th></tr></thead>
               <tbody>
               ${rows}
               </tbody>
             </table>
           </div>
-          <h3 class="mt-6 font-semibold text-slate-900 dark:text-white" data-i18n="about.table.listTitle">Sources by country</h3>
+          <h3 class="mt-6 font-semibold text-slate-900 dark:text-white" data-i18n="methodology.table.listTitle">Sources by country</h3>
           <div class="mt-3 space-y-3">
           ${lists}
           </div>`;

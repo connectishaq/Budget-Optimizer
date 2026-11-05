@@ -118,7 +118,7 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - Nav and footer both use "हमारे बारे में" (English "About" / "About us").
 - `about.toc.standards` "संपादकीय मानक" (editorial standards) is formal; "हमारे नियम" would be plainer.
 - `about.sections.how.item1_html` utilities written as "बिजली-पानी जैसे बिल".
-- `about.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
+- `methodology.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
 
 ## Neutral home article
 - `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).

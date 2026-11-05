@@ -32,6 +32,24 @@ const DATE = /^\d{4}-\d{2}-\d{2}(T[\d:.]+(Z|[+-]\d{2}:\d{2})?)?$/;
 
 const errors = [];
 let blocks = 0;
+
+// A Person or Organization with an @id must be described the same way on every page
+const entities = new Map(); // @id -> { rel, type, name, jobTitle }
+function collectIds(v, rel) {
+  if (Array.isArray(v)) { v.forEach((x) => collectIds(x, rel)); return; }
+  if (!v || typeof v !== 'object') return;
+  if (v['@id'] && v['@type']) {
+    const me = { rel, type: v['@type'], name: v.name, jobTitle: v.jobTitle };
+    const seen = entities.get(v['@id']);
+    if (!seen) entities.set(v['@id'], me);
+    else {
+      for (const k of ['type', 'name', 'jobTitle']) {
+        if (seen[k] && me[k] && seen[k] !== me[k]) errors.push(`${rel}: ${v['@id']} has ${k} "${me[k]}", but "${seen[k]}" on ${seen.rel}`);
+      }
+    }
+  }
+  Object.values(v).forEach((x) => collectIds(x, rel));
+}
 const pages = htmlPages(dist);
 const siteUrl = pages.map((p) => parse(p.html).querySelector('link[rel="canonical"]')?.getAttribute('href')).find(Boolean)?.replace(/^(https?:\/\/[^/]+).*$/, '$1') || '';
 
@@ -65,6 +83,7 @@ for (const { rel, html } of pages) {
       }
     };
     walk(data, '');
+    collectIds(data, rel);
 
     for (const n of nodes) {
       const type = n['@type'];
@@ -86,6 +105,7 @@ for (const { rel, html } of pages) {
         if (mod && shown !== mod.slice(0, 10)) err(`${at}: dateModified ${mod} but the page shows "Last updated" ${shown ? `<time datetime="${shown}">` : '(none)'}`);
         const a = need('author');
         if (a && (a['@type'] !== 'Person' || !a.name)) err(`${at}: author must be a Person with a name`);
+        if (a && siteUrl && a['@id'] !== `${siteUrl}/about/#person`) err(`${at}: author must be the About page's Person (@id ${siteUrl}/about/#person)`);
         const p = need('publisher');
         if (p && (p['@type'] !== 'Organization' || !p.name || !p.logo?.url)) err(`${at}: publisher must be an Organization with a name and logo`);
         if (canonical && n.url !== canonical) err(`${at}: url "${n.url}" isn't the canonical ${canonical}`);

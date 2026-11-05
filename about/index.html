@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>About | SpendMath</title>
-  <meta name="description" content="Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it.">
+  <title>About SpendMath: Who Runs It and Why It’s Free | SpendMath</title>
+  <meta name="description" content="SpendMath is a free, private budget calculator run by designer Muhammad Ishaq in Karachi. Why it’s free and independent, and how its figures are checked.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f172a">
   <meta name="color-scheme" content="light dark">
@@ -14,8 +14,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SpendMath">
-  <meta property="og:title" content="About | SpendMath">
-  <meta property="og:description" content="A free, private calculator that helps households find and plug money leaks. How it works and where the numbers come from.">
+  <meta property="og:title" content="About SpendMath: Who Runs It and Why It’s Free | SpendMath">
+  <meta property="og:description" content="Who runs SpendMath, why it’s free and independent, and how the calculator’s numbers are checked.">
   <meta name="twitter:card" content="summary_large_image">
   <script>
     (function () {
@@ -45,11 +45,28 @@
       {
         "@type": "AboutPage",
         "name": "About SpendMath",
-        "description": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it.",
+        "description": "SpendMath is a free, private budget calculator run by designer Muhammad Ishaq in Karachi. Why it’s free and independent, and how its figures are checked.",
         "inLanguage": "en",
         "url": "__SITE_URL__about/",
+        "dateModified": "__BUILD_DATE__",
         "isPartOf": { "@type": "WebSite", "name": "SpendMath", "url": "__SITE_URL__" },
-        "publisher": { "@type": "Organization", "name": "SpendMath", "url": "__SITE_URL__", "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" } }
+        "publisher": { "@id": "__SITE_URL__#organization" },
+        "mainEntity": {
+          "@type": "Person",
+          "@id": "__SITE_URL__about/#person",
+          "name": "Muhammad Ishaq",
+          "jobTitle": "UI/UX Designer",
+          "url": "__SITE_URL__about/",
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "__SITE_URL__#organization",
+            "name": "SpendMath",
+            "url": "__SITE_URL__",
+            "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" },
+            "email": "hello@spendmath.com",
+            "founder": { "@id": "__SITE_URL__about/#person" }
+          }
+        }
       },
       {
         "@type": "BreadcrumbList",
@@ -73,46 +90,36 @@
         <nav aria-label="On this page" data-i18n-attr="aria-label:about.toc.heading" class="sticky top-24 text-sm">
           <p data-i18n="about.toc.heading" class="font-semibold text-slate-900 dark:text-white">On this page</p>
           <ol class="mt-3 space-y-2 muted">
-            <li><a href="#why" data-i18n="about.toc.why" class="hover:text-slate-900 dark:hover:text-white">Why this tool exists</a></li>
-            <li><a href="#who" data-i18n="about.toc.who" class="hover:text-slate-900 dark:hover:text-white">Who runs it</a></li>
+            <li><a href="#who" data-i18n="about.toc.who" class="hover:text-slate-900 dark:hover:text-white">Who runs SpendMath</a></li>
+            <li><a href="#independent" data-i18n="about.toc.independent" class="hover:text-slate-900 dark:hover:text-white">Why it’s free and independent</a></li>
             <li><a href="#how" data-i18n="about.toc.how" class="hover:text-slate-900 dark:hover:text-white">How the calculator works</a></li>
-            <li><a href="#numbers" data-i18n="about.toc.numbers" class="hover:text-slate-900 dark:hover:text-white">Where the numbers come from</a></li>
             <li><a href="#privacy" data-i18n="about.toc.privacy" class="hover:text-slate-900 dark:hover:text-white">Your privacy</a></li>
             <li><a href="#standards" data-i18n="about.toc.standards" class="hover:text-slate-900 dark:hover:text-white">Editorial standards</a></li>
+            <li><a href="#contact" data-i18n="about.toc.contact" class="hover:text-slate-900 dark:hover:text-white">Get in touch</a></li>
           </ol>
         </nav>
       </aside>
 
       <article class="legal min-w-0 max-w-3xl">
         <h1 data-i18n="about.title">About SpendMath</h1>
-        <p data-i18n="about.lead" class="lead">A free, private household budget calculator that helps families see where their money goes and find simple ways to keep more of it.</p>
-
-        <section id="why" aria-labelledby="whyTitle">
-          <h2 data-i18n="about.sections.why.title" id="whyTitle">Why this tool exists</h2>
-          <p data-i18n="about.sections.why.p1">Most households don’t lose money in one big way. It slips out through small, regular costs that are easy to miss: a subscription nobody uses, a bill that crept up, interest on a card. This tool helps you find those leaks and plug them.</p>
-          <p data-i18n="about.sections.why.p2">It is free, needs no sign-up and works in many countries and languages, because careful money planning shouldn’t depend on where you live or what you can pay for an app.</p>
-        </section>
+        <p data-i18n="about.lead" class="lead">SpendMath is a free, private budget calculator. Add your monthly bills, see where your money goes, and get practical ideas to keep more of it. No account, no bank login, and your numbers never leave your device.</p>
 
         <section id="who" aria-labelledby="whoTitle">
-          <h2 data-i18n="about.sections.who.title" id="whoTitle">Who runs it</h2>
-          <p data-i18n="about.sections.who.p1">SpendMath is an independent project, built and looked after by a small team who want household money to be simpler to understand.</p>
+          <h2 data-i18n="about.sections.who.title" id="whoTitle">Who runs SpendMath</h2>
+          <p data-i18n="about.sections.who.p1">SpendMath is designed and run by Muhammad Ishaq, a UI/UX designer based in Karachi, Pakistan. I design apps and websites for a living, and I built SpendMath because most budgeting tools ask for too much: an account, a subscription, or access to your bank. I wanted something simpler: type in your bills, see the full picture in a minute, and get clear ideas you can act on today.</p>
+          <p data-i18n-html="about.sections.who.p2_html">I design and maintain the calculator, keep the country figures checked against the official sources listed on the <a href="/methodology/">methodology page</a>, and update the guides when figures or rules change.</p>
+        </section>
+
+        <section id="independent" aria-labelledby="independentTitle">
+          <h2 data-i18n="about.sections.independent.title" id="independentTitle">Why it’s free and independent</h2>
+          <p data-i18n="about.sections.independent.p1">SpendMath is independent. It isn’t owned by, or affiliated with, any bank, lender, insurer or financial company. No company pays to be mentioned, and the savings ideas never push a particular product or provider.</p>
+          <p data-i18n="about.sections.independent.p2">The site is free to use. To cover its running costs, it may show ads from Google AdSense. Ads never change the calculator’s results or what the guides recommend.</p>
         </section>
 
         <section id="how" aria-labelledby="howTitle">
           <h2 data-i18n="about.sections.how.title" id="howTitle">How the calculator works</h2>
-          <ul>
-            <li data-i18n-html="about.sections.how.item1_html"><strong>You enter your bills.</strong> Income, housing, utilities, transport, food, loans and subscriptions, as you pay them in a normal month. Costs that come once a year are spread over twelve months.</li>
-            <li data-i18n-html="about.sections.how.item2_html"><strong>We compare them with typical households.</strong> Each bill is set against a typical range for households like yours in the country you choose.</li>
-            <li data-i18n-html="about.sections.how.item3_html"><strong>We suggest changes, with the sum behind each.</strong> Every idea shows the bill it works on, the share it usually saves and the result, under “How did we get this?”. If two ideas cut the same bill, the second only counts what is left.</li>
-            <li data-i18n-html="about.sections.how.item4_html"><strong>Only what you choose counts.</strong> Ideas you add to your plan change your results. Interest you would avoid on debt is shown separately and is not counted as money saved each month.</li>
-          </ul>
-        </section>
-
-        <section id="numbers" aria-labelledby="numbersTitle">
-          <h2 data-i18n="about.sections.numbers.title" id="numbersTitle">Where the numbers come from</h2>
-          <p data-i18n="about.sections.numbers.p1">Each country has its own file of typical amounts: income, rent, groceries, power, fuel, school fees and more, for three kinds of household. These are estimates for planning, not exact figures for your city, and some are still being checked against local data. For any other country, typical amounts are worked out as shares of your own income.</p>
-          <p data-i18n="about.sections.numbers.p2">The table shows when each country’s figures were last reviewed and how many sources were used. You can open the list of sources below it.</p>
-          <!--COUNTRY_SOURCES-->
+          <p data-i18n="about.sections.how.p1">You enter your monthly bills, from rent and power to loans and subscriptions, and the calculator compares each one with typical amounts for households like yours in your country. Where a bill looks high, it suggests ways to spend less, and every idea shows the exact sum behind it under “How did we get this?”. Only the ideas you add to your plan count towards your results. Interest you would avoid on debt is shown separately and isn’t counted as money saved each month.</p>
+          <p><a href="/methodology/" class="inline-flex items-center gap-1.5 font-medium"><span data-i18n="about.sections.how.methodologyLink">See exactly where the numbers come from</span><svg class="icon icon-sm rtl-flip" aria-hidden="true"><use href="#f-arrow-right"></use></svg></a></p>
         </section>
 
         <section id="privacy" aria-labelledby="privacyTitle">
@@ -122,9 +129,17 @@
 
         <section id="standards" aria-labelledby="standardsTitle">
           <h2 data-i18n="about.sections.standards.title" id="standardsTitle">Editorial standards</h2>
-          <p data-i18n="about.sections.standards.p1">Everything here is for general education. It is not financial, tax or legal advice, and it does not recommend any product or provider. Figures are estimates, and we say so when a number is uncertain.</p>
-          <p data-i18n-html="about.sections.standards.p2_html">Found a mistake, a figure that looks wrong or a broken link? Please <a href="/contact/?topic=bug">tell us</a>. We read every message and correct errors as soon as we can.</p>
+          <p data-i18n-html="about.sections.standards.p1_html">SpendMath is for education and planning, not personal financial advice. Typical amounts and savings estimates are approximate, and every source is listed on the <a href="/methodology/">methodology page</a>. If something looks wrong or out of date, tell me and I’ll check it and correct it. Guides show the date they were last updated.</p>
+          <p data-i18n-html="about.sections.standards.p2_html">Found a mistake, a figure that looks wrong or a broken link? <a href="/contact/?topic=bug">Report a mistake</a>.</p>
         </section>
+
+        <section id="contact" aria-labelledby="contactTitle">
+          <h2 data-i18n="about.sections.contact.title" id="contactTitle">Get in touch</h2>
+          <p data-i18n-html="about.sections.contact.p1_html">Questions, ideas or spotted a mistake? Email <a href="mailto:hello@spendmath.com">hello@spendmath.com</a> or use the <a href="/contact/">contact form</a>. I read every message.</p>
+        </section>
+
+        <!-- The build date in English; src/about.js writes it in the visitor's language -->
+        <p class="meta mt-10 border-t border-slate-200 pt-4 dark:border-slate-800"><span data-i18n="about.launched">Launched October 2026</span> · <span id="aboutUpdated">Last updated: <!--BUILD_DATE--></span></p>
       </article>
     </div>
   </main>

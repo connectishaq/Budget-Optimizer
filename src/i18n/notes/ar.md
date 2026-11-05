@@ -113,7 +113,7 @@ verbatim where the policy refers to it.
 - `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use «مُحسِّن الميزانية»; align if the brand decision changes.
 - Nav and footer both use «من نحن» for "About" / "About us"; «عن الموقع» is an alternative for the nav.
 - `about.sections.why.p1` / `how.item4_html` use «فوائد» for interest; Islamic-finance wording would be «أرباح» / «رسوم» (see regional table).
-- `about.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
+- `methodology.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
 - `about.sections.how.item1_html` utilities as «الخدمات» (could be «فواتير الخدمات» or «الكهرباء والماء»).
 
 ## Neutral home article

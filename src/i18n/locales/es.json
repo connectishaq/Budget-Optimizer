@@ -1715,6 +1715,7 @@
     "whatToDo": "Qué hacer",
     "readGuide": "Lee la guía: {name}",
     "howDidWeGetThis": "¿Cómo lo hemos calculado?",
+    "methodologyLink": "De dónde salen las cantidades habituales",
     "howMuchCut": "¿Cuánto crees que puedes recortar?",
     "keepSuggestion": "¿No lo tienes claro? Mantén nuestra sugerencia.",
     "useSuggestion": "Usar nuestra sugerencia",
@@ -2141,7 +2142,8 @@
         "terms": "Condiciones de uso",
         "label": "Empresa",
         "choices": "Opciones de privacidad",
-        "about": "Sobre nosotros"
+        "about": "Sobre nosotros",
+        "methodology": "Metodología y fuentes"
       },
       "disclaimer": {
         "title": "Aviso financiero",
@@ -2465,7 +2467,7 @@
       "ldName": "Contacto",
       "ldDescription": "Envía preguntas, errores e ideas sobre la calculadora SpendMath."
     },
-    "emailAlt": "¿Prefieres el correo electrónico? Escribe a {email}.",
+    "emailAlt_html": "¿Prefieres el correo electrónico? Escribe a <a href=\"mailto:hello@spendmath.com\" class=\"link\">hello@spendmath.com</a>.",
     "errors": {
       "nameMissing": "Dinos tu nombre.",
       "nameTooLong": "Tu nombre debe tener menos de {max} caracteres.",
@@ -3119,36 +3121,30 @@
     },
     "toc": {
       "heading": "En esta página",
-      "why": "Por qué existe esta herramienta",
-      "who": "Quién la gestiona",
+      "who": "Quién está detrás de SpendMath",
+      "independent": "Por qué es gratis e independiente",
       "how": "Cómo funciona la calculadora",
-      "numbers": "De dónde salen las cifras",
       "privacy": "Tu privacidad",
-      "standards": "Criterios editoriales"
+      "standards": "Criterios editoriales",
+      "contact": "Ponte en contacto"
     },
     "title": "Acerca de SpendMath",
-    "lead": "Una calculadora de presupuesto familiar gratuita y privada que ayuda a las familias a ver en qué se va su dinero y a encontrar formas sencillas de conservar más.",
+    "lead": "SpendMath es una calculadora de presupuesto gratuita y privada. Añade tus facturas mensuales, mira a dónde va tu dinero y recibe ideas prácticas para quedarte con más. Sin cuenta, sin acceso a tu banco, y tus números nunca salen de tu dispositivo.",
     "sections": {
-      "why": {
-        "title": "Por qué existe esta herramienta",
-        "p1": "La mayoría de los hogares no pierden dinero de golpe. Se les escapa en gastos pequeños y regulares que es fácil pasar por alto: una suscripción que nadie usa, una factura que ha ido subiendo, los intereses de una tarjeta. Esta herramienta te ayuda a encontrar esas fugas y a taparlas.",
-        "p2": "Es gratis, no necesita registro y funciona en muchos países e idiomas, porque planificar bien el dinero no debería depender de dónde vives ni de lo que puedas pagar por una app."
-      },
       "who": {
-        "title": "Quién la gestiona",
-        "p1": "SpendMath es un proyecto independiente, creado y mantenido por un pequeño equipo que quiere que el dinero de casa sea más fácil de entender."
+        "title": "Quién está detrás de SpendMath",
+        "p1": "SpendMath lo diseña y lo gestiona Muhammad Ishaq, diseñador UI/UX que vive en Karachi (Pakistán). Me dedico a diseñar apps y webs, y creé SpendMath porque la mayoría de las herramientas de presupuesto piden demasiado: una cuenta, una suscripción o acceso a tu banco. Quería algo más sencillo: escribes tus facturas, ves el panorama completo en un minuto y recibes ideas claras que puedes aplicar hoy mismo.",
+        "p2_html": "Diseño y mantengo la calculadora, reviso las cifras de cada país con las fuentes oficiales que aparecen en la <a href=\"/methodology/\">página de metodología</a> y actualizo las guías cuando cambian las cifras o las normas."
+      },
+      "independent": {
+        "title": "Por qué es gratis e independiente",
+        "p1": "SpendMath es independiente. No pertenece a ningún banco, prestamista, aseguradora ni empresa financiera, ni está vinculado a ellos. Ninguna empresa paga para aparecer, y las ideas de ahorro nunca promocionan un producto o proveedor concreto.",
+        "p2": "El sitio es gratuito. Para cubrir sus costes, puede mostrar anuncios de Google AdSense. Los anuncios nunca cambian los resultados de la calculadora ni lo que recomiendan las guías."
       },
       "how": {
         "title": "Cómo funciona la calculadora",
-        "item1_html": "<strong>Introduces tus facturas.</strong> Ingresos, vivienda, suministros, transporte, comida, préstamos y suscripciones, tal como los pagas en un mes normal. Los gastos que llegan una vez al año se reparten entre doce meses.",
-        "item2_html": "<strong>Las comparamos con hogares típicos.</strong> Cada factura se compara con un rango habitual para hogares como el tuyo en el país que elijas.",
-        "item3_html": "<strong>Te sugerimos cambios, con la cuenta detrás de cada uno.</strong> Cada idea muestra la factura sobre la que actúa, el porcentaje que suele ahorrar y el resultado, en «¿Cómo lo hemos calculado?». Si dos ideas reducen la misma factura, la segunda solo cuenta lo que queda.",
-        "item4_html": "<strong>Solo cuenta lo que tú eliges.</strong> Las ideas que añades a tu plan cambian tus resultados. Los intereses de deudas que te ahorrarías se muestran aparte y no se cuentan como dinero ahorrado cada mes."
-      },
-      "numbers": {
-        "title": "De dónde salen las cifras",
-        "p1": "Cada país tiene su propio archivo de importes típicos: ingresos, alquiler, compra, luz, combustible, gastos escolares y más, para tres tipos de hogar. Son estimaciones para planificar, no cifras exactas de tu ciudad, y algunas aún se están contrastando con datos locales. Para cualquier otro país, los importes típicos se calculan como porcentajes de tus propios ingresos.",
-        "p2": "La tabla muestra cuándo se revisaron por última vez las cifras de cada país y cuántas fuentes se usaron. Debajo puedes abrir la lista de fuentes."
+        "p1": "Introduces tus facturas mensuales, del alquiler y la luz a los préstamos y las suscripciones, y la calculadora compara cada una con lo habitual en hogares como el tuyo en tu país. Cuando una factura parece alta, te sugiere formas de gastar menos, y cada idea muestra la cuenta exacta en «¿Cómo lo hemos calculado?». Solo cuentan en tus resultados las ideas que añades a tu plan. Los intereses que te ahorrarías en deudas se muestran aparte y no se cuentan como dinero ahorrado cada mes.",
+        "methodologyLink": "Mira exactamente de dónde salen las cifras"
       },
       "privacy": {
         "title": "Tu privacidad",
@@ -3156,8 +3152,51 @@
       },
       "standards": {
         "title": "Criterios editoriales",
-        "p1": "Todo lo que hay aquí es información general. No es asesoramiento financiero, fiscal ni legal, y no recomienda ningún producto ni proveedor. Las cifras son estimaciones, y lo decimos cuando un número es incierto.",
-        "p2_html": "¿Has encontrado un error, una cifra que parece incorrecta o un enlace roto? Por favor, <a href=\"/contact/?topic=bug\">avísanos</a>. Leemos todos los mensajes y corregimos los errores lo antes posible."
+        "p1_html": "SpendMath sirve para aprender y planificar; no es asesoramiento financiero personal. Las cantidades habituales y las estimaciones de ahorro son aproximadas, y todas las fuentes están en la <a href=\"/methodology/\">página de metodología</a>. Si algo parece incorrecto o desactualizado, avísame y lo revisaré y corregiré. Las guías muestran la fecha de su última actualización.",
+        "p2_html": "¿Has encontrado un error, una cifra que no cuadra o un enlace roto? <a href=\"/contact/?topic=bug\">Informa de un error</a>."
+      },
+      "contact": {
+        "title": "Ponte en contacto",
+        "p1_html": "¿Tienes preguntas o ideas, o has visto un error? Escribe a <a href=\"mailto:hello@spendmath.com\">hello@spendmath.com</a> o usa el <a href=\"/contact/\">formulario de contacto</a>. Leo todos los mensajes."
+      }
+    },
+    "launched": "Lanzado en octubre de 2026",
+    "updated": "Última actualización: {date}",
+    "seo": {
+      "title": "Acerca de SpendMath: quién está detrás y por qué es gratis | SpendMath",
+      "description": "SpendMath es una calculadora de presupuesto gratuita y privada creada por el diseñador Muhammad Ishaq en Karachi. Por qué es gratis e independiente y cómo se revisan sus cifras.",
+      "ogTitle": "Acerca de SpendMath: quién está detrás y por qué es gratis | SpendMath",
+      "ogDescription": "Quién está detrás de SpendMath, por qué es gratis e independiente y cómo se revisan las cifras de la calculadora.",
+      "ldName": "Acerca de SpendMath",
+      "ldDescription": "SpendMath es una calculadora de presupuesto gratuita y privada creada por el diseñador Muhammad Ishaq en Karachi. Por qué es gratis e independiente y cómo se revisan sus cifras."
+    }
+  },
+  "methodology": {
+    "breadcrumb": {
+      "current": "Metodología y fuentes"
+    },
+    "toc": {
+      "estimates": "Cómo se estiman las cantidades habituales",
+      "other": "Otros países",
+      "countries": "Países y fechas de revisión"
+    },
+    "title": "Metodología y fuentes",
+    "lead": "Cómo estima SpendMath lo que gasta un hogar típico en tu país, y todas las fuentes de esas cifras.",
+    "sections": {
+      "estimates": {
+        "title": "Cómo se estiman las cantidades habituales",
+        "p1": "Para cada país que cubrimos, SpendMath tiene un conjunto de cantidades mensuales habituales: ingresos, alquiler, comida, luz, combustible, transporte, gastos escolares y más. Hay cifras distintas para tres tipos de hogar: una persona que vive sola de alquiler en una ciudad, un joven profesional y una familia de cuatro. Cuando eliges tu país y tu tipo de hogar, cada una de tus facturas se compara con ese conjunto.",
+        "p2": "Las cifras proceden de oficinas oficiales de estadística, bancos centrales, organismos reguladores y las demás fuentes que aparecen abajo. Son estimaciones para planificar, no cifras exactas de tu ciudad o tu familia, y tus gastos pueden ser mayores o menores.",
+        "p3": "Cada país muestra la fecha de la última revisión de sus cifras. Cuando cambian las cifras o las normas, se vuelven a revisar y se actualiza la fecha."
+      },
+      "other": {
+        "title": "Otros países",
+        "p1": "Para otros países, las cantidades habituales se calculan como porcentajes de tus propios ingresos, a partir de los patrones de gasto de los hogares de la Encuesta de Gastos del Consumidor (Consumer Expenditure Survey) de la Oficina de Estadísticas Laborales de EE. UU.",
+        "p2": "La calculadora las marca como una referencia aproximada."
+      },
+      "countries": {
+        "title": "Países y fechas de revisión",
+        "p1": "La tabla muestra la moneda de cada país, cuándo se revisaron sus cifras por última vez y cuántas fuentes se usaron. Abre un país más abajo para ver sus fuentes."
       }
     },
     "table": {
@@ -3174,12 +3213,12 @@
       }
     },
     "seo": {
-      "title": "Acerca de | SpendMath",
-      "description": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían.",
-      "ogTitle": "Acerca de | SpendMath",
-      "ogDescription": "Una calculadora gratuita y privada que ayuda a los hogares a encontrar y tapar fugas de dinero. Cómo funciona y de dónde salen las cifras.",
-      "ldName": "Acerca de SpendMath",
-      "ldDescription": "Por qué existe esta calculadora de presupuesto familiar gratuita y privada, cómo funciona, de dónde salen sus cifras y los criterios que la guían."
+      "title": "Metodología y fuentes: cómo se estiman las cantidades habituales | SpendMath",
+      "description": "Cómo estima SpendMath el gasto habitual de los hogares por país y tipo de hogar, cuándo se revisó cada país y todas las fuentes de las cifras.",
+      "ogTitle": "Metodología y fuentes: cómo se estiman las cantidades habituales | SpendMath",
+      "ogDescription": "Cómo estima SpendMath el gasto habitual de los hogares por país y tipo de hogar, cuándo se revisó cada país y todas las fuentes de las cifras.",
+      "ldName": "Metodología y fuentes",
+      "ldDescription": "Cómo estima SpendMath el gasto habitual de los hogares por país y tipo de hogar, cuándo se revisó cada país y todas las fuentes de las cifras."
     }
   },
   "guides": {

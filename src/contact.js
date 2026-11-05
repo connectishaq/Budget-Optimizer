@@ -118,17 +118,6 @@ function initContactForm() {
   }
   let sending = false;
 
-  if (EMAIL) {
-    const alt = $('c-email-alt');
-    const [before, after = ''] = t('contact.emailAlt').split('{email}');
-    alt.append(before);
-    const a = document.createElement('a');
-    a.href = `mailto:${EMAIL}`;
-    a.className = 'link';
-    a.textContent = EMAIL;
-    alt.append(a, after);
-    alt.hidden = false;
-  }
   const counter = $('c-message-count');
 
   // ?topic=bug preselects the topic, so other pages can link straight to it

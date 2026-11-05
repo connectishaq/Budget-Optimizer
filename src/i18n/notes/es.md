@@ -130,7 +130,7 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Nav "Acerca de" vs footer "Sobre nosotros" (English "About" / "About us"); either could be used in both places.
 - `about.sections.standards.p1` "información general" for "general education" (literal "educación general" reads like schooling).
 - `about.sections.how.item1_html` "suministros" for utilities; Mexico would say "servicios".
-- `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
+- `methodology.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
 
 ## Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (Celsius first; figure grouping fixed in the review pass below).

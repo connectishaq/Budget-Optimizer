@@ -213,7 +213,7 @@ html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
   .legal td { @apply border-t border-slate-200 px-4 py-2.5 align-top dark:border-slate-800; }
 
   .field-msg { @apply mt-1 text-xs font-medium text-rose-700 empty:hidden dark:text-rose-400; }
-  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .hp { position: absolute; inset-inline-start: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .faq { @apply rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900; }
   .faq summary { @apply flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-medium text-slate-900 dark:text-white; }
   .faq summary::-webkit-details-marker { display: none; }

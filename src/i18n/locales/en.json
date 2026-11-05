@@ -1673,6 +1673,7 @@
     "whatToDo": "What to do",
     "readGuide": "Read the guide: {name}",
     "howDidWeGetThis": "How did we get this?",
+    "methodologyLink": "Where the typical amounts come from",
     "howMuchCut": "How much do you think you can cut?",
     "keepSuggestion": "Not sure? Keep our suggestion.",
     "useSuggestion": "Use our suggestion",
@@ -2093,7 +2094,8 @@
         "terms": "Terms of Use",
         "label": "Company",
         "choices": "Privacy choices",
-        "about": "About us"
+        "about": "About us",
+        "methodology": "Methodology & sources"
       },
       "disclaimer": {
         "title": "Financial disclaimer",
@@ -2417,7 +2419,7 @@
       "ldName": "Contact Us",
       "ldDescription": "Send questions, bug reports and ideas about the SpendMath calculator."
     },
-    "emailAlt": "Prefer email? Write to {email}.",
+    "emailAlt_html": "Prefer email? Write to <a href=\"mailto:hello@spendmath.com\" class=\"link\">hello@spendmath.com</a>.",
     "errors": {
       "nameMissing": "Please tell us your name.",
       "nameTooLong": "Please keep your name under {max} characters.",
@@ -3071,36 +3073,30 @@
     },
     "toc": {
       "heading": "On this page",
-      "why": "Why this tool exists",
-      "who": "Who runs it",
+      "who": "Who runs SpendMath",
+      "independent": "Why it’s free and independent",
       "how": "How the calculator works",
-      "numbers": "Where the numbers come from",
       "privacy": "Your privacy",
-      "standards": "Editorial standards"
+      "standards": "Editorial standards",
+      "contact": "Get in touch"
     },
     "title": "About SpendMath",
-    "lead": "A free, private household budget calculator that helps families see where their money goes and find simple ways to keep more of it.",
+    "lead": "SpendMath is a free, private budget calculator. Add your monthly bills, see where your money goes, and get practical ideas to keep more of it. No account, no bank login, and your numbers never leave your device.",
     "sections": {
-      "why": {
-        "title": "Why this tool exists",
-        "p1": "Most households don’t lose money in one big way. It slips out through small, regular costs that are easy to miss: a subscription nobody uses, a bill that crept up, interest on a card. This tool helps you find those leaks and plug them.",
-        "p2": "It is free, needs no sign-up and works in many countries and languages, because careful money planning shouldn’t depend on where you live or what you can pay for an app."
-      },
       "who": {
-        "title": "Who runs it",
-        "p1": "SpendMath is an independent project, built and looked after by a small team who want household money to be simpler to understand."
+        "title": "Who runs SpendMath",
+        "p1": "SpendMath is designed and run by Muhammad Ishaq, a UI/UX designer based in Karachi, Pakistan. I design apps and websites for a living, and I built SpendMath because most budgeting tools ask for too much: an account, a subscription, or access to your bank. I wanted something simpler: type in your bills, see the full picture in a minute, and get clear ideas you can act on today.",
+        "p2_html": "I design and maintain the calculator, keep the country figures checked against the official sources listed on the <a href=\"/methodology/\">methodology page</a>, and update the guides when figures or rules change."
+      },
+      "independent": {
+        "title": "Why it’s free and independent",
+        "p1": "SpendMath is independent. It isn’t owned by, or affiliated with, any bank, lender, insurer or financial company. No company pays to be mentioned, and the savings ideas never push a particular product or provider.",
+        "p2": "The site is free to use. To cover its running costs, it may show ads from Google AdSense. Ads never change the calculator’s results or what the guides recommend."
       },
       "how": {
         "title": "How the calculator works",
-        "item1_html": "<strong>You enter your bills.</strong> Income, housing, utilities, transport, food, loans and subscriptions, as you pay them in a normal month. Costs that come once a year are spread over twelve months.",
-        "item2_html": "<strong>We compare them with typical households.</strong> Each bill is set against a typical range for households like yours in the country you choose.",
-        "item3_html": "<strong>We suggest changes, with the sum behind each.</strong> Every idea shows the bill it works on, the share it usually saves and the result, under “How did we get this?”. If two ideas cut the same bill, the second only counts what is left.",
-        "item4_html": "<strong>Only what you choose counts.</strong> Ideas you add to your plan change your results. Interest you would avoid on debt is shown separately and is not counted as money saved each month."
-      },
-      "numbers": {
-        "title": "Where the numbers come from",
-        "p1": "Each country has its own file of typical amounts: income, rent, groceries, power, fuel, school fees and more, for three kinds of household. These are estimates for planning, not exact figures for your city, and some are still being checked against local data. For any other country, typical amounts are worked out as shares of your own income.",
-        "p2": "The table shows when each country’s figures were last reviewed and how many sources were used. You can open the list of sources below it."
+        "p1": "You enter your monthly bills, from rent and power to loans and subscriptions, and the calculator compares each one with typical amounts for households like yours in your country. Where a bill looks high, it suggests ways to spend less, and every idea shows the exact sum behind it under “How did we get this?”. Only the ideas you add to your plan count towards your results. Interest you would avoid on debt is shown separately and isn’t counted as money saved each month.",
+        "methodologyLink": "See exactly where the numbers come from"
       },
       "privacy": {
         "title": "Your privacy",
@@ -3108,8 +3104,51 @@
       },
       "standards": {
         "title": "Editorial standards",
-        "p1": "Everything here is for general education. It is not financial, tax or legal advice, and it does not recommend any product or provider. Figures are estimates, and we say so when a number is uncertain.",
-        "p2_html": "Found a mistake, a figure that looks wrong or a broken link? Please <a href=\"/contact/?topic=bug\">tell us</a>. We read every message and correct errors as soon as we can."
+        "p1_html": "SpendMath is for education and planning, not personal financial advice. Typical amounts and savings estimates are approximate, and every source is listed on the <a href=\"/methodology/\">methodology page</a>. If something looks wrong or out of date, tell me and I’ll check it and correct it. Guides show the date they were last updated.",
+        "p2_html": "Found a mistake, a figure that looks wrong or a broken link? <a href=\"/contact/?topic=bug\">Report a mistake</a>."
+      },
+      "contact": {
+        "title": "Get in touch",
+        "p1_html": "Questions, ideas or spotted a mistake? Email <a href=\"mailto:hello@spendmath.com\">hello@spendmath.com</a> or use the <a href=\"/contact/\">contact form</a>. I read every message."
+      }
+    },
+    "launched": "Launched October 2026",
+    "updated": "Last updated: {date}",
+    "seo": {
+      "title": "About SpendMath: Who Runs It and Why It’s Free | SpendMath",
+      "description": "SpendMath is a free, private budget calculator run by designer Muhammad Ishaq in Karachi. Why it’s free and independent, and how its figures are checked.",
+      "ogTitle": "About SpendMath: Who Runs It and Why It’s Free | SpendMath",
+      "ogDescription": "Who runs SpendMath, why it’s free and independent, and how the calculator’s numbers are checked.",
+      "ldName": "About SpendMath",
+      "ldDescription": "SpendMath is a free, private budget calculator run by designer Muhammad Ishaq in Karachi. Why it’s free and independent, and how its figures are checked."
+    }
+  },
+  "methodology": {
+    "breadcrumb": {
+      "current": "Methodology & sources"
+    },
+    "toc": {
+      "estimates": "How typical amounts are estimated",
+      "other": "Other countries",
+      "countries": "Countries and review dates"
+    },
+    "title": "Methodology & sources",
+    "lead": "How SpendMath estimates what a typical household spends in your country, and every source behind those figures.",
+    "sections": {
+      "estimates": {
+        "title": "How typical amounts are estimated",
+        "p1": "For each country we cover, SpendMath keeps a set of typical monthly amounts: income, rent, groceries, power, fuel, transport, school fees and more. There are separate figures for three kinds of household: a single person renting in a city, a young professional and a family of four. When you choose your country and household type, each of your bills is compared with that set.",
+        "p2": "The figures come from official statistics offices, central banks, regulators and the other sources listed below. They are estimates for planning, not exact figures for your city or your family, and your own costs may be higher or lower.",
+        "p3": "Each country shows the date its figures were last reviewed. When figures or rules change, they are checked again and the date is updated."
+      },
+      "other": {
+        "title": "Other countries",
+        "p1": "For other countries, typical amounts are worked out as shares of your own income, based on household spending patterns from the US Bureau of Labor Statistics Consumer Expenditure Survey.",
+        "p2": "The calculator marks these amounts as a rough guide."
+      },
+      "countries": {
+        "title": "Countries and review dates",
+        "p1": "The table shows each country’s currency, when its figures were last reviewed and how many sources were used. Open a country below to see its sources."
       }
     },
     "table": {
@@ -3125,12 +3164,12 @@
       }
     },
     "seo": {
-      "title": "About | SpendMath",
-      "description": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it.",
-      "ogTitle": "About | SpendMath",
-      "ogDescription": "A free, private calculator that helps households find and plug money leaks. How it works and where the numbers come from.",
-      "ldName": "About SpendMath",
-      "ldDescription": "Why this free, private household budget calculator exists, how it works, where its numbers come from and the standards behind it."
+      "title": "Methodology & Sources: How Typical Amounts Are Estimated | SpendMath",
+      "description": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.",
+      "ogTitle": "Methodology & Sources: How Typical Amounts Are Estimated | SpendMath",
+      "ogDescription": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.",
+      "ldName": "Methodology & sources",
+      "ldDescription": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures."
     }
   },
   "guides": {

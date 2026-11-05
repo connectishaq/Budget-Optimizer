@@ -83,6 +83,7 @@ const htmlFiles = [
   path.join(root, 'index.html'),
   path.join(root, '404.html'),
   path.join(root, 'about', 'index.html'),
+  path.join(root, 'methodology', 'index.html'),
   ...['privacy-policy', 'terms-of-use', 'contact'].map((p) => path.join(root, p, 'index.html')),
   ...walk(path.join(root, 'src/partials'), ['.html'])
 ].filter((f) => fs.existsSync(f));
@@ -122,7 +123,7 @@ for (const f of htmlFiles) {
 }
 
 // Head/SEO keys are read by the build (Phase 8), not by page code
-const buildPrefixes = ['seo.', 'privacy.seo.', 'terms.seo.', 'contact.seo.', 'about.seo.'];
+const buildPrefixes = ['seo.', 'privacy.seo.', 'terms.seo.', 'contact.seo.', 'about.seo.', 'methodology.seo.'];
 const isUsed = (k) => used.has(k) || buildPrefixes.some((p) => k.startsWith(p)) || [...dynamicPrefixes].some((p) => k.startsWith(p));
 
 for (const k of used) if (!(k in en)) errors.push(`missing in en.json: ${k}`);
@@ -149,7 +150,7 @@ for (const { code, keys } of langs) {
 // A page title should say the same as its H1 in different words, in every
 // live language (seo:check only sees the built English legal and contact
 // pages); switched-off languages are checked once they're switched on
-const TITLE_H1 = { 'seo.title': 'page.hero.title_html', 'privacy.seo.title': 'privacy.title', 'terms.seo.title': 'terms.title', 'contact.seo.title': 'contact.title' };
+const TITLE_H1 = { 'seo.title': 'page.hero.title_html', 'privacy.seo.title': 'privacy.title', 'terms.seo.title': 'terms.title', 'contact.seo.title': 'contact.title', 'about.seo.title': 'about.title', 'methodology.seo.title': 'methodology.title' };
 const plainTitle = (s) => decode(String(s)).replace(/\s*\|\s*SpendMath\s*$/, '').replace(/\s+/g, ' ').trim().toLowerCase();
 for (const { code, keys } of [{ code: 'en', keys: en }, ...langs.filter((l) => isEnabledLanguage(l.code))]) {
   for (const [title, h1] of Object.entries(TITLE_H1)) {

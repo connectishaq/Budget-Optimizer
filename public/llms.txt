@@ -27,9 +27,9 @@
 
 ## About and methodology
 
-- [About SpendMath](__SITE_URL__/about/): why the tool exists, who runs it and its editorial standards
+- [About SpendMath](__SITE_URL__/about/): who runs it (Muhammad Ishaq, a UI/UX designer in Karachi), why it's free and independent, and its editorial standards
 - [How the calculator works](__SITE_URL__/about/#how): how bills are compared with typical households and how each savings idea is worked out
-- [Where the numbers come from](__SITE_URL__/about/#numbers): the sources behind each country's typical amounts, with the date each was last reviewed
+- [Methodology & sources](__SITE_URL__/methodology/): how typical amounts are estimated per country and household type, and the sources behind them, with the date each country was last reviewed
 - [Privacy policy](__SITE_URL__/privacy-policy/): budget numbers stay in your browser; what is stored on your device and how ads use cookies
 
 ## Optional

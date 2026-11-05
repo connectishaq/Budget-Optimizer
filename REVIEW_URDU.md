@@ -46,7 +46,7 @@ Each item gives the key or file, the current Urdu, the English, and the question
 - `privacy.sections.transfers.p1`: "معیاری معاہداتی شقیں (standard contractual clauses)". Is this the right legal term?
 - `privacy.sections.rights.p2`: the GDPR, CCPA/CPRA and DPDP names are in Urdu with the English abbreviations. Is this the usual form?
 - `about.toc.standards`: "ادارتی اصول" (Editorial standards). Is this too formal? "ہمارے اصول" is plainer.
-- `about.table.sourceCount`: "ذریعہ / ذرائع" (source/sources), or the loan word "سورس"?
+- `methodology.table.sourceCount`: "ذریعہ / ذرائع" (source/sources), or the loan word "سورس"?
 - Contact page: no open wording questions.
 
 ## Guides (/ur-pk/guides/ and the /ur-pk/ article)

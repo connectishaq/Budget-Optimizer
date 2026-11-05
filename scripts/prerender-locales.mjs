@@ -56,7 +56,7 @@ export function applyMessages(doc, t, lang) {
 /**
  * Keeps links on a language page: home ("/") and its sections ("/#app") go to
  * that page, guides go to the guides in that language when there are any, and
- * the privacy, terms, about and contact pages open in that language (?lang=).
+ * the privacy, terms, about, methodology and contact pages open in that language (?lang=).
  */
 export function localizeLinks(doc, { home, lang, guidesBase }) {
   for (const a of doc.querySelectorAll('a[href]')) {
@@ -64,7 +64,7 @@ export function localizeLinks(doc, { home, lang, guidesBase }) {
     if (href === '/') a.setAttribute('href', home);
     else if (href.startsWith('/#')) a.setAttribute('href', `${home}${href.slice(1)}`);
     else if (guidesBase && href.startsWith('/guides/')) a.setAttribute('href', `${guidesBase}${href.slice('/guides/'.length)}`);
-    else if (/^\/(privacy-policy|terms-of-use|contact|about)\//.test(href)) {
+    else if (/^\/(privacy-policy|terms-of-use|contact|about|methodology)\//.test(href)) {
       a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${lang}`);
     }
   }

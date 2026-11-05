@@ -121,7 +121,7 @@ verbatim where the policy refers to it.
 - `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use «مُحسِّن الميزانية»; align if the brand decision changes.
 - Nav and footer both use «من نحن» for "About" / "About us"; «عن الموقع» is an alternative for the nav.
 - `about.sections.why.p1` / `how.item4_html` use «فوائد» for interest; Islamic-finance wording would be «أرباح» / «رسوم» (see regional table).
-- `about.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
+- `methodology.table.sourceCount`: `one` «مصدر واحد» and `two` «مصدران» omit the number, as elsewhere; `zero` «{count} مصدر».
 - `about.sections.how.item1_html` utilities as «الخدمات» (could be «فواتير الخدمات» or «الكهرباء والماء»).
 
 #### Neutral home article
@@ -406,7 +406,7 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Nav "Acerca de" vs footer "Sobre nosotros" (English "About" / "About us"); either could be used in both places.
 - `about.sections.standards.p1` "información general" for "general education" (literal "educación general" reads like schooling).
 - `about.sections.how.item1_html` "suministros" for utilities; Mexico would say "servicios".
-- `about.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
+- `methodology.table.sourceCount.many` "{count} de fuentes" (only for millions), following the existing plural pattern.
 
 #### Neutral home article
 - `page.guide.*` no longer uses $ or °F first; the older note about "$3,000"/"$46,000" above is superseded (Celsius first; figure grouping fixed in the review pass below).
@@ -641,7 +641,7 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - Nav and footer both use "हमारे बारे में" (English "About" / "About us").
 - `about.toc.standards` "संपादकीय मानक" (editorial standards) is formal; "हमारे नियम" would be plainer.
 - `about.sections.how.item1_html` utilities written as "बिजली-पानी जैसे बिल".
-- `about.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
+- `methodology.table.sourceCount`: "स्रोत" is the same in singular and plural, so `one` and `other` are identical.
 
 #### Neutral home article
 - `page.guide.*` no longer has $ amounts or °F first; the "Money tips article" note above is partly superseded (figures are plain "250", "46,000"; Celsius first).
@@ -972,7 +972,7 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - `about.seo.*` keep the brand "Household Budget Optimizer" in Latin script (as requested), while `about.title` and `about.sections.who.p1` use "بجٹ آپٹیمائزر"; align if the brand decision changes.
 - Nav and footer both use "ہمارے بارے میں" (English "About" / "About us").
 - `about.toc.standards` "ادارتی اصول" (editorial standards) is formal; "ہمارے اصول" would be plainer.
-- `about.table.sourceCount` uses "ذریعہ / ذرائع" for sources; "سورس" is a common loan word alternative.
+- `methodology.table.sourceCount` uses "ذریعہ / ذرائع" for sources; "سورس" is a common loan word alternative.
 - `about.sections.how.item1_html` utilities as "بجلی، گیس اور پانی".
 
 #### Neutral home article

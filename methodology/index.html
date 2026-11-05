@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Methodology &amp; Sources: How Typical Amounts Are Estimated | SpendMath</title>
+  <meta name="description" content="How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="color-scheme" content="light dark">
+  <!--SITE_URL_TAGS-->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SpendMath">
+  <meta property="og:title" content="Methodology &amp; Sources: How Typical Amounts Are Estimated | SpendMath">
+  <meta property="og:description" content="How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      // Non-English visitors: hide the page until it's translated (max 2s), and set direction early
+      var L = __LIVE_LANGUAGES__, l = null; // filled in from src/i18n/enabled.js at build time
+      // ?lang=xx (links from a language/country page) wins for this visit, without being saved
+      var q = (/[?&]lang=([a-z]{2})(?:&|$)/.exec(location.search) || [])[1];
+      try { l = L.indexOf(q) > -1 ? q : localStorage.getItem('hbo:lang'); } catch (e) { l = q; }
+      if (L.indexOf(l) < 0) {
+        l = 'en';
+        var ls = navigator.languages || [navigator.language];
+        for (var i = 0; i < ls.length; i++) { var b = String(ls[i] || '').toLowerCase().split('-')[0]; if (L.indexOf(b) > -1) { l = b; break; } }
+      }
+      if (l !== 'en') {
+        d.classList.add('i18n-pending'); d.lang = l; if (l === 'ar' || l === 'ur') d.dir = 'rtl';
+        setTimeout(function () { d.classList.remove('i18n-pending'); }, 2000);
+      }
+      try { t = localStorage.getItem('hbo:theme'); } catch (e) {}
+      if (t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches) d.classList.add('dark');
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "Methodology & sources",
+        "description": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.",
+        "inLanguage": "en",
+        "url": "__SITE_URL__methodology/",
+        "isPartOf": { "@type": "WebSite", "name": "SpendMath", "url": "__SITE_URL__" },
+        "publisher": { "@type": "Organization", "@id": "__SITE_URL__#organization", "name": "SpendMath", "url": "__SITE_URL__", "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" } }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "__SITE_URL__" },
+          { "@type": "ListItem", "position": 2, "name": "Methodology & sources", "item": "__SITE_URL__methodology/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<!--SITE_HEADER-->
+
+  <main id="main" class="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+    <nav aria-label="Breadcrumb" data-i18n-attr="aria-label:about.breadcrumb.label" class="text-sm muted"><a href="/" data-i18n="about.breadcrumb.home" class="hover:text-slate-900 dark:hover:text-white">Home</a> <span aria-hidden="true">/</span> <span aria-current="page" data-i18n="methodology.breadcrumb.current">Methodology &amp; sources</span></nav>
+
+    <div class="mt-4 lg:grid lg:grid-cols-[220px_1fr] lg:gap-12">
+      <aside class="hidden lg:block">
+        <nav aria-label="On this page" data-i18n-attr="aria-label:about.toc.heading" class="sticky top-24 text-sm">
+          <p data-i18n="about.toc.heading" class="font-semibold text-slate-900 dark:text-white">On this page</p>
+          <ol class="mt-3 space-y-2 muted">
+            <li><a href="#estimates" data-i18n="methodology.toc.estimates" class="hover:text-slate-900 dark:hover:text-white">How typical amounts are estimated</a></li>
+            <li><a href="#other" data-i18n="methodology.toc.other" class="hover:text-slate-900 dark:hover:text-white">Other countries</a></li>
+            <li><a href="#numbers" data-i18n="methodology.toc.countries" class="hover:text-slate-900 dark:hover:text-white">Countries and review dates</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <article class="legal min-w-0 max-w-3xl">
+        <h1 data-i18n="methodology.title">Methodology &amp; sources</h1>
+        <p data-i18n="methodology.lead" class="lead">How SpendMath estimates what a typical household spends in your country, and every source behind those figures.</p>
+
+        <section id="estimates" aria-labelledby="estimatesTitle">
+          <h2 data-i18n="methodology.sections.estimates.title" id="estimatesTitle">How typical amounts are estimated</h2>
+          <p data-i18n="methodology.sections.estimates.p1">For each country we cover, SpendMath keeps a set of typical monthly amounts: income, rent, groceries, power, fuel, transport, school fees and more. There are separate figures for three kinds of household: a single person renting in a city, a young professional and a family of four. When you choose your country and household type, each of your bills is compared with that set.</p>
+          <p data-i18n="methodology.sections.estimates.p2">The figures come from official statistics offices, central banks, regulators and the other sources listed below. They are estimates for planning, not exact figures for your city or your family, and your own costs may be higher or lower.</p>
+          <p data-i18n="methodology.sections.estimates.p3">Each country shows the date its figures were last reviewed. When figures or rules change, they are checked again and the date is updated.</p>
+        </section>
+
+        <section id="other" aria-labelledby="otherTitle">
+          <h2 data-i18n="methodology.sections.other.title" id="otherTitle">Other countries</h2>
+          <p data-i18n="methodology.sections.other.p1">For other countries, typical amounts are worked out as shares of your own income, based on household spending patterns from the US Bureau of Labor Statistics Consumer Expenditure Survey.</p>
+          <p data-i18n="methodology.sections.other.p2">The calculator marks these amounts as a rough guide.</p>
+        </section>
+
+        <section id="numbers" aria-labelledby="numbersTitle">
+          <h2 data-i18n="methodology.sections.countries.title" id="numbersTitle">Countries and review dates</h2>
+          <p data-i18n="methodology.sections.countries.p1">The table shows each country’s currency, when its figures were last reviewed and how many sources were used. Open a country below to see its sources.</p>
+          <!--COUNTRY_SOURCES-->
+        </section>
+      </article>
+    </div>
+  </main>
+
+<!--SITE_FOOTER-->
+  <div id="toastRegion" class="pointer-events-none fixed inset-x-0 bottom-6 z-50 flex flex-col items-center gap-2 px-4" aria-live="polite"></div>
+  <script type="module" src="/src/methodology.js"></script>
+</body>
+</html>
