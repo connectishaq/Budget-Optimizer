@@ -60,7 +60,9 @@ Ad slots are marked in `index.html` with `<!-- ===== ADSENSE: … START/END ====
 **Security headers.** `public/_headers` sets HSTS, nosniff, the referrer policy, `X-Frame-Options`,
 `Permissions-Policy` and a Content-Security-Policy that allows only what the site uses today: its
 own files, the inline theme/language script (by SHA-256 hash) and the contact form service
-(`https://api.web3forms.com`). `npm run build` runs `csp:check`, which fails if an inline script's
+(`https://api.web3forms.com`), plus Cloudflare Web Analytics, whose beacon Cloudflare adds while
+serving pages (`static.cloudflareinsights.com`, reporting to `cloudflareinsights.com`; remove both if
+Web Analytics is turned off). `npm run build` runs `csp:check`, which fails if an inline script's
 hash is missing (it prints the hash to add), if a page loads something from another site, or if
 `VITE_CONTACT_FORM_ENDPOINT` points to a service that isn't in `connect-src` (for Formspree, add
 `https://formspree.io`).

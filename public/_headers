@@ -11,6 +11,10 @@
 #   set style="" attributes.
 # - Images: own files and data: (small SVG icons inside the CSS).
 # - Fonts: own files (the Arabic/Urdu font is self-hosted).
+# - Cloudflare Web Analytics: Cloudflare adds its beacon to every page as it
+#   serves it (it isn't in dist/), so static.cloudflareinsights.com is in
+#   script-src and cloudflareinsights.com (where it reports) in connect-src.
+#   Remove both if Web Analytics is turned off in the Cloudflare dashboard.
 # - Network: own files and the contact form service (Web3Forms). If you move
 #   the form to Formspree, replace https://api.web3forms.com with
 #   https://formspree.io in connect-src.
@@ -42,4 +46,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-BnSxa8uY8aFxYBFCgw2CNXtG4SfGjcJKK1qHyfwY2uM=' 'sha256-ncymmka8aUc7VLViCaagdHMKwiSw5AtNPpFM519+Ucw=' 'sha256-dG827GbB35HDihq0jPxDTXLyv1zu+5dLS66WA33uJmo=' 'sha256-QSg4XfwCj8XI+T0AFMCV6aSdDWaPQBW0PcPHK1tleq8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com 'sha256-BnSxa8uY8aFxYBFCgw2CNXtG4SfGjcJKK1qHyfwY2uM=' 'sha256-ncymmka8aUc7VLViCaagdHMKwiSw5AtNPpFM519+Ucw=' 'sha256-dG827GbB35HDihq0jPxDTXLyv1zu+5dLS66WA33uJmo=' 'sha256-QSg4XfwCj8XI+T0AFMCV6aSdDWaPQBW0PcPHK1tleq8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://api.web3forms.com; form-action 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
