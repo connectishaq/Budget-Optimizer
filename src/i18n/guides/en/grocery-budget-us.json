@@ -2,13 +2,15 @@
   "slug": "grocery-budget-us",
   "keyword": "groceries US",
   "region": "US",
-  "regionalVersions": { "GB": "grocery-budget-uk" },
+  "regionalVersions": {
+    "GB": "grocery-budget-uk"
+  },
   "seo": {
     "title": "US Grocery Costs by Household Size: Averages and Budgets",
     "description": "What US households spend on groceries by household size, from BLS 2025 data, how the USDA Food Plans set a budget, and how to choose a number for you."
   },
   "h1": "How much should a family spend on groceries in the US?",
-  "summary": "Official BLS figures for what US singles, couples and families of four spend on groceries, how the USDA Food Plans work, and how to set your own budget.",
+  "summary": "Official BLS figures for what US singles, couples and families of four spend on groceries, the USDA Food Plan costs for a healthy diet, and how to set your own budget.",
   "readMinutes": 8,
   "datePublished": "2026-11-05",
   "dateModified": "2026-11-05",
@@ -16,11 +18,11 @@
   "sections": [
     {
       "h2": "US grocery spending at a glance",
-      "body_html": "<p>The table shows average spending on <strong>food at home</strong> (groceries) and <strong>food away from home</strong> (restaurants, takeout and similar) by household size, from the BLS Consumer Expenditure Surveys for 2025, published in October 2026. BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Household</th><th>Groceries, per year (2025)</th><th>Groceries, per month (our calculation)</th><th>Eating out, per month (our calculation)</th></tr></thead><tbody><tr><th>Single person</th><td>$3,385</td><td>about $282</td><td>about $192</td></tr><tr><th>Two people (e.g. a couple)</th><td>$6,249</td><td>about $521</td><td>about $349</td></tr><tr><th>Four people (e.g. a family of 4)</th><td>$8,912</td><td>about $743</td><td>about $512</td></tr><tr><th>All households (average 2.4 people)</th><td>$6,491</td><td>about $541</td><td>about $345</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> the BLS annual average divided by 12, rounded to the nearest dollar. They are our calculation, not BLS figures. Source: BLS Consumer Expenditure Surveys 2025, Table 1400 (size of consumer unit). BLS groups households by size, not by age or family type, so \"four people\" may include different mixes of adults and children.</p>"
+      "body_html": "<p>The table shows average spending on <strong>food at home</strong> (groceries) and <strong>food away from home</strong> (restaurants, takeout and similar) by household size, from the BLS Consumer Expenditure Surveys for 2025, published in October 2026, next to the monthly cost of the USDA Food Plans for September 2026. BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Household</th><th>Groceries, per year (2025)</th><th>Groceries, per month (our calculation)</th><th>Eating out, per month (our calculation)</th><th>USDA Food Plans, per month (Sept 2026, Thrifty to Liberal)</th></tr></thead><tbody><tr><th>Single person</th><td>$3,385</td><td>about $282</td><td>about $192</td><td>$304.68–$584.16</td></tr><tr><th>Two people (e.g. a couple)</th><td>$6,249</td><td>about $521</td><td>about $349</td><td>$630.19–$1,008.04</td></tr><tr><th>Four people (e.g. a family of 4)</th><td>$8,912</td><td>about $743</td><td>about $512</td><td>$1,024.00–$1,681.80</td></tr><tr><th>All households (average 2.4 people)</th><td>$6,491</td><td>about $541</td><td>about $345</td><td>–</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> the BLS annual average divided by 12, rounded to the nearest dollar. They are our calculation, not BLS figures. Source: BLS Consumer Expenditure Surveys 2025, Table 1400 (size of consumer unit). BLS groups households by size, not by age or family type, so \"four people\" may include different mixes of adults and children. The USDA ranges come from the Food Plans table in the next section: a single woman on the Thrifty plan to a single man on the Liberal plan, a couple aged 19–50, and a couple with two children aged 6–8 and 9–11.</p>"
     },
     {
       "h2": "Average spending vs a reasonable budget",
-      "body_html": "<p>An average tells you what households spend, not what you should spend. The BLS figures include households that are cutting back hard, households that buy mostly premium brands, and everyone in between.</p><h3>The USDA Food Plans: an official budget benchmark</h3><p>The USDA publishes the cost of four Food Plans every month: <strong>Thrifty, Low-Cost, Moderate-Cost and Liberal</strong>. Each plan prices a healthy diet at a different level of spending, for individuals by age and sex, and for example families. The Thrifty Food Plan is also the basis for maximum SNAP benefits.</p><p>Because these plans are built around a nutritious diet rather than what people happen to buy, they are a better guide to a <strong>reasonable budget</strong> than an average. You can pick the plan that matches your situation: Thrifty or Low-Cost for a tight budget, Moderate-Cost or Liberal if there is more room.The latest monthly figures are on the <a href=\"https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports\">USDA Food Plans: Cost of Food at Home</a> page. Look up your household members there and add their costs together, following the adjustments for household size explained in the report.</p><h3>Using both</h3><p>Compare your real spending with the BLS average for your household size and with the USDA plan that matches your goals. If you are far above both, there is probably room to save without eating worse. If you are far below the Thrifty plan, check whether money pressure is forcing cuts to a healthy diet, and whether you qualify for help such as SNAP or WIC.</p>"
+      "body_html": "<p>An average tells you what households spend, not what you should spend. The BLS figures include households that are cutting back hard, households that buy mostly premium brands, and everyone in between.</p><h3>The USDA Food Plans: what a healthy diet costs</h3><p>The U.S. Department of Agriculture publishes the cost of four Food Plans: <strong>Thrifty, Low-Cost, Moderate-Cost and Liberal</strong>. Each one prices a nutritious diet at a different level of spending. All four assume that <strong>every meal and snack is made at home</strong>, so restaurant meals, takeout and delivery are not included. USDA updates the costs <strong>every month</strong> using the Consumer Price Index for food. The <strong>Thrifty Food Plan</strong> is the one used to set SNAP benefits: its reference family of four sets the maximum SNAP allotment.</p><p>These are the monthly costs from the September 2026 report, issued in October 2026.</p><table><thead><tr><th>Household (per month)</th><th>Thrifty</th><th>Low-Cost</th><th>Moderate-Cost</th><th>Liberal</th></tr></thead><tbody><tr><th>Single woman (aged 19–50)</th><td>$304.68</td><td>$331.56</td><td>$403.68</td><td>$515.52</td></tr><tr><th>Single man (aged 19–50)</th><td>$382.80</td><td>$381.24</td><td>$478.08</td><td>$584.16</td></tr><tr><th>Couple (aged 19–50)</th><td>$630.19</td><td>$653.40</td><td>$808.28</td><td>$1,008.04</td></tr><tr><th>Family of 4 (couple, children aged 6–8 and 9–11)</th><td>$1,024.00 (USDA figure)</td><td>$1,126.90</td><td>$1,389.20</td><td>$1,681.80</td></tr></tbody></table><p><strong>How these were worked out:</strong> the Thrifty cost for a family of four, $1,024.00 a month ($236.30 a week), is USDA's own reference-family figure. Every other figure in this table is our calculation using USDA's household-size adjustments: add up the cost for each person, then add 20% for a one-person household or 10% for a two-person household; a four-person household needs no adjustment. Adults are aged 20–50 in the Thrifty plan and 19–50 in the other three plans.</p><h3>Cost per person</h3><p>For other household mixes, use USDA's monthly cost per person below. These figures are for people in four-person households. Add up everyone in your home, then apply USDA's adjustment for your household size: add 20% for one person, 10% for two and 5% for three, or subtract 5% for five or six people and 10% for seven or more.</p><table><thead><tr><th>Person (per month)</th><th>Thrifty</th><th>Low-Cost</th><th>Moderate-Cost</th><th>Liberal</th></tr></thead><tbody><tr><th>Woman, 19/20–50</th><td>$253.90</td><td>$276.30</td><td>$336.40</td><td>$429.60</td></tr><tr><th>Man, 19/20–50</th><td>$319.00</td><td>$317.70</td><td>$398.40</td><td>$486.80</td></tr><tr><th>Child, 6–8</th><td>$209.10</td><td>$261.50</td><td>$304.70</td><td>$357.20</td></tr><tr><th>Child, 9–11</th><td>$241.90</td><td>$271.40</td><td>$349.70</td><td>$408.20</td></tr></tbody></table><p>The full report also lists younger children, teenagers and older adults.</p><h3>Which plan fits your budget?</h3><p>Because the plans are built around a nutritious diet rather than what people happen to buy, they are a better guide to a <strong>reasonable budget</strong> than an average. Thrifty or Low-Cost suits a tight budget; Moderate-Cost or Liberal suits a household with more room.</p><p>The USDA figures and the BLS averages measure different things, so they don't line up. The plans price a full diet made entirely at home, at September 2026 prices. The BLS averages are what households actually spent on groceries during 2025, alongside what they spent eating out. For example, the BLS average for four-person households was about $743 a month on groceries plus about $512 eating out, while the Thrifty plan for the reference family of four is $1,024.00 a month with no eating out.</p><h3>Using both</h3><p>Compare your real spending with the BLS average for your household size and with the USDA plan that matches your goals. If you are far above both, there is probably room to save without eating worse. If you are far below the Thrifty plan, check whether money pressure is forcing cuts to a healthy diet, and whether you qualify for help such as SNAP or WIC.</p>"
     },
     {
       "h2": "What affects your grocery bill",
@@ -38,15 +40,15 @@
   "faq": [
     {
       "q": "How much does the average US family of four spend on groceries?",
-      "a": "In the BLS Consumer Expenditure Surveys for 2025, four-person households spent an average of $8,912 a year on food at home, about $743 a month by our calculation."
+      "a": "In the BLS Consumer Expenditure Surveys for 2025, four-person households spent an average of $8,912 a year on food at home, about $743 a month by our calculation. For comparison, USDA's Thrifty Food Plan for a reference family of four cost $1,024.00 a month in September 2026."
     },
     {
       "q": "How much does a single person in the US spend on groceries?",
-      "a": "Single-person households spent an average of $3,385 on food at home in 2025, about $282 a month by our calculation, plus $2,308 a year on food away from home."
+      "a": "Single-person households spent an average of $3,385 on food at home in 2025, about $282 a month by our calculation. On the USDA Food Plans for September 2026, one adult aged 19–50 living alone would need $304.68 to $584.16 a month, depending on plan and sex (our calculation using USDA's household-size adjustments)."
     },
     {
       "q": "What are the USDA Food Plans?",
-      "a": "They are four monthly estimates of what a healthy diet costs at home, from Thrifty to Liberal, published by the USDA for individuals by age and sex. Check the latest report on the USDA website for current figures."
+      "a": "They are four monthly cost estimates for a nutritious diet with every meal and snack made at home: Thrifty, Low-Cost, Moderate-Cost and Liberal. USDA updates them every month, and the Thrifty plan is used to set SNAP benefits. In September 2026, a family of four ranged from $1,024.00 a month (Thrifty, USDA figure) to $1,681.80 (Liberal, our calculation)."
     },
     {
       "q": "Do the BLS grocery figures include restaurants and takeout?",
@@ -54,7 +56,7 @@
     },
     {
       "q": "What is a reasonable grocery budget for a US family?",
-      "a": "Start from what you really spend, then compare it with the BLS average for your household size and the USDA Food Plan that matches your budget, then adjust for ages, diet and where you live."
+      "a": "Start from what you really spend, then compare it with the USDA Food Plan that matches your budget and with the BLS average for your household size. For a family of four in September 2026, the plans ran from $1,024.00 to $1,681.80 a month, assuming all meals are made at home."
     }
   ],
   "related": [
@@ -72,8 +74,16 @@
       "url": "https://www.bls.gov/news.release/archives/cesan_10292026.htm"
     },
     {
-      "title": "USDA Food and Nutrition Service: USDA Food Plans, Cost of Food at Home monthly reports",
-      "url": "https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports"
+      "title": "USDA Food and Nutrition Administration: USDA Food Plans, Cost of Food at Home monthly reports (page updated October 19, 2026)",
+      "url": "https://www.fna.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports"
+    },
+    {
+      "title": "USDA: Thrifty Food Plan, cost of food at home, September 2026 (PDF)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/CostofFoodSep2026Thrifty.pdf"
+    },
+    {
+      "title": "USDA: Low-Cost, Moderate-Cost and Liberal Food Plans, cost of food at home, September 2026 (PDF)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/CostofFoodSep2026LowModLib.pdf"
     },
     {
       "title": "BLS: Consumer Price Index news release (September 2026 data)",
