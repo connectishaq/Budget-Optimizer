@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run jsonld:check && npm run hreflang:check",
+    "build": "vite build && npm run jsonld:check && npm run hreflang:check && npm run csp:check",
     "preview": "vite preview",
     "test": "vitest run",
     "i18n:check": "node scripts/i18n-check.mjs",
@@ -15,7 +15,8 @@
     "i18n:notes": "node scripts/translation-notes.mjs",
     "seo:check": "node scripts/seo-check.mjs",
     "jsonld:check": "node scripts/jsonld-check.mjs",
-    "hreflang:check": "node scripts/hreflang-check.mjs"
+    "hreflang:check": "node scripts/hreflang-check.mjs",
+    "csp:check": "node scripts/csp-check.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

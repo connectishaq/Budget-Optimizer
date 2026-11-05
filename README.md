@@ -15,9 +15,10 @@ npm run i18n:check          # missing/unused translation keys, placeholder and p
 npm run i18n:missing -- de  # the English messages a language still lacks, ready to translate
 npm run i18n:notes          # rebuild TRANSLATION_NOTES.md from src/i18n/notes/
 npm run articles:check      # country articles and money guides: keys, markup, length, links, FAQ
-npm run seo:check           # after a build: one H1, heading order, unique titles, title ≠ H1, link text, alt text
+npm run seo:check           # after a build: one H1, heading order, unique titles, title ≠ H1, title ≤ 60 and description ≤ 160 characters, link text, alt text
 npm run jsonld:check        # after a build: JSON-LD valid for Google rich results (run by npm run build)
 npm run hreflang:check      # after a build: canonical + hreflang self-links, reciprocity, sitemap (run by npm run build)
+npm run csp:check           # after a build: inline-script hashes and form endpoint allowed by the CSP in public/_headers (run by npm run build)
 npm run benchmarks:review   # rebuild REVIEW_BENCHMARKS.md (country numbers marked "verify")
 ```
 
@@ -55,6 +56,30 @@ offline messages.
 **Ad consent (EEA, UK, Switzerland).** AdSense requires a Google-certified consent tool there. The simplest is Google's own: in AdSense open *Privacy & messaging → European regulations*, create and publish the message; it needs no code. Either way, `src/ads.js` sets Google Consent Mode v2 defaults before any Google script, so ads stay non-personalised in those regions until the visitor agrees. The slot is marked in `index.html` with `CONSENT (CMP) SLOT`.
 
 Ad slots are marked in `index.html` with `<!-- ===== ADSENSE: … START/END ===== -->` comments and reserve their height to prevent layout shift. The sidebar slot is desktop-only, so on phones no ad sits between the inputs and the results.
+
+**Security headers.** `public/_headers` sets HSTS, nosniff, the referrer policy, `X-Frame-Options`,
+`Permissions-Policy` and a Content-Security-Policy that allows only what the site uses today: its
+own files, the inline theme/language script (by SHA-256 hash) and the contact form service
+(`https://api.web3forms.com`). `npm run build` runs `csp:check`, which fails if an inline script's
+hash is missing (it prints the hash to add), if a page loads something from another site, or if
+`VITE_CONTACT_FORM_ENDPOINT` points to a service that isn't in `connect-src` (for Formspree, add
+`https://formspree.io`).
+
+Before turning on AdSense and Google's consent message, add these to the CSP or they are blocked:
+
+| Directive | Add |
+| --- | --- |
+| `script-src` | `https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://*.adtrafficquality.google` |
+| `connect-src` | `https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com https://*.adtrafficquality.google` |
+| `frame-src` (now `'none'`) | `https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://*.googlesyndication.com https://www.google.com https://fundingchoicesmessages.google.com https://*.adtrafficquality.google` |
+| `img-src` | `https:` (ad images and measurement pixels come from many hosts) |
+| `style-src` / `font-src` | `https://fonts.googleapis.com` / `https://fonts.gstatic.com` (the consent message's font) |
+
+With another consent tool (`VITE_CMP_SRC`), also add its host to `script-src`, `connect-src` and
+`frame-src`. Google only documents a nonce-based policy for AdSense, which a static site can't
+use, so this list is a starting point: ship the ads change with the policy as
+`Content-Security-Policy-Report-Only` first, browse a few pages, add whatever the console reports
+as blocked, then switch back to `Content-Security-Policy`.
 
 ## Content update checklist
 

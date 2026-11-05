@@ -1,0 +1,45 @@
+# Security headers for every page and file (Cloudflare Workers static assets).
+#
+# Content-Security-Policy: only what the site uses today.
+# - Scripts: the site's own files, plus the small inline script at the top of
+#   each page (theme and language before first paint), allowed by its SHA-256
+#   hash. There is one hash per variant: home and language/country pages,
+#   guides, the other standalone pages (About, Methodology, Contact, legal),
+#   and 404. If you edit that inline script, `npm run build` (csp:check)
+#   fails and prints the new hash to put here.
+# - Styles: own files; 'unsafe-inline' because the charts and progress bars
+#   set style="" attributes.
+# - Images: own files and data: (small SVG icons inside the CSS).
+# - Fonts: own files (the Arabic/Urdu font is self-hosted).
+# - Network: own files and the contact form service (Web3Forms). If you move
+#   the form to Formspree, replace https://api.web3forms.com with
+#   https://formspree.io in connect-src.
+# JSON-LD blocks (<script type="application/ld+json">) don't run, so they
+# need no hash.
+#
+# Turning on AdSense (VITE_ADSENSE_CLIENT) and Google's consent message needs
+# these added first, or the ads and the consent message are blocked:
+#   script-src  https://pagead2.googlesyndication.com https://tpc.googlesyndication.com
+#               https://googleads.g.doubleclick.net https://fundingchoicesmessages.google.com
+#               https://*.adtrafficquality.google
+#   connect-src https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net
+#               https://fundingchoicesmessages.google.com https://*.adtrafficquality.google
+#   frame-src   https://googleads.g.doubleclick.net https://tpc.googlesyndication.com
+#               https://*.googlesyndication.com https://www.google.com
+#               https://fundingchoicesmessages.google.com https://*.adtrafficquality.google
+#   img-src     https:   (ad images and measurement pixels come from many hosts)
+#   style-src   https://fonts.googleapis.com   and   font-src https://fonts.gstatic.com
+#               (the consent message's font)
+#   plus the host of VITE_CMP_SRC in script-src, connect-src and frame-src if
+#   you use another consent tool.
+# Google only documents a nonce-based policy for AdSense, so ship the ads
+# change with this policy as Content-Security-Policy-Report-Only first and add
+# whatever the browser console reports as blocked. See README, "Security headers".
+
+/*
+  Strict-Transport-Security: max-age=15552000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-BnSxa8uY8aFxYBFCgw2CNXtG4SfGjcJKK1qHyfwY2uM=' 'sha256-ncymmka8aUc7VLViCaagdHMKwiSw5AtNPpFM519+Ucw=' 'sha256-dG827GbB35HDihq0jPxDTXLyv1zu+5dLS66WA33uJmo=' 'sha256-QSg4XfwCj8XI+T0AFMCV6aSdDWaPQBW0PcPHK1tleq8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'

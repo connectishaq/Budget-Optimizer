@@ -9,6 +9,8 @@
 // - FAQPage: questions with an accepted answer; BreadcrumbList: positions 1…n,
 //   every item named and linked, the last one being the page itself;
 // - WebApplication: name, category, operating system, offer with price and currency;
+//   home pages also need WebSite (name, url, inLanguage) and Organization (name,
+//   url, logo, email; founder = the About page Person);
 // - AboutPage/ContactPage/WebPage/CollectionPage: name, description, url, and
 //   dateModified on the same day as a visible #pageUpdated <time>;
 // - with SITE_URL: every url/item/image/logo is an absolute https URL on the
@@ -60,6 +62,7 @@ for (const { rel, html } of pages) {
   const htmlLang = doc.querySelector('html')?.getAttribute('lang') || '';
   const err = (msg) => errors.push(`${rel}: ${msg}`);
 
+  const types = new Set();
   for (const script of doc.querySelectorAll('script[type="application/ld+json"]')) {
     blocks++;
     let data;
@@ -88,6 +91,7 @@ for (const { rel, html } of pages) {
 
     for (const n of nodes) {
       const type = n['@type'];
+      types.add(type);
       const at = `${type}`;
       const need = (k) => { if (n[k] == null || n[k] === '') err(`${at}: "${k}" is required`); return n[k]; };
       if (n.inLanguage && htmlLang && n.inLanguage.toLowerCase() !== htmlLang.toLowerCase()) err(`${at}: inLanguage "${n.inLanguage}" but <html lang="${htmlLang}">`);
@@ -141,6 +145,15 @@ for (const { rel, html } of pages) {
         if (n.dateModified && !DATE.test(n.dateModified)) err(`${at}: dateModified "${n.dateModified}" isn't an ISO 8601 date`);
         if (canonical && n.url !== canonical) err(`${at}: url "${n.url}" isn't the canonical ${canonical}`);
       }
+      if (type === 'WebSite') {
+        need('name'); need('inLanguage');
+        if (siteUrl) { if (n.url !== `${siteUrl}/`) err(`${at}: url must be the home page ${siteUrl}/`); need('@id'); }
+      }
+      if (type === 'Organization') {
+        need('name'); need('email');
+        if (siteUrl) { need('url'); need('logo'); }
+        if (n.founder && siteUrl && n.founder['@id'] !== `${siteUrl}/about/#person`) err(`${at}: founder must be the About page's Person (@id ${siteUrl}/about/#person)`);
+      }
       // Organization logos: a URL (or ImageObject with one)
       for (const org of [n.publisher, type === 'Organization' ? n : null].filter(Boolean)) {
         if (org.logo && !(typeof org.logo === 'string' || org.logo.url)) err(`${at}: publisher logo needs a url`);
@@ -154,6 +167,8 @@ for (const { rel, html } of pages) {
       }
     }
   }
+  // Home pages (the calculator, in every language) describe the site and who runs it
+  if (types.has('WebApplication')) for (const t of ['WebSite', 'Organization']) if (!types.has(t)) err(`home page needs a ${t} node`);
 }
 
 console.log(`JSON-LD check: ${blocks} blocks on ${pages.length} pages${siteUrl ? '' : ' (no SITE_URL: URL checks skipped)'}`);

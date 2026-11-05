@@ -12,7 +12,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
 import { GUIDE_BASES } from '../src/i18n/guide-langs.js';
-import { publisher } from './structured-data.mjs';
+import { publisher, siteGraph } from './structured-data.mjs';
 
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -143,7 +143,7 @@ function jsonLd(t, page, currency, pageUrl, siteUrl) {
   };
   // "<" can't appear inside the script tag
   const block = (o) => `<script type="application/ld+json">\n  ${JSON.stringify(o, null, 2).replace(/</g, '\\u003c').replace(/\n/g, '\n  ')}\n  </script>`;
-  return `${block(app)}\n  ${block(faq)}`;
+  return `${block(app)}\n  ${block(faq)}\n  ${block(siteGraph(siteUrl, bcp47(page.path)))}`;
 }
 
 /**

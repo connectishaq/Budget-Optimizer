@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Free Household Budget Calculator &amp; Savings Planner | SpendMath</title>
-  <meta name="description" content="Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.">
+  <title>Free Budget Calculator &amp; Savings Planner | SpendMath</title>
+  <meta name="description" content="Free, private household budget calculator. Enter your bills, see where your money goes and find easy ways to save. No sign-up, and it runs in your browser.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#0f172a">
   <meta name="color-scheme" content="light dark">
@@ -66,10 +66,35 @@
     "isAccessibleForFree": true,
     "url": "__SITE_URL__",
     "inLanguage": "en",
-    "publisher": { "@type": "Organization", "name": "SpendMath", "url": "__SITE_URL__", "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" } },
+    "publisher": { "@type": "Organization", "@id": "__SITE_URL__#organization", "name": "SpendMath", "url": "__SITE_URL__", "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" }, "email": "hello@spendmath.com" },
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "description": "A private, in-browser household budget tool that guides you through your bills, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow.",
     "featureList": ["Step-by-step guided setup", "Plain-language savings ideas", "Budget health score", "How your money is split (50/30/20)", "Savings growth projection in today's money", "Goal planner", "Payday checklist with calendar reminder", "Weekly spending limit", "Once-a-year costs spread into monthly amounts", "Emergency fund check", "Debt-free date", "13 currencies with lakh and crore display"]
+  }
+  </script>
+  <!-- Same values as siteGraph() in scripts/structured-data.mjs (the language/country pages) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "__SITE_URL__#website",
+        "url": "__SITE_URL__",
+        "name": "SpendMath",
+        "inLanguage": "en",
+        "publisher": { "@id": "__SITE_URL__#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "__SITE_URL__#organization",
+        "name": "SpendMath",
+        "url": "__SITE_URL__",
+        "logo": { "@type": "ImageObject", "url": "__SITE_URL__brand/logo-icon.svg" },
+        "email": "hello@spendmath.com",
+        "founder": { "@type": "Person", "@id": "__SITE_URL__about/#person", "name": "Muhammad Ishaq", "jobTitle": "UI/UX Designer", "url": "__SITE_URL__about/" }
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">

@@ -1514,8 +1514,8 @@
     }
   },
   "seo": {
-    "title": "Free Household Budget Calculator & Savings Planner | SpendMath",
-    "description": "Free, simple household budget tool: enter your bills step by step, see where your money goes, get easy ideas to spend less, and watch your savings grow. 100% private, runs in your browser.",
+    "title": "Free Budget Calculator & Savings Planner | SpendMath",
+    "description": "Free, private household budget calculator. Enter your bills, see where your money goes and find easy ways to save. No sign-up, and it runs in your browser.",
     "ogTitle": "SpendMath: Household Budget Calculator & Savings Planner",
     "ogDescription": "Enter your bills, get simple ideas to spend less, and see how much you could save. Private, free and instant.",
     "twitterTitle": "SpendMath: Household Budget Calculator & Savings Planner",
@@ -3164,12 +3164,12 @@
       }
     },
     "seo": {
-      "title": "Methodology & Sources: How Typical Amounts Are Estimated | SpendMath",
-      "description": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.",
-      "ogTitle": "Methodology & Sources: How Typical Amounts Are Estimated | SpendMath",
-      "ogDescription": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures.",
+      "title": "Methodology: How Typical Amounts Are Estimated | SpendMath",
+      "description": "How SpendMath estimates typical household spending for each country and household type, when each was last reviewed, and every source behind the figures.",
+      "ogTitle": "Methodology: How Typical Amounts Are Estimated | SpendMath",
+      "ogDescription": "How SpendMath estimates typical household spending for each country and household type, when each was last reviewed, and every source behind the figures.",
       "ldName": "Methodology & sources",
-      "ldDescription": "How SpendMath estimates typical household spending for each country and household type, when each country was last reviewed, and every source behind the figures."
+      "ldDescription": "How SpendMath estimates typical household spending for each country and household type, when each was last reviewed, and every source behind the figures."
     }
   },
   "guides": {

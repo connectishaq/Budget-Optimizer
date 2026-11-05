@@ -30,6 +30,27 @@ export function author(siteUrl) {
   };
 }
 
+/**
+ * Home pages: the WebSite and the Organization behind it, with the About page's
+ * Person as founder (same @ids as everywhere else). Hand-written copy in index.html.
+ */
+export function siteGraph(siteUrl, lang) {
+  const { worksFor, ...founder } = author(siteUrl); // eslint-disable-line no-unused-vars
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        ...(siteUrl ? { '@id': `${siteUrl}/#website`, url: `${siteUrl}/` } : {}),
+        name: 'SpendMath',
+        inLanguage: lang,
+        publisher: siteUrl ? { '@id': `${siteUrl}/#organization` } : { '@type': 'Organization', name: 'SpendMath' }
+      },
+      { ...publisher(siteUrl), founder }
+    ]
+  };
+}
+
 /** BreadcrumbList from [{ name, href }]; every item gets its absolute URL when SITE_URL is set. */
 export function breadcrumbList(siteUrl, items) {
   return {

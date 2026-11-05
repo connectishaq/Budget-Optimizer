@@ -1,13 +1,17 @@
 // npm run seo:check   (after npm run build)
 // Checks every built page in dist/: exactly one H1, headings that don't skip
 // a level, a title and meta description that no other page uses, a title that
-// isn't just the H1, readable text on every link, and alt text on every
-// image. Exit code 1 on errors.
+// isn't just the H1, a title of at most 60 characters and a description of at
+// most 160 (longer ones are cut off in search results), readable text on every
+// link, and alt text on every image. Exit code 1 on errors.
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
+
+const MAX = { title: 60, description: 160 };
+const decode = (s) => s.replace(/&(amp|lt|gt|quot|#39|apos);/g, (m, e) => ({ amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", apos: "'" })[e]);
 
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../dist');
 if (!fs.existsSync(dist)) {
@@ -67,6 +71,8 @@ for (const f of files) {
   const description = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim();
   for (const [kind, value] of [['title', title], ['description', description]]) {
     if (!value) { errors.push(`${rel}: no ${kind}`); continue; }
+    const length = [...decode(value)].length;
+    if (length > MAX[kind]) errors.push(`${rel}: ${kind} is ${length} characters (max ${MAX[kind]}): "${decode(value)}"`);
     if (seen[kind].has(value)) errors.push(`${rel}: same ${kind} as ${seen[kind].get(value)}`);
     else seen[kind].set(value, rel);
   }
