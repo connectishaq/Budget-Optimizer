@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
+import { isEnabledLanguage } from '../src/i18n/enabled.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const localesDir = path.join(root, 'src/i18n/locales');
@@ -143,6 +144,17 @@ for (const { code, keys } of langs) {
   summary.push(`  ${code}: ${enCount - missing.length}/${enCount} translated${missing.length ? `, ${missing.length} missing` : ''}${extra.length ? `, ${extra.length} extra` : ''}`);
   if (missing.length) (strict ? errors : warnings).push(`${code}.json is missing ${missing.length} key(s), e.g.\n    ${missing.slice(0, 10).join('\n    ')}`);
   if (extra.length) warnings.push(`${code}.json has ${extra.length} key(s) English doesn't, e.g.\n    ${extra.slice(0, 10).join('\n    ')}`);
+}
+
+// A page title should say the same as its H1 in different words, in every
+// live language (seo:check only sees the built English legal and contact
+// pages); switched-off languages are checked once they're switched on
+const TITLE_H1 = { 'seo.title': 'page.hero.title_html', 'privacy.seo.title': 'privacy.title', 'terms.seo.title': 'terms.title', 'contact.seo.title': 'contact.title' };
+const plainTitle = (s) => decode(String(s)).replace(/\s*\|\s*SpendMath\s*$/, '').replace(/\s+/g, ' ').trim().toLowerCase();
+for (const { code, keys } of [{ code: 'en', keys: en }, ...langs.filter((l) => isEnabledLanguage(l.code))]) {
+  for (const [title, h1] of Object.entries(TITLE_H1)) {
+    if (keys[title] && keys[h1] && plainTitle(keys[title]) === plainTitle(keys[h1])) errors.push(`${code}.json: "${title}" is the same as the H1 "${h1}"`);
+  }
 }
 
 console.log(`i18n check: ${enCount} English keys, ${used.size} referenced in code/HTML`);

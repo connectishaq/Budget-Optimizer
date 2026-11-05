@@ -39,8 +39,8 @@ export function makeT(messages, en, where) {
   };
 }
 
-/** Translates static markup the way the browser does (data-i18n, -html, -attr). */
-export function applyMessages(doc, t) {
+/** Translates static markup the way the browser does (data-i18n, -html, -attr, data-country-name). */
+export function applyMessages(doc, t, lang) {
   for (const el of doc.querySelectorAll('[data-i18n]')) el.set_content(esc(fill(t(el.getAttribute('data-i18n')), el.getAttribute('data-i18n-vars'))));
   for (const el of doc.querySelectorAll('[data-i18n-html]')) el.set_content(t(el.getAttribute('data-i18n-html')));
   for (const el of doc.querySelectorAll('[data-i18n-attr]')) {
@@ -49,6 +49,8 @@ export function applyMessages(doc, t) {
       if (a && key) el.setAttribute(a, t(key));
     }
   }
+  const names = new Intl.DisplayNames([lang, 'en'], { type: 'region' });
+  for (const el of doc.querySelectorAll('[data-country-name]')) el.set_content(esc(names.of(el.getAttribute('data-country-name'))));
 }
 
 /**
@@ -182,7 +184,7 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
     const doc = parse(home, { comment: true });
 
     // ---- Words: the same keys the browser would translate
-    applyMessages(doc, t);
+    applyMessages(doc, t, page.lang);
 
     // ---- The country's article. Its elements lose their data-i18n keys so the
     // browser doesn't swap them back to the general article.

@@ -2131,6 +2131,9 @@
         "rule503020": "Use a regra 50/30/20",
         "debt": "Quite a dívida do cartão de crédito"
       },
+      "countries": {
+        "heading": "Países"
+      },
       "legal": {
         "heading": "Ajuda e informações legais",
         "contact": "Fale conosco",
@@ -3192,6 +3195,7 @@
       "many": "Guia · {count} minutos de leitura",
       "other": "Guia · {count} minutos de leitura"
     },
+    "updated": "Última atualização: {date}",
     "onThisPage": "Nesta página",
     "faqTitle": "Perguntas frequentes",
     "related": "Guias relacionados",

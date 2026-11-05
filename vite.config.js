@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 import { prerenderLocales, alternateLinks, sitemapXml, fillFigures } from './scripts/prerender-locales.mjs';
-import { LOCALE_PAGES } from './src/i18n/locale-pages.js';
+import { LOCALE_PAGES, bcp47 } from './src/i18n/locale-pages.js';
 import { buildGuides, renderGuides, guideSitemapPages } from './scripts/build-guides.mjs';
 import { GUIDE_BASES } from './src/i18n/guide-langs.js';
 import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
@@ -80,6 +80,7 @@ function siteConfig(env) {
         .replace('<!--NAV_MENU-->', () => partial('nav-menu'))
         .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
         .replace('<!--COUNTRY_SOURCES-->', () => countrySourcesHtml())
+        .replace('<!--FOOTER_COUNTRIES-->', () => footerCountriesHtml())
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
@@ -163,10 +164,27 @@ async function exampleFigures(pairs) {
 }
 
 /**
+ * The footer's "Countries" links: one per language/country page, grouped by
+ * country. The name follows the page language (data-country-name); a country
+ * with pages in two languages names the language too ("Pakistan · اردو").
+ */
+function footerCountriesHtml() {
+  const names = new Intl.DisplayNames(['en'], { type: 'region' });
+  const count = (c) => LOCALE_PAGES.filter((p) => p.country === c).length;
+  const order = [...new Set(LOCALE_PAGES.map((p) => p.country))];
+  return order.flatMap((c) => LOCALE_PAGES.filter((p) => p.country === c)).map((p) => {
+    const language = count(p.country) > 1
+      ? `<span class="text-emerald-100/60">· <bdi lang="${p.lang}">${new Intl.DisplayNames([p.lang], { type: 'language' }).of(p.lang)}</bdi></span>`
+      : '';
+    return `<li><a href="/${p.path}/" hreflang="${bcp47(p.path)}" class="flex-wrap gap-x-2"><span data-country-name="${p.country}">${names.of(p.country)}</span>${language}</a></li>`;
+  }).join('\n          ');
+}
+
+/**
  * About page, "Where the numbers come from": a table of every country file
  * (currency, last reviewed, number of sources) and the source lists, read from
  * src/data/countries so it never goes out of date. English names and dates;
- * src/about.js shows them in the visitor's language.
+ * translateDom and src/about.js show them in the visitor's language.
  */
 function countrySourcesHtml() {
   const dir = path.resolve(__dirname, 'src/data/countries');

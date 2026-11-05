@@ -13,6 +13,7 @@
 
 import enCore from 'virtual:en-core';
 import { isEnabledLanguage } from './enabled.js';
+import { countryName } from './countries.js';
 
 export const LANGUAGES = {
   en: { name: 'English', dir: 'ltr' },
@@ -154,6 +155,7 @@ export function onLanguageChange(fn) {
  *   data-i18n="key"            -> textContent (data-i18n-vars='{"n":1}' fills placeholders)
  *   data-i18n-html="key"       -> innerHTML (trusted message files only)
  *   data-i18n-attr="aria-label:key;placeholder:key2"
+ *   data-country-name="PK"     -> the country's name in the current language
  * English text stays inline in the HTML, so the English page needs no JS.
  */
 export function translateDom(root = document) {
@@ -170,5 +172,9 @@ export function translateDom(root = document) {
       const [attr, key] = pair.split(':').map((s) => s.trim());
       if (attr && key) el.setAttribute(attr, t(key));
     }
+  });
+  root.querySelectorAll('[data-country-name]').forEach((el) => {
+    const v = countryName(el.dataset.countryName, lang, el.textContent);
+    if (el.textContent !== v) el.textContent = v;
   });
 }

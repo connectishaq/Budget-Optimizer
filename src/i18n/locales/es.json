@@ -1554,7 +1554,7 @@
     }
   },
   "seo": {
-    "title": "Calculadora de presupuesto familiar y planificador de ahorro | SpendMath",
+    "title": "Calculadora gratis de presupuesto familiar y planificador de ahorro | SpendMath",
     "description": "Herramienta de presupuesto familiar gratis y sencilla: escribe tus facturas paso a paso, mira en qué se va tu dinero, recibe ideas fáciles para gastar menos y observa cómo crecen tus ahorros. 100% privada, funciona en tu navegador.",
     "ogTitle": "SpendMath: Calculadora de presupuesto familiar y planificador de ahorro",
     "ogDescription": "Escribe tus facturas, recibe ideas sencillas para gastar menos y descubre cuánto podrías ahorrar. Privado, gratis e instantáneo.",
@@ -2131,6 +2131,9 @@
         "rule503020": "Usa la regla 50/30/20",
         "debt": "Paga la deuda de la tarjeta de crédito"
       },
+      "countries": {
+        "heading": "Países"
+      },
       "legal": {
         "heading": "Ayuda y aviso legal",
         "contact": "Contacto",
@@ -2281,9 +2284,9 @@
     },
     "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
     "seo": {
-      "title": "Política de privacidad | SpendMath",
+      "title": "Política de privacidad: tus datos, cookies y derechos | SpendMath",
       "description": "Tu presupuesto se queda en tu navegador: sin cuentas y sin nada guardado en nuestros servidores. Qué guardamos en tu dispositivo, cómo usan cookies los anuncios de Google y cuáles son tus derechos.",
-      "ogTitle": "Política de privacidad | SpendMath",
+      "ogTitle": "Política de privacidad: tus datos, cookies y derechos | SpendMath",
       "ogDescription": "Tus números del presupuesto nunca salen de tu navegador. Qué guardamos, cómo usan cookies los anuncios y cuáles son tus derechos.",
       "ldName": "Política de privacidad",
       "ldDescription": "Cómo trata tus datos SpendMath: los números del presupuesto se quedan en tu navegador, qué se guarda en tu dispositivo, las cookies publicitarias y tus derechos de privacidad."
@@ -2390,9 +2393,9 @@
     },
     "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
     "seo": {
-      "title": "Condiciones de uso | SpendMath",
+      "title": "Condiciones de uso: estimaciones, no asesoramiento financiero | SpendMath",
       "description": "Las normas para usar nuestra calculadora gratuita de presupuesto familiar. Los resultados son estimaciones para planificar, no asesoramiento financiero. Incluye exactitud, uso razonable y responsabilidad.",
-      "ogTitle": "Condiciones de uso | SpendMath",
+      "ogTitle": "Condiciones de uso: estimaciones, no asesoramiento financiero | SpendMath",
       "ogDescription": "De uso gratuito, solo estimaciones, no es asesoramiento financiero. Las condiciones de nuestra calculadora de presupuesto, en lenguaje sencillo.",
       "ldName": "Condiciones de uso",
       "ldDescription": "Las condiciones para usar la calculadora gratuita SpendMath: solo estimaciones, no es asesoramiento financiero, uso aceptable y límites de responsabilidad."
@@ -2455,9 +2458,9 @@
       }
     },
     "seo": {
-      "title": "Contacto | SpendMath",
+      "title": "Contacto: preguntas, errores e ideas | SpendMath",
       "description": "¿Tienes preguntas, errores que comunicar o ideas para la calculadora de presupuesto gratuita? Envíanos un mensaje; solemos responder en 2 días laborables. No podemos dar asesoramiento financiero.",
-      "ogTitle": "Contacto | SpendMath",
+      "ogTitle": "Contacto: preguntas, errores e ideas | SpendMath",
       "ogDescription": "¿Has encontrado un error, tienes una idea o una pregunta sobre un cálculo? Envíanos un mensaje.",
       "ldName": "Contacto",
       "ldDescription": "Envía preguntas, errores e ideas sobre la calculadora SpendMath."
@@ -3192,6 +3195,7 @@
       "many": "Guía · {count} minutos de lectura",
       "other": "Guía · {count} minutos de lectura"
     },
+    "updated": "Última actualización: {date}",
     "onThisPage": "En esta página",
     "faqTitle": "Preguntas frecuentes",
     "related": "Guías relacionadas",

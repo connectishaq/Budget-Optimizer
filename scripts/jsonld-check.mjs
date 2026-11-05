@@ -3,8 +3,9 @@
 // Rich Results Test and schema.org expect:
 // - every block is valid JSON with "@context": "https://schema.org" and known types;
 // - Article/BlogPosting: headline (max 110 characters), description, image,
-//   datePublished, dateModified (not before published), author (Person with a
-//   name), publisher (Organization with a name and logo);
+//   datePublished, dateModified (not before published, and the same day as
+//   the visible "Last updated" <time> in the article header), author (Person
+//   with a name), publisher (Organization with a name and logo);
 // - FAQPage: questions with an accepted answer; BreadcrumbList: positions 1…n,
 //   every item named and linked, the last one being the page itself;
 // - WebApplication: name, category, operating system, offer with price and currency;
@@ -80,6 +81,9 @@ for (const { rel, html } of pages) {
         const mod = need('dateModified');
         for (const [k, d] of [['datePublished', pub], ['dateModified', mod]]) if (d && !DATE.test(d)) err(`${at}: ${k} "${d}" isn't an ISO 8601 date`);
         if (pub && mod && mod < pub) err(`${at}: dateModified is before datePublished`);
+        // The "Last updated" date shown under the H1 must be the same day
+        const shown = doc.querySelector('article header time[datetime]')?.getAttribute('datetime');
+        if (mod && shown !== mod.slice(0, 10)) err(`${at}: dateModified ${mod} but the page shows "Last updated" ${shown ? `<time datetime="${shown}">` : '(none)'}`);
         const a = need('author');
         if (a && (a['@type'] !== 'Person' || !a.name)) err(`${at}: author must be a Person with a name`);
         const p = need('publisher');

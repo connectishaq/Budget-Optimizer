@@ -2056,6 +2056,9 @@
         "rule503020": "Terapkan aturan 50/30/20",
         "debt": "Lunasi utang kartu kredit"
       },
+      "countries": {
+        "heading": "Negara"
+      },
       "legal": {
         "heading": "Bantuan & hukum",
         "contact": "Hubungi kami",
@@ -3113,6 +3116,7 @@
     "readTime": {
       "other": "Panduan · {count} menit baca"
     },
+    "updated": "Terakhir diperbarui: {date}",
     "onThisPage": "Di halaman ini",
     "faqTitle": "Pertanyaan yang Sering Diajukan",
     "related": "Panduan terkait",

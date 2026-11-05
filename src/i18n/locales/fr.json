@@ -2131,6 +2131,9 @@
         "rule503020": "Appliquer la règle 50/30/20",
         "debt": "Rembourser sa carte de crédit"
       },
+      "countries": {
+        "heading": "Pays"
+      },
       "legal": {
         "heading": "Aide et mentions légales",
         "contact": "Nous contacter",
@@ -3192,6 +3195,7 @@
       "many": "Guide · {count} minutes de lecture",
       "other": "Guide · {count} minutes de lecture"
     },
+    "updated": "Dernière mise à jour : {date}",
     "onThisPage": "Sur cette page",
     "faqTitle": "Questions fréquentes",
     "related": "Guides associés",

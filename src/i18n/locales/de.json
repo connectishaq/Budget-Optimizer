@@ -2094,6 +2094,9 @@
         "rule503020": "Die 50/30/20-Regel nutzen",
         "debt": "Kreditkartenschulden abbezahlen"
       },
+      "countries": {
+        "heading": "Länder"
+      },
       "legal": {
         "heading": "Hilfe & Rechtliches",
         "contact": "Kontakt",
@@ -3153,6 +3156,7 @@
       "one": "Ratgeber · {count} Minute Lesezeit",
       "other": "Ratgeber · {count} Minuten Lesezeit"
     },
+    "updated": "Zuletzt aktualisiert: {date}",
     "onThisPage": "Auf dieser Seite",
     "faqTitle": "Häufige Fragen",
     "related": "Ähnliche Ratgeber",

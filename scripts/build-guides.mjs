@@ -26,6 +26,9 @@ const COUNTRY = { ur: 'PK' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const plural = (msg, count) => (typeof msg === 'object' ? msg.other : msg).replace('{count}', String(count));
+// Dates as written on the page: "19 October 2026", "19 اکتوبر، 2026" (Western digits, like the rest of the site)
+const DATE_LOCALE = { en: 'en-GB', ur: 'ur-PK-u-nu-latn' };
+const longDate = (lang, iso) => new Date(`${iso}T00:00:00Z`).toLocaleDateString(DATE_LOCALE[lang] || lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 /** The guides a language has, in list order, keyed by slug. */
 export function loadGuides(root, lang) {
@@ -108,6 +111,7 @@ function articleMain(t, lang, g, guides) {
         <header class="mb-8">
           <p class="eyebrow mb-2">${esc(plural(t('guides.readTime'), g.readMinutes))}</p>
           <h1 class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl dark:text-white">${esc(g.h1)}</h1>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">${esc(t('guides.updated')).replace('{date}', `<time datetime="${g.dateModified}">${esc(longDate(lang, g.dateModified))}</time>`)}</p>
         </header>
         <div class="text-lg">${styleBody(g.intro_html)}</div>
         ${sections}
@@ -198,7 +202,7 @@ export function renderGuides({ root, template, siteUrl }) {
     const page = (main) => {
       const doc = parse(template, { comment: true });
       if (lang !== 'en') {
-        applyMessages(doc, t);
+        applyMessages(doc, t, lang);
         localizeLinks(doc, { home: HOME[lang], lang, guidesBase: base });
       }
       doc.querySelector('main').set_content(`\n    ${main}\n  `);

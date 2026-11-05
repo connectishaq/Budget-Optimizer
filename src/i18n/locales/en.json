@@ -2083,6 +2083,9 @@
         "rule503020": "Use the 50/30/20 rule",
         "debt": "Pay off credit card debt"
       },
+      "countries": {
+        "heading": "Countries"
+      },
       "legal": {
         "heading": "Help & legal",
         "contact": "Contact us",
@@ -3142,6 +3145,7 @@
       "one": "Guide · {count} minute read",
       "other": "Guide · {count} minute read"
     },
+    "updated": "Last updated: {date}",
     "onThisPage": "On this page",
     "faqTitle": "Frequently asked questions",
     "related": "Related guides",
