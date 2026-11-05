@@ -72,9 +72,9 @@ function siteConfig(env) {
       const contact = contactEmail
         ? `<a href="mailto:${contactEmail}" class="font-semibold text-indigo-300 underline-offset-2 hover:underline">${contactEmail}</a>`
         : 'the contact details listed by the site owner';
-      // The build date ("Last updated" on the About page)
-      const buildDate = new Date().toISOString().slice(0, 10);
-      const buildDateHtml = `<time datetime="${buildDate}">${new Date(`${buildDate}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>`;
+      // "Last updated" on the Methodology page: the most recent country review
+      const methodologyUpdated = countryFiles().map((c) => c.lastReviewed).filter(Boolean).sort().pop();
+      const methodologyUpdatedHtml = `<time datetime="${methodologyUpdated}">${new Date(`${methodologyUpdated}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>`;
       // Shared header and footer for the standalone pages (privacy, terms, contact)
       const partial = (name) => fs.readFileSync(path.resolve(__dirname, 'src/partials', `${name}.html`), 'utf8');
       return html
@@ -84,8 +84,8 @@ function siteConfig(env) {
         .replace('<!--LOCALE_PICKER-->', () => partial('locale-picker'))
         .replace('<!--COUNTRY_SOURCES-->', () => countrySourcesHtml())
         .replace('<!--FOOTER_COUNTRIES-->', () => footerCountriesHtml())
-        .replace('<!--BUILD_DATE-->', buildDateHtml)
-        .replace(/__BUILD_DATE__/g, buildDate)
+        .replace('<!--METHODOLOGY_UPDATED-->', methodologyUpdatedHtml)
+        .replace(/__METHODOLOGY_UPDATED__/g, methodologyUpdated)
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')
@@ -186,6 +186,13 @@ function footerCountriesHtml() {
   }).join('\n          ');
 }
 
+// Every country file in src/data/countries (and GLOBAL.json)
+function countryFiles() {
+  const dir = path.resolve(__dirname, 'src/data/countries');
+  return fs.readdirSync(dir).filter((f) => /^([A-Z]{2}|GLOBAL)\.json$/.test(f))
+    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+}
+
 /**
  * Methodology page, "Countries and review dates": a table of every country file
  * (currency, last reviewed, number of sources) and the source lists, read from
@@ -193,11 +200,9 @@ function footerCountriesHtml() {
  * translateDom and src/methodology.js show them in the visitor's language.
  */
 function countrySourcesHtml() {
-  const dir = path.resolve(__dirname, 'src/data/countries');
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   const names = new Intl.DisplayNames(['en'], { type: 'region' });
-  const files = fs.readdirSync(dir).filter((f) => /^([A-Z]{2}|GLOBAL)\.json$/.test(f))
-    .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')))
+  const files = countryFiles()
     // Only public web sources are listed and counted (not internal notes such as "v1 benchmark set")
     .map((c) => ({ ...c, sources: (c.sources || []).filter((src) => /^https?:\/\//.test(src.url || '')) }))
     .sort((a, b) => (a.code === 'GLOBAL') - (b.code === 'GLOBAL') || names.of(a.code === 'GLOBAL' ? 'US' : a.code).localeCompare(names.of(b.code === 'GLOBAL' ? 'US' : b.code)));

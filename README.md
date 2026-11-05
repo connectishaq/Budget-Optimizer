@@ -56,6 +56,21 @@ offline messages.
 
 Ad slots are marked in `index.html` with `<!-- ===== ADSENSE: … START/END ===== -->` comments and reserve their height to prevent layout shift. The sidebar slot is desktop-only, so on phones no ad sits between the inputs and the results.
 
+## Content update checklist
+
+"Last updated" dates are stored with the content, so a rebuild doesn't change them. When you edit:
+
+- [ ] **About page text** (`about/index.html` or `about.*` in the locale files): set the new date in
+  both places in `about/index.html`: `"dateModified"` in the JSON-LD and the `<time datetime="…">`
+  in the "Last updated" line at the bottom. Change it only when the About text actually changes
+  (not for a typo fix in markup or a translation-only fix).
+- [ ] **Country figures or sources** (`src/data/countries/<CC>.json`): update that file's
+  `lastReviewed`. The Methodology page's "Last updated" and `dateModified` use the most recent
+  `lastReviewed` automatically.
+- [ ] **A money guide**: update its `dateModified` in `src/i18n/guides/<lang>/<slug>.json`.
+
+`npm run build` fails (`jsonld:check`) if a page's visible "Last updated" and its `dateModified` differ.
+
 ## Project structure
 
 ```

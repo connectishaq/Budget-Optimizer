@@ -9,7 +9,8 @@
 // - FAQPage: questions with an accepted answer; BreadcrumbList: positions 1…n,
 //   every item named and linked, the last one being the page itself;
 // - WebApplication: name, category, operating system, offer with price and currency;
-// - AboutPage/ContactPage/WebPage/CollectionPage: name, description, url;
+// - AboutPage/ContactPage/WebPage/CollectionPage: name, description, url, and
+//   dateModified on the same day as a visible #pageUpdated <time>;
 // - with SITE_URL: every url/item/image/logo is an absolute https URL on the
 //   site, the page's own url equals its canonical, and site files (logo, share
 //   image) exist in dist/; inLanguage matches <html lang>;
@@ -134,6 +135,10 @@ for (const { rel, html } of pages) {
       }
       if (PAGE_TYPES.has(type)) {
         need('name'); need('description');
+        // A page with a visible "Last updated" (About, Methodology) needs dateModified on the same day
+        const shown = doc.querySelector('#pageUpdated time[datetime]')?.getAttribute('datetime');
+        if (shown && n.dateModified?.slice(0, 10) !== shown) err(`${at}: the page shows "Last updated" ${shown} but dateModified is ${n.dateModified || '(none)'}`);
+        if (n.dateModified && !DATE.test(n.dateModified)) err(`${at}: dateModified "${n.dateModified}" isn't an ISO 8601 date`);
         if (canonical && n.url !== canonical) err(`${at}: url "${n.url}" isn't the canonical ${canonical}`);
       }
       // Organization logos: a URL (or ImageObject with one)
