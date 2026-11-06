@@ -10,12 +10,12 @@
   "summary": "How to set a target for a wedding, Hajj or Umrah, work out what to save each month, keep the money safe while it grows, and bring the total cost down, with worked examples in rupees.",
   "readMinutes": 8,
   "datePublished": "2026-11-06",
-  "dateModified": "2026-11-06",
+  "dateModified": "2026-11-07",
   "intro_html": "<p>A wedding, Hajj or Umrah is one of the biggest costs most families in Pakistan ever plan for. Too often, the money comes from a loan, a rushed committee or selling gold at the last minute.</p><p>A steady plan works better. Choose a target, divide it into monthly amounts, keep the money somewhere safe that earns a little profit, and look for ways to bring the total down. This guide shows how, step by step.</p>",
   "sections": [
     {
       "h2": "Monthly savings at a glance",
-      "body_html": "<p>How much to save each month to reach three example targets:</p><table><thead><tr><th>Goal</th><th>Target</th><th>Time</th><th>Monthly, no profit</th><th>Monthly, with profit (our calculation)</th></tr></thead><tbody><tr><th>Hajj (government scheme, 40-day package for 2027)</th><td>Rs 12,00,000</td><td>24 months</td><td>Rs 50,000</td><td>about Rs 45,700</td></tr><tr><th>Umrah (example)</th><td>Rs 4,00,000</td><td>18 months</td><td>Rs 22,200</td><td>about Rs 20,800</td></tr><tr><th>Wedding (example)</th><td>Rs 15,00,000</td><td>24 months</td><td>Rs 62,500</td><td>about Rs 57,200</td></tr></tbody></table><p>The Hajj figure is the government scheme price for 2027 reported by Business Recorder in August 2026. The Umrah and wedding targets are <strong>examples only</strong>, because costs vary widely with the package, the season and the family. \"With profit\" assumes 10% a year with 15% tax withheld, about 8.5% after tax, with profit added monthly. That is our calculation based on the National Savings Account rate in October 2026, not a promise of future returns.</p>"
+      "body_html": "<p>How much to save each month to reach three example targets:</p><table><thead><tr><th>Goal</th><th>Target</th><th>Time</th><th>Monthly, no profit</th><th>Monthly, with profit (our calculation)</th></tr></thead><tbody><tr><th>Hajj (government scheme, 40-day package for 2027)</th><td>Rs 12,00,000</td><td>24 months</td><td>Rs 50,000</td><td>about Rs 45,000</td></tr><tr><th>Umrah (example)</th><td>Rs 4,00,000</td><td>18 months</td><td>Rs 22,200</td><td>about Rs 20,500</td></tr><tr><th>Wedding (example)</th><td>Rs 15,00,000</td><td>24 months</td><td>Rs 62,500</td><td>about Rs 56,200</td></tr></tbody></table><p>The Hajj figure is the government scheme price for 2027 reported by Business Recorder in August 2026. The Umrah and wedding targets are <strong>examples only</strong>, because costs vary widely with the package, the season and the family. \"With profit\" assumes 10% a year before tax, the National Savings Account rate from 21 October 2026, with profit added monthly (our calculation). Tax is deducted from the profit, so in practice you need to save a little more. Rates change, so this is not a promise of future returns.</p>"
     },
     {
       "h2": "Step 1: set a realistic target",
@@ -31,7 +31,7 @@
     },
     {
       "h2": "Step 4: decide where to keep the money",
-      "body_html": "<p>For a goal one to three years away, safety and easy access matter more than high returns. The common options:</p><ul><li><strong>A bank savings account.</strong> Under State Bank of Pakistan rules, the minimum profit for individuals is linked to the SBP repo rate. Deposits are protected up to Rs 10 lakh per depositor per bank by the Deposit Protection Corporation.</li><li><strong>National Savings.</strong> From 21 October 2026, Dawn reported 10% on the Savings Account, 11.12% on 3-month Short Term Savings Certificates and 11.84% on the Sarwa Islamic Savings Account. Filers pay 15% tax on profit, non-filers 30%.</li><li><strong>A committee.</strong> No profit, but an early turn can bring the money forward. Read the risks in our guide to <a href=\"/guides/committee-vs-savings-pakistan/\">committees, bank savings and National Savings</a>.</li><li><strong>Gold.</strong> Many families save in gold. Its price can fall as well as rise, and buying and selling has costs, so it suits money you won't need on a fixed date.</li></ul><p><strong>Zakat:</strong> banks deduct zakat on 1 Ramazan from savings accounts at or above the nisab, which was set at Rs 5,03,529 for the zakat year 1446-47 (2026). Savings for Hajj or a wedding still count. Ask a scholar how zakat applies to you.</p>"
+      "body_html": "<p>For a goal one to three years away, safety and easy access matter more than high returns. The common options:</p><ul><li><strong>A bank savings account.</strong> SBP requires banks to pay a minimum profit rate on rupee savings accounts, linked to SBP's floor (overnight repo) rate. With the floor rate at 11% from 27 October 2026, the minimum is 10.5% a year from 1 November 2026, for individuals with an average monthly balance of up to Rs 10 million (our calculation). SBP's policy rate is 12% from 27 October 2026. Deposits are protected up to Rs 10 lakh per depositor per bank by the Deposit Protection Corporation.</li><li><strong>National Savings.</strong> From 21 October 2026, the National Savings Account pays 10%, and Short Term Savings Certificates pay 11.12% for 3 months, 11.50% for 6 months and 11.72% for 1 year. Certificates may have rules for early withdrawal, so check with National Savings first.</li><li><strong>A committee.</strong> No profit, but an early turn can bring the money forward. Read the risks in our guide to <a href=\"/guides/committee-vs-savings-pakistan/\">committees, bank savings and National Savings</a>.</li><li><strong>Gold.</strong> Many families save in gold. Its price can fall as well as rise, and buying and selling has costs, so it suits money you won't need on a fixed date.</li></ul><p><strong>Tax:</strong> tax is deducted from bank and National Savings profit automatically. The rate depends on whether you're on FBR's Active Taxpayer List: non-filers pay double. Check FBR's current withholding tax card for the exact rate.</p><p><strong>Zakat:</strong> banks deduct zakat on 1 Ramazan from savings accounts at or above the nisab, which was set at Rs 5,03,529 for the zakat year 1446-47 (2026). Savings for Hajj or a wedding still count. Ask a scholar how zakat applies to you.</p>"
     },
     {
       "h2": "Step 5: bring the total cost down",
@@ -45,7 +45,7 @@
     },
     {
       "q": "How much should I save each month for Hajj?",
-      "a": "Divide the package price by the months you have. Rs 1.2 million over 24 months is Rs 50,000 a month, or about Rs 45,700 if the money earns about 8.5% a year after tax (our calculation). Remember that half is paid with the application."
+      "a": "Divide the package price by the months you have. Rs 1.2 million over 24 months is Rs 50,000 a month, or about Rs 45,000 if the money earns 10% a year before tax (our calculation). Remember that half is paid with the application."
     },
     {
       "q": "Where should I keep money for a wedding or Hajj?",
@@ -64,7 +64,11 @@
   "sources": [
     { "title": "Business Recorder: Hajj 2027 packages set at Rs1.2mn and Rs1.3mn (11 August 2026)", "url": "https://www.brecorder.com/news/40434275/hajj-2027-packages-set-at-rs12mn-and-rs13mn" },
     { "title": "Express Tribune: Hajj 2027 second instalment deadline set (5 October 2026)", "url": "https://tribune.com.pk/story/2633018/hajj-2027-second-instalment-deadline-set" },
-    { "title": "Dawn: National Savings profit rates revised from 21 October 2026", "url": "https://www.dawn.com/news/2038739" },
+    { "title": "Business Recorder: National Savings schemes profit rates increased (22 October 2026)", "url": "https://www.brecorder.com/news/40445381/national-savings-schemes-profit-rates-increased" },
+    { "title": "Daily Pakistan: National Savings changes profit rates for certificates and accounts (21 October 2026)", "url": "https://en.dailypakistan.com.pk/21-Oct-2026/national-savings-changes-profit-rates-for-certificates-accounts" },
+    { "title": "State Bank of Pakistan: DMMD Circular No. 04 of 2026 (floor rate)", "url": "https://www.sbp.org.pk/circulars/dmmd-circular-no-04-of-2026" },
+    { "title": "Allied Bank: minimum profit rate on savings accounts", "url": "https://www.abl.com/?p=294843" },
+    { "title": "State Bank of Pakistan: Monetary Policy Statement, 26 October 2026 (policy rate 12%)", "url": "https://www.sbp.org.pk/assets/documents/press-release/PR-26-Oct-2026.pdf" },
     { "title": "State Bank of Pakistan: Nisab of Zakat for 1446-47 AH (Ministry notification, February 2026)", "url": "https://www.sbp.org.pk/assets/documents/circulars/CL3-Notification_(2).pdf" },
     { "title": "Dawn: Deposit Protection Corporation coverage of Rs 1 million per depositor (June 2026)", "url": "https://www.dawn.com/news/2006761/dpc-doubles-deposit-cover" },
     { "title": "Pakistan Bureau of Statistics: Monthly Review on Price Indices, October 2026", "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Monthly-Review-October2026.pdf" },
