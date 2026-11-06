@@ -14,6 +14,11 @@
 // marked up as en-GB / en-US, links its calculator buttons to that country's
 // page (/en-gb/), and lists the same guide for the other country
 // ("regionalVersions") as its hreflang alternate.
+//
+// A guide written for one country in every language it has ("country": "PK")
+// keeps its language versions as hreflang alternates (en, ur-PK, x-default),
+// and its calculator buttons open that country's page in the guide's language
+// (/en-pk/, /ur-pk/).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -30,6 +35,8 @@ const HOME = { en: '/', ur: '/ur-pk/' };
 const COUNTRY = { ur: 'PK' };
 // Guides written for one country: their language tag and that country's calculator page
 const REGIONS = { GB: { hreflang: 'en-GB', home: '/en-gb/' }, US: { hreflang: 'en-US', home: '/en-us/' } };
+// Guides for one country in several languages: that country's calculator page per language
+const COUNTRY_HOMES = { PK: { en: '/en-pk/', ur: '/ur-pk/' } };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const plural = (msg, count) => (typeof msg === 'object' ? msg.other : msg).replace('{count}', String(count));
@@ -116,7 +123,7 @@ function articleMain(t, lang, g, guides) {
   const base = GUIDE_BASES[lang];
   const home = HOME[lang];
   // The calculator buttons open the guide's country page when it has one
-  const calc = `${g.region ? REGIONS[g.region].home : home}#app`;
+  const calc = `${g.region ? REGIONS[g.region].home : COUNTRY_HOMES[g.country]?.[lang] || home}#app`;
   const sections = g.sections.map((s, i) => `
         <section id="s${i + 1}" aria-labelledby="s${i + 1}-title">
           <h2 id="s${i + 1}-title" class="${H2}">${esc(s.h2)}</h2>
@@ -259,7 +266,7 @@ export function renderGuides({ root, template, siteUrl }) {
       const doc = page(articleMain(t, lang, g, guides));
       const pageLang = g.region ? REGIONS[g.region].hreflang : HREFLANG[lang];
       setHead(doc, {
-        title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, htmlLang: pageLang, country: g.region || COUNTRY[lang], siteUrl, path: pagePath,
+        title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, htmlLang: pageLang, country: g.region || g.country || COUNTRY[lang], siteUrl, path: pagePath,
         alternates: versions(all, g.slug), links: hreflangs(all, g), type: 'article',
         ld: [
           {

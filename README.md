@@ -160,8 +160,16 @@ The guides at `/guides/` (and `/ur-pk/guides/` in Urdu) are built from
 layout. The list and order are in `src/i18n/guide-langs.js` (`GUIDE_SLUGS`, and `GUIDE_BASES` for
 the languages that have guides). To add a guide, write its English file (see an existing one for
 the fields), add its slug to `GUIDE_SLUGS`, and run `npm run articles:check`, which checks word
-count (1,000–1,500), headings, tags, links, FAQ and related guides. A translation only needs the
+count (1,000–2,000), headings, tags, links, FAQ and related guides. A translation only needs the
 same file in `src/i18n/guides/<lang>/`; guides without one simply aren't built in that language.
+
+Country guides come in two kinds:
+- `"region": "GB"` or `"US"`: English only, for one country, with the other country's version as
+  its hreflang alternate (`regionalVersions`). Its calculator buttons open `/en-gb/` or `/en-us/`.
+- `"country": "PK"`: one country in every language it has (English and Urdu). It keeps the usual
+  language hreflang (en, ur-PK, x-default), and its calculator buttons open `/en-pk/` or `/ur-pk/`.
+  Set it in each language's file. The check asks for sources, a summary table, 4–6 FAQ entries,
+  and in English 1,200–1,800 words, a title of up to 60 characters and a description of 140–155.
 
 ### Add a country
 1. Add `src/data/countries/<CC>.json` following `src/data/countries/SCHEMA.md` (start from a

@@ -27,6 +27,11 @@
 - [Sinking funds explained](__SITE_URL__/guides/sinking-funds/): saving monthly for known yearly costs, with worked examples in £, $, C$ and A$
 - [Zero-based budgeting vs the 50/30/20 rule](__SITE_URL__/guides/zero-based-budgeting-vs-50-30-20/): both methods compared on the same income, and how to choose
 - [How to stop living paycheck to paycheck](__SITE_URL__/guides/stop-living-paycheck-to-paycheck/): seven steps to build a buffer and get a month ahead
+- [Monthly budget plan for any salary in Pakistan](__SITE_URL__/guides/monthly-budget-plan-pakistan/): sample budgets for Rs 30,000 to Rs 1,50,000 take-home pay, single person and family of four (Pakistan; Urdu: __SITE_URL__/ur-pk/guides/monthly-budget-plan-pakistan/)
+- [Average monthly household expenses in Pakistan (2026)](__SITE_URL__/guides/household-expenses-pakistan/): spending by category, urban and rural, from the PBS Household Integrated Economic Survey 2024-25 (Pakistan; Urdu: __SITE_URL__/ur-pk/guides/household-expenses-pakistan/)
+- [Committee (BC) vs bank savings vs National Savings](__SITE_URL__/guides/committee-vs-savings-pakistan/): how committees work, their risks, how to join one safely, and how they compare (Pakistan; Urdu: __SITE_URL__/ur-pk/guides/committee-vs-savings-pakistan/)
+- [How to save for a wedding, Hajj or Umrah](__SITE_URL__/guides/save-for-wedding-hajj-umrah/): targets, monthly savings maths, sinking funds and where to keep the money (Pakistan; Urdu: __SITE_URL__/ur-pk/guides/save-for-wedding-hajj-umrah/)
+- [Buy now, pay later in Pakistan](__SITE_URL__/guides/buy-now-pay-later-pakistan/): how BNPL and instalment purchases work, their real cost and the SECP rules (Pakistan; Urdu: __SITE_URL__/ur-pk/guides/buy-now-pay-later-pakistan/)
 - [How much should a family spend on groceries in the UK?](__SITE_URL__/guides/grocery-budget-uk/): ONS average food spending by household size and the Minimum Income Standard (UK)
 - [How much should a family spend on groceries in the US?](__SITE_URL__/guides/grocery-budget-us/): BLS average grocery spending by household size and the USDA Food Plans (US)
 - [Average household bills per month in the UK](__SITE_URL__/guides/household-bills-uk/): energy, water, council tax, broadband and phone, from Ofgem, Water UK, MHCLG and ONS (UK)

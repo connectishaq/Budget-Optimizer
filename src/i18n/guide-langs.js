@@ -24,6 +24,12 @@ export const GUIDE_SLUGS = [
   'sinking-funds',
   'zero-based-budgeting-vs-50-30-20',
   'stop-living-paycheck-to-paycheck',
+  // Pakistan guides (English and Urdu, calculator buttons open /en-pk/ and /ur-pk/)
+  'monthly-budget-plan-pakistan',
+  'household-expenses-pakistan',
+  'committee-vs-savings-pakistan',
+  'save-for-wedding-hajj-umrah',
+  'buy-now-pay-later-pakistan',
   // Country guides (English, en-GB / en-US)
   'grocery-budget-uk',
   'grocery-budget-us',

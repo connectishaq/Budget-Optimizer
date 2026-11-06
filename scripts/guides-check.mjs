@@ -5,6 +5,9 @@
 // Country guides ("region": "GB" | "US", English only): sources listed, a
 // summary table, 4–6 FAQ entries, and regionalVersions that are guides for
 // another country.
+// Guides for one country in every language ("country": "PK"): sources listed,
+// a summary table, 4–6 FAQ entries, the same country in every language, and
+// 1,200–1,800 words in English.
 // Translations: the same structure as the
 // English. When dist/ exists, every built guide page must carry FAQPage and
 // Article JSON-LD matching its FAQ. Returns { errors, report }.
@@ -16,6 +19,7 @@ import { GUIDE_SLUGS, GUIDE_BASES } from '../src/i18n/guide-langs.js';
 
 const ALLOWED = new Set(['p', 'h3', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td']);
 const REGIONS = ['GB', 'US'];
+const COUNTRIES = ['PK'];
 const strip = (s) => s.replace(/<[^>]+>/g, ' ');
 const words = (s) => strip(s).split(/\s+/).filter(Boolean).length;
 
@@ -56,6 +60,16 @@ export function checkGuides(root) {
       if (related.length < 2 || related.length > 3) errors.push(`${id}: needs 2–3 related guides`);
       for (const r of related) if (!GUIDE_SLUGS.includes(r) || r === slug) errors.push(`${id}: related "${r}" isn't another guide`);
 
+      if (g.country) {
+        if (!COUNTRIES.includes(g.country)) errors.push(`${id}: country "${g.country}" isn't one of ${COUNTRIES.join(', ')}`);
+        if (g.region) errors.push(`${id}: use region or country, not both`);
+        if (en && en.country !== g.country) errors.push(`${id}: country differs from the English`);
+        if (!g.sources?.length || g.sources.some((x) => !/^https:\/\//.test(x.url || '') || !x.title)) errors.push(`${id}: a country guide needs its sources (title and https URL)`);
+        if (!/<table/.test(g.intro_html + (g.sections || []).map((x) => x.body_html).join(''))) errors.push(`${id}: needs a summary table`);
+        if (g.faq?.length < 4 || g.faq?.length > 6) errors.push(`${id}: needs 4–6 FAQ entries`);
+        if (lang === 'en' && g.seo?.title?.length > 60) errors.push(`${id}: seo.title is ${g.seo.title.length} characters (max 60)`);
+        if (lang === 'en' && (g.seo?.description?.length < 140 || g.seo?.description?.length > 155)) errors.push(`${id}: seo.description is ${g.seo?.description?.length} characters (aim for 140–155)`);
+      } else if (lang !== 'en' && en?.country) errors.push(`${id}: the English is a ${en.country} guide; set "country" here too`);
       if (g.region) {
         if (lang !== 'en') errors.push(`${id}: country guides are English only`);
         if (!REGIONS.includes(g.region)) errors.push(`${id}: region "${g.region}" isn't one of ${REGIONS.join(', ')}`);
@@ -85,7 +99,8 @@ export function checkGuides(root) {
 
       const n = words(html) + (g.sections || []).reduce((a, s) => a + words(s.h2 || ''), 0) + (g.faq || []).reduce((a, f) => a + words(`${f.q} ${f.a}`), 0);
       if (lang === 'en') {
-        if (n < 1000 || n > 2000) errors.push(`${id}: ${n} words; aim for 1,000–2,000`);
+        const [min, max] = g.country ? [1200, 1800] : [1000, 2000];
+        if (n < min || n > max) errors.push(`${id}: ${n} words; aim for ${min.toLocaleString('en')}–${max.toLocaleString('en')}`);
         if (!g.h1.toLowerCase().includes((g.keyword || '').toLowerCase().split(' ')[0])) errors.push(`${id}: the H1 doesn't contain the keyword "${g.keyword}"`);
       } else if (en) {
         // A translation keeps the English structure
