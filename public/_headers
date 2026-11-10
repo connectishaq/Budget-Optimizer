@@ -47,3 +47,7 @@
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com 'sha256-AIjLOn9hPEpoPdKuDAoPsW0GIiogR1dqafMMHeakxKQ=' 'sha256-ncymmka8aUc7VLViCaagdHMKwiSw5AtNPpFM519+Ucw=' 'sha256-VcvgPzn7ZOTFsAfdStxBDiHyA6LtVces1UF6X3neFNA=' 'sha256-QSg4XfwCj8XI+T0AFMCV6aSdDWaPQBW0PcPHK1tleq8='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://api.web3forms.com; form-action 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
+# RFC 9116 requires security.txt to be served as UTF-8 plain text
+/.well-known/security.txt
+  Content-Type: text/plain; charset=utf-8
