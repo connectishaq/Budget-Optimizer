@@ -99,6 +99,26 @@ as blocked, then switch back to `Content-Security-Policy`.
 
 `npm run build` fails (`jsonld:check`) if a page's visible "Last updated" and its `dateModified` differ.
 
+## Marketing screenshots
+
+`scripts/capture-marketing.mjs` takes screenshots of the **live** site (https://spendmath.com) for
+Behance, Product Hunt and LinkedIn: 10 desktop shots (1440×900 at 2×) and 3 mobile shots
+(390×844 at 3×), in light, dark and Urdu. It also exports the logo as 1200 px PNGs and a
+1270×760 Product Hunt cover. Everything goes to `marketing-assets/`, which is git-ignored.
+
+Playwright isn't a project dependency, so deploys don't install it. Install it once without
+saving it (a later `npm install` or `npm ci` removes it again):
+
+```bash
+npm install --no-save playwright@1.65.0
+npx playwright install chromium
+node scripts/capture-marketing.mjs                                # everything
+node scripts/capture-marketing.mjs mobile-09-results-dark,cover   # only some (also: shots, logos)
+```
+
+The history shots load `demo-backup-6-months.json` from the project root, and are skipped
+without it. The cover is built from `desktop-01-home-light.png`, so take that shot first.
+
 ## Project structure
 
 ```

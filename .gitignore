@@ -4,3 +4,5 @@ dist
 .env.local
 .vscode/
 demo-backup-6-months.json
+# Marketing screenshots and logo exports (made locally, not part of the site)
+marketing-assets/
