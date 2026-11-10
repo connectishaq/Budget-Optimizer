@@ -53,7 +53,7 @@ function guideLink(item) {
 /** "Where the typical amounts come from" under the sum, opening the methodology page in this language. */
 function methodologyLink() {
   const lang = getLanguage();
-  return `<p class="mt-2"><a class="link" href="/methodology/${lang === 'en' ? '' : `?lang=${lang}`}">${esc(t('plan.methodologyLink'))}</a></p>`;
+  return `<p class="mt-2"><a class="link" href="/methodology/${lang === 'en' ? '' : `#lang=${lang}`}">${esc(t('plan.methodologyLink'))}</a></p>`;
 }
 
 /** The "How did we get this?" paragraph, in plain words with the real sums. */

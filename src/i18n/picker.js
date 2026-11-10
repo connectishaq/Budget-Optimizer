@@ -16,11 +16,29 @@ export const pageLanguage = () => {
   return isLive(l) ? l : null;
 };
 
-/** ?lang=xx on links from a language/country page (to the privacy policy…), or null. */
-export const urlLanguage = (search = location.search) => {
-  const l = new URLSearchParams(search).get('lang');
+/**
+ * The language a link from a language/country page asked for (to the privacy
+ * policy…), or null. Links use the fragment (#lang=xx), which search engines
+ * ignore; the older ?lang=xx is still read so old links and bookmarks work.
+ */
+export const urlLanguage = (search = location.search, hash = location.hash) => {
+  const l = new URLSearchParams(String(hash).replace(/^#/, '')).get('lang') || new URLSearchParams(search).get('lang');
   return isLive(l) ? l : null;
 };
+
+/**
+ * An old ?lang=xx address becomes the clean one (#lang=xx keeps the language
+ * for this view), so a copied or shared link is never a ?lang= duplicate.
+ * Returns the new address, or null when there is nothing to change.
+ */
+export function cleanLangUrl(href) {
+  const url = new URL(href);
+  const l = url.searchParams.get('lang');
+  if (l == null) return null;
+  url.searchParams.delete('lang');
+  if (!url.hash && isLive(l)) url.hash = `lang=${l}`;
+  return url.href;
+}
 
 /**
  * Language for this page view: a language/country page's own language, else
@@ -43,6 +61,8 @@ export function chooseLanguage() {
  */
 export async function startI18n() {
   const lang = chooseLanguage();
+  const clean = cleanLangUrl(location.href);
+  if (clean) try { history.replaceState(history.state, '', clean); } catch { /* ignore */ }
   try {
     await setLanguage(lang);
     // Arabic-script font, only for right-to-left languages
@@ -86,12 +106,12 @@ function fillCountries(select, current) {
 /** Reloads keeping the scroll position, so a language/country switch feels in place. */
 function reloadInPlace() {
   try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch { /* ignore */ }
-  // A ?lang= from the link would override the new choice, so drop it
+  // A #lang= (or old ?lang=) from the link would override the new choice, so drop it
   const url = new URL(location.href);
-  if (url.searchParams.has('lang')) {
-    url.searchParams.delete('lang');
-    location.replace(url.href);
-  } else location.reload();
+  if (/^#lang=/.test(url.hash)) url.hash = '';
+  url.searchParams.delete('lang');
+  if (url.href !== location.href) history.replaceState(history.state, '', url.href.replace(/#$/, ''));
+  location.reload();
 }
 
 /** Puts the page back where it was before a language/country reload. True when it did. */

@@ -56,7 +56,10 @@ export function applyMessages(doc, t, lang) {
 /**
  * Keeps links on a language page: home ("/") and its sections ("/#app") go to
  * that page, guides go to the guides in that language when there are any, and
- * the privacy, terms, about, methodology and contact pages open in that language (?lang=).
+ * the privacy, terms, about, methodology and contact pages open in that language
+ * (#lang=xx). The language goes in the fragment, never the query string: search
+ * engines ignore fragments, so these links can't create ?lang= duplicates of
+ * /contact/, /about/… (scripts/lang-url-check.mjs checks the built site).
  */
 export function localizeLinks(doc, { home, lang, guidesBase }) {
   for (const a of doc.querySelectorAll('a[href]')) {
@@ -65,7 +68,7 @@ export function localizeLinks(doc, { home, lang, guidesBase }) {
     else if (href.startsWith('/#')) a.setAttribute('href', `${home}${href.slice(1)}`);
     else if (guidesBase && href.startsWith('/guides/')) a.setAttribute('href', `${guidesBase}${href.slice('/guides/'.length)}`);
     else if (/^\/(privacy-policy|terms-of-use|contact|about|methodology)\//.test(href)) {
-      a.setAttribute('href', `${href}${href.includes('?') ? '&' : '?'}lang=${lang}`);
+      a.setAttribute('href', `${href.split('#')[0]}#lang=${lang}`);
     }
   }
 }

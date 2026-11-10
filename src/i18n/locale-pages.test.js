@@ -6,7 +6,8 @@ import { ENABLED_LANGUAGES } from './enabled.js';
 import { suggestion, browserLanguage } from './suggest.js';
 import { LANGUAGES } from './index.js';
 import { COUNTRY_CODES } from './countries.js';
-import { alternateLinks, sitemapXml } from '../../scripts/prerender-locales.mjs';
+import { alternateLinks, sitemapXml, localizeLinks } from '../../scripts/prerender-locales.mjs';
+import { parse } from 'node-html-parser';
 
 describe('language/country pages', () => {
   it('cover the 17 pages in the brief, each a known language and country with an article', () => {
@@ -76,5 +77,20 @@ describe('language suggestion banner', () => {
     expect(browserLanguage(['ja-JP', 'ko'])).toBeNull();
     expect(browserLanguage(['ja-JP', 'ar-SA', 'en'])).toBe('ar');
     expect(browserLanguage(['pt-BR', 'en'])).toBe('en'); // Portuguese is switched off
+  });
+});
+
+describe('links on language/country pages', () => {
+  it('carry the language in #lang=, never ?lang= (no crawlable duplicates)', () => {
+    const doc = parse('<a href="/">h</a><a href="/#app">a</a><a href="/contact/">c</a><a href="/contact/?topic=bug">b</a><a href="/about/#who">w</a><a href="/guides/x/">g</a>');
+    localizeLinks(doc, { home: '/ur-pk/', lang: 'ur', guidesBase: '/ur-pk/guides/' });
+    expect(doc.querySelectorAll('a').map((a) => a.getAttribute('href'))).toEqual([
+      '/ur-pk/', '/ur-pk/#app', '/contact/#lang=ur', '/contact/?topic=bug#lang=ur', '/about/#lang=ur', '/ur-pk/guides/x/'
+    ]);
+  });
+
+  it('the sitemap lists only clean URLs', () => {
+    const xml = sitemapXml('https://x.test', '2026-01-01', [{ path: 'contact', priority: '0.5' }]);
+    for (const [, u] of xml.matchAll(/(?:<loc>|href=")([^<"]+)/g)) expect(u).not.toMatch(/[?#]/);
   });
 });

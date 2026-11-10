@@ -30,8 +30,8 @@
       // (Language/country pages such as /de-de/ are built already translated, so they skip this.)
       var L = __LIVE_LANGUAGES__, l = null; // filled in from src/i18n/enabled.js at build time
       var prebuilt = d.hasAttribute('data-page-lang');
-      // ?lang=xx (links from a language/country page) wins for this visit, without being saved
-      var q = (/[?&]lang=([a-z]{2})(?:&|$)/.exec(location.search) || [])[1];
+      // #lang=xx (links from a language/country page; old links: ?lang=xx) wins for this visit, without being saved
+      var q = (/[#&]lang=([a-z]{2})(?:&|$)/.exec(location.hash) || /[?&]lang=([a-z]{2})(?:&|$)/.exec(location.search) || [])[1];
       try { l = L.indexOf(q) > -1 ? q : localStorage.getItem('hbo:lang'); } catch (e) { l = q; }
       if (L.indexOf(l) < 0) {
         l = 'en';

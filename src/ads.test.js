@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { setConsentDefaults, CONSENT_REGIONS } from './ads.js';
-import { urlLanguage } from './i18n/picker.js';
+import { urlLanguage, cleanLangUrl } from './i18n/picker.js';
 
 describe('ad consent', () => {
   it('denies personalised ads by default in the EEA, UK and Switzerland, before any Google tag', () => {
@@ -21,12 +21,26 @@ describe('ad consent', () => {
   });
 });
 
-describe('?lang= from language/country pages', () => {
+describe('#lang= from language/country pages', () => {
   it('opens the legal pages in that language for the visit', () => {
-    expect(urlLanguage('?lang=hi')).toBe('hi');
-    expect(urlLanguage('?lang=de')).toBeNull(); // switched off
-    expect(urlLanguage('?topic=bug&lang=ur')).toBe('ur');
-    expect(urlLanguage('?lang=xx')).toBeNull();
-    expect(urlLanguage('')).toBeNull();
+    expect(urlLanguage('', '#lang=hi')).toBe('hi');
+    expect(urlLanguage('?topic=bug', '#lang=ur')).toBe('ur');
+    expect(urlLanguage('', '#lang=de')).toBeNull(); // switched off
+    expect(urlLanguage('', '#app')).toBeNull();
+    expect(urlLanguage('', '')).toBeNull();
+  });
+
+  it('still reads old ?lang= links, the fragment winning', () => {
+    expect(urlLanguage('?lang=hi', '')).toBe('hi');
+    expect(urlLanguage('?topic=bug&lang=ur', '')).toBe('ur');
+    expect(urlLanguage('?lang=xx', '')).toBeNull();
+    expect(urlLanguage('?lang=es', '#lang=ur')).toBe('ur');
+  });
+
+  it('turns an old ?lang= address into the clean one', () => {
+    expect(cleanLangUrl('https://x.test/contact/?lang=ur')).toBe('https://x.test/contact/#lang=ur');
+    expect(cleanLangUrl('https://x.test/contact/?topic=bug&lang=es')).toBe('https://x.test/contact/?topic=bug#lang=es');
+    expect(cleanLangUrl('https://x.test/about/?lang=xx')).toBe('https://x.test/about/');
+    expect(cleanLangUrl('https://x.test/about/#lang=ur')).toBeNull();
   });
 });

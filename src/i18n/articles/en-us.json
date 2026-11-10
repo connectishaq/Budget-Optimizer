@@ -2,8 +2,8 @@
   "locale": "en-us",
   "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for the United States</span>",
   "seo": {
-    "title": "Free US Household Budget Calculator ($) – No Sign-Up",
-    "description": "Plan your US household budget in dollars for free. Spot hidden leaks in utilities, subscriptions and card interest. Private: your data stays on your device."
+    "title": "Free Monthly Budget Calculator for US Households ($)",
+    "description": "Free monthly budget calculator for US households, in dollars. No sign-up: add your income and bills, see where money leaks. Your data stays on your device."
   },
   "guide": {
     "toc": {

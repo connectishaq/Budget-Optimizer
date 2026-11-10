@@ -2,7 +2,9 @@
   "slug": "grocery-budget-uk",
   "keyword": "groceries UK",
   "region": "GB",
-  "regionalVersions": { "US": "grocery-budget-us" },
+  "regionalVersions": {
+    "US": "grocery-budget-us"
+  },
   "seo": {
     "title": "UK Food Shopping Costs: What Households Spend Each Week",
     "description": "What UK households spend on food each week by household size, from ONS data, compared with the Minimum Income Standard, plus how to set your own budget."
@@ -11,9 +13,13 @@
   "summary": "Official ONS figures for what UK singles, couples and families of four spend on food, compared with a minimum healthy budget, and how to set your own number.",
   "readMinutes": 8,
   "datePublished": "2026-11-05",
-  "dateModified": "2026-11-05",
+  "dateModified": "2026-11-10",
   "intro_html": "<p>\"How much should we spend on food?\" is one of the most common budgeting questions, and one of the hardest to answer from a gut feeling. Prices change, children eat more as they grow, and every household shops differently.</p><p>This guide gives you two official reference points: what UK households <strong>actually spend</strong> on food, from the Office for National Statistics (ONS), and what a household <strong>needs</strong> for a basic healthy diet, from the Minimum Income Standard. Then it shows you how to turn those numbers into a grocery budget that fits your family.</p>",
   "sections": [
+    {
+      "h2": "Quick answers: UK food shop costs for 1 or 2 people",
+      "body_html": "<p>Short answers from the ONS figures used throughout this guide: food and non-alcoholic drinks bought to eat at home, April 2024 to March 2025. Monthly and per-person amounts are our calculation.</p><table><thead><tr><th>Question</th><th>Short answer</th></tr></thead><tbody><tr><th>Average weekly food shop for 2 people in the UK</th><td>£73.20 a week for a working-age couple</td></tr><tr><th>Average UK grocery bill per person per week</th><td>About £32 across all households (£73.70 for an average 2.3 people); £40.30 living alone, about £36.60 each in a couple, about £25 each in a family of four</td></tr><tr><th>Groceries per month for a 2-person household</th><td>About £317 a month (£73.20 × 52 ÷ 12)</td></tr></tbody></table><p>These are averages, not targets, and prices have risen a little since: food inflation was 1.3% in the 12 months to September 2026 (ONS). The sections below compare the averages with a minimum healthy budget.</p>"
+    },
     {
       "h2": "UK grocery spending at a glance",
       "body_html": "<p>The table shows average weekly spending on <strong>food and non-alcoholic drinks</strong> bought to eat at home, from the ONS <em>Family spending in the UK</em> survey for April 2024 to March 2025 (published June 2026). Next to it is the Minimum Income Standard (MIS) food budget for 2026, which is what members of the public agreed a household needs as a minimum.</p><table><thead><tr><th>Household</th><th>ONS average spend, per week (2024–25)</th><th>Per month (our calculation)</th><th>MIS minimum food budget, per week (April 2026)</th></tr></thead><tbody><tr><th>Single adult (working age)</th><td>£40.30</td><td>about £175</td><td>£79.71</td></tr><tr><th>Couple (two adults, working age)</th><td>£73.20</td><td>about £317</td><td>not published</td></tr><tr><th>Family of 4 (two adults, two children)</th><td>£98.30</td><td>about £426</td><td>£211.49</td></tr><tr><th>All UK households (average 2.3 people)</th><td>£73.70</td><td>about £319</td><td>–</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> weekly amount × 52 ÷ 12, rounded to the nearest pound. They are our calculation, not ONS figures. ONS figures are from Workbook 2, Table A23 (non-retired households) and Workbook 1, Table A1 (all households). The MIS family is a couple with one child aged 2–4 and one of primary school age.</p>"
@@ -41,8 +47,12 @@
       "a": "According to the ONS Family Spending survey for April 2024 to March 2025, two adults with two children spent an average of £98.30 a week on food and non-alcoholic drinks for the home, about £426 a month by our calculation."
     },
     {
+      "q": "How much does a 2-person household spend on groceries per month in the UK?",
+      "a": "A working-age couple spent an average of £73.20 a week on food and non-alcoholic drinks for the home in 2024–25, according to the ONS, which is about £317 a month or £36.60 per person a week by our calculation."
+    },
+    {
       "q": "How much does a single person in the UK spend on groceries?",
-      "a": "The ONS figure for a single non-retired adult was £40.30 a week in 2024–25, about £175 a month by our calculation. The Minimum Income Standard 2026 puts a single working-age adult's minimum food budget at £79.71 a week."
+      "a": "The ONS figure for a single non-retired adult was £40.30 a week in 2024–25, about £175 a month by our calculation. The Minimum Income Standard 2026 puts a single working-age adult's minimum food budget at £79.71 a week. Across all UK households, spending works out at about £32 per person a week (£73.70 for an average household of 2.3 people, our calculation)."
     },
     {
       "q": "Why is the Minimum Income Standard higher than the ONS average?",

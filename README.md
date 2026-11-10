@@ -18,6 +18,7 @@ npm run articles:check      # country articles and money guides: keys, markup, l
 npm run seo:check           # after a build: one H1, heading order, unique titles, title ≠ H1, title ≤ 60 and description ≤ 160 characters, link text, alt text
 npm run jsonld:check        # after a build: JSON-LD valid for Google rich results (run by npm run build)
 npm run hreflang:check      # after a build: canonical + hreflang self-links, reciprocity, sitemap (run by npm run build)
+npm run lang-url:check      # after a build: no ?lang= links (language pages use #lang=xx), clean canonical/hreflang/sitemap URLs (run by npm run build)
 npm run csp:check           # after a build: inline-script hashes and form endpoint allowed by the CSP in public/_headers (run by npm run build)
 npm run benchmarks:review   # rebuild REVIEW_BENCHMARKS.md (country numbers marked "verify")
 ```
