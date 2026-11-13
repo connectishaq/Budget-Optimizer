@@ -15,7 +15,7 @@ import { initPayday, renderPayday } from './ui/payday.js';
 import { initHelp } from './ui/help.js';
 import { startMonths, initMonths, renderMonths, noteBudgetChange, loadThisMonth } from './ui/months.js';
 import { initReset } from './ui/reset.js';
-import { localizePageUpdated } from './ui/page-updated.js';
+import { localizePageUpdated, localizeByline } from './ui/page-updated.js';
 import { $, makeView, debounce, announce, setText } from './ui/dom.js';
 import { setFormatRegion } from './utils/format.js';
 import { initAds } from './ads.js';
@@ -108,8 +108,11 @@ function initSavedIndicator() {
 async function boot() {
   // Words first: everything below builds text with the active language
   await startI18n();
-  // The article's "Last updated" (language/country pages have it built in their language)
-  if (!document.documentElement.hasAttribute('data-page-lang')) localizePageUpdated('guideUpdated', 'guides.updated');
+  // The article's byline and "Last updated" (language/country pages have them built in their language)
+  if (!document.documentElement.hasAttribute('data-page-lang')) {
+    localizeByline();
+    localizePageUpdated('guideUpdated', 'guides.updated');
+  }
   const restored = loadState();
   // Returning users with saved numbers go straight to their results;
   // everyone else starts the guided steps.

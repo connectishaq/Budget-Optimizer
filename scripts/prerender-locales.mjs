@@ -12,7 +12,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
 import { GUIDE_BASES } from '../src/i18n/guide-langs.js';
-import { publisher, siteGraph, articleLd, ldScript, plainText, updatedTime, ogLocale, HOME_ARTICLE } from './structured-data.mjs';
+import { publisher, siteGraph, articleLd, ldScript, plainText, updatedTime, ogLocale, HOME_ARTICLE, bylineHtml } from './structured-data.mjs';
 
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -281,9 +281,9 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
       datePublished: article?.datePublished || HOME_ARTICLE.datePublished,
       dateModified: article?.dateModified || HOME_ARTICLE.dateModified
     };
-    const [before, after = ''] = t('guides.updated').split('{date}');
+    // "By <name> · Last updated: <date>" (the /about/ link gets #lang= in localizeLinks below)
     const dateLocale = page.lang === 'en' ? 'en-GB' : `${page.lang}-${page.country}-u-nu-latn`;
-    doc.querySelector('#guideUpdated')?.set_content(`${esc(before)}${updatedTime(articleInfo.dateModified, dateLocale)}${esc(after)}`);
+    doc.querySelector('#guideMeta')?.set_content(bylineHtml({ t, dateHtml: updatedTime(articleInfo.dateModified, dateLocale) }));
 
     // ---- The page's own H1 ("Household Budget Calculator for Pakistan"), kept
     // when the browser translates the page

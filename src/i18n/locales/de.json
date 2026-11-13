@@ -3130,6 +3130,8 @@
       "other": "Ratgeber · {count} Minuten Lesezeit"
     },
     "updated": "Zuletzt aktualisiert: {date}",
+    "byline": "Von {name}",
+    "authorName": "Muhammad Ishaq",
     "onThisPage": "Auf dieser Seite",
     "faqTitle": "Häufige Fragen",
     "related": "Ähnliche Ratgeber",

@@ -3235,6 +3235,8 @@
       "other": "Guía · {count} minutos de lectura"
     },
     "updated": "Última actualización: {date}",
+    "byline": "Por {name}",
+    "authorName": "Muhammad Ishaq",
     "onThisPage": "En esta página",
     "faqTitle": "Preguntas frecuentes",
     "related": "Guías relacionadas",

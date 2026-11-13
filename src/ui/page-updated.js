@@ -16,3 +16,14 @@ export function localizePageUpdated(id = 'pageUpdated', key = 'about.updated') {
   const [before, after = ''] = t(key).split('{date}');
   updated.replaceChildren(before, time, after);
 }
+
+/** The home page article's "By Muhammad Ishaq" (#guideByline) in the visitor's language. */
+export function localizeByline(id = 'guideByline') {
+  if (getLanguage() === 'en') return;
+  const byline = document.getElementById(id);
+  const link = byline?.querySelector('a');
+  if (!link) return;
+  link.textContent = t('guides.authorName');
+  const [before, after = ''] = t('guides.byline').split('{name}');
+  byline.replaceChildren(before, link, after);
+}

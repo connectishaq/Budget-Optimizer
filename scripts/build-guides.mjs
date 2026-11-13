@@ -25,7 +25,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { GUIDE_BASES, GUIDE_SLUGS } from '../src/i18n/guide-langs.js';
 import { makeT, applyMessages, localizeLinks } from './prerender-locales.mjs';
-import { publisher, breadcrumbList, articleLd, ogLocale } from './structured-data.mjs';
+import { publisher, breadcrumbList, articleLd, ogLocale, bylineHtml } from './structured-data.mjs';
 import { sourceRel } from './official-sources.mjs';
 
 const RTL = new Set(['ar', 'ur']);
@@ -147,7 +147,7 @@ function articleMain(t, lang, g, guides) {
         <header class="mb-8">
           <p class="eyebrow mb-2">${esc(plural(t('guides.readTime'), g.readMinutes))}</p>
           <h1 class="text-3xl font-bold leading-tight tracking-tight text-slate-900 sm:text-4xl dark:text-white">${esc(g.h1)}</h1>
-          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">${esc(t('guides.updated')).replace('{date}', `<time datetime="${g.dateModified}">${esc(longDate(lang, g.dateModified))}</time>`)}</p>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">${bylineHtml({ t, aboutHref: lang === 'en' ? '/about/' : `/about/#lang=${lang}`, dateHtml: `<time datetime="${g.dateModified}">${esc(longDate(lang, g.dateModified))}</time>` })}</p>
         </header>
         <div class="text-lg">${styleBody(g.intro_html)}</div>
         ${sections}

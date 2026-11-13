@@ -72,6 +72,19 @@ export function updatedTime(iso, locale = 'en-GB') {
 }
 
 /**
+ * The byline under a guide's or the home page article's title, in the page's
+ * language: "By <a href="/about/">Muhammad Ishaq</a> · Last updated: <time>".
+ * `t` reads that language's messages (guides.byline, guides.authorName,
+ * guides.updated). index.html writes the same markup by hand for English.
+ */
+export function bylineHtml({ t, aboutHref = '/about/', dateHtml }) {
+  const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const [by, byAfter = ''] = t('guides.byline').split('{name}');
+  const [upd, updAfter = ''] = t('guides.updated').split('{date}');
+  return `<span id="guideByline">${esc(by)}<a href="${aboutHref}" class="link">${esc(t('guides.authorName'))}</a>${esc(byAfter)}</span> · <span id="guideUpdated">${esc(upd)}${dateHtml}${esc(updAfter)}</span>`;
+}
+
+/**
  * Home pages: the WebSite and the Organization behind it, with the About page's
  * Person as founder (same @ids as everywhere else). Hand-written copy in index.html.
  */

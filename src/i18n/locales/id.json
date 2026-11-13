@@ -3090,6 +3090,8 @@
       "other": "Panduan · {count} menit baca"
     },
     "updated": "Terakhir diperbarui: {date}",
+    "byline": "Oleh {name}",
+    "authorName": "Muhammad Ishaq",
     "onThisPage": "Di halaman ini",
     "faqTitle": "Pertanyaan yang Sering Diajukan",
     "related": "Panduan terkait",

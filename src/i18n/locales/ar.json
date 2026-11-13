@@ -3356,6 +3356,8 @@
       "other": "دليل · قراءة في {count} دقيقة"
     },
     "updated": "آخر تحديث: {date}",
+    "byline": "بقلم {name}",
+    "authorName": "محمد إسحاق",
     "onThisPage": "في هذه الصفحة",
     "faqTitle": "الأسئلة الشائعة",
     "related": "أدلة ذات صلة",
