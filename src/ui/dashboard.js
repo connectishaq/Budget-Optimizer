@@ -69,29 +69,50 @@ function renderSummary(result, view) {
   setText($('plainSummary'), plainSummary(result, view));
 }
 
-/** The till receipt: income − bills = left over, + plan savings = left with your plan. */
-function renderReceipt(result, view) {
+/**
+ * The till receipt's labels and amounts ([shown, exact] pairs): income − bills
+ * = left over, + plan savings = left with your plan. No DOM, so the build uses
+ * it too for the example figures in the static HTML (src/prerender-figures.js).
+ */
+export function receiptFigures(result, view) {
   const { income, spend, pay, extrasMonthly } = result.totals;
-  document.querySelectorAll('[data-period-word]').forEach((el) => setText(el, view.periodWord));
-  const put = (id, text, exact) => setMoney($(id), text, exact);
   const left = income - spend;
   // With bonuses, show take-home pay and the bonuses' monthly share separately
   const split = extrasMonthly > 0;
-  setText($('rcIncomeLabel'), split ? t('dashboard.receipt.takeHome') : t('dashboard.receipt.income'));
   const first = split ? pay : income;
-  put('rcIncome', first > 0 ? view.m(first) : split ? view.m(0) : t('dashboard.receipt.notAdded'), first > 0 ? view.full(first * view.f) : '');
-  $('rcExtrasRow').hidden = !split;
-  if (split) put('rcExtras', withSign('+', view.m(extrasMonthly)), withSign('+', view.full(extrasMonthly * view.f)));
-  put('rcBills', withSign('−', view.m(spend)), withSign('−', view.full(spend * view.f)));
-  setText($('rcLeftLabel'), left < 0 && income > 0 ? t('dashboard.receipt.shortBy') : t('dashboard.receipt.leftOver'));
-  put('rcLeft', income > 0 ? view.m(Math.abs(left)) : '–', income > 0 ? view.full(Math.abs(left) * view.f) : '');
-  $('rcLeft').className = `tabular-nums ${left < 0 && income > 0 ? 'font-semibold text-rose-700 dark:text-rose-400' : ''}`;
-  put('rcPlan', withSign('+', view.s(result.savings)), withSign('+', view.full(result.savings * view.f)));
   const total = left + result.savings;
-  put('rcTotal', income > 0 ? withSign(total < 0 ? '−' : '', view.m(Math.abs(total))) : '–', income > 0 ? view.full(total * view.f) : '');
-  setText($('rcNote'), income > 0
-    ? (total >= 0 ? t('dashboard.receipt.noteLeft') : t('dashboard.receipt.noteShort'))
-    : t('dashboard.receipt.noteNoIncome'));
+  return {
+    periodWord: view.periodWord,
+    incomeLabel: split ? t('dashboard.receipt.takeHome') : t('dashboard.receipt.income'),
+    income: [first > 0 ? view.m(first) : split ? view.m(0) : t('dashboard.receipt.notAdded'), first > 0 ? view.full(first * view.f) : ''],
+    extras: split ? [withSign('+', view.m(extrasMonthly)), withSign('+', view.full(extrasMonthly * view.f))] : null,
+    bills: [withSign('−', view.m(spend)), withSign('−', view.full(spend * view.f))],
+    leftLabel: left < 0 && income > 0 ? t('dashboard.receipt.shortBy') : t('dashboard.receipt.leftOver'),
+    left: [income > 0 ? view.m(Math.abs(left)) : '–', income > 0 ? view.full(Math.abs(left) * view.f) : ''],
+    leftClass: `tabular-nums ${left < 0 && income > 0 ? 'font-semibold text-rose-700 dark:text-rose-400' : ''}`,
+    plan: [withSign('+', view.s(result.savings)), withSign('+', view.full(result.savings * view.f))],
+    total: [income > 0 ? withSign(total < 0 ? '−' : '', view.m(Math.abs(total))) : '–', income > 0 ? view.full(total * view.f) : ''],
+    note: income > 0
+      ? (total >= 0 ? t('dashboard.receipt.noteLeft') : t('dashboard.receipt.noteShort'))
+      : t('dashboard.receipt.noteNoIncome')
+  };
+}
+
+function renderReceipt(result, view) {
+  const r = receiptFigures(result, view);
+  document.querySelectorAll('[data-period-word]').forEach((el) => setText(el, r.periodWord));
+  const put = (id, [text, exact]) => setMoney($(id), text, exact);
+  setText($('rcIncomeLabel'), r.incomeLabel);
+  put('rcIncome', r.income);
+  $('rcExtrasRow').hidden = !r.extras;
+  if (r.extras) put('rcExtras', r.extras);
+  put('rcBills', r.bills);
+  setText($('rcLeftLabel'), r.leftLabel);
+  put('rcLeft', r.left);
+  $('rcLeft').className = r.leftClass;
+  put('rcPlan', r.plan);
+  put('rcTotal', r.total);
+  setText($('rcNote'), r.note);
 }
 
 function renderBanners(state, result, view) {
@@ -128,30 +149,43 @@ function meterRow({ lead, value, fill, fillColor = '', fillClass = '', marker = 
     ${note ? `<p class="mt-1.5 text-xs ${noteClass}">${note}</p>` : ''}`;
 }
 
+/** Budget health's score, label pill, tip and breakdown as markup (no DOM; the build uses it too). */
+export function healthMarkup(h) {
+  const tone = toneFor(h.score / 100);
+  // The one thing to do next, as a callout rather than another line of body text
+  const perfect = h.parts.every((p) => p.earned >= p.max);
+  return {
+    score: String(Math.round(h.score)),
+    label: h.label,
+    labelClass: `ms-1 rounded-full px-2.5 py-0.5 text-sm font-medium ${tone.pill}`,
+    tipHtml: `${icon(perfect ? 'check-circle' : 'lightbulb', 'icon-sm mt-0.5 shrink-0')}<span>${esc(h.tip)}</span>`,
+    tipClass: `mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3 text-sm ${perfect
+      ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
+      : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`,
+    partsHtml: h.parts.map((p) => {
+      const ratio = p.earned / p.max;
+      const t = toneFor(ratio);
+      return `<li class="py-3 first:pt-0 last:pb-0">${meterRow({
+        lead: `${icon(ratio >= 0.6 ? 'check-circle' : 'alert', `icon-sm shrink-0 ${t.text}`)}${esc(p.label)}`,
+        value: `<span class="font-semibold ${t.text}">${Math.round(p.earned)}</span><span class="muted"> / ${p.max}</span>`,
+        fill: ratio * 100, fillClass: t.bar, note: esc(p.text)
+      })}</li>`;
+    }).join('')
+  };
+}
+
 function renderHealth(result) {
   const h = result.health;
   $('healthEmpty').hidden = !!h;
   $('healthBody').hidden = !h;
   if (!h) return;
-  const tone = toneFor(h.score / 100);
+  const m = healthMarkup(h);
   animateNumber($('healthScore'), h.score, (n) => String(Math.round(n)));
-  setText($('healthLabel'), h.label);
-  $('healthLabel').className = `ms-1 rounded-full px-2.5 py-0.5 text-sm font-medium ${tone.pill}`;
-  // The one thing to do next, as a callout rather than another line of body text
-  const perfect = h.parts.every((p) => p.earned >= p.max);
-  setHTML($('healthTip'), `${icon(perfect ? 'check-circle' : 'lightbulb', 'icon-sm mt-0.5 shrink-0')}<span>${esc(h.tip)}</span>`);
-  $('healthTip').className = `mt-4 flex items-start gap-2.5 rounded-xl px-4 py-3 text-sm ${perfect
-    ? 'bg-emerald-50 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-200'
-    : 'bg-amber-50 text-amber-900 dark:bg-amber-950/60 dark:text-amber-200'}`;
-  setHTML($('healthParts'), h.parts.map((p) => {
-    const ratio = p.earned / p.max;
-    const t = toneFor(ratio);
-    return `<li class="py-3 first:pt-0 last:pb-0">${meterRow({
-      lead: `${icon(ratio >= 0.6 ? 'check-circle' : 'alert', `icon-sm shrink-0 ${t.text}`)}${esc(p.label)}`,
-      value: `<span class="font-semibold ${t.text}">${Math.round(p.earned)}</span><span class="muted"> / ${p.max}</span>`,
-      fill: ratio * 100, fillClass: t.bar, note: esc(p.text)
-    })}</li>`;
-  }).join(''));
+  setText($('healthLabel'), m.label);
+  $('healthLabel').className = m.labelClass;
+  setHTML($('healthTip'), m.tipHtml);
+  $('healthTip').className = m.tipClass;
+  setHTML($('healthParts'), m.partsHtml);
 }
 
 function renderSplit(result, view) {
@@ -222,6 +256,9 @@ function renderMobileBar(state, result, view) {
 }
 
 export function renderDashboard(state, result, view) {
+  // The static HTML's results are an example budget, marked "Example" by the
+  // build (scripts/prerender-locales.mjs, fillFigures); real figures replace them
+  document.querySelectorAll('[data-example-badge]').forEach((el) => el.remove());
   renderBanners(state, result, view);
   renderSummary(result, view);
   renderHealth(result);

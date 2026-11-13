@@ -1465,7 +1465,7 @@
     "faq": {
       "title": "Häufige Fragen",
       "q1": "Sind meine Finanzdaten in diesem Rechner sicher?",
-      "a1": "Ja. Jede Berechnung läuft in deinem Webbrowser und nichts, was du eingibst, wird an einen Server gesendet. Deine Zahlen werden nur im lokalen Speicher deines eigenen Browsers gemerkt, und der Zurücksetzen-Button löscht sie.",
+      "a1": "Ja. Jede Berechnung läuft in deinem Webbrowser und die Budgetzahlen, die du eingibst, werden nie an einen Server gesendet. Deine Zahlen werden nur im lokalen Speicher deines eigenen Browsers gemerkt, und der Zurücksetzen-Button löscht sie.",
       "q2": "Wie werden die Spar-Schätzungen berechnet?",
       "a2": "Jede Idee nimmt die passende Rechnung und setzt eine vorsichtige, typische Ersparnis an, z. B. 12 % für Energiespar-Gewohnheiten oder 15 % für Fahrgemeinschaften. Öffne bei einer Idee „Wie kommen wir darauf?“, um die genaue Rechnung zu sehen. Wenn zwei Ideen dieselbe Rechnung senken, zählt die zweite nur, was übrig ist – Ersparnisse werden also nie doppelt gezählt.",
       "q3": "Was macht der Schalter „Zu meinem Plan hinzufügen“?",
@@ -1552,7 +1552,7 @@
     },
     "faq": {
       "q1": "Sind meine Finanzdaten in diesem Rechner sicher?",
-      "a1": "Ja. Jede Berechnung läuft in deinem Webbrowser und nichts, was du eingibst, wird an einen Server gesendet. Deine Zahlen werden nur im lokalen Speicher deines eigenen Browsers gemerkt, und der Zurücksetzen-Button löscht sie.",
+      "a1": "Ja. Jede Berechnung läuft in deinem Webbrowser und die Budgetzahlen, die du eingibst, werden nie an einen Server gesendet. Deine Zahlen werden nur im lokalen Speicher deines eigenen Browsers gemerkt, und der Zurücksetzen-Button löscht sie.",
       "q2": "Wie werden die Spar-Schätzungen berechnet?",
       "a2": "Jede Idee nimmt die passende Rechnung und setzt eine vorsichtige, typische Ersparnis an, z. B. 12 % für Energiespar-Gewohnheiten oder 15 % für Fahrgemeinschaften. Öffne bei einer Idee „Wie kommen wir darauf?“, um die genaue Rechnung zu sehen. Wenn zwei Ideen dieselbe Rechnung senken, zählt die zweite nur, was übrig ist – Ersparnisse werden also nie doppelt gezählt.",
       "q3": "Was macht der Schalter „Zu meinem Plan hinzufügen“?",
@@ -2068,7 +2068,7 @@
         "subtitle": "Was du zahlst · was du bekommst",
         "signUp": "Anmeldung nötig",
         "signUpValue": "Keine",
-        "dataSent": "An uns gesendete Daten",
+        "dataSent": "An uns gesendete Budgetdaten",
         "dataSentValue": "0 Byte",
         "currencies": "Währungen",
         "ideas": "Spar-Ideen",
@@ -3137,7 +3137,7 @@
     "readGuide": "Ratgeber lesen",
     "cta": {
       "title": "Probier es mit deinen eigenen Zahlen",
-      "text": "Trag deine Rechnungen in den kostenlosen Rechner ein und erhalte Sparideen mit der Rechnung hinter jeder einzelnen. Nichts, was du eingibst, verlässt dein Gerät.",
+      "text": "Trag deine Rechnungen in den kostenlosen Rechner ein und erhalte Sparideen mit der Rechnung hinter jeder einzelnen. Deine Budgetzahlen verlassen nie dein Gerät.",
       "button": "Rechner ausprobieren"
     },
     "disclaimer": "Dieser Ratgeber dient nur der allgemeinen Information. Er ist keine Finanz-, Steuer- oder Rechtsberatung. Die Zahlen sind Beispiele oder allgemeine Richtwerte; prüf, was für dich gilt."

@@ -10,6 +10,7 @@ import { buildGuides, renderGuides, guideSitemapPages } from './scripts/build-gu
 import { GUIDE_BASES } from './src/i18n/guide-langs.js';
 import { ENABLED_LANGUAGES } from './src/i18n/enabled.js';
 import { sourceRel } from './scripts/official-sources.mjs';
+import { HOME_ARTICLE, articleLd, ldScript, plainText, updatedTime } from './scripts/structured-data.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES = ['privacy-policy', 'terms-of-use', 'contact', 'about', 'methodology', 'guides'];
@@ -75,6 +76,14 @@ function siteConfig(env) {
       // "Last updated" on the Methodology page: the most recent country review
       const methodologyUpdated = countryFiles().map((c) => c.lastReviewed).filter(Boolean).sort().pop();
       const methodologyUpdatedHtml = `<time datetime="${methodologyUpdated}">${new Date(`${methodologyUpdated}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>`;
+      // The home page article: "Last updated" and its Article JSON-LD (language/country
+      // pages get their own versions in scripts/prerender-locales.mjs)
+      const homeArticleLd = () => {
+        const { guide } = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/i18n/locales/en.json'), 'utf8')).page;
+        return ldScript(articleLd({
+          siteUrl, path: '/', headline: guide.title, description: plainText(guide.intro1_html), lang: 'en', mainEntity: false, ...HOME_ARTICLE
+        }));
+      };
       // Shared header and footer for the standalone pages (privacy, terms, contact)
       const partial = (name) => fs.readFileSync(path.resolve(__dirname, 'src/partials', `${name}.html`), 'utf8');
       return html
@@ -86,6 +95,8 @@ function siteConfig(env) {
         .replace('<!--FOOTER_COUNTRIES-->', () => footerCountriesHtml())
         .replace('<!--METHODOLOGY_UPDATED-->', methodologyUpdatedHtml)
         .replace(/__METHODOLOGY_UPDATED__/g, methodologyUpdated)
+        .replace('<!--HOME_ARTICLE_UPDATED-->', () => updatedTime(HOME_ARTICLE.dateModified))
+        .replace('<!--HOME_ARTICLE_LD-->', homeArticleLd)
         .replace('<!--SITE_URL_TAGS-->', urlTags)
         .replace(/__SITE_URL__/g, siteUrl ? `${siteUrl}/` : '')
         .replace('__ADS_ON__', adsClient ? 'true' : 'false')

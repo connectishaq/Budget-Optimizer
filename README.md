@@ -1,6 +1,6 @@
 # SpendMath
 
-A household budget calculator and savings planner: a fast, private, static budgeting tool. All calculations run in the browser; nothing is sent to a server.
+A household budget calculator and savings planner: a fast, private, static budgeting tool. All calculations run in the browser; no budget data is sent to a server.
 
 ## Run it
 

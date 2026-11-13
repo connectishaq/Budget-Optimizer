@@ -1436,7 +1436,7 @@
     "faq": {
       "title": "Pertanyaan yang Sering Diajukan",
       "q1": "Apakah data keuangan saya aman di kalkulator ini?",
-      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan tidak ada yang Anda ketik dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
+      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan angka anggaran yang Anda ketik tidak pernah dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
       "q2": "Bagaimana perkiraan penghematan dihitung?",
       "a2": "Setiap ide mengambil tagihan yang dibahasnya dan menerapkan penghematan yang hati-hati dan umum, misalnya 12% untuk kebiasaan hemat energi atau 15% untuk berbagi kendaraan. Buka \"Dari mana angka ini?\" pada ide mana pun untuk melihat hitungan persisnya. Jika dua ide memangkas tagihan yang sama, ide kedua hanya menghitung sisanya, jadi penghematan tidak pernah dihitung dua kali.",
       "q3": "Apa fungsi tombol \"Masukkan ke rencana saya\"?",
@@ -1523,7 +1523,7 @@
     },
     "faq": {
       "q1": "Apakah data keuangan saya aman di kalkulator ini?",
-      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan tidak ada yang Anda ketik dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
+      "a1": "Ya. Semua perhitungan berjalan di dalam browser Anda dan angka anggaran yang Anda ketik tidak pernah dikirim ke server. Angka Anda hanya diingat di penyimpanan lokal browser Anda sendiri, dan tombol reset menghapusnya.",
       "q2": "Bagaimana perkiraan penghematan dihitung?",
       "a2": "Setiap ide mengambil tagihan yang dibahasnya dan menerapkan penghematan yang hati-hati dan umum, misalnya 12% untuk kebiasaan hemat energi atau 15% untuk berbagi kendaraan. Buka \"Dari mana angka ini?\" pada ide mana pun untuk melihat hitungan persisnya. Jika dua ide memangkas tagihan yang sama, ide kedua hanya menghitung sisanya, jadi penghematan tidak pernah dihitung dua kali.",
       "q3": "Apa fungsi tombol \"Masukkan ke rencana saya\"?",
@@ -2030,7 +2030,7 @@
         "subtitle": "Yang Anda bayar · yang Anda dapat",
         "signUp": "Perlu daftar",
         "signUpValue": "Tidak",
-        "dataSent": "Data yang dikirim ke kami",
+        "dataSent": "Data anggaran yang dikirim ke kami",
         "dataSentValue": "0 byte",
         "currencies": "Mata uang",
         "ideas": "Ide untuk berhemat",
@@ -3097,7 +3097,7 @@
     "readGuide": "Baca panduan",
     "cta": {
       "title": "Lihat dengan angka Anda sendiri",
-      "text": "Masukkan tagihan Anda ke kalkulator gratis dan dapatkan ide hemat beserta hitungan di balik setiap ide. Apa pun yang Anda ketik tidak keluar dari perangkat Anda.",
+      "text": "Masukkan tagihan Anda ke kalkulator gratis dan dapatkan ide hemat beserta hitungan di balik setiap ide. Angka anggaran Anda tidak pernah keluar dari perangkat Anda.",
       "button": "Coba kalkulatornya"
     },
     "disclaimer": "Panduan ini hanya untuk edukasi umum, bukan nasihat keuangan, pajak, atau hukum. Angka-angka adalah contoh atau patokan umum; periksa apa yang berlaku untuk Anda."

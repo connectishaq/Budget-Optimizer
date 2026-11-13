@@ -26,7 +26,8 @@ export function setAttr(el, name, value) {
 }
 
 export const isLite = () => document.documentElement.classList.contains('lite');
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+// No window when the build imports this module (src/prerender-figures.js)
+const reduceMotion = typeof window === 'undefined' ? { matches: true } : window.matchMedia('(prefers-reduced-motion: reduce)');
 export const motionOK = () => !isLite() && !reduceMotion.matches;
 
 /**

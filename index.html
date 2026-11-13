@@ -102,7 +102,7 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is my financial data safe in this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them." } },
+      { "@type": "Question", "name": "Is my financial data safe in this calculator?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every calculation runs inside your web browser and the budget numbers you type are never sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them." } },
       { "@type": "Question", "name": "How are the savings estimates worked out?", "acceptedAnswer": { "@type": "Answer", "text": "Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open \"How did we get this?\" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice." } },
       { "@type": "Question", "name": "What does the \"Add to my plan\" switch do?", "acceptedAnswer": { "@type": "Answer", "text": "Only ideas you add to your plan count towards what you could spend, the money you could save, the growth chart, your goal dates and your debt-free date. Switch an idea off if it doesn't fit your life and every figure updates instantly." } },
       { "@type": "Question", "name": "What is the 50/30/20 budget rule?", "acceptedAnswer": { "@type": "Answer", "text": "It's a simple guideline: spend about half of your take-home pay on must-pay bills such as housing, power, groceries and loan payments, about a third on nice-to-haves such as eating out and subscriptions, and save about a fifth." } },
@@ -113,6 +113,8 @@
     ]
   }
   </script>
+  <!-- The article below the calculator ("5 Hidden Household Expense Leaks"), built by vite.config.js -->
+  <!--HOME_ARTICLE_LD-->
 
   <!-- ===================== CONSENT (CMP) SLOT =====================
        AdSense requires a Google-certified consent management platform (CMP) for
@@ -855,6 +857,8 @@
         <header class="mb-8">
           <p class="eyebrow mb-2" data-i18n="page.guide.eyebrow">Money tips · 5 minute read</p>
           <h2 id="guideTitle" class="text-2xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-3xl dark:text-white" data-i18n="page.guide.title">5 Hidden Household Expense Leaks (And How to Plug Them Today)</h2>
+          <!-- Same as the guides' "Last updated"; the date is HOME_ARTICLE in scripts/structured-data.mjs -->
+          <p id="guideUpdated" class="mt-3 text-sm text-slate-600 dark:text-slate-400">Last updated: <!--HOME_ARTICLE_UPDATED--></p>
         </header>
 
         <p class="text-lg" data-i18n-html="page.guide.intro1_html">Most households don't have a spending problem so much as a <strong>leak problem</strong>. The big, visible costs, such as rent, a mortgage or a car payment, get scrutinized constantly. Meanwhile, dozens of small, recurring charges quietly drain hundreds every month without anyone noticing. Because these leaks are automatic, spread out and individually small, they slip past even careful budgeters.</p>
@@ -950,7 +954,7 @@
           <div class="border-t border-slate-200 dark:border-slate-800">
             <details class="group border-b border-slate-200 dark:border-slate-800">
               <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q1">Is my financial data safe in this calculator?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>
-              <p class="pb-4" data-i18n="page.faq.a1">Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.</p>
+              <p class="pb-4" data-i18n="page.faq.a1">Yes. Every calculation runs inside your web browser and the budget numbers you type are never sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.</p>
             </details>
             <details class="group border-b border-slate-200 dark:border-slate-800">
               <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-medium text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden"><span data-i18n="page.faq.q2">How are the savings estimates worked out?</span><svg class="icon chev group-open:rotate-180" aria-hidden="true"><use href="#i-chevron-down"></use></svg></summary>

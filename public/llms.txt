@@ -1,6 +1,6 @@
 # SpendMath
 
-> SpendMath is a free, private household budget calculator and savings planner. You enter your income and bills step by step, and it shows where your money goes, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow. Every calculation runs in the browser: nothing you type is sent to a server, and there is no sign-up.
+> SpendMath is a free, private household budget calculator and savings planner. You enter your income and bills step by step, and it shows where your money goes, suggests simple ways to spend less, scores your budget health, plans goals and debt payoff, and shows how savings could grow. Every calculation runs in the browser: the budget numbers you type are never sent to a server, and there is no sign-up.
 
 - It works in 13 currencies with typical household amounts and local tips per country, and shows rupee amounts in lakh and crore.
 - It is available in English, Urdu, Hindi, Arabic and Spanish, with a page per language and country (for example /en-gb/, /ur-pk/, /ar-ae/).

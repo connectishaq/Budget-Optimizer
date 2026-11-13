@@ -25,7 +25,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { GUIDE_BASES, GUIDE_SLUGS } from '../src/i18n/guide-langs.js';
 import { makeT, applyMessages, localizeLinks } from './prerender-locales.mjs';
-import { publisher, author, breadcrumbList } from './structured-data.mjs';
+import { publisher, breadcrumbList, articleLd, ogLocale } from './structured-data.mjs';
 import { sourceRel } from './official-sources.mjs';
 
 const RTL = new Set(['ar', 'ur']);
@@ -190,6 +190,7 @@ function setHead(doc, { title, description, imageAlt, lang, htmlLang = HREFLANG[
   set('meta[property="og:title"]', title);
   set('meta[property="og:description"]', description);
   set('meta[property="og:type"]', type);
+  set('meta[property="og:locale"]', ogLocale(htmlLang));
   set('meta[property="og:image:alt"]', imageAlt);
   for (const el of head.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang], meta[property="og:url"], script[type="application/ld+json"]')) el.remove();
   const tags = [];
@@ -269,11 +270,7 @@ export function renderGuides({ root, template, siteUrl }) {
         title: g.seo.title, description: g.seo.description, imageAlt: t('seo.ogImageAlt'), lang, htmlLang: pageLang, country: g.region || g.country || COUNTRY[lang], siteUrl, path: pagePath,
         alternates: versions(all, g.slug), links: hreflangs(all, g), type: 'article',
         ld: [
-          {
-            '@context': 'https://schema.org', '@type': 'Article', headline: g.h1, description: g.seo.description, inLanguage: pageLang,
-            datePublished: g.datePublished, dateModified: g.dateModified, author: author(siteUrl), publisher: publisher(siteUrl),
-            ...(siteUrl ? { url: `${siteUrl}${pagePath}`, mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteUrl}${pagePath}` }, image: `${siteUrl}/og-image.png` } : {})
-          },
+          articleLd({ siteUrl, path: pagePath, headline: g.h1, description: g.seo.description, lang: pageLang, datePublished: g.datePublished, dateModified: g.dateModified }),
           { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: pageLang, mainEntity: g.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
           crumbs([{ name: t('about.breadcrumb.home'), href: HOME[lang] }, { name: t('guides.index.breadcrumb'), href: base }, { name: g.h1, href: pagePath }])
         ]

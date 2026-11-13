@@ -31,6 +31,47 @@ export function author(siteUrl) {
 }
 
 /**
+ * The home page article, "5 Hidden Household Expense Leaks" (index.html #guide,
+ * page.guide.* in the locales): first published, and when its text last
+ * changed. Change dateModified only when the article's text changes. The
+ * language/country pages' own versions keep their dates in src/i18n/articles/.
+ */
+export const HOME_ARTICLE = { datePublished: '2026-10-12', dateModified: '2026-10-20' };
+
+/**
+ * og:locale for a page's hreflang/lang tag: "en-GB" -> "en_GB", "ur-PK" -> "ur_PK".
+ * Open Graph needs a territory, so generic English ("en", the home page and the
+ * English guides) is en_US, Open Graph's default, as on the home page.
+ */
+export const ogLocale = (tag) => (tag.includes('-') ? tag.replace('-', '_') : ({ en: 'en_US' }[tag] || tag));
+
+/** Plain text from a message's HTML ("Most households <strong>…</strong>" -> "Most households …"). */
+export const plainText = (html) => String(html).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+
+/**
+ * Article JSON-LD for a guide or the home page article: the About page's Person
+ * as author, the site as publisher. `mainEntity`: the article is the page's main
+ * content (guides), not part of a page about something else (the calculator).
+ */
+export function articleLd({ siteUrl, path, headline, description, lang, datePublished, dateModified, mainEntity = true }) {
+  const url = siteUrl ? `${siteUrl}${path}` : '';
+  return {
+    '@context': 'https://schema.org', '@type': 'Article', headline, description, inLanguage: lang,
+    datePublished, dateModified, author: author(siteUrl), publisher: publisher(siteUrl),
+    ...(url ? { url, ...(mainEntity ? { mainEntityOfPage: { '@type': 'WebPage', '@id': url } } : {}), image: `${siteUrl}/og-image.png` } : {})
+  };
+}
+
+/** A JSON-LD script tag ("<" can't appear inside it). */
+export const ldScript = (o) => `<script type="application/ld+json">\n  ${JSON.stringify(o, null, 2).replace(/</g, '\\u003c').replace(/\n/g, '\n  ')}\n  </script>`;
+
+/** "Last updated" as on the guides: <time datetime="2026-10-20">20 October 2026</time> in the page's language. */
+export function updatedTime(iso, locale = 'en-GB') {
+  const shown = new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  return `<time datetime="${iso}">${shown}</time>`;
+}
+
+/**
  * Home pages: the WebSite and the Organization behind it, with the About page's
  * Person as founder (same @ids as everywhere else). Hand-written copy in index.html.
  */

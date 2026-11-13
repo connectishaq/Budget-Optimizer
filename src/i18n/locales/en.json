@@ -1454,7 +1454,7 @@
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "Is my financial data safe in this calculator?",
-      "a1": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
+      "a1": "Yes. Every calculation runs inside your web browser and the budget numbers you type are never sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
       "q2": "How are the savings estimates worked out?",
       "a2": "Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open \"How did we get this?\" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.",
       "q3": "What does the \"Add to my plan\" switch do?",
@@ -1541,7 +1541,7 @@
     },
     "faq": {
       "q1": "Is my financial data safe in this calculator?",
-      "a1": "Yes. Every calculation runs inside your web browser and nothing you type is sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
+      "a1": "Yes. Every calculation runs inside your web browser and the budget numbers you type are never sent to a server. Your numbers are only remembered in your own browser's local storage, and the reset button deletes them.",
       "q2": "How are the savings estimates worked out?",
       "a2": "Each idea takes the bill it's about and applies a careful, typical saving, for example 12% for energy-saving habits or 15% for carpooling. Open \"How did we get this?\" on any idea to see the exact sum. If two ideas cut the same bill, the second only counts what's left, so savings are never counted twice.",
       "q3": "What does the \"Add to my plan\" switch do?",
@@ -2058,7 +2058,7 @@
         "subtitle": "What you pay · what you get",
         "signUp": "Sign-up needed",
         "signUpValue": "None",
-        "dataSent": "Data sent to us",
+        "dataSent": "Budget data sent to us",
         "dataSentValue": "0 bytes",
         "currencies": "Currencies",
         "ideas": "Ideas to save",
@@ -3192,7 +3192,7 @@
     "readGuide": "Read the guide",
     "cta": {
       "title": "See it with your own numbers",
-      "text": "Add your bills to the free calculator and get savings ideas with the sum behind each one. Nothing you type leaves your device.",
+      "text": "Add your bills to the free calculator and get savings ideas with the sum behind each one. Your budget numbers never leave your device.",
       "button": "Try the calculator"
     },
     "disclaimer": "This guide is for general education only. It is not financial, tax or legal advice. Figures are examples or general guidelines; check what applies to you."

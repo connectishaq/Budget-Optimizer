@@ -25,6 +25,40 @@ export function projectionData(state, result) {
   return { years, rate, inflationOn, inflation, curMonthly, altMonthly, cur, alt, showReal: inflationOn };
 }
 
+/**
+ * The growth panel's figures and sentences from projectionData(). No DOM, so the
+ * build uses it too for the example figures in the static HTML.
+ */
+export function projectionFigures(state, d, view) {
+  const pick = (s) => (d.showReal ? s.real : s.nominal);
+  const fvAlt = pick(d.alt).at(-1);
+  const fvCur = pick(d.cur).at(-1);
+  const tag = (n) => view.tag(view.rawS(n), n);
+  // No ideas switched on: both lines would be the same, so show one line and its total
+  const single = d.altMonthly - d.curMonthly < 0.5;
+  const yearsTxt = t('charts.years', { count: d.years });
+  const nominalAlt = d.alt.nominal.at(-1);
+  const realAlt = d.alt.real.at(-1);
+  let summary;
+  if (d.altMonthly <= 0) {
+    // With an income entered, nothing to grow means spending is above income
+    summary = t(state.values.income > 0 ? 'charts.summary.short' : 'charts.summary.empty');
+  } else {
+    summary = t('charts.summary.main', { monthly: view.rawS(d.altMonthly), years: yearsTxt, rate: Math.round(d.rate * 100), nominal: view.rawS(nominalAlt), real: view.rawS(realAlt) });
+    if (nominalAlt - d.cur.nominal.at(-1) > 0.5) summary += ` ${t('charts.summary.asYouAre', { amount: view.rawS(d.cur.nominal.at(-1)) })}`;
+  }
+  return {
+    single,
+    altLabel: single ? t('charts.legend.only') : t('charts.legend.alt'),
+    altHtml: tag(fvAlt),
+    curHtml: tag(fvCur),
+    sideHtml: single ? t('charts.side.total_html') : t('charts.side.extra_html'),
+    diffHtml: single ? tag(fvAlt) : withSign('+', tag(fvAlt - fvCur)),
+    yearsAfter: t('charts.afterYears', { count: d.years }),
+    summary
+  };
+}
+
 // ---------------- Chart ----------------
 let growth = null;
 
@@ -73,33 +107,19 @@ export function renderProjection(state, result, view) {
     ? t('charts.mode.real', { pct: d.inflation })
     : t('charts.mode.nominal'));
 
-  const pick = (s) => (d.showReal ? s.real : s.nominal);
-  const fvAlt = pick(d.alt).at(-1);
-  const fvCur = pick(d.cur).at(-1);
-  const tag = (n) => view.tag(view.rawS(n), n);
-  // No ideas switched on: both lines would be the same, so show one line and its total
-  const single = d.altMonthly - d.curMonthly < 0.5;
-  setText($('fvAltLabel'), single ? t('charts.legend.only') : t('charts.legend.alt'));
-  $('fvCurItem').hidden = single;
-  setHTML($('fvAlt'), tag(fvAlt));
-  setHTML($('fvCur'), tag(fvCur));
-  setHTML($('fvLabel'), single ? t('charts.side.total_html') : t('charts.side.extra_html'));
-  setHTML($('fvDiff'), single ? tag(fvAlt) : withSign('+', tag(fvAlt - fvCur)));
-  setText($('fvYears'), t('charts.afterYears', { count: d.years }));
+  const f = projectionFigures(state, d, view);
+  setText($('fvAltLabel'), f.altLabel);
+  $('fvCurItem').hidden = f.single;
+  setHTML($('fvAlt'), f.altHtml);
+  setHTML($('fvCur'), f.curHtml);
+  setHTML($('fvLabel'), f.sideHtml);
+  setHTML($('fvDiff'), f.diffHtml);
+  setText($('fvYears'), f.yearsAfter);
+  setText($('projectionSummary'), f.summary);
+  setAttr($('growthChart'), 'aria-label', t('charts.ariaLabel', { summary: f.summary }));
 
-  const yearsTxt = t('charts.years', { count: d.years });
-  const nominalAlt = d.alt.nominal.at(-1);
-  const realAlt = d.alt.real.at(-1);
-  let summary;
-  if (d.altMonthly <= 0) {
-    // With an income entered, nothing to grow means spending is above income
-    summary = t(state.values.income > 0 ? 'charts.summary.short' : 'charts.summary.empty');
-  } else {
-    summary = t('charts.summary.main', { monthly: view.rawS(d.altMonthly), years: yearsTxt, rate: Math.round(d.rate * 100), nominal: view.rawS(nominalAlt), real: view.rawS(realAlt) });
-    if (nominalAlt - d.cur.nominal.at(-1) > 0.5) summary += ` ${t('charts.summary.asYouAre', { amount: view.rawS(d.cur.nominal.at(-1)) })}`;
-  }
-  setText($('projectionSummary'), summary);
-  setAttr($('growthChart'), 'aria-label', t('charts.ariaLabel', { summary }));
+  const pick = (s) => (d.showReal ? s.real : s.nominal);
+  const single = f.single;
 
   // Accessible year-by-year table
   setHTML($('projectionTable'), pick(d.cur).map((c, i) => i === 0 ? '' : `<tr><th scope="row" class="px-3 py-1.5 text-start font-medium">${t('charts.year', { n: i })}</th><td class="px-3 py-1.5 text-end">${view.rawS(c)}</td><td class="px-3 py-1.5 text-end">${view.rawS(pick(d.alt)[i])}</td></tr>`).join(''));

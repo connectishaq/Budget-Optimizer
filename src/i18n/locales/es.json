@@ -1494,7 +1494,7 @@
     "faq": {
       "title": "Preguntas frecuentes",
       "q1": "¿Están seguros mis datos financieros en esta calculadora?",
-      "a1": "Sí. Todos los cálculos se hacen dentro de tu navegador y nada de lo que escribes se envía a un servidor. Tus números solo se guardan en el almacenamiento local de tu propio navegador, y el botón de reinicio los borra.",
+      "a1": "Sí. Todos los cálculos se hacen dentro de tu navegador y los números del presupuesto que escribes nunca se envían a un servidor. Tus números solo se guardan en el almacenamiento local de tu propio navegador, y el botón de reinicio los borra.",
       "q2": "¿Cómo se calculan las estimaciones de ahorro?",
       "a2": "Cada idea toma la factura a la que se refiere y aplica un ahorro prudente y habitual, por ejemplo un 12% por hábitos de ahorro de energía o un 15% por compartir coche. Abre «¿Cómo lo hemos calculado?» en cualquier idea para ver la cuenta exacta. Si dos ideas reducen la misma factura, la segunda solo cuenta lo que queda, así que el ahorro nunca se cuenta dos veces.",
       "q3": "¿Qué hace el interruptor «Añadir a mi plan»?",
@@ -1581,7 +1581,7 @@
     },
     "faq": {
       "q1": "¿Están seguros mis datos financieros en esta calculadora?",
-      "a1": "Sí. Todos los cálculos se hacen dentro de tu navegador y nada de lo que escribes se envía a un servidor. Tus números solo se guardan en el almacenamiento local de tu propio navegador, y el botón de reinicio los borra.",
+      "a1": "Sí. Todos los cálculos se hacen dentro de tu navegador y los números del presupuesto que escribes nunca se envían a un servidor. Tus números solo se guardan en el almacenamiento local de tu propio navegador, y el botón de reinicio los borra.",
       "q2": "¿Cómo se calculan las estimaciones de ahorro?",
       "a2": "Cada idea toma la factura a la que se refiere y aplica un ahorro prudente y habitual, por ejemplo un 12% por hábitos de ahorro de energía o un 15% por compartir coche. Abre «¿Cómo lo hemos calculado?» en cualquier idea para ver la cuenta exacta. Si dos ideas reducen la misma factura, la segunda solo cuenta lo que queda, así que el ahorro nunca se cuenta dos veces.",
       "q3": "¿Qué hace el interruptor «Añadir a mi plan»?",
@@ -2106,7 +2106,7 @@
         "subtitle": "Lo que pagas · lo que recibes",
         "signUp": "Registro necesario",
         "signUpValue": "Ninguno",
-        "dataSent": "Datos que nos envías",
+        "dataSent": "Datos del presupuesto que nos envías",
         "dataSentValue": "0 bytes",
         "currencies": "Monedas",
         "ideas": "Ideas para ahorrar",
@@ -3242,7 +3242,7 @@
     "readGuide": "Leer la guía",
     "cta": {
       "title": "Compruébalo con tus propios números",
-      "text": "Añade tus facturas a la calculadora gratuita y recibe ideas de ahorro con el cálculo detrás de cada una. Nada de lo que escribes sale de tu dispositivo.",
+      "text": "Añade tus facturas a la calculadora gratuita y recibe ideas de ahorro con el cálculo detrás de cada una. Los números de tu presupuesto nunca salen de tu dispositivo.",
       "button": "Prueba la calculadora"
     },
     "disclaimer": "Esta guía es solo informativa. No es asesoramiento financiero, fiscal ni legal. Las cifras son ejemplos o pautas generales; comprueba lo que se aplica en tu caso."

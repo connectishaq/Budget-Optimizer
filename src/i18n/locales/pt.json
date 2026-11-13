@@ -1494,7 +1494,7 @@
     "faq": {
       "title": "Perguntas frequentes",
       "q1": "Meus dados financeiros estão seguros nesta calculadora?",
-      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e nada do que você digita é enviado a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
+      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e os números do orçamento que você digita nunca são enviados a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
       "q2": "Como as estimativas de economia são calculadas?",
       "a2": "Cada ideia pega a conta a que se refere e aplica uma economia típica e cautelosa, por exemplo 12% para hábitos de economia de energia ou 15% para caronas. Abra \"Como chegamos a isso?\" em qualquer ideia para ver a conta exata. Se duas ideias cortam a mesma conta, a segunda só conta sobre o que sobrou, então a economia nunca é contada duas vezes.",
       "q3": "O que faz o botão \"Adicionar ao meu plano\"?",
@@ -1581,7 +1581,7 @@
     },
     "faq": {
       "q1": "Meus dados financeiros estão seguros nesta calculadora?",
-      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e nada do que você digita é enviado a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
+      "a1": "Sim. Todos os cálculos são feitos dentro do seu navegador e os números do orçamento que você digita nunca são enviados a um servidor. Seus números ficam guardados só no armazenamento local do seu próprio navegador, e o botão de reiniciar os apaga.",
       "q2": "Como as estimativas de economia são calculadas?",
       "a2": "Cada ideia pega a conta a que se refere e aplica uma economia típica e cautelosa, por exemplo 12% para hábitos de economia de energia ou 15% para caronas. Abra \"Como chegamos a isso?\" em qualquer ideia para ver a conta exata. Se duas ideias cortam a mesma conta, a segunda só conta sobre o que sobrou, então a economia nunca é contada duas vezes.",
       "q3": "O que faz o botão \"Adicionar ao meu plano\"?",
@@ -2105,7 +2105,7 @@
         "subtitle": "O que você paga · o que você recebe",
         "signUp": "Cadastro necessário",
         "signUpValue": "Nenhum",
-        "dataSent": "Dados enviados para nós",
+        "dataSent": "Dados do orçamento enviados para nós",
         "dataSentValue": "0 bytes",
         "currencies": "Moedas",
         "ideas": "Ideias para economizar",
@@ -3176,7 +3176,7 @@
     "readGuide": "Ler o guia",
     "cta": {
       "title": "Veja com os seus próprios números",
-      "text": "Adicione suas contas à calculadora grátis e receba ideias de economia com a conta por trás de cada uma. Nada do que você digita sai do seu dispositivo.",
+      "text": "Adicione suas contas à calculadora grátis e receba ideias de economia com a conta por trás de cada uma. Os números do seu orçamento nunca saem do seu dispositivo.",
       "button": "Experimente a calculadora"
     },
     "disclaimer": "Este guia é apenas informativo. Não é aconselhamento financeiro, tributário ou jurídico. Os valores são exemplos ou referências gerais; confira o que se aplica a você."

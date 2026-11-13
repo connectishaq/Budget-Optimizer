@@ -1,8 +1,10 @@
 // npm run articles:check   (also checks the money guides: scripts/guides-check.mjs)
 // Checks the per-country articles in src/i18n/articles/<page>.json against the
 // English article (page.guide in en.json): same keys, the same markup in
-// "_html" messages (number badges, no new tags), a sensible length, and a
-// page title and description that fit search results. Exit code 1 on errors.
+// "_html" messages (number badges, no new tags), a sensible length, a page
+// title and description that fit search results, and the article's dates
+// (datePublished, dateModified: change it when the article text changes).
+// Exit code 1 on errors.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -43,6 +45,10 @@ for (const page of LOCALE_PAGES.filter((p) => p.path !== 'en-us')) {
     for (const tg of tags(v)) if (!ALLOWED.test(tg)) errors.push(`${page.path}: guide.${k} has a tag not allowed: ${tg}`);
     if (ref[k] && badge(ref[k]) !== badge(v)) errors.push(`${page.path}: guide.${k} must keep its number badge exactly`);
   }
+  // "Last updated" and the Article JSON-LD: when the article text last changed
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!iso.test(a.datePublished || '') || !iso.test(a.dateModified || '')) errors.push(`${page.path}: datePublished and dateModified must be YYYY-MM-DD dates`);
+  else if (a.dateModified < a.datePublished) errors.push(`${page.path}: dateModified is before datePublished`);
   const t = a.seo?.title || '';
   const d = a.seo?.description || '';
   if (!t || t.length > 70) errors.push(`${page.path}: seo.title must be 1–70 characters (is ${t.length})`);

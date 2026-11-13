@@ -12,7 +12,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LOCALE_PAGES, bcp47 } from '../src/i18n/locale-pages.js';
 import { GUIDE_BASES } from '../src/i18n/guide-langs.js';
-import { publisher, siteGraph } from './structured-data.mjs';
+import { publisher, siteGraph, articleLd, ldScript, plainText, updatedTime, ogLocale, HOME_ARTICLE } from './structured-data.mjs';
 
 const RTL = new Set(['ar', 'ur']);
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -115,7 +115,7 @@ ${[
 `;
 }
 
-function jsonLd(t, page, currency, pageUrl, siteUrl) {
+function jsonLd(t, page, currency, pageUrl, siteUrl, article) {
   const app = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -141,17 +141,36 @@ function jsonLd(t, page, currency, pageUrl, siteUrl) {
       acceptedAnswer: { '@type': 'Answer', text: t(`seo.faq.a${i}`) }
     }))
   };
-  // "<" can't appear inside the script tag
-  const block = (o) => `<script type="application/ld+json">\n  ${JSON.stringify(o, null, 2).replace(/</g, '\\u003c').replace(/\n/g, '\n  ')}\n  </script>`;
-  return `${block(app)}\n  ${block(faq)}\n  ${block(siteGraph(siteUrl, bcp47(page.path)))}`;
+  // The article below the calculator, by the About page's Person (as on the guides)
+  const post = articleLd({ siteUrl, path: `/${page.path}/`, lang: bcp47(page.path), mainEntity: false, ...article });
+  return [app, faq, siteGraph(siteUrl, bcp47(page.path)), post].map(ldScript).join('\n  ');
 }
+
+// The "Example" badge on pre-rendered results (same look as the hero card's);
+// src/ui/dashboard.js removes every [data-example-badge] once real figures render
+const BADGE = 'rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400';
+const BADGE_ON_DARK = 'rounded bg-white/15 px-1.5 py-0.5 text-xs text-emerald-50';
+const badge = (text, cls, extra = '') => `<span data-example-badge class="${cls}${extra ? ` ${extra}` : ''}" data-i18n="page.hero.receipt.badge">${esc(text)}</span>`;
 
 /**
  * Puts example figures (src/prerender-figures.js) into the hero card, the
- * results summary and the phone's sticky bar. Scripts replace them later.
+ * results (summary, "Your month, added up", Budget health, savings growth) and
+ * the phone's sticky bar, with an "Example" badge on each results panel.
+ * Scripts replace them later.
  */
 export function fillFigures(doc, f) {
-  const put = (sel, text) => { for (const el of doc.querySelectorAll(sel)) el.set_content(esc(text)); };
+  const all = (sel) => doc.querySelectorAll(sel);
+  const one = (sel) => doc.querySelector(sel);
+  const put = (sel, text) => { for (const el of all(sel)) el.set_content(esc(text)); };
+  const html = (sel, markup) => one(sel)?.set_content(markup);
+  // An amount, with the exact figure on hover when it's shortened (as setMoney does)
+  const money = (sel, [text, exact]) => {
+    const el = one(sel);
+    if (!el) return;
+    el.set_content(esc(text));
+    if (exact && exact !== text) el.setAttribute('title', exact);
+    else el.removeAttribute('title');
+  };
   put('[data-example="income"]', f.income);
   put('[data-example="bills"]', `−${f.bills}`);
   put('[data-example="left"]', f.left);
@@ -162,6 +181,60 @@ export function fillFigures(doc, f) {
   put('#sumCurrent', f.current);
   put('#sumOptimized', f.optimized);
   put('#mbAmount', f.monthly);
+  if (f.summary) put('#plainSummary', f.summary);
+
+  // "Your month, added up"
+  const rc = f.receipt;
+  if (rc) {
+    put('#rcIncomeLabel', rc.incomeLabel);
+    money('#rcIncome', rc.income);
+    // Shown only with bonuses (set both ways: language pages start from the built home page)
+    if (rc.extras) { one('#rcExtrasRow')?.removeAttribute('hidden'); money('#rcExtras', rc.extras); } else one('#rcExtrasRow')?.setAttribute('hidden', '');
+    money('#rcBills', rc.bills);
+    put('#rcLeftLabel', rc.leftLabel);
+    money('#rcLeft', rc.left);
+    one('#rcLeft')?.setAttribute('class', rc.leftClass.trim());
+    money('#rcPlan', rc.plan);
+    money('#rcTotal', rc.total);
+    put('#rcNote', rc.note);
+  }
+
+  // Budget health
+  const h = f.health;
+  if (h) {
+    put('#healthScore', h.score);
+    put('#healthLabel', h.label);
+    one('#healthLabel')?.setAttribute('class', h.labelClass);
+    html('#healthTip', h.tipHtml);
+    one('#healthTip')?.setAttribute('class', h.tipClass);
+    html('#healthParts', h.partsHtml);
+  }
+
+  // How your savings could grow
+  const g = f.growth;
+  if (g) {
+    put('#fvAltLabel', g.altLabel);
+    if (g.single) one('#fvCurItem')?.setAttribute('hidden', ''); else one('#fvCurItem')?.removeAttribute('hidden');
+    html('#fvAlt', g.altHtml);
+    html('#fvCur', g.curHtml);
+    html('#fvLabel', g.sideHtml);
+    put('#fvYears', g.yearsAfter);
+    html('#fvDiff', g.diffHtml);
+    put('#projectionSummary', g.summary);
+  }
+
+  // "Example" on each panel, next to the figures (removed in the browser by
+  // renderDashboard), in the words of the hero card's own badge, already in the
+  // page's language. Language pages start from the built home page, so its
+  // badges go first.
+  for (const el of all('[data-example-badge]')) el.remove();
+  const label = one('[data-i18n="page.hero.receipt.badge"]')?.text.trim();
+  if (label) {
+    one('#sumLabel')?.parentNode.insertAdjacentHTML('beforeend', badge(label, BADGE_ON_DARK, 'ms-auto'));
+    one('#rcTitle')?.insertAdjacentHTML('afterend', badge(label, BADGE, 'ms-auto me-2'));
+    if (h) one('#healthLabel')?.insertAdjacentHTML('afterend', badge(label, BADGE, 'ms-auto self-center'));
+    if (g) one('#fvCurItem')?.insertAdjacentHTML('afterend', `<li data-example-badge class="flex items-center">${badge(label, BADGE).replace(' data-example-badge', '')}</li>`);
+  }
 }
 
 /**
@@ -200,6 +273,18 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
       }
     }
 
+    // ---- The article's "Last updated" (as on the guides) and its Article JSON-LD:
+    // the country's version, or the home page article where a page has none
+    const articleInfo = {
+      headline: article?.guide?.title || t('page.guide.title'),
+      description: plainText(article?.guide?.intro1_html || t('page.guide.intro1_html')),
+      datePublished: article?.datePublished || HOME_ARTICLE.datePublished,
+      dateModified: article?.dateModified || HOME_ARTICLE.dateModified
+    };
+    const [before, after = ''] = t('guides.updated').split('{date}');
+    const dateLocale = page.lang === 'en' ? 'en-GB' : `${page.lang}-${page.country}-u-nu-latn`;
+    doc.querySelector('#guideUpdated')?.set_content(`${esc(before)}${updatedTime(articleInfo.dateModified, dateLocale)}${esc(after)}`);
+
     // ---- The page's own H1 ("Household Budget Calculator for Pakistan"), kept
     // when the browser translates the page
     if (article?.h1_html) {
@@ -232,14 +317,14 @@ export function prerenderLocales({ root, outDir, siteUrl, figures = {} }) {
     set('meta[property="og:site_name"]', t('seo.app.name'));
     set('meta[property="og:title"]', article?.seo?.title || t('seo.ogTitle'));
     set('meta[property="og:description"]', article?.seo?.description || t('seo.ogDescription'));
-    set('meta[property="og:locale"]', bcp47(page.path).replace('-', '_'));
+    set('meta[property="og:locale"]', ogLocale(bcp47(page.path)));
     set('meta[name="twitter:title"]', article?.seo?.title || t('seo.twitterTitle'));
     set('meta[name="twitter:description"]', article?.seo?.description || t('seo.twitterDescription'));
     set('meta[property="og:image:alt"]', t('seo.ogImageAlt'));
     for (const el of head.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang], meta[property="og:url"], script[type="application/ld+json"]')) el.remove();
     const tags = [];
     if (pageUrl) tags.push(`<link rel="canonical" href="${pageUrl}">`, `<meta property="og:url" content="${pageUrl}">`, alternateLinks(siteUrl));
-    tags.push(jsonLd(t, page, country.currency, pageUrl, siteUrl));
+    tags.push(jsonLd(t, page, country.currency, pageUrl, siteUrl, articleInfo));
     head.insertAdjacentHTML('beforeend', `  ${tags.join('\n  ')}\n`);
 
     const dir = path.join(outDir, page.path);

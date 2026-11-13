@@ -1494,7 +1494,7 @@
     "faq": {
       "title": "Questions fréquentes",
       "q1": "Mes données financières sont-elles en sécurité dans ce calculateur ?",
-      "a1": "Oui. Tous les calculs se font dans votre navigateur et rien de ce que vous saisissez n’est envoyé à un serveur. Vos chiffres sont uniquement mémorisés dans le stockage local de votre propre navigateur, et le bouton de réinitialisation les supprime.",
+      "a1": "Oui. Tous les calculs se font dans votre navigateur et les chiffres de budget que vous saisissez ne sont jamais envoyés à un serveur. Vos chiffres sont uniquement mémorisés dans le stockage local de votre propre navigateur, et le bouton de réinitialisation les supprime.",
       "q2": "Comment les estimations d’économies sont-elles calculées ?",
       "a2": "Chaque idée part de la dépense concernée et applique une économie prudente et habituelle, par exemple 12 % pour les gestes d’économie d’énergie ou 15 % pour le covoiturage. Ouvrez « Comment avons-nous calculé ? » sur n’importe quelle idée pour voir le calcul exact. Si deux idées réduisent la même dépense, la seconde ne compte que ce qui reste : les économies ne sont jamais comptées deux fois.",
       "q3": "À quoi sert l’interrupteur « Ajouter à mon plan » ?",
@@ -1581,7 +1581,7 @@
     },
     "faq": {
       "q1": "Mes données financières sont-elles en sécurité dans ce calculateur ?",
-      "a1": "Oui. Tous les calculs se font dans votre navigateur et rien de ce que vous saisissez n’est envoyé à un serveur. Vos chiffres sont uniquement mémorisés dans le stockage local de votre propre navigateur, et le bouton de réinitialisation les supprime.",
+      "a1": "Oui. Tous les calculs se font dans votre navigateur et les chiffres de budget que vous saisissez ne sont jamais envoyés à un serveur. Vos chiffres sont uniquement mémorisés dans le stockage local de votre propre navigateur, et le bouton de réinitialisation les supprime.",
       "q2": "Comment les estimations d’économies sont-elles calculées ?",
       "a2": "Chaque idée part de la dépense concernée et applique une économie prudente et habituelle, par exemple 12 % pour les gestes d’économie d’énergie ou 15 % pour le covoiturage. Ouvrez « Comment avons-nous calculé ? » sur n’importe quelle idée pour voir le calcul exact. Si deux idées réduisent la même dépense, la seconde ne compte que ce qui reste : les économies ne sont jamais comptées deux fois.",
       "q3": "À quoi sert l’interrupteur « Ajouter à mon plan » ?",
@@ -2105,7 +2105,7 @@
         "subtitle": "Ce que vous payez · ce que vous obtenez",
         "signUp": "Inscription requise",
         "signUpValue": "Aucune",
-        "dataSent": "Données envoyées chez nous",
+        "dataSent": "Données de budget envoyées chez nous",
         "dataSentValue": "0 octet",
         "currencies": "Devises",
         "ideas": "Idées d’économies",
@@ -3176,7 +3176,7 @@
     "readGuide": "Lire le guide",
     "cta": {
       "title": "Faites le calcul avec vos propres chiffres",
-      "text": "Ajoutez vos factures au calculateur gratuit et obtenez des idées d’économies, avec le calcul derrière chacune. Rien de ce que vous saisissez ne quitte votre appareil.",
+      "text": "Ajoutez vos factures au calculateur gratuit et obtenez des idées d’économies, avec le calcul derrière chacune. Vos chiffres de budget ne quittent jamais votre appareil.",
       "button": "Essayer le calculateur"
     },
     "disclaimer": "Ce guide est fourni à titre informatif uniquement. Il ne constitue pas un conseil financier, fiscal ou juridique. Les chiffres sont des exemples ou des repères généraux ; vérifiez ce qui s’applique à votre situation."
