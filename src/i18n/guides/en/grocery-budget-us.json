@@ -6,19 +6,23 @@
     "GB": "grocery-budget-uk"
   },
   "seo": {
-    "title": "US Grocery Costs by Household Size: Averages and Budgets",
-    "description": "What US households spend on groceries by household size, from BLS 2025 data, how the USDA Food Plans set a budget, and how to choose a number for you."
+    "title": "Average US Grocery Bill 2026: Per Week and Per Month",
+    "description": "The average US household spends about $125 a week or $541 a month on groceries (BLS 2025): about $65 a week for one person and $171 for four people."
   },
   "h1": "How much should a family spend on groceries in the US?",
   "summary": "Official BLS figures for what US singles, couples and families of four spend on groceries, the USDA Food Plan costs for a healthy diet, and how to set your own budget.",
   "readMinutes": 8,
   "datePublished": "2026-11-05",
-  "dateModified": "2026-11-05",
+  "dateModified": "2026-11-13",
   "intro_html": "<p>Groceries are one of the biggest flexible costs in a US household budget, and one of the easiest to underestimate. A few extra trips to the store, a couple of delivery orders and the month's food money is gone.</p><p>This guide gives you official reference points: what US households <strong>actually spend</strong> on food at home, from the Bureau of Labor Statistics (BLS), and how the U.S. Department of Agriculture's <strong>Food Plans</strong> describe a reasonable food budget at four cost levels. Then it shows how to turn those into a number that fits your family.</p>",
   "sections": [
     {
+      "h2": "Quick answer: average US grocery bill per week and per month",
+      "body_html": "<p><strong>The average US household spent $6,491 on groceries in 2025, about $125 a week or $541 a month</strong>, according to the BLS Consumer Expenditure Surveys. The average household has 2.4 people.</p><table><thead><tr><th>Household</th><th>Groceries per week (our calculation)</th><th>Groceries per month (our calculation)</th></tr></thead><tbody><tr><th>Single person</th><td>about $65</td><td>about $282</td></tr><tr><th>Two people</th><td>about $120</td><td>about $521</td></tr><tr><th>Four people</th><td>about $171</td><td>about $743</td></tr><tr><th>All households (average 2.4 people)</th><td>about $125</td><td>about $541</td></tr></tbody></table><p>We divided the BLS annual averages by 52 for a week and by 12 for a month, rounded to the nearest dollar. They cover food at home only; eating out is extra. Grocery prices rose 1.8% in the 12 months to September 2026 (BLS), so today's bills are a little higher.</p>"
+    },
+    {
       "h2": "US grocery spending at a glance",
-      "body_html": "<p>The table shows average spending on <strong>food at home</strong> (groceries) and <strong>food away from home</strong> (restaurants, takeout and similar) by household size, from the BLS Consumer Expenditure Surveys for 2025, published in October 2026, next to the monthly cost of the USDA Food Plans for September 2026. BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Household</th><th>Groceries, per year (2025)</th><th>Groceries, per month (our calculation)</th><th>Eating out, per month (our calculation)</th><th>USDA Food Plans, per month (Sept 2026, Thrifty to Liberal)</th></tr></thead><tbody><tr><th>Single person</th><td>$3,385</td><td>about $282</td><td>about $192</td><td>$304.68–$584.16</td></tr><tr><th>Two people (e.g. a couple)</th><td>$6,249</td><td>about $521</td><td>about $349</td><td>$630.19–$1,008.04</td></tr><tr><th>Four people (e.g. a family of 4)</th><td>$8,912</td><td>about $743</td><td>about $512</td><td>$1,024.00–$1,681.80</td></tr><tr><th>All households (average 2.4 people)</th><td>$6,491</td><td>about $541</td><td>about $345</td><td>–</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> the BLS annual average divided by 12, rounded to the nearest dollar. They are our calculation, not BLS figures. Source: BLS Consumer Expenditure Surveys 2025, Table 1400 (size of consumer unit). BLS groups households by size, not by age or family type, so \"four people\" may include different mixes of adults and children. The USDA ranges come from the Food Plans table in the next section: a single woman on the Thrifty plan to a single man on the Liberal plan, a couple aged 19–50, and a couple with two children aged 6–8 and 9–11.</p>"
+      "body_html": "<p>The table shows average spending on <strong>food at home</strong> (groceries) and <strong>food away from home</strong> (restaurants, takeout and similar) by household size, from the BLS Consumer Expenditure Surveys for 2025, published in October 2026, next to the monthly cost of the USDA Food Plans for September 2026. BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Household</th><th>Groceries, per year (2025)</th><th>Groceries, per month (our calculation)</th><th>Eating out, per month (our calculation)</th><th>USDA Food Plans, per month (Sept 2026, Thrifty to Liberal)</th></tr></thead><tbody><tr><th>Single person</th><td>$3,385</td><td>about $282</td><td>about $192</td><td>$304.68–$584.16</td></tr><tr><th>Two people (e.g. a couple)</th><td>$6,249</td><td>about $521</td><td>about $349</td><td>$630.19–$1,008.04</td></tr><tr><th>Four people (e.g. a family of 4)</th><td>$8,912</td><td>about $743</td><td>about $512</td><td>$1,024.00–$1,681.80</td></tr><tr><th>All households (average 2.4 people)</th><td>$6,491</td><td>about $541</td><td>about $345</td><td>–</td></tr></tbody></table><p><strong>How we worked out the monthly figures:</strong> the BLS annual average divided by 12, rounded to the nearest dollar. They are our calculation, not BLS figures. Source: BLS Consumer Expenditure Surveys 2025, Table 1400 (size of consumer unit). BLS groups households by size, not by age or family type, so \"four people\" may include different mixes of adults and children. The USDA ranges come from the Food Plans table in the next section: a single woman on the Thrifty plan to a single man on the Liberal plan, a couple aged 19–50, and a couple with two children aged 6–8 and 9–11. Our calculator's typical US amounts come from official sources like these; <a href=\"/methodology/\">how we work out these figures</a> explains the method and when each country was last reviewed.</p>"
     },
     {
       "h2": "Average spending vs a reasonable budget",
@@ -45,6 +49,10 @@
     {
       "q": "How much does a single person in the US spend on groceries?",
       "a": "Single-person households spent an average of $3,385 on food at home in 2025, about $282 a month by our calculation. On the USDA Food Plans for September 2026, one adult aged 19–50 living alone would need $304.68 to $584.16 a month, depending on plan and sex (our calculation using USDA's household-size adjustments)."
+    },
+    {
+      "q": "How much does the average American household spend on groceries per week?",
+      "a": "The average US household spent $6,491 on food at home in 2025, according to the BLS, which is about $125 a week or $541 a month by our calculation. Single-person households spent about $65 a week and four-person households about $171."
     },
     {
       "q": "What are the USDA Food Plans?",

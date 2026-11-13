@@ -4,23 +4,27 @@
   "region": "US",
   "regionalVersions": { "GB": "household-bills-uk" },
   "seo": {
-    "title": "US Utility Costs per Month: Electricity, Gas, Water, Phone",
-    "description": "Average US electricity, gas, water, internet and phone bills per month for singles, couples and families of four, from EIA and BLS data, and how to save."
+    "title": "Average Utility Bills per Month in the US (2026)",
+    "description": "US utilities average about $318 a month for one person, $473 for two and $570 for a family of four (BLS 2025): electricity, gas, water, phone, internet."
   },
   "h1": "Average utility bills per month in the US",
   "summary": "What US households pay each month for electricity, natural gas, water, internet and phone, by household size, from official EIA and BLS figures, and how to lower each bill.",
   "readMinutes": 9,
   "datePublished": "2026-11-05",
-  "dateModified": "2026-11-05",
+  "dateModified": "2026-11-13",
   "intro_html": "<p>After rent or a mortgage, utilities are one of the biggest monthly costs for most US households. They are also the bills that change the most: air conditioning in summer, heating in winter, a new phone plan, a rate increase from your power company.</p><p>This guide brings together the latest official figures from the U.S. Energy Information Administration (EIA) and the Bureau of Labor Statistics (BLS), shows them per month for a single person, a couple and a family of four, and explains how to lower each one.</p>",
   "sections": [
+    {
+      "h2": "Quick answer: average US utility bills per month",
+      "body_html": "<p><strong>A person living alone in the US spends about $318 a month on utilities, a two-person household about $473 and a four-person household about $570</strong>, counting electricity, natural gas, water and trash, phone and internet (our calculation from BLS 2025 data).</p><table><thead><tr><th>Household</th><th>Utilities per month (our calculation)</th></tr></thead><tbody><tr><th>One person</th><td>about $318</td></tr><tr><th>Two people</th><td>about $473</td></tr><tr><th>Four people</th><td>about $570</td></tr></tbody></table><p>BLS reports spending per household, not per person, so the figure for people living alone is the closest official answer for one person. For electricity alone, the average residential customer paid $150.68 a month in 2025 (EIA). The full breakdown by bill is below.</p>"
+    },
     {
       "h2": "Use our free household bills calculator",
       "body_html": "<p>Want to see how your own bills compare? Our free <a href=\"/en-us/\">household bills calculator</a> puts your electricity, gas, water, internet and phone bills next to your income and other costs, in dollars. It's private: your figures stay on your device.</p>"
     },
     {
       "h2": "US utility bills at a glance",
-      "body_html": "<p>Average monthly spending by household size, worked out from the BLS Consumer Expenditure Surveys for 2025 (published October 2026). BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Utility (per month)</th><th>Single person</th><th>Two people</th><th>Four people</th></tr></thead><tbody><tr><th>Electricity</th><td>$105</td><td>$162</td><td>$201</td></tr><tr><th>Natural gas</th><td>$33</td><td>$47</td><td>$58</td></tr><tr><th>Water and other public services (incl. trash)</th><td>$48</td><td>$76</td><td>$94</td></tr><tr><th>Phone (mostly cell phone service)</th><td>$72</td><td>$128</td><td>$157</td></tr><tr><th>Internet (all households average)</th><td>$60</td><td>$60</td><td>$60</td></tr><tr><th>Total (sum of the rows)</th><td>$318</td><td>$473</td><td>$570</td></tr></tbody></table><p><strong>How we worked these out (all are our calculations from BLS figures):</strong> each row is the 2025 BLS annual average for that household size divided by 12 and rounded to the nearest dollar. Source: Table 1400 (size of consumer unit) for electricity, natural gas, water and other public services, and telephone services. Internet is \"computer information services\" from Table 2500, which BLS publishes for all households only, so the same $60 appears in each column. The averages include households that don't use a utility at all, for example homes without natural gas, so they can be lower than the bill for a home that has one. Fuel oil and propane are not included in the total.</p>"
+      "body_html": "<p>Average monthly spending by household size, worked out from the BLS Consumer Expenditure Surveys for 2025 (published October 2026). BLS calls a household a \"consumer unit\".</p><table><thead><tr><th>Utility (per month)</th><th>Single person</th><th>Two people</th><th>Four people</th></tr></thead><tbody><tr><th>Electricity</th><td>$105</td><td>$162</td><td>$201</td></tr><tr><th>Natural gas</th><td>$33</td><td>$47</td><td>$58</td></tr><tr><th>Water and other public services (incl. trash)</th><td>$48</td><td>$76</td><td>$94</td></tr><tr><th>Phone (mostly cell phone service)</th><td>$72</td><td>$128</td><td>$157</td></tr><tr><th>Internet (all households average)</th><td>$60</td><td>$60</td><td>$60</td></tr><tr><th>Total (sum of the rows)</th><td>$318</td><td>$473</td><td>$570</td></tr></tbody></table><p><strong>How we worked these out (all are our calculations from BLS figures):</strong> each row is the 2025 BLS annual average for that household size divided by 12 and rounded to the nearest dollar. Source: Table 1400 (size of consumer unit) for electricity, natural gas, water and other public services, and telephone services. Internet is \"computer information services\" from Table 2500, which BLS publishes for all households only, so the same $60 appears in each column. The averages include households that don't use a utility at all, for example homes without natural gas, so they can be lower than the bill for a home that has one. Fuel oil and propane are not included in the total. Our calculator's typical US amounts come from official sources like these; <a href=\"/methodology/\">how we work out these figures</a> explains the method and when each country was last reviewed.</p>"
     },
     {
       "h2": "Electricity",
@@ -50,7 +54,11 @@
     },
     {
       "q": "How much are utilities for one person?",
-      "a": "Single-person households spent about $105 a month on electricity, $33 on natural gas, $48 on water and other public services and $72 on phone service in 2025, by our calculation from BLS data, plus about $60 for internet on average."
+      "a": "Single-person households spent about $105 a month on electricity, $33 on natural gas, $48 on water and other public services and $72 on phone service in 2025, by our calculation from BLS data, plus about $60 for internet on average: about $318 a month in total."
+    },
+    {
+      "q": "How much does the average person spend on utilities per month?",
+      "a": "BLS publishes utility spending per household, not per person. The closest official figure is for people living alone: about $318 a month in 2025 for electricity, natural gas, water and other public services, phone and internet, by our calculation from BLS data. In shared homes the bills are split between more people."
     },
     {
       "q": "Is internet counted as a utility?",
