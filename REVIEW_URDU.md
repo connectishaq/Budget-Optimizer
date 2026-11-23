@@ -110,13 +110,14 @@ Links added to existing Urdu pages (please also check these sentences):
 ### monthly-budget-plan-pakistan (`src/i18n/guides/ur/monthly-budget-plan-pakistan.json`, /ur-pk/guides/monthly-budget-plan-pakistan/)
 
 - **keyword**: ماہانہ بجٹ پلان
-- **seo.title**: ماہانہ بجٹ پلان: 30 ہزار سے ڈیڑھ لاکھ تنخواہ تک
-- **seo.description**: 30 ہزار، 50 ہزار، 75 ہزار، ایک لاکھ اور ڈیڑھ لاکھ روپے تنخواہ کے لیے نمونے کا ماہانہ بجٹ، اکیلے فرد اور 4 افراد کی فیملی کے لیے، ہر تنخواہ کا الگ ٹیبل۔
-- **h1**: پاکستان میں ہر تنخواہ کے لیے ماہانہ بجٹ پلان
+- **seo.title**: پاکستان میں ہر تنخواہ کے لیے ماہانہ بجٹ پلان (2026)
+- **seo.description**: 30 ہزار سے ڈیڑھ لاکھ روپے تنخواہ کے لیے آسان ماہانہ بجٹ پلان: اکیلے فرد اور 4 افراد کی فیملی کے لیے نمونے کے بجٹ، کرائے اور راشن سے بچت تک۔
+- **h1**: پاکستان میں ہر تنخواہ کے لیے ماہانہ بجٹ پلان: آسان نمونے کے بجٹ
 - **summary**: 30 ہزار سے ڈیڑھ لاکھ روپے تک ہاتھ میں آنے والی تنخواہ کے لیے نمونے کے بجٹ، اکیلے فرد اور 4 افراد کی فیملی کے لیے، اور انہیں اپنی زندگی کے مطابق ڈھالنے کا طریقہ۔
 
 **Intro**
 
+یہاں پاکستان میں 30 ہزار، 50 ہزار، 75 ہزار، ایک لاکھ یا ڈیڑھ لاکھ روپے تنخواہ کے لیے آسان اور تیار ماہانہ بجٹ پلان ہیں، اکیلے فرد کے لیے بھی اور 4 افراد کی فیملی کے لیے بھی۔ ہر نمونے کا بجٹ بتاتا ہے کہ کرائے، راشن، بلوں اور آنے جانے پر کتنا خرچ کریں اور کتنا بچائیں۔
 تنخواہ 30 ہزار ہو یا ڈیڑھ لاکھ، سوال ایک ہی ہوتا ہے: کرائے، راشن، بلوں اور اسکول فیس پر کتنا جائے، اور کتنا بچ سکتا ہے؟ مہینے کے آخر میں یہ دیکھنے کے بجائے کہ کیا بچا، تنخواہ آنے سے پہلے لکھا ہوا پلان کہیں بہتر کام کرتا ہے۔
 یہ گائیڈ پانچ تنخواہوں کے لیے نمونے کا بجٹ دیتی ہے، اکیلے فرد کے لیے بھی اور 4 افراد کی فیملی کے لیے بھی۔ یہ مثالیں ہیں، اوسط نہیں: آپ کا کرایہ، شہر اور گھرانہ ان رقموں کو بدل دے گا۔ انہیں شروعات سمجھیں، پھر اپنی رقمیں کیلکولیٹر میں ڈالیں۔
 
@@ -626,3 +627,18 @@ KFS یا معاہدہ پڑھیں، خاص طور پر لیٹ فیس۔
 - اسٹیٹ بینک آف پاکستان: BPRD سرکلر لیٹر نمبر 29، 2021، کنزیومر فنانسنگ کے پروڈینشل ریگولیشنز
 - بزنس ریکارڈر: موبائل فون کی قسطوں کا فریم ورک ابھی حتمی نہیں (4 نومبر 2026)
 - اسٹیٹ بینک آف پاکستان: مانیٹری پالیسی اسٹیٹمنٹ، 26 اکتوبر 2026
+
+## Search snippet rewrite (23 November 2026)
+
+Google showed `/ur-pk/guides/monthly-budget-plan-pakistan/` with an old-style title and a snippet built from table cells. The title and H1 were brought closer together, and a plain two-sentence opening was added above the first table so Google has a clean snippet to use. The figures did not change. Please check these four strings (they are also in the guide's block above):
+
+- **seo.title** (English: "Monthly Budget Plan for Any Salary in Pakistan (2026)"): پاکستان میں ہر تنخواہ کے لیے ماہانہ بجٹ پلان (2026)
+- **h1** (English: "Monthly budget plan for any salary in Pakistan: simple sample budgets"): پاکستان میں ہر تنخواہ کے لیے ماہانہ بجٹ پلان: آسان نمونے کے بجٹ
+- **Opening paragraph** (English: "Here are simple, ready-made monthly budget plans for a Rs 30,000, 50,000, 75,000, 1,00,000 or 1,50,000 salary in Pakistan, for one person or a family of four. Each sample budget shows how much to spend on rent, food, bills and transport, and how much to save."): یہاں پاکستان میں 30 ہزار، 50 ہزار، 75 ہزار، ایک لاکھ یا ڈیڑھ لاکھ روپے تنخواہ کے لیے آسان اور تیار ماہانہ بجٹ پلان ہیں، اکیلے فرد کے لیے بھی اور 4 افراد کی فیملی کے لیے بھی۔ ہر نمونے کا بجٹ بتاتا ہے کہ کرائے، راشن، بلوں اور آنے جانے پر کتنا خرچ کریں اور کتنا بچائیں۔
+- **seo.description** (English: "A simple monthly budget plan for a Rs 30,000 to 1,50,000 salary in Pakistan: sample budgets for one person or a family of four, from rent to savings."): 30 ہزار سے ڈیڑھ لاکھ روپے تنخواہ کے لیے آسان ماہانہ بجٹ پلان: اکیلے فرد اور 4 افراد کی فیملی کے لیے نمونے کے بجٹ، کرائے اور راشن سے بچت تک۔
+
+Questions:
+
+- "Simple" is translated as "آسان". Do people searching in Urdu type "آسان بجٹ پلان" or "سادہ بجٹ پلان"? If "سادہ" is more common, change it in the H1, opening and description together.
+- "آسان نمونے کے بجٹ" in the H1: does it read naturally, or would "آسان نمونہ بجٹ" or "بجٹ کے آسان نمونے" be better?
+- "Transport" is "آنے جانے" in the opening, to match the table row "آنا جانا". Is that natural in a sentence, or is "سفر" or "ٹرانسپورٹ" clearer?
