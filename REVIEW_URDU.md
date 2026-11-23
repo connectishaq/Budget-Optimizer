@@ -119,7 +119,7 @@ Links added to existing Urdu pages (please also check these sentences):
 
 یہاں پاکستان میں 30 ہزار، 50 ہزار، 75 ہزار، ایک لاکھ یا ڈیڑھ لاکھ روپے تنخواہ کے لیے آسان اور تیار ماہانہ بجٹ پلان ہیں، اکیلے فرد کے لیے بھی اور 4 افراد کی فیملی کے لیے بھی۔ ہر نمونے کا بجٹ بتاتا ہے کہ کرائے، راشن، بلوں اور آنے جانے پر کتنا خرچ کریں اور کتنا بچائیں۔
 تنخواہ 30 ہزار ہو یا ڈیڑھ لاکھ، سوال ایک ہی ہوتا ہے: کرائے، راشن، بلوں اور اسکول فیس پر کتنا جائے، اور کتنا بچ سکتا ہے؟ مہینے کے آخر میں یہ دیکھنے کے بجائے کہ کیا بچا، تنخواہ آنے سے پہلے لکھا ہوا پلان کہیں بہتر کام کرتا ہے۔
-یہ گائیڈ پانچ تنخواہوں کے لیے نمونے کا بجٹ دیتی ہے، اکیلے فرد کے لیے بھی اور 4 افراد کی فیملی کے لیے بھی۔ یہ مثالیں ہیں، اوسط نہیں: آپ کا کرایہ، شہر اور گھرانہ ان رقموں کو بدل دے گا۔ انہیں شروعات سمجھیں، پھر اپنی رقمیں کیلکولیٹر میں ڈالیں۔
+یہ بجٹ مثالیں ہیں، اوسط نہیں: آپ کا کرایہ، شہر اور گھرانہ ان رقموں کو بدل دے گا۔ انہیں شروعات سمجھیں، پھر اپنی رقمیں کیلکولیٹر میں ڈالیں۔
 
 **ایک نظر میں ماہانہ بجٹ پلان**
 
@@ -642,3 +642,4 @@ Questions:
 - "Simple" is translated as "آسان". Do people searching in Urdu type "آسان بجٹ پلان" or "سادہ بجٹ پلان"? If "سادہ" is more common, change it in the H1, opening and description together.
 - "آسان نمونے کے بجٹ" in the H1: does it read naturally, or would "آسان نمونہ بجٹ" or "بجٹ کے آسان نمونے" be better?
 - "Transport" is "آنے جانے" in the opening, to match the table row "آنا جانا". Is that natural in a sentence, or is "سفر" or "ٹرانسپورٹ" clearer?
+- The second intro paragraph now starts "یہ بجٹ مثالیں ہیں، اوسط نہیں" (English: "These plans are examples, not averages"). Its old first sentence repeated the new opening and was removed. Does it still read well straight after the opening?
