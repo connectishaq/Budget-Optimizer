@@ -283,7 +283,7 @@
   <!-- ===== ADSENSE: TOP BANNER START ===== -->
   <!-- Filled automatically when VITE_ADSENSE_CLIENT (and optionally VITE_ADSENSE_SLOT_TOP) is set in .env.
        min-height reserves the space so the ad never shifts the layout. -->
-  <aside class="mx-auto max-w-6xl px-4 pt-6 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
+  <aside data-ad-area class="mx-auto max-w-6xl px-4 pt-6 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
     <div class="ad-slot min-h-[100px]" data-ad="top"></div>
   </aside>
   <!-- ===== ADSENSE: TOP BANNER END ===== -->
@@ -831,7 +831,7 @@
         <!-- ===== ADSENSE: SIDEBAR START ===== -->
         <!-- Desktop only (1280px and wider), beside the results. Never shown on phones, so an ad
              never sits between the inputs and the results. Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_SIDEBAR. -->
-        <aside class="rail-ad hidden xl:sticky xl:top-32 xl:block xl:w-[300px] xl:shrink-0" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
+        <aside data-ad-area class="rail-ad hidden xl:sticky xl:top-32 xl:block xl:w-[300px] xl:shrink-0" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
           <div class="ad-slot min-h-[600px]" data-ad="sidebar"></div>
         </aside>
         <!-- ===== ADSENSE: SIDEBAR END ===== -->
@@ -899,7 +899,7 @@
 
         <!-- ===== ADSENSE: IN-ARTICLE START ===== -->
         <!-- In-article (fluid) unit. Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_INARTICLE. -->
-        <aside class="my-10" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
+        <aside data-ad-area class="my-10" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
           <div class="ad-slot min-h-[200px]" data-ad="inarticle"></div>
         </aside>
         <!-- ===== ADSENSE: IN-ARTICLE END ===== -->
@@ -1014,7 +1014,7 @@
 
   <!-- ===== ADSENSE: BOTTOM BANNER START ===== -->
   <!-- Filled from VITE_ADSENSE_CLIENT / VITE_ADSENSE_SLOT_BOTTOM. min-height prevents layout shift. -->
-  <aside class="mx-auto max-w-6xl px-4 pb-10 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
+  <aside data-ad-area class="mx-auto max-w-6xl px-4 pb-10 sm:px-6" aria-label="Advertisement" data-i18n-attr="aria-label:page.adLabel">
     <div class="ad-slot min-h-[100px]" data-ad="bottom"></div>
   </aside>
   <!-- ===== ADSENSE: BOTTOM BANNER END ===== -->

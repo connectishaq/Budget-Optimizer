@@ -172,7 +172,10 @@ body.goal-dragging { user-select: none; cursor: grabbing; }
 html.returning #wizard { display: none; }
 html.returning #resultsView[hidden] { display: block !important; }
 
-/* No ads configured: drop the empty ad column so results use the full width */
+/* No ads configured: drop every empty ad area (the side column too, so results use
+   the full width). display: none also keeps screen readers from announcing empty
+   "Advertisement" landmarks until ads are live. */
+html:not(.ads-on):not(.ads-preview) [data-ad-area],
 html:not(.ads-on):not(.ads-preview) .rail-ad { display: none !important; }
 /* Hide the desktop ad column while the full inputs are open */
 #resultsLayout[data-inputs="on"] .rail-ad { display: none !important; }

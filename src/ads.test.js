@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import fs from 'node:fs';
 import { setConsentDefaults, CONSENT_REGIONS } from './ads.js';
 import { urlLanguage, cleanLangUrl } from './i18n/picker.js';
 
@@ -42,5 +43,22 @@ describe('#lang= from language/country pages', () => {
     expect(cleanLangUrl('https://x.test/contact/?topic=bug&lang=es')).toBe('https://x.test/contact/?topic=bug#lang=es');
     expect(cleanLangUrl('https://x.test/about/?lang=xx')).toBe('https://x.test/about/');
     expect(cleanLangUrl('https://x.test/about/#lang=ur')).toBeNull();
+  });
+});
+
+describe('empty ad areas before ads are live', () => {
+  // Read the page and stylesheet as files (vitest runs in node, no DOM)
+  const read = (rel) => fs.readFileSync(new URL(rel, import.meta.url), 'utf8');
+  const html = read('../index.html');
+  const css = read('./styles.css');
+
+  it('marks every "Advertisement" area so it can be hidden', () => {
+    const asides = html.match(/<aside\b[^>]*aria-label="Advertisement"[^>]*>/g) || [];
+    expect(asides.length).toBeGreaterThan(0);
+    for (const tag of asides) expect(tag).toContain('data-ad-area');
+  });
+
+  it('hides them (display: none, so screen readers skip them) unless ads are on', () => {
+    expect(css).toMatch(/html:not\(\.ads-on\):not\(\.ads-preview\) \[data-ad-area\][^{]*\{\s*display:\s*none !important;/);
   });
 });
