@@ -91,3 +91,13 @@
 - `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while older pages' SEO titles use « Optimiseur de budget familial »; pick one.
 - "Utilities" in how.item1 = « énergie et eau »; "Your privacy" = « Vos données personnelles » (more natural than « Votre vie privée »).
 - "plug the leaks" = « colmater les fuites »; "Editorial standards" = « Règles éditoriales » (alternative: « Charte éditoriale »).
+
+## Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.

@@ -133,3 +133,13 @@ Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approxim
 - `about.seo.*` keep the English brand "Household Budget Optimizer", consistent with the other id SEO titles.
 - "Utilities" = "listrik dan air"; "plug the leaks" = "menambal kebocoran"; "Who runs it" = "Siapa pengelolanya".
 - "shares of your own income" = "persentase dari pendapatan Anda" (porsi would be more literal).
+
+## Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.

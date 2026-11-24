@@ -2133,7 +2133,7 @@
       "sharing": "Share links and backups",
       "contactData": "When you contact us",
       "ads": "Ads and cookies",
-      "logs": "Hosting and security logs",
+      "logs": "Hosting, analytics and email",
       "rights": "Your rights",
       "children": "Children",
       "transfers": "International transfers",
@@ -2149,7 +2149,7 @@
         "item1_html": "<strong>We never see your budget.</strong> Income, bills, debts, goals and saved months stay in your browser on your device.",
         "item2_html": "<strong>No account, no sign-up.</strong> We don’t ask for your name, email or bank details to use the calculator.",
         "item3_html": "<strong>You’re in control.</strong> Delete everything at any time with <em>Start over</em> → <em>Delete everything</em>, or by clearing your browser’s site data.",
-        "item4_html": "<strong>Ads keep the tool free.</strong> Google may use cookies to show ads. You can turn off personalised ads.",
+        "item4_html": "<strong>The site may show ads.</strong> If it does, Google may use cookies to show them, and you can turn off personalised ads.",
         "item5_html": "<strong>If you write to us,</strong> we use your name, email and message only to reply."
       },
       "who": {
@@ -2187,23 +2187,24 @@
       },
       "contactData": {
         "title": "When you contact us",
-        "p2": "The form is delivered to our inbox by a third-party form service, which processes the message on our behalf and is not allowed to use it for anything else. We keep messages for up to 12 months after the conversation ends, then delete them, unless we need them longer to deal with a legal claim. We never add you to a mailing list and never sell or rent your details.",
+        "p2": "Messages sent through the contact form are delivered to our inbox by Web3Forms, a form service that processes them on our behalf. Emails to hello@spendmath.com are forwarded to the same inbox by Cloudflare Email Routing. We keep messages only as long as needed to reply and deal with your request. We never add you to a mailing list and never sell or rent your details.",
         "p3": "Please don’t include personal financial details, such as account numbers or passwords, in a message. We don’t need them to help you.",
         "p1_html": "If you use our <a href=\"/contact/\">contact form</a> or email us, we receive your name, your email address, the topic you choose, your message and the page you were on. We use this only to read and answer your message, fix problems you report and improve the site. Our legal basis is our legitimate interest in replying to you, or the steps you ask us to take."
       },
       "ads": {
         "title": "Advertising and cookies",
-        "p1": "The site is free because it shows ads. Ads are served by Google AdSense. We don’t give Google, or any advertiser, the numbers you enter in the calculator.",
+        "p1": "The site is free to use. To cover its running costs, it may show ads from Google AdSense. We never give Google, or any advertiser, the numbers you enter in the calculator. When ads are shown:",
         "item1": "Third-party vendors, including Google, use cookies to serve ads based on your previous visits to this website and other websites.",
         "item2": "Google’s use of advertising cookies lets it and its partners serve ads to you based on your visits to this site and other sites on the internet.",
-        "p2": "If you are in the European Economic Area, the UK or Switzerland, you’ll be asked for consent before personalised ads or their cookies are used, and you can change your choice at any time. If you decline, you may still see non-personalised ads, which rely on context rather than your browsing history. Ad-blocking or blocking third-party cookies in your browser also stops personalised ads, and the calculator keeps working either way.",
-        "p3": "The site itself sets no cookies, and we don’t use analytics or tracking tools.",
+        "p2": "If ads are shown and you are in the European Economic Area, the UK or Switzerland, you’ll be asked for consent before personalised ads or their cookies are used, and you can change your choice at any time. If you decline, you may still see non-personalised ads, which rely on context rather than your browsing history. Ad-blocking or blocking third-party cookies in your browser also stops personalised ads, and the calculator keeps working either way.",
+        "p3": "The site itself sets no cookies, and the analytics we use is cookie-free too (see “Hosting, analytics and email” below).",
         "item3_html": "You can opt out of personalised advertising in <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a>. You can also opt out of some third-party vendors’ personalised ads at <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> or, in Europe, <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
         "item4_html": "Learn more in <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">how Google uses information from sites or apps that use its services</a>."
       },
       "logs": {
-        "title": "Hosting and security logs",
-        "p1": "Like every website, the site is delivered by a hosting provider. When your browser asks for a page, the host may briefly record technical details such as your IP address, browser type, the page requested and the time. These logs are used only to deliver the site, keep it secure and fix faults, and are deleted on the host’s normal schedule. They never contain your budget numbers."
+        "title": "Hosting, analytics and email",
+        "p1": "The site is hosted on Cloudflare. When your browser asks for a page, Cloudflare may briefly record technical details such as your IP address, browser type, the page requested and the time. These logs are used only to deliver the site, keep it secure and fix faults, and are deleted on Cloudflare’s normal schedule. They never contain your budget numbers.",
+        "p2": "We use Cloudflare Web Analytics to count visits and see which pages are read and how quickly they load. It is cookie-free and doesn’t track individuals: it stores nothing on your device and never sees your budget numbers."
       },
       "rights": {
         "title": "Your privacy rights",
@@ -2221,7 +2222,7 @@
       },
       "transfers": {
         "title": "International transfers",
-        "p1": "Messages you send us, and data used by Google for ads, may be processed in countries other than yours, including the United States. Where the law requires it, these transfers are protected by safeguards such as the European Commission’s standard contractual clauses."
+        "p1": "Messages you send us, data handled by Cloudflare and Web3Forms on our behalf and, if ads are shown, data used by Google for ads may be processed in countries other than yours, including the United States. Where the law requires it, these transfers are protected by safeguards such as the European Commission’s standard contractual clauses."
       },
       "links": {
         "title": "Links to other websites",
@@ -2236,12 +2237,12 @@
         "p1_html": "Questions about this policy or your data? <a href=\"/contact/?topic=privacy\">Send us a message</a> and choose <em>Privacy or data request</em>. You can also read our <a href=\"/terms-of-use/\">Terms of Use</a>."
       }
     },
-    "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
+    "updated_html": "Last updated: <time datetime=\"2026-11-24\">24 November 2026</time>",
     "seo": {
       "title": "Privacy Policy: Your Data, Cookies & Rights | SpendMath",
-      "description": "Your budget stays in your browser: no accounts, nothing stored on our servers. What we keep on your device, how Google ads use cookies, and your rights.",
+      "description": "Your budget stays in your browser: no accounts, nothing stored on our servers. What we keep on your device, how ads may use cookies, and your rights.",
       "ogTitle": "Privacy Policy: Your Data, Cookies & Rights | SpendMath",
-      "ogDescription": "Your budget numbers never leave your browser. What we store, how ads use cookies, and your rights.",
+      "ogDescription": "Your budget numbers never leave your browser. What we store, how ads may use cookies, and your rights.",
       "ldName": "Privacy Policy",
       "ldDescription": "How SpendMath handles your data: budget numbers stay in your browser, what is stored on your device, advertising cookies and your privacy rights."
     }
@@ -2321,7 +2322,7 @@
       },
       "thirdParty": {
         "title": "8. Ads and other websites",
-        "p1": "The site shows ads, mostly served by Google, and may link to other websites. Ads and links are not endorsements. We don’t control other websites or the products advertised, and we aren’t responsible for their content, offers or privacy practices. Any deal you make with an advertiser is between you and them."
+        "p1": "The site may show ads, mostly served by Google, and may link to other websites. Ads and links are not endorsements. We don’t control other websites or the products advertised, and we aren’t responsible for their content, offers or privacy practices. Any deal you make with an advertiser is between you and them."
       },
       "warranty": {
         "title": "9. No warranty",
@@ -2334,7 +2335,7 @@
       },
       "law": {
         "title": "11. Governing law",
-        "p1": "These terms are governed by the laws of the country where the site’s operator is based, and its courts will deal with any dispute. If you live elsewhere, you keep the protection of any mandatory consumer laws where you live and may bring a claim in your local courts. If any part of these terms can’t be enforced, the rest still applies."
+        "p1": "These terms are governed by the laws of Pakistan, and the courts of Pakistan will deal with any dispute. If you live elsewhere, you keep the protection of any mandatory consumer laws where you live and may bring a claim in your local courts. If any part of these terms can’t be enforced, the rest still applies."
       },
       "changes": {
         "title": "12. Changes to these terms",
@@ -2345,7 +2346,7 @@
         "p1_html": "Questions about these terms? <a href=\"/contact/\">Send us a message</a>. See also our <a href=\"/privacy-policy/\">Privacy Policy</a>."
       }
     },
-    "updated_html": "Last updated: <time datetime=\"2026-10-19\">19 October 2026</time>",
+    "updated_html": "Last updated: <time datetime=\"2026-11-24\">24 November 2026</time>",
     "seo": {
       "title": "Terms of Use: Estimates, Not Financial Advice | SpendMath",
       "description": "The rules for using our free household budget calculator. Results are estimates for planning, not financial advice. Covers accuracy, fair use and liability.",
@@ -2407,8 +2408,8 @@
         "a": "Sorry, we can’t. The tool is for general education only. For advice about your situation, speak to a qualified financial adviser or a free debt advice service."
       },
       "ads": {
-        "q": "Why does the site show ads?",
-        "a_html": "Ads keep the calculator free. You can turn off personalised ads at any time. See <a href=\"/privacy-policy/#ads\" class=\"link\">ads and cookies</a>."
+        "q": "Does the site show ads?",
+        "a_html": "It may show ads from Google AdSense to cover its running costs. Ads never change the calculator’s results or what the guides recommend, and you can turn off personalised ads. See <a href=\"/privacy-policy/#ads\" class=\"link\">ads and cookies</a>."
       }
     },
     "seo": {
@@ -3100,7 +3101,7 @@
       },
       "privacy": {
         "title": "Your privacy",
-        "p1_html": "Your budget is worked out in your own browser and is never sent to us. There is no account and nothing to sign up for. Ads keep the tool free. Read the full <a href=\"/privacy-policy/\">Privacy Policy</a>."
+        "p1_html": "Your budget is worked out in your own browser and is never sent to us. There is no account and nothing to sign up for. The site may show ads to cover its running costs. Read the full <a href=\"/privacy-policy/\">Privacy Policy</a>."
       },
       "standards": {
         "title": "Editorial standards",

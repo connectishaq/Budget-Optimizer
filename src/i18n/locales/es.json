@@ -2181,7 +2181,7 @@
       "sharing": "Enlaces para compartir y copias de seguridad",
       "contactData": "Cuando te pones en contacto con nosotros",
       "ads": "Publicidad y cookies",
-      "logs": "Alojamiento y registros de seguridad",
+      "logs": "Alojamiento, analítica y correo",
       "rights": "Tus derechos",
       "children": "Menores",
       "transfers": "Transferencias internacionales",
@@ -2197,7 +2197,7 @@
         "item1_html": "<strong>Nunca vemos tu presupuesto.</strong> Los ingresos, facturas, deudas, metas y meses guardados se quedan en tu navegador, en tu dispositivo.",
         "item2_html": "<strong>Sin cuenta y sin registro.</strong> No te pedimos tu nombre, tu correo electrónico ni tus datos bancarios para usar la calculadora.",
         "item3_html": "<strong>Tú tienes el control.</strong> Borra todo cuando quieras con <em>Empezar de nuevo</em> → <em>Borrar todo</em>, o borrando los datos del sitio en tu navegador.",
-        "item4_html": "<strong>La publicidad mantiene la herramienta gratis.</strong> Google puede usar cookies para mostrar anuncios. Puedes desactivar los anuncios personalizados.",
+        "item4_html": "<strong>El sitio puede mostrar anuncios.</strong> Si lo hace, Google puede usar cookies para mostrarlos, y puedes desactivar los anuncios personalizados.",
         "item5_html": "<strong>Si nos escribes,</strong> usamos tu nombre, tu correo electrónico y tu mensaje solo para responderte."
       },
       "who": {
@@ -2235,23 +2235,24 @@
       },
       "contactData": {
         "title": "Cuando te pones en contacto con nosotros",
-        "p2": "Un servicio de formularios de terceros entrega el formulario en nuestro buzón; ese servicio trata el mensaje en nuestro nombre y no puede usarlo para nada más. Conservamos los mensajes hasta 12 meses después de terminar la conversación y luego los borramos, salvo que los necesitemos más tiempo para atender una reclamación legal. Nunca te añadimos a una lista de correo y nunca vendemos ni alquilamos tus datos.",
+        "p2": "Los mensajes que envías con el formulario de contacto llegan a nuestro buzón a través de Web3Forms, un servicio de formularios que los trata en nuestro nombre. Los correos a hello@spendmath.com se reenvían al mismo buzón mediante Cloudflare Email Routing. Conservamos los mensajes solo el tiempo necesario para responderte y atender tu solicitud. Nunca te añadimos a una lista de correo y nunca vendemos ni alquilamos tus datos.",
         "p3": "Por favor, no incluyas en tu mensaje datos financieros personales, como números de cuenta o contraseñas. No los necesitamos para ayudarte.",
         "p1_html": "Si usas nuestro <a href=\"/contact/\">formulario de contacto</a> o nos escribes por correo electrónico, recibimos tu nombre, tu dirección de correo, el tema que eliges, tu mensaje y la página en la que estabas. Lo usamos solo para leer y responder a tu mensaje, resolver los problemas que nos comuniques y mejorar el sitio. La base legal es nuestro interés legítimo en responderte, o las medidas que nos pides que tomemos."
       },
       "ads": {
         "title": "Publicidad y cookies",
-        "p1": "El sitio es gratis porque muestra anuncios. Los anuncios los sirve Google AdSense. No damos a Google ni a ningún anunciante los números que escribes en la calculadora.",
+        "p1": "El sitio es gratuito. Para cubrir sus costes, puede mostrar anuncios de Google AdSense. Nunca damos a Google ni a ningún anunciante los números que escribes en la calculadora. Cuando se muestran anuncios:",
         "item1": "Los proveedores externos, incluido Google, usan cookies para mostrar anuncios basados en tus visitas anteriores a este sitio web y a otros sitios web.",
         "item2": "El uso de cookies publicitarias por parte de Google le permite, a Google y a sus socios, mostrarte anuncios basados en tus visitas a este sitio y a otros sitios de internet.",
-        "p2": "Si estás en el Espacio Económico Europeo, el Reino Unido o Suiza, se te pedirá tu consentimiento antes de usar anuncios personalizados o sus cookies, y podrás cambiar tu elección en cualquier momento. Si no aceptas, puede que sigas viendo anuncios no personalizados, que se basan en el contexto y no en tu historial de navegación. Bloquear anuncios o las cookies de terceros en tu navegador también detiene los anuncios personalizados, y la calculadora sigue funcionando en cualquier caso.",
-        "p3": "El sitio en sí no instala cookies, y no usamos herramientas de analítica ni de seguimiento.",
+        "p2": "Si se muestran anuncios y estás en el Espacio Económico Europeo, el Reino Unido o Suiza, se te pedirá tu consentimiento antes de usar anuncios personalizados o sus cookies, y podrás cambiar tu elección en cualquier momento. Si no aceptas, puede que sigas viendo anuncios no personalizados, que se basan en el contexto y no en tu historial de navegación. Bloquear anuncios o las cookies de terceros en tu navegador también detiene los anuncios personalizados, y la calculadora sigue funcionando en cualquier caso.",
+        "p3": "El sitio en sí no instala cookies, y la herramienta de analítica que usamos tampoco las usa (consulta «Alojamiento, analítica y correo» más abajo).",
         "item3_html": "Puedes desactivar la publicidad personalizada en <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a> (Configuración de anuncios de Google). También puedes desactivar los anuncios personalizados de algunos proveedores externos en <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> o, en Europa, en <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
         "item4_html": "Más información sobre <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">cómo usa Google la información de los sitios o aplicaciones que utilizan sus servicios</a>."
       },
       "logs": {
-        "title": "Alojamiento y registros de seguridad",
-        "p1": "Como todos los sitios web, este sitio lo sirve un proveedor de alojamiento. Cuando tu navegador pide una página, el proveedor puede registrar brevemente datos técnicos como tu dirección IP, el tipo de navegador, la página solicitada y la hora. Estos registros se usan solo para servir el sitio, mantenerlo seguro y corregir errores, y se borran según el calendario habitual del proveedor. Nunca contienen tus números del presupuesto."
+        "title": "Alojamiento, analítica y correo",
+        "p1": "El sitio está alojado en Cloudflare. Cuando tu navegador pide una página, Cloudflare puede registrar brevemente datos técnicos como tu dirección IP, el tipo de navegador, la página solicitada y la hora. Estos registros se usan solo para servir el sitio, mantenerlo seguro y corregir errores, y se borran según el calendario habitual de Cloudflare. Nunca contienen tus números del presupuesto.",
+        "p2": "Usamos Cloudflare Web Analytics para contar visitas y ver qué páginas se leen y lo rápido que cargan. No usa cookies ni hace seguimiento de personas concretas: no guarda nada en tu dispositivo y nunca ve tus números del presupuesto."
       },
       "rights": {
         "title": "Tus derechos de privacidad",
@@ -2269,7 +2270,7 @@
       },
       "transfers": {
         "title": "Transferencias internacionales",
-        "p1": "Los mensajes que nos envías y los datos que Google usa para los anuncios pueden tratarse en países distintos del tuyo, incluido Estados Unidos. Cuando la ley lo exige, estas transferencias están protegidas por garantías como las cláusulas contractuales tipo de la Comisión Europea."
+        "p1": "Los mensajes que nos envías, los datos que tratan Cloudflare y Web3Forms en nuestro nombre y, si se muestran anuncios, los datos que Google usa para ellos pueden tratarse en países distintos del tuyo, incluido Estados Unidos. Cuando la ley lo exige, estas transferencias están protegidas por garantías como las cláusulas contractuales tipo de la Comisión Europea."
       },
       "links": {
         "title": "Enlaces a otros sitios web",
@@ -2284,12 +2285,12 @@
         "p1_html": "¿Tienes preguntas sobre esta política o sobre tus datos? <a href=\"/contact/?topic=privacy\">Envíanos un mensaje</a> y elige <em>Privacidad o solicitud de datos</em>. También puedes leer nuestras <a href=\"/terms-of-use/\">Condiciones de uso</a>."
       }
     },
-    "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
+    "updated_html": "Última actualización: <time datetime=\"2026-11-24\">24 de noviembre de 2026</time>",
     "seo": {
       "title": "Política de privacidad: tus datos, cookies y derechos | SpendMath",
-      "description": "Tu presupuesto se queda en tu navegador: sin cuentas y sin nada guardado en nuestros servidores. Qué guardamos en tu dispositivo, cómo usan cookies los anuncios de Google y cuáles son tus derechos.",
+      "description": "Tu presupuesto se queda en tu navegador: sin cuentas y sin nada guardado en nuestros servidores. Qué guardamos en tu dispositivo, cómo pueden usar cookies los anuncios y cuáles son tus derechos.",
       "ogTitle": "Política de privacidad: tus datos, cookies y derechos | SpendMath",
-      "ogDescription": "Tus números del presupuesto nunca salen de tu navegador. Qué guardamos, cómo usan cookies los anuncios y cuáles son tus derechos.",
+      "ogDescription": "Tus números del presupuesto nunca salen de tu navegador. Qué guardamos, cómo pueden usar cookies los anuncios y cuáles son tus derechos.",
       "ldName": "Política de privacidad",
       "ldDescription": "Cómo trata tus datos SpendMath: los números del presupuesto se quedan en tu navegador, qué se guarda en tu dispositivo, las cookies publicitarias y tus derechos de privacidad."
     }
@@ -2369,7 +2370,7 @@
       },
       "thirdParty": {
         "title": "8. Anuncios y otros sitios web",
-        "p1": "El sitio muestra anuncios, en su mayoría servidos por Google, y puede enlazar a otros sitios web. Los anuncios y enlaces no implican que los respaldemos. No controlamos otros sitios web ni los productos anunciados, y no somos responsables de su contenido, sus ofertas ni sus prácticas de privacidad. Cualquier acuerdo que hagas con un anunciante es entre tú y él."
+        "p1": "El sitio puede mostrar anuncios, en su mayoría servidos por Google, y puede enlazar a otros sitios web. Los anuncios y enlaces no implican que los respaldemos. No controlamos otros sitios web ni los productos anunciados, y no somos responsables de su contenido, sus ofertas ni sus prácticas de privacidad. Cualquier acuerdo que hagas con un anunciante es entre tú y él."
       },
       "warranty": {
         "title": "9. Sin garantía",
@@ -2382,7 +2383,7 @@
       },
       "law": {
         "title": "11. Ley aplicable",
-        "p1": "Estas condiciones se rigen por las leyes del país donde tiene su sede el responsable del sitio, y sus tribunales resolverán cualquier conflicto. Si vives en otro lugar, conservas la protección de las leyes de consumo obligatorias de donde vives y puedes presentar una reclamación ante los tribunales de tu zona. Si alguna parte de estas condiciones no se puede aplicar, el resto sigue siendo válido."
+        "p1": "Estas condiciones se rigen por las leyes de Pakistán, y los tribunales de Pakistán resolverán cualquier conflicto. Si vives en otro lugar, conservas la protección de las leyes de consumo obligatorias de donde vives y puedes presentar una reclamación ante los tribunales de tu zona. Si alguna parte de estas condiciones no se puede aplicar, el resto sigue siendo válido."
       },
       "changes": {
         "title": "12. Cambios en estas condiciones",
@@ -2393,7 +2394,7 @@
         "p1_html": "¿Tienes preguntas sobre estas condiciones? <a href=\"/contact/\">Envíanos un mensaje</a>. Consulta también nuestra <a href=\"/privacy-policy/\">Política de privacidad</a>."
       }
     },
-    "updated_html": "Última actualización: <time datetime=\"2026-10-19\">19 de octubre de 2026</time>",
+    "updated_html": "Última actualización: <time datetime=\"2026-11-24\">24 de noviembre de 2026</time>",
     "seo": {
       "title": "Condiciones de uso: estimaciones, no asesoramiento financiero | SpendMath",
       "description": "Las normas para usar nuestra calculadora gratuita de presupuesto familiar. Los resultados son estimaciones para planificar, no asesoramiento financiero. Incluye exactitud, uso razonable y responsabilidad.",
@@ -2455,8 +2456,8 @@
         "a": "Lo sentimos, no podemos. La herramienta es solo para información general. Para recibir consejo sobre tu situación, habla con un asesor financiero cualificado o con un servicio gratuito de asesoramiento sobre deudas."
       },
       "ads": {
-        "q": "¿Por qué el sitio muestra anuncios?",
-        "a_html": "Los anuncios mantienen la calculadora gratis. Puedes desactivar los anuncios personalizados cuando quieras. Consulta <a href=\"/privacy-policy/#ads\" class=\"link\">publicidad y cookies</a>."
+        "q": "¿El sitio muestra anuncios?",
+        "a_html": "Puede mostrar anuncios de Google AdSense para cubrir sus costes. Los anuncios nunca cambian los resultados de la calculadora ni lo que recomiendan las guías, y puedes desactivar los anuncios personalizados. Consulta <a href=\"/privacy-policy/#ads\" class=\"link\">publicidad y cookies</a>."
       }
     },
     "seo": {
@@ -3148,7 +3149,7 @@
       },
       "privacy": {
         "title": "Tu privacidad",
-        "p1_html": "Tu presupuesto se calcula en tu propio navegador y nunca se nos envía. No hay cuenta ni nada en lo que registrarse. Los anuncios mantienen la herramienta gratis. Lee la <a href=\"/privacy-policy/\">Política de privacidad</a> completa."
+        "p1_html": "Tu presupuesto se calcula en tu propio navegador y nunca se nos envía. No hay cuenta ni nada en lo que registrarse. Para cubrir sus costes, el sitio puede mostrar anuncios. Lee la <a href=\"/privacy-policy/\">Política de privacidad</a> completa."
       },
       "standards": {
         "title": "Criterios editoriales",

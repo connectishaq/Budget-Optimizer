@@ -150,3 +150,13 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Number grouping: "3,000", "46,000", "147,000", "100,000", "30,000", "10,000,000" (comma thousands read as decimals in Spain) and "1.300", "1.444,70", "3.500", "6.000" (period thousands read as decimals in Mexico) now use the RAE neutral form: no separator for 4 digits, non-breaking space from 5 digits ("46 000", "10 000 000"). Keys: `page.guide.leak5.body_html`, `page.guide.wealth.p2_html`, `page.glossary.apr` / `lakhCrore`, `localTips.id-va-power.why`, `localTips.id-krl-tj.why`, `localTips.sa-6000-kwh.*`. The es-es ("2.400 €") and es-mx ("$1,200") articles keep their country formats.
 - Neutral wording: "pillarte por sorpresa" → "tomarte por sorpresa"; "alcachofa de ducha" → "cabezal de ducha" (×2); "canguro" → "niñera" in `help.text.school` / `help.text.homeHelp` (in Mexico "canguro" only means kangaroo).
 - Left for a native reviewer: the other Spain-leaning words in the table above (coche, móvil, alquiler, piso, casero, ordenador, nevera, bombilla, franquicia, TAE, "Bonus"), decimal commas in country amounts ("18,36 €", "6,30 AED"), historyEngine singular/plural agreement, and the brand decision.
+
+## Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.

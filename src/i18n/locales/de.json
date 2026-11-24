@@ -2142,7 +2142,7 @@
       "sharing": "Teilen-Links und Sicherungen",
       "contactData": "Wenn du uns kontaktierst",
       "ads": "Werbung und Cookies",
-      "logs": "Hosting- und Sicherheitsprotokolle",
+      "logs": "Hosting, Analyse und E-Mail",
       "rights": "Deine Rechte",
       "children": "Kinder",
       "transfers": "Internationale Übermittlungen",
@@ -2158,7 +2158,7 @@
         "item1_html": "<strong>Wir sehen dein Budget nie.</strong> Einkommen, Rechnungen, Schulden, Ziele und gespeicherte Monate bleiben in deinem Browser auf deinem Gerät.",
         "item2_html": "<strong>Kein Konto, keine Anmeldung.</strong> Für die Nutzung des Rechners fragen wir nicht nach deinem Namen, deiner E-Mail-Adresse oder deinen Bankdaten.",
         "item3_html": "<strong>Du hast die Kontrolle.</strong> Lösche jederzeit alles über <em>Neu anfangen</em> → <em>Alles löschen</em> oder indem du die Website-Daten in deinem Browser löschst.",
-        "item4_html": "<strong>Werbung hält das Tool kostenlos.</strong> Google kann Cookies verwenden, um Werbung anzuzeigen. Du kannst personalisierte Werbung abschalten.",
+        "item4_html": "<strong>Die Website kann Werbung zeigen.</strong> Falls ja, kann Google Cookies verwenden, um sie anzuzeigen, und du kannst personalisierte Werbung abschalten.",
         "item5_html": "<strong>Wenn du uns schreibst,</strong> nutzen wir deinen Namen, deine E-Mail-Adresse und deine Nachricht nur, um zu antworten."
       },
       "who": {
@@ -2196,23 +2196,24 @@
       },
       "contactData": {
         "title": "Wenn du uns kontaktierst",
-        "p2": "Das Formular wird von einem externen Formulardienst in unser Postfach zugestellt, der die Nachricht in unserem Auftrag verarbeitet und sie für nichts anderes verwenden darf. Wir bewahren Nachrichten bis zu 12 Monate nach Ende der Unterhaltung auf und löschen sie dann, es sei denn, wir brauchen sie länger, um einen Rechtsanspruch zu klären. Wir nehmen dich nie in einen Verteiler auf und verkaufen oder vermieten deine Daten nie.",
+        "p2": "Nachrichten über das Kontaktformular werden von Web3Forms, einem Formulardienst, der sie in unserem Auftrag verarbeitet, in unser Postfach zugestellt. E-Mails an hello@spendmath.com leitet Cloudflare Email Routing in dasselbe Postfach weiter. Wir bewahren Nachrichten nur so lange auf, wie es nötig ist, um zu antworten und dein Anliegen zu bearbeiten. Wir nehmen dich nie in einen Verteiler auf und verkaufen oder vermieten deine Daten nie.",
         "p3": "Bitte schick in einer Nachricht keine persönlichen Finanzdaten wie Kontonummern oder Passwörter. Wir brauchen sie nicht, um dir zu helfen.",
         "p1_html": "Wenn du unser <a href=\"/contact/\">Kontaktformular</a> nutzt oder uns eine E-Mail schreibst, erhalten wir deinen Namen, deine E-Mail-Adresse, das gewählte Thema, deine Nachricht und die Seite, auf der du warst. Wir nutzen das nur, um deine Nachricht zu lesen und zu beantworten, gemeldete Probleme zu beheben und die Website zu verbessern. Rechtsgrundlage ist unser berechtigtes Interesse, dir zu antworten, oder die Durchführung von Schritten, um die du uns bittest."
       },
       "ads": {
         "title": "Werbung und Cookies",
-        "p1": "Die Website ist kostenlos, weil sie Werbung zeigt. Die Werbung wird über Google AdSense ausgeliefert. Wir geben Google oder anderen Werbetreibenden nicht die Zahlen, die du in den Rechner eingibst.",
+        "p1": "Die Nutzung der Website ist kostenlos. Um ihre laufenden Kosten zu decken, kann sie Werbung von Google AdSense zeigen. Wir geben Google oder anderen Werbetreibenden nie die Zahlen, die du in den Rechner eingibst. Wenn Werbung angezeigt wird:",
         "item1": "Drittanbieter, einschließlich Google, verwenden Cookies, um Werbung auf Grundlage deiner früheren Besuche auf dieser und anderen Websites anzuzeigen.",
         "item2": "Durch Werbe-Cookies können Google und seine Partner dir Werbung auf Grundlage deiner Besuche auf dieser Website und anderen Websites im Internet anzeigen.",
-        "p2": "Wenn du dich im Europäischen Wirtschaftsraum, im Vereinigten Königreich oder in der Schweiz befindest, wirst du um deine Einwilligung gebeten, bevor personalisierte Werbung oder die zugehörigen Cookies verwendet werden, und du kannst deine Wahl jederzeit ändern. Lehnst du ab, siehst du eventuell trotzdem nicht personalisierte Werbung, die sich nach dem Kontext statt nach deinem Browserverlauf richtet. Ein Werbeblocker oder das Blockieren von Drittanbieter-Cookies in deinem Browser stoppt personalisierte Werbung ebenfalls – der Rechner funktioniert so oder so weiter.",
-        "p3": "Die Website selbst setzt keine Cookies, und wir nutzen keine Analyse- oder Tracking-Tools.",
+        "p2": "Wenn Werbung angezeigt wird und du dich im Europäischen Wirtschaftsraum, im Vereinigten Königreich oder in der Schweiz befindest, wirst du um deine Einwilligung gebeten, bevor personalisierte Werbung oder die zugehörigen Cookies verwendet werden, und du kannst deine Wahl jederzeit ändern. Lehnst du ab, siehst du eventuell trotzdem nicht personalisierte Werbung, die sich nach dem Kontext statt nach deinem Browserverlauf richtet. Ein Werbeblocker oder das Blockieren von Drittanbieter-Cookies in deinem Browser stoppt personalisierte Werbung ebenfalls – der Rechner funktioniert so oder so weiter.",
+        "p3": "Die Website selbst setzt keine Cookies, und auch das Analyse-Tool, das wir nutzen, kommt ohne Cookies aus (siehe „Hosting, Analyse und E-Mail“ unten).",
         "item3_html": "Du kannst personalisierte Werbung in den <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a> (Einstellungen für Werbung) deaktivieren. Personalisierte Werbung mancher Drittanbieter kannst du auch unter <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> oder, in Europa, unter <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a> deaktivieren.",
         "item4_html": "Mehr dazu erfährst du unter <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">Wie Google Daten von Websites oder Apps verwendet, die Google-Dienste nutzen</a>."
       },
       "logs": {
-        "title": "Hosting- und Sicherheitsprotokolle",
-        "p1": "Wie jede Website wird auch diese von einem Hosting-Anbieter ausgeliefert. Wenn dein Browser eine Seite anfragt, kann der Host kurzzeitig technische Details wie deine IP-Adresse, deinen Browsertyp, die angefragte Seite und die Uhrzeit protokollieren. Diese Protokolle dienen nur dazu, die Website auszuliefern, sie sicher zu halten und Fehler zu beheben, und werden nach dem üblichen Zeitplan des Hosts gelöscht. Sie enthalten nie deine Budgetzahlen."
+        "title": "Hosting, Analyse und E-Mail",
+        "p1": "Die Website wird bei Cloudflare gehostet. Wenn dein Browser eine Seite anfragt, kann Cloudflare kurzzeitig technische Details wie deine IP-Adresse, deinen Browsertyp, die angefragte Seite und die Uhrzeit protokollieren. Diese Protokolle dienen nur dazu, die Website auszuliefern, sie sicher zu halten und Fehler zu beheben, und werden nach dem üblichen Zeitplan von Cloudflare gelöscht. Sie enthalten nie deine Budgetzahlen.",
+        "p2": "Wir nutzen Cloudflare Web Analytics, um Besuche zu zählen und zu sehen, welche Seiten gelesen werden und wie schnell sie laden. Es kommt ohne Cookies aus und verfolgt keine einzelnen Personen: Es speichert nichts auf deinem Gerät und sieht nie deine Budgetzahlen."
       },
       "rights": {
         "title": "Deine Datenschutzrechte",
@@ -2230,7 +2231,7 @@
       },
       "transfers": {
         "title": "Internationale Übermittlungen",
-        "p1": "Nachrichten, die du uns schickst, und Daten, die Google für Werbung nutzt, können in anderen Ländern als deinem verarbeitet werden, auch in den Vereinigten Staaten. Wo das Gesetz es verlangt, sind diese Übermittlungen durch Garantien wie die Standardvertragsklauseln der Europäischen Kommission geschützt."
+        "p1": "Nachrichten, die du uns schickst, Daten, die Cloudflare und Web3Forms in unserem Auftrag verarbeiten, und, falls Werbung angezeigt wird, Daten, die Google für Werbung nutzt, können in anderen Ländern als deinem verarbeitet werden, auch in den Vereinigten Staaten. Wo das Gesetz es verlangt, sind diese Übermittlungen durch Garantien wie die Standardvertragsklauseln der Europäischen Kommission geschützt."
       },
       "links": {
         "title": "Links zu anderen Websites",
@@ -2245,12 +2246,12 @@
         "p1_html": "Fragen zu dieser Erklärung oder zu deinen Daten? <a href=\"/contact/?topic=privacy\">Schreib uns eine Nachricht</a> und wähle <em>Datenschutz- oder Datenanfrage</em>. Du kannst auch unsere <a href=\"/terms-of-use/\">Nutzungsbedingungen</a> lesen."
       }
     },
-    "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-10-19\">19. Oktober 2026</time>",
+    "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-11-24\">24. November 2026</time>",
     "seo": {
       "title": "Datenschutzerklärung | SpendMath",
-      "description": "Dein Budget bleibt in deinem Browser: keine Konten, nichts auf unseren Servern. Was wir auf deinem Gerät speichern, wie Google-Werbung Cookies nutzt und welche Rechte du hast.",
+      "description": "Dein Budget bleibt in deinem Browser: keine Konten, nichts auf unseren Servern. Was wir auf deinem Gerät speichern, wie Werbung Cookies nutzen kann und welche Rechte du hast.",
       "ogTitle": "Datenschutzerklärung | SpendMath",
-      "ogDescription": "Deine Budgetzahlen verlassen nie deinen Browser. Was wir speichern, wie Werbung Cookies nutzt und welche Rechte du hast.",
+      "ogDescription": "Deine Budgetzahlen verlassen nie deinen Browser. Was wir speichern, wie Werbung Cookies nutzen kann und welche Rechte du hast.",
       "ldName": "Datenschutzerklärung",
       "ldDescription": "Wie SpendMath mit deinen Daten umgeht: Budgetzahlen bleiben in deinem Browser, was auf deinem Gerät gespeichert wird, Werbe-Cookies und deine Datenschutzrechte."
     }
@@ -2330,7 +2331,7 @@
       },
       "thirdParty": {
         "title": "8. Werbung und andere Websites",
-        "p1": "Die Website zeigt Werbung, überwiegend von Google ausgeliefert, und kann auf andere Websites verlinken. Werbung und Links sind keine Empfehlungen. Wir haben keinen Einfluss auf andere Websites oder die beworbenen Produkte und sind nicht für deren Inhalte, Angebote oder Datenschutzpraktiken verantwortlich. Jedes Geschäft, das du mit einem Werbetreibenden abschließt, besteht zwischen dir und diesem."
+        "p1": "Die Website kann Werbung zeigen, überwiegend von Google ausgeliefert, und kann auf andere Websites verlinken. Werbung und Links sind keine Empfehlungen. Wir haben keinen Einfluss auf andere Websites oder die beworbenen Produkte und sind nicht für deren Inhalte, Angebote oder Datenschutzpraktiken verantwortlich. Jedes Geschäft, das du mit einem Werbetreibenden abschließt, besteht zwischen dir und diesem."
       },
       "warranty": {
         "title": "9. Keine Gewährleistung",
@@ -2343,7 +2344,7 @@
       },
       "law": {
         "title": "11. Anwendbares Recht",
-        "p1": "Für diese Bedingungen gilt das Recht des Landes, in dem der Betreiber der Website ansässig ist, und dessen Gerichte sind für Streitigkeiten zuständig. Wenn du anderswo wohnst, behältst du den Schutz der zwingenden Verbraucherschutzgesetze deines Wohnortes und kannst vor deinen örtlichen Gerichten klagen. Ist ein Teil dieser Bedingungen nicht durchsetzbar, gilt der Rest weiterhin."
+        "p1": "Für diese Bedingungen gilt pakistanisches Recht, und die Gerichte Pakistans sind für Streitigkeiten zuständig. Wenn du anderswo wohnst, behältst du den Schutz der zwingenden Verbraucherschutzgesetze deines Wohnortes und kannst vor deinen örtlichen Gerichten klagen. Ist ein Teil dieser Bedingungen nicht durchsetzbar, gilt der Rest weiterhin."
       },
       "changes": {
         "title": "12. Änderungen dieser Bedingungen",
@@ -2354,7 +2355,7 @@
         "p1_html": "Fragen zu diesen Bedingungen? <a href=\"/contact/\">Schreib uns eine Nachricht</a>. Siehe auch unsere <a href=\"/privacy-policy/\">Datenschutzerklärung</a>."
       }
     },
-    "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-10-19\">19. Oktober 2026</time>",
+    "updated_html": "Zuletzt aktualisiert: <time datetime=\"2026-11-24\">24. November 2026</time>",
     "seo": {
       "title": "Nutzungsbedingungen | SpendMath",
       "description": "Die Regeln für die Nutzung unseres kostenlosen Haushaltsbudget-Rechners. Ergebnisse sind Schätzungen zur Planung, keine Finanzberatung. Mit Genauigkeit, fairer Nutzung und Haftung.",
@@ -2416,8 +2417,8 @@
         "a": "Leider nein. Das Tool dient nur der allgemeinen Information. Für eine Beratung zu deiner Situation wende dich an eine qualifizierte Finanzberatung oder eine kostenlose Schuldnerberatung."
       },
       "ads": {
-        "q": "Warum zeigt die Website Werbung?",
-        "a_html": "Werbung hält den Rechner kostenlos. Du kannst personalisierte Werbung jederzeit abschalten. Siehe <a href=\"/privacy-policy/#ads\" class=\"link\">Werbung und Cookies</a>."
+        "q": "Zeigt die Website Werbung?",
+        "a_html": "Um ihre laufenden Kosten zu decken, kann die Website Werbung von Google AdSense zeigen. Werbung ändert nie die Ergebnisse des Rechners oder die Empfehlungen der Ratgeber, und du kannst personalisierte Werbung abschalten. Siehe <a href=\"/privacy-policy/#ads\" class=\"link\">Werbung und Cookies</a>."
       }
     },
     "seo": {
@@ -3093,7 +3094,7 @@
       },
       "privacy": {
         "title": "Deine Privatsphäre",
-        "p1_html": "Dein Budget wird in deinem eigenen Browser berechnet und nie an uns geschickt. Es gibt kein Konto und keine Anmeldung. Werbung hält das Tool kostenlos. Lies die vollständige <a href=\"/privacy-policy/\">Datenschutzerklärung</a>."
+        "p1_html": "Dein Budget wird in deinem eigenen Browser berechnet und nie an uns geschickt. Es gibt kein Konto und keine Anmeldung. Um die laufenden Kosten zu decken, kann die Website Werbung zeigen. Lies die vollständige <a href=\"/privacy-policy/\">Datenschutzerklärung</a>."
       },
       "standards": {
         "title": "Redaktionelle Grundsätze"

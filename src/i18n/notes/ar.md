@@ -131,3 +131,13 @@ verbatim where the policy refers to it.
 - `ar-sa` `guide.intro1_html`: colloquial «أونلاين» → «عبر الإنترنت» (MSA, as in the rest of the file).
 - Checked, no change needed: digits/separators (Western digits, comma thousands, °C first with °F only in brackets), emergency fund, take-home pay, nice-to-haves, subscriptions, Latin words (all brand, code or local names).
 - Left for a native reviewer: brand in `about.seo.*` still Latin «Household Budget Optimizer» (kept as requested) vs «مُحسِّن ميزانية الأسرة» on other pages; `{months} شهر` / `{years} سنة` with small numbers (needs plural messages in code); «درجة الصحة المالية» vs «درجة صحة الميزانية» follows the English "health score" / "budget health score" split; Islamic-finance wording (فائدة/ربح) and the regional alternatives above.
+
+## Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.

@@ -140,6 +140,16 @@ verbatim where the policy refers to it.
 - Checked, no change needed: digits/separators (Western digits, comma thousands, °C first with °F only in brackets), emergency fund, take-home pay, nice-to-haves, subscriptions, Latin words (all brand, code or local names).
 - Left for a native reviewer: brand in `about.seo.*` still Latin «Household Budget Optimizer» (kept as requested) vs «مُحسِّن ميزانية الأسرة» on other pages; `{months} شهر` / `{years} سنة` with small numbers (needs plural messages in code); «درجة الصحة المالية» vs «درجة صحة الميزانية» follows the English "health score" / "budget health score" split; Islamic-finance wording (فائدة/ربح) and the regional alternatives above.
 
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+
 ### German (de)
 
 Source: frozen English snapshot `en-snapshot-p1.json` (1,507 messages); keys added to en.json since then were
@@ -273,6 +283,16 @@ reviewed**. A German lawyer should check them before launch, in particular:
 - `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while other pages' SEO titles use "Haushaltsbudget-Optimierer"; please align.
 - "Utilities" = "Nebenkosten", "transport" = "Mobilität"; "money leaks" = "Geldlecks" (slightly figurative).
 - how.item3 reorders the sentence so „Wie kommen wir darauf?“ comes first; "Editorial standards" = "Redaktionelle Grundsätze".
+
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
 
 ### Spanish (es)
 
@@ -427,6 +447,16 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - Neutral wording: "pillarte por sorpresa" → "tomarte por sorpresa"; "alcachofa de ducha" → "cabezal de ducha" (×2); "canguro" → "niñera" in `help.text.school` / `help.text.homeHelp` (in Mexico "canguro" only means kangaroo).
 - Left for a native reviewer: the other Spain-leaning words in the table above (coche, móvil, alquiler, piso, casero, ordenador, nevera, bombilla, franquicia, TAE, "Bonus"), decimal commas in country amounts ("18,36 €", "6,30 AED"), historyEngine singular/plural agreement, and the brand decision.
 
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+
 ### French (fr)
 
 #### General choices
@@ -520,6 +550,16 @@ by a qualified Spanish-speaking lawyer** before launch, for Spain and Mexico sep
 - `about.seo.*` keep the English brand "Household Budget Optimizer" as requested, while older pages' SEO titles use « Optimiseur de budget familial »; pick one.
 - "Utilities" in how.item1 = « énergie et eau »; "Your privacy" = « Vos données personnelles » (more natural than « Votre vie privée »).
 - "plug the leaks" = « colmater les fuites »; "Editorial standards" = « Règles éditoriales » (alternative: « Charte éditoriale »).
+
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
 
 ### Hindi (hi)
 
@@ -662,6 +702,16 @@ UI labels quoted in the legal pages (<em>…</em>) match the Hindi UI strings.
 - Checked and already consistent: इमरजेंसी फ़ंड, ज़रूरी बिल, शौक़ की चीज़ें, हाथ में आने वाली सैलरी, सब्सक्रिप्शन; no stray $/°F-first; numbers match English.
 - Left for a native reviewer: brand in `about.seo.*` (Latin "Household Budget Optimizer", kept as requested) vs "घरेलू बजट ऑप्टिमाइज़र" elsewhere; gendered slashes ("भरता/भरती"); regional word choices above; "0 महीना" with plural `one`; legal text.
 
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+
 ### Indonesian (id)
 
 Translated from the English snapshot `en-snapshot-p1.json` (1,507 messages). Keys added to or changed in
@@ -798,6 +848,16 @@ Changed text: `inputs.debts.aprCapped` (now has {max}), `inputs.typical.approxim
 - "Utilities" = "listrik dan air"; "plug the leaks" = "menambal kebocoran"; "Who runs it" = "Siapa pengelolanya".
 - "shares of your own income" = "persentase dari pendapatan Anda" (porsi would be more literal).
 
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+
 ### Portuguese (pt)
 
 Target: Brazilian Portuguese (pt-BR), informal-polite "você" form throughout, as usual for Brazilian consumer apps.
@@ -902,6 +962,16 @@ numbers (e.g. 1 milhão), so it uses the same text as `other` everywhere.
 - "Utilities" = "contas de consumo"; "groceries" = "mercado"; "plug the leaks" = "tapar os vazamentos".
 - "Avise a gente" (tell us) is informal on purpose; "Entre em contato" would be more neutral.
 
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+
 ### Urdu (ur)
 
 Pakistani Urdu, written in Nastaliq/Arabic script and shown right-to-left. I used English loan words that people in Pakistan actually say (بل، بجٹ، بونس، سبسکرپشن، کریڈٹ کارڈ، پرسنل لون، ہوم لون، اسکور، بیک اپ، ڈیوائس، سیٹنگز). The tone uses the polite "آپ" form throughout. Numbers, `{placeholders}`, currency codes, brand names and URLs are unchanged. Western digits are kept as in the English.
@@ -992,6 +1062,16 @@ Urdu uses `one` and `other`. English messages that had only `other` (e.g. `calc.
 - English left by mistake, now Urdu (Latin kept in brackets where it is the local term): co-payment (`countryFields.BR.planoSaude.help`), retention → "ریٹینشن", rebates → "رعایتیں (rebates)" (`ca-home-energy-rebates`), money-market → "منی مارکیٹ فنڈ", off-peak → "آف پیک", energy ombudsman → "توانائی کے قومی محتسب (ombudsman)", ride-hailing → "آن لائن ٹیکسی", extras → "ایکسٹراز" (`au-health-cover-review`, as in `countryFields.AU.privateHealth.help`), "ہیٹ" → "ہیٹنگ" (`ca-home-energy-rebates.tips.2`).
 - Guides: first-salary-budget used "بلا سوچے خرچ" for impulse spending, now "بے سوچے خریداری" as in the stop-impulse-spending guide and the site; "غیر منصوبہ" → "غیر منصوبہ بند" (stop-impulse-spending ×4, family-grocery-budget ×1); family-grocery-budget "ضرورتوں والے حصے" → "لازمی خرچ والے حصے" (as in the 50/30/20 guide).
 - Open questions for a native reviewer are collected in REVIEW_URDU.md at the repo root.
+
+#### Legal wording update (2026-11-24): needs native and legal review
+Translated from English in one pass, not yet reviewed by a native speaker:
+- `contact.faq.ads.q` / `contact.faq.ads.a_html`, `privacy.sections.summary.item4_html`, `privacy.sections.ads.p1`, the opening of `privacy.sections.ads.p2`, `terms.sections.thirdParty.p1`, `about.sections.privacy.p1_html`: the site now says it *may* show ads (none are live yet).
+- `privacy.sections.ads.p3`, `privacy.toc.logs`, `privacy.sections.logs.title/p1`, new `privacy.sections.logs.p2`: hosting on Cloudflare and Cloudflare Web Analytics (cookie-free, does not track individuals).
+- `privacy.sections.contactData.p2`: Web3Forms and Cloudflare Email Routing are named; messages are kept only as long as needed to reply (no fixed period).
+- `privacy.sections.transfers.p1`: Cloudflare and Web3Forms added.
+- `terms.sections.law.p1`: governing law is now Pakistan.
+- `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
+Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 

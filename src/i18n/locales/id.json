@@ -2104,7 +2104,7 @@
       "sharing": "Tautan berbagi dan cadangan",
       "contactData": "Saat Anda menghubungi kami",
       "ads": "Iklan dan cookie",
-      "logs": "Log hosting dan keamanan",
+      "logs": "Hosting, analitik, dan email",
       "rights": "Hak Anda",
       "children": "Anak-anak",
       "transfers": "Transfer internasional",
@@ -2120,7 +2120,7 @@
         "item1_html": "<strong>Kami tidak pernah melihat anggaran Anda.</strong> Penghasilan, tagihan, utang, target, dan bulan tersimpan tetap berada di browser pada perangkat Anda.",
         "item2_html": "<strong>Tanpa akun, tanpa daftar.</strong> Kami tidak meminta nama, email, atau data bank Anda untuk memakai kalkulator.",
         "item3_html": "<strong>Anda yang memegang kendali.</strong> Hapus semuanya kapan saja lewat <em>Mulai dari awal</em> → <em>Hapus semuanya</em>, atau dengan menghapus data situs di browser Anda.",
-        "item4_html": "<strong>Iklan membuat alat ini tetap gratis.</strong> Google dapat menggunakan cookie untuk menampilkan iklan. Anda bisa mematikan iklan yang dipersonalisasi.",
+        "item4_html": "<strong>Situs ini mungkin menampilkan iklan.</strong> Jika ya, Google dapat menggunakan cookie untuk menampilkannya, dan Anda bisa mematikan iklan yang dipersonalisasi.",
         "item5_html": "<strong>Jika Anda menulis kepada kami,</strong> kami memakai nama, email, dan pesan Anda hanya untuk membalas."
       },
       "who": {
@@ -2158,23 +2158,24 @@
       },
       "contactData": {
         "title": "Saat Anda menghubungi kami",
-        "p2": "Formulir dikirim ke kotak masuk kami oleh layanan formulir pihak ketiga, yang memproses pesan atas nama kami dan tidak diizinkan memakainya untuk hal lain. Kami menyimpan pesan hingga 12 bulan setelah percakapan berakhir, lalu menghapusnya, kecuali kami membutuhkannya lebih lama untuk menangani klaim hukum. Kami tidak pernah memasukkan Anda ke milis dan tidak pernah menjual atau menyewakan data Anda.",
+        "p2": "Pesan yang dikirim lewat formulir kontak sampai ke kotak masuk kami melalui Web3Forms, layanan formulir yang memprosesnya atas nama kami. Email ke hello@spendmath.com diteruskan ke kotak masuk yang sama oleh Cloudflare Email Routing. Kami menyimpan pesan hanya selama diperlukan untuk membalas dan menangani permintaan Anda. Kami tidak pernah memasukkan Anda ke milis dan tidak pernah menjual atau menyewakan data Anda.",
         "p3": "Mohon jangan menyertakan data keuangan pribadi, seperti nomor rekening atau kata sandi, dalam pesan. Kami tidak membutuhkannya untuk membantu Anda.",
         "p1_html": "Jika Anda memakai <a href=\"/contact/\">formulir kontak</a> kami atau mengirim email kepada kami, kami menerima nama, alamat email, topik yang Anda pilih, pesan Anda, dan halaman tempat Anda berada. Kami memakainya hanya untuk membaca dan menjawab pesan Anda, memperbaiki masalah yang Anda laporkan, dan menyempurnakan situs. Dasar hukum kami adalah kepentingan sah kami untuk membalas Anda, atau langkah yang Anda minta kami lakukan."
       },
       "ads": {
         "title": "Iklan dan cookie",
-        "p1": "Situs ini gratis karena menampilkan iklan. Iklan disajikan oleh Google AdSense. Kami tidak memberikan angka yang Anda isi di kalkulator kepada Google atau pengiklan mana pun.",
+        "p1": "Situs ini gratis digunakan. Untuk menutup biaya operasionalnya, situs ini mungkin menampilkan iklan dari Google AdSense. Kami tidak pernah memberikan angka yang Anda isi di kalkulator kepada Google atau pengiklan mana pun. Saat iklan ditampilkan:",
         "item1": "Vendor pihak ketiga, termasuk Google, menggunakan cookie untuk menayangkan iklan berdasarkan kunjungan Anda sebelumnya ke situs web ini dan situs web lain.",
         "item2": "Penggunaan cookie iklan oleh Google memungkinkan Google dan mitranya menayangkan iklan kepada Anda berdasarkan kunjungan Anda ke situs ini dan situs lain di internet.",
-        "p2": "Jika Anda berada di Wilayah Ekonomi Eropa, Inggris, atau Swiss, Anda akan dimintai persetujuan sebelum iklan yang dipersonalisasi atau cookie-nya digunakan, dan Anda bisa mengubah pilihan kapan saja. Jika Anda menolak, Anda mungkin tetap melihat iklan yang tidak dipersonalisasi, yang didasarkan pada konteks, bukan riwayat penjelajahan Anda. Pemblokir iklan atau pemblokiran cookie pihak ketiga di browser juga menghentikan iklan yang dipersonalisasi, dan kalkulator tetap berfungsi dalam kedua kasus.",
-        "p3": "Situs ini sendiri tidak memasang cookie, dan kami tidak memakai alat analitik atau pelacakan.",
+        "p2": "Jika iklan ditampilkan dan Anda berada di Wilayah Ekonomi Eropa, Inggris, atau Swiss, Anda akan dimintai persetujuan sebelum iklan yang dipersonalisasi atau cookie-nya digunakan, dan Anda bisa mengubah pilihan kapan saja. Jika Anda menolak, Anda mungkin tetap melihat iklan yang tidak dipersonalisasi, yang didasarkan pada konteks, bukan riwayat penjelajahan Anda. Pemblokir iklan atau pemblokiran cookie pihak ketiga di browser juga menghentikan iklan yang dipersonalisasi, dan kalkulator tetap berfungsi dalam kedua kasus.",
+        "p3": "Situs ini sendiri tidak memasang cookie, dan alat analitik yang kami pakai juga tidak memakai cookie (lihat “Hosting, analitik, dan email” di bawah).",
         "item3_html": "Anda bisa menolak iklan yang dipersonalisasi di <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google Ads Settings</a>. Anda juga bisa menolak iklan yang dipersonalisasi dari sebagian vendor pihak ketiga di <a href=\"https://www.aboutads.info/choices/\" rel=\"noopener\" target=\"_blank\">aboutads.info</a> atau, di Eropa, <a href=\"https://www.youronlinechoices.eu/\" rel=\"noopener\" target=\"_blank\">youronlinechoices.eu</a>.",
         "item4_html": "Pelajari lebih lanjut tentang <a href=\"https://policies.google.com/technologies/partner-sites\" rel=\"noopener\" target=\"_blank\">cara Google menggunakan informasi dari situs atau aplikasi yang memakai layanannya</a>."
       },
       "logs": {
-        "title": "Log hosting dan keamanan",
-        "p1": "Seperti semua situs web, situs ini disajikan oleh penyedia hosting. Saat browser Anda meminta sebuah halaman, penyedia hosting dapat mencatat sebentar detail teknis seperti alamat IP, jenis browser, halaman yang diminta, dan waktunya. Log ini hanya dipakai untuk menyajikan situs, menjaga keamanannya, dan memperbaiki kesalahan, lalu dihapus sesuai jadwal normal penyedia hosting. Log ini tidak pernah berisi angka anggaran Anda."
+        "title": "Hosting, analitik, dan email",
+        "p1": "Situs ini di-hosting di Cloudflare. Saat browser Anda meminta sebuah halaman, Cloudflare dapat mencatat sebentar detail teknis seperti alamat IP, jenis browser, halaman yang diminta, dan waktunya. Log ini hanya dipakai untuk menyajikan situs, menjaga keamanannya, dan memperbaiki kesalahan, lalu dihapus sesuai jadwal normal Cloudflare. Log ini tidak pernah berisi angka anggaran Anda.",
+        "p2": "Kami memakai Cloudflare Web Analytics untuk menghitung kunjungan dan melihat halaman mana yang dibaca serta seberapa cepat halaman dimuat. Alat ini tidak memakai cookie dan tidak melacak individu: alat ini tidak menyimpan apa pun di perangkat Anda dan tidak pernah melihat angka anggaran Anda."
       },
       "rights": {
         "title": "Hak privasi Anda",
@@ -2192,7 +2193,7 @@
       },
       "transfers": {
         "title": "Transfer internasional",
-        "p1": "Pesan yang Anda kirim kepada kami, dan data yang dipakai Google untuk iklan, dapat diproses di negara selain negara Anda, termasuk Amerika Serikat. Jika diwajibkan oleh hukum, transfer ini dilindungi dengan pengamanan seperti klausul kontrak standar Komisi Eropa."
+        "p1": "Pesan yang Anda kirim kepada kami, data yang ditangani Cloudflare dan Web3Forms atas nama kami, dan, jika iklan ditampilkan, data yang dipakai Google untuk iklan dapat diproses di negara selain negara Anda, termasuk Amerika Serikat. Jika diwajibkan oleh hukum, transfer ini dilindungi dengan pengamanan seperti klausul kontrak standar Komisi Eropa."
       },
       "links": {
         "title": "Tautan ke situs web lain",
@@ -2207,12 +2208,12 @@
         "p1_html": "Ada pertanyaan tentang kebijakan ini atau data Anda? <a href=\"/contact/?topic=privacy\">Kirim pesan kepada kami</a> dan pilih <em>Permintaan privasi atau data</em>. Anda juga bisa membaca <a href=\"/terms-of-use/\">Ketentuan Penggunaan</a> kami."
       }
     },
-    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
+    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-11-24\">24 November 2026</time>",
     "seo": {
       "title": "Kebijakan Privasi | SpendMath",
-      "description": "Anggaran Anda tetap di browser Anda: tanpa akun, tidak ada yang disimpan di server kami. Apa yang kami simpan di perangkat Anda, bagaimana iklan Google memakai cookie, dan hak-hak Anda.",
+      "description": "Anggaran Anda tetap di browser Anda: tanpa akun, tidak ada yang disimpan di server kami. Apa yang kami simpan di perangkat Anda, bagaimana iklan dapat memakai cookie, dan hak-hak Anda.",
       "ogTitle": "Kebijakan Privasi | SpendMath",
-      "ogDescription": "Angka anggaran Anda tidak pernah keluar dari browser Anda. Apa yang kami simpan, bagaimana iklan memakai cookie, dan hak-hak Anda.",
+      "ogDescription": "Angka anggaran Anda tidak pernah keluar dari browser Anda. Apa yang kami simpan, bagaimana iklan dapat memakai cookie, dan hak-hak Anda.",
       "ldName": "Kebijakan Privasi",
       "ldDescription": "Cara SpendMath menangani data Anda: angka anggaran tetap di browser Anda, apa yang disimpan di perangkat Anda, cookie iklan, dan hak privasi Anda."
     }
@@ -2292,7 +2293,7 @@
       },
       "thirdParty": {
         "title": "8. Iklan dan situs web lain",
-        "p1": "Situs ini menampilkan iklan, sebagian besar disajikan oleh Google, dan dapat menautkan ke situs web lain. Iklan dan tautan bukan bentuk dukungan. Kami tidak mengendalikan situs web lain atau produk yang diiklankan, dan kami tidak bertanggung jawab atas konten, penawaran, atau praktik privasinya. Setiap kesepakatan yang Anda buat dengan pengiklan adalah urusan antara Anda dan mereka."
+        "p1": "Situs ini mungkin menampilkan iklan, sebagian besar disajikan oleh Google, dan dapat menautkan ke situs web lain. Iklan dan tautan bukan bentuk dukungan. Kami tidak mengendalikan situs web lain atau produk yang diiklankan, dan kami tidak bertanggung jawab atas konten, penawaran, atau praktik privasinya. Setiap kesepakatan yang Anda buat dengan pengiklan adalah urusan antara Anda dan mereka."
       },
       "warranty": {
         "title": "9. Tanpa jaminan",
@@ -2305,7 +2306,7 @@
       },
       "law": {
         "title": "11. Hukum yang berlaku",
-        "p1": "Ketentuan ini diatur oleh hukum negara tempat pengelola situs berkedudukan, dan pengadilannya akan menangani setiap sengketa. Jika Anda tinggal di tempat lain, Anda tetap mendapat perlindungan dari hukum konsumen yang wajib berlaku di tempat tinggal Anda dan dapat mengajukan gugatan di pengadilan setempat. Jika ada bagian dari ketentuan ini yang tidak dapat diberlakukan, bagian lainnya tetap berlaku."
+        "p1": "Ketentuan ini diatur oleh hukum Pakistan, dan pengadilan Pakistan akan menangani setiap sengketa. Jika Anda tinggal di tempat lain, Anda tetap mendapat perlindungan dari hukum konsumen yang wajib berlaku di tempat tinggal Anda dan dapat mengajukan gugatan di pengadilan setempat. Jika ada bagian dari ketentuan ini yang tidak dapat diberlakukan, bagian lainnya tetap berlaku."
       },
       "changes": {
         "title": "12. Perubahan ketentuan ini",
@@ -2316,7 +2317,7 @@
         "p1_html": "Ada pertanyaan tentang ketentuan ini? <a href=\"/contact/\">Kirim pesan kepada kami</a>. Lihat juga <a href=\"/privacy-policy/\">Kebijakan Privasi</a> kami."
       }
     },
-    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-10-19\">19 Oktober 2026</time>",
+    "updated_html": "Terakhir diperbarui: <time datetime=\"2026-11-24\">24 November 2026</time>",
     "seo": {
       "title": "Ketentuan Penggunaan | SpendMath",
       "description": "Aturan penggunaan kalkulator anggaran rumah tangga gratis kami. Hasilnya adalah perkiraan untuk perencanaan, bukan nasihat keuangan. Mencakup akurasi, penggunaan yang wajar, dan tanggung jawab.",
@@ -2378,8 +2379,8 @@
         "a": "Maaf, kami tidak bisa. Alat ini hanya untuk edukasi umum. Untuk nasihat tentang situasi Anda, bicarakan dengan perencana keuangan yang berkualifikasi atau layanan konsultasi utang gratis."
       },
       "ads": {
-        "q": "Mengapa situs ini menampilkan iklan?",
-        "a_html": "Iklan membuat kalkulator tetap gratis. Anda bisa mematikan iklan yang dipersonalisasi kapan saja. Lihat <a href=\"/privacy-policy/#ads\" class=\"link\">iklan dan cookie</a>."
+        "q": "Apakah situs ini menampilkan iklan?",
+        "a_html": "Situs ini mungkin menampilkan iklan dari Google AdSense untuk menutup biaya operasionalnya. Iklan tidak pernah mengubah hasil kalkulator atau saran dalam panduan, dan Anda bisa mematikan iklan yang dipersonalisasi. Lihat <a href=\"/privacy-policy/#ads\" class=\"link\">iklan dan cookie</a>."
       }
     },
     "seo": {
@@ -3055,7 +3056,7 @@
       },
       "privacy": {
         "title": "Privasi Anda",
-        "p1_html": "Anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami. Tidak ada akun dan tidak perlu mendaftar. Iklan membuat alat ini tetap gratis. Baca <a href=\"/privacy-policy/\">Kebijakan Privasi</a> selengkapnya."
+        "p1_html": "Anggaran Anda dihitung di browser Anda sendiri dan tidak pernah dikirim ke kami. Tidak ada akun dan tidak perlu mendaftar. Untuk menutup biaya operasionalnya, situs ini mungkin menampilkan iklan. Baca <a href=\"/privacy-policy/\">Kebijakan Privasi</a> selengkapnya."
       },
       "standards": {
         "title": "Standar editorial"
