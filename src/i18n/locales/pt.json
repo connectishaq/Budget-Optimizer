@@ -3025,13 +3025,13 @@
     "pk-protected-slab": {
       "label": "Luz",
       "noun": "luz",
-      "title": "Fique na faixa protegida de 200 unidades no inverno",
-      "why": "Casas que consomem até 200 unidades por mês por seis meses seguidos pagam uma tarifa \"protegida\" bem menor. Um mês acima disso pode tirar esse status pelos próximos seis meses.",
-      "evidence": "Ficar na faixa protegida costuma reduzir",
+      "title": "Você pode ter direito à tarifa \"protegida\", mais barata: confira sua conta",
+      "why": "Casas que consomem até 200 unidades por mês por seis meses seguidos podem pagar uma tarifa \"protegida\" bem menor. As regras podem mudar, então confira sua conta ou pergunte à sua companhia de luz antes de contar com isso.",
+      "evidence": "Se você tiver direito, ficar na faixa protegida pode reduzir",
       "tips": {
-        "1": "Confira as \"unidades\" dos últimos 6 meses na sua conta para ver se você está perto do status protegido.",
+        "1": "Confira as \"unidades\" dos últimos 6 meses na sua conta e pergunte à sua companhia de luz se você conta como protegido.",
         "2": "No inverno, desligue a resistência elétrica do aquecedor (geyser) e use gás ou um aquecedor de passagem.",
-        "3": "Leia o medidor no meio do mês para poder economizar antes de passar de 200 unidades."
+        "3": "Se você estiver perto de 200 unidades, leia o medidor no meio do mês para poder economizar antes de passar do limite."
       }
     },
     "pk-solar-ups": {

@@ -2988,13 +2988,13 @@
     "pk-protected-slab": {
       "label": "Strom",
       "noun": "Strom",
-      "title": "Bleib im Winter in der geschützten Stufe bis 200 Einheiten",
-      "why": "Haushalte, die sechs Monate in Folge höchstens 200 Einheiten (kWh) im Monat verbrauchen, zahlen einen viel niedrigeren „geschützten“ (protected) Tarif. Ein Monat darüber kann dich diesen Status für die nächsten sechs Monate kosten.",
-      "evidence": "Wer in der geschützten Stufe bleibt, spart meist",
+      "title": "Vielleicht bekommst du den günstigeren „geschützten“ Tarif: Prüf deine Rechnung",
+      "why": "Haushalte, die sechs Monate in Folge höchstens 200 Einheiten (kWh) im Monat verbrauchen, zahlen eventuell einen viel niedrigeren „geschützten“ (protected) Tarif. Die Regeln können sich ändern, also prüf deine Rechnung oder frag deinen Stromversorger, bevor du damit rechnest.",
+      "evidence": "Wenn du Anspruch hast und in der geschützten Stufe bleibst, sparst du oft",
       "tips": {
-        "1": "Prüf die „Units“ der letzten 6 Monate auf deiner Rechnung, um zu sehen, ob du nah am geschützten Status bist.",
+        "1": "Prüf die „Units“ der letzten 6 Monate auf deiner Rechnung und frag deinen Stromversorger, ob du als geschützt giltst.",
         "2": "Schalt im Winter den elektrischen Heizstab des Geysers (Warmwasserboiler) aus und nutz stattdessen Gas oder einen Durchlauferhitzer.",
-        "3": "Lies Mitte des Monats deinen Zähler ab, damit du sparen kannst, bevor du 200 Einheiten überschreitest."
+        "3": "Wenn du nah an 200 Einheiten bist, lies Mitte des Monats deinen Zähler ab, damit du sparen kannst, bevor du sie überschreitest."
       }
     },
     "pk-solar-ups": {

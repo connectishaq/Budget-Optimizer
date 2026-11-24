@@ -3027,13 +3027,13 @@
     "pk-protected-slab": {
       "label": "Luz",
       "noun": "luz",
-      "title": "Quédate en el tramo protegido de 200 unidades en invierno",
-      "why": "Los hogares que consumen hasta 200 unidades al mes durante seis meses seguidos pagan una tarifa «protegida» mucho más baja. Pasarte un solo mes puede hacerte perder esa condición durante los seis meses siguientes.",
-      "evidence": "Quedarse en el tramo protegido suele reducir",
+      "title": "Puede que tengas derecho a la tarifa «protegida», más baja: revisa tu factura",
+      "why": "Los hogares que consumen 200 unidades o menos al mes durante seis meses seguidos pueden pagar una tarifa «protegida» mucho más baja. Las reglas pueden cambiar, así que revisa tu factura o pregunta a tu compañía eléctrica antes de contar con ello.",
+      "evidence": "Si tienes derecho, quedarte en el tramo protegido puede reducir",
       "tips": {
-        "1": "Mira las «units» de los últimos 6 meses en tu factura para ver si estás cerca de la condición de protegido.",
+        "1": "Mira las «units» de los últimos 6 meses en tu factura y pregunta a tu compañía eléctrica si cuentas como protegido.",
         "2": "En invierno, apaga la resistencia eléctrica del calentador (geyser) y usa gas o un calentador instantáneo.",
-        "3": "Lee el contador a mitad de mes para poder recortar antes de pasar de 200 unidades."
+        "3": "Si estás cerca de 200 unidades, lee el contador a mitad de mes para poder recortar antes de pasarte."
       }
     },
     "pk-solar-ups": {

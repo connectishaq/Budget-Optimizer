@@ -2950,13 +2950,13 @@
     "pk-protected-slab": {
       "label": "Listrik",
       "noun": "listrik",
-      "title": "Bertahan di golongan terlindungi 200 unit saat musim dingin",
-      "why": "Rumah yang memakai paling banyak 200 unit per bulan selama enam bulan berturut-turut membayar tarif “terlindungi” (protected) yang jauh lebih rendah. Lewat sebulan saja bisa membuat status itu hilang selama enam bulan berikutnya.",
-      "evidence": "Bertahan di golongan terlindungi biasanya memangkas",
+      "title": "Anda mungkin berhak atas tarif “terlindungi” yang lebih murah: cek tagihan Anda",
+      "why": "Rumah yang memakai paling banyak 200 unit per bulan selama enam bulan berturut-turut mungkin membayar tarif “terlindungi” (protected) yang jauh lebih rendah. Aturannya bisa berubah, jadi cek tagihan Anda atau tanyakan ke perusahaan listrik sebelum mengandalkannya.",
+      "evidence": "Jika Anda berhak, bertahan di golongan terlindungi dapat memangkas",
       "tips": {
-        "1": "Cek angka “units” 6 bulan terakhir di tagihan Anda untuk melihat apakah Anda hampir mendapat status terlindungi.",
+        "1": "Cek angka “units” 6 bulan terakhir di tagihan Anda dan tanyakan ke perusahaan listrik apakah Anda termasuk golongan terlindungi.",
         "2": "Saat musim dingin, matikan elemen listrik pada pemanas air (geyser) dan pakai gas atau pemanas air instan.",
-        "3": "Baca meteran di pertengahan bulan agar Anda bisa berhemat sebelum melewati 200 unit."
+        "3": "Jika Anda mendekati 200 unit, baca meteran di pertengahan bulan agar bisa berhemat sebelum melewatinya."
       }
     },
     "pk-solar-ups": {

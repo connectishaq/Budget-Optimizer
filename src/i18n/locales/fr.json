@@ -3025,13 +3025,13 @@
     "pk-protected-slab": {
       "label": "Électricité",
       "noun": "l’électricité",
-      "title": "Restez dans la tranche protégée des 200 unités en hiver",
-      "why": "Les foyers qui consomment jusqu’à 200 unités par mois pendant six mois de suite paient un tarif « protégé » bien plus bas. Un seul mois au-dessus peut vous faire perdre ce statut pour les six mois suivants.",
-      "evidence": "Rester dans la tranche protégée permet généralement d’économiser",
+      "title": "Vous pourriez bénéficier du tarif « protégé », plus bas : vérifiez votre facture",
+      "why": "Les foyers qui consomment 200 unités ou moins par mois pendant six mois de suite peuvent payer un tarif « protégé » bien plus bas. Les règles peuvent changer : vérifiez votre facture ou demandez à votre fournisseur d’électricité avant de compter dessus.",
+      "evidence": "Si vous y avez droit, rester dans la tranche protégée permet souvent d’économiser",
       "tips": {
-        "1": "Regardez les « units » des 6 derniers mois sur votre facture pour voir si vous êtes proche du statut protégé.",
+        "1": "Regardez les « units » des 6 derniers mois sur votre facture et demandez à votre fournisseur d’électricité si vous êtes considéré comme protégé.",
         "2": "En hiver, coupez la résistance électrique du geyser et utilisez plutôt le gaz ou un geyser instantané.",
-        "3": "Relevez votre compteur en milieu de mois pour réduire votre consommation avant de dépasser 200 unités."
+        "3": "Si vous approchez des 200 unités, relevez votre compteur en milieu de mois pour réduire votre consommation avant de les dépasser."
       }
     },
     "pk-solar-ups": {
