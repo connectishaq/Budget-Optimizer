@@ -16,3 +16,5 @@
 - Card balance to EMI / personal loan: common bank offers; advice is hedged to check fees.
 - Wealth example: ₹5,000 a month at 10% a year, monthly compounding ≈ ₹10.2 lakh in 10 years and ≈ ₹38 lakh in 20 (IN.json longTerm is 11%; 10% chosen as a rounder, more cautious figure).
 - SIP, recurring deposit, standing instruction: standard Indian banking/mutual fund terms.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

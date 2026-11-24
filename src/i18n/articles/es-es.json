@@ -1,7 +1,7 @@
 {
   "locale": "es-es",
   "datePublished": "2026-10-20",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-11-24",
   "h1_html": "Calculadora de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para España</span>",
   "seo": {
     "title": "Calculadora de presupuesto familiar gratis en euros (España)",
@@ -26,15 +26,15 @@
     "howToPlug": "Cómo taparla",
     "leak1": {
       "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma y una tarifa de luz que no te conviene",
-      "body_html": "La tele, el router, la cafetera y los cargadores del móvil siguen gastando luz aunque no los uses. Este consumo en espera puede suponer <strong>alrededor de un 5–10% de la factura</strong>. Además, muchos hogares tienen una tarifa o una potencia que no encaja con su forma de vivir. El PVPC cambia de precio cada hora; una tarifa fija del mercado libre puede salir más barata, o más cara, según tus hábitos. En un piso pequeño la luz suele rondar los 35–60 € al mes.",
+      "body_html": "La tele, el router, la cafetera y los cargadores del móvil siguen gastando luz aunque no los uses. Este consumo en espera puede suponer <strong>alrededor de un 5–10% del consumo eléctrico de una casa</strong> (según el <a href=\"https://standby.lbl.gov/\">Lawrence Berkeley National Laboratory</a>). Además, muchos hogares tienen una tarifa o una potencia que no encaja con su forma de vivir. El PVPC cambia de precio cada hora; una tarifa fija del mercado libre puede salir más barata, o más cara, según tus hábitos. En un piso pequeño la luz suele rondar los 35–60 € al mes.",
       "fix1_html": "<strong>Compara tu tarifa en el comparador de la CNMC</strong> con tus últimas facturas, y mira si puedes <strong>bajar la potencia contratada</strong> si nunca te salta el automático.",
       "fix2_html": "<strong>Pon la lavadora y el lavavajillas en horas valle</strong> (de 00:00 a 08:00 y los fines de semana). En invierno, deja la calefacción en torno a 19–21 °C y bájala cuando no haya nadie.",
       "fix3_html": "<strong>Usa regletas con interruptor</strong> en la zona de la tele y el ordenador, y cambia las bombillas que te queden por LED.",
-      "fix4": "Si tu familia tiene ingresos bajos o es numerosa, mira si puedes pedir el bono social eléctrico."
+      "fix4_html": "Si tu familia tiene ingresos bajos o es numerosa, mira si puedes pedir el bono social eléctrico."
     },
     "leak2": {
       "title_html": "<span class=\"num-badge\">2</span>Suscripciones que se acumulan sin que te des cuenta",
-      "body_html": "Netflix, Disney+, Movistar Plus+, Spotify, Amazon Prime, la nube, el gimnasio al que ya no vas y esa «prueba gratis» que se convirtió en cuota. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente 40–80 € al mes</strong>. Con la fibra y el móvil pasa algo parecido: cuando acaba la promoción, la cuota sube y casi nadie llama.",
+      "body_html": "Netflix, Disney+, Movistar Plus+, Spotify, Amazon Prime, la nube, el gimnasio al que ya no vas y esa «prueba gratis» que se convirtió en cuota. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente 40–80 € al mes</strong> (estimación aproximada). Con la fibra y el móvil pasa algo parecido: cuando acaba la promoción, la cuota sube y casi nadie llama.",
       "fix1_html": "Revisa los movimientos del banco y de la tarjeta de los últimos tres meses y apunta <strong>cada cargo que se repite</strong>. Date de baja de lo que casi no usas.",
       "fix2_html": "<strong>Alterna las plataformas</strong> en lugar de tenerlas todas: contrata una, ve lo que te interesa, cancélala y pasa a la siguiente.",
       "fix3": "Llama a tu compañía (Movistar, Vodafone, Orange, Digi u otra) y pide mejor precio, o plantéate la portabilidad. A menudo no necesitas tantos gigas.",
@@ -67,7 +67,7 @@
     "wealth": {
       "title": "Convierte las fugas tapadas en ahorro de verdad",
       "p1_html": "Tapar fugas solo sirve si ese dinero va a algún sitio útil. Lo más eficaz es <strong>automatizar el ahorro enseguida</strong>: la misma semana en que bajes una factura, programa una transferencia por esa cantidad, justo después de cobrar la nómina, a una cuenta remunerada, a tu fondo de emergencia o a un fondo indexado de bajo coste. Y cuando llegue la paga extra, aparta una parte antes de gastarla.",
-      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes 200 € al mes y obtienes de media un 7% al año, tendrías unos <strong>34.000 € en diez años</strong> y más de <strong>100.000 € en veinte</strong>. No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
+      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes 200 € al mes y obtienes de media un 7% al año, tendrías unos <strong>34.000 € en diez años</strong> y más de <strong>100.000 € en veinte</strong> (con capitalización mensual, antes de comisiones e impuestos). No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tener en cuenta la subida de precios.",
       "p3": "Empieza con una fuga esta semana: esta noche revisa tus suscripciones, mañana compara tu tarifa de luz y el domingo planifica las comidas. Cada cambio lleva minutos, y el ahorro se repite cada mes."
     }
   }

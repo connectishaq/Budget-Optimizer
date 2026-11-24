@@ -14,3 +14,5 @@
 - Wealth: Rs 10,000 a month at 12% a year (monthly compounding) = about Rs 23 lakh in 10 years (2,300,387) and about Rs 99 lakh in 20 years (9,892,554); 12% sits near PK.json returns.balanced (12.5%). Text adds that returns aren't guaranteed and inflation erodes value.
 - Wealth: National Savings, bank savings, mutual funds and committee (BC) named generically as places to send savings; no rates given.
 - Phrase: "“آج کے پیسوں میں دکھائیں”" must match the calculator toggle label in ur.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

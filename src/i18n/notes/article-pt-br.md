@@ -19,3 +19,5 @@
 - Wealth: R$ 300/month at 10% a year → about R$ 60 mil in 10 years (R$ 59.959–61.453 depending on compounding), more than R$ 215 mil in 20 (R$ 215.478–227.811). Nominal; 10% matches BR.json returns.savings.
 - Tesouro Selic, CDB com liquidez diária, Pix agendado: real products; no rates quoted.
 - Toggle label “Mostrar em dinheiro de hoje” matches pt.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

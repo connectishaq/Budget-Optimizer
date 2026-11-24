@@ -152,6 +152,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. Translated in one pass; needs a native read.
 
 ### German (de)
 
@@ -299,6 +300,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. This file still had an older US version (with $, "pays for itself in two years", 10–15%, 49°C); the changed keys now follow the current English. Translated in one pass; needs a native read.
 
 ### Spanish (es)
 
@@ -465,6 +467,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. Translated in one pass; needs a native read.
 
 ### French (fr)
 
@@ -572,6 +575,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. This file still had an older US version (with $, "pays for itself in two years", 10–15%, 49°C); the changed keys now follow the current English. Translated in one pass; needs a native read.
 
 ### Hindi (hi)
 
@@ -726,6 +730,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. Translated in one pass; needs a native read.
 
 ### Indonesian (id)
 
@@ -875,6 +880,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. This file still had an older US version (with $, "pays for itself in two years", 10–15%, 49°C); the changed keys now follow the current English. Translated in one pass; needs a native read.
 
 ### Portuguese (pt)
 
@@ -992,6 +998,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1 and tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Translated in one pass; needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. This file still had an older US version (with $, "pays for itself in two years", 10–15%, 49°C); the changed keys now follow the current English. Translated in one pass; needs a native read.
 
 ### Urdu (ur)
 
@@ -1097,6 +1104,7 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Pakistan data pass (2026-11-24): the monthly-budget-plan-pakistan guide (twice in the body and FAQ, once in the source title) now says Rs 40,700 is the minimum wage the federal government set for its own employees ("جو وفاقی حکومت نے 2026-27 کے لیے اپنے ملازمین کی کم از کم اجرت مقرر کی ہے"). Needs a native read.
 - (2026-11-24) `localTips.pk-protected-slab` title, why, evidence, tips.1, tips.3 reworded to "you may qualify; check your bill" (the 200-unit rule is unconfirmed). Needs a native read.
 - (2026-11-24) New: `app.countryNotice.text/change/close` (the home page note "Showing {country} figures in {currency} · Change", shown when the country was guessed from the browser) and `privacy.sections.device.p3` (the site may guess the country from the time zone and language, on the device only). Translated in one pass; needs a native read, and the privacy sentence a legal read.
+- (2026-11-24) Home article (`page.guide`): citations added (LBNL standby power, US DOE thermostat and LED, UK HSE Legionella, UK FCA renewal pricing). The 5–10% figure now refers to electricity *use*, not the bill. `leak1.fix4` became `leak1.fix4_html` (water-heater Legionella caveat). `leak4.body_html` drops "insurers rarely reward loyalty" and adds the UK 2022 rule. Estimate labels on the per-meal claim. "Most urges fade" softened. Balance-transfer fee given without a number. `wealth.p2_html` says compounded monthly. Translated in one pass; needs a native read.
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 
@@ -1120,6 +1128,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - "Fixed deposit" (وديعة لأجل) suggested; AE.json savings rate 3.4% not quoted.
 - Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /ar-sa/
 
 - Saudi Electricity Company residential tariff: 18 halalas/kWh up to 6,000 kWh a month, 30 halalas above (SA.json source, 2022 schedule): verify still current.
@@ -1135,6 +1145,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - «معدل النسبة السنوي» used for APR (SAMA disclosure term): verify.
 - Wealth example: SAR 1,000 a month at 8% (SA.json returns.longTerm, TASI-based judgement) → ~SAR 183,000 in 10 years, >SAR 589,000 in 20 (monthly compounding).
 - Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /de-de/
 
@@ -1157,6 +1169,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Compounding: 250 €/month at 7 % a year → ~43.000 € after 10 years, >130.000 € after 20 (monthly compounding; 43,280 / 130,250). Uses 7 % rather than the English 8 % to stay below the DAX long-run 7.8 % in DE.json; added "garantiert ist nichts".
 - Toggle label quoted as „In heutigem Geld zeigen“; the actual de.json label is "In heutigem Geld zeigen (Preise steigen mit der Zeit)".
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /en-ae/
 
 - DEWA/ADDC slab (tiered) electricity tariffs: from AE.json localTips ae-dewa-slab; ADDC's tariff for expats is also tiered, check wording "and other providers".
@@ -1177,6 +1191,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Wealth example: AED 1,000 a month at 7% a year (AE.json longTerm), monthly compounding ≈ AED 173,000 in 10 years and ≈ AED 521,000 in 20.
 - Weekend: "plan next week's meals at the weekend" kept neutral since the UAE weekend is Saturday–Sunday since 2022.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /en-au/
 
 - "Phantom load around 5–10% of a home's electricity use": generic estimate carried over from the English article, hedged.
@@ -1194,6 +1210,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Mortgage offset account, everyday account, high-interest savings account: Australian terms.
 - Growth example: $300 a month at 7% a year ≈ $51,900 after 10 years and ≈ $156,000 after 20 (monthly compounding; deliberately below AU.json longTerm of 9%).
 - Spelling: Australian/British (tyres, organise, kilometre); "program" kept for government programs.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /en-ca/
 
@@ -1214,6 +1232,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Growth example: $300 a month at 7% a year ≈ $51,900 after 10 years and ≈ $156,000 after 20 (monthly compounding; deliberately below CA.json longTerm of 8%).
 - Spelling: Canadian (kilometre, chequing, tire, organize, program).
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /en-gb/
 
 - "Phantom load around 5–10% of a home's electricity use": generic estimate carried over from the English article, hedged.
@@ -1232,6 +1252,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Balance transfer fee "often around 3%"; StepChange named as a free debt charity.
 - Cash ISA, Stocks and Shares ISA, standing order, current account: UK terms.
 - Growth example: £200 a month at 7% a year ≈ £34,600 after 10 years and ≈ £104,000 after 20 (monthly compounding; 7% = GB.json longTerm).
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /en-in/
 
@@ -1253,6 +1275,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Wealth example: ₹5,000 a month at 10% a year, monthly compounding ≈ ₹10.2 lakh in 10 years and ≈ ₹38 lakh in 20 (IN.json longTerm is 11%; 10% chosen as a rounder, more cautious figure).
 - SIP, recurring deposit, standing instruction: standard Indian banking/mutual fund terms.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /en-pk/
 
 - Electricity "Rs 15,000–30,000 or more a month in summer": close to the PK.json suburban electricity range (15,000–32,000; verify flag).
@@ -1271,6 +1295,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Committee (BC) payout used to clear card debt: suggestion only, hedged with "consider".
 - Wealth example: Rs 10,000 a month at 12% a year, monthly compounding ≈ Rs 23 lakh in 10 years and ≈ Rs 99 lakh ("close to Rs 1 crore") in 20. PK.json longTerm is 14%; 12% chosen as a cautious figure.
 - National Savings (CDNS) named as a saving option: real government scheme.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /es-es/
 
@@ -1299,6 +1325,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Number format follows the brief ("2.400 €", "34.000 €"); RAE prefers no separator in 4-digit numbers ("2400 €"), reviewer may change.
 - SEO title is exactly 70 characters.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /es-mx/
 
 - Standby consumption "alrededor de un 5–10% del recibo": carried over from the English article, hedged.
@@ -1326,6 +1354,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Number format "$1,200" (comma thousands) as in the brief. "$" means pesos throughout; consider "MXN" if ambiguity with USD is a concern.
 - SEO title is exactly 70 characters.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /fr-fr/
 
 - Typography: U+00A0 (no-break space) before : ; ? ! % € » and after «, and as thousands separator (2 000 €, 36 000 €), matching fr.json.
@@ -1351,6 +1381,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Wealth: Livret A, assurance-vie, PEA named as savings vehicles (no rate quoted).
 - Wealth: 200 €/month at 8 %/year, monthly compounding = 36 589 € after 10 years ("environ 36 000 €") and 117 804 € after 20 years ("plus de 117 000 €"); explicitly said to be not guaranteed.
 - Toggle label « Afficher en valeur d’aujourd’hui » must match fr.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /hi-in/
 
@@ -1379,6 +1411,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - RD (recurring deposit), SIP into a low-cost index fund: generic product names, no provider named.
 - seo.title uses "–" and "₹"; 69 characters by JS length. seo.description 145 characters; says data stays "आपके फ़ोन में" (on device) — confirm this matches the app's privacy claim wording (could be "डिवाइस").
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /id-id/
 
 - PLN tariff "sekitar Rp1.444 per kWh" for 1.300 VA and up (ID.json: R-1 Rp1,444.70/kWh, Q4 2026); confirm the same rate still applies to all classes from 1.300 VA.
@@ -1397,6 +1431,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Savings options named: deposito, reksa dana pasar uang, SBN ritel; arisan described as earning no interest.
 - Compound example: Rp1.000.000 a month at 8% a year, compounded monthly = Rp182,9 juta after 10 years ("sekitar Rp183 juta") and Rp589 juta after 20 years ("lebih dari Rp585 juta"). 8% matches ID.json returns.longTerm (flagged verify).
 - Check that the toggle label “Tampilkan dalam nilai uang hari ini” matches the label in src/i18n/locales/id.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ### /pt-br/
 
@@ -1421,6 +1457,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Tesouro Selic, CDB com liquidez diária, Pix agendado: real products; no rates quoted.
 - Toggle label “Mostrar em dinheiro de hoje” matches pt.json.
 
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
+
 ### /ur-pk/
 
 - Leak 1: summer electricity bill "Rs 15,000 to Rs 30,000" for many homes, based on PK.json electricity ranges (6,000–32,000; family 15,000–32,000); not a published statistic.
@@ -1438,6 +1476,8 @@ Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, W
 - Wealth: Rs 10,000 a month at 12% a year (monthly compounding) = about Rs 23 lakh in 10 years (2,300,387) and about Rs 99 lakh in 20 years (9,892,554); 12% sits near PK.json returns.balanced (12.5%). Text adds that returns aren't guaranteed and inflation erodes value.
 - Wealth: National Savings, bank savings, mutual funds and committee (BC) named generically as places to send savings; no rates given.
 - Phrase: "“آج کے پیسوں میں دکھائیں”" must match the calculator toggle label in ur.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
 
 ## Money guides (/guides/, /ur-pk/guides/)
 

@@ -23,3 +23,5 @@
 - "$2,000 al mes al 8% → unos $365,000 en diez años y más de $1,170,000 en veinte": monthly compounding gives 365,892 and 1,178,041. 8% chosen below the MX.json longTerm judgment of 9%.
 - Number format "$1,200" (comma thousands) as in the brief. "$" means pesos throughout; consider "MXN" if ambiguity with USD is a concern.
 - SEO title is exactly 70 characters.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

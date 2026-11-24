@@ -1,7 +1,7 @@
 {
   "locale": "pt-br",
   "datePublished": "2026-10-20",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-11-24",
   "h1_html": "Calculadora de orçamento familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para o Brasil</span>",
   "seo": {
     "title": "Calculadora de orçamento familiar grátis e privada (R$) | Brasil",
@@ -30,11 +30,11 @@
       "fix1_html": "<strong>Deixe o chuveiro na posição \"verão\"</strong> sempre que der e combine banhos de 5 a 8 minutos.",
       "fix2_html": "<strong>Confira a bandeira na sua conta</strong> e segure o ar-condicionado e a secadora nos meses de bandeira vermelha.",
       "fix3_html": "<strong>Troque as lâmpadas que sobraram por LED</strong> e use um filtro de linha com botão para desligar tudo de uma vez. Ao trocar um eletrodoméstico, prefira os com <strong>Selo Procel</strong>.",
-      "fix4": "Pergunte à distribuidora se sua família tem direito à Tarifa Social de Energia Elétrica, para famílias de baixa renda no CadÚnico."
+      "fix4_html": "Pergunte à distribuidora se sua família tem direito à Tarifa Social de Energia Elétrica, para famílias de baixa renda no CadÚnico."
     },
     "leak2": {
       "title_html": "<span class=\"num-badge\">2</span>Assinaturas que se acumulam",
-      "body_html": "Netflix, Globoplay, Max, Spotify, Clube iFood, nuvem, academia e aquele \"teste grátis\" que virou plano pago. Somando tudo, não é raro uma família pagar <strong>R$ 150 a R$ 300 por mês em assinaturas</strong>, algumas quase sem uso. Como cada uma parece barata sozinha, o total quase nunca é conferido.",
+      "body_html": "Netflix, Globoplay, Max, Spotify, Clube iFood, nuvem, academia e aquele \"teste grátis\" que virou plano pago. Somando tudo, não é raro uma família pagar <strong>R$ 150 a R$ 300 por mês em assinaturas</strong> (estimativa aproximada), algumas quase sem uso. Como cada uma parece barata sozinha, o total quase nunca é conferido.",
       "fix1_html": "Abra as faturas do cartão dos últimos três meses e anote <strong>toda cobrança recorrente</strong>. Marque as que você usou menos de duas vezes no mês passado.",
       "fix2_html": "<strong>Reveze os streamings</strong> em vez de pagar todos juntos: assine um, assista, cancele e passe para o próximo. Veja também se seu plano de celular já não inclui algum.",
       "fix3": "Ligue para a operadora (Vivo, Claro, TIM ou outra) e peça uma oferta melhor, ou baixe para uma velocidade que você nem vai notar.",
@@ -42,7 +42,7 @@
     },
     "leak3": {
       "title_html": "<span class=\"num-badge\">3</span>Desperdício no mercado e o preço do delivery",
-      "body_html": "Muita comida comprada acaba no lixo: a fruta que passou do ponto, a sobra esquecida no pote. Idas ao mercado sem lista e produtos em porção individual também custam mais. E tem o delivery: com taxa de entrega e de serviço, um pedido no app pode sair <strong>três a cinco vezes mais caro</strong> do que a mesma refeição feita em casa. Para uma família de quatro, o mercado costuma ficar entre R$ 1.800 e R$ 2.800 por mês, fora o iFood.",
+      "body_html": "Muita comida comprada acaba no lixo: a fruta que passou do ponto, a sobra esquecida no pote. Idas ao mercado sem lista e produtos em porção individual também custam mais. E tem o delivery: com taxa de entrega e de serviço, um pedido no app pode sair <strong>três a cinco vezes mais caro</strong> (estimativa aproximada) do que a mesma refeição feita em casa. Para uma família de quatro, o mercado costuma ficar entre R$ 1.800 e R$ 2.800 por mês, fora o iFood.",
       "fix1_html": "<strong>Planeje o cardápio com o que já está na geladeira</strong> antes de fazer a lista.",
       "fix2": "Prefira as marcas próprias do supermercado para o básico, como arroz, feijão e produtos de limpeza, e compare o preço por quilo no atacarejo.",
       "fix3": "Faça uma compra por semana, com lista, e passe na feira perto do fim, quando os preços costumam baixar.",
@@ -67,7 +67,7 @@
     "wealth": {
       "title": "Transforme vazamentos fechados em patrimônio de verdade",
       "p1_html": "Fechar vazamentos só vale se o dinheiro for para um lugar útil. O passo mais forte é <strong>automatizar a economia na hora</strong>. Na semana em que cortar uma conta, agende um Pix desse valor para sua reserva de emergência, no Tesouro Selic ou num CDB com liquidez diária. Se o dinheiro não fica parado na conta-corrente, ele não vaza de volta.",
-      "p2_html": "Números pequenos viram grandes com o tempo. Guardar R$ 300 por mês rendendo em média 10% ao ano chega a cerca de <strong>R$ 60 mil em dez anos</strong> e a mais de <strong>R$ 215 mil em vinte</strong>. Use a calculadora acima para testar seus números e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
+      "p2_html": "Números pequenos viram grandes com o tempo. Guardar R$ 300 por mês rendendo em média 10% ao ano chega a cerca de <strong>R$ 60 mil em dez anos</strong> e a mais de <strong>R$ 215 mil em vinte</strong> (com capitalização mensal, antes de taxas e impostos). Use a calculadora acima para testar seus números e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
       "p3": "Comece com um vazamento esta semana. Confira suas assinaturas hoje à noite, coloque o chuveiro no \"verão\" amanhã e planeje as refeições no domingo. Cada ajuste leva minutos, e a economia se repete todo mês."
     }
   }

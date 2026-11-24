@@ -17,3 +17,5 @@
 - Ratenkredit "oft deutlich unter den Dispozinsen" (DE.json loanApr median ~6 %). English 0 % balance-transfer tip replaced, as such cards are uncommon in Germany.
 - Compounding: 250 €/month at 7 % a year → ~43.000 € after 10 years, >130.000 € after 20 (monthly compounding; 43,280 / 130,250). Uses 7 % rather than the English 8 % to stay below the DAX long-run 7.8 % in DE.json; added "garantiert ist nichts".
 - Toggle label quoted as „In heutigem Geld zeigen“; the actual de.json label is "In heutigem Geld zeigen (Preise steigen mit der Zeit)".
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

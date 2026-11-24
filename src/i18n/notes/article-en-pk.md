@@ -15,3 +15,5 @@
 - Committee (BC) payout used to clear card debt: suggestion only, hedged with "consider".
 - Wealth example: Rs 10,000 a month at 12% a year, monthly compounding ≈ Rs 23 lakh in 10 years and ≈ Rs 99 lakh ("close to Rs 1 crore") in 20. PK.json longTerm is 14%; 12% chosen as a cautious figure.
 - National Savings (CDNS) named as a saving option: real government scheme.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

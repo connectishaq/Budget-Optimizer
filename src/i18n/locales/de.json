@@ -1412,16 +1412,16 @@
       },
       "eyebrow": "Spartipps · 5 Minuten Lesezeit",
       "title": "5 versteckte Geldlecks im Haushalt (und wie du sie heute stopfst)",
-      "intro1_html": "Die meisten Haushalte haben weniger ein Ausgabenproblem als ein <strong>Leck-Problem</strong>. Die großen, sichtbaren Kosten wie Miete, Kreditrate oder Autorate werden ständig geprüft. Gleichzeitig ziehen Dutzende kleine, wiederkehrende Abbuchungen jeden Monat still und leise Hunderte ab, ohne dass es jemand merkt. Weil diese Lecks automatisch, verteilt und einzeln klein sind, rutschen sie selbst an sorgfältigen Budgetplanern vorbei.",
+      "intro1_html": "Die meisten Haushalte haben weniger ein Ausgabenproblem als ein <strong>Leck-Problem</strong>. Die großen, sichtbaren Kosten wie Miete, Kreditrate oder Autorate werden ständig geprüft. Gleichzeitig summieren sich Dutzende kleine, wiederkehrende Abbuchungen jeden Monat still und leise, ohne dass es jemand merkt. Weil diese Lecks automatisch, verteilt und einzeln klein sind, rutschen sie selbst an sorgfältigen Budgetplanern vorbei.",
       "intro2": "Die gute Nachricht? Lecks sind meist das am leichtesten zurückzuholende Geld. Anders als beim Verzicht auf Dinge, die du magst, zahlst du beim Stopfen eines Lecks meist einfach weniger für genau denselben Lebensstil. Hier sind die fünf häufigsten versteckten Geldlecks im Haushalt und praktische Schritte, mit denen du jedes davon noch heute stoppst.",
       "howToPlug": "So stopfst du das Leck",
       "leak1": {
         "title_html": "<span class=\"num-badge\">1</span>Standby-Verbrauch und ineffiziente Nebenkosten",
-        "body_html": "Jeder Fernseher, jede Spielkonsole, jede Kaffeemaschine und jedes Handyladegerät, das eingesteckt bleibt, zieht rund um die Uhr ein wenig Strom. Dieser „Standby-Verbrauch“, auch Leerlaufverlust genannt, kann <strong>5–10 % der Stromrechnung eines typischen Haushalts</strong> ausmachen. Dazu ein Thermostat, das ein leeres Haus heizt oder kühlt, und alte Glühbirnen, die noch in Lampen stecken – schon schleppt deine Nebenkostenrechnung viel Ballast mit.",
+        "body_html": "Jeder Fernseher, jede Spielkonsole, jede Kaffeemaschine und jedes Handyladegerät, das eingesteckt bleibt, zieht rund um die Uhr ein wenig Strom. Dieser „Standby-Verbrauch“, auch Leerlaufverlust genannt, kann laut <a href=\"https://standby.lbl.gov/\">Lawrence Berkeley National Laboratory</a> <strong>etwa 5–10 % des Stromverbrauchs eines Haushalts</strong> ausmachen. Dazu eine Heizung oder Klimaanlage, die ein leeres Haus heizt oder kühlt, und alte Glühbirnen, die noch in Lampen stecken – schon schleppt deine Stromrechnung viel Ballast mit.",
         "fix1_html": "<strong>Nutze smarte Steckdosenleisten</strong> für Fernseh-Ecke und Homeoffice, damit ungenutzte Geräte komplett ausgehen.",
-        "fix2_html": "<strong>Senke die Temperatur um 4–6 °C (7–10 °F)</strong> für acht Stunden am Tag, während du schläfst oder unterwegs bist. Ein smartes Thermostat erledigt das automatisch und macht sich oft innerhalb von zwei Jahren bezahlt.",
-        "fix3_html": "<strong>Tausche die restlichen Glühbirnen gegen LEDs</strong>, die bis zu 75 % weniger Energie verbrauchen und um ein Vielfaches länger halten.",
-        "fix4": "Wasch Wäsche kalt und stell den Warmwasserspeicher auf 49 °C (120 °F) ein."
+        "fix2_html": "<strong>Senke die Heiztemperatur um 4–6 °C (7–10 °F) oder stell die Klimaanlage entsprechend höher</strong>, für etwa acht Stunden am Tag, während du schläfst oder unterwegs bist. Das <a href=\"https://web.archive.org/web/20241231175920/https://www.energy.gov/energysaver/programmable-thermostats\">US-Energieministerium</a> schätzt, dass das bis zu 10 % der Heiz- und Kühlkosten im Jahr spart. Ein Timer oder ein smartes Thermostat erledigt das für dich.",
+        "fix3_html": "<strong>Tausche die restlichen Glühbirnen gegen LEDs</strong>, die mindestens 75 % weniger Energie verbrauchen und bis zu 25-mal länger halten als Glühlampen (<a href=\"https://web.archive.org/web/20250102063149/https://www.energy.gov/energysaver/led-lighting\">US-Energieministerium</a>).",
+        "fix4_html": "Wasch Wäsche kalt. Bevor du einen Warmwasserspeicher zum Energiesparen auf etwa 50 °C (120 °F) herunterdrehst: Gesundheitsbehörden wie die britische <a href=\"https://www.hse.gov.uk/legionnaires/things-to-consider.htm\">Health and Safety Executive</a> raten, gespeichertes Warmwasser zum Schutz vor Legionellen auf mindestens 60 °C (140 °F) zu halten."
       },
       "leak2": {
         "title_html": "<span class=\"num-badge\">2</span>Schleichende Abo-Kosten",
@@ -1433,7 +1433,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Lebensmittelverschwendung und der Aufpreis fürs Essengehen",
-        "body_html": "Viele Haushalte werfen <strong>einen überraschend großen Teil der gekauften Lebensmittel</strong> weg. Vorgeschnittenes Gemüse, Einzelportionen und ungeplante Einkäufe unter der Woche kosten alle einen Bequemlichkeitsaufschlag. Dazu kommt das Essengehen: Gibt ein Haushalt mehr für Restaurants und Lieferdienste aus als für Lebensmittel, zahlt er meist das Drei- bis Fünffache pro Mahlzeit für Essen, das er selbst kochen könnte.",
+        "body_html": "Viele Haushalte werfen <strong>einen überraschend großen Teil der gekauften Lebensmittel</strong> weg. Vorgeschnittenes Gemüse, Einzelportionen und ungeplante Einkäufe unter der Woche kosten alle einen Bequemlichkeitsaufschlag. Dazu kommt das Essengehen: Gibt ein Haushalt mehr für Restaurants und Lieferdienste aus als für Lebensmittel, zahlt er oft ein Mehrfaches pro Mahlzeit (grobe Schätzung) für Essen, das er selbst kochen könnte.",
         "fix1_html": "<strong>Plane Mahlzeiten mit dem, was schon im Kühlschrank ist</strong>, bevor du eine Einkaufsliste schreibst.",
         "fix2": "Wähle bei Grundnahrungsmitteln Eigenmarken. Sie werden oft in denselben Werken wie Markenprodukte hergestellt und kosten 20–30 % weniger.",
         "fix3": "Kauf einmal pro Woche mit Liste ein und plane einen „Reste-Abend“, um den Kühlschrank zu leeren.",
@@ -1441,7 +1441,7 @@
       },
       "leak4": {
         "title_html": "<span class=\"num-badge\">4</span>Mobilität und Versicherungen auf Autopilot",
-        "body_html": "Sprit ist einer der variabelsten Posten im Haushaltsbudget, und Gewohnheiten treiben ihn. Kurze, verstreute Fahrten verbrauchen pro Kilometer viel mehr, weil Motoren kalt am ineffizientesten sind. Zu wenig Reifendruck, allein pendeln und volle Mautgebühren summieren sich. Versicherungen sind der stille Zwilling dieses Lecks. Beiträge steigen bei jeder Verlängerung gern ein bisschen, und Versicherer belohnen Treue selten – Haushalte, die nie vergleichen, zahlen daher oft <strong>10–15 % mehr</strong> als ein Neukunde.",
+        "body_html": "Sprit ist einer der variabelsten Posten im Haushaltsbudget, und Gewohnheiten treiben ihn. Kurze, verstreute Fahrten verbrauchen pro Kilometer viel mehr, weil Motoren kalt am ineffizientesten sind. Zu wenig Reifendruck, allein pendeln und volle Mautgebühren summieren sich. Versicherungen sind der stille Zwilling dieses Lecks. Beiträge steigen bei der Verlängerung gern ein bisschen, daher können Haushalte, die nie vergleichen, <strong>mehr zahlen als ein Neukunde</strong>. Manche Länder begrenzen das: Im Vereinigten Königreich müssen Haus- und Kfz-Versicherer Bestandskunden seit Januar 2022 bei der Verlängerung einen Preis anbieten, der nicht höher ist als für Neukunden (<a href=\"https://www.fca.org.uk/news/press-releases/fca-confirms-measures-protect-customers-loyalty-penalty-home-motor-insurance-markets\">Financial Conduct Authority</a>).",
         "fix1_html": "<strong>Bündle Erledigungen</strong> ein- oder zweimal pro Woche in einer Runde und organisiere eine <strong>Fahrgemeinschaft</strong> für Schulweg oder Arbeitsweg.",
         "fix2": "Achte auf den richtigen Reifendruck – das kann den Verbrauch um bis zu 3 % senken.",
         "fix3": "Vergleiche Monatskarten und Rabatte für Maut-Boxen mit dem, was du pro Fahrt zahlst.",
@@ -1450,15 +1450,15 @@
       "leak5": {
         "title_html": "<span class=\"num-badge\">5</span>Spontankäufe und teure Schulden",
         "body_html": "Der tägliche Kaffee, die Online-Bestellung spät in der Nacht, der „War doch im Angebot“-Kauf: Spontankäufe sind das am schwersten erkennbare Leck, weil sie nie als eine Rechnung kommen. Bestellen mit einem Klick und gespeicherte Kartendaten nehmen dir die kurze Pause, die einen ungeplanten Kauf normalerweise stoppen würde. Landen diese Käufe auf einer Kreditkarte mit 20–30 % Zinsen im Jahr (effektiver Jahreszins), wächst das Leck: Ein Saldo von 3.000 $ bei 24 % kostet etwa <strong>60 $ im Monat allein an Zinsen</strong>.",
-        "fix1_html": "<strong>Nutze die 24-Stunden-Regel:</strong> Warte einen ganzen Tag vor jedem nicht notwendigen Kauf. Die meisten Kaufimpulse verfliegen.",
+        "fix1_html": "<strong>Nutze die 24-Stunden-Regel:</strong> Warte einen ganzen Tag vor jedem nicht notwendigen Kauf. Viele Kaufimpulse sind bis dahin verflogen.",
         "fix2": "Lösche gespeicherte Kartendaten aus Shopping-Seiten und schalte Händler-Benachrichtigungen ab.",
         "fix3_html": "<strong>Zahl zuerst den Kredit mit den höchsten Zinsen ab</strong>: Zahl überall den Mindestbetrag und steck jeden zusätzlichen Betrag in die Schuld mit dem höchsten Zinssatz.",
-        "fix4": "Denk über eine Kreditkarte mit 0 % Zinsen auf übertragene Salden nach. Eine typische Gebühr von 3 % ist durch die vermiedenen Zinsen oft in wenigen Monaten wieder drin."
+        "fix4": "Denk über eine Kreditkarte mit 0 % Zinsen auf übertragene Salden nach. Die einmalige Gebühr (ein Prozentsatz des Saldos, vorher prüfen) ist durch die vermiedenen Zinsen oft in wenigen Monaten wieder drin."
       },
       "wealth": {
         "title": "Aus gestopften Lecks echtes Vermögen machen",
         "p1_html": "Lecks zu stopfen bringt nur etwas, wenn das Geld irgendwo Sinnvolles landet. Der wirkungsvollste Schritt: <strong>Automatisiere das Sparen sofort</strong>. In derselben Woche, in der du eine Rechnung senkst, richte einen Dauerauftrag über genau diesen Betrag ein – auf ein gut verzinstes Tagesgeldkonto, deinen Notgroschen oder einen günstigen Indexfonds (ETF). Landet das Geld nie auf deinem Girokonto, kann es auch nicht wieder auslaufen.",
-        "p2_html": "Aus kleinen Zahlen werden mit der Zeit große. Wer 250 $ im Monat in eine Anlage mit durchschnittlich 8 % im Jahr umleitet, hat nach zehn Jahren rund <strong>46.000 $</strong> und nach zwanzig mehr als <strong>147.000 $</strong>. Probier mit dem Rechner oben deine eigenen Zahlen aus, nimm nur die Ideen auf, die zu deinem Leben passen, und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
+        "p2_html": "Aus kleinen Zahlen werden mit der Zeit große. Wer 250 im Monat (in beliebiger Währung) in eine Anlage mit durchschnittlich 8 % im Jahr steckt, hat nach zehn Jahren rund <strong>46.000</strong> und nach zwanzig mehr als <strong>147.000</strong> (bei monatlicher Verzinsung, vor Gebühren und Steuern). Wachstum ist nie garantiert. Probier mit dem Rechner oben deine eigenen Zahlen aus, nimm nur die Ideen auf, die zu deinem Leben passen, und schalte „In heutigem Geld zeigen“ ein, um steigende Preise zu berücksichtigen.",
         "p3": "Fang diese Woche mit einem Leck an. Prüf heute Abend deine Abos, stell morgen den Thermostat-Zeitplan um und plane am Sonntag die Mahlzeiten der nächsten Woche. Jede Änderung dauert nur Minuten, und die Ersparnis wiederholt sich jeden Monat."
       }
     },

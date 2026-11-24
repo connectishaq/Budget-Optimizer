@@ -15,3 +15,5 @@
 - Savings options named: deposito, reksa dana pasar uang, SBN ritel; arisan described as earning no interest.
 - Compound example: Rp1.000.000 a month at 8% a year, compounded monthly = Rp182,9 juta after 10 years ("sekitar Rp183 juta") and Rp589 juta after 20 years ("lebih dari Rp585 juta"). 8% matches ID.json returns.longTerm (flagged verify).
 - Check that the toggle label “Tampilkan dalam nilai uang hari ini” matches the label in src/i18n/locales/id.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

@@ -36,7 +36,7 @@ export function author(siteUrl) {
  * changed. Change dateModified only when the article's text changes. The
  * language/country pages' own versions keep their dates in src/i18n/articles/.
  */
-export const HOME_ARTICLE = { datePublished: '2026-10-12', dateModified: '2026-10-20' };
+export const HOME_ARTICLE = { datePublished: '2026-10-12', dateModified: '2026-11-24' };
 
 /**
  * og:locale for a page's hreflang/lang tag: "en-GB" -> "en_GB", "ur-PK" -> "ur_PK".

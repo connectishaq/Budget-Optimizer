@@ -22,3 +22,5 @@
 - Wealth: Livret A, assurance-vie, PEA named as savings vehicles (no rate quoted).
 - Wealth: 200 €/month at 8 %/year, monthly compounding = 36 589 € after 10 years ("environ 36 000 €") and 117 804 € after 20 years ("plus de 117 000 €"); explicitly said to be not guaranteed.
 - Toggle label « Afficher en valeur d’aujourd’hui » must match fr.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

@@ -1,7 +1,7 @@
 {
   "locale": "en-au",
   "datePublished": "2026-10-20",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-11-24",
   "h1_html": "Household Budget Calculator <span class=\"text-emerald-700 dark:text-emerald-400\">for Australia</span>",
   "seo": {
     "title": "Free Household Budget Calculator Australia (A$) – Private",
@@ -26,15 +26,15 @@
     "howToPlug": "How to plug it",
     "leak1": {
       "title_html": "<span class=\"num-badge\">1</span>Standby Power and Energy Plans on Autopilot",
-      "body_html": "Every TV, gaming console, set-top box and phone charger left on standby draws a trickle of electricity day and night. This \"phantom load\" can make up <strong>around 5–10% of a home's electricity use</strong>. Add air-con cooling an empty house, a second fridge humming in the garage and old halogen downlights, and your power bill carries a lot of dead weight. Many households also sit on a plan priced at or near the Default Market Offer when cheaper market offers are available.",
+      "body_html": "Every TV, gaming console, set-top box and phone charger left on standby draws a trickle of electricity day and night. This \"phantom load\" can make up <strong>around 5–10% of a home's electricity use</strong> (<a href=\"https://standby.lbl.gov/\">Lawrence Berkeley National Laboratory</a>). Add air-con cooling an empty house, a second fridge humming in the garage and old halogen downlights, and your power bill carries a lot of dead weight. Many households also sit on a plan priced at or near the Default Market Offer when cheaper market offers are available.",
       "fix1_html": "<strong>Switch devices off at the wall</strong>, or use a smart power board for the TV area and home office so idle devices shut off completely.",
       "fix2_html": "<strong>Set the air-con a degree or two closer to the outside temperature</strong>, around 24–25°C for cooling in summer and 18–20°C for heating in winter, and only run it in rooms you're using. Door seals and draught stoppers cost little.",
       "fix3_html": "<strong>Compare your plan on Energy Made Easy</strong> (or Victorian Energy Compare in Victoria) by uploading a recent bill, then ask your retailer to match the best offer before you switch.",
-      "fix4": "Swap halogen downlights for LEDs, wash clothes in cold water, and if you have solar, run the dishwasher and washing machine in the middle of the day."
+      "fix4_html": "Swap halogen downlights for LEDs, wash clothes in cold water, and if you have solar, run the dishwasher and washing machine in the middle of the day."
     },
     "leak2": {
       "title_html": "<span class=\"num-badge\">2</span>Subscription Creep",
-      "body_html": "Netflix, Stan, Binge, Kayo, Amazon Prime, Spotify, cloud storage, gym memberships and \"free trials\" that quietly became paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use. Because each one feels cheap on its own, the total hardly ever gets looked at.",
+      "body_html": "Netflix, Stan, Binge, Kayo, Amazon Prime, Spotify, cloud storage, gym memberships and \"free trials\" that quietly became paid plans add up fast. Many families carry <strong>$50–$150 a month in subscriptions</strong> they rarely use (our rough estimate). Because each one feels cheap on its own, the total hardly ever gets looked at.",
       "fix1_html": "Pull your last three months of bank and card statements and list <strong>every recurring charge</strong>. Mark the ones you used less than twice last month.",
       "fix2_html": "<strong>Rotate streaming services</strong> instead of stacking them: subscribe to one, watch what you want, cancel and move to the next.",
       "fix3": "Check your NBN speed tier and ask your provider for their current deal, or drop to a speed you won't notice. Compare your mobile plan with cheaper providers that use the same networks.",
@@ -42,7 +42,7 @@
     },
     "leak3": {
       "title_html": "<span class=\"num-badge\">3</span>Food Waste and the Takeaway Premium",
-      "body_html": "Households often throw away <strong>a surprising share of the food they buy</strong>, especially fruit and veg, bread and leftovers. Pre-cut produce, single-serve packs and unplanned mid-week trips to the shops all carry a convenience premium. Then there's takeaway and delivery apps: when a household spends more on Uber Eats, Menulog or DoorDash than on groceries, it's often paying several times more per meal for food it could make at home.",
+      "body_html": "Households often throw away <strong>a surprising share of the food they buy</strong>, especially fruit and veg, bread and leftovers. Pre-cut produce, single-serve packs and unplanned mid-week trips to the shops all carry a convenience premium. Then there's takeaway and delivery apps: when a household spends more on Uber Eats, Menulog or DoorDash than on groceries, it's often paying several times more per meal (our rough estimate) for food it could make at home.",
       "fix1_html": "<strong>Plan meals around what's already in your fridge and freezer</strong> before writing a shopping list.",
       "fix2": "Choose home brands at Coles and Woolworths for staples, or shop at Aldi. They often cost noticeably less than big brands.",
       "fix3": "Check the weekly specials, shop once a week with a list, and plan one \"leftovers night\" to clear the fridge.",
@@ -59,7 +59,7 @@
     "leak5": {
       "title_html": "<span class=\"num-badge\">5</span>Impulse Buys and High-Interest Debt",
       "body_html": "The daily flat white, the late-night online order, the \"it was on special\" purchase: impulse spending is the hardest leak to see because it never arrives as one bill. One-click checkout, saved card details and buy now, pay later remove the brief pause that would normally stop an unplanned purchase. When those purchases sit on a credit card charging around 20% interest a year, the leak grows: a $3,800 balance at 20.99% costs about <strong>$66 a month in interest alone</strong>.",
-      "fix1_html": "<strong>Try the 24-hour rule:</strong> wait a full day before any non-essential purchase. Most urges fade.",
+      "fix1_html": "<strong>Try the 24-hour rule:</strong> wait a full day before any non-essential purchase. Many urges fade by then.",
       "fix2": "Remove saved card details from shopping sites and turn off retailer notifications.",
       "fix3_html": "<strong>Pay the highest-interest debt first</strong>: pay the minimum on everything, and put every extra dollar towards the debt with the highest interest rate.",
       "fix4": "Consider a balance transfer card, but check the fee and the rate after the offer ends. If debt feels out of control, the free National Debt Helpline can help."
@@ -67,7 +67,7 @@
     "wealth": {
       "title": "Turn Plugged Leaks Into Real Wealth",
       "p1_html": "Plugging leaks only matters if the money goes somewhere useful. The most powerful step is to <strong>automate the savings straight away</strong>. The same week you cut a bill, set up an automatic transfer for that exact amount into a high-interest savings account, your emergency fund, a mortgage offset account or a low-cost index fund. If the money never lands in your everyday account, it can't leak back out.",
-      "p2_html": "Small amounts become large ones over time. Putting $300 a month into an investment averaging 7% a year could grow to roughly <strong>$52,000 in ten years</strong> and about <strong>$156,000 in twenty</strong>. Returns go up and down and are never guaranteed. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
+      "p2_html": "Small amounts become large ones over time. Putting $300 a month into an investment averaging 7% a year could grow to roughly <strong>$52,000 in ten years</strong> and about <strong>$156,000 in twenty</strong> (compounded monthly, before fees and taxes). Returns go up and down and are never guaranteed. Use the calculator above to try your own numbers, add only the ideas that fit your life, and switch on “Show in today’s money” to allow for rising prices.",
       "p3": "Start with one leak this week. Check your subscriptions tonight, compare your energy plan tomorrow, and plan next week's meals on Sunday. Each fix takes minutes, and the savings repeat every month."
     }
   }

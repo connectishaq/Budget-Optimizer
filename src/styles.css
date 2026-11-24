@@ -126,6 +126,8 @@
   .prose-guide p, .prose-guide li { @apply leading-relaxed text-slate-700 dark:text-slate-300; }
   .prose-guide p { @apply mb-4; }
   .prose-guide strong { @apply font-semibold text-slate-900 dark:text-white; }
+  /* Links inside the article (sources, related guides) look like the site's other text links */
+  .prose-guide a { @apply font-medium text-emerald-800 underline decoration-emerald-800/30 underline-offset-2 hover:decoration-emerald-800 dark:text-emerald-300 dark:decoration-emerald-300/40; }
   .prose-guide h3 { @apply mt-12 mb-3 text-xl font-semibold tracking-tight text-slate-900 dark:text-white; }
   .prose-guide h4 { @apply mb-2 text-sm font-semibold text-slate-900 dark:text-white; }
   .prose-guide .fix { @apply mt-4 border-s-2 border-emerald-700 ps-4 dark:border-emerald-500; }

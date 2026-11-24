@@ -23,3 +23,5 @@
 - "200 € al mes al 7% → unos 34.000 € en diez años y más de 100.000 € en veinte": monthly compounding gives 34,617 and 104,185. 7% chosen just below ES.json longTerm 7.9.
 - Number format follows the brief ("2.400 €", "34.000 €"); RAE prefers no separator in 4-digit numbers ("2400 €"), reviewer may change.
 - SEO title is exactly 70 characters.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

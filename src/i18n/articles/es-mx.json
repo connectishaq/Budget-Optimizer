@@ -1,7 +1,7 @@
 {
   "locale": "es-mx",
   "datePublished": "2026-10-20",
-  "dateModified": "2026-10-20",
+  "dateModified": "2026-11-24",
   "h1_html": "Calculadora de presupuesto familiar <span class=\"text-emerald-700 dark:text-emerald-400\">para México</span>",
   "seo": {
     "title": "Calculadora de presupuesto familiar gratis en pesos (México)",
@@ -26,15 +26,15 @@
     "howToPlug": "Cómo taparla",
     "leak1": {
       "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma, recibo de la CFE y gas LP",
-      "body_html": "La tele, el módem, el microondas y los cargadores del celular siguen gastando luz aunque no los uses: puede ser <strong>alrededor de un 5–10% del recibo</strong>. Pero la fuga más cara suele ser otra. La CFE cobra más caro cada bloque de kWh arriba del consumo básico, y si tu promedio de 12 meses es muy alto te pasa a la <strong>tarifa DAC</strong>, sin subsidio; salir de ella puede tardar un año. Además, una familia puede gastar uno o dos cilindros de gas LP al mes.",
+      "body_html": "La tele, el módem, el microondas y los cargadores del celular siguen gastando luz aunque no los uses: puede ser <strong>alrededor de un 5–10% del consumo eléctrico de una casa</strong> (según el <a href=\"https://standby.lbl.gov/\">Lawrence Berkeley National Laboratory</a>). Pero la fuga más cara suele ser otra. La CFE cobra más caro cada bloque de kWh arriba del consumo básico, y si tu promedio de 12 meses es muy alto te pasa a la <strong>tarifa DAC</strong>, sin subsidio; salir de ella puede tardar un año. Además, una familia puede gastar uno o dos cilindros de gas LP al mes.",
       "fix1_html": "<strong>Revisa tu recibo bimestral de la CFE</strong>: la línea «Tarifa» y cuántos kWh caen en cada bloque. Si te acercas al límite, recorta antes de que te cambien a DAC.",
       "fix2_html": "<strong>Pon el aire acondicionado en 25–26 °C</strong> y, cuando puedas, cambia el refri o el minisplit de más de 10 años por uno eficiente.",
       "fix3_html": "<strong>Usa multicontactos con apagador</strong> en la zona de la tele y la computadora, y cambia los focos que te queden por LED.",
-      "fix4": "Antes de pagar el gas, revisa el precio máximo por kilo de la semana en tu zona, y busca fugas con agua y jabón en la manguera y el regulador."
+      "fix4_html": "Antes de pagar el gas, revisa el precio máximo por kilo de la semana en tu zona, y busca fugas con agua y jabón en la manguera y el regulador."
     },
     "leak2": {
       "title_html": "<span class=\"num-badge\">2</span>Suscripciones que se acumulan sin que te des cuenta",
-      "body_html": "Netflix, Disney+, Max, ViX, Spotify, Amazon Prime, la nube, el gym al que ya no vas y esa «prueba gratis» que se volvió cobro mensual. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente $600 a $1,500 al mes</strong>. Con el internet y el plan del celular pasa algo parecido: al terminar la promoción, la mensualidad sube y casi nadie reclama.",
+      "body_html": "Netflix, Disney+, Max, ViX, Spotify, Amazon Prime, la nube, el gym al que ya no vas y esa «prueba gratis» que se volvió cobro mensual. Por separado parecen baratas, pero juntas pueden sumar <strong>fácilmente $600 a $1,500 al mes</strong> (estimación aproximada). Con el internet y el plan del celular pasa algo parecido: al terminar la promoción, la mensualidad sube y casi nadie reclama.",
       "fix1_html": "Revisa los estados de cuenta de los últimos tres meses y apunta <strong>cada cargo que se repite</strong>. Cancela lo que casi no usas.",
       "fix2_html": "<strong>Rota las plataformas</strong> en vez de tenerlas todas: contrata una, ve lo que te interesa, cancélala y pásate a la siguiente.",
       "fix3": "Llama a tu compañía de internet (Telmex, Totalplay, izzi u otra) o de celular (Telcel, AT&T u otra) y pide mejor precio o un plan más chico.",
@@ -67,7 +67,7 @@
     "wealth": {
       "title": "Convierte las fugas tapadas en ahorro de verdad",
       "p1_html": "Tapar fugas solo sirve si ese dinero va a algún lado útil. Lo más eficaz es <strong>automatizar el ahorro de inmediato</strong>: la misma semana en que bajes un gasto, programa un traspaso por esa cantidad el día de quincena, a una cuenta con rendimiento, a Cetes con cetesdirecto, a tu fondo de emergencia o al ahorro voluntario de tu Afore. Y cuando lleguen el aguinaldo o las utilidades, aparta una parte antes de gastarla.",
-      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes $2,000 al mes y obtienes en promedio un 8% al año, tendrías unos <strong>$365,000 en diez años</strong> y más de <strong>$1,170,000 en veinte</strong>. No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tomar en cuenta la inflación.",
+      "p2_html": "Las cantidades pequeñas crecen con el tiempo. Si inviertes $2,000 al mes y obtienes en promedio un 8% al año, tendrías unos <strong>$365,000 en diez años</strong> y más de <strong>$1,170,000 en veinte</strong> (con capitalización mensual, antes de comisiones e impuestos). No es una promesa: las inversiones suben y bajan. Prueba tus números en la calculadora de arriba y activa «Mostrar en dinero de hoy» para tomar en cuenta la inflación.",
       "p3": "Empieza con una fuga esta semana: hoy en la noche revisa tus suscripciones, mañana checa tu recibo de la CFE y el domingo planea las comidas. Cada cambio toma minutos, y el ahorro se repite cada quincena."
     }
   }

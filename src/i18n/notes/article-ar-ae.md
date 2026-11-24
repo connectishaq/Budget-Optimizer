@@ -16,3 +16,5 @@
 - Wealth example: AED 1,000 a month at 7% (AE.json returns.longTerm, judgement) → ~AED 173,000 in 10 years, >AED 520,000 in 20 (monthly compounding).
 - "Fixed deposit" (وديعة لأجل) suggested; AE.json savings rate 3.4% not quoted.
 - Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

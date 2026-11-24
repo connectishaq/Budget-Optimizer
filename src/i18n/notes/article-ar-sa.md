@@ -12,3 +12,5 @@
 - «معدل النسبة السنوي» used for APR (SAMA disclosure term): verify.
 - Wealth example: SAR 1,000 a month at 8% (SA.json returns.longTerm, TASI-based judgement) → ~SAR 183,000 in 10 years, >SAR 589,000 in 20 (monthly compounding).
 - Phrase «اعرض بقيمة المال اليوم» must match the calculator toggle label in ar.json.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.

@@ -1441,16 +1441,16 @@
       },
       "eyebrow": "Dicas de dinheiro · leitura de 5 minutos",
       "title": "5 vazamentos escondidos no orçamento da casa (e como fechá-los hoje)",
-      "intro1_html": "A maioria das famílias não tem tanto um problema de gastos, mas sim um <strong>problema de vazamentos</strong>. Os gastos grandes e visíveis, como aluguel, financiamento ou parcela do carro, são vigiados o tempo todo. Enquanto isso, dezenas de pequenas cobranças recorrentes drenam centenas por mês sem que ninguém perceba. Como esses vazamentos são automáticos, espalhados e pequenos um a um, eles escapam até de quem controla bem o orçamento.",
+      "intro1_html": "A maioria das famílias não tem tanto um problema de gastos, mas sim um <strong>problema de vazamentos</strong>. Os gastos grandes e visíveis, como aluguel, financiamento ou parcela do carro, são vigiados o tempo todo. Enquanto isso, dezenas de pequenas cobranças recorrentes vão se somando todo mês sem que ninguém perceba. Como esses vazamentos são automáticos, espalhados e pequenos um a um, eles escapam até de quem controla bem o orçamento.",
       "intro2": "A boa notícia? Vazamentos costumam ser o dinheiro mais fácil de recuperar. Diferente de cortar coisas de que você gosta, fechar um vazamento geralmente significa pagar menos pelo mesmo estilo de vida. Aqui estão os cinco vazamentos escondidos mais comuns no orçamento da casa e os passos práticos que você pode dar hoje para acabar com cada um.",
       "howToPlug": "Como fechar",
       "leak1": {
         "title_html": "<span class=\"num-badge\">1</span>Consumo fantasma e contas da casa ineficientes",
-        "body_html": "Toda TV, videogame, cafeteira e carregador de celular que fica na tomada consome um pouquinho de energia o dia todo. Esse \"consumo fantasma\", também chamado de consumo em stand-by, pode representar <strong>5–10% da conta de luz de uma casa típica</strong>. Some a isso um termostato que aquece ou resfria a casa vazia e lâmpadas incandescentes ainda escondidas nos abajures, e sua conta carrega muito peso morto.",
+        "body_html": "Toda TV, videogame, cafeteira e carregador de celular que fica na tomada consome um pouquinho de energia o dia todo. Esse \"consumo fantasma\", também chamado de consumo em stand-by, pode representar <strong>cerca de 5–10% do consumo de energia de uma casa</strong>, segundo o <a href=\"https://standby.lbl.gov/\">Lawrence Berkeley National Laboratory</a>. Some a isso aquecedor ou ar-condicionado ligados numa casa vazia e lâmpadas incandescentes ainda escondidas nos abajures, e sua conta carrega muito peso morto.",
         "fix1_html": "<strong>Use filtros de linha inteligentes</strong> na TV e no escritório de casa, para que os aparelhos parados desliguem por completo.",
-        "fix2_html": "<strong>Ajuste o termostato 7–10°F (4–6°C)</strong> durante oito horas por dia enquanto você dorme ou está fora. Um termostato inteligente faz isso sozinho e muitas vezes se paga em até dois anos.",
-        "fix3_html": "<strong>Troque as lâmpadas restantes por LED</strong>, que gastam até 75% menos energia e duram muitas vezes mais.",
-        "fix4": "Lave a roupa em água fria e ajuste o aquecedor de água para 120°F (49°C)."
+        "fix2_html": "<strong>Baixe o aquecimento ou suba a temperatura do ar-condicionado em 4–6 °C (7–10 °F)</strong> por cerca de oito horas por dia, enquanto você dorme ou está fora. O <a href=\"https://web.archive.org/web/20241231175920/https://www.energy.gov/energysaver/programmable-thermostats\">Departamento de Energia dos EUA</a> estima que isso pode economizar até 10% ao ano em aquecimento e refrigeração. Um timer ou termostato inteligente faz isso por você.",
+        "fix3_html": "<strong>Troque as lâmpadas restantes por LED</strong>, que gastam pelo menos 75% menos energia e duram até 25 vezes mais que as incandescentes (<a href=\"https://web.archive.org/web/20250102063149/https://www.energy.gov/energysaver/led-lighting\">Departamento de Energia dos EUA</a>).",
+        "fix4_html": "Lave a roupa em água fria. Antes de baixar o aquecedor de água para cerca de 50 °C (120 °F) para economizar, saiba que órgãos como o <a href=\"https://www.hse.gov.uk/legionnaires/things-to-consider.htm\">Health and Safety Executive</a> britânico recomendam manter a água quente armazenada a 60 °C (140 °F) ou mais para controlar a bactéria legionela."
       },
       "leak2": {
         "title_html": "<span class=\"num-badge\">2</span>Assinaturas que se acumulam",
@@ -1462,7 +1462,7 @@
       },
       "leak3": {
         "title_html": "<span class=\"num-badge\">3</span>Desperdício no mercado e o preço de comer fora",
-        "body_html": "Muitas famílias jogam fora <strong>uma parte surpreendente da comida que compram</strong>. Alimentos já cortados, embalagens individuais e idas ao mercado sem planejamento no meio da semana custam mais pela conveniência. E tem o comer fora: quando uma família gasta mais com restaurantes e delivery do que com mercado, geralmente paga de três a cinco vezes mais por refeição por uma comida que poderia fazer em casa.",
+        "body_html": "Muitas famílias jogam fora <strong>uma parte surpreendente da comida que compram</strong>. Alimentos já cortados, embalagens individuais e idas ao mercado sem planejamento no meio da semana custam mais pela conveniência. E tem o comer fora: quando uma família gasta mais com restaurantes e delivery do que com mercado, muitas vezes paga várias vezes mais por refeição (estimativa aproximada) por uma comida que poderia fazer em casa.",
         "fix1_html": "<strong>Planeje as refeições com o que já está na geladeira</strong> antes de fazer a lista de compras.",
         "fix2": "Escolha marcas próprias para o básico. Muitas vezes são feitas nas mesmas fábricas das marcas conhecidas e custam 20–30% menos.",
         "fix3": "Faça compras uma vez por semana, com lista, e reserve uma \"noite das sobras\" para esvaziar a geladeira.",
@@ -1470,7 +1470,7 @@
       },
       "leak4": {
         "title_html": "<span class=\"num-badge\">4</span>Transporte e seguros no piloto automático",
-        "body_html": "O combustível é um dos gastos que mais variam no orçamento da casa, e os hábitos fazem a diferença. Trajetos curtos e espalhados gastam muito mais combustível por quilômetro, porque o motor frio é menos eficiente. Pneus murchos, ir trabalhar sozinho de carro e pedágios a preço cheio somam. O seguro é o irmão silencioso desse vazamento. O valor costuma subir a cada renovação e as seguradoras raramente premiam a fidelidade, então famílias que nunca pesquisam preços muitas vezes pagam <strong>10–15% a mais</strong> do que um cliente novo pagaria.",
+        "body_html": "O combustível é um dos gastos que mais variam no orçamento da casa, e os hábitos fazem a diferença. Trajetos curtos e espalhados gastam muito mais combustível por quilômetro, porque o motor frio é menos eficiente. Pneus murchos, ir trabalhar sozinho de carro e pedágios a preço cheio somam. O seguro é o irmão silencioso desse vazamento. O valor costuma subir a cada renovação, então famílias que nunca pesquisam preços <strong>podem acabar pagando mais do que um cliente novo</strong>. Alguns países limitam isso: no Reino Unido, desde janeiro de 2022, seguradoras de casa e de carro precisam oferecer a quem renova um preço não maior que o de um cliente novo (<a href=\"https://www.fca.org.uk/news/press-releases/fca-confirms-measures-protect-customers-loyalty-penalty-home-motor-insurance-markets\">Financial Conduct Authority</a>).",
         "fix1_html": "<strong>Junte as tarefas</strong> numa só saída uma ou duas vezes por semana, e organize uma <strong>carona</strong> para a escola ou o trabalho.",
         "fix2": "Mantenha os pneus bem calibrados, o que pode melhorar o consumo de combustível em até 3%.",
         "fix3": "Compare passes mensais de transporte e descontos de tag de pedágio com o que você paga por viagem.",
@@ -1479,15 +1479,15 @@
       "leak5": {
         "title_html": "<span class=\"num-badge\">5</span>Compras por impulso e dívidas com juros altos",
         "body_html": "O cafezinho de todo dia, o pedido online de madrugada, a compra \"porque estava em promoção\": as compras por impulso são o vazamento mais difícil de ver, porque nunca chegam como uma conta só. A compra com um clique e os cartões salvos tiram aquela pausa rápida que normalmente evitaria uma compra não planejada. Quando essas compras ficam num cartão de crédito que cobra 20–30% de juros ao ano, o vazamento cresce: um saldo de $3,000 a 24% custa cerca de <strong>$60 por mês só de juros</strong>.",
-        "fix1_html": "<strong>Adote a regra das 24 horas:</strong> espere um dia inteiro antes de qualquer compra que não seja essencial. A maior parte das vontades passa.",
+        "fix1_html": "<strong>Adote a regra das 24 horas:</strong> espere um dia inteiro antes de qualquer compra que não seja essencial. Muitas vontades já terão passado.",
         "fix2": "Remova os cartões salvos dos sites de compras e desative as notificações das lojas.",
         "fix3_html": "<strong>Pague primeiro a dívida com os juros mais altos</strong>: pague o mínimo de todas e coloque todo valor extra na dívida com a maior taxa de juros.",
-        "fix4": "Considere um cartão com transferência de saldo a 0%. Uma taxa típica de 3% costuma ser recuperada em poucos meses de juros evitados."
+        "fix4": "Considere um cartão com transferência de saldo a 0%. A taxa única (um percentual do saldo; confira antes de pedir) costuma ser recuperada em poucos meses de juros evitados."
       },
       "wealth": {
         "title": "Transforme vazamentos fechados em patrimônio de verdade",
         "p1_html": "Fechar vazamentos só faz diferença se o dinheiro for para um lugar útil. O passo mais poderoso é <strong>automatizar a economia na hora</strong>. Na mesma semana em que você cortar uma conta, programe uma transferência automática desse valor exato para uma aplicação que renda bem, sua reserva de emergência ou um fundo de índice de baixo custo. Se o dinheiro nunca cair na sua conta-corrente, ele não tem como vazar de volta.",
-        "p2_html": "Números pequenos viram números grandes com o tempo. Direcionar $250 por mês para um investimento que renda em média 8% ao ano chega a cerca de <strong>$46,000 em dez anos</strong> e mais de <strong>$147,000 em vinte</strong>. Use a calculadora acima para testar seus próprios números, adicione só as ideias que combinam com a sua vida e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
+        "p2_html": "Números pequenos viram números grandes com o tempo. Direcionar 250 por mês (em qualquer moeda) para um investimento que renda em média 8% ao ano chega a cerca de <strong>46.000 em dez anos</strong> e mais de <strong>147.000 em vinte</strong> (com capitalização mensal, antes de taxas e impostos). O crescimento nunca é garantido. Use a calculadora acima para testar seus próprios números, adicione só as ideias que combinam com a sua vida e ative “Mostrar em dinheiro de hoje” para considerar a alta dos preços.",
         "p3": "Comece com um vazamento esta semana. Confira suas assinaturas hoje à noite, ajuste a programação do termostato amanhã e planeje as refeições da próxima semana no domingo. Cada ajuste leva minutos, e a economia se repete todo mês."
       }
     },

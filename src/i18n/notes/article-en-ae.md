@@ -16,3 +16,5 @@
 - Balance transfer / instalment plans: offered by many UAE banks; advice hedged to check fees.
 - Wealth example: AED 1,000 a month at 7% a year (AE.json longTerm), monthly compounding ≈ AED 173,000 in 10 years and ≈ AED 521,000 in 20.
 - Weekend: "plan next week's meals at the weekend" kept neutral since the UAE weekend is Saturday–Sunday since 2022.
+
+- (2026-11-24) Fact-check pass: source links (LBNL standby power where the 5–10% figure appears; others as relevant), estimate labels on unsourced subscription and per-meal figures, "most urges" softened, `wealth.p2_html` now says compounded monthly, and `leak1.fix4` is now `leak1.fix4_html`. Non-English wording needs a native read.
