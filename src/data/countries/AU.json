@@ -7,13 +7,13 @@
   "inflation": {
     "value": 3.5,
     "verify": true,
-    "note": "Monthly CPI 4.0% and trimmed mean 3.6% (Aug 2026) versus the RBA 2–3% target band; 3.5% is a middle figure."
+    "note": "ABS: CPI rose 4.3% and trimmed mean 3.6% in the 12 months to Sept 2026 (released 28 Oct 2026); the RBA target is 2–3%. 3.5% is a middle figure. The October CPI is due 25 Nov 2026: re-check then."
   },
   "returns": {
     "savings": {
       "value": 4.75,
       "verify": true,
-      "note": "RBA cash rate reported at 4.35–4.60% (2026, unconfirmed); best ongoing no-conditions savings ~5%, bonus/intro rates higher. Estimate."
+      "note": "RBA cash rate target 4.85% from 4 Nov 2026 (RBA media release 2026-30). 4.75% assumes a good ongoing savings account; current savings-account rates were not re-checked (comparison sites block automated access). Estimate."
     },
     "balanced": {
       "value": 6,
@@ -77,7 +77,7 @@
             2900
           ],
           "verify": true,
-          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); one-bedroom unit. Weekly rent × 52 ÷ 12."
+          "note": "Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); one-bedroom unit. Weekly rent × 52 ÷ 12."
         },
         "homeIns": {
           "value": [
@@ -93,7 +93,7 @@
             140
           ],
           "verify": true,
-          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate."
         },
         "waterGas": {
           "value": [
@@ -113,11 +113,11 @@
         },
         "fuel": {
           "value": [
-            150,
-            250
+            160,
+            270
           ],
           "verify": true,
-          "note": "Petrol around $1.90–2.10 a litre; estimate."
+          "note": "Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 150-250). Litres per month are an estimate."
         },
         "transit": {
           "value": [
@@ -223,9 +223,9 @@
           "note": "Set near the top of the estimated typical range; estimate."
         },
         "fuel": {
-          "value": 250,
+          "value": 270,
           "verify": true,
-          "note": "Set near the top of the estimated typical range; estimate."
+          "note": "Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026)."
         },
         "transit": {
           "value": 220,
@@ -322,7 +322,7 @@
             3600
           ],
           "verify": true,
-          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); 3–4 bedroom house in a suburb. Weekly rent × 52 ÷ 12."
+          "note": "Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); 3–4 bedroom house in a suburb. Weekly rent × 52 ÷ 12."
         },
         "homeIns": {
           "value": [
@@ -338,7 +338,7 @@
             300
           ],
           "verify": true,
-          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate."
         },
         "waterGas": {
           "value": [
@@ -358,11 +358,11 @@
         },
         "fuel": {
           "value": [
-            350,
-            550
+            370,
+            580
           ],
           "verify": true,
-          "note": "Petrol around $1.90–2.10 a litre; estimate."
+          "note": "Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 350-550). Litres per month are an estimate."
         },
         "transit": {
           "value": [
@@ -468,9 +468,9 @@
           "note": "Set near the top of the estimated typical range; estimate."
         },
         "fuel": {
-          "value": 550,
+          "value": 580,
           "verify": true,
-          "note": "Set near the top of the estimated typical range; estimate."
+          "note": "Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026)."
         },
         "transit": {
           "value": 150,
@@ -567,7 +567,7 @@
             3500
           ],
           "verify": true,
-          "note": "Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); unit in Sydney/Melbourne-type city. Weekly rent × 52 ÷ 12."
+          "note": "Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); unit in Sydney/Melbourne-type city. Weekly rent × 52 ÷ 12."
         },
         "homeIns": {
           "value": [
@@ -583,7 +583,7 @@
             170
           ],
           "verify": true,
-          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate."
+          "note": "Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate."
         },
         "waterGas": {
           "value": [
@@ -603,11 +603,11 @@
         },
         "fuel": {
           "value": [
-            200,
-            320
+            210,
+            340
           ],
           "verify": true,
-          "note": "Petrol around $1.90–2.10 a litre; estimate."
+          "note": "Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 200-320). Litres per month are an estimate."
         },
         "transit": {
           "value": [
@@ -713,9 +713,9 @@
           "note": "Set near the top of the estimated typical range; estimate."
         },
         "fuel": {
-          "value": 320,
+          "value": 340,
           "verify": true,
-          "note": "Set near the top of the estimated typical range; estimate."
+          "note": "Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026)."
         },
         "transit": {
           "value": 240,
@@ -1134,7 +1134,7 @@
             260
           ],
           "verify": true,
-          "note": "Average hospital + extras policy about $3,560 a year (~$300 a month) per Compare the Market 2025 data; singles often pay less on basic/bronze cover. Estimate."
+          "note": "Average hospital + extras policy about $3,560 a year (~$300 a month) per Compare the Market 2025 data, a single broker's customer sample (not an official average); singles often pay less on basic/bronze cover. Estimate."
         },
         "suburban": {
           "value": [
@@ -1197,7 +1197,7 @@
   ],
   "sources": [
     {
-      "title": "Cotality Quarterly Rental Review, September 2026 (via savings.com.au)",
+      "title": "Cotality Quarterly Rental Review, September 2026 (private data, via savings.com.au)",
       "url": "https://www.savings.com.au/news/rental-growth-slows-as-affordability-pressures-bite",
       "usedFor": "rent (national median $713 a week)"
     },
@@ -1207,17 +1207,17 @@
       "usedFor": "electricity (Ausgrid $1,899 a year at 3,900 kWh)"
     },
     {
-      "title": "Australian CPI August 2026 (QNA / ABS release)",
-      "url": "https://qna.org.qa/en/News-Area/News/2026-9/30/australia-cpi-inflation-rises-to-4-in-august",
-      "usedFor": "inflation (4.0% headline, trimmed mean 3.6%)"
+      "title": "Australian Bureau of Statistics — Consumer Price Index, Australia, September 2026 (released 28 Oct 2026)",
+      "url": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/sep-2026",
+      "usedFor": "inflation (CPI 4.3%, trimmed mean 3.6%, 12 months to Sept 2026)"
     },
     {
-      "title": "Compare the Market: about health insurance premiums",
+      "title": "Compare the Market: about health insurance premiums (broker's own customer data)",
       "url": "https://www.comparethemarket.com.au/health-insurance/about",
       "usedFor": "private health insurance (average $3,560 a year hospital + extras)"
     },
     {
-      "title": "Canstar best savings account interest rates",
+      "title": "Canstar best savings account interest rates (comparison site)",
       "url": "https://www.canstar.com.au/savings-accounts/compare/best-savings-account-interest-rates/",
       "usedFor": "savings return"
     },
@@ -1230,7 +1230,17 @@
       "title": "privatehealth.gov.au",
       "url": "https://www.privatehealth.gov.au/",
       "usedFor": "local tip"
+    },
+    {
+      "title": "Reserve Bank of Australia — media release 2026-30: cash rate target raised to 4.85% (3 Nov 2026)",
+      "url": "https://www.rba.gov.au/media-releases/2026/mr-26-30.html",
+      "usedFor": "savings return (context)"
+    },
+    {
+      "title": "Australian Institute of Petroleum — Weekly Petrol Prices Report, week ending 22 Nov 2026 (national average ULP 212.5 c/L)",
+      "url": "https://aip.com.au/wp-content/uploads/2026/11/Weekly-Petrol-Prices-Report-22-November-2026.pdf",
+      "usedFor": "fuel (all profiles)"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-11-24"
 }

@@ -7,13 +7,13 @@
   "inflation": {
     "value": 2.5,
     "verify": true,
-    "note": "Headline CPI 3.0% (Aug 2026, gasoline-driven) but core measures ~2% and the Bank of Canada target is 2%; 2.5% is a middle figure."
+    "note": "Bank of Canada CPI page: total CPI 3.1% year over year in Oct 2026, CPI-trim 1.8%, CPI-median 2.0%; the target is 2%. 2.5% is a middle figure."
   },
   "returns": {
     "savings": {
       "value": 2.5,
       "verify": true,
-      "note": "Policy rate 2.25%; ongoing HISA rates ~1–3%, promotional rates up to ~4.75%. Estimate."
+      "note": "Bank of Canada policy rate 2.50% (raised 28 Oct 2026; next decision 9 Dec 2026). Ongoing HISA rates ~1–3%, promotional rates higher (Finder; not re-checked). Estimate."
     },
     "balanced": {
       "value": 5,
@@ -77,7 +77,7 @@
             2100
           ],
           "verify": true,
-          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); one-bedroom apartment. Varies hugely by city."
+          "note": "Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); one-bedroom apartment. Varies hugely by city."
         },
         "homeIns": {
           "value": [
@@ -117,7 +117,7 @@
             160
           ],
           "verify": true,
-          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+          "note": "Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate."
         },
         "transit": {
           "value": [
@@ -157,7 +157,7 @@
             450
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "dining": {
           "value": [
@@ -165,7 +165,7 @@
             350
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "misc": {
           "value": [
@@ -322,7 +322,7 @@
             3000
           ],
           "verify": true,
-          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 3-bedroom townhouse or house. Varies hugely by city."
+          "note": "Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); 3-bedroom townhouse or house. Varies hugely by city."
         },
         "homeIns": {
           "value": [
@@ -362,7 +362,7 @@
             400
           ],
           "verify": true,
-          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+          "note": "Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate."
         },
         "transit": {
           "value": [
@@ -402,7 +402,7 @@
             1500
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "dining": {
           "value": [
@@ -410,7 +410,7 @@
             500
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "misc": {
           "value": [
@@ -567,7 +567,7 @@
             2600
           ],
           "verify": true,
-          "note": "Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 1–2 bed in Toronto/Vancouver-type city. Varies hugely by city."
+          "note": "Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); 1–2 bed in Toronto/Vancouver-type city. Varies hugely by city."
         },
         "homeIns": {
           "value": [
@@ -607,7 +607,7 @@
             220
           ],
           "verify": true,
-          "note": "Gasoline around $1.50–1.70 a litre; estimate."
+          "note": "Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate."
         },
         "transit": {
           "value": [
@@ -647,7 +647,7 @@
             650
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate."
+          "note": "StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "dining": {
           "value": [
@@ -655,7 +655,7 @@
             550
           ],
           "verify": true,
-          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate."
+          "note": "StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate."
         },
         "misc": {
           "value": [
@@ -1159,9 +1159,9 @@
   ],
   "sources": [
     {
-      "title": "Rentals.ca / Urbanation National Rent Report, September 2026 (CTV News)",
-      "url": "https://www.ctvnews.ca/business/real-estate/article/average-asking-rents-fall-42-in-september-marking-24-months-of-decreases",
-      "usedFor": "rent (average asking rent $2,034)"
+      "title": "Rentals.ca / Urbanation National Rent Report, Nov 2026 (October data; private listing data)",
+      "url": "https://rentals.ca/national-rent-report",
+      "usedFor": "rent (average asking rent $2,036; 1-bed $1,755; 2-bed $2,138)"
     },
     {
       "title": "Statistics Canada: How Canadian households spent their money in 2023",
@@ -1174,15 +1174,20 @@
       "usedFor": "household spending totals"
     },
     {
-      "title": "Canada CPI August 2026 (Investinglive)",
-      "url": "https://investinglive.com/news/canada-august-cpi-y-y-vs-3-0-expected/",
-      "usedFor": "inflation (3.0% headline, core ~2%)"
+      "title": "Bank of Canada — Consumer price index (Oct 2026: total 3.1%, CPI-trim 1.8%, CPI-median 2.0%)",
+      "url": "https://www.bankofcanada.ca/rates/price-indexes/cpi/",
+      "usedFor": "inflation"
     },
     {
-      "title": "Best high-interest savings accounts in Canada (Finder)",
+      "title": "Best high-interest savings accounts in Canada (Finder; comparison site)",
       "url": "https://www.finder.com/ca/savings-accounts/best-savings-accounts",
       "usedFor": "savings return"
+    },
+    {
+      "title": "Bank of Canada — policy interest rate (2.50% from 28 Oct 2026 announcement)",
+      "url": "https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/",
+      "usedFor": "savings return (context)"
     }
   ],
-  "lastReviewed": "2026-10-19"
+  "lastReviewed": "2026-11-24"
 }

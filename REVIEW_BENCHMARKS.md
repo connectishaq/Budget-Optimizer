@@ -6,7 +6,7 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1803 value(s) across 16 file(s).**
+**1809 value(s) across 16 file(s).**
 
 ## AE · AED · last reviewed 2026-10-20
 
@@ -132,14 +132,14 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [e& UAE — Home Wireless plans (AED 229 / 299 a month + VAT)](https://www.eand.ae/en/c/home/home-wireless.jsp): internet
 - [The National — UAE salary guide 2026 (Michael Page: most roles AED 10,000–40,000 a month)](https://thenational.shorthandstories.com/uae-salary-guide-2026-trends/): income (context)
 
-## AU · AUD · last reviewed 2026-10-19
+## AU · AUD · last reviewed 2026-11-24
 
 138 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 3.5 | Monthly CPI 4.0% and trimmed mean 3.6% (Aug 2026) versus the RBA 2–3% target band; 3.5% is a middle figure. |
-| `returns.savings` | 4.75 | RBA cash rate reported at 4.35–4.60% (2026, unconfirmed); best ongoing no-conditions savings ~5%, bonus/intro rates higher. Estimate. |
+| `inflation` | 3.5 | ABS: CPI rose 4.3% and trimmed mean 3.6% in the 12 months to Sept 2026 (released 28 Oct 2026); the RBA target is 2–3%. 3.5% is a middle figure. The October CPI is due 25 Nov 2026: re-check then. |
+| `returns.savings` | 4.75 | RBA cash rate target 4.85% from 4 Nov 2026 (RBA media release 2026-30). 4.75% assumes a good ongoing savings account; current savings-account rates were not re-checked (comparison sites block automated access). Estimate. |
 | `returns.balanced` | 6 | Estimate between cash and shares. |
 | `returns.longTerm` | 9 | Rough long-run nominal total return (with dividends reinvested) for Australian shares (ASX 200 / All Ords accumulation); check a long-run source. |
 | `returns.shares` | 10 | Estimate for a mostly-equity portfolio; never guaranteed. |
@@ -149,12 +149,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.smartThermostat` | 250 | Smart thermostat or smart AC controller; uncommon in Australian homes; estimate. |
 | `costs.tuneup` | 20 | Door seals and draught stoppers; estimate. |
 | `profiles.single.ranges.income` | 4500 – 6500 | Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate. |
-| `profiles.single.ranges.rent` | 2200 – 2900 | Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); one-bedroom unit. Weekly rent × 52 ÷ 12. |
+| `profiles.single.ranges.rent` | 2200 – 2900 | Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); one-bedroom unit. Weekly rent × 52 ÷ 12. |
 | `profiles.single.ranges.homeIns` | 20 – 45 | Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate. |
-| `profiles.single.ranges.electricity` | 80 – 140 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate. |
+| `profiles.single.ranges.electricity` | 80 – 140 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate. |
 | `profiles.single.ranges.waterGas` | 30 – 80 | Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate. |
 | `profiles.single.ranges.internet` | 100 – 150 | NBN plan plus mobile plan(s); estimate. |
-| `profiles.single.ranges.fuel` | 150 – 250 | Petrol around $1.90–2.10 a litre; estimate. |
+| `profiles.single.ranges.fuel` | 160 – 270 | Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 150-250). Litres per month are an estimate. |
 | `profiles.single.ranges.transit` | 120 – 220 | Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate. |
 | `profiles.single.ranges.carIns` | 100 – 180 | Comprehensive car insurance (CTP is in rego, a yearly cost); estimate. |
 | `profiles.single.ranges.carLoan` | 0 – 600 | Car loan or novated lease payment; estimate. |
@@ -168,7 +168,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.ranges.giving` | 0 – 100 | Charity and gifts; estimate. |
 | `profiles.single.ranges.other` | 0 – 200 | Anything else; estimate. |
 | `profiles.single.thresholds.utilities` | 210 | Set near the top of the estimated typical range; estimate. |
-| `profiles.single.thresholds.fuel` | 250 | Set near the top of the estimated typical range; estimate. |
+| `profiles.single.thresholds.fuel` | 270 | Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026). |
 | `profiles.single.thresholds.transit` | 220 | Set near the top of the estimated typical range; estimate. |
 | `profiles.single.thresholds.internet` | 140 | Set near the top of the estimated typical range; estimate. |
 | `profiles.single.thresholds.insurance` | 210 | Set near the top of the estimated typical range; estimate. |
@@ -185,12 +185,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.care` | 0.06 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.single.categoryShare.yearly` | 0.04 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.ranges.income` | 9000 – 13000 | Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate. |
-| `profiles.suburban.ranges.rent` | 2800 – 3600 | Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); 3–4 bedroom house in a suburb. Weekly rent × 52 ÷ 12. |
+| `profiles.suburban.ranges.rent` | 2800 – 3600 | Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); 3–4 bedroom house in a suburb. Weekly rent × 52 ÷ 12. |
 | `profiles.suburban.ranges.homeIns` | 150 – 280 | Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate. |
-| `profiles.suburban.ranges.electricity` | 180 – 300 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate. |
+| `profiles.suburban.ranges.electricity` | 180 – 300 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate. |
 | `profiles.suburban.ranges.waterGas` | 120 – 220 | Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate. |
 | `profiles.suburban.ranges.internet` | 160 – 260 | NBN plan plus mobile plan(s); estimate. |
-| `profiles.suburban.ranges.fuel` | 350 – 550 | Petrol around $1.90–2.10 a litre; estimate. |
+| `profiles.suburban.ranges.fuel` | 370 – 580 | Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 350-550). Litres per month are an estimate. |
 | `profiles.suburban.ranges.transit` | 30 – 150 | Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate. |
 | `profiles.suburban.ranges.carIns` | 200 – 320 | Comprehensive car insurance (CTP is in rego, a yearly cost); estimate. |
 | `profiles.suburban.ranges.carLoan` | 600 – 1100 | Car loan or novated lease payment; estimate. |
@@ -204,7 +204,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.ranges.giving` | 0 – 250 | Charity and gifts; estimate. |
 | `profiles.suburban.ranges.other` | 0 – 300 | Anything else; estimate. |
 | `profiles.suburban.thresholds.utilities` | 480 | Set near the top of the estimated typical range; estimate. |
-| `profiles.suburban.thresholds.fuel` | 550 | Set near the top of the estimated typical range; estimate. |
+| `profiles.suburban.thresholds.fuel` | 580 | Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026). |
 | `profiles.suburban.thresholds.transit` | 150 | Set near the top of the estimated typical range; estimate. |
 | `profiles.suburban.thresholds.internet` | 240 | Set near the top of the estimated typical range; estimate. |
 | `profiles.suburban.thresholds.insurance` | 550 | Set near the top of the estimated typical range; estimate. |
@@ -221,12 +221,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.care` | 0.08 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.youngpro.ranges.income` | 7000 – 10500 | Monthly take-home pay estimated from ABS average weekly earnings after income tax and Medicare levy (super is on top); estimate. |
-| `profiles.youngpro.ranges.rent` | 2700 – 3500 | Built around Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month); unit in Sydney/Melbourne-type city. Weekly rent × 52 ÷ 12. |
+| `profiles.youngpro.ranges.rent` | 2700 – 3500 | Built around the Cotality national median dwelling rent ($713 a week, Sept 2026, about $3,090 a month; private data reported by savings.com.au, not re-checked because the Cotality site has moved); unit in Sydney/Melbourne-type city. Weekly rent × 52 ÷ 12. |
 | `profiles.youngpro.ranges.homeIns` | 25 – 50 | Contents insurance for renters, home and contents for families (premiums high in flood/storm areas); estimate. |
-| `profiles.youngpro.ranges.electricity` | 100 – 170 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh); usage by household type is an estimate. |
+| `profiles.youngpro.ranges.electricity` | 100 – 170 | Guided by the AER Default Market Offer 2026-27 (e.g. Ausgrid $1,899 a year for 3,900 kWh; the AER PDF could not be re-opened on 24 Nov 2026); usage by household type is an estimate. |
 | `profiles.youngpro.ranges.waterGas` | 40 – 100 | Gas (where connected) plus water usage charges; renters usually pay water usage only; estimate. |
 | `profiles.youngpro.ranges.internet` | 130 – 200 | NBN plan plus mobile plan(s); estimate. |
-| `profiles.youngpro.ranges.fuel` | 200 – 320 | Petrol around $1.90–2.10 a litre; estimate. |
+| `profiles.youngpro.ranges.fuel` | 210 – 340 | Updated 24 Nov 2026: regular unleaded averaged 212.5 c/L nationally in the week ended 22 Nov 2026 (AIP weekly report; ACCC: 207.8 c/L across the 5 largest cities on 18 Nov). The earlier range assumed about $2.00/L, so it was scaled up about 6% for the same driving (was 200-320). Litres per month are an estimate. |
 | `profiles.youngpro.ranges.transit` | 120 – 240 | Public transport plus tolls (Sydney/Melbourne/Brisbane); estimate. |
 | `profiles.youngpro.ranges.carIns` | 120 – 200 | Comprehensive car insurance (CTP is in rego, a yearly cost); estimate. |
 | `profiles.youngpro.ranges.carLoan` | 400 – 800 | Car loan or novated lease payment; estimate. |
@@ -240,7 +240,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.youngpro.ranges.giving` | 0 – 150 | Charity and gifts; estimate. |
 | `profiles.youngpro.ranges.other` | 0 – 250 | Anything else; estimate. |
 | `profiles.youngpro.thresholds.utilities` | 260 | Set near the top of the estimated typical range; estimate. |
-| `profiles.youngpro.thresholds.fuel` | 320 | Set near the top of the estimated typical range; estimate. |
+| `profiles.youngpro.thresholds.fuel` | 340 | Equals the top of the fuel range (AIP national average ULP 212.5 c/L, week ended 22 Nov 2026). |
 | `profiles.youngpro.thresholds.transit` | 240 | Set near the top of the estimated typical range; estimate. |
 | `profiles.youngpro.thresholds.internet` | 190 | Set near the top of the estimated typical range; estimate. |
 | `profiles.youngpro.thresholds.insurance` | 240 | Set near the top of the estimated typical range; estimate. |
@@ -271,7 +271,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `samples.youngpro.subscriptions[2].cost` | 4.49 | Australian list price as remembered for late 2025/2026; prices change often. |
 | `samples.youngpro.subscriptions[3].cost` | 14.99 | Australian list price as remembered for late 2025/2026; prices change often. |
 | `samples.youngpro.subscriptions[4].cost` | 19.99 | Australian list price as remembered for late 2025/2026; prices change often. |
-| `extraFields[0].ranges.single` | 120 – 260 | Average hospital + extras policy about $3,560 a year (~$300 a month) per Compare the Market 2025 data; singles often pay less on basic/bronze cover. Estimate. |
+| `extraFields[0].ranges.single` | 120 – 260 | Average hospital + extras policy about $3,560 a year (~$300 a month) per Compare the Market 2025 data, a single broker's customer sample (not an official average); singles often pay less on basic/bronze cover. Estimate. |
 | `extraFields[0].ranges.suburban` | 350 – 650 | Family hospital + extras cover; no direct family average found. Estimate. |
 | `extraFields[0].ranges.youngpro` | 200 – 500 | Couple or single hospital + extras cover; estimate. |
 | `localTips[0].pct` | 0.1 | Assumed saving from switching to a market offer; estimate. |
@@ -279,13 +279,15 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 **Sources**
 
-- [Cotality Quarterly Rental Review, September 2026 (via savings.com.au)](https://www.savings.com.au/news/rental-growth-slows-as-affordability-pressures-bite): rent (national median $713 a week)
+- [Cotality Quarterly Rental Review, September 2026 (private data, via savings.com.au)](https://www.savings.com.au/news/rental-growth-slows-as-affordability-pressures-bite): rent (national median $713 a week)
 - [AER Default Market Offer 2026-27 information kit](https://www.aer.gov.au/system/files/2026-05/Information%20Kit%20-%20Default%20Market%20Offer%20-%202026-27_0.pdf): electricity (Ausgrid $1,899 a year at 3,900 kWh)
-- [Australian CPI August 2026 (QNA / ABS release)](https://qna.org.qa/en/News-Area/News/2026-9/30/australia-cpi-inflation-rises-to-4-in-august): inflation (4.0% headline, trimmed mean 3.6%)
-- [Compare the Market: about health insurance premiums](https://www.comparethemarket.com.au/health-insurance/about): private health insurance (average $3,560 a year hospital + extras)
-- [Canstar best savings account interest rates](https://www.canstar.com.au/savings-accounts/compare/best-savings-account-interest-rates/): savings return
+- [Australian Bureau of Statistics — Consumer Price Index, Australia, September 2026 (released 28 Oct 2026)](https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/sep-2026): inflation (CPI 4.3%, trimmed mean 3.6%, 12 months to Sept 2026)
+- [Compare the Market: about health insurance premiums (broker's own customer data)](https://www.comparethemarket.com.au/health-insurance/about): private health insurance (average $3,560 a year hospital + extras)
+- [Canstar best savings account interest rates (comparison site)](https://www.canstar.com.au/savings-accounts/compare/best-savings-account-interest-rates/): savings return
 - [Energy Made Easy (Australian Government)](https://www.energymadeeasy.gov.au/): local tip
 - [privatehealth.gov.au](https://www.privatehealth.gov.au/): local tip
+- [Reserve Bank of Australia — media release 2026-30: cash rate target raised to 4.85% (3 Nov 2026)](https://www.rba.gov.au/media-releases/2026/mr-26-30.html): savings return (context)
+- [Australian Institute of Petroleum — Weekly Petrol Prices Report, week ending 22 Nov 2026 (national average ULP 212.5 c/L)](https://aip.com.au/wp-content/uploads/2026/11/Weekly-Petrol-Prices-Report-22-November-2026.pdf): fuel (all profiles)
 
 ## BR · BRL · last reviewed 2026-10-19
 
@@ -433,14 +435,14 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Suno: quanto rende investir no Ibovespa](https://www.suno.com.br/noticias/ibovespa-quanto-rende-investir-go/amp/): returns.longTerm
 - [Clube dos Poupadores: tabela de investimentos 2000–2024](https://clubedospoupadores.com/carteira-investimentos/tabela.html): returns.longTerm (caveat)
 
-## CA · CAD · last reviewed 2026-10-19
+## CA · CAD · last reviewed 2026-11-24
 
 135 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 2.5 | Headline CPI 3.0% (Aug 2026, gasoline-driven) but core measures ~2% and the Bank of Canada target is 2%; 2.5% is a middle figure. |
-| `returns.savings` | 2.5 | Policy rate 2.25%; ongoing HISA rates ~1–3%, promotional rates up to ~4.75%. Estimate. |
+| `inflation` | 2.5 | Bank of Canada CPI page: total CPI 3.1% year over year in Oct 2026, CPI-trim 1.8%, CPI-median 2.0%; the target is 2%. 2.5% is a middle figure. |
+| `returns.savings` | 2.5 | Bank of Canada policy rate 2.50% (raised 28 Oct 2026; next decision 9 Dec 2026). Ongoing HISA rates ~1–3%, promotional rates higher (Finder; not re-checked). Estimate. |
 | `returns.balanced` | 5 | Estimate between cash and shares. |
 | `returns.longTerm` | 8 | Rough long-run nominal total return for the S&P/TSX Composite; check a long-run source. |
 | `returns.shares` | 9.5 | Estimate for a mostly-equity portfolio; never guaranteed. |
@@ -450,18 +452,18 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `costs.smartThermostat` | 180 | ecobee/Nest street price; utility rebates often available; estimate. |
 | `costs.tuneup` | 20 | Weatherstripping and draught kit; estimate. |
 | `profiles.single.ranges.income` | 3600 – 5200 | Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate. |
-| `profiles.single.ranges.rent` | 1500 – 2100 | Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); one-bedroom apartment. Varies hugely by city. |
+| `profiles.single.ranges.rent` | 1500 – 2100 | Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); one-bedroom apartment. Varies hugely by city. |
 | `profiles.single.ranges.homeIns` | 20 – 40 | Tenant insurance for renters, home insurance for families; estimate. |
 | `profiles.single.ranges.electricity` | 50 – 90 | Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate. |
 | `profiles.single.ranges.waterGas` | 30 – 70 | Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate. |
 | `profiles.single.ranges.internet` | 90 – 150 | Home internet plus mobile plan(s); Canadian prices are high; estimate. |
-| `profiles.single.ranges.fuel` | 80 – 160 | Gasoline around $1.50–1.70 a litre; estimate. |
+| `profiles.single.ranges.fuel` | 80 – 160 | Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate. |
 | `profiles.single.ranges.transit` | 100 – 160 | Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate. |
 | `profiles.single.ranges.carIns` | 120 – 220 | Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate. |
 | `profiles.single.ranges.carLoan` | 0 – 550 | Car loan or lease payment; estimate. |
 | `profiles.single.ranges.school` | 0 – 0 | Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate. |
-| `profiles.single.ranges.groceries` | 300 – 450 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate. |
-| `profiles.single.ranges.dining` | 150 – 350 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate. |
+| `profiles.single.ranges.groceries` | 300 – 450 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
+| `profiles.single.ranges.dining` | 150 – 350 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
 | `profiles.single.ranges.misc` | 80 – 150 | Clothes, household items and personal spending; estimate. |
 | `profiles.single.ranges.medical` | 30 – 100 | Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate. |
 | `profiles.single.ranges.homeHelp` | 0 – 0 | Cleaner or babysitter; estimate. |
@@ -486,18 +488,18 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.care` | 0.04 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.single.categoryShare.yearly` | 0.04 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.ranges.income` | 7500 – 11000 | Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate. |
-| `profiles.suburban.ranges.rent` | 2200 – 3000 | Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 3-bedroom townhouse or house. Varies hugely by city. |
+| `profiles.suburban.ranges.rent` | 2200 – 3000 | Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); 3-bedroom townhouse or house. Varies hugely by city. |
 | `profiles.suburban.ranges.homeIns` | 100 – 180 | Tenant insurance for renters, home insurance for families; estimate. |
 | `profiles.suburban.ranges.electricity` | 110 – 200 | Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate. |
 | `profiles.suburban.ranges.waterGas` | 120 – 220 | Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate. |
 | `profiles.suburban.ranges.internet` | 150 – 250 | Home internet plus mobile plan(s); Canadian prices are high; estimate. |
-| `profiles.suburban.ranges.fuel` | 250 – 400 | Gasoline around $1.50–1.70 a litre; estimate. |
+| `profiles.suburban.ranges.fuel` | 250 – 400 | Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate. |
 | `profiles.suburban.ranges.transit` | 0 – 100 | Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate. |
 | `profiles.suburban.ranges.carIns` | 220 – 380 | Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate. |
 | `profiles.suburban.ranges.carLoan` | 500 – 900 | Car loan or lease payment; estimate. |
 | `profiles.suburban.ranges.school` | 200 – 800 | Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate. |
-| `profiles.suburban.ranges.groceries` | 1100 – 1500 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate. |
-| `profiles.suburban.ranges.dining` | 250 – 500 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate. |
+| `profiles.suburban.ranges.groceries` | 1100 – 1500 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
+| `profiles.suburban.ranges.dining` | 250 – 500 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
 | `profiles.suburban.ranges.misc` | 150 – 250 | Clothes, household items and personal spending; estimate. |
 | `profiles.suburban.ranges.medical` | 100 – 300 | Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate. |
 | `profiles.suburban.ranges.homeHelp` | 0 – 400 | Cleaner or babysitter; estimate. |
@@ -522,18 +524,18 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.care` | 0.05 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.suburban.categoryShare.yearly` | 0.05 | Estimated typical share of take-home pay; not from a single source. |
 | `profiles.youngpro.ranges.income` | 5500 – 8500 | Monthly take-home pay estimated from median after-tax incomes; varies a lot by province; estimate. |
-| `profiles.youngpro.ranges.rent` | 1900 – 2600 | Built around Rentals.ca/Urbanation national average asking rent ($2,034, Sept 2026); 1–2 bed in Toronto/Vancouver-type city. Varies hugely by city. |
+| `profiles.youngpro.ranges.rent` | 1900 – 2600 | Built around the Rentals.ca/Urbanation national average asking rent ($2,036 in Oct 2026; 1-bed $1,755, 2-bed $2,138; private listing data); 1–2 bed in Toronto/Vancouver-type city. Varies hugely by city. |
 | `profiles.youngpro.ranges.homeIns` | 20 – 45 | Tenant insurance for renters, home insurance for families; estimate. |
 | `profiles.youngpro.ranges.electricity` | 60 – 110 | Varies hugely by province (Quebec/Manitoba cheap, Ontario/Alberta higher); estimate. |
 | `profiles.youngpro.ranges.waterGas` | 40 – 90 | Natural gas heating plus water; winter bills much higher; often partly included in rent for apartments; estimate. |
 | `profiles.youngpro.ranges.internet` | 120 – 200 | Home internet plus mobile plan(s); Canadian prices are high; estimate. |
-| `profiles.youngpro.ranges.fuel` | 120 – 220 | Gasoline around $1.50–1.70 a litre; estimate. |
+| `profiles.youngpro.ranges.fuel` | 120 – 220 | Gasoline around $1.50–1.70 a litre (not re-checked: the Statistics Canada and NRCan price pages block automated access); estimate. |
 | `profiles.youngpro.ranges.transit` | 100 – 200 | Monthly transit pass (e.g. TTC, STM, TransLink) as a guide; estimate. |
 | `profiles.youngpro.ranges.carIns` | 150 – 260 | Auto insurance varies a lot by province (Ontario, BC, Alberta high); estimate. |
 | `profiles.youngpro.ranges.carLoan` | 300 – 650 | Car loan or lease payment; estimate. |
 | `profiles.youngpro.ranges.school` | 0 – 300 | Public school is free; mostly childcare under the $10-a-day program (fees vary by province) and activities; estimate. |
-| `profiles.youngpro.ranges.groceries` | 450 – 650 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; estimate. |
-| `profiles.youngpro.ranges.dining` | 300 – 550 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; estimate. |
+| `profiles.youngpro.ranges.groceries` | 450 – 650 | StatCan SHS 2023 (food from stores $8,659 a year per household) and Canada’s Food Price Report (family of four about $1,400+ a month) as guides; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
+| `profiles.youngpro.ranges.dining` | 300 – 550 | StatCan SHS 2023 (restaurants $3,351 a year per household) as a guide; the StatCan pages could not be re-opened on 24 Nov 2026 (they block automated access); estimate. |
 | `profiles.youngpro.ranges.misc` | 100 – 200 | Clothes, household items and personal spending; estimate. |
 | `profiles.youngpro.ranges.medical` | 50 – 150 | Public health care covers doctors and hospitals; this is dental, prescriptions and glasses not covered by a work plan; estimate. |
 | `profiles.youngpro.ranges.homeHelp` | 0 – 0 | Cleaner or babysitter; estimate. |
@@ -577,11 +579,12 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 **Sources**
 
-- [Rentals.ca / Urbanation National Rent Report, September 2026 (CTV News)](https://www.ctvnews.ca/business/real-estate/article/average-asking-rents-fall-42-in-september-marking-24-months-of-decreases): rent (average asking rent $2,034)
+- [Rentals.ca / Urbanation National Rent Report, Nov 2026 (October data; private listing data)](https://rentals.ca/national-rent-report): rent (average asking rent $2,036; 1-bed $1,755; 2-bed $2,138)
 - [Statistics Canada: How Canadian households spent their money in 2023](https://www150.statcan.gc.ca/n1/pub/11-627-m/11-627-m2025026-eng.htm): groceries, dining, category shares (shelter 32.1%, transportation 15.8%, food 15.7%)
 - [Statistics Canada: Survey of Household Spending, 2023 (The Daily)](https://www150.statcan.gc.ca/n1/daily-quotidien/250521/dq250521a-eng.htm): household spending totals
-- [Canada CPI August 2026 (Investinglive)](https://investinglive.com/news/canada-august-cpi-y-y-vs-3-0-expected/): inflation (3.0% headline, core ~2%)
-- [Best high-interest savings accounts in Canada (Finder)](https://www.finder.com/ca/savings-accounts/best-savings-accounts): savings return
+- [Bank of Canada — Consumer price index (Oct 2026: total 3.1%, CPI-trim 1.8%, CPI-median 2.0%)](https://www.bankofcanada.ca/rates/price-indexes/cpi/): inflation
+- [Best high-interest savings accounts in Canada (Finder; comparison site)](https://www.finder.com/ca/savings-accounts/best-savings-accounts): savings return
+- [Bank of Canada — policy interest rate (2.50% from 28 Oct 2026 announcement)](https://www.bankofcanada.ca/core-functions/monetary-policy/key-interest-rate/): savings return (context)
 
 ## DE · EUR · last reviewed 2026-10-19
 
@@ -1425,18 +1428,21 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Cermati — suku bunga kartu kredit di Indonesia (cap 1.75% a month)](https://www.cermati.com/artikel/suku-bunga-kartu-kredit-di-indonesia): defaults.cardApr
 - [Bisnis.com — Vidio Platinum Rp32,480 incl. 12% VAT (Jan 2025)](https://teknologi.bisnis.com/read/20250102/266/1828401/vidio-terapkan-ppn-12-langganan-streaming-platinium-jadi-segini-harganya): sample subscriptions
 
-## IN · INR · last reviewed 2026-10-20
+## IN · INR · last reviewed 2026-11-24
 
-108 value(s) to verify.
+114 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
+| `inflation` | 5.2 | RBI FY27 CPI projection of 5.2% (Oct 2026 MPC, via smallcase; rbi.org.in blocks automated access). October 2026 CPI was reported at 6.09%, above the RBI's 6% upper limit, but that could not be confirmed on MoSPI (site unreachable). To re-check after 4 Dec 2026: the RBI MPC meets 2–4 Dec. |
+| `returns.savings` | 6.25 | SBI 1-year FD rate of 6.25% (Sept 2026) as reported by Upstox; the linked article does not show it and sbi.co.in could not be reached on 24 Nov 2026, so it needs confirmation on SBI's rate page. Repo rate 5.50% (Oct 2026 MPC). To re-check after 4 Dec 2026: the RBI MPC meets 2–4 Dec. |
 | `returns.balanced` | 8.5 | Blend of ~6.5% fixed deposits and ~11% equity; judgement, not a published figure. |
 | `returns.shares` | 12 | Nifty 50 total-return CAGR is ~12.4–12.7% since 1995; rounded down for a mostly-shares portfolio after costs. |
 | `defaults.loanApr` | 13 | From the v1 INR personal-loan sample; bank personal loans run roughly 10.5–24% depending on profile. |
 | `costs.ledKit` | 1500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.smartThermostat` | 8000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.tuneup` | 800 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.income` | 25000 – 70000 | was [50000, 90000]; too high for a typical urban single renter. PLFS Apr–Jun 2024: urban regular salaried earnings avg ₹24,434/month (gross). Upper end (≈₹9–10 LPA experienced professional) is judgement. The PLFS figure is not shown on the linked page and MoSPI could not be reached on 24 Nov 2026, so it needs confirmation against the official PLFS report. |
 | `profiles.single.ranges.rent` | 8000 – 22000 | was [15000, 30000]; lowered to fit the new income (≈30% of take-home): shared flat or PG at the low end, 1BHK in a metro at the high end. Magicbricks (May 2025) puts a 1,000 sq ft unit at ≈₹36.8k Bengaluru / ₹31.4k Pune; a 1BHK at roughly half is my scaling. No official 1BHK rent index found. |
 | `profiles.single.ranges.homeIns` | 0 – 500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.waterGas` | 800 – 1500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); one cylinder every 1.5–2 months ≈ ₹470–630 a month; municipal water/PNG on top varies by city and is not sourced. |
@@ -1467,6 +1473,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.care` | 0.1 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.yearly` | 0.05 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.income` | 45000 – 140000 | was [120000, 250000]; that is the top few percent of urban households. HCES 2023-24 urban MPCE ₹6,996 → ≈₹28k a month consumption for an average family of four; PLFS urban salaried avg ₹24,434 (₹26,105 men). A one- or two-earner salaried family renting a 2BHK is ≈₹45k–1.4 lakh take-home; the upper end is judgement. (PLFS figure needs confirmation against the official report; MoSPI unreachable on 24 Nov 2026.) |
 | `profiles.suburban.ranges.rent` | 12000 – 35000 | was [25000, 50000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹20–30k in KR Puram (outer Bengaluru), ₹28–40k Hebbal. Second cities are lower; the ₹12k floor is an estimate (no tier-2 rent index found). |
 | `profiles.suburban.ranges.homeIns` | 0 – 1000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.waterGas` | 1200 – 2500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); about one cylinder a month for a family of four ≈ ₹940; municipal water and PNG charges vary by city and are not sourced. |
@@ -1496,6 +1503,8 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.care` | 0.12 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.youngpro.ranges.income` | 60000 – 160000 | was [80000, 160000]; lower end fits a couple of early-career earners on about ₹30k each in hand (judgement; the earlier starting-salary source no longer loads). Upper end (two mid-career salaries or one senior one) kept; judgement. |
+| `profiles.youngpro.ranges.rent` | 18000 – 40000 | was [20000, 40000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹35–45k on Bengaluru's ORR/Sarjapur, ₹28–40k Hebbal, ₹20–30k KR Puram. Floor lowered slightly for a 1BHK. (Pune and Hyderabad figures removed: the article only supports the Bengaluru ones.) Estimate. |
 | `profiles.youngpro.ranges.homeIns` | 0 – 500 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.waterGas` | 800 – 1500 | Kept. LPG ₹942 per 14.2 kg cylinder in Delhi (Sep 2026); a cylinder every 1–1.5 months ≈ ₹630–940; water/PNG not sourced. |
 | `profiles.youngpro.ranges.transit` | 1500 – 4000 | Carried over unchanged from the v1 hand-written INR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1543,16 +1552,15 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 **Sources**
 
 - [v1 INR benchmark set (src/engine/profiles.js, commit ee4576a)](git:ee4576a:src/engine/profiles.js): all ranges, thresholds, category shares, one-off costs and sample budgets (ported unchanged)
-- [RBI MPC October 2026: repo raised to 5.50%, FY27 CPI forecast 5.2% (smallcase summary)](https://www.smallcase.com/blog/rbi-october-2026-monetary-policy-repo-rate-inflation/): inflation
-- [SBI 1-year FD 6.25% (Sept 2026) — Upstox, RBI MPC preview](https://upstox.com/news/personal-finance/financial-regulations/rbi-mpc-october-2026-will-repo-rate-rise-25-bps-what-borrowers-and-fd-savers-should-know/article-201240/): returns.savings
+- [RBI MPC October 2026: repo raised to 5.50%, FY27 CPI forecast 5.2% (smallcase summary; re-check after the 2–4 Dec 2026 MPC)](https://www.smallcase.com/blog/rbi-october-2026-monetary-policy-repo-rate-inflation/): inflation
+- [Upstox — RBI MPC preview, Oct 2026 (cites SBI 1-year FD 6.25%; figure not shown on the page, needs confirmation)](https://upstox.com/news/personal-finance/financial-regulations/rbi-mpc-october-2026-will-repo-rate-rise-25-bps-what-borrowers-and-fd-savers-should-know/article-201240/): returns.savings
 - [NSE press release: Nifty 50 returns Nov 1995–Feb 2026 (11.23% price, 12.74% TRI CAGR)](https://nsearchives.nseindia.com//web/pressrelease/2026-03/PR_cc_09032026_20260309214332.pdf): returns.longTerm
 - [Bajaj AMC — Nifty 50 historical returns (20-year CAGR ~11.1% price / ~12.4% TRI)](https://www.bajajamc.com/knowledge-centre/nifty-50-historical-returns): returns.longTerm, returns.shares
 - [Paisabazaar — credit card interest rates in India (typically 2.5–3.75% a month)](https://www.paisabazaar.com/credit-card/interest-rates): defaults.cardApr (3.5% a month ≈ 42% a year)
 - [PM Surya Ghar: Muft Bijli Yojana](https://pmsuryaghar.gov.in/): localTips in-rooftop-solar
 - [MoSPI — HCES 2023-24 press note (urban MPCE ₹6,996; food ≈40% of urban MPCE)](https://mospi.gov.in/sites/default/files/press_release/HCES_Report202324_Press_Note_30012025.pdf): groceries (all profiles), suburban income
-- [PLFS annual report Jul 2023–Jun 2024 (urban regular salaried earnings ₹24,434/month, Apr–Jun 2024) — Rural India Online library](https://ruralindiaonline.org/en/library/resource/periodic-labour-force-survey-plfs-annual-report-july-2023-june-2024/): income (all profiles)
-- [Indeed hiring report via People Matters — average starting offer for class of 2025 ₹3.5 LPA](https://www.peoplematters.in/?p=45358): single and youngpro income
-- [NoBroker H1 2025 rent report via Outlook Money (2BHK rents by locality, Bengaluru/Pune/Hyderabad)](https://www.outlookmoney.com/real-estate/rent-vs-buying-huge-gap-between-monthly-rental-yields-and-emis-check-roi): youngpro and suburban rent
+- [PLFS annual report Jul 2023–Jun 2024 — Rural India Online library listing (the ₹24,434 urban salaried figure is not shown on this page; needs confirmation on MoSPI)](https://ruralindiaonline.org/en/library/resource/periodic-labour-force-survey-plfs-annual-report-july-2023-june-2024/): income (all profiles)
+- [NoBroker H1 2025 rent report via Outlook Money (2BHK rents by locality, Bengaluru/Pune/Hyderabad)](https://www.outlookmoney.com/real-estate/rent-vs-buying-huge-gap-between-monthly-rental-yields-and-emis-check-roi): youngpro and suburban rent (Bengaluru localities only)
 - [Magicbricks Rent Index May 2025 via Outlook Money (1,000 sq ft unit: Bengaluru ₹36,772, Pune ₹31,439, Mumbai ₹98,431)](https://www.outlookmoney.com/invest/ahmedabad-bengaluru-pune-lead-as-rental-yields-surge-across-indian-cities): single rent (scaling only)
 - [KERC tariff order FY26–28 for BESCOM — Deccan Herald (₹5.80/unit, ₹145/kW fixed, 36p P&G surcharge)](https://www.deccanherald.com/amp/story/india%2Fkarnataka%2Fhike-in-fixed-charge-to-raise-power-bill-in-karnataka-3466600): electricity (all profiles)
 - [Housing.com — Delhi electricity rates 2025 (DERC slabs ₹3/₹4.5/₹6.5, 200 free units)](https://housing.com/news/electricity-rates-in-delhi/): electricity (context)
@@ -1990,7 +1998,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Zameen Index — average asking rent for houses, Lahore (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/lahore-1/): rent (suburban)
 - [Zameen Index — average asking rent for houses, Faisalabad (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/faisalabad-16/): rent (suburban)
 - [Zameen Index — average asking rent for houses, Karachi (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/karachi-2/): rent (suburban)
-- [OGRA — petrol price build-up, effective 21 Nov 2026 (Rs 322.00 per litre)](https://ogra.org.pk/download/18473?lang=en): fuel ranges and thresholds
+- [OGRA — petrol price build-up, effective 21 Nov 2026 (Rs 322.00 per litre)](https://ogra.org.pk/download/18473): fuel ranges and thresholds
 - [Ministry of Energy (Power Division) — Federal Government tariff motion to NEPRA, 6 Feb 2026 (residential slabs Rs 22.44–47.20/unit; fixed charges Rs 275–675 per kW a month)](https://www.nepra.org.pk/Admission%20Notices/2026/02%20Feb/Complete%20motion%20alogwith%20Annexs_260206_150050.pdf): electricity ranges (bill calculation, fixed charges)
 - [Allied Bank — credit card charges (34% a year)](https://www.abl.com/?p=293152): defaults.cardApr (38% sits inside the 34–44% range)
 - [Dawn — Govt notifies 50pc hike in gas charges (30 Jun 2025)](https://www.dawn.com/news/1921120): waterGas (minimum gas bills; still unverified)

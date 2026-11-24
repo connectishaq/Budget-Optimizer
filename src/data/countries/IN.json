@@ -4,9 +4,17 @@
   "locale": "en-IN",
   "lakh": true,
   "payFrequency": "monthly",
-  "inflation": 5.2,
+  "inflation": {
+    "value": 5.2,
+    "verify": true,
+    "note": "RBI FY27 CPI projection of 5.2% (Oct 2026 MPC, via smallcase; rbi.org.in blocks automated access). October 2026 CPI was reported at 6.09%, above the RBI's 6% upper limit, but that could not be confirmed on MoSPI (site unreachable). To re-check after 4 Dec 2026: the RBI MPC meets 2–4 Dec."
+  },
   "returns": {
-    "savings": 6.25,
+    "savings": {
+      "value": 6.25,
+      "verify": true,
+      "note": "SBI 1-year FD rate of 6.25% (Sept 2026) as reported by Upstox; the linked article does not show it and sbi.co.in could not be reached on 24 Nov 2026, so it needs confirmation on SBI's rate page. Repo rate 5.50% (Oct 2026 MPC). To re-check after 4 Dec 2026: the RBI MPC meets 2–4 Dec."
+    },
     "balanced": {
       "value": 8.5,
       "verify": true,
@@ -52,8 +60,8 @@
             25000,
             70000
           ],
-          "verify": false,
-          "note": "was [50000, 90000]; too high for a typical urban single renter. PLFS Apr–Jun 2024: urban regular salaried earnings avg ₹24,434/month (gross); Indeed: class-of-2025 average starting offer ₹3.5 LPA (≈₹27k a month in hand, my arithmetic). Upper end (≈₹9–10 LPA experienced professional) is judgement."
+          "verify": true,
+          "note": "was [50000, 90000]; too high for a typical urban single renter. PLFS Apr–Jun 2024: urban regular salaried earnings avg ₹24,434/month (gross). Upper end (≈₹9–10 LPA experienced professional) is judgement. The PLFS figure is not shown on the linked page and MoSPI could not be reached on 24 Nov 2026, so it needs confirmation against the official PLFS report."
         },
         "rent": {
           "value": [
@@ -77,7 +85,7 @@
             2200
           ],
           "verify": false,
-          "note": "was [1000, 2500]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 100–250 units a month (assumed use for a 1BHK, AC at the high end) gives ≈₹900–2,000."
+          "note": "was [1000, 2500]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 100–250 units a month (assumed use for a 1BHK, AC at the high end) gives ≈₹900–2,000. Not included: a further per-unit true-up surcharge reported for May 2026–Apr 2027 (about 56 paise/unit), and FY27 fixed charges may be higher; needs confirmation on KERC/BESCOM (sites unreachable on 24 Nov 2026)."
         },
         "waterGas": {
           "value": [
@@ -297,8 +305,8 @@
             45000,
             140000
           ],
-          "verify": false,
-          "note": "was [120000, 250000]; that is the top few percent of urban households. HCES 2023-24 urban MPCE ₹6,996 → ≈₹28k a month consumption for an average family of four; PLFS urban salaried avg ₹24,434 (₹26,105 men). A one- or two-earner salaried family renting a 2BHK is ≈₹45k–1.4 lakh take-home; the upper end is judgement."
+          "verify": true,
+          "note": "was [120000, 250000]; that is the top few percent of urban households. HCES 2023-24 urban MPCE ₹6,996 → ≈₹28k a month consumption for an average family of four; PLFS urban salaried avg ₹24,434 (₹26,105 men). A one- or two-earner salaried family renting a 2BHK is ≈₹45k–1.4 lakh take-home; the upper end is judgement. (PLFS figure needs confirmation against the official report; MoSPI unreachable on 24 Nov 2026.)"
         },
         "rent": {
           "value": [
@@ -322,7 +330,7 @@
             5000
           ],
           "verify": false,
-          "note": "was [2500, 6000]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 250–600 units a month for a 2–3 BHK (assumed use) ≈ ₹2,100–4,500. Delhi's 200 free units make bills lower there."
+          "note": "was [2500, 6000]; BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 250–600 units a month for a 2–3 BHK (assumed use) ≈ ₹2,100–4,500. Delhi's 200 free units make bills lower there. Not included: a further per-unit true-up surcharge reported for May 2026–Apr 2027 (about 56 paise/unit), and FY27 fixed charges may be higher; needs confirmation on KERC/BESCOM (sites unreachable on 24 Nov 2026)."
         },
         "waterGas": {
           "value": [
@@ -542,16 +550,16 @@
             60000,
             160000
           ],
-          "verify": false,
-          "note": "was [80000, 160000]; lower end now fits a couple of early-career earners (Indeed: avg starting offer ₹3.5 LPA ≈ ₹27k in hand each). Upper end (two mid-career salaries or one senior one) kept; judgement."
+          "verify": true,
+          "note": "was [80000, 160000]; lower end fits a couple of early-career earners on about ₹30k each in hand (judgement; the earlier starting-salary source no longer loads). Upper end (two mid-career salaries or one senior one) kept; judgement."
         },
         "rent": {
           "value": [
             18000,
             40000
           ],
-          "verify": false,
-          "note": "was [20000, 40000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹35–45k on Bengaluru's ORR/Sarjapur, ₹28–40k Hebbal, ₹20–30k KR Puram, ₹30–38k Baner (Pune), ₹25–33k Hafeezpet (Hyderabad). Floor lowered slightly for a 1BHK."
+          "verify": true,
+          "note": "was [20000, 40000]; NoBroker H1 2025 (via Outlook Money): 2BHK ₹35–45k on Bengaluru's ORR/Sarjapur, ₹28–40k Hebbal, ₹20–30k KR Puram. Floor lowered slightly for a 1BHK. (Pune and Hyderabad figures removed: the article only supports the Bengaluru ones.) Estimate."
         },
         "homeIns": {
           "value": [
@@ -567,7 +575,7 @@
             3500
           ],
           "verify": false,
-          "note": "Confirmed: BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 200–450 units a month (assumed use, AC in summer) ≈ ₹1,650–3,500."
+          "note": "Confirmed: BESCOM 2025-26 (KERC): ₹5.80/unit + 36p P&G surcharge + ₹145/kW fixed, plus ~9% tax: 200–450 units a month (assumed use, AC in summer) ≈ ₹1,650–3,500. Not included: a further per-unit true-up surcharge reported for May 2026–Apr 2027 (about 56 paise/unit), and FY27 fixed charges may be higher; needs confirmation on KERC/BESCOM (sites unreachable on 24 Nov 2026)."
         },
         "waterGas": {
           "value": [
@@ -1204,12 +1212,12 @@
       "usedFor": "all ranges, thresholds, category shares, one-off costs and sample budgets (ported unchanged)"
     },
     {
-      "title": "RBI MPC October 2026: repo raised to 5.50%, FY27 CPI forecast 5.2% (smallcase summary)",
+      "title": "RBI MPC October 2026: repo raised to 5.50%, FY27 CPI forecast 5.2% (smallcase summary; re-check after the 2–4 Dec 2026 MPC)",
       "url": "https://www.smallcase.com/blog/rbi-october-2026-monetary-policy-repo-rate-inflation/",
       "usedFor": "inflation"
     },
     {
-      "title": "SBI 1-year FD 6.25% (Sept 2026) — Upstox, RBI MPC preview",
+      "title": "Upstox — RBI MPC preview, Oct 2026 (cites SBI 1-year FD 6.25%; figure not shown on the page, needs confirmation)",
       "url": "https://upstox.com/news/personal-finance/financial-regulations/rbi-mpc-october-2026-will-repo-rate-rise-25-bps-what-borrowers-and-fd-savers-should-know/article-201240/",
       "usedFor": "returns.savings"
     },
@@ -1239,19 +1247,14 @@
       "usedFor": "groceries (all profiles), suburban income"
     },
     {
-      "title": "PLFS annual report Jul 2023–Jun 2024 (urban regular salaried earnings ₹24,434/month, Apr–Jun 2024) — Rural India Online library",
+      "title": "PLFS annual report Jul 2023–Jun 2024 — Rural India Online library listing (the ₹24,434 urban salaried figure is not shown on this page; needs confirmation on MoSPI)",
       "url": "https://ruralindiaonline.org/en/library/resource/periodic-labour-force-survey-plfs-annual-report-july-2023-june-2024/",
       "usedFor": "income (all profiles)"
     },
     {
-      "title": "Indeed hiring report via People Matters — average starting offer for class of 2025 ₹3.5 LPA",
-      "url": "https://www.peoplematters.in/?p=45358",
-      "usedFor": "single and youngpro income"
-    },
-    {
       "title": "NoBroker H1 2025 rent report via Outlook Money (2BHK rents by locality, Bengaluru/Pune/Hyderabad)",
       "url": "https://www.outlookmoney.com/real-estate/rent-vs-buying-huge-gap-between-monthly-rental-yields-and-emis-check-roi",
-      "usedFor": "youngpro and suburban rent"
+      "usedFor": "youngpro and suburban rent (Bengaluru localities only)"
     },
     {
       "title": "Magicbricks Rent Index May 2025 via Outlook Money (1,000 sq ft unit: Bengaluru ₹36,772, Pune ₹31,439, Mumbai ₹98,431)",
@@ -1294,5 +1297,5 @@
       "usedFor": "suburban school"
     }
   ],
-  "lastReviewed": "2026-10-20"
+  "lastReviewed": "2026-11-24"
 }
