@@ -162,7 +162,7 @@ describe('country benchmarks', () => {
     const pk = benchmarkFor('PK', 'suburban');
     expect(pk.approximate).toBe(false);
     expect(pk.thresholds.utilities).toBe(40000);
-    expect(pk.ranges.fuel).toEqual([18000, 28000]);
+    expect(pk.ranges.fuel).toEqual([15000, 23000]);
   });
 
   it('India has its own data', () => {

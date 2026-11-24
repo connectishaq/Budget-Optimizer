@@ -7,14 +7,18 @@
   "inflation": {
     "value": 10,
     "verify": true,
-    "note": "SBP expected inflation to stay in double digits after 10.9–11.7% in Apr–May 2026, easing towards its 5–7% target; 10% is a middle-of-the-road planning figure."
+    "note": "PBS: CPI 9.6% year on year in Oct 2026 (10.3% Sep, 11.7% May peak; Monthly Review on Price Indices, Oct 2026). SBP aims to bring inflation within its 5–7% target range over the medium term (MPS, 26 Oct 2026). 10% is a middle-of-the-road planning figure."
   },
   "returns": {
-    "savings": 11,
+    "savings": {
+      "value": 12,
+      "verify": true,
+      "note": "National Savings rates raised from 21 Oct 2026: Special Savings Certificates 12% (first five payments), Regular Income Certificates 12.12%, ordinary Savings Account 10% (Dawn, 21 Oct 2026; newspaper report, not checked on the CDNS site, which fails TLS). Before 15% withholding tax for filers."
+    },
     "balanced": {
       "value": 12.5,
       "verify": true,
-      "note": "Blend of ~11% National Savings / bank deposits and ~14% equity; judgement."
+      "note": "Blend of ~12% National Savings (Oct 2026) and ~14% equity, allowing for tax on profit; judgement."
     },
     "longTerm": 14,
     "shares": {
@@ -28,7 +32,7 @@
     "loanApr": {
       "value": 22,
       "verify": true,
-      "note": "From the v1 PKR personal-loan sample; with the policy rate at 11.5% bank personal loans are typically KIBOR + 6–10%."
+      "note": "From the v1 PKR personal-loan sample; with the SBP policy rate at 12% (from 27 Oct 2026) bank personal loans are typically KIBOR + 6–10%."
     }
   },
   "costs": {
@@ -57,15 +61,15 @@
             130000
           ],
           "verify": false,
-          "note": "was [90000, 160000]; too high for a typical single urban worker. PBS LFS 2024-25 mean monthly wage of paid employees: urban ~Rs 44k, professionals Rs 62.8k, managers Rs 103.3k; +15% CPI uplift (PBS national CPI 304.3 in Sep 2026 vs ~265 mid-survey, derived from PBS YoY rates of 10.26% for Sep 2026 and 5.76% for Sep 2025) gives ~51k / 72k / 119k (income tax is small at these levels). Federal minimum wage is Rs 40,700 (Budget 2026-27)."
+          "note": "was [90000, 160000]; too high for a typical single urban worker. PBS LFS 2024-25 mean monthly wage of paid employees: urban ~Rs 44k, professionals Rs 62.8k, managers Rs 103.3k; +15% CPI uplift (PBS national CPI 304.3 in Sep 2026 vs ~265 mid-survey, derived from PBS YoY rates of 10.26% for Sep 2026 and 5.76% for Sep 2025) gives ~51k / 72k / 119k (income tax is small at these levels). The Rs 40,700 minimum wage from 1 Jul 2026 covers federal government civil employees (Finance Division OM, 21 Aug 2026), not all workers."
         },
         "rent": {
           "value": [
             20000,
             45000
           ],
-          "verify": false,
-          "note": "was [25000, 40000]; Zameen Index average asking rents for flats, Aug 2026: North Karachi Rs 30k, Saddar Rs 41k, Lahore Central Park Rs 22k, Nawab Town Rs 36k, Johar Town (about 490 sq ft) Rs 45k. Low end allows a shared flat or room; rent stays under ~35% of the new income range."
+          "verify": true,
+          "note": "was [25000, 40000]; Zameen Index average asking rents for flats, Aug 2026: North Karachi Rs 30k, Saddar Rs 41k, Lahore Central Park Rs 22k, Nawab Town Rs 36k, Johar Town (about 490 sq ft) Rs 45k. Low end allows a shared flat or room; rent stays under ~35% of the new income range. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data."
         },
         "homeIns": {
           "value": [
@@ -81,7 +85,7 @@
             14000
           ],
           "verify": false,
-          "note": "Confirmed: about 190-345 units a month for an unprotected consumer. Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored. Protected users (200 units or less for 6 months) pay far less."
+          "note": "Recalculated 24 Nov 2026: about 190-345 units a month. Uses the unprotected domestic slabs Rs 22.44-47.20/unit and fixed charges of Rs 275-675 per kW of sanctioned load a month from the Federal Government tariff motion to NEPRA (6 Feb 2026, Annex-IV), billed slab by slab, with an assumed 2 kW sanctioned load, +18% GST and 1.5% duty; fuel price adjustments ignored. Protected consumers (Rs 10.54-13.01/unit in the same schedule) pay far less."
         },
         "waterGas": {
           "value": [
@@ -97,15 +101,15 @@
             6000
           ],
           "verify": false,
-          "note": "Confirmed: PTCL Flash Fiber 30 Mbps Rs 3,499 and 40 Mbps Rs 4,999 a month incl. tax (ProPakistani package list, Jun 2026), plus a mobile bundle."
+          "note": "PTCL Flash Fiber 30 Mbps Rs 3,499 and 40 Mbps Rs 4,999 (ProPakistani package list, Jun 2026), plus a mobile bundle. The package page doesn't say whether tax is included."
         },
         "fuel": {
           "value": [
-            5000,
-            10000
+            4000,
+            8500
           ],
           "verify": false,
-          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 13-26 litres a month: a motorbike commute or light car use."
+          "note": "Updated 24 Nov 2026: petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves), so about 13-26 litres a month: a motorbike commute or light car use. Was 5000-10000 at Rs 390.23 (Oct 2026)."
         },
         "transit": {
           "value": [
@@ -211,9 +215,9 @@
           "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
         },
         "fuel": {
-          "value": 10000,
+          "value": 8500,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
+          "note": "Equals the top of the fuel range (petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves))."
         },
         "transit": {
           "value": 8000,
@@ -223,7 +227,7 @@
         "internet": {
           "value": 6000,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
+          "note": "equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999, ProPakistani 2026). The package page doesn't say whether tax is included."
         },
         "insurance": {
           "value": 3000,
@@ -309,8 +313,8 @@
             35000,
             80000
           ],
-          "verify": false,
-          "note": "was [50000, 90000]; Zameen Index average asking rents, Aug 2026: houses in Lahore Alfalah Town Rs 50k, Shoukat Town Rs 43k; Faisalabad Nemat Colony Rs 46k, Canal Garden Rs 68k; Karachi Shah Faisal Town Rs 71k, Bahria Town Rs 81k; flats in Gulistan-e-Jauhar Rs 66k, Bahria Town Karachi Rs 44k. Low end is a house portion in a cheaper scheme."
+          "verify": true,
+          "note": "was [50000, 90000]; Zameen Index average asking rents, Aug 2026: houses in Faisalabad Nemat Colony Rs 46k, Canal Garden Rs 68k; Karachi Shah Faisal Town Rs 71k, Bahria Town Rs 81k; flats in Gulistan-e-Jauhar Rs 66k, Bahria Town Karachi Rs 44k. Low end is a house portion in a cheaper scheme. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data. (The two Lahore localities cited earlier are no longer listed in the index, so they were dropped.)"
         },
         "homeIns": {
           "value": [
@@ -326,7 +330,7 @@
             32000
           ],
           "verify": false,
-          "note": "Confirmed: about 370-650 units a month averaged over the year (ACs in summer). Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored."
+          "note": "Recalculated 24 Nov 2026: about 370-650 units a month averaged over the year (ACs in summer). Uses the unprotected domestic slabs Rs 22.44-47.20/unit and fixed charges of Rs 275-675 per kW of sanctioned load a month from the Federal Government tariff motion to NEPRA (6 Feb 2026, Annex-IV), billed slab by slab, with an assumed 5 kW sanctioned load, +18% GST and 1.5% duty; fuel price adjustments ignored."
         },
         "waterGas": {
           "value": [
@@ -342,15 +346,15 @@
             8000
           ],
           "verify": false,
-          "note": "Confirmed: PTCL Flash Fiber Rs 3,499-4,999 a month incl. tax (ProPakistani, Jun 2026) plus two adults' mobile bundles."
+          "note": "PTCL Flash Fiber Rs 3,499-4,999 (ProPakistani, Jun 2026) plus two adults' mobile bundles. The package page doesn't say whether tax is included."
         },
         "fuel": {
           "value": [
-            18000,
-            28000
+            15000,
+            23000
           ],
           "verify": false,
-          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 46-72 litres a month: one family car (roughly 550-850 km at 12 km/l)."
+          "note": "Updated 24 Nov 2026: petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves), so about 46-72 litres a month: one family car (roughly 550-850 km at 12 km/l). Was 18000-28000 at Rs 390.23 (Oct 2026)."
         },
         "transit": {
           "value": [
@@ -382,7 +386,7 @@
             50000
           ],
           "verify": true,
-          "note": "No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools; Sindh and Lahore cap yearly rises at 5%. Two children at mid-range schools fits, but kept as an estimate."
+          "note": "No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools. Two children at mid-range schools fits, but kept as an estimate."
         },
         "groceries": {
           "value": [
@@ -456,9 +460,9 @@
           "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
         },
         "fuel": {
-          "value": 28000,
+          "value": 23000,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
+          "note": "Equals the top of the fuel range (petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves))."
         },
         "transit": {
           "value": 6000,
@@ -468,7 +472,7 @@
         "internet": {
           "value": 8000,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
+          "note": "equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999, ProPakistani 2026). The package page doesn't say whether tax is included."
         },
         "insurance": {
           "value": 8000,
@@ -552,10 +556,10 @@
         "rent": {
           "value": [
             45000,
-            95000
+            100000
           ],
-          "verify": false,
-          "note": "was [40000, 75000]; Zameen Index average asking rents for flats, Aug 2026: Karachi Gulistan-e-Jauhar Rs 66k, Federal B Area Rs 75k, North Nazimabad Rs 87k, Gulshan-e-Iqbal Rs 96k; Lahore Johar Town Rs 45k, Bahria Town Rs 58k, Model Town Rs 73k; Islamabad G-15 Rs 63k, Gulberg Rs 87k, E-11 Rs 93k."
+          "verify": true,
+          "note": "was [40000, 75000]; Zameen Index average asking rents for flats, Aug 2026: Karachi Gulistan-e-Jauhar Rs 66k, Federal B Area Rs 75k, North Nazimabad Rs 87k, Gulshan-e-Iqbal Rs 96k; Lahore Johar Town Rs 45k, Bahria Town Rs 58k, Model Town Rs 73k; Islamabad (Zameen Index, Oct 2026) G-15 Rs 99.9k, Gulberg Rs 88.1k, E-11 Rs 90.1k. Top raised from 95k to 100k for Islamabad. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data."
         },
         "homeIns": {
           "value": [
@@ -571,7 +575,7 @@
             22000
           ],
           "verify": false,
-          "note": "Confirmed: about 260-490 units a month. Calc from NEPRA unprotected domestic slabs (Rs 22.44-47.69/unit, Nukta Jul 2025) with the Feb 2026 slab cuts and fixed charges (The News), +18% GST and 1.5% duty; fuel price adjustments ignored."
+          "note": "Recalculated 24 Nov 2026: about 260-490 units a month. Uses the unprotected domestic slabs Rs 22.44-47.20/unit and fixed charges of Rs 275-675 per kW of sanctioned load a month from the Federal Government tariff motion to NEPRA (6 Feb 2026, Annex-IV), billed slab by slab, with an assumed 3 kW sanctioned load, +18% GST and 1.5% duty; fuel price adjustments ignored."
         },
         "waterGas": {
           "value": [
@@ -587,15 +591,15 @@
             7000
           ],
           "verify": false,
-          "note": "Confirmed: PTCL Flash Fiber Rs 3,499-4,999 a month incl. tax (ProPakistani, Jun 2026) plus mobile bundles."
+          "note": "PTCL Flash Fiber Rs 3,499-4,999 (ProPakistani, Jun 2026) plus mobile bundles. The package page doesn't say whether tax is included."
         },
         "fuel": {
           "value": [
-            12000,
-            22000
+            10000,
+            18000
           ],
           "verify": false,
-          "note": "Confirmed: petrol Rs 390.23/litre from 16 Oct 2026 (OGRA via APP), so about 31-56 litres a month."
+          "note": "Updated 24 Nov 2026: petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves), so about 31-56 litres a month. Was 12000-22000 at Rs 390.23 (Oct 2026)."
         },
         "transit": {
           "value": [
@@ -701,9 +705,9 @@
           "note": "Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source."
         },
         "fuel": {
-          "value": 22000,
+          "value": 18000,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed fuel range (petrol Rs 390.23/litre, OGRA via APP, Oct 2026)."
+          "note": "Equals the top of the fuel range (petrol Rs 322.00/litre from 21 Nov 2026 (OGRA price notification; OGRA re-notifies prices weekly, so this moves))."
         },
         "transit": {
           "value": 7000,
@@ -713,7 +717,7 @@
         "internet": {
           "value": 7000,
           "verify": false,
-          "note": "Confirmed: equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999 incl. tax, ProPakistani 2026)."
+          "note": "equals the top of the reviewed internet range (PTCL Flash Fiber Rs 3,499-4,999, ProPakistani 2026). The package page doesn't say whether tax is included."
         },
         "insurance": {
           "value": 6000,
@@ -1179,14 +1183,14 @@
       "usedFor": "values still marked verify: true (ported unchanged from v1)"
     },
     {
-      "title": "SBP keeps policy rate at 11.5% (July 2026); inflation 10.9% Apr, 11.7% May 2026 — ARY News",
-      "url": "https://arynews.tv/sbp-retains-policy-rate-at-11-5-percent",
-      "usedFor": "inflation (context)"
+      "title": "State Bank of Pakistan — Monetary Policy Statement, 26 Oct 2026 (policy rate raised to 12% from 27 Oct 2026; inflation target 5–7%)",
+      "url": "https://www.sbp.org.pk/assets/documents/press-release/PR-26-Oct-2026-Eng.pdf",
+      "usedFor": "inflation (context), loan rate (context)"
     },
     {
-      "title": "CDNS cuts National Savings profit rates, Special Savings Certificate 11.2% (July 2026) — Express Tribune",
-      "url": "https://tribune.com.pk/story/2619071/govt-cuts-profit-rates-on-savings-schemes",
-      "usedFor": "returns.savings"
+      "title": "Dawn — National Savings profit rates raised from 21 Oct 2026: Special Savings Certificates 12%, Regular Income Certificates 12.12% (newspaper report, 21 Oct 2026)",
+      "url": "https://www.dawn.com/news/2038739",
+      "usedFor": "returns.savings (estimate)"
     },
     {
       "title": "KSE-100 posts ~14% compounded annual growth over 30 years — Business Recorder",
@@ -1199,7 +1203,7 @@
       "usedFor": "returns.shares (context)"
     },
     {
-      "title": "MCB credit card summary box Jul–Dec 2026 (APR up to 44%); Allied Bank cards 34% p.a.",
+      "title": "MCB credit card summary box Jul–Dec 2026 (APR up to 44%)",
       "url": "https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf",
       "usedFor": "defaults.cardApr (38% sits inside the 34–44% range)"
     },
@@ -1219,59 +1223,64 @@
       "usedFor": "inflating 2024-25 survey figures to late 2026"
     },
     {
+      "title": "PBS — Monthly Review on Price Indices, October 2026 (CPI 9.6% year on year)",
+      "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/Monthly-Review-October2026.pdf",
+      "usedFor": "inflation"
+    },
+    {
       "title": "PBS — CPI press release, September 2025 (5.76% YoY)",
       "url": "https://www.pbs.gov.pk/wp-content/uploads/2020/07/3.-Revised-Press-Release-September-2025.doc",
       "usedFor": "inflating 2024-25 survey figures to late 2026"
     },
     {
-      "title": "Daily Pakistan — minimum wage raised to Rs 40,700 in Budget 2026-27 (12 Jun 2026)",
-      "url": "https://en.dailypakistan.com.pk/12-Jun-2026/pakistan-raises-minimum-wage-to-rs40700-in-budget-2026-27",
+      "title": "Finance Division — Office Memorandum, 21 Aug 2026: minimum wage Rs 40,700 for federal government civil employees from 1 Jul 2026",
+      "url": "https://www.finance.gov.pk/circulars/circular_21082026.pdf",
       "usedFor": "single income (context)"
     },
     {
-      "title": "Zameen Index — average asking rent for flats, Karachi (Aug 2026)",
+      "title": "Zameen Index — average asking rent for flats, Karachi (Aug 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/flats/karachi-2/",
       "usedFor": "rent (single, suburban, youngpro)"
     },
     {
-      "title": "Zameen Index — average asking rent for flats, Lahore (Aug 2026)",
+      "title": "Zameen Index — average asking rent for flats, Lahore (Aug 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/flats/lahore-1/",
       "usedFor": "rent (single, youngpro)"
     },
     {
-      "title": "Zameen Index — average asking rent for flats, Islamabad (Aug 2026)",
+      "title": "Zameen Index — average asking rent for flats, Islamabad (Oct 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/flats/islamabad-3/",
       "usedFor": "rent (youngpro)"
     },
     {
-      "title": "Zameen Index — average asking rent for houses, Lahore (Aug 2026)",
+      "title": "Zameen Index — average asking rent for houses, Lahore (Aug 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/houses/lahore-1/",
       "usedFor": "rent (suburban)"
     },
     {
-      "title": "Zameen Index — average asking rent for houses, Faisalabad (Aug 2026)",
+      "title": "Zameen Index — average asking rent for houses, Faisalabad (Aug 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/houses/faisalabad-16/",
       "usedFor": "rent (suburban)"
     },
     {
-      "title": "Zameen Index — average asking rent for houses, Karachi (Aug 2026)",
+      "title": "Zameen Index — average asking rent for houses, Karachi (Aug 2026; portal asking rents, estimate)",
       "url": "https://www.zameen.com/index/rent/houses/karachi-2/",
       "usedFor": "rent (suburban)"
     },
     {
-      "title": "APP — OGRA cuts petrol price by Rs3.63 to Rs390.23 per litre (Oct 2026)",
-      "url": "https://www.app.com.pk/?p=1292415",
+      "title": "OGRA — petrol price build-up, effective 21 Nov 2026 (Rs 322.00 per litre)",
+      "url": "https://ogra.org.pk/download/18473?lang=en",
       "usedFor": "fuel ranges and thresholds"
     },
     {
-      "title": "Nukta — Pakistan reduces average power tariff (NEPRA domestic slab rates, Jul 2025)",
-      "url": "https://nukta.com/pakistan-reduces-average-power-tariff",
-      "usedFor": "electricity ranges (bill calculation)"
+      "title": "Ministry of Energy (Power Division) — Federal Government tariff motion to NEPRA, 6 Feb 2026 (residential slabs Rs 22.44–47.20/unit; fixed charges Rs 275–675 per kW a month)",
+      "url": "https://www.nepra.org.pk/Admission%20Notices/2026/02%20Feb/Complete%20motion%20alogwith%20Annexs_260206_150050.pdf",
+      "usedFor": "electricity ranges (bill calculation, fixed charges)"
     },
     {
-      "title": "The News — domestic consumers using up to 300 units hit with fixed charges (NEPRA, Feb 2026)",
-      "url": "https://www.thenews.pk/story/1398554-domestic-consumers-using-up-to-300-units-hit-with-fixed-charges",
-      "usedFor": "electricity ranges (fixed charges, slab cuts)"
+      "title": "Allied Bank — credit card charges (34% a year)",
+      "url": "https://www.abl.com/?p=293152",
+      "usedFor": "defaults.cardApr (38% sits inside the 34–44% range)"
     },
     {
       "title": "Dawn — Govt notifies 50pc hike in gas charges (30 Jun 2025)",
@@ -1289,5 +1298,5 @@
       "usedFor": "school (context only; still unverified)"
     }
   ],
-  "lastReviewed": "2026-10-20"
+  "lastReviewed": "2026-11-24"
 }

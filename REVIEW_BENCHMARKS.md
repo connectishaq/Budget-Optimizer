@@ -6,7 +6,7 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1794 value(s) across 16 file(s).**
+**1798 value(s) across 16 file(s).**
 
 ## AE · AED · last reviewed 2026-10-20
 
@@ -1858,19 +1858,21 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [Nairametrics — bank lending rates GTBank/Zenith/Access June 2026](https://nairametrics.com/2026/06/20/nigerian-bank-lending-rates-how-gtbank-zenith-access-compare-in-june-2026/): defaults.cardApr, defaults.loanApr
 - [VTpass — DStv packages and prices 2026 (Compact ₦19,000)](https://vtpass.com/blog/2026-dstv-packages-and-prices-in-nigeria-what-you-need-to-know/): sample subscriptions
 
-## PK · PKR · last reviewed 2026-10-20
+## PK · PKR · last reviewed 2026-11-24
 
-101 value(s) to verify.
+105 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 10 | SBP expected inflation to stay in double digits after 10.9–11.7% in Apr–May 2026, easing towards its 5–7% target; 10% is a middle-of-the-road planning figure. |
-| `returns.balanced` | 12.5 | Blend of ~11% National Savings / bank deposits and ~14% equity; judgement. |
+| `inflation` | 10 | PBS: CPI 9.6% year on year in Oct 2026 (10.3% Sep, 11.7% May peak; Monthly Review on Price Indices, Oct 2026). SBP aims to bring inflation within its 5–7% target range over the medium term (MPS, 26 Oct 2026). 10% is a middle-of-the-road planning figure. |
+| `returns.savings` | 12 | National Savings rates raised from 21 Oct 2026: Special Savings Certificates 12% (first five payments), Regular Income Certificates 12.12%, ordinary Savings Account 10% (Dawn, 21 Oct 2026; newspaper report, not checked on the CDNS site, which fails TLS). Before 15% withholding tax for filers. |
+| `returns.balanced` | 12.5 | Blend of ~12% National Savings (Oct 2026) and ~14% equity, allowing for tax on profit; judgement. |
 | `returns.shares` | 16 | KSE-100 has averaged ~21–22% a year over 10–20 years (arithmetic, nominal) but compounds nearer 14% over 30 years; 16% is a cautious middle figure. |
-| `defaults.loanApr` | 22 | From the v1 PKR personal-loan sample; with the policy rate at 11.5% bank personal loans are typically KIBOR + 6–10%. |
+| `defaults.loanApr` | 22 | From the v1 PKR personal-loan sample; with the SBP policy rate at 12% (from 27 Oct 2026) bank personal loans are typically KIBOR + 6–10%. |
 | `costs.ledKit` | 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.smartThermostat` | 30000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `costs.tuneup` | 2500 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.single.ranges.rent` | 20000 – 45000 | was [25000, 40000]; Zameen Index average asking rents for flats, Aug 2026: North Karachi Rs 30k, Saddar Rs 41k, Lahore Central Park Rs 22k, Nawab Town Rs 36k, Johar Town (about 490 sq ft) Rs 45k. Low end allows a shared flat or room; rent stays under ~35% of the new income range. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data. |
 | `profiles.single.ranges.homeIns` | 0 – 1000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.ranges.waterGas` | 1500 – 4000 | Gas minimum bill is over Rs 755 (protected) or Rs 1,820 (non-protected) a month after the July 2025 fixed-charge rise (Dawn), so the low end fits; winter usage, water and LPG costs above that are an estimate (no published bill averages). |
 | `profiles.single.ranges.transit` | 3000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1898,12 +1900,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.care` | 0.08 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.single.categoryShare.yearly` | 0.05 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.suburban.ranges.rent` | 35000 – 80000 | was [50000, 90000]; Zameen Index average asking rents, Aug 2026: houses in Faisalabad Nemat Colony Rs 46k, Canal Garden Rs 68k; Karachi Shah Faisal Town Rs 71k, Bahria Town Rs 81k; flats in Gulistan-e-Jauhar Rs 66k, Bahria Town Karachi Rs 44k. Low end is a house portion in a cheaper scheme. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data. (The two Lahore localities cited earlier are no longer listed in the index, so they were dropped.) |
 | `profiles.suburban.ranges.homeIns` | 0 – 2000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.waterGas` | 3000 – 8000 | Gas fixed charge is Rs 1,500 for non-protected homes from July 2025 (minimum bill over Rs 1,820, Dawn); winter slab use and water charges on top are an estimate. |
 | `profiles.suburban.ranges.transit` | 0 – 6000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carIns` | 3000 – 8000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.carLoan` | 0 – 60000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
-| `profiles.suburban.ranges.school` | 20000 – 50000 | No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools; Sindh and Lahore cap yearly rises at 5%. Two children at mid-range schools fits, but kept as an estimate. |
+| `profiles.suburban.ranges.school` | 20000 – 50000 | No official fee survey. Reports cite Rs 25-50k per child a month at chains such as Beaconhouse/LGS (Result.pk) and far less at low-cost private schools. Two children at mid-range schools fits, but kept as an estimate. |
 | `profiles.suburban.ranges.dining` | 8000 – 20000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.misc` | 10000 – 18000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.ranges.medical` | 5000 – 15000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1926,6 +1929,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.categoryShare.subscriptions` | 0.02 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.care` | 0.12 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.suburban.categoryShare.yearly` | 0.06 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
+| `profiles.youngpro.ranges.rent` | 45000 – 100000 | was [40000, 75000]; Zameen Index average asking rents for flats, Aug 2026: Karachi Gulistan-e-Jauhar Rs 66k, Federal B Area Rs 75k, North Nazimabad Rs 87k, Gulshan-e-Iqbal Rs 96k; Lahore Johar Town Rs 45k, Bahria Town Rs 58k, Model Town Rs 73k; Islamabad (Zameen Index, Oct 2026) G-15 Rs 99.9k, Gulberg Rs 88.1k, E-11 Rs 90.1k. Top raised from 95k to 100k for Islamabad. Zameen Index figures are average asking rents on a property portal, so they are estimates, not official data. |
 | `profiles.youngpro.ranges.homeIns` | 0 – 1500 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.waterGas` | 2000 – 5000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
 | `profiles.youngpro.ranges.transit` | 3000 – 7000 | Carried over unchanged from the v1 hand-written PKR set (src/engine/profiles.js); not tied to a cited source. |
@@ -1969,25 +1973,26 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 **Sources**
 
 - [v1 PKR benchmark set (src/engine/profiles.js, commit ee4576a)](git:ee4576a:src/engine/profiles.js): values still marked verify: true (ported unchanged from v1)
-- [SBP keeps policy rate at 11.5% (July 2026); inflation 10.9% Apr, 11.7% May 2026 — ARY News](https://arynews.tv/sbp-retains-policy-rate-at-11-5-percent): inflation (context)
-- [CDNS cuts National Savings profit rates, Special Savings Certificate 11.2% (July 2026) — Express Tribune](https://tribune.com.pk/story/2619071/govt-cuts-profit-rates-on-savings-schemes): returns.savings
+- [State Bank of Pakistan — Monetary Policy Statement, 26 Oct 2026 (policy rate raised to 12% from 27 Oct 2026; inflation target 5–7%)](https://www.sbp.org.pk/assets/documents/press-release/PR-26-Oct-2026-Eng.pdf): inflation (context), loan rate (context)
+- [Dawn — National Savings profit rates raised from 21 Oct 2026: Special Savings Certificates 12%, Regular Income Certificates 12.12% (newspaper report, 21 Oct 2026)](https://www.dawn.com/news/2038739): returns.savings (estimate)
 - [KSE-100 posts ~14% compounded annual growth over 30 years — Business Recorder](https://www.brecorder.com/news/amp/40110781): returns.longTerm
 - [PSX returns 2025 (avg annual gains ~22% over 10 years, 21% over 20) — Nukta](https://nukta.com/psx-returns-2025): returns.shares (context)
-- [MCB credit card summary box Jul–Dec 2026 (APR up to 44%); Allied Bank cards 34% p.a.](https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf): defaults.cardApr (38% sits inside the 34–44% range)
+- [MCB credit card summary box Jul–Dec 2026 (APR up to 44%)](https://www.mcb.com.pk/assets/documents/Credit-card-Summary-Box-1-July-to-Dec-16-Sep-2026-Font-11-English.pdf): defaults.cardApr (38% sits inside the 34–44% range)
 - [PBS — Household Integrated Economic Survey (HIES) 2024-25, Final Report](https://www.pbs.gov.pk/wp-content/uploads/2020/07/HIES-2024-25-Report-Final-1.pdf): urban household income by quintile, per-capita consumption, food and restaurant shares (income, groceries)
 - [PBS — Labour Force Survey 2024-25 Annual Report (Tables 5.2 and 5.4, monthly wages)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/LFS-2024-25-Annual-Report.pdf): single and youngpro income
 - [PBS — CPI press release, September 2026 (10.26% YoY, national index 304.33)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/Press-Release-September-2026.pdf): inflating 2024-25 survey figures to late 2026
+- [PBS — Monthly Review on Price Indices, October 2026 (CPI 9.6% year on year)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/Monthly-Review-October2026.pdf): inflation
 - [PBS — CPI press release, September 2025 (5.76% YoY)](https://www.pbs.gov.pk/wp-content/uploads/2020/07/3.-Revised-Press-Release-September-2025.doc): inflating 2024-25 survey figures to late 2026
-- [Daily Pakistan — minimum wage raised to Rs 40,700 in Budget 2026-27 (12 Jun 2026)](https://en.dailypakistan.com.pk/12-Jun-2026/pakistan-raises-minimum-wage-to-rs40700-in-budget-2026-27): single income (context)
-- [Zameen Index — average asking rent for flats, Karachi (Aug 2026)](https://www.zameen.com/index/rent/flats/karachi-2/): rent (single, suburban, youngpro)
-- [Zameen Index — average asking rent for flats, Lahore (Aug 2026)](https://www.zameen.com/index/rent/flats/lahore-1/): rent (single, youngpro)
-- [Zameen Index — average asking rent for flats, Islamabad (Aug 2026)](https://www.zameen.com/index/rent/flats/islamabad-3/): rent (youngpro)
-- [Zameen Index — average asking rent for houses, Lahore (Aug 2026)](https://www.zameen.com/index/rent/houses/lahore-1/): rent (suburban)
-- [Zameen Index — average asking rent for houses, Faisalabad (Aug 2026)](https://www.zameen.com/index/rent/houses/faisalabad-16/): rent (suburban)
-- [Zameen Index — average asking rent for houses, Karachi (Aug 2026)](https://www.zameen.com/index/rent/houses/karachi-2/): rent (suburban)
-- [APP — OGRA cuts petrol price by Rs3.63 to Rs390.23 per litre (Oct 2026)](https://www.app.com.pk/?p=1292415): fuel ranges and thresholds
-- [Nukta — Pakistan reduces average power tariff (NEPRA domestic slab rates, Jul 2025)](https://nukta.com/pakistan-reduces-average-power-tariff): electricity ranges (bill calculation)
-- [The News — domestic consumers using up to 300 units hit with fixed charges (NEPRA, Feb 2026)](https://www.thenews.pk/story/1398554-domestic-consumers-using-up-to-300-units-hit-with-fixed-charges): electricity ranges (fixed charges, slab cuts)
+- [Finance Division — Office Memorandum, 21 Aug 2026: minimum wage Rs 40,700 for federal government civil employees from 1 Jul 2026](https://www.finance.gov.pk/circulars/circular_21082026.pdf): single income (context)
+- [Zameen Index — average asking rent for flats, Karachi (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/flats/karachi-2/): rent (single, suburban, youngpro)
+- [Zameen Index — average asking rent for flats, Lahore (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/flats/lahore-1/): rent (single, youngpro)
+- [Zameen Index — average asking rent for flats, Islamabad (Oct 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/flats/islamabad-3/): rent (youngpro)
+- [Zameen Index — average asking rent for houses, Lahore (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/lahore-1/): rent (suburban)
+- [Zameen Index — average asking rent for houses, Faisalabad (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/faisalabad-16/): rent (suburban)
+- [Zameen Index — average asking rent for houses, Karachi (Aug 2026; portal asking rents, estimate)](https://www.zameen.com/index/rent/houses/karachi-2/): rent (suburban)
+- [OGRA — petrol price build-up, effective 21 Nov 2026 (Rs 322.00 per litre)](https://ogra.org.pk/download/18473?lang=en): fuel ranges and thresholds
+- [Ministry of Energy (Power Division) — Federal Government tariff motion to NEPRA, 6 Feb 2026 (residential slabs Rs 22.44–47.20/unit; fixed charges Rs 275–675 per kW a month)](https://www.nepra.org.pk/Admission%20Notices/2026/02%20Feb/Complete%20motion%20alogwith%20Annexs_260206_150050.pdf): electricity ranges (bill calculation, fixed charges)
+- [Allied Bank — credit card charges (34% a year)](https://www.abl.com/?p=293152): defaults.cardApr (38% sits inside the 34–44% range)
 - [Dawn — Govt notifies 50pc hike in gas charges (30 Jun 2025)](https://www.dawn.com/news/1921120): waterGas (minimum gas bills; still unverified)
 - [ProPakistani — PTCL Flash Fiber packages (Jun 2026)](https://propakistani.pk/packages/ptcl-flash-fiber-packages/): internet ranges and thresholds
 - [Result.pk — Punjab govt denies Rs 10,000 limit on private school fees](https://www.result.pk/educom/punjab-govt-denies-rs-10000-limit-on-private-school-fees-55209.htm): school (context only; still unverified)

@@ -1080,6 +1080,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
 - Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
+- Pakistan data pass (2026-11-24): the monthly-budget-plan-pakistan guide (twice in the body and FAQ, once in the source title) now says Rs 40,700 is the minimum wage the federal government set for its own employees ("جو وفاقی حکومت نے 2026-27 کے لیے اپنے ملازمین کی کم از کم اجرت مقرر کی ہے"). Needs a native read.
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 
