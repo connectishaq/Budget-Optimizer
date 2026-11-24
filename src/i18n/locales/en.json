@@ -2383,7 +2383,7 @@
       "messageHelp": "For a problem, tell us what you did, what you expected and what happened, plus your browser and device.",
       "honeypot": "Leave this empty",
       "send": "Send message",
-      "privacyNote_html": "We use your details only to reply, never add you to a mailing list and delete messages within 12 months. Please don’t include bank details or passwords. See our <a href=\"/privacy-policy/#contact-data\" class=\"link\">Privacy Policy</a>.",
+      "privacyNote_html": "We use your details only to reply, never add you to a mailing list and keep messages only as long as needed to deal with your request. Please don’t include bank details or passwords. See our <a href=\"/privacy-policy/#contact-data\" class=\"link\">Privacy Policy</a>.",
       "sending": "Sending…"
     },
     "topics": {
@@ -2448,7 +2448,9 @@
       "failedTitle": "Your message wasn’t sent.",
       "notConfigured": "The contact form isn’t set up yet. Please try again later.",
       "failedText": "Please check your connection and try again. Your message is still in the form.",
-      "failedTextWithEmail": "Please check your connection and try again, or email us at {email}. Your message is still in the form."
+      "failedTextWithEmail": "Please check your connection and try again, or email us at {email}. Your message is still in the form.",
+      "unconfirmedTitle": "We couldn’t confirm your message was sent.",
+      "unconfirmedText": "To be safe, email us at {email}. Your message is still in the form, so you can copy it."
     },
     "mail": {
       "subject": "SpendMath: {topic}",

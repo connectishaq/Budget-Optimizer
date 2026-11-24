@@ -2431,7 +2431,7 @@
       "messageHelp": "Si es un problema, cuéntanos qué hiciste, qué esperabas y qué pasó, además de tu navegador y dispositivo.",
       "honeypot": "Deja esto vacío",
       "send": "Enviar mensaje",
-      "privacyNote_html": "Usamos tus datos solo para responderte, nunca te añadimos a una lista de correo y borramos los mensajes en un plazo de 12 meses. Por favor, no incluyas datos bancarios ni contraseñas. Consulta nuestra <a href=\"/privacy-policy/#contact-data\" class=\"link\">Política de privacidad</a>.",
+      "privacyNote_html": "Usamos tus datos solo para responderte, nunca te añadimos a una lista de correo y conservamos los mensajes solo el tiempo necesario para atender tu solicitud. Por favor, no incluyas datos bancarios ni contraseñas. Consulta nuestra <a href=\"/privacy-policy/#contact-data\" class=\"link\">Política de privacidad</a>.",
       "sending": "Enviando…"
     },
     "topics": {
@@ -2496,7 +2496,9 @@
       "failedTitle": "Tu mensaje no se ha enviado.",
       "notConfigured": "El formulario de contacto aún no está configurado. Vuelve a intentarlo más tarde.",
       "failedText": "Comprueba tu conexión y vuelve a intentarlo. Tu mensaje sigue en el formulario.",
-      "failedTextWithEmail": "Comprueba tu conexión y vuelve a intentarlo, o escríbenos a {email}. Tu mensaje sigue en el formulario."
+      "failedTextWithEmail": "Comprueba tu conexión y vuelve a intentarlo, o escríbenos a {email}. Tu mensaje sigue en el formulario.",
+      "unconfirmedTitle": "No hemos podido confirmar que tu mensaje se haya enviado.",
+      "unconfirmedText": "Por si acaso, escríbenos a {email}. Tu mensaje sigue en el formulario, así que puedes copiarlo."
     },
     "mail": {
       "subject": "SpendMath: {topic}",

@@ -2429,7 +2429,7 @@
       "messageHelp": "Pour un problème, dites-nous ce que vous avez fait, ce que vous attendiez et ce qui s’est passé, ainsi que votre navigateur et votre appareil.",
       "honeypot": "Laissez ce champ vide",
       "send": "Envoyer le message",
-      "privacyNote_html": "Nous utilisons vos informations uniquement pour vous répondre, ne vous inscrivons jamais à une liste de diffusion et supprimons les messages sous 12 mois. N’indiquez ni coordonnées bancaires ni mots de passe. Consultez notre <a href=\"/privacy-policy/#contact-data\" class=\"link\">Politique de confidentialité</a>.",
+      "privacyNote_html": "Nous utilisons vos informations uniquement pour vous répondre, ne vous inscrivons jamais à une liste de diffusion et ne conservons les messages que le temps nécessaire pour traiter votre demande. N’indiquez ni coordonnées bancaires ni mots de passe. Consultez notre <a href=\"/privacy-policy/#contact-data\" class=\"link\">Politique de confidentialité</a>.",
       "sending": "Envoi…"
     },
     "topics": {
@@ -2494,7 +2494,9 @@
       "failedTitle": "Votre message n’a pas été envoyé.",
       "notConfigured": "Le formulaire de contact n’est pas encore configuré. Réessayez plus tard.",
       "failedText": "Vérifiez votre connexion et réessayez. Votre message est toujours dans le formulaire.",
-      "failedTextWithEmail": "Vérifiez votre connexion et réessayez, ou écrivez-nous à {email}. Votre message est toujours dans le formulaire."
+      "failedTextWithEmail": "Vérifiez votre connexion et réessayez, ou écrivez-nous à {email}. Votre message est toujours dans le formulaire.",
+      "unconfirmedTitle": "Nous n’avons pas pu confirmer l’envoi de votre message.",
+      "unconfirmedText": "Par précaution, écrivez-nous à {email}. Votre message est toujours dans le formulaire, vous pouvez le copier."
     },
     "mail": {
       "subject": "SpendMath : {topic}",

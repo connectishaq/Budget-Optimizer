@@ -24,6 +24,10 @@ function siteConfig(env) {
   const siteUrl = (env.SITE_URL || '').trim().replace(/\/+$/, '');
   const adsClient = (env.VITE_ADSENSE_CLIENT || '').trim();
   const contactEmail = (env.VITE_CONTACT_EMAIL || '').trim();
+  // The contact form's no-JavaScript fallback posts straight to the form service
+  const attr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  const contactFormAction = attr((env.VITE_CONTACT_FORM_ENDPOINT || '').trim());
+  const contactFormKey = attr((env.VITE_CONTACT_FORM_KEY || '').trim());
   let outDir = 'dist';
   let isBuild = false;
 
@@ -103,6 +107,8 @@ function siteConfig(env) {
         .replace('__LIVE_LANGUAGES__', JSON.stringify(ENABLED_LANGUAGES))
         .replace(/<!--CONTACT_EMAIL-->/g, contact)
         .replace(/__CONTACT_EMAIL__/g, contactEmail)
+        .replace(/__CONTACT_FORM_ACTION__/g, contactFormAction)
+        .replace(/__CONTACT_FORM_KEY__/g, contactFormKey)
         .replace(/__YEAR__/g, String(new Date().getFullYear()));
     },
     async closeBundle() {

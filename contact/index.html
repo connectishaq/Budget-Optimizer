@@ -93,11 +93,17 @@
           <p class="mt-1" data-i18n="contact.unavailable.text">The contact form isn’t set up yet, so nothing you type here would reach us. Please check back soon. Meanwhile, the answers on this page cover the most common questions.</p>
         </div>
 
-        <form id="contactForm" class="mt-6 grid gap-5" novalidate>
+        <!-- Without JavaScript the browser checks the fields and posts straight to the form
+             service (action and key are filled in at build time; see vite.config.js). With
+             JavaScript, src/contact.js sends it instead and shows the result on this page. -->
+        <form id="contactForm" class="mt-6 grid gap-5" method="post" action="__CONTACT_FORM_ACTION__">
+          <input type="hidden" name="access_key" value="__CONTACT_FORM_KEY__">
+          <input type="hidden" name="subject" value="SpendMath contact form (sent without JavaScript)">
+          <input type="hidden" name="from_name" value="SpendMath contact form">
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
               <label for="c-name" class="label" data-i18n="contact.form.name">Your name</label>
-              <input id="c-name" name="name" type="text" class="input mt-1.5" autocomplete="name" maxlength="120" required aria-describedby="c-name-msg">
+              <input id="c-name" name="name" type="text" class="input mt-1.5" autocomplete="name" maxlength="100" required aria-describedby="c-name-msg">
               <p id="c-name-msg" class="field-msg" aria-live="polite"></p>
             </div>
             <div>
@@ -129,7 +135,7 @@
               <label for="c-message" class="label" data-i18n="contact.form.message">Your message</label>
               <span id="c-message-count" class="text-xs tabular-nums muted" aria-hidden="true"></span>
             </div>
-            <textarea id="c-message" name="message" rows="7" class="input mt-1.5 min-h-40 py-3" required aria-describedby="c-message-msg c-message-help"></textarea>
+            <textarea id="c-message" name="message" rows="7" class="input mt-1.5 min-h-40 py-3" minlength="20" maxlength="3000" required aria-describedby="c-message-msg c-message-help"></textarea>
             <p id="c-message-help" class="mt-1 text-xs muted" data-i18n="contact.form.messageHelp">For a problem, tell us what you did, what you expected and what happened, plus your browser and device.</p>
             <p id="c-message-msg" class="field-msg" aria-live="polite"></p>
           </div>
@@ -138,10 +144,12 @@
           <div class="hp" aria-hidden="true">
             <label for="c-website" data-i18n="contact.form.honeypot">Leave this empty</label>
             <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            <!-- Web3Forms' own spam trap, for posts sent without JavaScript -->
+            <input name="botcheck" type="checkbox" tabindex="-1" autocomplete="off">
           </div>
 
           <div class="flex flex-col gap-4 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800">
-            <p class="flex gap-2 text-xs leading-relaxed muted sm:max-w-sm"><svg class="icon icon-sm mt-px shrink-0" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n-html="contact.form.privacyNote_html">We use your details only to reply, never add you to a mailing list and delete messages within 12 months. Please don’t include bank details or passwords. See our <a href="/privacy-policy/#contact-data" class="link">Privacy Policy</a>.</span></p>
+            <p class="flex gap-2 text-xs leading-relaxed muted sm:max-w-sm"><svg class="icon icon-sm mt-px shrink-0" aria-hidden="true"><use href="#i-lock"></use></svg><span data-i18n-html="contact.form.privacyNote_html">We use your details only to reply, never add you to a mailing list and keep messages only as long as needed to deal with your request. Please don’t include bank details or passwords. See our <a href="/privacy-policy/#contact-data" class="link">Privacy Policy</a>.</span></p>
             <button id="c-submit" type="submit" class="btn btn-primary shrink-0 px-6" data-i18n="contact.form.send">Send message</button>
           </div>
           <div id="c-status" role="status" tabindex="-1" hidden></div>

@@ -2354,7 +2354,7 @@
       "messageHelp": "Untuk masalah, ceritakan apa yang Anda lakukan, apa yang Anda harapkan, dan apa yang terjadi, beserta browser dan perangkat Anda.",
       "honeypot": "Biarkan kosong",
       "send": "Kirim pesan",
-      "privacyNote_html": "Kami memakai data Anda hanya untuk membalas, tidak pernah memasukkan Anda ke milis, dan menghapus pesan dalam 12 bulan. Mohon jangan sertakan data bank atau kata sandi. Lihat <a href=\"/privacy-policy/#contact-data\" class=\"link\">Kebijakan Privasi</a> kami.",
+      "privacyNote_html": "Kami memakai data Anda hanya untuk membalas, tidak pernah memasukkan Anda ke milis, dan menyimpan pesan hanya selama diperlukan untuk menangani permintaan Anda. Mohon jangan sertakan data bank atau kata sandi. Lihat <a href=\"/privacy-policy/#contact-data\" class=\"link\">Kebijakan Privasi</a> kami.",
       "sending": "Mengirim…"
     },
     "topics": {
@@ -2419,7 +2419,9 @@
       "failedTitle": "Pesan Anda tidak terkirim.",
       "notConfigured": "Formulir kontak belum siap. Silakan coba lagi nanti.",
       "failedText": "Periksa koneksi Anda dan coba lagi. Pesan Anda masih ada di formulir.",
-      "failedTextWithEmail": "Periksa koneksi Anda dan coba lagi, atau kirim email ke {email}. Pesan Anda masih ada di formulir."
+      "failedTextWithEmail": "Periksa koneksi Anda dan coba lagi, atau kirim email ke {email}. Pesan Anda masih ada di formulir.",
+      "unconfirmedTitle": "Kami tidak bisa memastikan pesan Anda terkirim.",
+      "unconfirmedText": "Untuk amannya, kirim email ke {email}. Pesan Anda masih ada di formulir, jadi Anda bisa menyalinnya."
     },
     "mail": {
       "subject": "SpendMath: {topic}",

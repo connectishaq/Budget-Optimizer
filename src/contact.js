@@ -6,6 +6,7 @@
 
 import { pageReady } from './page.js';
 import { t } from './i18n/index.js';
+import { formResult } from './utils/form-result.js';
 
 const ENDPOINT = (import.meta.env.VITE_CONTACT_FORM_ENDPOINT || '').trim();
 const ACCESS_KEY = (import.meta.env.VITE_CONTACT_FORM_KEY || '').trim();
@@ -85,20 +86,30 @@ async function send(form) {
     return 'mailto';
   }
 
-  const body = new FormData();
-  for (const [k, v] of Object.entries(data)) body.append(k, v);
-  body.append('subject', subject); // Web3Forms
-  body.append('_subject', subject); // Formspree
-  body.append('_replyto', data.email);
-  body.append('from_name', 'SpendMath contact form');
-  if (ACCESS_KEY) body.append('access_key', ACCESS_KEY);
+  // JSON in and out: with a JSON body Web3Forms answers in JSON ({"success": true}),
+  // while a multipart post gets an HTML page even when it fails
+  const body = {
+    ...data,
+    subject, // Web3Forms
+    _subject: subject, // Formspree
+    _replyto: data.email,
+    from_name: 'SpendMath contact form',
+    ...(ACCESS_KEY ? { access_key: ACCESS_KEY } : {})
+  };
 
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 15000);
   try {
-    const res = await fetch(ENDPOINT, { method: 'POST', body, headers: { Accept: 'application/json' }, signal: ctrl.signal });
-    const json = await res.json().catch(() => ({}));
-    if (!res.ok || json.success === false || json.ok === false) throw new Error('rejected');
+    const res = await fetch(ENDPOINT, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      signal: ctrl.signal
+    });
+    const json = await res.json().catch(() => null);
+    // "Sent" only when the service confirms it; see src/utils/form-result.js
+    const result = formResult(res.ok, json);
+    if (result !== 'sent') throw new Error(result);
     return 'sent';
   } finally {
     clearTimeout(timer);
@@ -108,6 +119,9 @@ async function send(form) {
 function initContactForm() {
   const form = $('contactForm');
   if (!form) return;
+  // The page's own checks and messages take over from the browser's built-in ones,
+  // which stay on (with required/minlength/maxlength) when JavaScript is off
+  form.noValidate = true;
   const button = $('c-submit');
 
   if (!ENDPOINT && !EMAIL) {
@@ -174,6 +188,12 @@ function initContactForm() {
       // The connection dropped while sending (fetch throws a TypeError)
       if (err.name === 'TypeError' && navigator.onLine === false) {
         showStatus('error', t('contact.status.offlineTitle'), t('contact.status.offlineText'));
+        return;
+      }
+      // The service answered but didn't confirm: don't invite a resend that could
+      // arrive twice; point to email instead
+      if (err.message === 'unconfirmed' && EMAIL) {
+        showStatus('error', t('contact.status.unconfirmedTitle'), t('contact.status.unconfirmedText', { email: EMAIL }));
         return;
       }
       showStatus('error', t('contact.status.failedTitle'),

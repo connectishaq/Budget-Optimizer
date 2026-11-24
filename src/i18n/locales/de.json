@@ -2392,7 +2392,7 @@
       "messageHelp": "Bei einem Problem: Schreib uns, was du gemacht hast, was du erwartet hast und was passiert ist, dazu deinen Browser und dein Gerät.",
       "honeypot": "Dieses Feld leer lassen",
       "send": "Nachricht senden",
-      "privacyNote_html": "Wir nutzen deine Angaben nur für die Antwort, nehmen dich nie in einen Verteiler auf und löschen Nachrichten innerhalb von 12 Monaten. Bitte schick keine Bankdaten oder Passwörter. Siehe unsere <a href=\"/privacy-policy/#contact-data\" class=\"link\">Datenschutzerklärung</a>.",
+      "privacyNote_html": "Wir nutzen deine Angaben nur für die Antwort, nehmen dich nie in einen Verteiler auf und bewahren Nachrichten nur so lange auf, wie es für dein Anliegen nötig ist. Bitte schick keine Bankdaten oder Passwörter. Siehe unsere <a href=\"/privacy-policy/#contact-data\" class=\"link\">Datenschutzerklärung</a>.",
       "sending": "Wird gesendet …"
     },
     "topics": {
@@ -2457,7 +2457,9 @@
       "failedTitle": "Deine Nachricht wurde nicht gesendet.",
       "notConfigured": "Das Kontaktformular ist noch nicht eingerichtet. Bitte versuch es später noch einmal.",
       "failedText": "Bitte prüf deine Verbindung und versuch es noch einmal. Deine Nachricht ist noch im Formular.",
-      "failedTextWithEmail": "Bitte prüf deine Verbindung und versuch es noch einmal oder schreib uns an {email}. Deine Nachricht ist noch im Formular."
+      "failedTextWithEmail": "Bitte prüf deine Verbindung und versuch es noch einmal oder schreib uns an {email}. Deine Nachricht ist noch im Formular.",
+      "unconfirmedTitle": "Wir konnten nicht bestätigen, dass deine Nachricht angekommen ist.",
+      "unconfirmedText": "Schreib uns sicherheitshalber an {email}. Deine Nachricht steht noch im Formular, du kannst sie kopieren."
     },
     "mail": {
       "subject": "SpendMath: {topic}",

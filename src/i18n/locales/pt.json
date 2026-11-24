@@ -2429,7 +2429,7 @@
       "messageHelp": "Se for um problema, conte o que você fez, o que esperava e o que aconteceu, além do seu navegador e dispositivo.",
       "honeypot": "Deixe este campo vazio",
       "send": "Enviar mensagem",
-      "privacyNote_html": "Usamos seus dados só para responder, nunca incluímos você em listas de e-mail e apagamos as mensagens em até 12 meses. Não inclua dados bancários nem senhas. Veja nossa <a href=\"/privacy-policy/#contact-data\" class=\"link\">Política de Privacidade</a>.",
+      "privacyNote_html": "Usamos seus dados só para responder, nunca incluímos você em listas de e-mail e guardamos as mensagens só pelo tempo necessário para resolver o seu pedido. Não inclua dados bancários nem senhas. Veja nossa <a href=\"/privacy-policy/#contact-data\" class=\"link\">Política de Privacidade</a>.",
       "sending": "Enviando…"
     },
     "topics": {
@@ -2494,7 +2494,9 @@
       "failedTitle": "Sua mensagem não foi enviada.",
       "notConfigured": "O formulário de contato ainda não está configurado. Tente novamente mais tarde.",
       "failedText": "Confira sua conexão e tente novamente. Sua mensagem continua no formulário.",
-      "failedTextWithEmail": "Confira sua conexão e tente novamente, ou envie um e-mail para {email}. Sua mensagem continua no formulário."
+      "failedTextWithEmail": "Confira sua conexão e tente novamente, ou envie um e-mail para {email}. Sua mensagem continua no formulário.",
+      "unconfirmedTitle": "Não conseguimos confirmar o envio da sua mensagem.",
+      "unconfirmedText": "Por garantia, escreva para {email}. Sua mensagem continua no formulário, então você pode copiá-la."
     },
     "mail": {
       "subject": "SpendMath: {topic}",
