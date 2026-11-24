@@ -86,9 +86,11 @@ async function send(form) {
     return 'mailto';
   }
 
-  // JSON in and out: with a JSON body Web3Forms answers in JSON ({"success": true}),
-  // while a multipart post gets an HTML page even when it fails
-  const body = {
+  // URL-encoded out, JSON back: Web3Forms answers a url-encoded post (with
+  // Accept: application/json) in JSON, {"success": true}, while a multipart post
+  // gets an HTML page even when it fails. Url-encoded is also a "simple" request,
+  // so the browser sends it without a CORS preflight.
+  const fields = {
     ...data,
     subject, // Web3Forms
     _subject: subject, // Formspree
@@ -102,8 +104,8 @@ async function send(form) {
   try {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
-      body: JSON.stringify(body),
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: new URLSearchParams(fields),
+      headers: { Accept: 'application/json' },
       signal: ctrl.signal
     });
     const json = await res.json().catch(() => null);
