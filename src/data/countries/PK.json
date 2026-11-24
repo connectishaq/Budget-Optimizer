@@ -1114,17 +1114,17 @@
     {
       "id": "pk-protected-slab",
       "pool": "electricity",
-      "title": "Stay in the protected 200-unit slab in winter",
-      "why": "Homes that use up to 200 units a month for six months in a row pay a much lower “protected” rate. One month over can cost you that status for the next six months.",
+      "title": "You may qualify for the lower “protected” rate: check your bill",
+      "why": "Homes that stay at or under 200 units a month for six months in a row may pay a much lower “protected” rate. The rules can change, so check your bill or ask your electricity company before you count on it.",
       "tips": [
-        "Check the last 6 months of “units” on your bill to see if you are close to protected status.",
+        "Check the last 6 months of “units” on your bill and ask your electricity company whether you count as protected.",
         "In winter, switch off the geyser’s electric element and use gas or an instant geyser instead.",
-        "Read your meter mid-month so you can cut back before you cross 200 units."
+        "If you are close to 200 units, read your meter mid-month so you can cut back before you go over."
       ],
       "pct": {
         "value": 0.2,
         "verify": true,
-        "note": "Judgement estimate; the saving depends on the slab rates in your DISCO’s current tariff."
+        "note": "Judgement estimate, and only if the household qualifies as protected; the saving depends on the slab rates in your DISCO’s current tariff. The 200-unit/6-month rule is not stated in the 6 Feb 2026 tariff motion, so it is worded as something to check."
       },
       "effort": "Easy"
     },
