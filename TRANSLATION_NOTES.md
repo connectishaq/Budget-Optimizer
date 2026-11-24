@@ -149,6 +149,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### German (de)
 
@@ -293,6 +294,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### Spanish (es)
 
@@ -456,6 +458,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### French (fr)
 
@@ -560,6 +563,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### Hindi (hi)
 
@@ -711,6 +715,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### Indonesian (id)
 
@@ -857,6 +862,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### Portuguese (pt)
 
@@ -971,6 +977,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ### Urdu (ur)
 
@@ -1072,6 +1079,7 @@ Translated from English in one pass, not yet reviewed by a native speaker:
 - `terms.sections.law.p1`: governing law is now Pakistan.
 - `privacy.seo.description` / `ogDescription`, `privacy.updated_html`, `terms.updated_html` (24 Nov 2026).
 Product names (Cloudflare, Cloudflare Web Analytics, Cloudflare Email Routing, Web3Forms, Google AdSense) are left in English.
+- Added the same day: `privacy.sections.contactData.p2` and `privacy.sections.transfers.p1` now name Google (Gmail) as the mailbox provider; new `common.legalTranslationNote` ("If it differs from the English version, the English version applies"), shown only on translated Privacy and Terms pages. Have a lawyer check the wording of this clause.
 
 ## Country articles ("5 Hidden Household Expense Leaks")
 

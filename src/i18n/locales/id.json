@@ -1633,7 +1633,8 @@
       "year": "tahun"
     },
     "confirm": "Konfirmasi",
-    "undo": "Urungkan"
+    "undo": "Urungkan",
+    "legalTranslationNote": "Terjemahan ini disediakan untuk kemudahan. Jika berbeda dengan versi bahasa Inggris, versi bahasa Inggris yang berlaku."
   },
   "plan": {
     "explain": {
@@ -2158,7 +2159,7 @@
       },
       "contactData": {
         "title": "Saat Anda menghubungi kami",
-        "p2": "Pesan yang dikirim lewat formulir kontak sampai ke kotak masuk kami melalui Web3Forms, layanan formulir yang memprosesnya atas nama kami. Email ke hello@spendmath.com diteruskan ke kotak masuk yang sama oleh Cloudflare Email Routing. Kami menyimpan pesan hanya selama diperlukan untuk membalas dan menangani permintaan Anda. Kami tidak pernah memasukkan Anda ke milis dan tidak pernah menjual atau menyewakan data Anda.",
+        "p2": "Pesan yang dikirim lewat formulir kontak sampai ke kotak masuk kami melalui Web3Forms, layanan formulir yang memprosesnya atas nama kami. Kotak masuk kami disediakan oleh Google (Gmail), dan email ke hello@spendmath.com diteruskan ke sana oleh Cloudflare Email Routing. Kami menyimpan pesan hanya selama diperlukan untuk membalas dan menangani permintaan Anda. Kami tidak pernah memasukkan Anda ke milis dan tidak pernah menjual atau menyewakan data Anda.",
         "p3": "Mohon jangan menyertakan data keuangan pribadi, seperti nomor rekening atau kata sandi, dalam pesan. Kami tidak membutuhkannya untuk membantu Anda.",
         "p1_html": "Jika Anda memakai <a href=\"/contact/\">formulir kontak</a> kami atau mengirim email kepada kami, kami menerima nama, alamat email, topik yang Anda pilih, pesan Anda, dan halaman tempat Anda berada. Kami memakainya hanya untuk membaca dan menjawab pesan Anda, memperbaiki masalah yang Anda laporkan, dan menyempurnakan situs. Dasar hukum kami adalah kepentingan sah kami untuk membalas Anda, atau langkah yang Anda minta kami lakukan."
       },
@@ -2193,7 +2194,7 @@
       },
       "transfers": {
         "title": "Transfer internasional",
-        "p1": "Pesan yang Anda kirim kepada kami, data yang ditangani Cloudflare dan Web3Forms atas nama kami, dan, jika iklan ditampilkan, data yang dipakai Google untuk iklan dapat diproses di negara selain negara Anda, termasuk Amerika Serikat. Jika diwajibkan oleh hukum, transfer ini dilindungi dengan pengamanan seperti klausul kontrak standar Komisi Eropa."
+        "p1": "Pesan yang Anda kirim kepada kami, data yang ditangani Cloudflare, Web3Forms, dan Google (Gmail) atas nama kami, dan, jika iklan ditampilkan, data yang dipakai Google untuk iklan dapat diproses di negara selain negara Anda, termasuk Amerika Serikat. Jika diwajibkan oleh hukum, transfer ini dilindungi dengan pengamanan seperti klausul kontrak standar Komisi Eropa."
       },
       "links": {
         "title": "Tautan ke situs web lain",

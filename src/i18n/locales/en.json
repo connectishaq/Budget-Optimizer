@@ -1653,7 +1653,8 @@
       "year": "year"
     },
     "confirm": "Confirm",
-    "undo": "Undo"
+    "undo": "Undo",
+    "legalTranslationNote": "This translation is provided for convenience. If it differs from the English version, the English version applies."
   },
   "plan": {
     "explain": {
@@ -2187,7 +2188,7 @@
       },
       "contactData": {
         "title": "When you contact us",
-        "p2": "Messages sent through the contact form are delivered to our inbox by Web3Forms, a form service that processes them on our behalf. Emails to hello@spendmath.com are forwarded to the same inbox by Cloudflare Email Routing. We keep messages only as long as needed to reply and deal with your request. We never add you to a mailing list and never sell or rent your details.",
+        "p2": "Messages sent through the contact form are delivered to our inbox by Web3Forms, a form service that processes them on our behalf. Our inbox is hosted by Google (Gmail), and emails to hello@spendmath.com are forwarded to it by Cloudflare Email Routing. We keep messages only as long as needed to reply and deal with your request. We never add you to a mailing list and never sell or rent your details.",
         "p3": "Please don’t include personal financial details, such as account numbers or passwords, in a message. We don’t need them to help you.",
         "p1_html": "If you use our <a href=\"/contact/\">contact form</a> or email us, we receive your name, your email address, the topic you choose, your message and the page you were on. We use this only to read and answer your message, fix problems you report and improve the site. Our legal basis is our legitimate interest in replying to you, or the steps you ask us to take."
       },
@@ -2222,7 +2223,7 @@
       },
       "transfers": {
         "title": "International transfers",
-        "p1": "Messages you send us, data handled by Cloudflare and Web3Forms on our behalf and, if ads are shown, data used by Google for ads may be processed in countries other than yours, including the United States. Where the law requires it, these transfers are protected by safeguards such as the European Commission’s standard contractual clauses."
+        "p1": "Messages you send us, data handled by Cloudflare, Web3Forms and Google (Gmail) on our behalf and, if ads are shown, data used by Google for ads may be processed in countries other than yours, including the United States. Where the law requires it, these transfers are protected by safeguards such as the European Commission’s standard contractual clauses."
       },
       "links": {
         "title": "Links to other websites",

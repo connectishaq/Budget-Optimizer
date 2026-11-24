@@ -1695,7 +1695,8 @@
       "year": "año"
     },
     "confirm": "Confirmar",
-    "undo": "Deshacer"
+    "undo": "Deshacer",
+    "legalTranslationNote": "Esta traducción se ofrece por comodidad. Si difiere de la versión en inglés, prevalece la versión en inglés."
   },
   "plan": {
     "explain": {
@@ -2235,7 +2236,7 @@
       },
       "contactData": {
         "title": "Cuando te pones en contacto con nosotros",
-        "p2": "Los mensajes que envías con el formulario de contacto llegan a nuestro buzón a través de Web3Forms, un servicio de formularios que los trata en nuestro nombre. Los correos a hello@spendmath.com se reenvían al mismo buzón mediante Cloudflare Email Routing. Conservamos los mensajes solo el tiempo necesario para responderte y atender tu solicitud. Nunca te añadimos a una lista de correo y nunca vendemos ni alquilamos tus datos.",
+        "p2": "Los mensajes que envías con el formulario de contacto llegan a nuestro buzón a través de Web3Forms, un servicio de formularios que los trata en nuestro nombre. Nuestro buzón está alojado en Google (Gmail), y los correos a hello@spendmath.com se reenvían a él mediante Cloudflare Email Routing. Conservamos los mensajes solo el tiempo necesario para responderte y atender tu solicitud. Nunca te añadimos a una lista de correo y nunca vendemos ni alquilamos tus datos.",
         "p3": "Por favor, no incluyas en tu mensaje datos financieros personales, como números de cuenta o contraseñas. No los necesitamos para ayudarte.",
         "p1_html": "Si usas nuestro <a href=\"/contact/\">formulario de contacto</a> o nos escribes por correo electrónico, recibimos tu nombre, tu dirección de correo, el tema que eliges, tu mensaje y la página en la que estabas. Lo usamos solo para leer y responder a tu mensaje, resolver los problemas que nos comuniques y mejorar el sitio. La base legal es nuestro interés legítimo en responderte, o las medidas que nos pides que tomemos."
       },
@@ -2270,7 +2271,7 @@
       },
       "transfers": {
         "title": "Transferencias internacionales",
-        "p1": "Los mensajes que nos envías, los datos que tratan Cloudflare y Web3Forms en nuestro nombre y, si se muestran anuncios, los datos que Google usa para ellos pueden tratarse en países distintos del tuyo, incluido Estados Unidos. Cuando la ley lo exige, estas transferencias están protegidas por garantías como las cláusulas contractuales tipo de la Comisión Europea."
+        "p1": "Los mensajes que nos envías, los datos que tratan Cloudflare, Web3Forms y Google (Gmail) en nuestro nombre y, si se muestran anuncios, los datos que Google usa para ellos pueden tratarse en países distintos del tuyo, incluido Estados Unidos. Cuando la ley lo exige, estas transferencias están protegidas por garantías como las cláusulas contractuales tipo de la Comisión Europea."
       },
       "links": {
         "title": "Enlaces a otros sitios web",

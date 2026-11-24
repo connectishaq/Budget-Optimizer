@@ -1695,7 +1695,8 @@
       "year": "an"
     },
     "confirm": "Confirmer",
-    "undo": "Annuler"
+    "undo": "Annuler",
+    "legalTranslationNote": "Cette traduction est fournie à titre indicatif. En cas de divergence avec la version anglaise, la version anglaise prévaut."
   },
   "plan": {
     "explain": {
@@ -2233,7 +2234,7 @@
       },
       "contactData": {
         "title": "Quand vous nous contactez",
-        "p2": "Les messages envoyés via le formulaire de contact sont acheminés vers notre boîte de réception par Web3Forms, un service de formulaires qui les traite pour notre compte. Les e-mails adressés à hello@spendmath.com sont transférés vers la même boîte par Cloudflare Email Routing. Nous conservons les messages uniquement le temps nécessaire pour vous répondre et traiter votre demande. Nous ne vous inscrivons jamais à une liste de diffusion et ne vendons ni ne louons jamais vos données.",
+        "p2": "Les messages envoyés via le formulaire de contact sont acheminés vers notre boîte de réception par Web3Forms, un service de formulaires qui les traite pour notre compte. Notre boîte de réception est hébergée par Google (Gmail), et les e-mails adressés à hello@spendmath.com y sont transférés par Cloudflare Email Routing. Nous conservons les messages uniquement le temps nécessaire pour vous répondre et traiter votre demande. Nous ne vous inscrivons jamais à une liste de diffusion et ne vendons ni ne louons jamais vos données.",
         "p3": "N’incluez pas de données financières personnelles, comme des numéros de compte ou des mots de passe, dans un message. Nous n’en avons pas besoin pour vous aider.",
         "p1_html": "Si vous utilisez notre <a href=\"/contact/\">formulaire de contact</a> ou nous écrivez par e-mail, nous recevons votre nom, votre adresse e-mail, le sujet choisi, votre message et la page sur laquelle vous étiez. Nous les utilisons uniquement pour lire votre message et y répondre, corriger les problèmes signalés et améliorer le site. Notre base légale est notre intérêt légitime à vous répondre, ou les mesures que vous nous demandez de prendre."
       },
@@ -2268,7 +2269,7 @@
       },
       "transfers": {
         "title": "Transferts internationaux",
-        "p1": "Les messages que vous nous envoyez, les données traitées par Cloudflare et Web3Forms pour notre compte et, si des publicités sont affichées, les données utilisées par Google pour la publicité peuvent être traités dans d’autres pays que le vôtre, y compris aux États-Unis. Lorsque la loi l’exige, ces transferts sont encadrés par des garanties comme les clauses contractuelles types de la Commission européenne."
+        "p1": "Les messages que vous nous envoyez, les données traitées par Cloudflare, Web3Forms et Google (Gmail) pour notre compte et, si des publicités sont affichées, les données utilisées par Google pour la publicité peuvent être traités dans d’autres pays que le vôtre, y compris aux États-Unis. Lorsque la loi l’exige, ces transferts sont encadrés par des garanties comme les clauses contractuelles types de la Commission européenne."
       },
       "links": {
         "title": "Liens vers d’autres sites",

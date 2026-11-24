@@ -2,7 +2,7 @@
 // the light/dark switch. The calculator itself boots from main.js.
 
 import './styles.css';
-import { t } from './i18n/index.js';
+import { t, getLanguage } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
 import { getStoredCountry } from './i18n/countries.js';
 import { setFormatRegion } from './utils/format.js';
@@ -31,6 +31,9 @@ function initTheme() {
 /** Resolves once the page is translated and the header is wired; page scripts wait for it. */
 setFormatRegion(getStoredCountry());
 export const pageReady = startI18n().then(() => {
+  // Privacy and Terms: "the English version applies" note, only on translations
+  // (changing language reloads the page, so this runs once per language)
+  if (getLanguage() !== 'en') document.querySelectorAll('[data-translation-note]').forEach((el) => { el.hidden = false; });
   initTheme();
   initNavMenu();
   initLocalePicker();
