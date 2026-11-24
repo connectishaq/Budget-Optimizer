@@ -6,7 +6,7 @@ Every number below is an estimate, not a sourced fact. It is used for "typical" 
 "higher than typical" hints and when savings ideas appear. Check each one against a current local
 source, then remove its `"verify": true` wrapper (keep the plain number) and update `lastReviewed`.
 
-**1798 value(s) across 16 file(s).**
+**1803 value(s) across 16 file(s).**
 
 ## AE · AED · last reviewed 2026-10-20
 
@@ -1964,7 +1964,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `extraFields[1].ranges.single` | 0 – 20000 | Estimate; no published average for committee contributions. |
 | `extraFields[1].ranges.suburban` | 0 – 50000 | Estimate; no published average for committee contributions. |
 | `extraFields[1].ranges.youngpro` | 0 – 40000 | Estimate; no published average for committee contributions. |
-| `localTips[0].pct` | 0.2 | Judgement estimate; the saving depends on the slab rates in your DISCO’s current tariff. |
+| `localTips[0].pct` | 0.2 | Judgement estimate, and only if the household qualifies as protected; the saving depends on the slab rates in your DISCO’s current tariff. The 200-unit/6-month rule is not stated in the 6 Feb 2026 tariff motion, so it is worded as something to check. |
 | `localTips[1].pct` | 0.4 | Judgement estimate. |
 | `localTips[1].upfront` | 250000 | Two or three panels with a lithium battery and hybrid inverter for fans, lights and the router; prices vary by city. |
 | `localTips[2].pct` | 0.15 | Judgement estimate. |
@@ -2132,38 +2132,43 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [SAMA — rules for disclosing the prices of financing and savings products](https://www.sama.gov.sa/en-US/RulesInstructions/FinanceRules/Rules for disclosing the prices of financing and savings products.pdf): defaults.cardApr (context)
 - [Saudi Life Guide — Iqama fees 2026 (dependent levy SAR 400 a month)](https://saudilifeguide.com/saudi-arabia-iqama-fees/): dependentFee
 
-## US · USD · last reviewed 2026-10-20
+## US · USD · last reviewed 2026-11-24
 
-4 value(s) to verify.
+9 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
+| `returns.savings` | 4 | FDIC national rates (16 Nov 2026): the average savings account pays 0.39%, and the national rate cap is 4.63%. Online high-yield accounts paid around 4.2–4.35% APY in Oct 2026 (The College Investor; not re-checked, the site blocks automated access). 4% assumes a high-yield account. |
+| `profiles.single.ranges.rent` | 1200 – 1800 | ACS 2024 median gross rent $1,487 (Census, official; the 2025 figure could not be checked). Apartment List (Oct 2026: 1-bed $1,220) and Zillow (typical asking rent about $1,950) are private listing data, not re-checked because the sites block automated access. Range kept as an estimate. |
+| `profiles.suburban.ranges.rent` | 1800 – 2600 | No official national rent series for family-size homes. ACS 2024 median gross rent is $1,487 (Census); private listing data (Zillow typical asking rent about $1,950; Apartment List 2-bed $1,374, Oct 2026; not re-checked) put houses above that. Range kept as an estimate. |
 | `profiles.suburban.ranges.school` | 200 – 600 | Public school is free; this covers after-school care, camps and activities. Child Care Aware reports a 2025 national average of $13,184 a year for infant/preschool care but gives no national school-age figure; state school-age centre prices are often $5,000+ a year per child. Range kept as an estimate. |
-| `extraFields[0].ranges.single` | 80 – 200 | KFF 2025: average worker contribution for single coverage $1,440 a year (about $120 a month, 16% of the $9,325 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary. |
-| `extraFields[0].ranges.youngpro` | 100 – 350 | Between KFF 2025 single ($120 a month) and family ($570 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate. |
+| `profiles.youngpro.ranges.rent` | 1400 – 2100 | Between the ACS 2024 median gross rent ($1,487, Census) and Zillow's typical asking rent (about $1,950; private listing data, not re-checked) for big-city flats. Range kept as an estimate. |
+| `extraFields[0].ranges.single` | 80 – 200 | KFF 2026: average worker contribution for single coverage $1,672 a year (about $139 a month, 18% of the $9,804 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary. |
+| `extraFields[0].ranges.suburban` | 350 – 800 | KFF 2026: average worker contribution for family coverage $7,471 a year (about $623 a month, 27% of the $28,303 premium). The spread around it, for cheaper and costlier plans, is our estimate. |
+| `extraFields[0].ranges.youngpro` | 100 – 350 | Between KFF 2026 single ($139 a month) and family ($623 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate. |
 | `localTips[0].pct` | 0.1 | Assumed saving from switching plans at open enrollment; no national study of the typical saving found, estimate kept. |
 
 **Sources**
 
-- [KFF 2025 Employer Health Benefits Survey (summary)](https://www.kff.org/health-costs/): health insurance premium ranges (worker contributions $1,440 single / $6,850 family)
-- [Best high-yield savings rates, Oct 2026 (The College Investor)](https://thecollegeinvestor.com/90524/best-high-yield-savings-rates-for-october-14-2026/): savings return (top online savings around 4.2–4.35% APY)
-- [BLS Consumer Price Index news release (Sept 2026 data)](https://www.bls.gov/news.release/cpi.nr0.htm): inflation (CPI-U 3.7% over the year to Sept 2026)
-- [Federal Reserve Bank of Cleveland, Inflation Expectations](https://www.clevelandfed.org/indicators-and-data/inflation-expectations): inflation (10-year expected inflation about 2.5%, Aug 2026)
+- [KFF 2026 Employer Health Benefits Survey (22 Oct 2026)](https://www.kff.org/health-costs/2026-employer-health-benefits-survey/): health insurance premium ranges (premiums $9,804 single / $28,303 family; worker contributions $1,672 / $7,471; shares 18% / 27%)
+- [Best high-yield savings rates, Oct 2026 (The College Investor; private comparison site)](https://thecollegeinvestor.com/90524/best-high-yield-savings-rates-for-october-14-2026/): savings return (top online savings around 4.2–4.35% APY)
+- [BLS Consumer Price Index, September 2026 (released Oct 14, 2026)](https://www.bls.gov/news.release/archives/cpi_10142026.htm): inflation (CPI-U 3.7% over the year to Sept 2026)
+- [Federal Reserve Bank of Cleveland, Inflation Expectations](https://www.clevelandfed.org/indicators-and-data/inflation-expectations): inflation (10-year expected inflation 2.67%, Nov 2026)
 - [Damodaran, Historical Returns on Stocks, Bonds and Bills 1928-2025 (NYU Stern)](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html): long-term and shares returns (S&P 500 about 10.0% a year geometric)
-- [KFF Employer Health Benefits Survey 2025, Summary of Findings](https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf): health premium (premiums $9,325 / $26,993; worker shares 16% / 26%, 23% vs 36% by firm size)
-- [BLS Usual Weekly Earnings, Q2 2026 (July 21, 2026)](https://www.bls.gov/news.release/archives/wkyeng_07212026.htm): income (median full-time $1,251 a week; bachelor's $1,768)
+- [FDIC National Rates and Rate Caps (16 Nov 2026)](https://www.fdic.gov/national-rates-and-rate-caps): savings return (national savings rate 0.39%, rate cap 4.63%)
+- [BLS Usual Weekly Earnings, Q3 2026 (Oct 21, 2026; current release page)](https://www.bls.gov/news.release/wkyeng.nr0.htm): income (median full-time $1,232 a week; at least a bachelor's degree $1,752)
 - [Census Bureau, Income in the United States: 2025 (Sept 15, 2026)](https://www.census.gov/newsroom/press-releases/2026/income-poverty-health-insurance-coverage.html): income (median household $87,460; post-tax $76,060)
 - [Census Bureau ACS 2024 1-year, median gross rent (table B25064)](https://data.census.gov/table/ACSDT1Y2024.B25064): rent (US median gross rent $1,487)
-- [Apartment List National Rent Report, Oct 2026](https://www.apartmentlist.com/research/national-rent-data): rent (national median $1,388; 1-bed $1,220; 2-bed $1,374)
-- [Zillow Research, rent reports and Observed Rent Index](https://www.zillow.com/research/data/): rent (typical US asking rent about $1,900-$1,950 in 2026)
-- [BLS Consumer Expenditures 2024 (news release, Dec 19, 2025)](https://www.bls.gov/news.release/archives/cesan_12192025.htm): groceries, fuel (all households: food at home $6,224, gasoline $2,411 a year)
-- [FRED / BLS CE: Food at home by size of consumer unit (1, 2, 4 people)](https://fred.stlouisfed.org/series/CXUFOODHOMELB0502M): groceries (2024: $3,395 one person, $6,088 two, $8,697 four; series CXUFOODHOMELB0502M/0504M/0506M)
-- [FRED / BLS CE: Gasoline, other fuels and motor oil by size of consumer unit](https://fred.stlouisfed.org/series/CXUGASOILLB0502M): fuel (2022: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)
-- [USDA FNS Food Plans: Monthly Cost of Food Reports (2026)](https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports): groceries (thrifty family of four $1,023 and adults 20-50 $253-$319, June 2026; moderate adults 19-50 $336-$398, May-July 2026)
+- [Apartment List National Rent Report, Oct 2026 (private listing data)](https://www.apartmentlist.com/research/national-rent-data): rent (national median $1,388; 1-bed $1,220; 2-bed $1,374)
+- [Zillow Research, rent reports and Observed Rent Index (private listing data)](https://www.zillow.com/research/data/): rent (typical US asking rent about $1,900-$1,950 in 2026)
+- [BLS Consumer Expenditures 2025 (Oct 29, 2026)](https://www.bls.gov/news.release/cesan.nr0.htm): groceries, fuel (all households: food at home $6,491, gasoline and other fuels $2,503 a year)
+- [FRED / BLS CE: Food at home by size of consumer unit (1, 2, 4 people)](https://fred.stlouisfed.org/series/CXUFOODHOMELB0502M): groceries (2025: $3,385 one person, $6,249 two, $8,912 four; series CXUFOODHOMELB0502M/0504M/0506M)
+- [FRED / BLS CE: Gasoline, other fuels and motor oil by size of consumer unit](https://fred.stlouisfed.org/series/CXUGASOILLB0502M): fuel (2022, latest usable year: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)
+- [USDA FNS Food Plans: Monthly Cost of Food Reports (2026; not re-checked in Nov 2026)](https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports): groceries (thrifty family of four $1,023 and adults 20-50 $253-$319, June 2026; moderate adults 19-50 $336-$398, May-July 2026)
 - [EIA, Residential Energy Consumption Survey 2020, table CE4.1](https://www.eia.gov/consumption/residential/data/2020/c&e/pdf/ce4.1.pdf): electricity (kWh by housing type: 5+ unit apartments about 6,100 kWh/yr, single-family detached about 12,400)
-- [EIA Short-Term Energy Outlook (2026 residential electricity price 18.2 cents/kWh)](https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php): electricity price
+- [EIA Short-Term Energy Outlook, Nov 2026 (2026 residential electricity price 18.2 cents/kWh)](https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php): electricity price
 - [EIA Today in Energy: residential electric bills by state (May 12, 2025)](https://www.eia.gov/todayinenergy/detail.php?id=65244): electricity (US average bill $144 a month in 2024)
-- [AAA Gas Prices](https://gasprices.aaa.com/): fuel (national regular average about $4.30-$4.41 in Oct 2026)
+- [EIA Gasoline and Diesel Fuel Update (weekly; US regular $3.805 on 16 Nov 2026)](https://www.eia.gov/petroleum/gasdiesel/): fuel (current national regular price)
 - [EIA Today in Energy: 2024 retail gasoline prices (Jan 7, 2025)](https://www.eia.gov/todayinenergy/detail.php?id=64164): fuel (2024 regular average $3.30/gal)
-- [Federal Reserve G.19 Consumer Credit](https://www.federalreserve.gov/releases/g19/current/): card APR default (accounts assessed interest averaged 22.3% in 2025)
+- [Federal Reserve G.19 Consumer Credit (6 Nov 2026)](https://www.federalreserve.gov/releases/g19/current/): card APR default (accounts assessed interest 22.36%, Q3 2026, preliminary)
 - [Child Care Aware of America, Child Care in America: 2025 Price & Supply](https://info.childcareaware.org/price-and-supply-2025): school/childcare context (national average $13,184 a year, infant/preschool)

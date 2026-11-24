@@ -7,10 +7,14 @@
   "inflation": {
     "value": 3,
     "verify": false,
-    "note": "CPI-U was 3.7% a year in Sept 2026 (BLS, energy-driven) and the Cleveland Fed 10-year expected inflation was about 2.5% (Aug 2026); 3% sits between the current rate and the long-run expectation, so kept."
+    "note": "CPI-U was 3.7% a year in Sept 2026 (BLS, energy-driven); BLS could not publish a 12-month change for Oct 2026 because Oct 2025 data were never collected. The Cleveland Fed 10-year expected inflation is 2.67% (Nov 2026 update). 3% sits between the current rate and the long-run expectation, so kept."
   },
   "returns": {
-    "savings": 4,
+    "savings": {
+      "value": 4,
+      "verify": true,
+      "note": "FDIC national rates (16 Nov 2026): the average savings account pays 0.39%, and the national rate cap is 4.63%. Online high-yield accounts paid around 4.2–4.35% APY in Oct 2026 (The College Investor; not re-checked, the site blocks automated access). 4% assumes a high-yield account."
+    },
     "balanced": 6,
     "longTerm": {
       "value": 8,
@@ -24,7 +28,11 @@
     }
   },
   "defaults": {
-    "cardApr": 22,
+    "cardApr": {
+      "value": 22,
+      "verify": false,
+      "note": "Federal Reserve G.19 (6 Nov 2026): commercial bank credit card rate for accounts assessed interest 22.36% in Q3 2026 (preliminary); all accounts 21.19%."
+    },
     "loanApr": 8
   },
   "costs": {
@@ -41,15 +49,15 @@
             5200
           ],
           "verify": false,
-          "note": "BLS Q2 2026 median full-time pay is $1,251 a week (about $65,000 a year), roughly $4,300 a month after federal, FICA and a typical state tax (our tax estimate); range covers about $46k-$80k gross."
+          "note": "BLS Q3 2026 median full-time pay is $1,232 a week (about $64,000 a year), roughly $4,250 a month after federal, FICA and a typical state tax (our tax estimate); range covers about $46k-$80k gross."
         },
         "rent": {
           "value": [
             1200,
             1800
           ],
-          "verify": false,
-          "note": "ACS 2024 median gross rent $1,487 (Census); Apartment List Oct 2026 national median 1-bed $1,220, higher in big cities; Zillow typical asking rent about $1,950. Range kept."
+          "verify": true,
+          "note": "ACS 2024 median gross rent $1,487 (Census, official; the 2025 figure could not be checked). Apartment List (Oct 2026: 1-bed $1,220) and Zillow (typical asking rent about $1,950) are private listing data, not re-checked because the sites block automated access. Range kept as an estimate."
         },
         "homeIns": [
           12,
@@ -61,7 +69,7 @@
             110
           ],
           "verify": false,
-          "note": "was [45, 85]; EIA RECS 2020: apartments in 5+ unit buildings use about 6,100 kWh a year (508 a month); at EIA's 2026 average residential price of 18.2 cents/kWh that is about $92 a month; a person living alone uses somewhat less."
+          "note": "was [45, 85]; EIA RECS 2020: apartments in 5+ unit buildings use about 6,100 kWh a year (508 a month); at EIA's 2026 average residential price of 18.2 cents/kWh (STEO, Nov 2026) that is about $92 a month; a person living alone uses somewhat less."
         },
         "waterGas": [
           25,
@@ -77,7 +85,7 @@
             180
           ],
           "verify": false,
-          "note": "was [60, 120]; BLS CE: one-person households spent $1,590 a year on gasoline in 2022 when regular averaged about $3.95; at the Oct 2026 AAA average of about $4.30 the same driving is about $145 a month. For a single person who drives."
+          "note": "BLS CE: one-person households spent $1,590 a year on gasoline in 2022 (latest year in this series) when regular averaged about $3.95; at the EIA weekly US regular price of $3.805 (16 Nov 2026) the same driving is about $128 a month. For a single person who drives."
         },
         "transit": [
           80,
@@ -101,7 +109,7 @@
             420
           ],
           "verify": false,
-          "note": "was [250, 350]; BLS CE 2024: one-person households spent $3,395 a year on food at home ($283 a month, about $300 in 2026 with roughly 3% a year food-at-home inflation); USDA 2026 food plans for one adult 19-50 with USDA's +20% one-person adjustment work out (our calculation) to about $300-$380 thrifty and $400-$480 moderate."
+          "note": "BLS CE 2025: one-person households spent $3,385 a year on food at home ($282 a month). USDA 2026 food plans for one adult 19-50 with USDA's +20% one-person adjustment worked out (our calculation, Jun-Jul 2026; not re-checked, the USDA site blocks automated access) to about $300-$380 thrifty and $400-$480 moderate."
         },
         "dining": [
           150,
@@ -186,15 +194,15 @@
             9500
           ],
           "verify": false,
-          "note": "Census: 2025 median household income $87,460 ($76,060 after tax, about $6,340 a month) for all households; families of four, often with two earners (BLS median full-time pay $1,251 a week each), sit above that, so this take-home range is consistent; split by family type not in the release."
+          "note": "Census: 2025 median household income $87,460 ($76,060 after tax, about $6,340 a month) for all households; families of four, often with two earners (BLS median full-time pay $1,232 a week each, Q3 2026), sit above that, so this take-home range is consistent; split by family type not in the release."
         },
         "rent": {
           "value": [
             1800,
             2600
           ],
-          "verify": false,
-          "note": "Zillow typical US asking rent about $1,950 (all homes, 2026); family-size houses rent above the 2-bed national median ($1,374, Apartment List Oct 2026). Range kept; no national 3-bed rent series found, so the top end is an estimate."
+          "verify": true,
+          "note": "No official national rent series for family-size homes. ACS 2024 median gross rent is $1,487 (Census); private listing data (Zillow typical asking rent about $1,950; Apartment List 2-bed $1,374, Oct 2026; not re-checked) put houses above that. Range kept as an estimate."
         },
         "homeIns": [
           100,
@@ -206,7 +214,7 @@
             230
           ],
           "verify": false,
-          "note": "was [110, 170]; EIA RECS 2020: single-family detached homes use about 12,400 kWh a year (1,030 a month), about $188 a month at 18.2 cents/kWh (EIA STEO 2026); US average bill was $144 in 2024 (EIA)."
+          "note": "was [110, 170]; EIA RECS 2020: single-family detached homes use about 12,400 kWh a year (1,030 a month), about $188 a month at 18.2 cents/kWh (EIA STEO, Nov 2026); US average bill was $144 in 2024 (EIA)."
         },
         "waterGas": [
           60,
@@ -222,7 +230,7 @@
             450
           ],
           "verify": false,
-          "note": "was [150, 200]; BLS CE: four-person households spent $4,467 a year on gasoline in 2022 (regular about $3.95/gal); at the Oct 2026 AAA average of about $4.30 that is about $405 a month. BLS CE 2024 all households: $2,411 a year at $3.30/gal (EIA)."
+          "note": "BLS CE: four-person households spent $4,467 a year on gasoline in 2022 (regular about $3.95/gal); at the EIA weekly price of $3.805 (16 Nov 2026) that is about $359 a month. BLS CE 2025, all households: $2,503 a year on gasoline and other fuels."
         },
         "transit": [
           20,
@@ -250,7 +258,7 @@
             1200
           ],
           "verify": false,
-          "note": "was [800, 950]; USDA Thrifty Food Plan for a family of four was $1,023 a month (June 2026), the cheapest of USDA's four plans; BLS CE 2024 four-person households spent $8,697 a year ($725 a month, about $760 in 2026)."
+          "note": "BLS CE 2025: four-person households spent $8,912 a year on food at home ($743 a month). The USDA Thrifty Food Plan for a family of four was $1,023 a month in June 2026 (cheapest of its four plans; not re-checked, the USDA site blocks automated access)."
         },
         "dining": [
           200,
@@ -339,15 +347,15 @@
             7000
           ],
           "verify": false,
-          "note": "BLS Q2 2026 median full-time pay for bachelor's degree holders is $1,768 a week (about $92,000 a year, roughly $5,900 a month after tax by our estimate); a two-earner couple is higher, so range kept."
+          "note": "BLS Q3 2026 median full-time pay for workers 25+ with at least a bachelor's degree is $1,752 a week (about $91,000 a year, roughly $5,850 a month after tax by our estimate; bachelor's degree only: $1,602); a two-earner couple is higher, so range kept."
         },
         "rent": {
           "value": [
             1400,
             2100
           ],
-          "verify": false,
-          "note": "Between the ACS 2024 median gross rent ($1,487) and Zillow's typical asking rent (about $1,950) for big-city flats; range kept."
+          "verify": true,
+          "note": "Between the ACS 2024 median gross rent ($1,487, Census) and Zillow's typical asking rent (about $1,950; private listing data, not re-checked) for big-city flats. Range kept as an estimate."
         },
         "homeIns": [
           15,
@@ -359,7 +367,7 @@
             130
           ],
           "verify": false,
-          "note": "was [55, 95]; EIA RECS 2020 apartments in 5+ unit buildings average 508 kWh a month, about $92 at EIA's 2026 price of 18.2 cents/kWh; range covers one or two people."
+          "note": "was [55, 95]; EIA RECS 2020 apartments in 5+ unit buildings average 508 kWh a month, about $92 at EIA's 2026 price of 18.2 cents/kWh (STEO, Nov 2026); range covers one or two people."
         },
         "waterGas": [
           30,
@@ -375,7 +383,7 @@
             300
           ],
           "verify": false,
-          "note": "was [100, 150]; BLS CE: two-person households spent $3,141 a year on gasoline in 2022 (regular about $3.95/gal), about $285 a month at the Oct 2026 AAA average of about $4.30; one-person about $145."
+          "note": "BLS CE: two-person households spent $3,141 a year on gasoline in 2022 (regular about $3.95/gal), about $252 a month at the EIA weekly price of $3.805 (16 Nov 2026); one-person about $128."
         },
         "transit": [
           60,
@@ -399,7 +407,7 @@
             600
           ],
           "verify": false,
-          "note": "was [300, 400]; BLS CE 2024: two-person households spent $6,088 a year on food at home ($507 a month, about $530 in 2026); one-person $283. Range covers a single high earner to a couple."
+          "note": "BLS CE 2025: two-person households spent $6,249 a year on food at home ($521 a month); one-person $282. Range covers a single high earner to a couple."
         },
         "dining": [
           250,
@@ -753,15 +761,15 @@
             200
           ],
           "verify": true,
-          "note": "KFF 2025: average worker contribution for single coverage $1,440 a year (about $120 a month, 16% of the $9,325 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary."
+          "note": "KFF 2026: average worker contribution for single coverage $1,672 a year (about $139 a month, 18% of the $9,804 premium); the 80-200 spread around it is our estimate, KFF gives no distribution in its summary."
         },
         "suburban": {
           "value": [
             350,
             800
           ],
-          "verify": false,
-          "note": "KFF 2025: average worker contribution for family coverage $6,850 a year (about $570 a month); worker share is 23% at large firms vs 36% at small firms of the $26,993 premium, i.e. about $520-$810 a month, which this range covers."
+          "verify": true,
+          "note": "KFF 2026: average worker contribution for family coverage $7,471 a year (about $623 a month, 27% of the $28,303 premium). The spread around it, for cheaper and costlier plans, is our estimate."
         },
         "youngpro": {
           "value": [
@@ -769,7 +777,7 @@
             350
           ],
           "verify": true,
-          "note": "Between KFF 2025 single ($120 a month) and family ($570 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate."
+          "note": "Between KFF 2026 single ($139 a month) and family ($623 a month) worker contributions; KFF summary has no employee-plus-spouse figure, so the range is an estimate."
         }
       }
     }
@@ -798,24 +806,24 @@
   ],
   "sources": [
     {
-      "title": "KFF 2025 Employer Health Benefits Survey (summary)",
-      "url": "https://www.kff.org/health-costs/",
-      "usedFor": "health insurance premium ranges (worker contributions $1,440 single / $6,850 family)"
+      "title": "KFF 2026 Employer Health Benefits Survey (22 Oct 2026)",
+      "url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/",
+      "usedFor": "health insurance premium ranges (premiums $9,804 single / $28,303 family; worker contributions $1,672 / $7,471; shares 18% / 27%)"
     },
     {
-      "title": "Best high-yield savings rates, Oct 2026 (The College Investor)",
+      "title": "Best high-yield savings rates, Oct 2026 (The College Investor; private comparison site)",
       "url": "https://thecollegeinvestor.com/90524/best-high-yield-savings-rates-for-october-14-2026/",
       "usedFor": "savings return (top online savings around 4.2–4.35% APY)"
     },
     {
-      "title": "BLS Consumer Price Index news release (Sept 2026 data)",
-      "url": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "title": "BLS Consumer Price Index, September 2026 (released Oct 14, 2026)",
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
       "usedFor": "inflation (CPI-U 3.7% over the year to Sept 2026)"
     },
     {
       "title": "Federal Reserve Bank of Cleveland, Inflation Expectations",
       "url": "https://www.clevelandfed.org/indicators-and-data/inflation-expectations",
-      "usedFor": "inflation (10-year expected inflation about 2.5%, Aug 2026)"
+      "usedFor": "inflation (10-year expected inflation 2.67%, Nov 2026)"
     },
     {
       "title": "Damodaran, Historical Returns on Stocks, Bonds and Bills 1928-2025 (NYU Stern)",
@@ -823,14 +831,14 @@
       "usedFor": "long-term and shares returns (S&P 500 about 10.0% a year geometric)"
     },
     {
-      "title": "KFF Employer Health Benefits Survey 2025, Summary of Findings",
-      "url": "https://files.kff.org/attachment/Employer-Health-Benefits-Survey-2025-Annual-Survey-Summary-of-Findings.pdf",
-      "usedFor": "health premium (premiums $9,325 / $26,993; worker shares 16% / 26%, 23% vs 36% by firm size)"
+      "title": "FDIC National Rates and Rate Caps (16 Nov 2026)",
+      "url": "https://www.fdic.gov/national-rates-and-rate-caps",
+      "usedFor": "savings return (national savings rate 0.39%, rate cap 4.63%)"
     },
     {
-      "title": "BLS Usual Weekly Earnings, Q2 2026 (July 21, 2026)",
-      "url": "https://www.bls.gov/news.release/archives/wkyeng_07212026.htm",
-      "usedFor": "income (median full-time $1,251 a week; bachelor's $1,768)"
+      "title": "BLS Usual Weekly Earnings, Q3 2026 (Oct 21, 2026; current release page)",
+      "url": "https://www.bls.gov/news.release/wkyeng.nr0.htm",
+      "usedFor": "income (median full-time $1,232 a week; at least a bachelor's degree $1,752)"
     },
     {
       "title": "Census Bureau, Income in the United States: 2025 (Sept 15, 2026)",
@@ -843,32 +851,32 @@
       "usedFor": "rent (US median gross rent $1,487)"
     },
     {
-      "title": "Apartment List National Rent Report, Oct 2026",
+      "title": "Apartment List National Rent Report, Oct 2026 (private listing data)",
       "url": "https://www.apartmentlist.com/research/national-rent-data",
       "usedFor": "rent (national median $1,388; 1-bed $1,220; 2-bed $1,374)"
     },
     {
-      "title": "Zillow Research, rent reports and Observed Rent Index",
+      "title": "Zillow Research, rent reports and Observed Rent Index (private listing data)",
       "url": "https://www.zillow.com/research/data/",
       "usedFor": "rent (typical US asking rent about $1,900-$1,950 in 2026)"
     },
     {
-      "title": "BLS Consumer Expenditures 2024 (news release, Dec 19, 2025)",
-      "url": "https://www.bls.gov/news.release/archives/cesan_12192025.htm",
-      "usedFor": "groceries, fuel (all households: food at home $6,224, gasoline $2,411 a year)"
+      "title": "BLS Consumer Expenditures 2025 (Oct 29, 2026)",
+      "url": "https://www.bls.gov/news.release/cesan.nr0.htm",
+      "usedFor": "groceries, fuel (all households: food at home $6,491, gasoline and other fuels $2,503 a year)"
     },
     {
       "title": "FRED / BLS CE: Food at home by size of consumer unit (1, 2, 4 people)",
       "url": "https://fred.stlouisfed.org/series/CXUFOODHOMELB0502M",
-      "usedFor": "groceries (2024: $3,395 one person, $6,088 two, $8,697 four; series CXUFOODHOMELB0502M/0504M/0506M)"
+      "usedFor": "groceries (2025: $3,385 one person, $6,249 two, $8,912 four; series CXUFOODHOMELB0502M/0504M/0506M)"
     },
     {
       "title": "FRED / BLS CE: Gasoline, other fuels and motor oil by size of consumer unit",
       "url": "https://fred.stlouisfed.org/series/CXUGASOILLB0502M",
-      "usedFor": "fuel (2022: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)"
+      "usedFor": "fuel (2022, latest usable year: $1,590 one person, $3,141 two, $4,467 four; series CXUGASOILLB0502M/0504M/0506M)"
     },
     {
-      "title": "USDA FNS Food Plans: Monthly Cost of Food Reports (2026)",
+      "title": "USDA FNS Food Plans: Monthly Cost of Food Reports (2026; not re-checked in Nov 2026)",
       "url": "https://www.fns.usda.gov/research/cnpp/usda-food-plans/cost-food-monthly-reports",
       "usedFor": "groceries (thrifty family of four $1,023 and adults 20-50 $253-$319, June 2026; moderate adults 19-50 $336-$398, May-July 2026)"
     },
@@ -878,7 +886,7 @@
       "usedFor": "electricity (kWh by housing type: 5+ unit apartments about 6,100 kWh/yr, single-family detached about 12,400)"
     },
     {
-      "title": "EIA Short-Term Energy Outlook (2026 residential electricity price 18.2 cents/kWh)",
+      "title": "EIA Short-Term Energy Outlook, Nov 2026 (2026 residential electricity price 18.2 cents/kWh)",
       "url": "https://www.eia.gov/outlooks/steo/report/elec_coal_renew.php",
       "usedFor": "electricity price"
     },
@@ -888,9 +896,9 @@
       "usedFor": "electricity (US average bill $144 a month in 2024)"
     },
     {
-      "title": "AAA Gas Prices",
-      "url": "https://gasprices.aaa.com/",
-      "usedFor": "fuel (national regular average about $4.30-$4.41 in Oct 2026)"
+      "title": "EIA Gasoline and Diesel Fuel Update (weekly; US regular $3.805 on 16 Nov 2026)",
+      "url": "https://www.eia.gov/petroleum/gasdiesel/",
+      "usedFor": "fuel (current national regular price)"
     },
     {
       "title": "EIA Today in Energy: 2024 retail gasoline prices (Jan 7, 2025)",
@@ -898,9 +906,9 @@
       "usedFor": "fuel (2024 regular average $3.30/gal)"
     },
     {
-      "title": "Federal Reserve G.19 Consumer Credit",
+      "title": "Federal Reserve G.19 Consumer Credit (6 Nov 2026)",
       "url": "https://www.federalreserve.gov/releases/g19/current/",
-      "usedFor": "card APR default (accounts assessed interest averaged 22.3% in 2025)"
+      "usedFor": "card APR default (accounts assessed interest 22.36%, Q3 2026, preliminary)"
     },
     {
       "title": "Child Care Aware of America, Child Care in America: 2025 Price & Supply",
@@ -908,5 +916,5 @@
       "usedFor": "school/childcare context (national average $13,184 a year, infant/preschool)"
     }
   ],
-  "lastReviewed": "2026-10-20"
+  "lastReviewed": "2026-11-24"
 }
