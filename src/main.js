@@ -23,8 +23,9 @@ import { initNavMenu } from './nav-menu.js';
 import { t } from './i18n/index.js';
 import { startI18n, initLocalePicker, restoreScroll } from './i18n/picker.js';
 import { initLanguageSuggestion } from './i18n/suggest.js';
-import { initialCountry, storeCountry, GLOBAL } from './i18n/countries.js';
+import { startCountry, storeCountry, setAutoCountry, GLOBAL } from './i18n/countries.js';
 import { loadCountry, isCountryLoaded } from './engine/countries.js';
+import { initCountryNotice, renderCountryNotice } from './ui/country-notice.js';
 
 let lastSavings = null;
 
@@ -46,6 +47,7 @@ function render() {
   renderMonths(state, result, view);
   const cs = $('countrySelect');
   if (cs && cs.value !== state.country) cs.value = state.country;
+  renderCountryNotice(state);
 
   const saving = canSave(result);
   if (lastSavings !== null && saving >= 0 && Math.round(saving) !== Math.round(lastSavings)) {
@@ -120,21 +122,26 @@ async function boot() {
   if (returning) getState().ui.mode = 'results';
   if (!restored) replaceState(defaultState(), 'boot');
   // Country: a saved budget keeps its own; a new one starts from the saved
-  // choice or the browser's region, with that country's defaults.
+  // choice or the page's country, or (first visit to the home page only) a
+  // guess from the browser's time zone and languages, with that country's
+  // defaults. The guess is remembered as a guess so the note can say so.
   if (restored && getState().country !== GLOBAL) {
     await loadCountry(getState().country);
     storeCountry(getState().country);
     setFormatRegion(getState().country);
   } else {
-    await applyCountry(initialCountry(), { defaults: !restored });
+    const start = startCountry({ restored });
+    await applyCountry(start.country, { defaults: !restored });
+    if (start.guessed) setAutoCountry(start.country);
   }
   // History: load this month, or copy last month's numbers, before the form fills
   startMonths(restored);
 
   initTheme();
   initNavMenu();
-  initLocalePicker({ country: getState().country, onCountry: (c) => applyCountry(c) });
+  initLocalePicker({ country: getState().country, onCountry: (c) => { setAutoCountry(null); applyCountry(c); } });
   initLanguageSuggestion();
+  initCountryNotice();
   initSavedIndicator();
   initInputs();
   initHelp();
@@ -155,6 +162,8 @@ async function boot() {
       shownCountry = getState().country;
       setFormatRegion(shownCountry);
       storeCountry(shownCountry);
+      // The visitor's own country now (dropdown, share link, backup): no longer a guess
+      setAutoCountry(null);
     }
     if (reason === 'replace' || reason === 'import' || reason === 'sample' || reason === 'reset' || reason === 'country') {
       syncInputs();

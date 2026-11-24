@@ -2042,7 +2042,12 @@
       "toDark": "Zum dunklen Modus wechseln"
     },
     "saved": "Auf diesem Gerät gespeichert",
-    "notSaved": "Nicht gespeichert (Speicher blockiert)"
+    "notSaved": "Nicht gespeichert (Speicher blockiert)",
+    "countryNotice": {
+      "text": "Zahlen für {country} in {currency}",
+      "change": "Ändern",
+      "close": "Hinweis ausblenden"
+    }
   },
   "layout": {
     "header": {
@@ -2186,7 +2191,8 @@
           "theme_html": "Helles oder dunkles Design (<code>hbo:theme</code>)"
         },
         "p1_html": "Damit deine Zahlen noch da sind, wenn du wiederkommst, speichert die Website sie im <em>lokalen Speicher</em> (Local Storage) deines Browsers. Das ist ein kleiner Speicherbereich, der zu deinem Browser auf diesem Gerät gehört. Er ist kein Cookie und wird nicht über das Internet gesendet.",
-        "p2_html": "<strong>So löschst du ihn:</strong> Öffne den Rechner, wähle <em>Zahlen bearbeiten</em> → <em>Neu anfangen</em> und dann <em>Meine Zahlen löschen</em> (deine gespeicherten Monate bleiben) oder <em>Alles löschen</em>. Du kannst die Daten dieser Website auch in deinen Browser-Einstellungen löschen. Jeder, der dein Gerät und deinen Browser nutzt, kann sehen, was gespeichert ist – nutze auf einem geteilten Computer also ein privates Fenster."
+        "p2_html": "<strong>So löschst du ihn:</strong> Öffne den Rechner, wähle <em>Zahlen bearbeiten</em> → <em>Neu anfangen</em> und dann <em>Meine Zahlen löschen</em> (deine gespeicherten Monate bleiben) oder <em>Alles löschen</em>. Du kannst die Daten dieser Website auch in deinen Browser-Einstellungen löschen. Jeder, der dein Gerät und deinen Browser nutzt, kann sehen, was gespeichert ist – nutze auf einem geteilten Computer also ein privates Fenster.",
+        "p3": "Beim ersten Besuch der Startseite kann die Website dein Land anhand der Zeitzonen- und Spracheinstellungen deines Browsers erraten, nur auf deinem Gerät, um die lokale Währung und typische Werte anzuzeigen. Dabei wird nichts übertragen, und du kannst das Land jederzeit ändern."
       },
       "sharing": {
         "title": "Teilen-Links, Sicherungen, Drucken und Erinnerungen",

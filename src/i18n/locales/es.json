@@ -2080,7 +2080,12 @@
       "toDark": "Cambiar a modo oscuro"
     },
     "saved": "Guardado en este dispositivo",
-    "notSaved": "No guardado (almacenamiento bloqueado)"
+    "notSaved": "No guardado (almacenamiento bloqueado)",
+    "countryNotice": {
+      "text": "Mostrando cifras de {country} en {currency}",
+      "change": "Cambiar",
+      "close": "Ocultar este aviso"
+    }
   },
   "layout": {
     "header": {
@@ -2225,7 +2230,8 @@
           "theme_html": "Tema claro u oscuro (<code>hbo:theme</code>)"
         },
         "p1_html": "Para que tus números sigan ahí cuando vuelvas, el sitio los guarda en el <em>almacenamiento local</em> de tu navegador. Es un pequeño espacio de almacenamiento que pertenece a tu navegador en este dispositivo. No es una cookie y no se envía por internet.",
-        "p2_html": "<strong>Para borrarlo:</strong> abre la calculadora, elige <em>Editar mis números</em> → <em>Empezar de nuevo</em> y luego <em>Borrar mis números</em> (conserva tus meses guardados) o <em>Borrar todo</em>. También puedes borrar los datos de este sitio en los ajustes de tu navegador. Cualquiera que use tu dispositivo y tu navegador puede ver lo que está guardado, así que usa una ventana privada en un ordenador compartido."
+        "p2_html": "<strong>Para borrarlo:</strong> abre la calculadora, elige <em>Editar mis números</em> → <em>Empezar de nuevo</em> y luego <em>Borrar mis números</em> (conserva tus meses guardados) o <em>Borrar todo</em>. También puedes borrar los datos de este sitio en los ajustes de tu navegador. Cualquiera que use tu dispositivo y tu navegador puede ver lo que está guardado, así que usa una ventana privada en un ordenador compartido.",
+        "p3": "En tu primera visita a la página de inicio, el sitio puede deducir tu país a partir de la zona horaria y el idioma de tu navegador, solo en tu dispositivo, para mostrar la moneda local y cifras típicas. No se envía nada a ningún sitio y puedes cambiar el país cuando quieras."
       },
       "sharing": {
         "title": "Enlaces para compartir, copias de seguridad, impresión y recordatorios",

@@ -2032,7 +2032,12 @@
       "toDark": "Switch to dark mode"
     },
     "saved": "Saved on this device",
-    "notSaved": "Not saved (storage blocked)"
+    "notSaved": "Not saved (storage blocked)",
+    "countryNotice": {
+      "text": "Showing {country} figures in {currency}",
+      "change": "Change",
+      "close": "Hide this message"
+    }
   },
   "layout": {
     "header": {
@@ -2177,7 +2182,8 @@
           "theme_html": "Light or dark theme (<code>hbo:theme</code>)"
         },
         "p1_html": "So that your numbers are still there when you come back, the site saves them in your browser’s <em>local storage</em>. This is a small storage area that belongs to your browser on this device. It is not a cookie and it is not sent over the internet.",
-        "p2_html": "<strong>To delete it:</strong> open the calculator, choose <em>Edit my numbers</em> → <em>Start over</em>, then <em>Clear my numbers</em> (keeps your saved months) or <em>Delete everything</em>. You can also clear this site’s data in your browser settings. Anyone who uses your device and browser can see what is stored, so use a private window on a shared computer."
+        "p2_html": "<strong>To delete it:</strong> open the calculator, choose <em>Edit my numbers</em> → <em>Start over</em>, then <em>Clear my numbers</em> (keeps your saved months) or <em>Delete everything</em>. You can also clear this site’s data in your browser settings. Anyone who uses your device and browser can see what is stored, so use a private window on a shared computer.",
+        "p3": "On your first visit to the home page, the site may guess your country from your browser’s time zone and language settings, on your device only, to show local currency and typical figures. Nothing is sent anywhere, and you can change the country at any time."
       },
       "sharing": {
         "title": "Share links, backups, printing and reminders",

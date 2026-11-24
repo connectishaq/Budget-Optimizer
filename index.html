@@ -291,6 +291,11 @@
   <!-- ===================== APP ===================== -->
   <main id="app" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
 
+    <!-- Country guessed from the browser (time zone, languages) on a first visit to the home page; filled by src/ui/country-notice.js -->
+    <p id="countryNotice" hidden class="mb-4 flex flex-wrap items-center gap-x-2 text-sm muted">
+      <svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"></use></svg><span id="countryNoticeText"></span><span aria-hidden="true">·</span><button type="button" id="countryNoticeChange" class="min-h-11 link"></button><button type="button" id="countryNoticeClose" class="inline-grid min-h-11 min-w-11 place-items-center rounded-full"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-x"></use></svg></button>
+    </p>
+
     <!-- ========== GUIDED STEPS (new users) ========== -->
     <section id="wizard" aria-labelledby="wizTitle" class="grid gap-8 md:grid-cols-[13rem_minmax(0,36rem)]">
       <ol id="wizSteps" class="hidden md:block" aria-label="Steps" data-i18n-attr="aria-label:page.wizard.stepsLabel">

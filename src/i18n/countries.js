@@ -72,6 +72,48 @@ export function detectCountry(list = typeof navigator !== 'undefined' ? navigato
   return null;
 }
 
+// ---------------- Time zone -> country ----------------
+// Only the IANA zones of the countries we have data for. The browser reports
+// the zone itself (Intl, no network request), so this never leaves the device.
+const AMERICA = {
+  US: 'New_York Detroit Chicago Denver Boise Phoenix Los_Angeles Anchorage Juneau Sitka Metlakatla Yakutat Nome Adak Menominee Shiprock',
+  CA: 'Toronto Montreal Vancouver Edmonton Winnipeg Halifax St_Johns Regina Moncton Glace_Bay Goose_Bay Whitehorse Dawson Dawson_Creek Fort_Nelson Creston Iqaluit Rankin_Inlet Resolute Cambridge_Bay Inuvik Swift_Current Atikokan Coral_Harbour Blanc-Sablon Nipigon Thunder_Bay Rainy_River Yellowknife Pangnirtung',
+  MX: 'Mexico_City Monterrey Merida Cancun Chihuahua Ciudad_Juarez Ojinaga Hermosillo Mazatlan Tijuana Matamoros Bahia_Banderas Ensenada Santa_Isabel',
+  BR: 'Sao_Paulo Bahia Fortaleza Recife Belem Maceio Araguaina Manaus Cuiaba Campo_Grande Porto_Velho Boa_Vista Rio_Branco Eirunepe Santarem Noronha Porto_Acre'
+};
+const TZ_COUNTRY = {
+  'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA',
+  'Europe/London': 'GB', 'Europe/Belfast': 'GB', GB: 'GB', 'GB-Eire': 'GB',
+  'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE', 'Europe/Paris': 'FR',
+  'Europe/Madrid': 'ES', 'Africa/Ceuta': 'ES', 'Atlantic/Canary': 'ES',
+  'Africa/Lagos': 'NG', 'Asia/Jakarta': 'ID', 'Asia/Pontianak': 'ID', 'Asia/Makassar': 'ID', 'Asia/Ujung_Pandang': 'ID', 'Asia/Jayapura': 'ID',
+  'Pacific/Honolulu': 'US'
+};
+for (const [code, names] of Object.entries(AMERICA)) for (const n of names.split(' ')) TZ_COUNTRY[`America/${n}`] = code;
+const TZ_PREFIX = [['America/Indiana/', 'US'], ['America/Kentucky/', 'US'], ['America/North_Dakota/', 'US'], ['US/', 'US'],
+  ['Canada/', 'CA'], ['Australia/', 'AU'], ['Mexico/', 'MX'], ['Brazil/', 'BR']];
+
+/** "Asia/Karachi" -> "PK"; null for a zone of a country we don't cover (or none). */
+export function countryFromTimeZone(tz) {
+  if (!tz || typeof tz !== 'string') return null;
+  if (TZ_COUNTRY[tz]) return TZ_COUNTRY[tz];
+  return TZ_PREFIX.find(([p]) => tz.startsWith(p))?.[1] || null;
+}
+
+/** The browser's time zone ("Europe/London"), or null. */
+export function browserTimeZone() {
+  try { return Intl.DateTimeFormat().resolvedOptions().timeZone || null; } catch { return null; }
+}
+
+/**
+ * Best guess at the visitor's country: the time zone's country when we cover
+ * it, otherwise the region in the browser's languages (en-GB, ur-PK) as the
+ * tiebreaker, otherwise null (keep the default).
+ */
+export function guessCountry({ timeZone = browserTimeZone(), languages } = {}) {
+  return countryFromTimeZone(timeZone) || detectCountry(languages);
+}
+
 /** The country of a language/country page (/en-gb/ -> "GB"), or null on the home page. */
 export function pageCountry() {
   const c = typeof document !== 'undefined' ? document.documentElement.getAttribute('data-page-country') : null;
@@ -85,4 +127,45 @@ export function pageCountry() {
  */
 export function initialCountry(savedCurrency, list) {
   return getStoredCountry() || pageCountry() || COUNTRY_FOR_CURRENCY[savedCurrency] || detectCountry(list) || GLOBAL;
+}
+
+/** True on the home page (/), false on the language/country pages (/en-gb/ …). */
+export function isHomePage() {
+  if (typeof document === 'undefined') return false;
+  const html = document.documentElement;
+  return !html.hasAttribute('data-page-lang') && !pageCountry();
+}
+
+/**
+ * The calculator's starting country and whether it was guessed.
+ * A country the visitor chose (saved by the dropdown, a saved budget or a share
+ * link) or the page's own country always wins. Only a first visit to the home
+ * page, with nothing saved, gets the time-zone/language guess. A saved budget
+ * starts exactly as before this guess existed (browser language region, else GLOBAL).
+ * Nothing here changes the page address.
+ */
+export function startCountry({ restored = false, stored = getStoredCountry(), page = pageCountry(), home = isHomePage(), languages, timeZone } = {}) {
+  // A saved GLOBAL with no saved budget is usually an old automatic default
+  // (before the time-zone guess existed), so it doesn't count as a choice
+  if (stored && !(stored === GLOBAL && !restored)) return { country: stored, guessed: false };
+  if (page) return { country: page, guessed: false };
+  if (restored || !home) return { country: detectCountry(languages) || GLOBAL, guessed: false };
+  const g = guessCountry({ timeZone, languages });
+  return g ? { country: g, guessed: true } : { country: GLOBAL, guessed: false };
+}
+
+// The country the site guessed (not chosen), so the "Showing … figures" note
+// can say so; cleared as soon as the country changes any other way.
+const AUTO_KEY = 'hbo:countryAuto';
+export function getAutoCountry() {
+  try {
+    const c = localStorage.getItem(AUTO_KEY);
+    return isCountry(c) ? c : null;
+  } catch { return null; }
+}
+export function setAutoCountry(code) {
+  try {
+    if (isCountry(code)) localStorage.setItem(AUTO_KEY, code);
+    else localStorage.removeItem(AUTO_KEY);
+  } catch { /* storage unavailable */ }
 }

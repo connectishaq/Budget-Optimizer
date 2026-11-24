@@ -122,6 +122,12 @@ export function restoreScroll() {
   return y != null;
 }
 
+let openCountry = null;
+/** Opens the language/country panel with the country list focused (e.g. from the home page's country note). */
+export function openCountryPicker() {
+  if (openCountry) openCountry();
+}
+
 /**
  * Wires the picker. `country` is the current country; `onCountry(code)` lets
  * the calculator apply a new country (defaults to saving it and reloading).
@@ -144,6 +150,11 @@ export function initLocalePicker({ country = initialCountry(), onCountry } = {})
     panel.classList.toggle('hidden', !open);
     toggle.setAttribute('aria-expanded', String(open));
     if (open) langSel.focus();
+  };
+  openCountry = () => {
+    setOpen(true);
+    toggle.scrollIntoView?.({ block: 'nearest' });
+    countrySel.focus();
   };
   toggle.addEventListener('click', () => setOpen(panel.classList.contains('hidden')));
   document.addEventListener('click', (e) => {

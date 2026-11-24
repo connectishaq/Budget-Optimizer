@@ -2004,7 +2004,12 @@
       "toDark": "Beralih ke mode gelap"
     },
     "saved": "Tersimpan di perangkat ini",
-    "notSaved": "Tidak tersimpan (penyimpanan diblokir)"
+    "notSaved": "Tidak tersimpan (penyimpanan diblokir)",
+    "countryNotice": {
+      "text": "Menampilkan angka {country} dalam {currency}",
+      "change": "Ubah",
+      "close": "Sembunyikan pesan ini"
+    }
   },
   "layout": {
     "header": {
@@ -2148,7 +2153,8 @@
           "theme_html": "Tema terang atau gelap (<code>hbo:theme</code>)"
         },
         "p1_html": "Agar angka Anda masih ada saat Anda kembali, situs menyimpannya di <em>penyimpanan lokal (local storage)</em> browser Anda. Ini adalah ruang penyimpanan kecil milik browser Anda di perangkat ini. Ini bukan cookie dan tidak dikirim melalui internet.",
-        "p2_html": "<strong>Untuk menghapusnya:</strong> buka kalkulator, pilih <em>Ubah angka saya</em> → <em>Mulai dari awal</em>, lalu <em>Kosongkan angka saya</em> (bulan tersimpan tetap ada) atau <em>Hapus semuanya</em>. Anda juga bisa menghapus data situs ini di pengaturan browser. Siapa pun yang memakai perangkat dan browser Anda bisa melihat apa yang tersimpan, jadi pakai jendela pribadi (penyamaran) di komputer bersama."
+        "p2_html": "<strong>Untuk menghapusnya:</strong> buka kalkulator, pilih <em>Ubah angka saya</em> → <em>Mulai dari awal</em>, lalu <em>Kosongkan angka saya</em> (bulan tersimpan tetap ada) atau <em>Hapus semuanya</em>. Anda juga bisa menghapus data situs ini di pengaturan browser. Siapa pun yang memakai perangkat dan browser Anda bisa melihat apa yang tersimpan, jadi pakai jendela pribadi (penyamaran) di komputer bersama.",
+        "p3": "Saat pertama kali membuka halaman beranda, situs ini dapat menebak negara Anda dari pengaturan zona waktu dan bahasa browser Anda, hanya di perangkat Anda, untuk menampilkan mata uang lokal dan angka umum. Tidak ada yang dikirim ke mana pun, dan Anda bisa mengganti negara kapan saja."
       },
       "sharing": {
         "title": "Tautan berbagi, cadangan, pencetakan, dan pengingat",

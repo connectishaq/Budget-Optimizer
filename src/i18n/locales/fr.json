@@ -2079,7 +2079,12 @@
       "toDark": "Passer en mode sombre"
     },
     "saved": "Enregistré sur cet appareil",
-    "notSaved": "Non enregistré (stockage bloqué)"
+    "notSaved": "Non enregistré (stockage bloqué)",
+    "countryNotice": {
+      "text": "Chiffres pour {country}, en {currency}",
+      "change": "Modifier",
+      "close": "Masquer ce message"
+    }
   },
   "layout": {
     "header": {
@@ -2223,7 +2228,8 @@
           "theme_html": "Thème clair ou sombre (<code>hbo:theme</code>)"
         },
         "p1_html": "Pour que vos chiffres soient toujours là à votre retour, le site les enregistre dans le <em>stockage local</em> de votre navigateur. C’est un petit espace de stockage propre à votre navigateur sur cet appareil. Ce n’est pas un cookie et il n’est pas envoyé sur internet.",
-        "p2_html": "<strong>Pour le supprimer :</strong> ouvrez le calculateur, choisissez <em>Modifier mes chiffres</em> → <em>Recommencer</em>, puis <em>Effacer mes chiffres</em> (conserve vos mois enregistrés) ou <em>Tout supprimer</em>. Vous pouvez aussi effacer les données de ce site dans les réglages de votre navigateur. Toute personne utilisant votre appareil et votre navigateur peut voir ce qui est stocké : sur un ordinateur partagé, utilisez une fenêtre de navigation privée."
+        "p2_html": "<strong>Pour le supprimer :</strong> ouvrez le calculateur, choisissez <em>Modifier mes chiffres</em> → <em>Recommencer</em>, puis <em>Effacer mes chiffres</em> (conserve vos mois enregistrés) ou <em>Tout supprimer</em>. Vous pouvez aussi effacer les données de ce site dans les réglages de votre navigateur. Toute personne utilisant votre appareil et votre navigateur peut voir ce qui est stocké : sur un ordinateur partagé, utilisez une fenêtre de navigation privée.",
+        "p3": "Lors de votre première visite sur la page d’accueil, le site peut deviner votre pays à partir du fuseau horaire et de la langue de votre navigateur, uniquement sur votre appareil, pour afficher la devise locale et des chiffres types. Rien n’est envoyé, et vous pouvez changer de pays à tout moment."
       },
       "sharing": {
         "title": "Liens de partage, sauvegardes, impression et rappels",

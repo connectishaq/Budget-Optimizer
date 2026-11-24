@@ -2079,7 +2079,12 @@
       "toDark": "Mudar para o modo escuro"
     },
     "saved": "Salvo neste dispositivo",
-    "notSaved": "Não salvo (armazenamento bloqueado)"
+    "notSaved": "Não salvo (armazenamento bloqueado)",
+    "countryNotice": {
+      "text": "Mostrando valores de {country} em {currency}",
+      "change": "Alterar",
+      "close": "Ocultar este aviso"
+    }
   },
   "layout": {
     "header": {
@@ -2223,7 +2228,8 @@
           "theme_html": "Tema claro ou escuro (<code>hbo:theme</code>)"
         },
         "p1_html": "Para que seus números continuem lá quando você voltar, o site os salva no <em>armazenamento local</em> do seu navegador. É uma pequena área de armazenamento que pertence ao seu navegador neste dispositivo. Não é um cookie e não é enviada pela internet.",
-        "p2_html": "<strong>Para apagar:</strong> abra a calculadora, escolha <em>Editar meus números</em> → <em>Começar de novo</em> e depois <em>Apagar meus números</em> (mantém seus meses salvos) ou <em>Apagar tudo</em>. Você também pode limpar os dados deste site nas configurações do navegador. Qualquer pessoa que use seu dispositivo e navegador pode ver o que está guardado, então use uma janela anônima em computadores compartilhados."
+        "p2_html": "<strong>Para apagar:</strong> abra a calculadora, escolha <em>Editar meus números</em> → <em>Começar de novo</em> e depois <em>Apagar meus números</em> (mantém seus meses salvos) ou <em>Apagar tudo</em>. Você também pode limpar os dados deste site nas configurações do navegador. Qualquer pessoa que use seu dispositivo e navegador pode ver o que está guardado, então use uma janela anônima em computadores compartilhados.",
+        "p3": "Na sua primeira visita à página inicial, o site pode deduzir seu país pelo fuso horário e pelo idioma do navegador, só no seu dispositivo, para mostrar a moeda local e valores típicos. Nada é enviado, e você pode mudar o país a qualquer momento."
       },
       "sharing": {
         "title": "Links de compartilhamento, backups, impressão e lembretes",
