@@ -5,9 +5,9 @@
   "lakh": false,
   "payFrequency": "biweekly",
   "inflation": {
-    "value": 3.5,
+    "value": 4,
     "verify": true,
-    "note": "ABS: CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (released 25 Nov 2026; Sept was 4.3% and 3.6%); the RBA target is 2–3%. 3.5% kept as a middle figure (not raised). Next CPI (Nov 2026) is due 6 Jan 2027."
+    "note": "was 3.5; ABS Consumer Price Index, Australia, October 2026 (released 25 Nov 2026): CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (Sept was 4.3% and 3.6%); the RBA target is 2–3%. 4% sits between the trimmed mean and headline CPI. Next CPI (Nov 2026) is due 6 Jan 2027."
   },
   "returns": {
     "savings": {

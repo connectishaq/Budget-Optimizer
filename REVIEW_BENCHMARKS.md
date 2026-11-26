@@ -138,7 +138,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 3.5 | ABS: CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (released 25 Nov 2026; Sept was 4.3% and 3.6%); the RBA target is 2–3%. 3.5% kept as a middle figure (not raised). Next CPI (Nov 2026) is due 6 Jan 2027. |
+| `inflation` | 4 | was 3.5; ABS Consumer Price Index, Australia, October 2026 (released 25 Nov 2026): CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (Sept was 4.3% and 3.6%); the RBA target is 2–3%. 4% sits between the trimmed mean and headline CPI. Next CPI (Nov 2026) is due 6 Jan 2027. |
 | `returns.savings` | 4.75 | RBA cash rate target 4.85% from 4 Nov 2026 (RBA media release 2026-30). 4.75% assumes a good ongoing savings account; current savings-account rates were not re-checked (comparison sites block automated access). Estimate. |
 | `returns.balanced` | 6 | Estimate between cash and shares. |
 | `returns.longTerm` | 9 | Rough long-run nominal total return (with dividends reinvested) for Australian shares (ASX 200 / All Ords accumulation); check a long-run source. |
