@@ -132,13 +132,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [e& UAE — Home Wireless plans (AED 229 / 299 a month + VAT)](https://www.eand.ae/en/c/home/home-wireless.jsp): internet
 - [The National — UAE salary guide 2026 (Michael Page: most roles AED 10,000–40,000 a month)](https://thenational.shorthandstories.com/uae-salary-guide-2026-trends/): income (context)
 
-## AU · AUD · last reviewed 2026-11-24
+## AU · AUD · last reviewed 2026-11-26
 
 138 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `inflation` | 3.5 | ABS: CPI rose 4.3% and trimmed mean 3.6% in the 12 months to Sept 2026 (released 28 Oct 2026); the RBA target is 2–3%. 3.5% is a middle figure. The October CPI is due 25 Nov 2026: re-check then. |
+| `inflation` | 3.5 | ABS: CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (released 25 Nov 2026; Sept was 4.3% and 3.6%); the RBA target is 2–3%. 3.5% kept as a middle figure (not raised). Next CPI (Nov 2026) is due 6 Jan 2027. |
 | `returns.savings` | 4.75 | RBA cash rate target 4.85% from 4 Nov 2026 (RBA media release 2026-30). 4.75% assumes a good ongoing savings account; current savings-account rates were not re-checked (comparison sites block automated access). Estimate. |
 | `returns.balanced` | 6 | Estimate between cash and shares. |
 | `returns.longTerm` | 9 | Rough long-run nominal total return (with dividends reinvested) for Australian shares (ASX 200 / All Ords accumulation); check a long-run source. |
@@ -281,7 +281,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 - [Cotality Quarterly Rental Review, September 2026 (private data, via savings.com.au)](https://www.savings.com.au/news/rental-growth-slows-as-affordability-pressures-bite): rent (national median $713 a week)
 - [AER Default Market Offer 2026-27 information kit](https://www.aer.gov.au/system/files/2026-05/Information%20Kit%20-%20Default%20Market%20Offer%20-%202026-27_0.pdf): electricity (Ausgrid $1,899 a year at 3,900 kWh)
-- [Australian Bureau of Statistics — Consumer Price Index, Australia, September 2026 (released 28 Oct 2026)](https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/sep-2026): inflation (CPI 4.3%, trimmed mean 3.6%, 12 months to Sept 2026)
+- [Australian Bureau of Statistics — Consumer Price Index, Australia, October 2026 (released 25 Nov 2026)](https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/oct-2026): inflation (CPI 4.9%, trimmed mean 3.8%, 12 months to Oct 2026)
 - [Compare the Market: about health insurance premiums (broker's own customer data)](https://www.comparethemarket.com.au/health-insurance/about): private health insurance (average $3,560 a year hospital + extras)
 - [Canstar best savings account interest rates (comparison site)](https://www.canstar.com.au/savings-accounts/compare/best-savings-account-interest-rates/): savings return
 - [Energy Made Easy (Australian Government)](https://www.energymadeeasy.gov.au/): local tip
@@ -1013,13 +1013,13 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 - [AFG: CAC 40 évolution et performance (GR +9.2%/yr since 1987, to 2021)](https://afg.asso.fr/app/uploads/2021/11/21-11-04-tribune-afg-cac40-volution-et-performance-vf.pdf): returns.longTerm
 - [Avenue des Investisseurs: ETF CAC 40 (~8.5%/yr since 1987, to 2022)](https://avenuedesinvestisseurs.fr/etf-cac-40/): returns.longTerm
 
-## GB · GBP · last reviewed 2026-10-20
+## GB · GBP · last reviewed 2026-11-26
 
 108 value(s) to verify.
 
 | Value | Current | Why it needs checking |
 |---|---|---|
-| `returns.savings` | 4 | Bank Rate 3.75%; best easy-access deals 4.5–5% (often bonus-led) per Moneyfacts Sept 2026, typical high-street accounts lower. |
+| `returns.savings` | 4 | Bank Rate 4% (raised 5 Nov 2026, Bank of England); best easy-access deals 4.5–5% (often bonus-led) per Moneyfacts Sept 2026 (not re-checked), typical high-street accounts lower. |
 | `returns.balanced` | 5.5 | Estimate between cash and shares. |
 | `returns.longTerm` | 7 | Rough long-run nominal total return for UK shares (FTSE All-Share); check against a long-run study such as the Barclays Equity Gilt Study. |
 | `returns.shares` | 9 | Estimate for a mostly-equity global portfolio; never guaranteed. |
@@ -1037,7 +1037,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.single.ranges.familySupport` | 0 – 150 | Money sent to family; estimate. |
 | `profiles.single.ranges.giving` | 0 – 60 | Charity and gifts; estimate. |
 | `profiles.single.ranges.other` | 0 – 120 | Anything else; estimate. |
-| `profiles.single.thresholds.utilities` | 160 | Set near the top of the estimated typical range; estimate. |
+| `profiles.single.thresholds.utilities` | 185 | Set near the top of the estimated typical range; estimate. Was 160; moved with the Jan–Mar 2027 energy ranges, keeping the same place relative to the top of electricity + water/gas. |
 | `profiles.single.thresholds.fuel` | 120 | Set near the top of the estimated typical range; estimate. |
 | `profiles.single.thresholds.transit` | 160 | Set near the top of the estimated typical range; estimate. |
 | `profiles.single.thresholds.internet` | 55 | Set near the top of the estimated typical range; estimate. |
@@ -1065,7 +1065,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.suburban.ranges.familySupport` | 0 – 200 | Money sent to family; estimate. |
 | `profiles.suburban.ranges.giving` | 0 – 150 | Charity and gifts; estimate. |
 | `profiles.suburban.ranges.other` | 0 – 200 | Anything else; estimate. |
-| `profiles.suburban.thresholds.utilities` | 290 | Set near the top of the estimated typical range; estimate. |
+| `profiles.suburban.thresholds.utilities` | 350 | Set near the top of the estimated typical range; estimate. Was 290; moved with the Jan–Mar 2027 energy ranges, keeping the same place relative to the top of electricity + water/gas. |
 | `profiles.suburban.thresholds.fuel` | 250 | Set near the top of the estimated typical range; estimate. |
 | `profiles.suburban.thresholds.transit` | 80 | Set near the top of the estimated typical range; estimate. |
 | `profiles.suburban.thresholds.internet` | 80 | Set near the top of the estimated typical range; estimate. |
@@ -1093,7 +1093,7 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 | `profiles.youngpro.ranges.familySupport` | 0 – 200 | Money sent to family; estimate. |
 | `profiles.youngpro.ranges.giving` | 0 – 100 | Charity and gifts; estimate. |
 | `profiles.youngpro.ranges.other` | 0 – 150 | Anything else; estimate. |
-| `profiles.youngpro.thresholds.utilities` | 200 | Set near the top of the estimated typical range; estimate. |
+| `profiles.youngpro.thresholds.utilities` | 235 | Set near the top of the estimated typical range; estimate. Was 200; moved with the Jan–Mar 2027 energy ranges, keeping the same place relative to the top of electricity + water/gas. |
 | `profiles.youngpro.thresholds.fuel` | 160 | Set near the top of the estimated typical range; estimate. |
 | `profiles.youngpro.thresholds.transit` | 200 | Set near the top of the estimated typical range; estimate. |
 | `profiles.youngpro.thresholds.internet` | 70 | Set near the top of the estimated typical range; estimate. |
@@ -1130,27 +1130,27 @@ source, then remove its `"verify": true` wrapper (keep the plain number) and upd
 
 **Sources**
 
-- [ONS Private rent and house prices, UK: September 2026](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/september2026): rent (UK average £1,400, England £1,459, Aug 2026)
-- [Ofgem energy price cap Oct–Dec 2026 (summarised by Octopus Energy)](https://octopus.energy/blog/energy-prices-from-october-2026-and-what-they-mean-for-you/): electricity and gas (typical dual fuel £1,723 a year, unit rates and standing charges)
+- [ONS Private rent and house prices, UK: November 2026](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/november2026): rent (UK average £1,411, England £1,472, one-bed £1,145, Oct 2026)
+- [Ofgem: Energy price cap to rise by 26% from January 2027 (press release, 25 Nov 2026)](https://www.ofgem.gov.uk/press-release/energy-price-cap-rise-26-january-2027): electricity and gas (typical dual fuel £2,166 a year, 1 Jan–31 Mar 2027, up from £1,723)
 - [Council Tax levels set by local authorities in England 2026 to 2027 (gov.uk)](https://www.gov.uk/government/statistics/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027/council-tax-levels-set-by-local-authorities-in-england-2026-to-2027): council tax (average Band D £2,392, band ratios)
 - [Cost of TV licence fee set for 2026/27 (gov.uk)](https://www.gov.uk/government/news/cost-of-tv-licence-fee-set-for-202627): TV licence (£180 a year)
 - [ONS Family spending in the UK: April 2024 to March 2025](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/april2024tomarch2025): groceries, dining, category shares (average £676.60 a week)
-- [UK CPI August 2026 (Investment Week)](https://www.investmentweek.co.uk/news/4535806/uk-inflation-rises-31-thanks-fuel-price-increase): inflation (3.1% a year)
+- [ONS Consumer price inflation, UK: October 2026](https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/october2026): inflation (CPI 3.6% in the 12 months to October 2026)
 - [Moneyfacts easy access savings accounts](https://moneyfactscompare.co.uk/savings-accounts/easy-access-savings-accounts/): savings return
-- [Average credit card interest rate UK (ClearScore, citing Bank of England)](https://www.clearscore.com/learn/credit-cards/average-credit-card-interest-rate-apr-uk): card APR (24.66% average, Dec 2025)
-- [ONS Price Index of Private Rents, UK: monthly price statistics (16 Sept 2026 dataset)](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics): rent by bedrooms and city (Aug 2026)
-- [ONS Employee earnings in the UK: 2025 (ASHE)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2025): income (median full-time pay £39,039)
+- [Bank of England Database: credit card lending interest rate (IUMCCTL)](https://www.bankofengland.co.uk/boeapps/database/fromshowcolumns.asp?Travel=NIxAZxSUx&FromSeries=1&ToSeries=50&DAT=RNG&FD=1&FM=Jan&FY=2026&TD=31&TM=Dec&TY=2026&FNY=Y&CSVF=TT&html.x=66&html.y=26&SeriesCodes=IUMCCTL&UsingCodes=Y&Filter=N&title=IUMCCTL&VPD=Y): card APR (24.88%, Oct 2026)
+- [ONS Price Index of Private Rents, UK: monthly price statistics](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics): rent by bedrooms and city (Aug 2026 figures from the 16 Sept 2026 release)
+- [ONS Employee earnings in the UK: 2026 (ASHE, provisional)](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/2026): income (median full-time pay £40,911, April 2026)
 - [ONS Average household income, UK: financial year ending 2025](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householddisposableincomeandinequality/financialyearending2025): income by household type (median £39,200 equivalised)
 - [Income Tax rates and Personal Allowances (gov.uk)](https://www.gov.uk/income-tax-rates): take-home pay calculation
 - [ONS Family spending workbook 4: expenditure by household characteristic (FYE 2025)](https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook4expenditurebyhouseholdcharacteristic): groceries and dining by household type (tables A56, A57)
-- [Ofgem: Changes to energy price cap between 1 October and 31 December 2026](https://ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026): electricity and gas unit rates and standing charges
+- [Ofgem: Changes to energy price cap between 1 January and 31 March 2027](https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-january-and-31-march-2027): electricity and gas unit rates and standing charges (electricity 32.69p/kWh + 54.77p/day; gas 10.96p/kWh + 29.65p/day)
 - [Ofgem: Energy price cap update from 1 July 2026 (revised TDCV)](https://www.ofgem.gov.uk/sites/default/files/2026-06/Summary-of-changes-to-energy-price-cap-1-July-to-30-September-2026-revised-TDCV.pdf): typical use 2,500 kWh electricity, 9,500 kWh gas
 - [MoneySavingExpert: water bills rise from April 2026 (Water UK figures)](https://www.moneysavingexpert.com/news/2026/01/water-bills-april-rise/): water bill (£639 a year average 2026/27)
-- [Weekly road fuel prices (gov.uk)](https://www.gov.uk/government/statistics/weekly-road-fuel-prices): fuel (petrol 174.57p a litre, 19 Oct 2026)
+- [Weekly road fuel prices (gov.uk)](https://www.gov.uk/government/statistics/weekly-road-fuel-prices): fuel (petrol 161.96p a litre, 23 Nov 2026)
 - [DfT NTS0901: Annual mileage of cars (gov.uk)](https://www.gov.uk/government/statistical-data-sets/nts09-vehicle-mileage-and-occupancy): fuel (petrol car 6,200 miles a year, 2025)
 - [Mayor of London MD3464: March 2026 TfL fare changes](https://www.london.gov.uk/md3464-march-2026-transport-london-fare-changes): transit (Zones 1–2 Travelcard frozen; monthly £171.70)
 - [Bus News: Greater Manchester Bee Network simpler fares](https://bus-news.com/greater-manchesters-bee-network-set-to-introduce-simpler-fares/): transit (28-day bus ticket £80 from Jan 2025)
-- [Irish News (PA): holiday clubs cost £1,145 per child (Coram Family and Childcare 2026 survey)](https://www.irishnews.com/news/uk/families-face-typical-1145-bill-per-child-for-holiday-clubs-over-summer-3N7RLS6ARFLE5KOAIK4ERC4KYY/): school / childcare (after-school £70 a week, holiday club £191 a week)
+- [Coram: Holiday Childcare Survey 2026](https://www.coram.org.uk/news/holiday-childcare-survey-2026/): school / childcare (holiday club £191 a week, £1,145 for the summer; after-school about £70 a week, our estimate)
 
 ## GLOBAL · any currency · last reviewed 2026-10-19
 

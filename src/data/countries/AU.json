@@ -7,7 +7,7 @@
   "inflation": {
     "value": 3.5,
     "verify": true,
-    "note": "ABS: CPI rose 4.3% and trimmed mean 3.6% in the 12 months to Sept 2026 (released 28 Oct 2026); the RBA target is 2–3%. 3.5% is a middle figure. The October CPI is due 25 Nov 2026: re-check then."
+    "note": "ABS: CPI rose 4.9% and trimmed mean 3.8% in the 12 months to Oct 2026 (released 25 Nov 2026; Sept was 4.3% and 3.6%); the RBA target is 2–3%. 3.5% kept as a middle figure (not raised). Next CPI (Nov 2026) is due 6 Jan 2027."
   },
   "returns": {
     "savings": {
@@ -1207,9 +1207,9 @@
       "usedFor": "electricity (Ausgrid $1,899 a year at 3,900 kWh)"
     },
     {
-      "title": "Australian Bureau of Statistics — Consumer Price Index, Australia, September 2026 (released 28 Oct 2026)",
-      "url": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/sep-2026",
-      "usedFor": "inflation (CPI 4.3%, trimmed mean 3.6%, 12 months to Sept 2026)"
+      "title": "Australian Bureau of Statistics — Consumer Price Index, Australia, October 2026 (released 25 Nov 2026)",
+      "url": "https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/oct-2026",
+      "usedFor": "inflation (CPI 4.9%, trimmed mean 3.8%, 12 months to Oct 2026)"
     },
     {
       "title": "Compare the Market: about health insurance premiums (broker's own customer data)",
@@ -1242,5 +1242,5 @@
       "usedFor": "fuel (all profiles)"
     }
   ],
-  "lastReviewed": "2026-11-24"
+  "lastReviewed": "2026-11-26"
 }
